@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Explore all 19 Edexcel International A Level IT topics across four units at Tr.Sun Education.">
+  <title>Tr.Sun Education | Edexcel IAL IT Learning Hub</title>
+  <style>
+    :root {
+      --sidebar-width: 282px;
+      --navy: #111827;
+      --navy-2: #1e293b;
+      --purple: #7653e8;
+      --purple-dark: #5937c5;
+      --bg: #f5f7fc;
+      --surface: #ffffff;
+      --text: #253047;
+      --muted: #64748b;
+      --border: #e7eaf2;
+      --shadow: 0 8px 28px rgba(25,33,60,.045);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid #b69aff;
+      outline-offset: 3px;
+    }
+    [hidden] { display: none !important; }
+
+    /* Exact branding, dimensions and palette of the Topic 15.3 lesson design */
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: var(--navy);
+      color: #fff;
+      z-index: 1000;
+      scrollbar-width: thin;
+      scrollbar-color: #45506a transparent;
+    }
+    .brand { padding: 28px 18px 23px; border-bottom: 1px solid #30394c; }
+    .brand-identity { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 62px; height: 62px; flex: 0 0 62px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg,#a06aff,#5837c6);
+      box-shadow: 0 8px 24px rgba(117,83,232,.3);
+    }
+    .brand-logo svg { width: 49px; height: 49px; }
+    .brand-text { min-width: 0; }
+    .brand-text h2 { margin: 0; color: #fff; font-size: 17px; line-height: 1.3; letter-spacing: -.5px; }
+    .brand-text p { margin: 5px 0 0; color: #c4b5fd; font-size: 11px; white-space: nowrap; }
+    .brand-curriculum { margin-top: 20px; color: #94a3b8; font-size: 9px; font-weight: 800; letter-spacing: 1.15px; }
+    .current-lesson {
+      margin: 22px 13px 13px; padding: 16px; border: 1px solid #4b3a86;
+      border-radius: 14px; background: linear-gradient(135deg,#382b65,#29234a);
+    }
+    .current-lesson small { display: block; margin-bottom: 8px; color: #c4b5fd; font-size: 10px; font-weight: 750; letter-spacing: 1px; }
+    .current-lesson h3 { margin: 0; color: #fff; font-size: 15px; }
+    .current-lesson p { margin: 4px 0 0; color: #d6d0ea; font-size: 12px; line-height: 1.5; }
+    .sidebar-label { padding: 18px 23px 12px; color: #8591a8; font-size: 10px; font-weight: 800; letter-spacing: 1.7px; }
+    .side-nav { padding: 0 12px 18px; }
+    .side-nav a {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 5px;
+      padding: 11px 12px; color: #cbd5e1; font-size: 12.5px;
+      line-height: 1.4; border-radius: 11px; transition: background .2s,color .2s;
+    }
+    .side-nav a:hover { background: #283249; color: #fff; }
+    .side-nav a.active { background: #392b66; color: #fff; box-shadow: inset 3px 0 #a78bfa; }
+    .nav-number {
+      flex-shrink: 0; width: 34px; height: 30px; display: grid; place-items: center;
+      border-radius: 9px; background: #293449; color: #bac5d8; font-size: 11px; font-weight: 800;
+    }
+    .side-nav a.active .nav-number { background: #8157ed; color: #fff; }
+    .sidebar-footer { margin-top: auto; padding: 21px 22px; border-top: 1px solid #30394c; color: #94a3b8; font-size: 12px; }
+    .sidebar-footer strong { color: #e2e8f0; }
+
+    /* Lesson-page layout, breadcrumb, and hero */
+    .main { margin-left: var(--sidebar-width); min-height: 100vh; padding: 34px 42px 55px; }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-bottom: 20px; color: #78849a; font-size: 12px; }
+    .breadcrumb a { color: inherit; }
+    .breadcrumb a:hover, .breadcrumb strong { color: #6744d0; }
+    .hero {
+      position: relative; overflow: hidden; padding: 47px 44px;
+      border-radius: 24px;
+      background: linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);
+      box-shadow: 0 15px 35px rgba(88,60,180,.16); color: #fff;
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.15); pointer-events: none;
+    }
+    .hero::before { width: 360px; height: 360px; right: -100px; top: -200px; }
+    .hero::after { width: 250px; height: 250px; right: 90px; bottom: -175px; }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block; padding: 7px 15px; background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.2); border-radius: 30px;
+      font-size: 11px; font-weight: 750; letter-spacing: .8px;
+    }
+    .hero h1 { margin: 21px 0 14px; font-size: clamp(29px,3.6vw,43px); line-height: 1.2; letter-spacing: -1px; }
+    .hero p { max-width: 720px; color: #f2ecff; font-size: 15px; margin: 0; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .hero-tags span { padding: 8px 13px; font-size: 11px; font-weight: 650; border-radius: 9px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.17); }
+
+    .intro {
+      margin: 30px 0; padding: 27px 31px; background: #fff;
+      border: 1px solid var(--border); border-left: 5px solid var(--purple);
+      border-radius: 16px; box-shadow: var(--shadow);
+    }
+    .intro h2 { font-size: 21px; margin: 0 0 9px; }
+    .intro p { margin: 0; color: #526177; font-size: 14px; }
+
+    .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; margin: 0 0 28px; }
+    .stat {
+      display: flex; align-items: center; gap: 15px; min-width: 0;
+      border: 1px solid var(--border); border-radius: 15px;
+      padding: 18px 20px; background: #fff; box-shadow: var(--shadow);
+    }
+    .stat-icon { flex: 0 0 48px; display: grid; place-items: center; height: 48px; border-radius: 14px; font-size: 24px; background: #f2edff; }
+    .stat:nth-child(2) .stat-icon { background: #eaf9f1; }
+    .stat:nth-child(3) .stat-icon { background: #ebf4ff; }
+    .stat strong { display: block; font-size: 23px; line-height: 1.25; color: #253047; }
+    .stat small { display: block; font-size: 11px; color: var(--muted); }
+
+    /* White section cards and pastel feature cards from the selected design */
+    .lesson-section {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 34px; margin-bottom: 26px;
+      box-shadow: var(--shadow); scroll-margin-top: 28px;
+    }
+    .section-heading {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 23px; padding-bottom: 20px; border-bottom: 1px solid #eef0f5;
+    }
+    .section-icon { width: 56px; height: 56px; flex-shrink: 0; display: grid; place-items: center; border-radius: 16px; font-size: 26px; background: #f2edff; }
+    .section-heading small { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+    .section-heading h2 { margin: 3px 0 0; color: #1e293b; line-height: 1.3; font-size: clamp(21px,2.5vw,26px); }
+    .section-lead { margin: 0 0 23px; font-size: 14px; color: #64748b; }
+
+    .search-bar {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+      padding: 12px 16px; background: #f8f9fd; border: 1px solid #dde2ef;
+      border-radius: 12px; transition: border-color .2s,box-shadow .2s;
+    }
+    .search-bar:focus-within { border-color: #9275ec; box-shadow: 0 0 0 3px #eee8ff; }
+    .search-bar svg { width: 20px; height: 20px; flex-shrink: 0; stroke: #8575ae; }
+    .search-bar input { width: 100%; border: none; background: transparent; color: var(--text); outline: none; font-size: 14px; }
+    .search-clear { border: 0; background: #ede9fa; color: #6845c5; border-radius: 8px; font-size: 12px; padding: 6px 10px; font-weight: 700; }
+    .results-note { margin: 0 0 21px; font-size: 12px; color: #64748b; }
+
+    .cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+    .lesson-card {
+      display: flex; flex-direction: column; min-width: 0; scroll-margin-top: 25px;
+      padding: 23px; background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; box-shadow: 0 6px 18px rgba(25,33,60,.04);
+      transition: transform .2s,border-color .2s,box-shadow .2s;
+    }
+    .lesson-card:hover { transform: translateY(-3px); border-color: #d9cafa; box-shadow: 0 12px 25px rgba(45,35,90,.09); }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
+    .card-icon { width: 53px; height: 53px; display: grid; place-items: center; font-size: 25px; border-radius: 15px; background: #f2edff; }
+    .lesson-card:nth-child(7n+2) .card-icon { background: #ebf4ff; }
+    .lesson-card:nth-child(7n+3) .card-icon { background: #eaf9f1; }
+    .lesson-card:nth-child(7n+4) .card-icon { background: #fff4e5; }
+    .lesson-card:nth-child(7n+5) .card-icon { background: #fff1f5; }
+    .lesson-card:nth-child(7n+6) .card-icon { background: #f1edff; }
+    .lesson-card:nth-child(7n+7) .card-icon { background: #ebf7f9; }
+    .number { color: #8a93a8; font-size: 10px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; }
+    .status { align-self: flex-start; font-size: 10px; font-weight: 800; border-radius: 30px; padding: 5px 10px; background: #eaf9f1; color: #147d54; }
+    .status.planned { background: #f1f3f8; color: #718096; }
+    .lesson-card h3 { color: #25324a; font-size: 17px; line-height: 1.35; margin: 12px 0 9px; }
+    .lesson-card p { margin: 0 0 19px; color: #617085; font-size: 13px; line-height: 1.65; flex-grow: 1; }
+    .card-footer { border-top: 1px solid #eef0f5; padding-top: 15px; display: flex; justify-content: space-between; align-items: center; gap: 9px; }
+    .open-link { display: inline-flex; align-items: center; gap: 7px; color: #5a38c3; font-size: 12.5px; font-weight: 800; }
+    .open-link:hover { text-decoration: underline; }
+    .coming-soon { color: #8692a6; font-size: 12px; font-weight: 700; }
+    .card-meta { font-size: 10px; color: #9aa5b6; white-space: nowrap; }
+    .empty { text-align: center; padding: 35px 20px; color: #64748b; background: #f7f7fe; border: 1px dashed #d7d3ec; border-radius: 14px; }
+
+    .note-box { margin-top: 22px; background: #fff8ec; border: 1px solid #f4deb0; border-left: 4px solid #e9a34e; padding: 17px 20px; border-radius: 12px; color: #725021; font-size: 13px; }
+    .note-box strong { color: #925411; }
+    .page-footer { padding: 25px 15px; text-align: center; color: #8995aa; font-size: 12px; }
+    .page-footer p { margin: 4px; }
+    .page-footer strong { color: #6542cd; }
+    .reading-progress { position: fixed; left: var(--sidebar-width); top: 0; height: 4px; width: 0; background: linear-gradient(90deg,#7955e8,#bd7aff); z-index: 200; pointer-events: none; }
+    .back-top { position: fixed; right: 24px; bottom: 24px; width: 44px; height: 44px; border: 0; border-radius: 13px; background: #6442cf; color: #fff; font-size: 21px; box-shadow: 0 7px 20px #6442cf33; opacity: 0; pointer-events: none; transform: translateY(10px); transition: .2s; z-index: 80; }
+    .back-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-top:hover { background: #4e2db3; }
+    .menu-button,.overlay { display: none; }
+    .skip-link { position: fixed; top: -65px; left: 16px; z-index: 1500; background: white; padding: 10px 14px; border-radius: 10px; color: #4934b5; }
+    .skip-link:focus { top: 12px; }
+
+    @media (max-width: 1150px) { .cards { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 1050px) { .main { padding: 28px; } .lesson-section { padding: 28px; } }
+    @media (max-width: 800px) {
+      .sidebar { width: 280px; transform: translateX(-100%); transition: transform .3s ease; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 78px 16px 35px; }
+      .menu-button { display: flex; align-items: center; gap: 9px; position: fixed; top: 15px; left: 16px; z-index: 900; padding: 10px 15px; border: 0; border-radius: 11px; background: var(--navy-2); color: white; box-shadow: 0 5px 18px #0002; }
+      .overlay.show { display: block; position: fixed; inset: 0; background: rgba(13,18,30,.65); z-index: 950; }
+      .hero { padding: 33px 25px; border-radius: 19px; }
+      .hero p { font-size: 14px; }
+      .intro { padding: 23px 20px; }
+      .lesson-section { padding: 25px 19px; border-radius: 16px; }
+      .reading-progress { left: 0; }
+    }
+    @media (max-width: 550px) {
+      .cards { grid-template-columns: 1fr; }
+      .stats { gap: 8px; }
+      .stat { display: block; text-align: center; padding: 13px 4px; border-radius: 12px; }
+      .stat-icon { width: 36px; height: 36px; margin: 0 auto 7px; font-size: 18px; }
+      .stat strong { font-size: 21px; }
+      .stat small { font-size: 10px; }
+      .hero { padding: 29px 21px; }
+      .hero-tags { gap: 7px; }
+      .hero-tags span { font-size: 10px; }
+      .section-heading { gap: 12px; }
+      .section-heading h2 { font-size: 20px; }
+      .section-icon { width: 48px; height: 48px; font-size: 23px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after { transition-duration: .01ms !important; }
+    }
+  
+
+    /* Homepage-specific pieces: built on the Topic 15 dashboard design tokens */
+    .course-intro { margin: 30px 0; padding: 27px 31px; background: #fff; border: 1px solid var(--border); border-left: 5px solid var(--purple); border-radius: 16px; box-shadow: var(--shadow); }
+    .course-intro h2 { font-size: 21px; margin: 0 0 9px; color: #253047; }
+    .course-intro p { font-size: 14px; margin: 0; color: #526177; }
+    .home-stats { margin-bottom: 28px; }
+    .catalog-toolbar { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; margin-bottom: 11px; }
+    .catalog-toolbar .search-bar { flex: 1 1 310px; min-width: 200px; margin: 0; }
+    .catalog-toolbar .search-bar input { min-width: 0; }
+    .filters { display: flex; gap: 5px; align-items: center; padding: 5px; border-radius: 12px; background: #f1effa; }
+    .filter { background: transparent; border: 0; padding: 9px 13px; border-radius: 9px; color: #716588; font-size: 12px; font-weight: 750; white-space: nowrap; }
+    .filter:hover { color: #583bc1; }
+    .filter[aria-pressed="true"] { background: #fff; box-shadow: 0 2px 10px #25124f13; color: #5b3bc1; }
+    .catalog-results { color: var(--muted); font-size: 12px; margin: 9px 0 23px; }
+    .unit-panel { scroll-margin-top: 25px; margin: 18px 0 32px; }
+    .unit-panel + .unit-panel { padding-top: 28px; border-top: 1px solid #eef0f5; }
+    .unit-title-row { display: flex; gap: 14px; align-items: center; justify-content: space-between; margin: 0 0 17px; }
+    .unit-heading { display: flex; align-items: center; gap: 13px; min-width: 0; }
+    .unit-number { width: 54px; height: 54px; border-radius: 15px; flex: 0 0 54px; display: grid; place-items: center; background: var(--soft); color: var(--accent); font-size: 18px; font-weight: 850; }
+    .unit-heading h3 { margin: 0; font-size: 19px; color: #25324a; line-height: 1.3; }
+    .unit-heading p { margin: 3px 0 0; color: #64748b; font-size: 12px; }
+    .level-tag { display: inline-flex; border: 1px solid #e3e6f1; border-radius: 8px; color: #6d7892; background: #fff; font-size: 11px; font-weight: 800; padding: 7px 11px; white-space: nowrap; }
+    .topic-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+    .topic-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid #e7eaf2; padding: 22px; border-radius: 16px; background: #fff; box-shadow: 0 6px 18px rgba(25,33,60,.04); transition: transform .2s, border-color .2s, box-shadow .2s; }
+    .topic-card:hover { transform: translateY(-3px); border-color: #d9cafa; box-shadow: 0 12px 25px rgba(45,35,90,.09); }
+    .topic-card .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .topic-card .card-icon { background: var(--soft); color: var(--accent); }
+    .topic-card .number { color: #8a93a8; }
+    .topic-card h4 { color: #25324a; font-size: 17px; line-height: 1.35; margin: 0 0 9px; }
+    .topic-card .blurb { margin: 0 0 19px; color: #617085; font-size: 13px; line-height: 1.65; flex: 1; }
+    .topic-card .card-footer { margin-top: auto; padding-top: 15px; }
+    .topic-link { color: #5a38c3; font-size: 12.5px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px; }
+    .topic-link:hover { text-decoration: underline; }
+    .topic-link .arrow { font-size: 18px; }
+    .card-meta { font-size: 10px; color: #9aa5b6; }
+    .sections { border-top: 1px solid #eef0f5; margin-top: 13px; padding-top: 12px; }
+    .sections summary { cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-weight: 750; font-size: 12px; color: #66748d; list-style: none; }
+    .sections summary::-webkit-details-marker { display: none; }
+    .sections summary::after { content: "+"; color: #7251d8; font-size: 19px; line-height: 1; }
+    .sections[open] summary::after { content: "−"; }
+    .section-list { list-style: none; margin: 0; padding: 12px 0 0; display: grid; gap: 7px; }
+    .section-list li { display: flex; align-items: baseline; gap: 9px; font-size: 11.5px; line-height: 1.5; color: #53607c; }
+    .section-code { color: #6744d0; font-weight: 800; white-space: nowrap; }
+    .unit-panel[hidden], .topic-card[hidden], .empty[hidden] { display: none !important; }
+    .empty { margin-top: 8px; }
+    .course-hint { margin-top: 22px; background: #fff8ec; border: 1px solid #f4deb0; border-left: 4px solid #e9a34e; padding: 17px 20px; border-radius: 12px; color: #725021; font-size: 13px; }
+    .course-hint strong { color: #925411; }
+    .top-link { color: #5a38c3; font-weight: 800; }
+    @media (max-width: 1150px) { .topic-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 800px) { .catalog-toolbar { align-items: stretch; } .course-intro { padding: 23px 20px; } }
+    @media (max-width: 550px) {
+      .topic-grid { grid-template-columns: 1fr; }
+      .catalog-toolbar .search-bar { flex-basis: 100%; }
+      .filters { width: 100%; }
+      .filter { flex: 1; text-align: center; padding: 10px 5px; }
+      .unit-heading h3 { font-size: 16px; }
+      .unit-heading p { font-size: 11px; }
+      .unit-number { width: 45px; height: 45px; flex-basis: 45px; border-radius: 12px; font-size: 15px; }
+      .level-tag { font-size: 10px; padding: 6px 7px; }
+      .unit-title-row { gap: 8px; }
+      .course-intro { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Skip to course topics</a>
+  <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-label="Open course navigation" aria-expanded="false">☰ <span>Course Menu</span></button>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Course navigation">
+    <div class="brand">
+      <div class="brand-identity">
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
+            <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
+          </svg>
+        </div>
+        <div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div>
+      </div>
+      <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
+    </div>
+
+    <div class="current-lesson">
+      <small>YOUR DIGITAL CLASSROOM</small>
+      <h3>🎓 IT Learning Hub</h3>
+      <p>AS &amp; A2 Level · 4 Units · 19 Topics</p>
+    </div>
+
+    <div class="sidebar-label">COURSE NAVIGATION</div>
+    <nav class="side-nav" id="unitNav" aria-label="Browse course units">
+      <a class="active" href="#catalog"><span class="nav-number" aria-hidden="true">⌂</span><span>All Topics</span></a>
+    </nav>
+    <div class="sidebar-label">AS LEVEL · UNITS 1–2</div>
+    <nav class="side-nav" aria-label="AS level units">
+      <a href="#unit-1" data-unit="1"><span class="nav-number">01</span><span>Information Technology</span></a>
+      <a href="#unit-2" data-unit="2"><span class="nav-number">02</span><span>Web Development</span></a>
+    </nav>
+    <div class="sidebar-label">A2 LEVEL · UNITS 3–4</div>
+    <nav class="side-nav" aria-label="A2 level units">
+      <a href="#unit-3" data-unit="3"><span class="nav-number">03</span><span>Advanced IT</span></a>
+      <a href="#unit-4" data-unit="4"><span class="nav-number">04</span><span>Database Development</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <strong>Edexcel IAL IT · AS &amp; A2</strong>
+      <div>19 Topics · 4 Units</div>
+      <div style="margin-top:12px">Created by Tr. Sun</div>
+    </div>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><strong aria-current="page">Edexcel IAL IT</strong><span aria-hidden="true">›</span><span>All Topics</span></nav>
+
+      <header class="hero" id="home">
+        <div class="hero-content">
+          <span class="hero-badge">EDEXCEL INTERNATIONAL A LEVEL IT</span>
+          <h1>Tr Sun Online Education</h1>
+          <div class="hero-tags"><span>📚 19 Topics</span><span>🎓 AS &amp; A2 Level</span><span>🧩 4 Learning Units</span></div>
+        </div>
+      </header>
+
+
+      <section class="lesson-section" id="catalog" aria-labelledby="catalogTitle">
+        <div class="section-heading"><div class="section-icon" aria-hidden="true">🗂️</div><div><small>CHOOSE YOUR LEARNING PATH</small><h2 id="catalogTitle">Explore Your Courses</h2></div></div>
+        <p class="section-lead">Browse every Edexcel International A Level IT topic across Units 1–4.</p>
+        <div class="catalog-toolbar">
+          <label class="search-bar" for="topicSearch">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+            <input id="topicSearch" type="search" placeholder="Search topics, keywords or sections..." autocomplete="off">
+            <button type="button" class="search-clear" id="clearSearch" hidden>Clear</button>
+          </label>
+          <div class="filters" role="group" aria-label="Filter by level">
+            <button type="button" class="filter" data-filter="all" aria-pressed="true">All Topics</button>
+            <button type="button" class="filter" data-filter="AS" aria-pressed="false">AS Level</button>
+            <button type="button" class="filter" data-filter="A2" aria-pressed="false">A2 Level</button>
+          </div>
+        </div>
+        <p class="catalog-results" id="resultCount" role="status" aria-live="polite">Showing 19 topics across 4 units</p>
+        <div id="unitsContainer"></div>
+        <div class="empty" id="emptyState" hidden>No matching topics found. Try another keyword or level.</div>
+      </section>
+
+      <footer class="page-footer">
+        <p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel International A Level IT</p>
+        <p>Designed and created by <strong>Tr. Sun</strong></p>
+      </footer>
+    </div>
+  </main>
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
+  <script>
+    /* Original course content and homepage filename conventions, preserved. */
+const LESSON_LINKS = {
+            1: "topic-01.html", 2: "topic-02.html",
+            3: "topic-03.html", 4: "topic-04.html",
+            5: "topic-05.html", 6: "topic-06.html",
+            7: "topic-07.html", 8: "topic-08.html",
+            9: "topic-09.html", 10: "topic-10.html",
+            11: "topic-11.html", 12: "topic-12.html",
+            13: "topic-13.html", 14: "topic-14.html",
+            15: "topic-15.html", 16: "topic-16.html",
+            17: "topic-17.html", 18: "topic-18.html",
+            19: "topic-19.html"
+        };
+
+        // Each topic: [number, title, icon, description, ["section number|section name", ...]]
+        const UNITS = [
+            {
+                no: 1, level: "AS", name: "Information Technology", subtitle: "Hardware, networks and digital systems", color: "#6c57da", soft: "#f0edff", topics: [
+                    [1, "Hardware and Software", "💻", "Devices, components, systems and application software.", ["1.1|Hardware", "1.2|Software"]],
+                    [2, "Networks", "🌐", "Network communication, design and security.", ["2.1|Network models and protocols", "2.2|Network design and implementation", "2.3|Network security"]],
+                    [3, "The Online Environment", "☁️", "The web, online communities and cloud technology.", ["3.1|The internet and the world wide web", "3.2|Operating online", "3.3|Online communities", "3.4|The cloud"]],
+                    [4, "IT Systems", "🖥️", "Designing systems using diagrams and dataflows.", ["4.1|Systems design", "4.2|Dataflow", "4.3|Flowcharts", "4.4|Systems"]],
+                    [5, "Data and Databases", "🗄️", "Managing structured data, relational databases and SQL.", ["5.1|Data and information", "5.2|Structured data", "5.3|Structured query language (SQL)"]],
+                    [6, "Wider Issues", "🌱", "Environmental, ethical, legal and social impacts of IT.", ["6.1|Environmental", "6.2|Legal, moral and ethical", "6.3|Society"]]
+                ]
+            },
+            {
+                no: 2, level: "AS", name: "Web Development", subtitle: "HTML, CSS, JavaScript and accessible design", color: "#148f9b", soft: "#e6f8f8", topics: [
+                    [7, "Understanding the Functionality of HTML", "🧱", "Document structure, markup and page components.", ["7.1|Document structure", "7.2|Structural markup", "7.3|Page components"]],
+                    [8, "Understanding the Functionality of CSS", "🎨", "Styles, positioning and responsive web pages.", ["8.1|Writing CSS", "8.2|Styling web pages", "8.3|Positioning content", "8.4|CSS animations"]],
+                    [9, "Understanding the Functions of JavaScript", "⚡", "DOM manipulation, validation and interactivity.", ["9.1|Document Object Model", "9.2|Regular expressions", "9.3|Programmed functionality"]],
+                    [10, "Designing Web Pages", "🖌️", "Design principles, usability and accessibility.", ["10.1|Principles of design", "10.2|Principles of accessibility", "10.3|Principles of usability"]],
+                    [11, "The Semantic Web", "🔖", "Meaningful semantic HTML and accessible structure.", ["11.1|Writing semantic code"]]
+                ]
+            },
+            {
+                no: 3, level: "A2", name: "Advanced Information Technology", subtitle: "Data, organisations and emerging technologies", color: "#e38d43", soft: "#fff3e6", topics: [
+                    [12, "Manipulating Data", "📊", "Data integrity, relational databases and Big Data.", ["12.1|Data integrity", "12.2|Relational databases", "12.3|Big Data"]],
+                    [13, "Enabling Technologies", "🔐", "Virtualisation, distributed systems, HCI and encryption.", ["13.1|Virtualisation", "13.2|Distributed systems", "13.3|Human computer interaction", "13.4|Storing and securing data", "13.5|Encryption"]],
+                    [14, "Using IT Systems in Organisations", "🏢", "Business IT systems and their operational issues.", ["14.1|Role of IT systems", "14.2|Operational issues"]],
+                    [15, "Systems Development", "📋", "Project management, waterfall, agile and diagrams.", ["15.1|Project management", "15.2|Waterfall method", "15.3|Agile approach", "15.4|Diagrams used in system design and development"]],
+                    [16, "Emerging Technologies", "🤖", "Machine learning, AR, VR and the Internet of Things.", ["16.1|Machine learning", "16.2|Virtual and augmented reality", "16.3|Internet of Things"]]
+                ]
+            },
+            {
+                no: 4, level: "A2", name: "Database Development", subtitle: "Database applications, design and solutions", color: "#d25f8c", soft: "#ffedf4", topics: [
+                    [17, "Use of Features of Database Solutions", "🗂️", "Database applications and user needs.", ["17.1|Database applications", "17.2|User needs", "17.3|User experience"]],
+                    [18, "Relational Database Concepts", "🔗", "Relational structures, forms and data validation.", ["18.1|Structuring data", "18.2|Relational data structures", "18.3|Data entry and validation techniques"]],
+                    [19, "Database Solutions", "🛠️", "Build, test, evaluate and enhance database solutions.", ["19.1|Using database software", "19.2|User interface", "19.3|Testing the solution", "19.4|Evaluation and enhancement"]]
+                ]
+            }
+        ];
+
+    const unitsContainer = document.getElementById('unitsContainer');
+    const searchInput = document.getElementById('topicSearch');
+    const clearSearch = document.getElementById('clearSearch');
+    const countText = document.getElementById('resultCount');
+    const emptyState = document.getElementById('emptyState');
+    const filterButtons = [...document.querySelectorAll('.filter')];
+    let currentFilter = 'all';
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function htmlEscape(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[character]);
+    }
+    function createTopicCard(topic, unit, query) {
+      const [number, name, icon, description, sectionStrings] = topic;
+      const target = LESSON_LINKS[number] || '#';
+      const sections = sectionStrings.map(s => {
+        const divider = s.indexOf('|');
+        return [s.slice(0, divider), s.slice(divider + 1)];
+      });
+      const sectionList = sections.map(([code, label]) =>
+        `<li><span class="section-code">${htmlEscape(code)}</span><span>${htmlEscape(label)}</span></li>`
+      ).join('');
+      const expand = query && sections.some(([code, label]) =>
+        (code + ' ' + label).toLowerCase().includes(query));
+      return `<article class="topic-card" style="--accent:${unit.color};--soft:${unit.soft}">
+        <div class="card-top"><span class="card-icon" aria-hidden="true">${icon}</span><span class="number">TOPIC ${String(number).padStart(2,'0')}</span></div>
+        <h4>${htmlEscape(name)}</h4><p class="blurb">${htmlEscape(description)}</p>
+        <div class="card-footer"><a class="topic-link" href="${htmlEscape(target)}" aria-label="Open Topic ${number}: ${htmlEscape(name)}">Open Topic <span class="arrow" aria-hidden="true">↗</span></a><span class="card-meta">${unit.level} · Unit ${unit.no}</span></div>
+        <details class="sections" ${expand ? 'open' : ''}><summary>View ${sections.length} curriculum section${sections.length === 1 ? '' : 's'}</summary><ul class="section-list">${sectionList}</ul></details>
+      </article>`;
+    }
+    function render() {
+      const query = searchInput.value.trim().toLowerCase();
+      let numberShown = 0;
+      let unitShown = 0;
+      const html = UNITS.filter(unit => currentFilter === 'all' || unit.level === currentFilter).map(unit => {
+        const matching = unit.topics.filter(topic =>
+          [String(topic[0]), topic[1], topic[3], ...topic[4], 'topic ' + topic[0]]
+            .some(value => value.toLowerCase().includes(query)));
+        if (!matching.length) return '';
+        numberShown += matching.length; unitShown++;
+        return `<section class="unit-panel" id="unit-${unit.no}" style="--accent:${unit.color};--soft:${unit.soft}">
+          <div class="unit-title-row">
+            <div class="unit-heading"><span class="unit-number">${String(unit.no).padStart(2,'0')}</span><div><h3>Unit ${unit.no} · ${htmlEscape(unit.name)}</h3><p>${htmlEscape(unit.subtitle)}</p></div></div>
+            <span class="level-tag">${unit.level} Level</span>
+          </div>
+          <div class="topic-grid">${matching.map(topic => createTopicCard(topic, unit, query)).join('')}</div>
+        </section>`;
+      }).join('');
+      unitsContainer.innerHTML = html;
+      countText.textContent = `Showing ${numberShown} topic${numberShown === 1 ? '' : 's'} across ${unitShown} unit${unitShown === 1 ? '' : 's'}`;
+      emptyState.hidden = numberShown !== 0;
+      clearSearch.hidden = !searchInput.value;
+    }
+    function setFilter(filter) {
+      currentFilter = filter;
+      filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
+      render();
+    }
+    searchInput.addEventListener('input', render);
+    clearSearch.addEventListener('click', () => {
+      searchInput.value = ''; render(); searchInput.focus();
+    });
+    filterButtons.forEach(button => button.addEventListener('click', () => setFilter(button.dataset.filter)));
+
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    function setMenuOpen(open) {
+      sidebar.classList.toggle('open', open);
+      overlay.classList.toggle('show', open);
+      overlay.setAttribute('aria-hidden', String(!open));
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close course navigation' : 'Open course navigation');
+    }
+    menuButton.addEventListener('click', () => setMenuOpen(!sidebar.classList.contains('open')));
+    overlay.addEventListener('click', () => setMenuOpen(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenuOpen(false); });
+    window.addEventListener('resize', () => { if (innerWidth > 800) setMenuOpen(false); });
+    document.querySelectorAll('.sidebar a').forEach(link => link.addEventListener('click', () => {
+      if (link.matches('[data-unit]')) {
+        currentFilter = 'all'; searchInput.value = ''; setFilter('all');
+      } else if (link.getAttribute('href') === '#catalog') {
+        currentFilter = 'all'; searchInput.value = ''; setFilter('all');
+      }
+      document.querySelectorAll('.sidebar nav a').forEach(a => a.classList.toggle('active', a === link));
+      setMenuOpen(false);
+    }));
+    const progressBar = document.getElementById('readingProgress');
+    const backTop = document.getElementById('backTop');
+    function updateReadingPosition() {
+      const limit = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = limit > 0 ? window.scrollY / limit * 100 : 0;
+      progressBar.style.width = Math.max(0, Math.min(100, percent)) + '%';
+      backTop.classList.toggle('visible', window.scrollY > 360);
+    }
+    window.addEventListener('scroll', updateReadingPosition, {passive:true});
+    window.addEventListener('resize', updateReadingPosition);
+    backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
+    render(); updateReadingPosition();
+  </script>
+</body>
+</html>

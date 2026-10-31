@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+
+  <title>
+    Topic 3.1 - The Internet and the World Wide Web
+    | Tr.Sun Education
+  </title>
+
+  <style>
+    /* =========================================
+       TR.SUN EDUCATION - SHARED LESSON DESIGN
+       ========================================= */
+
+    :root {
+      --sidebar-width: 282px;
+      --navy: #111827;
+      --navy-2: #1e293b;
+      --purple: #7653e8;
+      --purple-dark: #5937c5;
+      --bg: #f5f7fc;
+      --surface: #ffffff;
+      --text: #253047;
+      --muted: #64748b;
+      --border: #e7eaf2;
+      --shadow: 0 8px 28px rgba(25, 33, 60, 0.045);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #b69aff;
+      outline-offset: 3px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    h3 {
+      color: #25324a;
+      margin: 27px 0 12px;
+      font-size: 18px;
+    }
+
+    h4 {
+      color: #24334b;
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    li {
+      padding: 4px 0;
+    }
+
+    li::marker {
+      color: var(--purple);
+      font-weight: bold;
+    }
+
+    code {
+      background: #f1edff;
+      color: #5937c5;
+      border-radius: 5px;
+      padding: 2px 5px;
+      overflow-wrap: anywhere;
+    }
+
+    /* =========================================
+       SIDEBAR
+       ========================================= */
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: var(--navy);
+      color: #ffffff;
+      z-index: 1000;
+      scrollbar-width: thin;
+      scrollbar-color: #45506a transparent;
+    }
+
+    .brand {
+      padding: 28px 18px 23px;
+      border-bottom: 1px solid #30394c;
+    }
+
+    .brand-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 62px;
+      height: 62px;
+      flex: 0 0 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #a06aff, #5837c6);
+      box-shadow: 0 8px 24px rgba(117, 83, 232, 0.3);
+    }
+
+    .brand-logo svg {
+      width: 49px;
+      height: 49px;
+    }
+
+    .brand-text h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+    }
+
+    .brand-text p {
+      margin: 5px 0 0;
+      color: #c4b5fd;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .brand-curriculum {
+      margin-top: 20px;
+      color: #94a3b8;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.15px;
+    }
+
+    .current-lesson {
+      margin: 22px 13px 13px;
+      padding: 16px;
+      border: 1px solid #4b3a86;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #382b65, #29234a);
+    }
+
+    .current-lesson small {
+      display: block;
+      margin-bottom: 8px;
+      color: #c4b5fd;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 1px;
+    }
+
+    .current-lesson h3 {
+      margin: 0;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .current-lesson p {
+      margin: 4px 0 0;
+      color: #d6d0ea;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .sidebar-label {
+      padding: 18px 23px 12px;
+      color: #8591a8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+    }
+
+    .side-nav {
+      padding: 0 12px 18px;
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 5px;
+      padding: 11px 12px;
+      color: #cbd5e1;
+      font-size: 12.5px;
+      line-height: 1.4;
+      border-radius: 11px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .side-nav a:hover {
+      background: #283249;
+      color: #ffffff;
+    }
+
+    .side-nav a.active {
+      background: #392b66;
+      color: #ffffff;
+      box-shadow: inset 3px 0 #a78bfa;
+    }
+
+    .nav-number {
+      flex-shrink: 0;
+      width: 34px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: #293449;
+      color: #bac5d8;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .side-nav a.active .nav-number {
+      background: #8157ed;
+      color: #ffffff;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 21px 22px;
+      border-top: 1px solid #30394c;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .sidebar-footer strong {
+      color: #e2e8f0;
+    }
+
+    /* =========================================
+       MAIN CONTENT
+       ========================================= */
+
+    .main {
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+      padding: 34px 42px 55px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      color: #78849a;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: inherit;
+    }
+
+    .breadcrumb a:hover,
+    .breadcrumb strong {
+      color: #6744d0;
+    }
+
+    /* =========================================
+       HERO HEADER
+       ========================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 47px 44px;
+      border-radius: 24px;
+      background: linear-gradient(115deg,
+          #4934b5 0%,
+          #7753e7 55%,
+          #ad72ed 100%);
+      box-shadow: 0 15px 35px rgba(88, 60, 180, 0.16);
+      color: #ffffff;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      right: -100px;
+      top: -200px;
+    }
+
+    .hero::after {
+      width: 250px;
+      height: 250px;
+      right: 90px;
+      bottom: -175px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 15px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 0.8px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 3.6vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 21px 0 14px;
+      color: #ffffff;
+    }
+
+    .hero p {
+      max-width: 710px;
+      color: #f2ecff;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-tags span {
+      padding: 8px 13px;
+      font-size: 11px;
+      font-weight: 650;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.17);
+    }
+
+    /* =========================================
+       INTRODUCTION
+       ========================================= */
+
+    .introduction {
+      margin: 30px 0;
+      padding: 27px 31px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--purple);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .introduction h2 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    /* =========================================
+       LESSON CARDS
+       ========================================= */
+
+    .lesson-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 23px;
+      border-bottom: 1px solid #eef0f5;
+    }
+
+    .section-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      font-size: 26px;
+    }
+
+    .purple {
+      background: #f2edff;
+    }
+
+    .blue {
+      background: #ebf4ff;
+    }
+
+    .green {
+      background: #eaf9f1;
+    }
+
+    .section-heading small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: #1e293b;
+      margin: 3px 0 0;
+      line-height: 1.3;
+      font-size: clamp(21px, 2.5vw, 26px);
+    }
+
+    /* =========================================
+       KEY DEFINITION BOX
+       ========================================= */
+
+    .definition {
+      margin: 19px 0;
+      padding: 19px 22px;
+      border-radius: 12px;
+      border-left: 4px solid #875bea;
+      background: #f4f0ff;
+    }
+
+    .definition .label {
+      display: block;
+      color: #633cb8;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .definition p {
+      margin: 5px 0 0;
+      color: #3a3368;
+    }
+
+    /* =========================================
+       COLOURFUL FEATURE CARDS
+       ========================================= */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .feature {
+      padding: 21px;
+      border: 1px solid rgba(80, 100, 145, 0.08);
+      border-radius: 14px;
+      background: #f2edff;
+    }
+
+    .feature:nth-child(4n+2) {
+      background: #ebf4ff;
+    }
+
+    .feature:nth-child(4n+3) {
+      background: #eaf9f1;
+    }
+
+    .feature:nth-child(4n+4) {
+      background: #fff4e5;
+    }
+
+    .feature-icon {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #526177;
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .feature ul {
+      font-size: 13.5px;
+      margin: 8px 0 0;
+    }
+
+    /* =========================================
+       EXAMPLE AND NOTE BOXES
+       ========================================= */
+
+    .example-box {
+      margin-top: 23px;
+      padding: 23px 25px;
+      background: #effbf5;
+      border: 1px solid #c9ecda;
+      border-radius: 14px;
+    }
+
+    .example-label {
+      color: #11825b;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .example-box h3 {
+      margin: 9px 0 11px;
+      color: #176b50;
+    }
+
+    .example-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      margin: 19px 0 4px;
+    }
+
+    .example-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid #dbf3e7;
+      border-radius: 10px;
+      padding: 13px 14px;
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .check {
+      color: #059669;
+      font-weight: 800;
+    }
+
+    .note-box {
+      background: #fff8ec;
+      border: 1px solid #f7e2b8;
+      border-radius: 13px;
+      padding: 19px 22px;
+      margin-top: 22px;
+      color: #725021;
+      font-size: 14px;
+    }
+
+    .note-box strong {
+      color: #a56518;
+    }
+
+    /* =========================================
+       TABLES
+       ========================================= */
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      margin: 22px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    thead {
+      background: #f1edff;
+    }
+
+    th {
+      color: #5a36ad;
+      text-align: left;
+      padding: 15px 17px;
+    }
+
+    td {
+      padding: 15px 17px;
+      vertical-align: top;
+      border-top: 1px solid var(--border);
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff;
+    }
+
+    /* =========================================
+       PROCESS DIAGRAMS
+       ========================================= */
+
+    .process {
+      margin: 25px 0;
+      padding: 23px;
+      border: 1px solid #e8e2fb;
+      border-radius: 16px;
+      background: #faf9ff;
+    }
+
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: #ffffff;
+      border: 1px solid #e8e3f5;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: #7653e8;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .process-step strong {
+      display: block;
+      color: #27354d;
+    }
+
+    .process-step p {
+      margin: 3px 0 0;
+      font-size: 13.5px;
+    }
+
+    .process-arrow {
+      text-align: center;
+      color: #7653e8;
+      font-size: 23px;
+      padding: 5px;
+      line-height: 1.2;
+    }
+
+    .network-diagram {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin: 24px 0;
+    }
+
+    .diagram-node {
+      text-align: center;
+      border: 1px solid #ddd6fe;
+      background: #f4f0ff;
+      padding: 20px 10px;
+      border-radius: 13px;
+    }
+
+    .diagram-node:nth-child(2) {
+      background: #ebf4ff;
+      border-color: #bfdbfe;
+    }
+
+    .diagram-node:nth-child(3) {
+      background: #eaf9f1;
+      border-color: #bbf7d0;
+    }
+
+    .diagram-icon {
+      font-size: 35px;
+    }
+
+    .diagram-node strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .diagram-node p {
+      font-size: 12px;
+      color: #64748b;
+      margin: 4px 0 0;
+    }
+
+    /* =========================================
+       FOOTER AND NAVIGATION
+       ========================================= */
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+    .reading-progress {
+      position: fixed;
+      left: var(--sidebar-width);
+      top: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #7955e8, #bd7aff);
+      z-index: 200;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 13px;
+      background: #6442cf;
+      color: #ffffff;
+      font-size: 21px;
+      cursor: pointer;
+      box-shadow: 0 7px 20px #6442cf33;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: 0.2s;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .menu-button,
+    .overlay {
+      display: none;
+    }
+
+    /* =========================================
+       RESPONSIVE DESIGN
+       ========================================= */
+
+    @media (max-width: 1050px) {
+      .main {
+        padding: 28px;
+      }
+
+      .lesson-section {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .sidebar {
+        width: 280px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 78px 16px 35px;
+      }
+
+      .menu-button {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        position: fixed;
+        top: 15px;
+        left: 16px;
+        z-index: 900;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 11px;
+        background: var(--navy-2);
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .overlay.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(13, 18, 30, 0.65);
+        z-index: 950;
+      }
+
+      .hero {
+        padding: 33px 25px;
+        border-radius: 19px;
+      }
+
+      .introduction {
+        padding: 23px 20px;
+      }
+
+      .lesson-section {
+        padding: 25px 19px;
+        border-radius: 16px;
+      }
+
+      .reading-progress {
+        left: 0;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .feature-grid,
+      .example-list,
+      .network-diagram {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 29px 21px;
+      }
+
+      .hero-tags {
+        gap: 7px;
+      }
+
+      .hero-tags span {
+        font-size: 10px;
+      }
+
+      .section-heading {
+        gap: 12px;
+      }
+
+      .section-heading h2 {
+        font-size: 20px;
+      }
+
+      .section-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 23px;
+      }
+
+      .example-box {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MOBILE MENU -->
+  <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false">
+    ☰ <span>Lesson Menu</span>
+  </button>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- ======================================
+       LEFT SIDEBAR
+       ====================================== -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+
+      <div class="brand-identity">
+
+        <div class="brand-logo">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
+            <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
+          </svg>
+        </div>
+
+        <div class="brand-text">
+          <h2>Tr.Sun Education</h2>
+          <p>Learn · Explore · Achieve</p>
+        </div>
+
+      </div>
+
+      <div class="brand-curriculum">
+        EDEXCEL INTERNATIONAL A LEVEL IT
+      </div>
+
+    </div>
+
+    <div class="current-lesson">
+      <small>YOU ARE STUDYING</small>
+      <h3>📖 Topic 3.1</h3>
+      <p>The Internet and the World Wide Web</p>
+    </div>
+
+    <div class="sidebar-label">
+      LESSON CONTENTS
+    </div>
+
+    <nav class="side-nav" aria-label="Lesson sections">
+
+      <a class="active" href="#internet-www">
+        <span class="nav-number">1</span>
+        <span>Internet and WWW</span>
+      </a>
+
+      <a href="#web-components">
+        <span class="nav-number">2</span>
+        <span>Webpages and Servers</span>
+      </a>
+
+      <a href="#addresses">
+        <span class="nav-number">3</span>
+        <span>IP Addresses and URLs</span>
+      </a>
+
+      <a href="#dns">
+        <span class="nav-number">4</span>
+        <span>Domain Name System</span>
+      </a>
+
+      <a href="#web-request">
+        <span class="nav-number">5</span>
+        <span>Requesting Webpages</span>
+      </a>
+
+      <a href="#www-features">
+        <span class="nav-number">6</span>
+        <span>Features of the WWW</span>
+      </a>
+
+      <a href="#web-generations">
+        <span class="nav-number">7</span>
+        <span>Web 1.0 and Web 2.0</span>
+      </a>
+
+      <a href="#web3">
+        <span class="nav-number">8</span>
+        <span>Understanding Web 3.0</span>
+      </a>
+
+      <a href="#terminology">
+        <span class="nav-number">9</span>
+        <span>Important Terminology</span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <strong>Topic 3 · The Online Environment</strong>
+      <div>Unit 1 · AS Level</div>
+      <div style="margin-top:12px">
+        Created by Tr. Sun
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ======================================
+       MAIN LESSON
+       ====================================== -->
+
+  <main class="main">
+
+    <div class="container">
+
+      <!-- BREADCRUMB -->
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Edexcel IAL IT</a>
+        <span>&gt;</span>
+        <a href="topic-03.html">Topic 3</a>
+        <span>&gt;</span>
+        <strong>Lesson 3.1</strong>
+      </nav>
+
+      <!-- HERO -->
+
+      <header class="hero">
+
+        <div class="hero-content">
+
+          <span class="hero-badge">
+            UNIT 1 · TOPIC 3 · LESSON 1
+          </span>
+
+          <h1>
+            The Internet and the World Wide Web
+          </h1>
+
+          <p>
+            Understand the differences between the Internet
+            and the WWW, how webpages are accessed, how DNS
+            works, and the main features and generations
+            of the World Wide Web.
+          </p>
+
+          <div class="hero-tags">
+            <span>📚 9 Learning Areas</span>
+            <span>🎓 AS Level</span>
+            <span>🌐 The Online Environment</span>
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- INTRODUCTION -->
+
+      <div class="introduction">
+
+        <h2>📖 Introduction</h2>
+
+        <p>
+          People often use the terms Internet and World Wide
+          Web to mean the same thing. However, they refer
+          to two different but closely related technologies.
+        </p>
+
+        <p>
+          The Internet provides the global communication
+          infrastructure, while the World Wide Web allows
+          users to access interconnected webpages and
+          other resources through that infrastructure.
+        </p>
+
+        <h3>Learning Objectives</h3>
+
+        <ul>
+          <li>
+            Explain the difference between the Internet
+            and the WWW.
+          </li>
+          <li>
+            Understand webpages, websites, browsers
+            and web servers.
+          </li>
+          <li>
+            Explain IP addresses, domain names and URLs.
+          </li>
+          <li>
+            Describe the DNS resolution process.
+          </li>
+          <li>
+            Explain how a webpage is requested and delivered.
+          </li>
+          <li>
+            Describe the main features of the WWW.
+          </li>
+          <li>
+            Compare Web 1.0, Web 2.0 and Web 3.0.
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- ==================================
+           SECTION 1
+           ================================== -->
+
+      <section class="lesson-section" id="internet-www">
+
+        <div class="section-heading">
+          <div class="section-icon purple">🌐</div>
+          <div>
+            <small>Section 1</small>
+            <h2>Understanding the Internet and WWW</h2>
+          </div>
+        </div>
+
+        <h3>1.1 What is the Internet?</h3>
+
+        <p>
+          The Internet is a worldwide system of
+          interconnected computer networks that
+          communicate with one another using
+          standard communication protocols.
+        </p>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            The <strong>Internet</strong> is a global network
+            of interconnected networks that allows
+            computers and other devices to exchange data
+            across the world.
+          </p>
+        </div>
+
+        <h3>Infrastructure of the Internet</h3>
+
+        <p>
+          The Internet depends on different types
+          of hardware and communication technology.
+        </p>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">🔀</div>
+            <h4>Routers</h4>
+            <p>
+              Forward data packets between networks
+              to help them reach their destinations.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔌</div>
+            <h4>Network Cables</h4>
+            <p>
+              Copper and fibre-optic cables provide
+              physical connections for transmitting data.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">📡</div>
+            <h4>Wireless Networks</h4>
+            <p>
+              Wi-Fi, cellular networks and satellite links
+              enable communication without direct cables.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🖥️</div>
+            <h4>Servers</h4>
+            <p>
+              Provide resources and services such as
+              websites, email and online applications.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>1.2 What is the World Wide Web?</h3>
+
+        <p>
+          The World Wide Web is a system of interconnected
+          webpages and resources that can be accessed over
+          the Internet, normally using a web browser.
+        </p>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            The <strong>World Wide Web (WWW)</strong> is
+            a collection of interlinked webpages and
+            other resources accessed using web
+            technologies over the Internet.
+          </p>
+        </div>
+
+        <p>
+          Webpages can contain text, images, video,
+          audio, hyperlinks and interactive features.
+        </p>
+
+        <h3>1.3 Internet vs World Wide Web</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Internet</th>
+                <th>World Wide Web</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  A global system of interconnected networks.
+                </td>
+                <td>
+                  A system of interconnected web resources.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Includes network infrastructure and protocols.
+                </td>
+                <td>
+                  Uses web technologies such as HTTP and HTML.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Supports email, file transfer, web browsing
+                  and other services.
+                </td>
+                <td>
+                  Provides webpages, websites and web applications.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Can be used without opening a web browser.
+                </td>
+                <td>
+                  Usually accessed through a web browser.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="example-box">
+          <span class="example-label">
+            💡 Real-Life Example
+          </span>
+
+          <h3>Using Tr.Sun Education</h3>
+
+          <p>
+            When students open an educational website,
+            the Internet carries data between their
+            devices and the website's servers.
+          </p>
+
+          <p>
+            The website and its lesson pages form
+            part of the World Wide Web.
+          </p>
+
+          <div class="example-list">
+            <div class="example-item">
+              <span class="check">✓</span>
+              Internet = communication network
+            </div>
+            <div class="example-item">
+              <span class="check">✓</span>
+              WWW = connected web resources
+            </div>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <strong>Remember:</strong>
+          The World Wide Web uses the Internet.
+          However, the Internet provides many services
+          besides the WWW.
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 2
+           ================================== -->
+
+      <section class="lesson-section" id="web-components">
+
+        <div class="section-heading">
+          <div class="section-icon blue">💻</div>
+          <div>
+            <small>Section 2</small>
+            <h2>Webpages, Websites, Browsers and Servers</h2>
+          </div>
+        </div>
+
+        <h3>2.1 Webpage</h3>
+
+        <p>
+          A webpage is a web document or resource that
+          can be requested and displayed by a web browser.
+        </p>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            A <strong>webpage</strong> is an individual
+            document or resource displayed by a browser,
+            commonly created using HTML.
+          </p>
+        </div>
+
+        <h3>Technologies Used to Create Webpages</h3>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">🏗️</div>
+            <h4>HTML</h4>
+            <p>
+              Defines the structure and content of a webpage,
+              including headings, paragraphs, lists and links.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <h4>CSS</h4>
+            <p>
+              Controls the appearance of webpage elements,
+              including colours, fonts, spacing and layout.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h4>JavaScript</h4>
+            <p>
+              Adds interactive features and allows content
+              to change in response to user actions.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>2.2 Website</h3>
+
+        <p>
+          A website is a collection of related webpages
+          and resources usually associated with the
+          same domain name.
+        </p>
+
+        <p>
+          An educational website might contain:
+        </p>
+
+        <ul>
+          <li>A homepage.</li>
+          <li>Lesson pages.</li>
+          <li>Student registration pages.</li>
+          <li>Quizzes and assignments.</li>
+          <li>Teacher and student dashboards.</li>
+        </ul>
+
+        <h3>2.3 Web Browser</h3>
+
+        <p>
+          A web browser is software that allows users
+          to request, retrieve and display web resources.
+        </p>
+
+        <p>Examples include:</p>
+
+        <ul>
+          <li>Google Chrome</li>
+          <li>Mozilla Firefox</li>
+          <li>Microsoft Edge</li>
+          <li>Apple Safari</li>
+        </ul>
+
+        <h4>Main Functions of a Browser</h4>
+
+        <ol>
+          <li>Accept a URL from the user.</li>
+          <li>Resolve domain names when required.</li>
+          <li>Send requests to web servers.</li>
+          <li>Receive webpage resources.</li>
+          <li>Interpret HTML and CSS.</li>
+          <li>Execute JavaScript.</li>
+          <li>Display the webpage to the user.</li>
+        </ol>
+
+        <h3>2.4 Web Server</h3>
+
+        <p>
+          A web server is a computer system or software
+          that responds to requests for web resources.
+        </p>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            A <strong>web server</strong> receives
+            requests from clients and sends back
+            HTTP responses containing requested
+            resources or information about the request.
+          </p>
+        </div>
+
+        <p>A web server may provide:</p>
+
+        <ul>
+          <li>HTML files</li>
+          <li>CSS files</li>
+          <li>JavaScript files</li>
+          <li>Images and videos</li>
+          <li>Dynamically generated content</li>
+        </ul>
+
+        <div class="example-box">
+          <span class="example-label">
+            💡 Example
+          </span>
+          <h3>Opening an Online Lesson</h3>
+          <p>
+            When a student requests a lesson page,
+            the web server sends the resources
+            required to display that lesson.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 3
+           ================================== -->
+
+      <section class="lesson-section" id="addresses">
+
+        <div class="section-heading">
+          <div class="section-icon green">🔗</div>
+          <div>
+            <small>Section 3</small>
+            <h2>IP Addresses, Domain Names and URLs</h2>
+          </div>
+        </div>
+
+        <h3>3.1 IP Address</h3>
+
+        <p>
+          Computers communicate over IP networks
+          using numerical addresses.
+        </p>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            An <strong>IP address</strong> is a numerical
+            address used to identify a network interface
+            and deliver data to the correct destination
+            on an IP network.
+          </p>
+        </div>
+
+        <h4>Types of IP Addresses</h4>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Example</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IPv4</td>
+                <td><code>192.0.2.10</code></td>
+                <td>
+                  Uses 32-bit addresses, commonly
+                  displayed as four decimal numbers.
+                </td>
+              </tr>
+              <tr>
+                <td>IPv6</td>
+                <td><code>2001:db8::10</code></td>
+                <td>
+                  Uses 128-bit addresses, providing
+                  a much larger address space.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3.2 Domain Name</h3>
+
+        <p>
+          A domain name is a human-readable name used
+          to identify a domain on the Internet.
+        </p>
+
+        <p>Examples:</p>
+
+        <ul>
+          <li><code>google.com</code></li>
+          <li><code>bbc.com</code></li>
+          <li><code>pearson.com</code></li>
+        </ul>
+
+        <p>
+          Domain names are easier for people to remember
+          than numerical IP addresses.
+        </p>
+
+        <h3>3.3 Uniform Resource Locator (URL)</h3>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            A <strong>URL</strong> is an address that
+            identifies the location of a resource
+            and the method used to access it.
+          </p>
+        </div>
+
+        <p>Example URL:</p>
+
+        <div class="note-box">
+          <code>
+            https://www.example.com/lessons/topic3.html
+          </code>
+        </div>
+
+        <h4>Parts of a URL</h4>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h4>Protocol / Scheme</h4>
+            <p>
+              <code>https://</code> specifies secure
+              HTTP communication.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🌐</div>
+            <h4>Subdomain</h4>
+            <p>
+              <code>www</code> is a commonly used
+              subdomain.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🏷️</div>
+            <h4>Domain Name</h4>
+            <p>
+              <code>example.com</code> identifies
+              the Internet domain.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">📄</div>
+            <h4>Resource Path</h4>
+            <p>
+              <code>/lessons/topic3.html</code>
+              identifies a resource path.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>HTTP and HTTPS</h3>
+
+        <p>
+          HTTP stands for Hypertext Transfer Protocol.
+          It defines how web clients and web servers
+          exchange requests and responses.
+        </p>
+
+        <p>
+          HTTPS is HTTP used over a secure, encrypted
+          connection. It helps protect transmitted
+          information from interception and alteration.
+        </p>
+
+        <div class="note-box">
+          <strong>Important:</strong>
+          HTTPS protects data in transit, but it does
+          not automatically mean a website is trustworthy.
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 4
+           ================================== -->
+
+      <section class="lesson-section" id="dns">
+
+        <div class="section-heading">
+          <div class="section-icon purple">📒</div>
+          <div>
+            <small>Section 4</small>
+            <h2>Domain Name System (DNS)</h2>
+          </div>
+        </div>
+
+        <h3>4.1 What is DNS?</h3>
+
+        <p>
+          People prefer to use domain names instead
+          of remembering numerical IP addresses.
+        </p>
+
+        <p>
+          However, devices need appropriate network
+          addresses to communicate with web servers.
+        </p>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            The <strong>Domain Name System (DNS)</strong>
+            is a distributed naming system used to find
+            information, such as IP addresses,
+            associated with domain names.
+          </p>
+        </div>
+
+        <h3>4.2 Why is DNS Necessary?</h3>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">🧠</div>
+            <h4>Easy to Remember</h4>
+            <p>
+              Users can remember domain names
+              instead of numerical addresses.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔄</div>
+            <h4>Flexibility</h4>
+            <p>
+              A website can change server addresses
+              without changing its domain name.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🌍</div>
+            <h4>Scalability</h4>
+            <p>
+              Many DNS servers cooperate to manage
+              large numbers of domain names.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h4>Efficiency</h4>
+            <p>
+              DNS caching can reduce repeated
+              lookups and improve performance.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>4.3 How DNS Resolution Works</h3>
+
+        <p>
+          DNS resolution is the process of obtaining
+          information such as an IP address
+          for a domain name.
+        </p>
+
+        <div class="process">
+
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div>
+              <strong>Enter the URL</strong>
+              <p>
+                The user enters a URL into the browser.
+                The browser identifies the domain name.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-arrow">↓</div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div>
+              <strong>Check Available DNS Information</strong>
+              <p>
+                The device checks for a previously
+                obtained result. If necessary, it asks
+                a recursive DNS resolver.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-arrow">↓</div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div>
+              <strong>Search the DNS Hierarchy</strong>
+              <p>
+                If no cached answer is available,
+                the resolver may contact root,
+                TLD and authoritative DNS servers.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-arrow">↓</div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div>
+              <strong>Return the IP Address</strong>
+              <p>
+                The resolver returns the DNS result
+                to the user's device.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-arrow">↓</div>
+
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <div>
+              <strong>Contact the Web Server</strong>
+              <p>
+                The browser uses the obtained address
+                to communicate with the web server.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <h3>4.4 The DNS Hierarchy</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>DNS Component</th>
+                <th>Function</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Recursive Resolver</td>
+                <td>
+                  Searches for DNS information on
+                  behalf of the client and uses cached
+                  results when available.
+                </td>
+              </tr>
+              <tr>
+                <td>Root DNS Server</td>
+                <td>
+                  Provides referrals to the appropriate
+                  top-level domain servers.
+                </td>
+              </tr>
+              <tr>
+                <td>Top-Level Domain Server</td>
+                <td>
+                  Provides information about
+                  authoritative servers for domains
+                  under a TLD such as .com.
+                </td>
+              </tr>
+              <tr>
+                <td>Authoritative DNS Server</td>
+                <td>
+                  Provides DNS records for domains
+                  it is responsible for.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="example-box">
+          <span class="example-label">
+            💡 DNS Example
+          </span>
+
+          <h3>Looking Up www.example.com</h3>
+
+          <p>
+            If the resolver has no cached answer,
+            it can obtain referrals from root
+            and .com DNS servers before requesting
+            the relevant record from an authoritative
+            DNS server.
+          </p>
+
+          <p>
+            The resolved address is then returned
+            to the client.
+          </p>
+        </div>
+
+        <h3>4.5 When DNS Cannot Find a Domain</h3>
+
+        <p>
+          If a requested domain does not exist,
+          DNS may return an error such as
+          NXDOMAIN (non-existent domain).
+        </p>
+
+        <div class="note-box">
+          <strong>Important Difference:</strong>
+          A DNS name-resolution error is not the same
+          as HTTP 404. A 404 error usually means the
+          browser reached a web server but the
+          requested resource was not found.
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 5
+           ================================== -->
+
+      <section class="lesson-section" id="web-request">
+
+        <div class="section-heading">
+          <div class="section-icon blue">🔄</div>
+          <div>
+            <small>Section 5</small>
+            <h2>How a Webpage is Requested and Delivered</h2>
+          </div>
+        </div>
+
+        <p>
+          When a user opens a website, the browser
+          and web server exchange requests and responses
+          using web communication protocols.
+        </p>
+
+        <h3>5.1 Step-by-Step Process</h3>
+
+        <ol>
+          <li>
+            <strong>Enter a URL:</strong>
+            The user enters an address into the
+            browser or clicks a hyperlink.
+          </li>
+
+          <li>
+            <strong>Resolve the domain name:</strong>
+            DNS is used if an appropriate address
+            is not already available.
+          </li>
+
+          <li>
+            <strong>Establish a connection:</strong>
+            The browser establishes communication
+            with the server. HTTPS also provides
+            a secure encrypted connection.
+          </li>
+
+          <li>
+            <strong>Send an HTTP request:</strong>
+            The browser requests the required resource,
+            often using the GET method.
+          </li>
+
+          <li>
+            <strong>Process the request:</strong>
+            The web server locates or generates
+            the requested content.
+          </li>
+
+          <li>
+            <strong>Send an HTTP response:</strong>
+            The server responds with a status code
+            and, when appropriate, the requested data.
+          </li>
+
+          <li>
+            <strong>Retrieve additional resources:</strong>
+            The browser may request CSS files,
+            JavaScript files, images and other content.
+          </li>
+
+          <li>
+            <strong>Display the webpage:</strong>
+            The browser interprets the files and
+            renders the webpage for the user.
+          </li>
+        </ol>
+
+        <h3>5.2 Webpage Request Diagram</h3>
+
+        <div class="network-diagram">
+
+          <div class="diagram-node">
+            <div class="diagram-icon">💻</div>
+            <strong>Web Browser</strong>
+            <p>
+              Sends a webpage request
+            </p>
+          </div>
+
+          <div class="diagram-node">
+            <div class="diagram-icon">🌐</div>
+            <strong>Internet</strong>
+            <p>
+              Carries data packets
+            </p>
+          </div>
+
+          <div class="diagram-node">
+            <div class="diagram-icon">🖥️</div>
+            <strong>Web Server</strong>
+            <p>
+              Processes the request
+            </p>
+          </div>
+
+        </div>
+
+        <div class="process">
+
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div>
+              <strong>Browser → Web Server</strong>
+              <p>
+                HTTP request travels across the Internet.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-arrow">↓</div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div>
+              <strong>Web Server Processes Request</strong>
+              <p>
+                The server retrieves or generates the content.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-arrow">↓</div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div>
+              <strong>Web Server → Browser</strong>
+              <p>
+                HTTP response carries the requested resource,
+                when available.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-arrow">↓</div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div>
+              <strong>Browser Displays Webpage</strong>
+              <p>
+                The browser renders the content on the screen.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <h3>5.3 Common HTTP Status Codes</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>200 OK</td>
+                <td>The request was successful.</td>
+              </tr>
+              <tr>
+                <td>301 Moved Permanently</td>
+                <td>
+                  The resource has been permanently redirected.
+                </td>
+              </tr>
+              <tr>
+                <td>403 Forbidden</td>
+                <td>
+                  The server refuses access to the resource.
+                </td>
+              </tr>
+              <tr>
+                <td>404 Not Found</td>
+                <td>
+                  The requested resource was not found.
+                </td>
+              </tr>
+              <tr>
+                <td>500 Internal Server Error</td>
+                <td>
+                  The server encountered an unexpected error.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box">
+          <strong>Remember:</strong>
+          DNS resolution identifies the server address.
+          The HTTP request then asks the server for
+          a resource. These are different stages.
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 6
+           ================================== -->
+
+      <section class="lesson-section" id="www-features">
+
+        <div class="section-heading">
+          <div class="section-icon green">🌍</div>
+          <div>
+            <small>Section 6</small>
+            <h2>Main Features of the World Wide Web</h2>
+          </div>
+        </div>
+
+        <p>
+          The World Wide Web has several important
+          characteristics that make it useful for
+          communication, education, business
+          and information sharing.
+        </p>
+
+        <div class="feature-grid">
+
+          <!-- HYPERTEXT -->
+
+          <div class="feature">
+            <div class="feature-icon">🔗</div>
+            <h4>6.1 Hypertext Information System</h4>
+
+            <p>
+              Hypertext allows information to be
+              connected through clickable hyperlinks.
+              Links can connect webpages, documents,
+              videos or other resources.
+            </p>
+
+            <h4>Benefits</h4>
+            <ul>
+              <li>Easy navigation.</li>
+              <li>Quick access to related information.</li>
+              <li>Supports non-linear learning.</li>
+            </ul>
+
+            <p>
+              <strong>Example:</strong>
+              Students click a link to open another lesson.
+            </p>
+          </div>
+
+          <!-- CROSS PLATFORM -->
+
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h4>6.2 Cross-Platform</h4>
+
+            <p>
+              The WWW can be accessed using different
+              types of devices and operating systems
+              that support suitable web browsers.
+            </p>
+
+            <h4>Examples</h4>
+            <ul>
+              <li>Desktop computers</li>
+              <li>Laptops</li>
+              <li>Smartphones and tablets</li>
+              <li>Smart TVs and games consoles</li>
+            </ul>
+
+            <p>
+              <strong>Benefit:</strong>
+              Students can access learning materials
+              from different devices.
+            </p>
+          </div>
+
+          <!-- DISTRIBUTED -->
+
+          <div class="feature">
+            <div class="feature-icon">🌍</div>
+            <h4>6.3 Distributed</h4>
+
+            <p>
+              Web resources are stored and delivered
+              by many different servers around
+              the world instead of one central computer.
+            </p>
+
+            <h4>Benefits</h4>
+            <ul>
+              <li>Distributes network traffic.</li>
+              <li>Supports large numbers of users.</li>
+              <li>Can improve reliability.</li>
+              <li>Can reduce loading times.</li>
+            </ul>
+
+            <p>
+              <strong>Example:</strong>
+              A Content Delivery Network uses multiple
+              locations to deliver website resources.
+            </p>
+          </div>
+
+          <!-- OPEN STANDARDS -->
+
+          <div class="feature">
+            <div class="feature-icon">📏</div>
+            <h4>6.4 Open Standards</h4>
+
+            <p>
+              Open standards are publicly available
+              technical specifications that help
+              different systems communicate and work
+              together.
+            </p>
+
+            <h4>Examples</h4>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>HTTP</li>
+              <li>URL standards</li>
+            </ul>
+
+            <p>
+              <strong>Benefit:</strong>
+              Websites can work across browsers
+              and devices implementing shared standards.
+            </p>
+          </div>
+
+          <!-- DYNAMIC -->
+
+          <div class="feature">
+            <div class="feature-icon">🔄</div>
+            <h4>6.5 Dynamic</h4>
+
+            <p>
+              The WWW changes continuously as
+              webpages are added, edited and updated.
+              Individual webpages can also update
+              content in response to user interactions.
+            </p>
+
+            <h4>Examples</h4>
+            <ul>
+              <li>Updated news articles</li>
+              <li>Current weather information</li>
+              <li>Social media feeds</li>
+              <li>Online shopping stock information</li>
+            </ul>
+
+            <p>
+              <strong>Benefit:</strong>
+              Users can receive updated and
+              personalised information.
+            </p>
+          </div>
+
+          <!-- WEB 2 -->
+
+          <div class="feature">
+            <div class="feature-icon">🤝</div>
+            <h4>6.6 Web 2.0</h4>
+
+            <p>
+              Web 2.0 describes a more participatory
+              and interactive web in which users
+              can create, share and discuss content.
+            </p>
+
+            <h4>Examples</h4>
+            <ul>
+              <li>Social media posts</li>
+              <li>Blog comments</li>
+              <li>Collaborative documents</li>
+              <li>Online discussion forums</li>
+            </ul>
+
+            <p>
+              <strong>Benefit:</strong>
+              Encourages communication, collaboration
+              and user participation.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>Organisations Supporting Web Standards</h3>
+
+        <p>
+          The World Wide Web Consortium (W3C)
+          develops important web standards.
+          The Internet Engineering Task Force (IETF)
+          develops many Internet and web-related
+          protocol specifications.
+        </p>
+
+        <p>
+          The Internet Society supports an open
+          and interoperable Internet.
+        </p>
+
+        <div class="note-box">
+          <strong>Important:</strong>
+          A distributed web does not mean that every
+          website has decentralised ownership.
+          Similarly, a dynamic WWW can still contain
+          individual static webpages.
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 7
+           ================================== -->
+
+      <section class="lesson-section" id="web-generations">
+
+        <div class="section-heading">
+          <div class="section-icon purple">🤝</div>
+          <div>
+            <small>Section 7</small>
+            <h2>Web 1.0 and Web 2.0</h2>
+          </div>
+        </div>
+
+        <p>
+          The development of the World Wide Web is
+          commonly described using different generations.
+        </p>
+
+        <h3>7.1 Web 1.0 - The Read-Only Web</h3>
+
+        <p>
+          Web 1.0 describes the early web, where
+          most information was published by website
+          owners and visitors mainly read the content.
+        </p>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">📄</div>
+            <h4>Mostly Static Content</h4>
+            <p>
+              Many webpages displayed information
+              that changed relatively infrequently.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">👀</div>
+            <h4>Limited Participation</h4>
+            <p>
+              Ordinary users had fewer opportunities
+              to contribute or interact with content.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="example-box">
+          <span class="example-label">
+            💡 Web 1.0 Example
+          </span>
+          <h3>Early School Website</h3>
+          <p>
+            A school website displays its address,
+            telephone number, timetable and basic
+            information. Students mainly read
+            this information.
+          </p>
+        </div>
+
+        <h3>7.2 Web 2.0 - The Read-Write Web</h3>
+
+        <p>
+          Web 2.0 describes the growth of
+          interactive websites that support
+          user-generated content, collaboration
+          and social interaction.
+        </p>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">✍️</div>
+            <h4>User-Generated Content</h4>
+            <p>
+              Users can create posts, comments,
+              reviews, photographs and videos.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">💬</div>
+            <h4>Collaboration</h4>
+            <p>
+              Users can communicate, work together
+              and share information online.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">👤</div>
+            <h4>Personalisation</h4>
+            <p>
+              Websites may provide accounts,
+              customised content and user preferences.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h4>Interactive Services</h4>
+            <p>
+              Users can submit forms, upload files,
+              post messages and receive updates.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>7.3 Web 1.0 vs Web 2.0</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Web 1.0</th>
+                <th>Web 2.0</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Main Focus</td>
+                <td>Publishing information</td>
+                <td>Participation and collaboration</td>
+              </tr>
+              <tr>
+                <td>User Role</td>
+                <td>Mainly reader</td>
+                <td>Reader and contributor</td>
+              </tr>
+              <tr>
+                <td>Content Creation</td>
+                <td>Mainly website owners</td>
+                <td>Website owners and users</td>
+              </tr>
+              <tr>
+                <td>Interactivity</td>
+                <td>Often limited</td>
+                <td>Often high</td>
+              </tr>
+              <tr>
+                <td>Webpage Types</td>
+                <td>Often static</td>
+                <td>Often dynamic</td>
+              </tr>
+              <tr>
+                <td>Communication</td>
+                <td>Mainly one-way</td>
+                <td>Often two-way or many-to-many</td>
+              </tr>
+              <tr>
+                <td>Examples</td>
+                <td>Early information websites</td>
+                <td>Blogs, wikis and social platforms</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>7.4 Benefits and Challenges of Web 2.0</h3>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">✅</div>
+            <h4>Benefits</h4>
+            <ul>
+              <li>Greater collaboration.</li>
+              <li>Easier content sharing.</li>
+              <li>Online communities.</li>
+              <li>More user participation.</li>
+            </ul>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">⚠️</div>
+            <h4>Challenges</h4>
+            <ul>
+              <li>Misinformation.</li>
+              <li>Privacy risks.</li>
+              <li>Cyberbullying.</li>
+              <li>Inappropriate content.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="note-box">
+          <strong>Remember:</strong>
+          Web 1.0 and Web 2.0 are broad descriptions
+          of how the web evolved. They are not
+          completely separate technical systems.
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 8
+           ================================== -->
+
+      <section class="lesson-section" id="web3">
+
+        <div class="section-heading">
+          <div class="section-icon blue">🧠</div>
+          <div>
+            <small>Section 8</small>
+            <h2>Understanding Web 3.0</h2>
+          </div>
+        </div>
+
+        <p>
+          Web 3.0 is a term used to describe
+          several ideas about the development
+          of the World Wide Web.
+        </p>
+
+        <p>
+          Two important interpretations are the
+          Semantic Web and the decentralised Web3.
+        </p>
+
+        <h3>8.1 Web 3.0 and the Semantic Web</h3>
+
+        <p>
+          The Semantic Web is a vision of the web
+          in which online information is described
+          using structured, machine-readable data.
+        </p>
+
+        <div class="definition">
+          <span class="label">Key Definition</span>
+          <p>
+            The <strong>Semantic Web</strong> aims to
+            organise online data so that computer
+            systems can interpret, connect and
+            process information more effectively.
+          </p>
+        </div>
+
+        <h4>Potential Benefits</h4>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">🔍</div>
+            <h4>Better Information Discovery</h4>
+            <p>
+              Structured data can help systems
+              identify related information.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🤖</div>
+            <h4>Automated Processing</h4>
+            <p>
+              Software can process and combine
+              machine-readable information.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔗</div>
+            <h4>Linked Data</h4>
+            <p>
+              Information from different sources
+              can be connected using shared meanings.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">⚙️</div>
+            <h4>Interoperability</h4>
+            <p>
+              Different systems can exchange and
+              interpret structured data more easily.
+            </p>
+          </div>
+
+        </div>
+
+        <h3>8.2 Web3 and Decentralisation</h3>
+
+        <p>
+          Another use of the term Web3 refers to
+          decentralised applications and technologies,
+          often involving blockchains.
+        </p>
+
+        <p>
+          The aim is to explore systems where
+          users may have greater control over
+          certain digital assets or identities,
+          without depending exclusively on
+          traditional central platforms.
+        </p>
+
+        <h4>Common Concepts</h4>
+
+        <ul>
+          <li>
+            <strong>Blockchain:</strong>
+            A distributed ledger technology.
+          </li>
+          <li>
+            <strong>Decentralised Applications:</strong>
+            Applications that use decentralised
+            infrastructure for some functions.
+          </li>
+          <li>
+            <strong>Digital Wallets:</strong>
+            Tools for managing digital assets
+            and associated credentials.
+          </li>
+          <li>
+            <strong>Smart Contracts:</strong>
+            Programs that execute defined
+            operations on compatible blockchain systems.
+          </li>
+        </ul>
+
+        <h3>8.3 Effects on Different Groups</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Possible Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Users</td>
+                <td>
+                  More sophisticated online services,
+                  improved data connections and
+                  potentially greater control over
+                  digital identities.
+                </td>
+              </tr>
+              <tr>
+                <td>Software Developers</td>
+                <td>
+                  New approaches involving structured data,
+                  linked data, decentralised applications
+                  and related technologies.
+                </td>
+              </tr>
+              <tr>
+                <td>Web Designers</td>
+                <td>
+                  New interface design challenges involving
+                  accessibility, usability and the
+                  presentation of complex information.
+                </td>
+              </tr>
+              <tr>
+                <td>Organisations</td>
+                <td>
+                  New possibilities for data interoperability,
+                  automation and digital service models.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>8.4 Comparison of Web Generations</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>Web 1.0</th>
+                <th>Web 2.0</th>
+                <th>Web 3.0 / Web3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Description</td>
+                <td>Read</td>
+                <td>Read and write</td>
+                <td>
+                  Machine-readable data and/or
+                  user control
+                </td>
+              </tr>
+              <tr>
+                <td>Focus</td>
+                <td>Publishing</td>
+                <td>Participation</td>
+                <td>
+                  Data interoperability and/or
+                  decentralisation
+                </td>
+              </tr>
+              <tr>
+                <td>Typical Technologies</td>
+                <td>Early HTML websites</td>
+                <td>Interactive web applications</td>
+                <td>
+                  Semantic Web technologies
+                  and/or blockchain
+                </td>
+              </tr>
+              <tr>
+                <td>Development</td>
+                <td>Historical phase</td>
+                <td>Widely established</td>
+                <td>Evolving concepts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-box">
+          <strong>Important:</strong>
+          The Semantic Web and blockchain-based Web3
+          are different concepts. The term Web 3.0
+          does not have one universally accepted
+          technical meaning.
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           SECTION 9
+           ================================== -->
+
+      <section class="lesson-section" id="terminology">
+
+        <div class="section-heading">
+          <div class="section-icon green">📚</div>
+          <div>
+            <small>Section 9</small>
+            <h2>Important Terminology</h2>
+          </div>
+        </div>
+
+        <p>
+          The following technical terms are important
+          for understanding Topic 3.1.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>Internet</td>
+                <td>
+                  A global system of interconnected networks.
+                </td>
+              </tr>
+
+              <tr>
+                <td>WWW</td>
+                <td>
+                  A system of interconnected web resources
+                  accessed using Internet technologies.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Webpage</td>
+                <td>
+                  An individual web document or resource
+                  displayed by a browser.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Website</td>
+                <td>
+                  A collection of related webpages
+                  and resources.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Browser</td>
+                <td>
+                  Software used to request, retrieve
+                  and display web content.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Web Server</td>
+                <td>
+                  A system that responds to requests
+                  for web resources.
+                </td>
+              </tr>
+
+              <tr>
+                <td>IP Address</td>
+                <td>
+                  A numerical address used for
+                  communication on IP networks.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Domain Name</td>
+                <td>
+                  A human-readable name used
+                  in the Internet naming system.
+                </td>
+              </tr>
+
+              <tr>
+                <td>URL</td>
+                <td>
+                  An address identifying a resource
+                  and how it can be accessed.
+                </td>
+              </tr>
+
+              <tr>
+                <td>DNS</td>
+                <td>
+                  A distributed system for looking up
+                  information associated with domain names.
+                </td>
+              </tr>
+
+              <tr>
+                <td>HTTP</td>
+                <td>
+                  A protocol for exchanging web
+                  requests and responses.
+                </td>
+              </tr>
+
+              <tr>
+                <td>HTTPS</td>
+                <td>
+                  HTTP communication protected
+                  by a secure encrypted connection.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Hyperlink</td>
+                <td>
+                  A reference that users can follow
+                  to another resource.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Hypertext</td>
+                <td>
+                  Text containing links to related
+                  information or resources.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Cross-Platform</td>
+                <td>
+                  Able to operate across different
+                  devices or software platforms.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Distributed</td>
+                <td>
+                  Spread across multiple systems
+                  or geographical locations.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Open Standard</td>
+                <td>
+                  A publicly available technical
+                  specification supporting interoperability.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Web 1.0</td>
+                <td>
+                  The early web model focused mainly
+                  on information consumption.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Web 2.0</td>
+                <td>
+                  The participatory web model featuring
+                  interaction and user-generated content.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Semantic Web</td>
+                <td>
+                  An approach to organising data so
+                  computer systems can interpret
+                  and connect information.
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <!-- ==================================
+           LESSON NAVIGATION
+           ================================== -->
+
+      <nav class="lesson-navigation" aria-label="Other lessons">
+
+        <a href="topic-3.html">
+          ⬆️ Topic 3
+        </a>
+
+        <a href="topic-3-2.html">
+          Topic 3.2 ➡️
+        </a>
+
+      </nav>
+
+      <!-- FOOTER -->
+
+      <footer class="page-footer">
+        <p><strong>Tr.Sun Education</strong></p>
+        <p>Edexcel International A Level IT</p>
+        <p>
+          Topic 3.1 · The Internet and the World Wide Web
+        </p>
+        <p>Created by Tr. Sun</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">
+    ↑
+  </button>
+
+  <!-- ======================================
+       JAVASCRIPT INTERACTIONS
+       ====================================== -->
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const menuButton = document.getElementById("menuButton");
+    const overlay = document.getElementById("overlay");
+    const progress = document.getElementById("readingProgress");
+    const backTop = document.getElementById("backTop");
+
+    const navLinks = document.querySelectorAll(".side-nav a");
+    const sections = document.querySelectorAll(
+      ".lesson-section"
+    );
+
+    // Open the sidebar on mobile devices
+    function openMenu() {
+      sidebar.classList.add("open");
+      overlay.classList.add("show");
+
+      menuButton.setAttribute("aria-expanded", "true");
+      menuButton.setAttribute(
+        "aria-label", "Close lesson navigation"
+      );
+    }
+
+    // Close the sidebar
+    function closeMenu() {
+      sidebar.classList.remove("open");
+      overlay.classList.remove("show");
+
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute(
+        "aria-label", "Open lesson navigation"
+      );
+    }
+
+    menuButton.addEventListener("click", () => {
+      if (sidebar.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Highlight the lesson section being read
+    function updateActiveSection() {
+      let currentSection = sections[0]?.id;
+
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= 190) {
+          currentSection = section.id;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        const isActive =
+          link.getAttribute("href") === "#" + currentSection;
+
+        link.classList.toggle("active", isActive);
+
+        if (isActive) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    // Update the top reading progress indicator
+    function updateReadingProgress() {
+      const maxScroll =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const percentage =
+        maxScroll > 0
+          ? Math.min(100, (window.scrollY / maxScroll) * 100)
+          : 100;
+
+      progress.style.width = percentage + "%";
+    }
+
+    // Show the back-to-top button when scrolling
+    function updateBackTop() {
+      backTop.classList.toggle(
+        "visible",
+        window.scrollY > 450
+      );
+    }
+
+    function updatePage() {
+      updateActiveSection();
+      updateReadingProgress();
+      updateBackTop();
+    }
+
+    backTop.addEventListener("click", () => {
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion ? "auto" : "smooth"
+      });
+    });
+
+    window.addEventListener("scroll", updatePage, {
+      passive: true
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 800) {
+        closeMenu();
+      }
+
+      updatePage();
+    });
+
+    window.addEventListener("load", updatePage);
+
+    updatePage();
+  </script>
+
+</body>
+
+</html>
