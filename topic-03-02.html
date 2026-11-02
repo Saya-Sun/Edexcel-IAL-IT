@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<title>Topic 3.2 - Static and Dynamic Web Pages | Tr.Sun Education</title>
+
+<style>
+:root{
+  --sidebar-width:282px;
+  --navy:#111827;
+  --navy-2:#1e293b;
+  --purple:#7653e8;
+  --purple-dark:#5937c5;
+  --bg:#f5f7fc;
+  --surface:#fff;
+  --text:#253047;
+  --muted:#64748b;
+  --border:#e7eaf2;
+  --shadow:0 8px 28px rgba(25,33,60,.045);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:30px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"Segoe UI",Arial,sans-serif;line-height:1.75;
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:3px solid #b69aff;outline-offset:3px;
+}
+h3{font-size:18px;color:#25324a;margin:27px 0 12px}
+h4{font-size:15px;color:#24334b;margin:0 0 8px}
+p{margin:12px 0}
+ul,ol{padding-left:24px}
+li{padding:4px 0}
+li::marker{color:var(--purple);font-weight:bold}
+
+/* SIDEBAR */
+.sidebar{
+  position:fixed;top:0;left:0;width:var(--sidebar-width);
+  height:100vh;height:100dvh;display:flex;flex-direction:column;
+  overflow-y:auto;background:var(--navy);color:#fff;z-index:1000;
+  scrollbar-width:thin;scrollbar-color:#45506a transparent;
+}
+.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
+.brand-identity{display:flex;align-items:center;gap:12px}
+.brand-logo{
+  width:62px;height:62px;flex:0 0 62px;display:flex;
+  align-items:center;justify-content:center;border-radius:18px;
+  background:linear-gradient(135deg,#a06aff,#5837c6);
+  box-shadow:0 8px 24px rgba(117,83,232,.3);
+}
+.brand-logo svg{width:49px;height:49px}
+.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:white}
+.brand-text p{
+  margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap;
+}
+.brand-curriculum{
+  margin-top:20px;color:#94a3b8;font-size:9px;
+  font-weight:800;letter-spacing:1.15px;
+}
+.current-lesson{
+  margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;
+  border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a);
+}
+.current-lesson small{
+  display:block;margin-bottom:8px;color:#c4b5fd;
+  font-size:10px;font-weight:800;letter-spacing:1px;
+}
+.current-lesson h3{margin:0;font-size:15px;color:white}
+.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px}
+.sidebar-label{
+  padding:18px 23px 12px;color:#8591a8;
+  font-size:10px;font-weight:800;letter-spacing:1.7px;
+}
+.side-nav{padding:0 12px 18px}
+.side-nav a{
+  display:flex;align-items:center;gap:12px;margin-bottom:5px;
+  padding:11px 12px;color:#cbd5e1;font-size:12.5px;
+  line-height:1.4;border-radius:11px;
+  transition:background .2s,color .2s;
+}
+.side-nav a:hover{background:#283249;color:white}
+.side-nav a.active{
+  background:#392b66;color:white;box-shadow:inset 3px 0 #a78bfa;
+}
+.nav-number{
+  flex-shrink:0;width:34px;height:30px;display:grid;
+  place-items:center;border-radius:9px;background:#293449;
+  color:#bac5d8;font-size:11px;font-weight:800;
+}
+.side-nav a.active .nav-number{background:#8157ed;color:white}
+.sidebar-footer{
+  margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;
+  color:#94a3b8;font-size:12px;
+}
+.sidebar-footer strong{color:#e2e8f0}
+
+/* MAIN CONTENT */
+.main{
+  margin-left:var(--sidebar-width);min-height:100vh;
+  padding:34px 42px 55px;
+}
+.container{max-width:1120px;margin:auto}
+.breadcrumb{
+  display:flex;flex-wrap:wrap;gap:9px;align-items:center;
+  color:#78849a;font-size:12px;margin-bottom:20px;
+}
+.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
+.hero{
+  position:relative;overflow:hidden;padding:47px 44px;
+  border-radius:24px;
+  background:linear-gradient(115deg,#4934b5,#7753e7 55%,#ad72ed);
+  box-shadow:0 15px 35px rgba(88,60,180,.16);color:white;
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:50%;
+  border:1px solid rgba(255,255,255,.15);pointer-events:none;
+}
+.hero:before{width:360px;height:360px;right:-100px;top:-200px}
+.hero:after{width:250px;height:250px;right:90px;bottom:-175px}
+.hero-content{position:relative;z-index:1}
+.hero-badge{
+  display:inline-block;padding:7px 15px;
+  background:#ffffff29;border:1px solid #ffffff33;
+  border-radius:30px;font-size:11px;font-weight:750;
+  letter-spacing:.8px;
+}
+.hero h1{
+  font-size:clamp(28px,3.6vw,43px);line-height:1.2;
+  margin:21px 0 14px;letter-spacing:-1px;color:white;
+}
+.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero-tags span{
+  padding:8px 13px;font-size:11px;font-weight:650;
+  border-radius:9px;background:#ffffff26;border:1px solid #ffffff2b;
+}
+.introduction{
+  margin:30px 0;padding:27px 31px;background:white;
+  border:1px solid var(--border);border-left:5px solid var(--purple);
+  border-radius:16px;box-shadow:var(--shadow);
+}
+.introduction h2{margin:0 0 10px;font-size:21px}
+
+/* LESSON SECTIONS */
+.lesson-section{
+  background:white;border:1px solid var(--border);
+  border-radius:20px;padding:34px;margin-bottom:26px;
+  box-shadow:var(--shadow);scroll-margin-top:28px;
+}
+.section-heading{
+  display:flex;align-items:center;gap:16px;
+  padding-bottom:20px;margin-bottom:23px;
+  border-bottom:1px solid #eef0f5;
+}
+.section-icon{
+  width:56px;height:56px;flex-shrink:0;
+  display:grid;place-items:center;border-radius:16px;font-size:26px;
+}
+.icon-purple{background:#f2edff}
+.icon-blue{background:#ebf4ff}
+.icon-green{background:#eaf9f1}
+.section-heading small{
+  color:var(--muted);font-size:10px;font-weight:800;
+  letter-spacing:1.4px;text-transform:uppercase;
+}
+.section-heading h2{
+  margin:3px 0 0;color:#1e293b;
+  font-size:clamp(21px,2.5vw,26px);line-height:1.3;
+}
+.definition{
+  margin:19px 0;padding:19px 22px;border-radius:12px;
+  border-left:4px solid #875bea;background:#f4f0ff;
+}
+.definition .label{
+  display:block;color:#633cb8;font-size:12px;
+  font-weight:800;margin-bottom:4px;
+}
+.definition p{margin:5px 0 0;color:#3a3368}
+.feature-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;margin:22px 0;
+}
+.feature{
+  padding:21px;border:1px solid #e8e5f4;
+  border-radius:14px;background:#f2edff;
+}
+.feature:nth-child(4n+2){background:#ebf4ff}
+.feature:nth-child(4n+3){background:#eaf9f1}
+.feature:nth-child(4n+4){background:#fff4e5}
+.feature-icon{font-size:26px;margin-bottom:10px}
+.feature p{color:#526177;font-size:13.5px;line-height:1.65;margin:0}
+.feature ul{font-size:13.5px;margin:8px 0 0}
+.example-box{
+  margin-top:23px;padding:23px 25px;background:#effbf5;
+  border:1px solid #c9ecda;border-radius:14px;
+}
+.example-label{color:#11825b;font-size:13px;font-weight:800}
+.example-box h3{margin:9px 0 11px;color:#176b50}
+.note-box{
+  background:#fff8ec;border:1px solid #f7e2b8;
+  border-radius:13px;padding:19px 22px;
+  margin:22px 0;color:#725021;font-size:14px;
+}
+.note-box strong{color:#a56518}
+.table-wrap{
+  overflow-x:auto;border:1px solid var(--border);
+  border-radius:13px;margin:22px 0;
+}
+table{
+  width:100%;min-width:520px;border-collapse:collapse;
+  font-size:13.5px;line-height:1.6;
+}
+thead{background:#f1edff}
+th{color:#5a36ad;text-align:left;padding:15px 17px}
+td{
+  padding:15px 17px;vertical-align:top;
+  border-top:1px solid var(--border);
+}
+tbody tr:nth-child(even){background:#fafbff}
+.process{
+  margin:25px 0;padding:23px;border:1px solid #e8e2fb;
+  border-radius:16px;background:#faf9ff;
+}
+.process-step{
+  display:flex;align-items:flex-start;gap:15px;
+  background:white;border:1px solid #e8e3f5;
+  border-radius:12px;padding:15px;
+}
+.step-number{
+  flex-shrink:0;width:37px;height:37px;display:grid;
+  place-items:center;border-radius:11px;background:#7653e8;
+  color:white;font-weight:800;
+}
+.process-step strong{display:block;color:#27354d}
+.process-step p{margin:3px 0 0;font-size:13.5px}
+.process-arrow{
+  text-align:center;color:#7653e8;font-size:23px;
+  padding:5px;line-height:1.2;
+}
+.diagram{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:15px;margin:24px 0;
+}
+.diagram-node{
+  text-align:center;border:1px solid #ddd6fe;
+  background:#f4f0ff;padding:20px 10px;border-radius:13px;
+}
+.diagram-node:nth-child(2){background:#ebf4ff;border-color:#bfdbfe}
+.diagram-node:nth-child(3){background:#eaf9f1;border-color:#bbf7d0}
+.diagram-icon{font-size:35px}
+.diagram-node strong{display:block;font-size:14px}
+.diagram-node p{font-size:12px;color:#64748b;margin:4px 0 0}
+.code-block{
+  background:#111827;color:#e2e8f0;
+  border-radius:12px;padding:20px;overflow-x:auto;
+  font-family:Consolas,monospace;font-size:13px;line-height:1.7;
+  white-space:pre;
+}
+.demo{
+  padding:23px;border:1px solid #ddd6fe;
+  border-radius:14px;background:#faf9ff;margin:22px 0;
+}
+.demo button{
+  padding:11px 18px;border:0;border-radius:10px;
+  background:#6744d0;color:white;font-weight:700;
+}
+.demo input{
+  display:block;width:100%;max-width:500px;
+  padding:12px;border:1px solid #cbd5e1;
+  border-radius:10px;margin:10px 0;
+}
+.demo-result{margin-top:13px;font-weight:700;color:#5937c5}
+.lesson-navigation{
+  display:flex;flex-wrap:wrap;justify-content:space-between;
+  gap:12px;margin:24px 0 10px;
+}
+.lesson-navigation a{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:11px;font-size:13px;
+  font-weight:750;color:#5a38c3;background:#f2edff;
+  border:1px solid #e0d4ff;
+}
+.lesson-navigation a:hover{background:#e8deff}
+.page-footer{
+  padding:25px 15px;text-align:center;
+  color:#8995aa;font-size:12px;
+}
+.reading-progress{
+  position:fixed;left:var(--sidebar-width);top:0;height:4px;
+  width:0;background:linear-gradient(90deg,#7955e8,#bd7aff);
+  z-index:200;
+}
+.back-top{
+  position:fixed;right:24px;bottom:24px;width:44px;height:44px;
+  border:0;border-radius:13px;background:#6442cf;color:white;
+  font-size:21px;box-shadow:0 7px 20px #6442cf33;
+  opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:.2s;
+}
+.back-top.visible{
+  opacity:1;pointer-events:auto;transform:translateY(0);
+}
+.menu-button,.overlay{display:none}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .main{padding:28px}
+  .lesson-section{padding:28px}
+}
+@media(max-width:800px){
+  .sidebar{
+    width:280px;transform:translateX(-100%);
+    transition:transform .3s ease;
+  }
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0;padding:78px 16px 35px}
+  .menu-button{
+    display:flex;align-items:center;gap:9px;
+    position:fixed;top:15px;left:16px;z-index:900;
+    padding:10px 15px;border:0;border-radius:11px;
+    background:var(--navy-2);color:white;cursor:pointer;
+  }
+  .overlay.show{
+    display:block;position:fixed;inset:0;
+    background:rgba(13,18,30,.65);z-index:950;
+  }
+  .hero{padding:33px 25px;border-radius:19px}
+  .introduction{padding:23px 20px}
+  .lesson-section{padding:25px 19px;border-radius:16px}
+  .reading-progress{left:0}
+}
+@media(max-width:550px){
+  .feature-grid,.diagram{grid-template-columns:1fr}
+  .hero{padding:29px 21px}
+  .hero-tags{gap:7px}
+  .hero-tags span{font-size:10px}
+  .section-heading{gap:12px}
+  .section-heading h2{font-size:20px}
+  .section-icon{width:48px;height:48px;font-size:23px}
+  .example-box{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MOBILE MENU -->
+<button class="menu-button" id="menuButton"
+        type="button" aria-controls="sidebar"
+        aria-expanded="false">
+  ☰ <span>Lesson Menu</span>
+</button>
+<div class="overlay" id="overlay"></div>
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-identity">
+      <div class="brand-logo">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M9 25L32 14L55 25L32 36Z" fill="white"/>
+          <path d="M19 34V43Q32 53 45 43V34"
+                stroke="white" stroke-width="3.5"
+                stroke-linecap="round"/>
+          <path d="M54 27V43" stroke="white"
+                stroke-width="3" stroke-linecap="round"/>
+          <circle cx="54" cy="46" r="3" fill="#F9CD6A"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h2>Tr.Sun Education</h2>
+        <p>Learn · Explore · Achieve</p>
+      </div>
+    </div>
+    <div class="brand-curriculum">
+      EDEXCEL INTERNATIONAL A LEVEL IT
+    </div>
+  </div>
+
+  <div class="current-lesson">
+    <small>YOU ARE STUDYING</small>
+    <h3>📖 Topic 3.2</h3>
+    <p>Static and Dynamic Web Pages</p>
+  </div>
+
+  <div class="sidebar-label">LESSON CONTENTS</div>
+  <nav class="side-nav" aria-label="Lesson sections">
+    <a class="active" href="#static"><span class="nav-number">1</span><span>Static Web Pages</span></a>
+    <a href="#dynamic"><span class="nav-number">2</span><span>Dynamic Web Pages</span></a>
+    <a href="#comparison"><span class="nav-number">3</span><span>Static vs Dynamic</span></a>
+    <a href="#scripting"><span class="nav-number">4</span><span>Introduction to Scripting</span></a>
+    <a href="#client"><span class="nav-number">5</span><span>Client-Side Scripting</span></a>
+    <a href="#server"><span class="nav-number">6</span><span>Server-Side Scripting</span></a>
+    <a href="#scriptcomparison"><span class="nav-number">7</span><span>Scripting Comparison</span></a>
+    <a href="#together"><span class="nav-number">8</span><span>How Scripts Work Together</span></a>
+    <a href="#ajax"><span class="nav-number">9</span><span>AJAX</span></a>
+    <a href="#applications"><span class="nav-number">10</span><span>Real-World Applications</span></a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <strong>Topic 3 · The Online Environment</strong>
+    <div>Unit 1 · AS Level</div>
+    <div style="margin-top:12px">Created by Tr. Sun</div>
+  </div>
+</aside>
+
+<!-- MAIN LESSON -->
+<main class="main">
+<div class="container">
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Edexcel IAL IT</a>
+  <span>&gt;</span>
+  <a href="topic-03.html">Topic 3</a>
+  <span>&gt;</span>
+  <strong>Lesson 3.2</strong>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">UNIT 1 · TOPIC 3 · LESSON 2</span>
+    <h1>Static and Dynamic Web Pages</h1>
+    <p>
+      Explore how static and dynamic websites deliver content,
+      how scripting works, and how browsers and servers cooperate
+      to create interactive web applications.
+    </p>
+    <div class="hero-tags">
+      <span>📚 10 Learning Areas</span>
+      <span>🎓 AS Level</span>
+      <span>🌐 The Online Environment</span>
+    </div>
+  </div>
+</header>
+
+<div class="introduction">
+  <h2>📖 Introduction</h2>
+  <p>
+    Websites provide information and services to users.
+    Some web pages display the same information to everyone,
+    while others change depending on the user, database
+    records or other factors.
+  </p>
+  <p>
+    These are called <strong>static web pages</strong> and
+    <strong>dynamic web pages</strong>. Understanding their
+    differences helps developers choose suitable technologies
+    for different website requirements.
+  </p>
+</div>
+
+<!-- SECTION 1 -->
+<section class="lesson-section" id="static">
+  <div class="section-heading">
+    <div class="section-icon icon-purple">📄</div>
+    <div><small>Section 1</small><h2>Static Web Pages</h2></div>
+  </div>
+
+  <h3>1.1 What is a Static Web Page?</h3>
+  <p>
+    The word <strong>static</strong> means something that
+    remains the same. A static web page contains content
+    stored in files that are normally delivered without
+    being generated separately for each visitor.
+  </p>
+  <div class="definition">
+    <span class="label">Key Definition</span>
+    <p>
+      A <strong>static web page</strong> is a web page whose
+      content is stored in a fixed form and normally delivered
+      to users without being generated or modified by the
+      web server for each request.
+    </p>
+  </div>
+
+  <div class="example-box">
+    <span class="example-label">💡 Real-Life Example</span>
+    <h3>School Information Page</h3>
+    <p>
+      A school website might show its address, opening hours,
+      contact information, school rules and general course
+      information. These details are normally the same
+      for every visitor.
+    </p>
+  </div>
+
+  <h3>1.2 How Static Web Pages Work</h3>
+  <div class="diagram">
+    <div class="diagram-node">
+      <div class="diagram-icon">💻</div>
+      <strong>Web Browser</strong>
+      <p>Requests the page</p>
+    </div>
+    <div class="diagram-node">
+      <div class="diagram-icon">🖥️</div>
+      <strong>Web Server</strong>
+      <p>Locates stored files</p>
+    </div>
+    <div class="diagram-node">
+      <div class="diagram-icon">📄</div>
+      <strong>Page Files</strong>
+      <p>HTML, CSS and JavaScript</p>
+    </div>
+  </div>
+  <div class="process">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div><strong>Request the Page</strong><p>The user enters a URL or clicks a hyperlink.</p></div>
+    </div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div><strong>Send HTTP Request</strong><p>The browser sends an HTTP or HTTPS request to the server.</p></div>
+    </div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div><strong>Locate Files</strong><p>The server finds the requested HTML and related resources.</p></div>
+    </div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div><strong>Return Files</strong><p>The server sends the stored files to the browser.</p></div>
+    </div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step">
+      <div class="step-number">5</div>
+      <div><strong>Display Page</strong><p>The browser renders HTML, applies CSS and runs JavaScript if present.</p></div>
+    </div>
+  </div>
+
+  <h3>1.3 Technologies Used</h3>
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">🏗️</div><h4>HTML</h4><p>Defines the structure and content of a web page.</p></div>
+    <div class="feature"><div class="feature-icon">🎨</div><h4>CSS</h4><p>Controls colours, fonts, spacing and layout.</p></div>
+    <div class="feature"><div class="feature-icon">⚡</div><h4>JavaScript</h4><p>Adds interactivity such as menus, buttons and animations.</p></div>
+    <div class="feature"><div class="feature-icon">📁</div><h4>Static Assets</h4><p>Images, fonts and other files can be delivered directly.</p></div>
+  </div>
+
+  <h3>1.4 Characteristics</h3>
+  <ul>
+    <li>Content is normally stored in fixed files.</li>
+    <li>Basic pages do not require a database.</li>
+    <li>Server processing is generally minimal.</li>
+    <li>Content changes usually require editing or rebuilding files.</li>
+    <li>Suitable for relatively stable information.</li>
+  </ul>
+
+  <h3>1.5 Benefits</h3>
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">🔧</div><h4>Easy to Build</h4><p>Simple pages can be created using HTML and CSS.</p></div>
+    <div class="feature"><div class="feature-icon">💰</div><h4>Lower Cost</h4><p>Hosting and development can be inexpensive.</p></div>
+    <div class="feature"><div class="feature-icon">🚀</div><h4>Fast Loading</h4><p>Stored files can be delivered without database generation.</p></div>
+    <div class="feature"><div class="feature-icon">💾</div><h4>Easy to Cache</h4><p>Browsers and CDNs can store copies of files.</p></div>
+  </div>
+
+  <h3>1.6 Limitations</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Limitation</th><th>Explanation</th></tr></thead>
+    <tbody>
+      <tr><td>Large-scale updates</td><td>Maintaining many separate files can take time.</td></tr>
+      <tr><td>Limited personalisation</td><td>Stored page files are normally the same for all users.</td></tr>
+      <tr><td>Repeated information</td><td>Shared information may need updating in several files.</td></tr>
+      <tr><td>Advanced functionality</td><td>Account histories and transactions need additional services or processing.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note-box">
+    <strong>Important:</strong> Static does not mean non-interactive.
+    A static page can still contain JavaScript-powered menus,
+    buttons and animations.
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="lesson-section" id="dynamic">
+  <div class="section-heading">
+    <div class="section-icon icon-blue">🔄</div>
+    <div><small>Section 2</small><h2>Dynamic Web Pages</h2></div>
+  </div>
+
+  <h3>2.1 What is a Dynamic Web Page?</h3>
+  <div class="definition">
+    <span class="label">Key Definition</span>
+    <p>
+      A <strong>dynamic web page</strong> is a web page whose
+      content can be generated or changed according to user
+      information, database records, requests or changing data.
+    </p>
+  </div>
+  <p>
+    Dynamic web pages can show different information to different
+    users or display information that changes over time.
+  </p>
+
+  <div class="example-box">
+    <span class="example-label">💡 Example</span>
+    <h3>Student Dashboard</h3>
+    <p>
+      An online learning platform may display each student's
+      name, enrolled courses, completed lessons, assessment
+      scores and teacher feedback.
+    </p>
+    <p>
+      The information varies because each student has
+      different records.
+    </p>
+  </div>
+
+  <h3>2.2 How Dynamic Web Pages Work</h3>
+  <div class="diagram">
+    <div class="diagram-node"><div class="diagram-icon">💻</div><strong>Browser</strong><p>Sends a request</p></div>
+    <div class="diagram-node"><div class="diagram-icon">🖥️</div><strong>Application Server</strong><p>Processes the request</p></div>
+    <div class="diagram-node"><div class="diagram-icon">🗄️</div><strong>Database</strong><p>Stores and retrieves records</p></div>
+  </div>
+
+  <div class="process">
+    <div class="process-step"><div class="step-number">1</div><div><strong>Send Request</strong><p>The user opens a page or logs in.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">2</div><div><strong>Process Request</strong><p>The server-side application determines which information is needed.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">3</div><div><strong>Access Database</strong><p>The application may retrieve or update relevant records.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">4</div><div><strong>Generate Content</strong><p>The server combines information with a page template.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">5</div><div><strong>Display Result</strong><p>The browser receives and displays the response.</p></div></div>
+  </div>
+
+  <h3>2.3 Technologies Used</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Technology</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>PHP</td><td>Server-side scripting for generating content.</td></tr>
+      <tr><td>ASP.NET</td><td>Framework for developing web applications.</td></tr>
+      <tr><td>Python</td><td>Used with frameworks such as Django and Flask.</td></tr>
+      <tr><td>JavaScript / Node.js</td><td>Runs JavaScript on the server.</td></tr>
+      <tr><td>SQL</td><td>Queries and manages relational databases.</td></tr>
+      <tr><td>AJAX</td><td>Supports background browser-server communication.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>2.4 Characteristics</h3>
+  <ul>
+    <li>Content may change according to user or database information.</li>
+    <li>Can provide personalised pages and services.</li>
+    <li>Often uses databases.</li>
+    <li>May use server-side code to generate responses.</li>
+    <li>Supports accounts, searches and transactions.</li>
+    <li>Shared templates simplify site-wide changes.</li>
+  </ul>
+
+  <h3>2.5 Benefits</h3>
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">👤</div><h4>Personalisation</h4><p>Displays information relevant to individual users.</p></div>
+    <div class="feature"><div class="feature-icon">🔄</div><h4>Easier Updates</h4><p>Shared templates and central data simplify maintenance.</p></div>
+    <div class="feature"><div class="feature-icon">📈</div><h4>Scalability</h4><p>Templates can present large numbers of database records.</p></div>
+    <div class="feature"><div class="feature-icon">💬</div><h4>Rich Interaction</h4><p>Supports logins, comments, purchases and searches.</p></div>
+  </div>
+
+  <h3>2.6 Limitations</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Limitation</th><th>Explanation</th></tr></thead>
+    <tbody>
+      <tr><td>Development complexity</td><td>May require databases and server-side programming.</td></tr>
+      <tr><td>Higher costs</td><td>Database and application hosting may cost more.</td></tr>
+      <tr><td>Processing delays</td><td>Queries and application logic may increase response time.</td></tr>
+      <tr><td>Security risks</td><td>Accounts, data and permissions require protection.</td></tr>
+      <tr><td>Maintenance</td><td>Server software and databases need regular updates.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="lesson-section" id="comparison">
+  <div class="section-heading">
+    <div class="section-icon icon-green">⚖️</div>
+    <div><small>Section 3</small><h2>Static vs Dynamic Web Pages</h2></div>
+  </div>
+
+  <p>
+    The main difference is whether the content is delivered
+    from stored files or generated and updated using changing data.
+  </p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Feature</th><th>Static Page</th><th>Dynamic Page</th></tr></thead>
+    <tbody>
+      <tr><td>Content</td><td>Normally fixed in files</td><td>Can be generated or changed</td></tr>
+      <tr><td>Server processing</td><td>Usually minimal</td><td>May require application processing</td></tr>
+      <tr><td>Database</td><td>Not required</td><td>Often used</td></tr>
+      <tr><td>Personalisation</td><td>Limited without extra services</td><td>Can be account-specific</td></tr>
+      <tr><td>Speed</td><td>Often fast and easy to cache</td><td>May involve extra processing</td></tr>
+      <tr><td>Development</td><td>Generally simpler</td><td>Generally more complex</td></tr>
+      <tr><td>Cost</td><td>Often lower</td><td>Can be higher</td></tr>
+      <tr><td>Updates</td><td>Edit or rebuild files</td><td>Update data or templates centrally</td></tr>
+      <tr><td>Examples</td><td>Contact page, portfolio</td><td>Student portal, online banking</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="example-box">
+    <span class="example-label">💡 School Website Example</span>
+    <h3>Using Both Types of Pages</h3>
+    <p>
+      A school can use static pages for school history and
+      contact information, while using dynamic pages for
+      examination results, attendance records and student dashboards.
+    </p>
+  </div>
+
+  <div class="note-box">
+    <strong>Remember:</strong> A website can combine static
+    and dynamic features. It does not have to use only one approach.
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="lesson-section" id="scripting">
+  <div class="section-heading">
+    <div class="section-icon icon-purple">💻</div>
+    <div><small>Section 4</small><h2>Introduction to Scripting</h2></div>
+  </div>
+
+  <div class="definition">
+    <span class="label">Key Definition</span>
+    <p>
+      <strong>Scripting</strong> is the use of instructions
+      written in a scripting language to perform tasks,
+      automate processes or control website behaviour.
+    </p>
+  </div>
+
+  <h3>4.1 Uses of Scripting</h3>
+  <ul>
+    <li>Responding to button clicks.</li>
+    <li>Validating form information.</li>
+    <li>Showing or hiding content.</li>
+    <li>Calculating values.</li>
+    <li>Retrieving information from databases.</li>
+    <li>Generating personalised pages.</li>
+    <li>Processing login requests.</li>
+  </ul>
+
+  <h3>4.2 Main Types of Scripting</h3>
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="feature-icon">🖥️</div>
+      <h4>Client-Side Scripting</h4>
+      <p>Scripts run on the user's device, normally inside the browser.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🗄️</div>
+      <h4>Server-Side Scripting</h4>
+      <p>Scripts run on a server to process requests and prepare responses.</p>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Key difference:</strong> The execution location
+    determines whether a script is client-side or server-side.
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section class="lesson-section" id="client">
+  <div class="section-heading">
+    <div class="section-icon icon-blue">🖱️</div>
+    <div><small>Section 5</small><h2>Client-Side Scripting</h2></div>
+  </div>
+
+  <div class="definition">
+    <span class="label">Key Definition</span>
+    <p>
+      <strong>Client-side scripting</strong> means executing
+      scripts on the user's device, normally in a web browser.
+    </p>
+  </div>
+
+  <p>
+    JavaScript is the most common client-side scripting language.
+    It can update the interface and respond to user actions
+    without requiring a newly generated page for every interaction.
+  </p>
+
+  <h3>5.1 How Client-Side Scripting Works</h3>
+  <ol>
+    <li>The browser requests a web page.</li>
+    <li>The server sends HTML, CSS and JavaScript files.</li>
+    <li>The browser loads the page and executes JavaScript.</li>
+    <li>JavaScript responds to user actions.</li>
+    <li>The displayed page can change immediately.</li>
+  </ol>
+
+  <h3>5.2 Interactive Button Example</h3>
+  <div class="demo">
+    <p id="buttonMessage">Click the button to display a message.</p>
+    <button type="button" id="messageButton">Show Message</button>
+  </div>
+
+  <pre class="code-block"><code>&lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+&lt;p id="message"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function showMessage() {
+  document.getElementById("message").textContent =
+    "Welcome to Tr.Sun Education!";
+}
+&lt;/script&gt;</code></pre>
+
+  <h3>5.3 Benefits</h3>
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">⚡</div><h4>Fast Response</h4><p>Many actions can be handled immediately in the browser.</p></div>
+    <div class="feature"><div class="feature-icon">🖥️</div><h4>Reduced Server Work</h4><p>Simple calculations and visual changes can be handled locally.</p></div>
+    <div class="feature"><div class="feature-icon">🎮</div><h4>Better Interactivity</h4><p>Supports dropdown menus, animations and interactive forms.</p></div>
+    <div class="feature"><div class="feature-icon">📝</div><h4>Immediate Feedback</h4><p>Can check fields before a form is submitted.</p></div>
+  </div>
+
+  <h3>5.4 Limitations</h3>
+  <ul>
+    <li>Downloaded JavaScript can be inspected by users.</li>
+    <li>Client-side checks cannot enforce security by themselves.</li>
+    <li>Browser differences may affect some features.</li>
+    <li>Complex scripts can use significant device resources.</li>
+    <li>Some functionality may fail if JavaScript is disabled.</li>
+  </ul>
+
+  <h3>5.5 Form Validation Example</h3>
+  <div class="demo">
+    <label for="studentName"><strong>Student Name</strong></label>
+    <input id="studentName" placeholder="Enter student name">
+    <button type="button" id="validateButton">Validate Form</button>
+    <div class="demo-result" id="validationResult" aria-live="polite"></div>
+  </div>
+
+  <div class="note-box">
+    <strong>Important:</strong> A real application must
+    also validate information on the server. Client-side
+    validation is useful for convenience, not sufficient security.
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section class="lesson-section" id="server">
+  <div class="section-heading">
+    <div class="section-icon icon-green">🗄️</div>
+    <div><small>Section 6</small><h2>Server-Side Scripting</h2></div>
+  </div>
+
+  <div class="definition">
+    <span class="label">Key Definition</span>
+    <p>
+      <strong>Server-side scripting</strong> is the execution
+      of application code on a web server rather than
+      in the user's browser.
+    </p>
+  </div>
+
+  <p>
+    The server processes requests and returns results.
+    Common server-side technologies include PHP, Python,
+    JavaScript with Node.js and ASP.NET.
+  </p>
+
+  <h3>6.1 How Server-Side Scripting Works</h3>
+  <ol>
+    <li>The user sends a request, such as a login submission.</li>
+    <li>The browser sends the request to the server.</li>
+    <li>The server executes the appropriate application code.</li>
+    <li>The application may access a database.</li>
+    <li>The server prepares a response.</li>
+    <li>The response is returned to the browser.</li>
+  </ol>
+
+  <h3>6.2 Example: Student Login System</h3>
+  <div class="example-box">
+    <span class="example-label">💡 Real-Life Example</span>
+    <h3>Online Classroom Login</h3>
+    <ol>
+      <li>The student enters a username and password.</li>
+      <li>The browser submits the information securely.</li>
+      <li>The server finds the student's account.</li>
+      <li>The password is checked against a stored password hash.</li>
+      <li>The server verifies the student's permissions.</li>
+      <li>An authenticated session is created if verification succeeds.</li>
+    </ol>
+  </div>
+
+  <h3>6.3 PHP Example</h3>
+  <pre class="code-block"><code>&lt;?php
+  $studentName = "Alice";
+  echo "Welcome, " . $studentName;
+?&gt;</code></pre>
+  <p>The generated output is:</p>
+  <div class="demo"><strong>Welcome, Alice</strong></div>
+  <p>
+    The browser receives the result, not the original
+    server-side PHP code.
+  </p>
+
+  <h3>6.4 Benefits</h3>
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">🗃️</div><h4>Database Access</h4><p>Retrieves and updates records using authorised connections.</p></div>
+    <div class="feature"><div class="feature-icon">👤</div><h4>Personalisation</h4><p>Can generate information for individual users.</p></div>
+    <div class="feature"><div class="feature-icon">🔐</div><h4>Code Confidentiality</h4><p>Server-side source code is not normally delivered to users.</p></div>
+    <div class="feature"><div class="feature-icon">⚙️</div><h4>Centralised Processing</h4><p>Enforces application rules and permissions on the server.</p></div>
+  </div>
+
+  <h3>6.5 Limitations</h3>
+  <ul>
+    <li>Server processing can increase resource requirements.</li>
+    <li>Network communication is required for server operations.</li>
+    <li>Database queries may cause delays.</li>
+    <li>Server applications require maintenance and updates.</li>
+    <li>Poorly written code can introduce security vulnerabilities.</li>
+  </ul>
+</section>
+
+<!-- SECTION 7 -->
+<section class="lesson-section" id="scriptcomparison">
+  <div class="section-heading">
+    <div class="section-icon icon-purple">📊</div>
+    <div><small>Section 7</small><h2>Client-Side vs Server-Side Scripting</h2></div>
+  </div>
+
+  <div class="table-wrap"><table>
+    <thead>
+      <tr><th>Feature</th><th>Client-Side</th><th>Server-Side</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Execution location</td><td>Browser</td><td>Web server</td></tr>
+      <tr><td>Common technologies</td><td>JavaScript</td><td>PHP, Python, JavaScript, ASP.NET</td></tr>
+      <tr><td>Code visibility</td><td>Delivered code can be inspected</td><td>Source code is not normally sent</td></tr>
+      <tr><td>Processing</td><td>Uses client device resources</td><td>Uses server resources</td></tr>
+      <tr><td>Database access</td><td>Usually through APIs</td><td>Can use authorised database connections</td></tr>
+      <tr><td>Network</td><td>Not needed for every local action</td><td>Needed for server requests</td></tr>
+      <tr><td>Main use</td><td>Interactivity and immediate validation</td><td>Authentication and data processing</td></tr>
+      <tr><td>Example</td><td>Check an empty form field</td><td>Verify account credentials</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note-box">
+    <strong>Important:</strong> Both static and dynamic pages
+    can use client-side JavaScript. Modern web applications
+    often use both client-side and server-side scripting.
+  </div>
+</section>
+
+<!-- SECTION 8 -->
+<section class="lesson-section" id="together">
+  <div class="section-heading">
+    <div class="section-icon icon-blue">🤝</div>
+    <div><small>Section 8</small><h2>How Client-Side and Server-Side Scripts Work Together</h2></div>
+  </div>
+
+  <p>
+    An online examination system is an example of an
+    application that uses both approaches.
+  </p>
+
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="feature-icon">💻</div>
+      <h4>Client-Side Tasks</h4>
+      <ul>
+        <li>Display questions</li>
+        <li>Record selected answers</li>
+        <li>Show a countdown timer</li>
+        <li>Check required fields</li>
+        <li>Display returned feedback</li>
+      </ul>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🗄️</div>
+      <h4>Server-Side Tasks</h4>
+      <ul>
+        <li>Receive submissions</li>
+        <li>Validate submitted data</li>
+        <li>Check answers</li>
+        <li>Calculate scores</li>
+        <li>Save examination results</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>8.1 Step-by-Step Example</h3>
+  <div class="process">
+    <div class="process-step"><div class="step-number">1</div><div><strong>Display Questions</strong><p>The browser displays the examination interface.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">2</div><div><strong>Select Answers</strong><p>JavaScript records selections and updates the interface.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">3</div><div><strong>Submit Examination</strong><p>The browser sends answers to the server.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">4</div><div><strong>Process Results</strong><p>The server validates and grades the submission.</p></div></div>
+    <div class="process-arrow">↓</div>
+    <div class="process-step"><div class="step-number">5</div><div><strong>Display Feedback</strong><p>The browser displays the response returned by the server.</p></div></div>
+  </div>
+</section>
+
+<!-- SECTION 9 -->
+<section class="lesson-section" id="ajax">
+  <div class="section-heading">
+    <div class="section-icon icon-green">🌐</div>
+    <div><small>Section 9</small><h2>AJAX and Dynamic Content Updates</h2></div>
+  </div>
+
+  <h3>9.1 What is AJAX?</h3>
+  <div class="definition">
+    <span class="label">Key Definition</span>
+    <p>
+      <strong>AJAX</strong> stands for
+      <strong>Asynchronous JavaScript and XML</strong>.
+      It is a technique that allows a browser to exchange
+      data with a server in the background without
+      reloading the entire web page.
+    </p>
+  </div>
+
+  <p>
+    Despite its name, modern AJAX applications commonly
+    exchange data using JSON rather than XML.
+  </p>
+
+  <h3>9.2 How AJAX Works</h3>
+  <ol>
+    <li>A user performs an action, such as typing in a search box.</li>
+    <li>JavaScript sends a background request to the server.</li>
+    <li>The server processes the request and returns data.</li>
+    <li>JavaScript receives the response.</li>
+    <li>The relevant part of the page updates without a full reload.</li>
+  </ol>
+
+  <h3>9.3 Live Search Example</h3>
+  <p>
+    Many websites provide suggestions while a user types.
+    AJAX can retrieve matching records from a server
+    and update the displayed suggestions.
+  </p>
+
+  <div class="demo">
+    <label for="lessonSearch"><strong>Search Lesson Topics</strong></label>
+    <input id="lessonSearch" placeholder="Try HTML, CSS, static, dynamic...">
+    <div class="demo-result" id="searchResults" aria-live="polite"></div>
+  </div>
+
+  <div class="note-box">
+    <strong>Demonstration:</strong> This example filters a local
+    JavaScript list. It works offline and does not send
+    an AJAX request. A real AJAX search can retrieve
+    records from a server.
+  </div>
+
+  <h3>9.4 Benefits of AJAX</h3>
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">⚡</div><h4>Responsive Interaction</h4><p>Selected content can update without reloading the page.</p></div>
+    <div class="feature"><div class="feature-icon">📡</div><h4>Efficient Data Transfer</h4><p>Only necessary information may need to be requested.</p></div>
+    <div class="feature"><div class="feature-icon">🔄</div><h4>Background Updates</h4><p>Data can be retrieved while users continue interacting.</p></div>
+    <div class="feature"><div class="feature-icon">😊</div><h4>Improved Experience</h4><p>Useful for live search, notifications and updated results.</p></div>
+  </div>
+</section>
+
+<!-- SECTION 10 -->
+<section class="lesson-section" id="applications">
+  <div class="section-heading">
+    <div class="section-icon icon-purple">🌍</div>
+    <div><small>Section 10</small><h2>Real-World Applications</h2></div>
+  </div>
+
+  <div class="table-wrap"><table>
+    <thead>
+      <tr><th>Website / Application</th><th>Approach</th><th>Explanation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>School contact page</td><td>Usually static</td><td>Displays stable information.</td></tr>
+      <tr><td>Student results portal</td><td>Dynamic</td><td>Retrieves student-specific results.</td></tr>
+      <tr><td>Online shopping cart</td><td>Dynamic</td><td>Tracks products and processes orders.</td></tr>
+      <tr><td>Personal portfolio</td><td>Often static</td><td>Displays a person's work and background.</td></tr>
+      <tr><td>Online banking</td><td>Dynamic</td><td>Displays secure account-specific information.</td></tr>
+      <tr><td>Weather website</td><td>Dynamic data</td><td>Displays changing weather information.</td></tr>
+      <tr><td>Online learning platform</td><td>Both</td><td>Combines general pages and personalised features.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>10.1 Choosing the Appropriate Approach</h3>
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="feature-icon">📄</div>
+      <h4>Choose Static Pages When...</h4>
+      <ul>
+        <li>Information changes infrequently.</li>
+        <li>The website is relatively simple.</li>
+        <li>Low hosting costs are important.</li>
+        <li>Server-generated personalisation is unnecessary.</li>
+      </ul>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔄</div>
+      <h4>Choose Dynamic Pages When...</h4>
+      <ul>
+        <li>Information changes frequently.</li>
+        <li>Users require personalised content.</li>
+        <li>Database records must be updated.</li>
+        <li>The application manages accounts or transactions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <span class="example-label">💡 Final Concept</span>
+    <p>
+      A modern website may combine static files, dynamic content,
+      client-side JavaScript, server-side applications, databases
+      and AJAX to provide a fast, interactive and secure experience.
+    </p>
+  </div>
+</section>
+
+<!-- NAVIGATION -->
+<div class="lesson-navigation">
+  <a href="topic-03-01.html">← Previous: Topic 3.1</a>
+  <!-- <a href="topic-03.html">Topic 3 Dashboard</a> -->
+  <a href="topic-03-03.html">Next: Topic 3.3 →</a>
+</div>
+
+<footer class="page-footer">
+  <p>© Tr.Sun Education · Edexcel International A Level IT</p>
+  <p>Created by Tr. Sun · Learn · Explore · Achieve</p>
+</footer>
+
+</div>
+</main>
+
+<button class="back-top" id="backTop"
+        type="button" aria-label="Back to top">↑</button>
+
+<script>
+const sidebar=document.getElementById("sidebar");
+const overlay=document.getElementById("overlay");
+const menuButton=document.getElementById("menuButton");
+const progress=document.getElementById("readingProgress");
+const backTop=document.getElementById("backTop");
+const links=[...document.querySelectorAll(".side-nav a")];
+const sections=[...document.querySelectorAll(".lesson-section")];
+
+function openMenu(){
+  sidebar.classList.add("open");
+  overlay.classList.add("show");
+  menuButton.setAttribute("aria-expanded","true");
+}
+
+function closeMenu(){
+  sidebar.classList.remove("open");
+  overlay.classList.remove("show");
+  menuButton.setAttribute("aria-expanded","false");
+}
+
+menuButton.addEventListener("click",()=>{
+  sidebar.classList.contains("open")?closeMenu():openMenu();
+});
+overlay.addEventListener("click",closeMenu);
+links.forEach(link=>link.addEventListener("click",closeMenu));
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")closeMenu();
+});
+
+function updateScroll(){
+  const max=document.documentElement.scrollHeight-innerHeight;
+  const percentage=max>0?scrollY/max*100:0;
+  progress.style.width=percentage+"%";
+  backTop.classList.toggle("visible",scrollY>400);
+
+  let activeId=sections[0]?.id;
+  sections.forEach(section=>{
+    if(section.getBoundingClientRect().top<=160){
+      activeId=section.id;
+    }
+  });
+  links.forEach(link=>{
+    const active=link.getAttribute("href")==="#"+activeId;
+    link.classList.toggle("active",active);
+    if(active)link.setAttribute("aria-current","location");
+    else link.removeAttribute("aria-current");
+  });
+}
+window.addEventListener("scroll",updateScroll,{passive:true});
+window.addEventListener("resize",updateScroll);
+updateScroll();
+
+backTop.addEventListener("click",()=>{
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+// CLIENT-SIDE DEMONSTRATIONS
+document.getElementById("messageButton").addEventListener("click",()=>{
+  document.getElementById("buttonMessage").textContent=
+    "Welcome to Tr.Sun Education!";
+});
+
+document.getElementById("validateButton").addEventListener("click",()=>{
+  const name=document.getElementById("studentName").value.trim();
+  const result=document.getElementById("validationResult");
+  if(!name){
+    result.textContent="⚠ Please enter your name.";
+    result.style.color="#dc2626";
+  }else{
+    result.textContent="✓ Validation successful. Name entered: "+name;
+    result.style.color="#15803d";
+  }
+});
+
+// OFFLINE LIVE SEARCH DEMONSTRATION
+const lessonTopics=[
+  "HTML Basics",
+  "CSS Styling",
+  "JavaScript Programming",
+  "Static Web Pages",
+  "Dynamic Web Pages",
+  "Client-Side Scripting",
+  "Server-Side Scripting"
+];
+
+document.getElementById("lessonSearch").addEventListener("input",e=>{
+  const term=e.target.value.trim().toLowerCase();
+  const output=document.getElementById("searchResults");
+  output.replaceChildren();
+
+  if(!term)return;
+
+  const matches=lessonTopics.filter(item=>
+    item.toLowerCase().includes(term)
+  );
+
+  if(!matches.length){
+    output.textContent="No matching lessons found.";
+    return;
+  }
+
+  const list=document.createElement("ul");
+  matches.forEach(item=>{
+    const li=document.createElement("li");
+    li.textContent=item;
+    list.appendChild(li);
+  });
+  output.appendChild(list);
+});
+</script>
+</body>
+</html>
