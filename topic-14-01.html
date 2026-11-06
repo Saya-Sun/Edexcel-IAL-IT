@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description"
+    content="Detailed Edexcel International A Level IT Topic 14.1 lesson notes: The Role of IT Systems in Organisations.">
+  <title>14.1 The Role of IT Systems in Organisations | Tr.Sun Education</title>
+  <style>
+    :root {
+      --navy: #111827;
+      --navy-2: #1f2937;
+      --purple: #6d4de6;
+      --purple-dark: #4934b5;
+      --ink: #18243b;
+      --muted: #5d6b82;
+      --bg: #f3f6fb;
+      --white: #fff;
+      --line: #e4eaf3;
+      --shadow: 0 12px 35px rgba(23, 32, 63, .07);
+      --sidebar-width: 282px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 28px
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.72
+    }
+
+    a {
+      color: #5742cc;
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    button {
+      font: inherit
+    }
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7c3aed, #c084fc);
+      z-index: 1200;
+      transition: width .12s linear
+    }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      position: fixed;
+      inset: 0 auto 0 0;
+      background: var(--navy);
+      color: #f9fafb;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 7px 0 35px rgba(17, 24, 39, .12)
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 27px 19px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #7558f0, #ab70e8);
+      flex: none;
+      box-shadow: 0 6px 18px rgba(125, 82, 255, .22)
+    }
+
+    .brand-name {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      line-height: 1.2
+    }
+
+    .tagline {
+      font-size: 10.5px;
+      color: #b8a9e8;
+      letter-spacing: .8px;
+      margin-top: 5px;
+      font-weight: 600
+    }
+
+    .sidebar-inner {
+      overflow: auto;
+      flex: 1;
+      padding: 19px 13px;
+      scrollbar-width: thin;
+      scrollbar-color: #4b5563 transparent
+    }
+
+    .current-lesson {
+      padding: 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(107, 78, 221, .28), rgba(156, 89, 224, .12));
+      border: 1px solid rgba(196, 181, 253, .2);
+      margin: 0 4px 22px
+    }
+
+    .current-lesson small {
+      display: block;
+      color: #c4b5fd;
+      letter-spacing: 1.2px;
+      font-weight: 750;
+      font-size: 10px;
+      margin-bottom: 6px
+    }
+
+    .current-lesson strong {
+      font-size: 13px;
+      line-height: 1.5;
+      display: block
+    }
+
+    .nav-heading {
+      font-size: 10px;
+      letter-spacing: 1.7px;
+      font-weight: 800;
+      color: #919db1;
+      padding: 0 13px;
+      margin: 19px 0 8px
+    }
+
+    .sidebar-nav {
+      display: grid;
+      gap: 3px
+    }
+
+    .sidebar-nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: 10px;
+      color: #cbd5e1;
+      padding: 11px 12px;
+      font-size: 12.5px;
+      font-weight: 650;
+      line-height: 1.35;
+      transition: background .2s, color .2s
+    }
+
+    .sidebar-nav a:hover {
+      background: #263148;
+      color: #fff;
+      text-decoration: none
+    }
+
+    .sidebar-nav a.active {
+      background: linear-gradient(90deg, #5944bb, #483a91);
+      color: #fff;
+      box-shadow: inset 3px 0 0 #d8c6ff
+    }
+
+    .nav-number {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #b9a7fd;
+      background: rgba(181, 166, 247, .11);
+      border-radius: 7px;
+      min-width: 28px;
+      height: 27px;
+      display: grid;
+      place-items: center
+    }
+
+    .sidebar-nav a.active .nav-number {
+      color: #fff;
+      background: rgba(255, 255, 255, .18)
+    }
+
+    .sidebar-bottom {
+      padding: 15px 22px;
+      border-top: 1px solid rgba(255, 255, 255, .10);
+      color: #9ca3af;
+      font-size: 11px;
+      line-height: 1.7
+    }
+
+    .sidebar-bottom strong {
+      color: #e5e7eb
+    }
+
+    .overlay {
+      display: none
+    }
+
+    .mobile-header {
+      display: none
+    }
+
+    .page {
+      margin-left: var(--sidebar-width);
+      min-height: 100vh
+    }
+
+    .content {
+      width: min(1120px, calc(100% - 68px));
+      margin: auto;
+      padding: 27px 0 65px
+    }
+
+    .breadcrumbs {
+      font-size: 12px;
+      color: #738198;
+      font-weight: 650;
+      margin-bottom: 19px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
+    .breadcrumbs span:last-child {
+      color: #4635ad
+    }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(115deg, #4934b5 0%, #7450d4 49%, #ad72ed 100%);
+      color: #fff;
+      padding: 42px 43px;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(77, 57, 165, .2)
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      width: 290px;
+      height: 290px;
+      right: -82px;
+      top: -110px;
+      border: 55px solid rgba(255, 255, 255, .08);
+      border-radius: 50%;
+      pointer-events: none
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: 16%;
+      bottom: -110px;
+      background: rgba(255, 255, 255, .09);
+      border-radius: 50%;
+      pointer-events: none
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px
+    }
+
+    .hero-badges span {
+      border: 1px solid rgba(255, 255, 255, .3);
+      background: rgba(255, 255, 255, .14);
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .15px
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 43px);
+      line-height: 1.15;
+      max-width: 800px;
+      font-weight: 850;
+      letter-spacing: -1.3px
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #f3eaff;
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 19px 0 0
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 23px
+    }
+
+    .hero-meta span {
+      font-size: 11.5px;
+      font-weight: 750;
+      border-radius: 9px;
+      padding: 8px 11px;
+      background: rgba(30, 22, 95, .26)
+    }
+
+    .overview {
+      margin: 24px 0;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px
+    }
+
+    .overview a {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      min-height: 104px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      padding: 15px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: transform .2s, border-color .2s
+    }
+
+    .overview a:hover {
+      transform: translateY(-3px);
+      border-color: #b7a2f0
+    }
+
+    .overview .count {
+      color: #8266dc;
+      font-size: 11px;
+      font-weight: 850
+    }
+
+    .overview strong {
+      font-size: 12.5px;
+      line-height: 1.42
+    }
+
+    .overview small {
+      color: var(--muted);
+      font-size: 10.5px;
+      line-height: 1.45
+    }
+
+    .lesson-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 41px;
+      margin: 25px 0;
+      scroll-margin-top: 24px
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: #7b55cf;
+      font-weight: 850;
+      margin-bottom: 10px
+    }
+
+    .section-title {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      margin: 0 0 15px;
+      font-size: clamp(23px, 3vw, 29px);
+      line-height: 1.3;
+      letter-spacing: -.65px
+    }
+
+    .section-symbol {
+      background: #f0eaff;
+      border: 1px solid #e5d9ff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      width: 50px;
+      height: 50px;
+      flex: none;
+      border-radius: 15px
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 1.45;
+      letter-spacing: -.3px;
+      margin: 34px 0 12px;
+      color: #24304d;
+      scroll-margin-top: 26px
+    }
+
+    h4 {
+      font-size: 16px;
+      margin: 23px 0 8px;
+      color: #2b3451
+    }
+
+    p {
+      margin: 10px 0 14px
+    }
+
+    ul,
+    ol {
+      padding-left: 23px;
+      margin: 10px 0 17px
+    }
+
+    li {
+      padding-left: 3px;
+      margin: 6px 0
+    }
+
+    strong {
+      font-weight: 750
+    }
+
+    .lead {
+      font-size: 15.5px;
+      color: #4b5872
+    }
+
+    .definition {
+      background: linear-gradient(90deg, #eee8ff, #f8f5ff);
+      border-left: 5px solid #8260e7;
+      padding: 17px 20px;
+      border-radius: 0 13px 13px 0;
+      margin: 18px 0 23px;
+      color: #392b65
+    }
+
+    .definition strong {
+      color: #5b3abb
+    }
+
+    .example {
+      padding: 20px 23px;
+      border: 1px solid #bbecd4;
+      border-left: 5px solid #24aa76;
+      background: #edfcf4;
+      border-radius: 0 14px 14px 0;
+      margin: 21px 0
+    }
+
+    .example h4 {
+      margin: 0 0 10px;
+      color: #116243;
+      font-size: 15px
+    }
+
+    .example p:last-child,
+    .definition p:last-child,
+    .note p:last-child {
+      margin-bottom: 0
+    }
+
+    .note {
+      padding: 17px 20px;
+      border: 1px solid #f3dfa0;
+      border-left: 5px solid #e4b532;
+      background: #fff9e8;
+      border-radius: 0 13px 13px 0;
+      margin: 20px 0
+    }
+
+    .note strong {
+      color: #925b0a
+    }
+
+    .info {
+      padding: 18px 21px;
+      border: 1px solid #bfdaff;
+      border-left: 5px solid #4c91e8;
+      background: #f1f7ff;
+      border-radius: 0 13px 13px 0;
+      margin: 20px 0
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin: 17px 0 21px
+    }
+
+    .mini-grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .mini {
+      padding: 18px 18px 15px;
+      border-radius: 13px;
+      border: 1px solid transparent
+    }
+
+    .mini h4 {
+      margin: 0 0 7px;
+      font-size: 14.2px
+    }
+
+    .mini p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.68
+    }
+
+    .mini ul {
+      margin: 5px 0 0;
+      font-size: 13px
+    }
+
+    .lavender {
+      background: #f5f0ff;
+      border-color: #e4d8fb
+    }
+
+    .blue {
+      background: #eff6ff;
+      border-color: #d6e7ff
+    }
+
+    .green {
+      background: #edfcf5;
+      border-color: #ccefdc
+    }
+
+    .orange {
+      background: #fff6ed;
+      border-color: #ffe3c7
+    }
+
+    .pink {
+      background: #fff0f5;
+      border-color: #f9dce6
+    }
+
+    .cyan {
+      background: #ecfaff;
+      border-color: #cdeef6
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      width: 100%;
+      margin: 18px 0 22px;
+      border-radius: 13px;
+      border: 1px solid #e3e9f1
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      line-height: 1.6
+    }
+
+    th {
+      background: #edf0fc;
+      text-align: left;
+      color: #342d76;
+      padding: 13px 15px;
+      font-weight: 800
+    }
+
+    td {
+      padding: 12px 15px;
+      border-top: 1px solid #e6ecf3;
+      vertical-align: top
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fbfcff
+    }
+
+    td:first-child, .bold-text {
+      font-weight: 650
+    }
+
+    .subline {
+      height: 1px;
+      background: #e6ebf4;
+      margin: 34px 0 28px
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+      gap: 7px;
+      margin: 22px 0
+    }
+
+    .flow-step {
+      flex: 1 1 132px;
+      min-width: 0;
+      text-align: center;
+      border: 1px solid #ded5fb;
+      background: #f6f2ff;
+      padding: 12px 11px;
+      border-radius: 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #463785;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center
+    }
+
+    .flow-step small {
+      font-size: 11px;
+      color: #5d6681;
+      font-weight: 500
+    }
+
+    .flow-arrow {
+      align-self: center;
+      font-size: 21px;
+      color: #8f7bd4;
+      font-weight: 800
+    }
+
+    .erp {
+      border: 1px solid #dfdef2;
+      border-radius: 15px;
+      padding: 20px 14px;
+      background: linear-gradient(135deg, #fbfaff, #f5f8ff);
+      margin: 20px 0;
+      text-align: center
+    }
+
+    .erp-core {
+      display: inline-block;
+      background: #6a4bd1;
+      color: white;
+      font-weight: 850;
+      padding: 14px 24px;
+      border-radius: 13px;
+      box-shadow: 0 8px 16px rgba(106, 75, 209, .15)
+    }
+
+    .erp-line {
+      width: 2px;
+      height: 22px;
+      background: #a594dc;
+      margin: 0 auto
+    }
+
+    .erp-depts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px
+    }
+
+    .erp-depts span {
+      border-radius: 10px;
+      background: #e9e5ff;
+      color: #4a389f;
+      padding: 13px 5px;
+      font-size: 12px;
+      font-weight: 750
+    }
+
+    .figure-caption {
+      text-align: center;
+      color: #68758a;
+      font-size: 11px;
+      margin: 8px 0 25px
+    }
+
+    .phase-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0
+    }
+
+    .phase {
+      padding: 17px 14px;
+      border-radius: 13px;
+      border: 1px solid #dfe5f4;
+      background: #f9fbff;
+      position: relative
+    }
+
+    .phase .phase-n {
+      font-size: 11px;
+      display: inline-grid;
+      place-items: center;
+      color: white;
+      background: #7454d9;
+      border-radius: 9px;
+      width: 30px;
+      height: 30px;
+      font-weight: 850;
+      margin-bottom: 9px
+    }
+
+    .phase strong {
+      display: block;
+      font-size: 12.5px;
+      line-height: 1.4;
+      color: #31296f
+    }
+
+    .phase small {
+      display: block;
+      color: #68738a;
+      font-size: 11px;
+      line-height: 1.5;
+      margin-top: 8px
+    }
+
+    .side-by-side {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 18px 0
+    }
+
+    .contrast {
+      border: 1px solid #e0e5ed;
+      border-radius: 13px;
+      padding: 19px;
+      background: #fff
+    }
+
+    .contrast h4 {
+      margin: 0 0 10px;
+      color: #4832ae
+    }
+
+    .contrast ul {
+      font-size: 13px;
+      padding-left: 19px
+    }
+
+    .summary-band {
+      background: linear-gradient(135deg, #eae4ff, #f7f1ff);
+      padding: 18px 21px;
+      border: 1px solid #d9cefc;
+      border-radius: 14px;
+      margin: 19px 0
+    }
+
+    .summary-band p {
+      margin-bottom: 0
+    }
+
+    .lesson-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 33px
+    }
+
+    .lesson-bottom a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 11px;
+      background: #fff;
+      border: 1px solid #dedaf4;
+      color: #513db8;
+      padding: 12px 16px;
+      font-weight: 800;
+      font-size: 12.5px;
+      box-shadow: var(--shadow)
+    }
+
+    .lesson-bottom a:hover {
+      background: #f1edff;
+      text-decoration: none
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #728198;
+      line-height: 1.9;
+      margin: 35px 0 0
+    }
+
+    .footer strong {
+      color: #5c46b7
+    }
+
+    .to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 26px;
+      background: #6e4dd7;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      box-shadow: 0 9px 25px rgba(82, 57, 165, .24);
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(7px);
+      transition: .2s;
+      z-index: 100
+    }
+
+    .to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0)
+    }
+
+    .to-top:hover {
+      background: #5035b2
+    }
+
+    :focus-visible {
+      outline: 3px solid #b79aff;
+      outline-offset: 3px
+    }
+
+    @media(max-width:1100px) {
+      .overview {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+      }
+
+      .phase-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media(max-width:850px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        box-shadow: none
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+        box-shadow: 12px 0 40px rgba(0, 0, 0, .25)
+      }
+
+      .overlay.open {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(12, 17, 36, .55);
+        z-index: 850
+      }
+
+      .page {
+        margin-left: 0
+      }
+
+      .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 800;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 62px;
+        padding: 0 18px;
+        background: #111827;
+        color: #fff;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, .13)
+      }
+
+      .menu-btn {
+        width: 39px;
+        height: 39px;
+        display: grid;
+        place-items: center;
+        background: #262e44;
+        border: 1px solid #46506a;
+        color: white;
+        font-size: 23px;
+        cursor: pointer;
+        border-radius: 10px
+      }
+
+      .mobile-brand {
+        font-weight: 850;
+        font-size: 14px;
+        line-height: 1.3
+      }
+
+      .mobile-brand span {
+        display: block;
+        font-weight: 500;
+        font-size: 10px;
+        color: #bcaaf3
+      }
+
+      .content {
+        width: min(100% - 34px, 1040px);
+        padding-top: 21px
+      }
+
+      .lesson-card {
+        padding: 26px 23px
+      }
+
+      .hero {
+        padding: 33px 28px
+      }
+    }
+
+    @media(max-width:600px) {
+      .content {
+        width: calc(100% - 22px)
+      }
+
+      .breadcrumbs {
+        margin-left: 6px
+      }
+
+      .hero {
+        border-radius: 18px;
+        padding: 29px 23px
+      }
+
+      .hero h1 {
+        font-size: 28px
+      }
+
+      .hero p {
+        font-size: 13.8px
+      }
+
+      .overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px
+      }
+
+      .overview a {
+        padding: 12px;
+        min-height: 100px
+      }
+
+      .lesson-card {
+        border-radius: 15px;
+        padding: 23px 17px;
+        margin: 17px 0
+      }
+
+      .section-title {
+        font-size: 23px;
+        gap: 10px
+      }
+
+      .section-symbol {
+        width: 43px;
+        height: 43px;
+        font-size: 19px
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-top: 29px
+      }
+
+      .mini-grid,
+      .mini-grid.three,
+      .side-by-side,
+      .phase-list {
+        grid-template-columns: 1fr
+      }
+
+      .flow {
+        flex-direction: column;
+        gap: 6px
+      }
+
+      .flow-step {
+        flex: auto;
+        min-height: 67px
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg)
+      }
+
+      .lesson-bottom a {
+        flex: 1;
+        justify-content: center
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *:before,
+      *:after {
+        transition: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 17L24 8L43 17L24 26L5 17Z" fill="white" />
+          <path d="M13 23V31C19 36 29 36 35 31V23L24 28L13 23Z" fill="white" opacity=".93" />
+          <path d="M42 18V31" stroke="white" stroke-width="2.8" stroke-linecap="round" />
+          <circle cx="42" cy="34" r="3" fill="#F8D57E" />
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Tr.Sun Education</div>
+        <div class="tagline">LEARN · EXPLORE · ACHIEVE</div>
+      </div>
+    </div>
+    <div class="sidebar-inner">
+      <div class="current-lesson"><small>YOU ARE LEARNING</small><strong>14.1 The Role of IT Systems in
+          Organisations</strong></div>
+      <div class="nav-heading">ON THIS PAGE</div>
+      <nav class="sidebar-nav" id="sectionNav">
+        <a href="#introduction"><span class="nav-number">00</span> Introduction</a>
+        <a href="#operational-support"><span class="nav-number">01</span> Operational Support</a>
+        <a href="#collaboration"><span class="nav-number">02</span> Collaboration</a>
+        <a href="#knowledge-management"><span class="nav-number">03</span> Knowledge Management</a>
+        <a href="#product-development"><span class="nav-number">04</span> Product Development</a>
+        <a href="#service-delivery"><span class="nav-number">05</span> Service Delivery</a>
+        <a href="#working-together"><span class="nav-number">06</span> Roles Working Together</a>
+      </nav>
+      <div class="nav-heading">CURRICULUM</div>
+      <nav class="sidebar-nav">
+        <a href="topic-14.html"><span class="nav-number">↶</span> Topic 14 Dashboard</a>
+        <a href="topic-14-02.html"><span class="nav-number">→</span> Next: Transaction Processing</a>
+      </nav>
+    </div>
+    <div class="sidebar-bottom"><strong>Edexcel International A Level IT</strong><br>Unit 3 · Topic 14<br>Created by Tr.
+      Sun</div>
+  </aside>
+  <div class="page">
+    <header class="mobile-header"><button class="menu-btn" id="menuBtn" type="button"
+        aria-label="Open lesson navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
+      <div class="mobile-brand">Tr.Sun Education<span>LEARN · EXPLORE · ACHIEVE</span></div>
+    </header>
+    <main class="content">
+      <div class="breadcrumbs"><a href="topic-14.html">Topic 14</a><span>›</span><span>14.1 The Role of IT Systems in
+          Organisations</span></div>
+      <section class="hero" id="introduction">
+        <div class="hero-badges"><span>EDEXCEL INTERNATIONAL A LEVEL</span><span>UNIT 3</span><span>TOPIC 14.1</span>
+        </div>
+        <h1>The Role of IT Systems in Organisations</h1>
+        
+        <div class="hero-meta">
+          <span>📘 Detailed lesson notes</span>
+          <span>🧩 Real-world examples</span>
+          <span>📱Mobile-friendly</span>
+        </div>
+
+      </section>
+
+
+      <section class="lesson-card" aria-label="Introduction to IT systems">
+        <div class="section-label">INTRODUCTION</div>
+        <h2 class="section-title"><span class="section-symbol">💻</span>IT Systems in Organisations</h2>
+        <p class="lead">Almost every modern business and organisation relies on Information Technology (IT) systems to
+          carry out its activities.</p>
+        <p>IT systems help organisations manage information, automate tasks, communicate with employees, make decisions,
+          develop products and deliver services to customers.</p>
+        <div class="definition"><strong>Key Definition — IT System</strong>
+          <p>An <strong>IT system</strong> is a combination of hardware, software, data, people and procedures that work
+            together to collect, process, store and communicate information.</p>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: A supermarket</h4>
+          <p>A supermarket uses IT systems to record sales, manage stock, process payments and analyse customer
+            purchasing behaviour. These systems help employees do their work and help managers make informed decisions.
+          </p>
+        </div>
+        <p>IT systems are important because they enable organisations to improve efficiency, reduce costs, increase
+          productivity, provide reliable services and remain competitive.</p>
+        
+      </section>
+
+      <div class="overview" aria-label="The five roles of IT systems">
+        <a href="#operational-support"><span class="count">ROLE 01</span><strong>Operational
+            Support</strong><small>Managing daily activities</small></a>
+        <a href="#collaboration"><span class="count">ROLE 02</span><strong>Collaboration</strong><small>Working
+            together</small></a>
+        <a href="#knowledge-management"><span class="count">ROLE 03</span><strong>Knowledge
+            Management</strong><small>Sharing useful knowledge</small></a>
+        <a href="#product-development"><span class="count">ROLE 04</span><strong>Product
+            Development</strong><small>Creating better products</small></a>
+        <a href="#service-delivery"><span class="count">ROLE 05</span><strong>Service Delivery</strong><small>Serving
+            customers</small></a>
+      </div>
+
+
+      <section class="lesson-card" id="operational-support">
+        <div class="section-label">ROLE 01 · EVERYDAY BUSINESS ACTIVITIES</div>
+        <h2 class="section-title"><span class="section-symbol">⚙️</span>1. Operational Support</h2>
+        <h3>What is Operational Support?</h3>
+        <div class="definition"><strong>Key Definition — Operational Support</strong>
+          <p>The use of IT systems to help an organisation carry out its daily activities effectively and efficiently.
+          </p>
+        </div>
+        <p>Every organisation performs routine activities such as processing payments, recording customer orders,
+          managing employees, monitoring stock and preparing reports. Without suitable IT systems, many activities would
+          take longer and be more prone to human error.</p>
+        <h4>Main goals of operational support</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Goal</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Improve efficiency and productivity</td>
+                <td>Complete more work in less time using fewer resources.</td>
+              </tr>
+              <tr>
+                <td>Improve decision-making</td>
+                <td>Provide accurate and up-to-date information for managers.</td>
+              </tr>
+              <tr>
+                <td>Enhance communication and collaboration</td>
+                <td>Help employees exchange information and work together.</td>
+              </tr>
+              <tr>
+                <td>Reduce costs and increase profits</td>
+                <td>Reduce unnecessary labour, waste and operating expenses.</td>
+              </tr>
+              <tr>
+                <td>Improve customer service</td>
+                <td>Offer faster and more reliable support to customers.</td>
+              </tr>
+              <tr>
+                <td>Ensure security and compliance</td>
+                <td>Protect information and support compliance with relevant rules and regulations.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="subline"></div>
+        <h3>1.1 Automation</h3>
+        <div class="definition"><strong>Key Definition — Automation</strong>
+          <p>The use of technology to complete tasks with little or no human intervention.</p>
+        </div>
+        <p>Organisations repeatedly perform activities that may be slow, expensive or tiring when completed manually.
+          Automating these tasks frees employees to focus on work requiring judgement, creativity and personal
+          interaction.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>How IT systems automate it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data entry</td>
+                <td>Automatically transfer information between systems.</td>
+              </tr>
+              <tr>
+                <td>Report generation</td>
+                <td>Produce sales, attendance or financial reports automatically.</td>
+              </tr>
+              <tr>
+                <td>Order processing</td>
+                <td>Record and process orders with little manual intervention.</td>
+              </tr>
+              <tr>
+                <td>Customer service</td>
+                <td>Chatbots answer common customer questions.</td>
+              </tr>
+              <tr>
+                <td>Stock management</td>
+                <td>Update stock quantities following sales.</td>
+              </tr>
+              <tr>
+                <td>Payment processing</td>
+                <td>Record successful transactions automatically.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: Automation in a supermarket</h4>
+          <p>When a customer buys an item, an Electronic Point of Sale (EPOS) system can perform the following sequence:
+          </p>
+          <div class="flow">
+            <div class="flow-step">Scan barcode</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Retrieve price</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Calculate total</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Record sale & update stock</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Generate receipt</div>
+          </div>
+          <p>This reduces manual work, improves accuracy and helps the supermarket serve customers quickly.</p>
+        </div>
+        <div class="mini-grid">
+          <div class="mini green">
+            <h4>✓ Benefits of automation</h4>
+            <ul>
+              <li>Higher productivity</li>
+              <li>Reduced human error</li>
+              <li>Lower operating costs over time</li>
+              <li>Consistent processing</li>
+              <li>More time for skilled work</li>
+            </ul>
+          </div>
+          <div class="mini orange">
+            <h4>⚠ Limitations</h4>
+            <ul>
+              <li>Expensive implementation</li>
+              <li>Failures may interrupt operations</li>
+              <li>Some situations still require staff</li>
+              <li>Employees may need training</li>
+            </ul>
+          </div>
+        </div>
+        <div class="subline"></div>
+        <h3>1.2 Monitoring and Maintenance</h3>
+        <div class="mini-grid">
+          <div class="mini blue">
+            <h4>Monitoring</h4>
+            <p>Continuously checking the performance and condition of IT systems or equipment to detect unusual
+              behaviour and potential problems.</p>
+          </div>
+          <div class="mini lavender">
+            <h4>Maintenance</h4>
+            <p>Taking action to keep systems working correctly or to repair faults when they occur.</p>
+          </div>
+        </div>
+        <p>Monitoring software may collect CPU and memory usage, network traffic, server availability, storage capacity,
+          machine temperature and error reports.</p>
+        <div class="example">
+          <h4>🌱 Example: Monitoring a company server</h4>
+          <p>An online shopping company monitors its website server 24 hours a day. When CPU usage becomes unusually
+            high, the monitoring software alerts a technician. The technician investigates before the server becomes
+            overloaded and the website stops responding.</p>
+          <p>This is an example of <strong>preventive maintenance</strong>: action is taken before a major failure
+            occurs.</p>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Reduces unexpected downtime and loss of service.</li>
+          <li>Helps prevent data loss and disruption.</li>
+          <li>Identifies potential problems early.</li>
+          <li>Increases reliability and can reduce repair costs.</li>
+        </ul>
+        <div class="note"><strong>Remember:</strong> Monitoring detects performance changes or problems. Maintenance
+          involves preventing or resolving those problems.</div>
+        <div class="subline"></div>
+        <h3>1.3 Customer Service</h3>
+        <p><strong>Customer service</strong> is the assistance provided to customers before, during and after they
+          purchase a product or use a service. IT systems make customer support more accessible, quicker and more
+          convenient.</p>
+        <div class="mini-grid three">
+          <div class="mini blue">
+            <h4>🌐 Self-service portals</h4>
+            <p>Let customers manage services independently, e.g. track orders, change bookings or request refunds.</p>
+          </div>
+          <div class="mini lavender">
+            <h4>🤖 Chatbots</h4>
+            <p>Automatically answer routine questions, e.g. delivery charges and business hours.</p>
+          </div>
+          <div class="mini green">
+            <h4>📚 Knowledge bases</h4>
+            <p>Provide help articles, FAQs and troubleshooting instructions for customers.</p>
+          </div>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Customers may get support at any time.</li>
+          <li>Routine enquiries can be resolved immediately.</li>
+          <li>Staff can focus on complex requests.</li>
+          <li>Organisations can support more customers and improve satisfaction.</li>
+        </ul>
+        <div class="note"><strong>Limitation:</strong> Automated support does not always understand complicated
+          problems. Organisations should provide a way to contact a human employee when needed.</div>
+        <div class="subline"></div>
+        <h3>1.4 Data Management and Analysis</h3>
+        <div class="mini-grid">
+          <div class="mini cyan">
+            <h4>Data Management</h4>
+            <p>Collecting, storing, organising, updating and protecting organisational data.</p>
+          </div>
+          <div class="mini pink">
+            <h4>Data Analysis</h4>
+            <p>Examining data to identify patterns, trends and relationships that can support decisions.</p>
+          </div>
+        </div>
+        <p>Organisations collect customer information, sales transactions, employee attendance records, stock levels,
+          visitor statistics and customer feedback.</p>
+        <div class="example">
+          <h4>🌱 Example: Clothing shop sales</h4>
+          <p>A clothing shop analyses monthly sales and finds that jacket sales increase during colder months. The
+            manager orders additional jackets before the next cold season. Data analysis helps the shop anticipate
+            customer demand instead of relying only on guesses.</p>
+        </div>
+        <h4>How analysis supports organisations</h4>
+        <ul>
+          <li>Identifies problems or areas needing improvement.</li>
+          <li>Reveals buying patterns and predicts demand.</li>
+          <li>Supports more efficient resource allocation.</li>
+          <li>Helps reduce costs and improve services or products.</li>
+        </ul>
+        <div class="note"><strong>Important:</strong> Decisions based on data are only reliable when the data is
+          accurate, complete, relevant and sufficiently up to date.</div>
+        <div class="subline"></div>
+        <h3>1.5 Resource Management</h3>
+        <div class="definition"><strong>Key Definition — Resource Management</strong>
+          <p>The process of planning, allocating, using and monitoring the resources needed by an organisation.</p>
+        </div>
+        <div class="mini-grid">
+          <div class="mini lavender">
+            <h4>👥 Human resources</h4>
+            <p>Employees, skills and working time.</p>
+          </div>
+          <div class="mini blue">
+            <h4>💰 Financial resources</h4>
+            <p>Money, budgets and funding.</p>
+          </div>
+          <div class="mini orange">
+            <h4>🏭 Physical resources</h4>
+            <p>Buildings, machines and equipment.</p>
+          </div>
+          <div class="mini green">
+            <h4>📦 Material resources</h4>
+            <p>Stock, components and raw materials.</p>
+          </div>
+        </div>
+        <h4>Enterprise Resource Planning (ERP) Systems</h4>
+        <div class="definition"><strong>Key Definition — ERP</strong>
+          <p>An <strong>Enterprise Resource Planning (ERP) system</strong> is an integrated software system that manages
+            multiple business functions through a centralised system and shared information.</p>
+        </div>
+        <div class="erp">
+          <div class="erp-core">🗄️ Centralised ERP System</div>
+          <div class="erp-line"></div>
+          <div class="erp-depts"><span>💰 Finance</span><span>👥 Human Resources</span><span>🚚 Supply Chain</span>
+          </div>
+        </div>
+        <p class="figure-caption">ERP helps business departments share consistent, up-to-date information.</p>
+        <div class="example">
+          <h4>🌱 Example: ERP in a furniture company</h4>
+          <ol>
+            <li>Sales records an order for 50 tables.</li>
+            <li>The inventory system checks available wood.</li>
+            <li>Purchasing orders more material if necessary.</li>
+            <li>Production schedules manufacturing.</li>
+            <li>Finance records costs and prepares the invoice.</li>
+          </ol>
+          <p>Departments can coordinate because they use shared information.</p>
+        </div>
+        <h4>Advantages of ERP</h4>
+        <ul>
+          <li>Reduces duplicated data and inconsistency.</li>
+          <li>Improves communication across departments.</li>
+          <li>Gives managers a wider view of business operations.</li>
+          <li>Supports planning, decisions and allocation of resources.</li>
+        </ul>
+        <div class="note"><strong>Potential challenge:</strong> ERP systems can be complex and expensive to introduce,
+          and staff usually need training.</div>
+      </section>
+
+      <section class="lesson-card" id="collaboration">
+        <div class="section-label">ROLE 02 · WORKING TOGETHER</div>
+        <h2 class="section-title"><span class="section-symbol">🤝</span>2. Collaboration</h2>
+        <h3>What is Collaboration?</h3>
+        <div class="definition"><strong>Key Definition — Collaboration</strong>
+          <p>The process of two or more people working together to achieve a common objective.</p>
+        </div>
+        <p>Employees must communicate, share files, exchange ideas and coordinate activities. IT systems support
+          collaboration even when team members are located in different offices, cities or countries. This makes
+          distributed teams and remote working more practical.</p>
+        <div class="subline"></div>
+        <h3>2.1 Communication Tools</h3>
+        <p>Communication tools allow people to exchange messages, information and ideas within and between
+          organisations.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>How it works</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Email</td>
+                <td>Sends electronic messages and attachments.</td>
+                <td>A manager shares a monthly report.</td>
+              </tr>
+              <tr>
+                <td>Instant messaging</td>
+                <td>Exchanges text messages in near real time.</td>
+                <td>Team members discuss an urgent issue.</td>
+              </tr>
+              <tr>
+                <td>Video conferencing</td>
+                <td>Connects people using live audio and video.</td>
+                <td>Staff attend a remote meeting.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: International meetings</h4>
+          <p>A business with offices in Myanmar and Singapore uses video conferencing to hold meetings. Workers share
+            screens, discuss projects and agree on decisions without travelling between countries.</p>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Faster communication and coordination.</li>
+          <li>Supports remote and international teams.</li>
+          <li>Reduces travel time and expense.</li>
+          <li>Makes information sharing more flexible.</li>
+        </ul>
+        <div class="subline"></div>
+        <h3>2.2 Collaboration Platforms</h3>
+        <div class="definition"><strong>Key Definition — Collaboration Platform</strong>
+          <p>An online environment that allows users to store, share, edit and manage files while working together.</p>
+        </div>
+        <p>Examples include <strong>Google Workspace</strong>, <strong>Microsoft 365</strong> (previously Office 365)
+          and <strong>Dropbox</strong>. Available features differ between products and plans.</p>
+        <div class="mini-grid three">
+          <div class="mini lavender">
+            <h4>📤 File sharing</h4>
+            <p>Upload documents and provide access to authorised colleagues.</p>
+          </div>
+          <div class="mini blue">
+            <h4>✍️ Real-time editing</h4>
+            <p>Several employees can update the same document at once.</p>
+          </div>
+          <div class="mini green">
+            <h4>☁️ Cloud storage</h4>
+            <p>Files can be accessed from different places and devices, subject to access and connectivity.</p>
+          </div>
+          <div class="mini orange">
+            <h4>🕘 Version control</h4>
+            <p>Track changes and restore earlier versions where supported.</p>
+          </div>
+          <div class="mini pink">
+            <h4>🔒 Access permissions</h4>
+            <p>Control who can view, comment on, edit or manage shared files.</p>
+          </div>
+          <div class="mini cyan">
+            <h4>💬 Comments</h4>
+            <p>Discuss suggestions and feedback within shared documents.</p>
+          </div>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: Writing a project report</h4>
+          <p>Three employees edit different sections of the same shared report. Everyone sees updated content without
+            repeatedly emailing copies. If someone accidentally deletes important material, version history may help
+            restore it.</p>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Reduces confusion over document versions.</li>
+          <li>Supports simultaneous teamwork from different locations.</li>
+          <li>Reduces the need for email attachments.</li>
+          <li>Improves productivity and coordination.</li>
+        </ul>
+        <div class="subline"></div>
+        <h3>2.3 Social Media and Enterprise Social Networks</h3>
+        <div class="definition"><strong>Key Definition — Enterprise Social Network</strong>
+          <p>A platform used within an organisation to encourage communication, idea sharing, informal networking and
+            cooperation among employees.</p>
+        </div>
+        <p>Features may include group conversations, discussions, news feeds, announcements, communities and file
+          sharing.</p>
+        <div class="example">
+          <h4>🌱 Example: Employee communities</h4>
+          <p>Employees use Microsoft Teams channels to exchange ideas and seek help from colleagues across departments.
+            A new employee can ask a question in a relevant group instead of contacting each department separately.</p>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Promotes the sharing of knowledge and ideas.</li>
+          <li>Improves communication across departments and hierarchy.</li>
+          <li>Helps remote employees build relationships.</li>
+          <li>Can stimulate innovation and teamwork.</li>
+        </ul>
+        <div class="subline"></div>
+        <h3>2.4 Project Management Software</h3>
+        <div class="definition"><strong>Key Definition — Project Management Software</strong>
+          <p>Software that helps teams plan, organise, assign, schedule and track the work needed to complete a project.
+          </p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Task assignment</td>
+                <td>Allocates activities to specific team members.</td>
+              </tr>
+              <tr>
+                <td>Deadline management</td>
+                <td>Sets and tracks task completion dates.</td>
+              </tr>
+              <tr>
+                <td>Progress tracking</td>
+                <td>Shows finished, ongoing and overdue tasks.</td>
+              </tr>
+              <tr>
+                <td>Scheduling</td>
+                <td>Organises when activities should start and finish.</td>
+              </tr>
+              <tr>
+                <td>Resource allocation</td>
+                <td>Assigns workers, time and other resources.</td>
+              </tr>
+              <tr>
+                <td>Team discussions</td>
+                <td>Allows communication about particular tasks or projects.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: Website development</h4>
+          <p>A project manager assigns page design to a designer, programming to developers, content to writers and
+            testing to a quality assurance team. Each task has a deadline and a progress status, helping the manager
+            identify delays.</p>
+        </div>
+        <p>Project management software helps clarify responsibilities, coordinate work, identify late tasks and support
+          timely completion.</p>
+        <div class="subline"></div>
+        <h3>Case Study: Fatimah's IT Training Company</h3>
+        <p>Fatimah operates an IT training company with ten tutors. The company provides examination tutoring and
+          business IT training. She plans to close its city-centre office and operate entirely remotely, while tutors
+          continue to create and share learning resources.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Business activity</th>
+                <th>Suitable IT solution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Teaching students remotely</td>
+                <td>Video conferencing for live lessons.</td>
+              </tr>
+              <tr>
+                <td>Sharing resources</td>
+                <td>Cloud storage for notes, slides and exercises.</td>
+              </tr>
+              <tr>
+                <td>Planning lessons together</td>
+                <td>Shared editable documents.</td>
+              </tr>
+              <tr>
+                <td>Organising appointments</td>
+                <td>Shared calendars and scheduling systems.</td>
+              </tr>
+              <tr>
+                <td>Assigning tutor responsibilities</td>
+                <td>Project management software.</td>
+              </tr>
+              <tr>
+                <td>Daily communication</td>
+                <td>Email and instant messaging.</td>
+              </tr>
+              <tr>
+                <td>Protecting student information</td>
+                <td>Secure storage, authentication and access permissions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h4>✅ Why this plan helps</h4>
+          <p>Collaboration software would allow Fatimah and her tutors to work from different locations while
+            coordinating classes, preparing lessons and supporting clients. It could reduce office costs without
+            abandoning key business tasks.</p>
+        </div>
+      </section>
+
+      <section class="lesson-card" id="knowledge-management">
+        <div class="section-label">ROLE 03 · USING ORGANISATIONAL KNOWLEDGE</div>
+        <h2 class="section-title"><span class="section-symbol">🧠</span>3. Knowledge Management</h2>
+        <h3>What is Knowledge Management?</h3>
+        <div class="definition"><strong>Key Definition — Knowledge Management</strong>
+          <p>The process of organising, processing, storing, sharing and using information and knowledge effectively
+            within an organisation.</p>
+        </div>
+        <p>Collecting large amounts of data is not enough. Employees need to find, interpret and apply useful
+          information. Knowledge management helps an organisation retain expertise and use it to support decisions and
+          tasks.</p>
+        <h3>3.1 Data, Information and Knowledge</h3>
+        <div class="flow">
+          <div class="flow-step">DATA<small>45, 65, 70, 80, 90</small></div><span class="flow-arrow">→</span>
+          <div class="flow-step">INFORMATION<small>Average examination mark: 70</small></div><span
+            class="flow-arrow">→</span>
+          <div class="flow-step">KNOWLEDGE<small>A student scoring 45 may need support</small></div>
+        </div>
+        <p class="figure-caption">From raw facts, to processed information, to understanding that supports action.</p>
+        <div class="mini-grid three">
+          <div class="mini blue">
+            <h4>Data</h4>
+            <p>Raw facts, figures and observations without sufficient context to explain their meaning.</p>
+          </div>
+          <div class="mini lavender">
+            <h4>Information</h4>
+            <p>Data that has been processed or given context so it becomes meaningful.</p>
+          </div>
+          <div class="mini green">
+            <h4>Knowledge</h4>
+            <p>Understanding gained by interpreting information and applying experience or reasoning.</p>
+          </div>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: Student test results</h4>
+          <p><strong>Data:</strong> 45, 65, 70, 80, 90.<br><strong>Information:</strong> These are five students' marks
+            and the average is 70.<br><strong>Knowledge:</strong> A teacher recognises that the lowest-scoring student
+            may need extra learning support and plans a suitable response.</p>
+        </div>
+        <div class="note"><strong>Remember:</strong> Data = raw facts; information = meaningful processed data;
+          knowledge = understanding that helps people make decisions or take action.</div>
+        <div class="subline"></div>
+        <h3>3.2 Document Management Systems (DMS)</h3>
+        <div class="definition"><strong>Key Definition — DMS</strong>
+          <p>A <strong>Document Management System (DMS)</strong> stores, organises, manages and retrieves electronic
+            documents efficiently.</p>
+        </div>
+        <p>Organisations use a DMS for documents such as contracts, invoices, employee records, reports, policies and
+          project files.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>DMS feature</th>
+                <th>What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Centralised storage</td>
+                <td>Keeps documents in an organised digital location.</td>
+              </tr>
+              <tr>
+                <td>Version control</td>
+                <td>Tracks document changes and may restore previous versions.</td>
+              </tr>
+              <tr>
+                <td>Document tagging</td>
+                <td>Adds labels or keywords to simplify organisation.</td>
+              </tr>
+              <tr>
+                <td>Full-text search</td>
+                <td>Finds specific words or phrases inside documents.</td>
+              </tr>
+              <tr>
+                <td>Access control</td>
+                <td>Limits viewing, editing or deletion to authorised users.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: Hospital administration</h4>
+          <p>A hospital uses a DMS to store administrative documents and staff policies. Authorised employees can find
+            files using electronic search rather than looking through paper folders. Access permissions help protect
+            confidential material.</p>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Documents can be found more quickly.</li>
+          <li>Reduces paper storage needs and duplicate copies.</li>
+          <li>Improves document security and organisation.</li>
+          <li>Supports collaboration and change tracking.</li>
+        </ul>
+        <div class="subline"></div>
+        <h3>3.3 Content Management Systems (CMS)</h3>
+        <div class="definition"><strong>Key Definition — CMS</strong>
+          <p>A <strong>Content Management System (CMS)</strong> allows users to create, edit, organise, manage and
+            publish digital content, often for websites.</p>
+        </div>
+        <p>CMS content can include web pages, articles, blogs, images, videos, online guides and wiki material.</p>
+        <h4>Typical CMS features</h4>
+        <ul>
+          <li>Create and edit content through an interface.</li>
+          <li>Publish, update or remove articles and web pages.</li>
+          <li>Manage images and other media.</li>
+          <li>Support multiple authors and editors.</li>
+          <li>Keep revision history and control user permissions.</li>
+        </ul>
+        <div class="example">
+          <h4>🌱 Example: A school's website</h4>
+          <p>Teachers use a CMS to publish school announcements, upcoming events, photographs and information pages
+            without manually editing HTML for every update.</p>
+        </div>
+        <p>A CMS makes publication easier, allows faster updates and helps maintain consistent online information.</p>
+        <div class="subline"></div>
+        <h3>3.4 Knowledge Repositories</h3>
+        <div class="definition"><strong>Key Definition — Knowledge Repository</strong>
+          <p>A centralised collection of documents, information and organisational knowledge that people can search,
+            access and reuse.</p>
+        </div>
+        <p>Repositories often contain training manuals, research reports, troubleshooting guides, company policies,
+          best-practice advice and Standard Operating Procedures (SOPs).</p>
+        <div class="mini blue">
+          <h4>Standard Operating Procedure (SOP)</h4>
+          <p>A written set of instructions describing the steps that should be followed when performing a particular
+            routine task.</p>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: IT support company</h4>
+          <p>Support staff search a repository for troubleshooting instructions when customers report common computer
+            problems. They can solve problems using accurate, standard procedures instead of starting from scratch.</p>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Preserves expertise, even when an employee leaves.</li>
+          <li>Supports the training of new workers.</li>
+          <li>Encourages consistent procedures and answers.</li>
+          <li>Reduces repeated mistakes and duplicate effort.</li>
+          <li>Makes useful organisational knowledge easier to access.</li>
+        </ul>
+        <div class="subline"></div>
+        <h3>Comparing DMS, CMS and Knowledge Repositories</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Main purpose</th>
+                <th>Example use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DMS</td>
+                <td>Manage, protect and retrieve electronic documents.</td>
+                <td>Contracts, invoices and reports.</td>
+              </tr>
+              <tr>
+                <td>CMS</td>
+                <td>Create, edit and publish digital content.</td>
+                <td>Website pages and blog articles.</td>
+              </tr>
+              <tr>
+                <td>Knowledge repository</td>
+                <td>Preserve and share useful expertise and reference material.</td>
+                <td>Staff manuals and troubleshooting guides.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="summary-band"><strong>Key difference:</strong> A DMS focuses mainly on <strong>documents</strong>, a
+          CMS on <strong>digital content and publication</strong>, and a repository on <strong>knowledge sharing and
+            reuse</strong>. These systems may overlap: for example, a repository may use DMS or CMS technology.</div>
+      </section>
+
+      <section class="lesson-card" id="product-development">
+        <div class="section-label">ROLE 04 · CREATING AND IMPROVING PRODUCTS</div>
+        <h2 class="section-title"><span class="section-symbol">🛠️</span>4. Product Development</h2>
+        <h3>What is Product Development?</h3>
+        <div class="definition"><strong>Key Definition — Product Development</strong>
+          <p>The process of creating a new product or improving an existing product to meet customer needs and
+            organisational objectives.</p>
+        </div>
+        <p>Businesses develop products to respond to changing needs, improve quality, introduce features, increase sales
+          and remain competitive. IT systems support research, planning, design, testing and production.</p>
+        <h4>The four main stages</h4>
+        <div class="phase-list">
+          <div class="phase"><span class="phase-n">1</span><strong>Ideation, Conceptualisation and
+              Planning</strong><small>Explore and assess an idea</small></div>
+          <div class="phase"><span class="phase-n">2</span><strong>Design and Prototyping</strong><small>Specify and
+              trial early designs</small></div>
+          <div class="phase"><span class="phase-n">3</span><strong>Development and Testing</strong><small>Build, test
+              and improve</small></div>
+          <div class="phase"><span class="phase-n">4</span><strong>Production and Manufacturing</strong><small>Produce
+              physical goods consistently</small></div>
+        </div>
+        <div class="subline"></div>
+        <h3>Stage 1 — Ideation, Conceptualisation and Planning</h3>
+        <div class="mini-grid three">
+          <div class="mini lavender">
+            <h4>Ideation</h4>
+            <p>Generating possible product or feature ideas.</p>
+          </div>
+          <div class="mini blue">
+            <h4>Conceptualisation</h4>
+            <p>Developing an early idea into a clearer product concept.</p>
+          </div>
+          <div class="mini green">
+            <h4>Planning</h4>
+            <p>Identifying requirements, resources, schedules and proposed tasks.</p>
+          </div>
+        </div>
+        <h4>Main activities</h4>
+        <ol>
+          <li>Identify customer problems and needs.</li>
+          <li>Brainstorm possible ideas.</li>
+          <li>Research the market and competitors.</li>
+          <li>Consult stakeholders.</li>
+          <li>Carry out feasibility studies.</li>
+          <li>Estimate costs, resources and timelines.</li>
+          <li>Refine and select promising ideas.</li>
+        </ol>
+        <div class="definition"><strong>Feasibility Study</strong>
+          <p>An investigation into whether a proposed product is practical and achievable using the available time,
+            money, technology and other resources.</p>
+        </div>
+        <div class="definition"><strong>Stakeholder</strong>
+          <p>A person or group with an interest in, or who may be affected by, the product, such as customers, managers,
+            employees or investors.</p>
+        </div>
+        <h4>How IT systems help</h4>
+        <p>Online surveys, research databases, spreadsheets, communication tools and project planning systems help teams
+          collect opinions, compare options, forecast costs and organise early work.</p>
+        <div class="example">
+          <h4>🌱 Example: Planning a mobile learning app</h4>
+          <p>An education company surveys learners, researches competing applications, holds online meetings with
+            teachers and developers, and uses spreadsheets to estimate development costs. The company can then judge
+            whether the idea is feasible.</p>
+        </div>
+        <div class="subline"></div>
+        <h3>Stage 2 — Design and Prototyping</h3>
+        <div class="mini-grid">
+          <div class="mini blue">
+            <h4>Design</h4>
+            <p>Preparing detailed specifications for how a product looks, functions and operates.</p>
+          </div>
+          <div class="mini lavender">
+            <h4>Prototyping</h4>
+            <p>Creating an early or simplified version of a product to test ideas and gather feedback.</p>
+          </div>
+        </div>
+        <h4>Main activities</h4>
+        <ul>
+          <li>Prepare sketches, diagrams and designs.</li>
+          <li>Specify features and system requirements.</li>
+          <li>Build early prototypes.</li>
+          <li>Collect feedback from users and stakeholders.</li>
+          <li>Improve designs, sometimes through several iterations.</li>
+          <li>Approve an appropriate design for development.</li>
+        </ul>
+        <h4>How IT systems help</h4>
+        <p>Computer-Aided Design (CAD), diagramming and flowchart tools, user-interface design tools, prototyping
+          applications and shared design platforms can help develop and refine designs.</p>
+        <div class="example">
+          <h4>🌱 Example: Student registration application</h4>
+          <p>Developers create prototype registration, login and dashboard screens. Teachers and students review these
+            screens and suggest changes. The team improves its design before completing the application.</p>
+        </div>
+        <h4>Functional and Non-Functional Requirements</h4>
+        <div class="side-by-side">
+          <div class="contrast">
+            <h4>Functional Requirements</h4>
+            <p>Define <strong>what a system must do</strong>.</p>
+            <ul>
+              <li>Register a new student account.</li>
+              <li>Allow users to log in.</li>
+              <li>Let teachers approve registrations.</li>
+              <li>Display learning materials.</li>
+              <li>Let students update profiles.</li>
+            </ul>
+          </div>
+          <div class="contrast">
+            <h4>Non-Functional Requirements</h4>
+            <p>Define <strong>how well a system must operate</strong> or its overall qualities.</p>
+            <ul>
+              <li>Load pages within a defined time.</li>
+              <li>Protect private user data.</li>
+              <li>Support a stated number of users.</li>
+              <li>Work well on mobile devices.</li>
+              <li>Meet an availability target.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Functional requirements</th>
+                <th>Non-functional requirements</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Describe system functions and features.</td>
+                <td>Describe quality and operating characteristics.</td>
+              </tr>
+              <tr>
+                <td>Example: Allow users to log in.</td>
+                <td>Example: Process normal login requests within two seconds.</td>
+              </tr>
+              <tr>
+                <td>Example: Generate a report.</td>
+                <td>Example: Restrict report access to authorised users.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note"><strong>Why both matter:</strong> A system could include all the required features but still
+          be unsuitable because it is too slow, insecure or difficult to use.</div>
+        <div class="subline"></div>
+        <h3>Stage 3 — Development and Testing</h3>
+        <div class="mini-grid">
+          <div class="mini green">
+            <h4>Development</h4>
+            <p>Building and implementing the product according to the approved design and requirements.</p>
+          </div>
+          <div class="mini orange">
+            <h4>Testing</h4>
+            <p>Checking that the product works correctly, meets requirements and contains as few significant defects as
+              practical.</p>
+          </div>
+        </div>
+        <h4>Main activities</h4>
+        <ol>
+          <li>Build or implement the product.</li>
+          <li>Develop required features.</li>
+          <li>Test individual components.</li>
+          <li>Test components working together.</li>
+          <li>Identify bugs and other problems.</li>
+          <li>Correct errors and retest.</li>
+          <li>Gather feedback from potential users.</li>
+        </ol>
+        <h4>How IT systems help</h4>
+        <p>Programming environments, automated test software, simulators, issue-tracking software and collaboration
+          tools help teams develop, test and improve their work.</p>
+        <div class="example">
+          <h4>🌱 Example: Online shopping application</h4>
+          <p>During testing, developers discover that a shopping application calculates some delivery charges
+            incorrectly. The problem is repaired before release, avoiding incorrect charges and potential customer
+            complaints.</p>
+        </div>
+        <h4>Why testing during development matters</h4>
+        <ul>
+          <li>Identifies defects before the product is released.</li>
+          <li>Problems are often cheaper to fix earlier.</li>
+          <li>User feedback can improve usability and quality.</li>
+          <li>Shows whether specifications and expectations are being met.</li>
+          <li>Reduces the risk of major failures after release.</li>
+        </ul>
+        <div class="note"><strong>Important:</strong> Testing is not just a final activity. It should take place
+          throughout development, and changes should be retested.</div>
+        <div class="subline"></div>
+        <h3>Stage 4 — Production and Manufacturing</h3>
+        <div class="definition"><strong>Key Definition — Production and Manufacturing</strong>
+          <p>The process of producing finished products efficiently and consistently. For physical goods, this may
+            include machining, assembly and quality inspection.</p>
+        </div>
+        <p>This stage is especially relevant to physical products such as smartphones, cars and electronic devices. IT
+          systems can keep production processes consistent and help monitor product quality.</p>
+        <div class="mini-grid">
+          <div class="mini lavender">
+            <h4>🏭 Computer-Aided Manufacturing (CAM)</h4>
+            <p>Computer systems help control or assist manufacturing machinery.</p>
+          </div>
+          <div class="mini blue">
+            <h4>🤖 Robotic systems</h4>
+            <p>Programmable machines handle tasks such as assembly, welding or packaging.</p>
+          </div>
+          <div class="mini green">
+            <h4>📊 Production monitoring</h4>
+            <p>Systems track machinery and processes to identify changes or problems.</p>
+          </div>
+          <div class="mini orange">
+            <h4>✅ Quality control</h4>
+            <p>Systems support checks that products meet specified standards.</p>
+          </div>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: Smartphone manufacturing</h4>
+          <p>A manufacturer uses automated equipment to assemble electronic components. Computer systems control
+            operations, monitor the production line and support quality checks, helping manufacture smartphones
+            consistently.</p>
+        </div>
+        <h4>Benefits</h4>
+        <ul>
+          <li>Faster production.</li>
+          <li>More consistent product characteristics.</li>
+          <li>Fewer manufacturing errors and less waste.</li>
+          <li>Better equipment monitoring and reliability.</li>
+          <li>Improved quality control.</li>
+        </ul>
+        <div class="info"><strong>Digital products:</strong> A software application does not require a physical
+          manufacturing line. Its final stage may involve packaging, deployment and distribution instead.</div>
+        <div class="subline"></div>
+        <h3>Products and Services</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Service</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Something created and supplied to customers.</td>
+                <td class="bold-text">An activity or benefit provided to customers.</td>
+              </tr>
+              <tr>
+                <td>Can be physical or digital.</td>
+                <td class="bold-text">Generally intangible.</td>
+              </tr>
+              <tr>
+                <td>Examples: Laptop, smartphone, mobile app.</td>
+                <td class="bold-text">Examples: Tutoring, support, online consultation.</td>
+              </tr>
+              <tr>
+                <td>A customer obtains or uses the product.</td>
+                <td class="bold-text">A customer receives the benefit of the activity.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: An education business</h4>
+          <p>A learning application is a <strong>digital product</strong>. Live online tuition is a
+            <strong>service</strong>. A company may offer both products and services.</p>
+        </div>
+      </section>
+
+      <section class="lesson-card" id="service-delivery">
+        <div class="section-label">ROLE 05 · PROVIDING SERVICES</div>
+        <h2 class="section-title"><span class="section-symbol">🚀</span>5. Service Delivery</h2>
+        <h3>What is Service Delivery?</h3>
+        <div class="definition"><strong>Key Definition — Service Delivery</strong>
+          <p>The process through which an organisation provides its services to customers or users.</p>
+        </div>
+        <p>IT systems provide platforms and tools for delivering services efficiently and to people in more locations.
+          They support automation, effective data and knowledge management and better organisation of workflows.</p>
+        <div class="info"><strong>About this section:</strong> The supplied Topic 14.1 textbook extract introduces
+          service delivery briefly. The explanations and examples below expand on that introduction to make it easier to
+          understand.</div>
+        <h3>5.1 How IT Systems Improve Service Delivery</h3>
+        <div class="mini-grid">
+          <div class="mini blue">
+            <h4>⚙️ A. Process Automation</h4>
+            <p>Routine service steps can happen automatically. An online booking platform may confirm an appointment,
+              update a database and send a notification.</p>
+          </div>
+          <div class="mini lavender">
+            <h4>🌍 B. Wider Customer Reach</h4>
+            <p>Online systems help organisations serve customers in different cities or countries without requiring
+              physical travel.</p>
+          </div>
+          <div class="mini green">
+            <h4>🗃️ C. Data Management</h4>
+            <p>Customer and service records can be stored, retrieved and updated quickly, helping staff provide accurate
+              support.</p>
+          </div>
+          <div class="mini orange">
+            <h4>📚 D. Knowledge Management</h4>
+            <p>Guides, manuals and knowledge repositories help employees answer enquiries consistently and quickly.</p>
+          </div>
+          <div class="mini pink">
+            <h4>🔁 E. Workflow Optimisation</h4>
+            <p>Digital systems can reduce unnecessary steps, delays and duplication in the sequence of tasks needed to
+              provide a service.</p>
+          </div>
+        </div>
+        <div class="definition"><strong>Workflow Optimisation</strong>
+          <p>Improving the sequence of activities in a process to reduce unnecessary work, delays and inefficiencies.
+          </p>
+        </div>
+        <h3>5.2 Examples of Service Delivery</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Organisation</th>
+                <th>Service</th>
+                <th>Role of IT systems</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bank</td>
+                <td>Online banking</td>
+                <td>Customers check balances and transfer money electronically.</td>
+              </tr>
+              <tr>
+                <td>School</td>
+                <td>Online learning</td>
+                <td>Students access lessons, submit assignments and receive feedback.</td>
+              </tr>
+              <tr>
+                <td>Hospital</td>
+                <td>Appointments</td>
+                <td>Patients request or manage bookings online.</td>
+              </tr>
+              <tr>
+                <td>Retail business</td>
+                <td>Online shopping</td>
+                <td>Customers place orders and track deliveries.</td>
+              </tr>
+              <tr>
+                <td>Transport company</td>
+                <td>Ticket booking</td>
+                <td>Customers search journeys and reserve tickets.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h4>🌱 Example: An online learning platform</h4>
+          <p>An education company may deliver its teaching service through a series of connected digital processes:</p>
+          <div class="flow">
+            <div class="flow-step">Student registers</div><span class="flow-arrow">→</span>
+            <div class="flow-step">System stores details</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Student studies materials</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Attends online lesson</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Completes assessment</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Teacher reviews progress</div>
+          </div>
+          <p>The platform helps connect registration, learning activities, assessment and feedback into a manageable
+            service.</p>
+        </div>
+        <h3>5.3 Benefits and Challenges</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Benefits</th>
+                <th>Challenges</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Services may be available 24 hours a day.</td>
+                <td class="bold-text">Outages may interrupt access.</td>
+              </tr>
+              <tr>
+                <td>Customers can access services remotely.</td>
+                <td class="bold-text">Customers may need internet access and suitable devices.</td>
+              </tr>
+              <tr>
+                <td>Routine activities may be completed faster.</td>
+                <td class="bold-text">Implementation and ongoing support cost money.</td>
+              </tr>
+              <tr>
+                <td>Organisations may reduce operating costs.</td>
+                <td class="bold-text">Cybersecurity and privacy risks need controls.</td>
+              </tr>
+              <tr>
+                <td>Services can reach a larger audience.</td>
+                <td class="bold-text">Some customers may lack the necessary digital skills.</td>
+              </tr>
+              <tr>
+                <td>Data can improve service quality.</td>
+                <td class="bold-text">Incorrect or outdated data can reduce service quality.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="lesson-card" id="working-together">
+        <div class="section-label">PUTTING THE IDEAS TOGETHER</div>
+        <h2 class="section-title"><span class="section-symbol">🔗</span>6. How the Five Roles Work Together</h2>
+        <p>Although the roles are studied separately, organisations commonly use connected IT systems to support several
+          roles at the same time.</p>
+        <div class="example">
+          <h4>🌱 Example: Online education company</h4>
+          <p>Consider a company that produces online learning resources, hires tutors and teaches students through an
+            internet platform.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Role</th>
+                <th>Example within the education company</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Operational support</td>
+                <td>Automates student registration, records payments and maintains class timetables.</td>
+              </tr>
+              <tr>
+                <td>Collaboration</td>
+                <td>Teachers share resources, hold online meetings and plan lessons together.</td>
+              </tr>
+              <tr>
+                <td>Knowledge management</td>
+                <td>Stores teaching guides, policies, lesson documents and training resources.</td>
+              </tr>
+              <tr>
+                <td>Product development</td>
+                <td>Plans, designs, builds, tests and improves the company's learning application.</td>
+              </tr>
+              <tr>
+                <td>Service delivery</td>
+                <td>Gives students access to online classes, learning materials and teaching support.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>When the company introduces a new online course, teachers may collaborate on resources, consult stored
+          teaching knowledge, develop and test materials, and deliver the course through the learning platform.
+          Operational systems support enrolment, scheduling and payment throughout.</p>
+        <div class="summary-band"><strong>Core understanding:</strong> IT systems do not simply carry out isolated
+          tasks. They can connect an organisation's operations, employees, information, products and services to support
+          its overall success.</div>
+
+        <div class="lesson-bottom"><a href="topic-14.html">← Back to Topic 14</a><a href="topic-14-02.html">Next lesson:
+            14.2 →</a></div>
+      </section>
+      <footer class="footer">Edexcel International A Level Information Technology · Unit 3 · Topic
+        14.1<br><strong>Tr.Sun Education</strong> · Created by Tr. Sun<br>Independent educational lesson notes based on
+        the supplied Topic 14.1 textbook extract.</footer>
+    </main>
+  </div>
+  <button type="button" class="to-top" id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    (function () {
+      'use strict';
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const menuBtn = document.getElementById('menuBtn');
+      const progress = document.getElementById('progress');
+      const toTop = document.getElementById('toTop');
+      const links = Array.from(document.querySelectorAll('#sectionNav a'));
+      const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      function toggleMenu(open) {
+        sidebar.classList.toggle('open', open);
+        overlay.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+        menuBtn.textContent = open ? '✕' : '☰';
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuBtn.addEventListener('click', () => toggleMenu(!sidebar.classList.contains('open')));
+      overlay.addEventListener('click', () => toggleMenu(false));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') toggleMenu(false); });
+      links.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+      function updateScrollUI() {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 100) + '%';
+        toTop.classList.toggle('show', window.scrollY > 500);
+        let current = sections[0];
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= 170) current = section;
+        }
+        links.forEach(link => {
+          const active = current && link.getAttribute('href') === '#' + current.id;
+          link.classList.toggle('active', !!active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }));
+      window.addEventListener('scroll', updateScrollUI, { passive: true });
+      window.addEventListener('resize', () => { if (window.innerWidth > 850) toggleMenu(false); updateScrollUI(); }, { passive: true });
+      updateScrollUI();
+    }());
+  </script>
+</body>
+
+</html>
