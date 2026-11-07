@@ -1,124 +1,2249 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 14.3: Customer Relationship Management Systems — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 14.3 – Customer Relationship Management Systems | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description"
+    content="Detailed Edexcel International A Level IT lesson: Topic 14.3 – Customer Relationship Management Systems. Tr.Sun Education.">
+  <title>Topic 14.3 – Customer Relationship Management Systems | Tr.Sun Education</title>
+  <style>
+    /* ============================================================
+       TR.SUN EDUCATION | TOPIC 14.3 SUBTOPIC PAGE
+       Self-contained, responsive, offline HTML/CSS/JavaScript
+       ============================================================ */
+    :root {
+      --sidebar: #111827;
+      --sidebar-soft: #1d2738;
+      --sidebar-line: rgba(255, 255, 255, .105);
+      --purple: #6947d7;
+      --purple-dark: #4934b5;
+      --purple-light: #ad72ed;
+      --bg: #f5f7fc;
+      --white: #fff;
+      --ink: #192539;
+      --muted: #61718a;
+      --border: #e5eaf3;
+      --shadow: 0 10px 32px rgba(31, 43, 78, .055);
+      --radius: 22px;
+      --sidebar-width: 282px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 105px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.78 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: #5b45c5;
+    }
+
+    a:hover {
+      text-decoration-color: #a58af2;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid #ae98ff;
+      outline-offset: 3px;
+    }
+
+    ::selection {
+      color: #fff;
+      background: #7052d7;
+    }
+
+    .reading-progress {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+    }
+
+    .reading-progress>span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #8f62f7, #37b7d2);
+      transition: width .1s linear;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--sidebar-width);
+      padding: 26px 18px 19px;
+      color: #d3deef;
+      background: var(--sidebar);
+      border-right: 1px solid rgba(255, 255, 255, .06);
+      display: flex;
+      flex-direction: column;
+      z-index: 110;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #44516a transparent;
+    }
+
+    .brand {
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      padding: 2px 5px 21px;
+      border-bottom: 1px solid var(--sidebar-line);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      flex: none;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #6e51df, #ad72ed);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 7px 22px rgba(111, 79, 221, .25);
+    }
+
+    .brand-mark svg {
+      width: 29px;
+      height: 29px;
+    }
+
+    .brand-name {
+      font-size: 16.5px;
+      font-weight: 800;
+      letter-spacing: -.35px;
+      line-height: 1.35;
+    }
+
+    .brand-tagline {
+      display: block;
+      color: #a7b3c9;
+      font-size: 10.5px;
+      font-weight: 500;
+      margin-top: 2px;
+      letter-spacing: .08em;
+    }
+
+    .side-kicker {
+      margin: 24px 11px 11px;
+      color: #8290a9;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+
+    .current-lesson {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      margin: 0 0 7px;
+      padding: 13px 12px;
+      border-radius: 13px;
+      border: 1px solid rgba(164, 135, 245, .24);
+      background: linear-gradient(130deg, rgba(113, 79, 224, .24), rgba(113, 79, 224, .08));
+    }
+
+    .current-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(179, 150, 248, .15);
+      font-size: 17px;
+      flex: none;
+    }
+
+    .current-lesson small {
+      display: block;
+      color: #b7aaf7;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .current-lesson strong {
+      display: block;
+      color: #f2efff;
+      font-size: 12.5px;
+      line-height: 1.48;
+      margin-top: 4px;
+    }
+
+    .side-nav {
+      display: grid;
+      gap: 4px;
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 9px 10px;
+      color: #b6c3d6;
+      border-radius: 10px;
+      text-decoration: none;
+      line-height: 1.35;
+      font-size: 12.6px;
+      font-weight: 560;
+      transition: color .18s, background .18s;
+    }
+
+    .side-nav a:hover {
+      background: #222d41;
+      color: #fff;
+    }
+
+    .side-nav a.active {
+      background: linear-gradient(110deg, #6246c1, #7355ce);
+      color: white;
+      box-shadow: 0 5px 18px rgba(95, 66, 200, .2);
+    }
+
+    .nav-num {
+      display: grid;
+      place-items: center;
+      flex: 0 0 25px;
+      height: 25px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .075);
+      color: #aab6c9;
+      font-weight: 800;
+      font-size: 10px;
+    }
+
+    .side-nav a.active .nav-num {
+      background: rgba(255, 255, 255, .19);
+      color: white;
+    }
+
+    .sidebar-bottom {
+      padding: 19px 10px 0;
+      margin-top: auto;
+      font-size: 11px;
+      color: #8593ac;
+    }
+
+    .sidebar-bottom .side-rule {
+      border-top: 1px solid var(--sidebar-line);
+      margin-bottom: 15px;
+    }
+
+    .sidebar-bottom strong {
+      color: #cbd5e6;
+    }
+
+    .sidebar-bottom p {
+      margin: 4px 0;
+      line-height: 1.5;
+    }
+
+    /* Main layout */
+    .main {
+      margin-left: var(--sidebar-width);
+      min-width: 0;
+    }
+
+    .topbar {
+      height: 69px;
+      padding: 0 42px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, .86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .crumbs {
+      color: #7a879d;
+      font-size: 12px;
+      font-weight: 650;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+    }
+
+    .crumbs a {
+      color: #6b7890;
+      text-decoration: none;
+    }
+
+    .crumbs a:hover {
+      color: var(--purple);
+    }
+
+    .crumbs b {
+      color: #5440b7;
+    }
+
+    .course-label {
+      padding: 6px 12px;
+      border-radius: 100px;
+      color: #6047bf;
+      background: #f1ebff;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #dedff2;
+      border-radius: 12px;
+      background: white;
+      color: #533cb1;
+      cursor: pointer;
+      flex: none;
+    }
+
+    .menu-toggle svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .content {
+      max-width: 1190px;
+      margin: 0 auto;
+      padding: 31px 42px 64px;
+    }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+      border-radius: 26px;
+      color: white;
+      background: linear-gradient(115deg, #4934b5 0%, #7654d6 53%, #ad72ed 100%);
+      padding: 44px 43px 40px;
+      box-shadow: 0 18px 35px rgba(79, 60, 181, .15);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 365px;
+      height: 365px;
+      border: 70px solid rgba(255, 255, 255, .055);
+      right: -112px;
+      top: -157px;
+    }
+
+    .hero::after {
+      width: 190px;
+      height: 190px;
+      background: rgba(255, 255, 255, .07);
+      right: 115px;
+      bottom: -148px;
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, .14);
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 100px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .07em;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 3.3vw, 43px);
+      line-height: 1.16;
+      letter-spacing: -.035em;
+      margin: 18px 0 11px;
+      max-width: 850px;
+    }
+
+    .hero h1 span {
+      color: #e7d9ff;
+    }
+
+    .hero p {
+      color: #f0eafe;
+      font-size: 14.5px;
+      max-width: 740px;
+      margin: 0 0 23px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .hero-tags span {
+      display: inline-block;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .22);
+      padding: 5px 11px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .overview-strip {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+    }
+
+    .overview-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 17px;
+      box-shadow: var(--shadow);
+    }
+
+    .overview-item .overview-emoji {
+      width: 39px;
+      height: 39px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #f3efff;
+      font-size: 19px;
+    }
+
+    .overview-item b {
+      font-size: 12px;
+      display: block;
+      line-height: 1.35;
+    }
+
+    .overview-item span {
+      font-size: 11px;
+      color: var(--muted);
+      display: block;
+      line-height: 1.45;
+      margin-top: 2px;
+    }
+
+    /* Lesson sections */
+    .lesson-section {
+      scroll-margin-top: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-top: 25px;
+      padding: 32px 36px 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid #e9edf5;
+      padding-bottom: 18px;
+      margin-bottom: 23px;
+    }
+
+    .section-symbol {
+      flex: 0 0 51px;
+      width: 51px;
+      height: 51px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      background: linear-gradient(140deg, #eee9ff, #faf7ff);
+    }
+
+    .section-title small {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      color: #8a74cf;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin: 1px 0 0;
+      line-height: 1.23;
+      font-size: clamp(21px, 2.2vw, 27px);
+      letter-spacing: -.025em;
+      color: #1b2840;
+    }
+
+    .lesson-section h3 {
+      color: #30266d;
+      margin: 26px 0 9px;
+      font-size: 17px;
+      line-height: 1.4;
+      letter-spacing: -.012em;
+    }
+
+    .lesson-section h3:first-child {
+      margin-top: 0;
+    }
+
+    .lesson-section h4 {
+      font-size: 14px;
+      color: #233653;
+      margin: 10px 0 5px;
+    }
+
+    p {
+      margin: 9px 0 14px;
+    }
+
+    .lesson-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+      margin: 10px 0 16px;
+    }
+
+    li {
+      padding-left: 4px;
+      margin: 5px 0;
+    }
+
+    li::marker {
+      color: #8163db;
+      font-weight: 800;
+    }
+
+    strong {
+      color: #24324e;
+    }
+
+    .lead {
+      font-size: 16px;
+      color: #435168;
+    }
+
+    .definition {
+      margin: 20px 0;
+      padding: 17px 19px;
+      background: linear-gradient(105deg, #f0eaff, #f7f4ff);
+      border-left: 4px solid #7954de;
+      border-radius: 13px;
+    }
+
+    .definition .callout-title {
+      color: #5437b7;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .055em;
+      margin-bottom: 5px;
+    }
+
+    .definition p {
+      margin: 0;
+      color: #3f3769;
+    }
+
+    .example {
+      background: #edfbf3;
+      border: 1px solid #cdebdc;
+      border-left: 4px solid #2ca56c;
+      padding: 19px 21px;
+      border-radius: 13px;
+      margin: 19px 0;
+    }
+
+    .example .callout-title {
+      font-size: 13px;
+      font-weight: 850;
+      color: #167447;
+      margin-bottom: 6px;
+    }
+
+    .example p,
+    .example li {
+      color: #345747;
+    }
+
+    .example p:last-child,
+    .example ol:last-child {
+      margin-bottom: 0;
+    }
+
+    .important {
+      background: #fffaeb;
+      border: 1px solid #f2e4ab;
+      border-left: 4px solid #e4b743;
+      border-radius: 13px;
+      padding: 17px 19px;
+      margin: 19px 0;
+    }
+
+    .important .callout-title {
+      font-size: 13px;
+      font-weight: 850;
+      color: #90650d;
+      margin-bottom: 5px;
+    }
+
+    .important p,
+    .important li {
+      color: #65532f;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 15px 0 18px;
+    }
+
+    .feature {
+      padding: 18px;
+      border-radius: 14px;
+      min-width: 0;
+    }
+
+    .feature.purple {
+      background: #f3eeff;
+    }
+
+    .feature.blue {
+      background: #eaf5ff;
+    }
+
+    .feature.green {
+      background: #eafaef;
+    }
+
+    .feature.orange {
+      background: #fff3e7;
+    }
+
+    .feature.pink {
+      background: #fff0f7;
+    }
+
+    .feature.cyan {
+      background: #eafafa;
+    }
+
+    .feature .feature-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+      background: #ffffffa8;
+      border-radius: 11px;
+      margin-bottom: 8px;
+    }
+
+    .feature h4 {
+      margin: 0 0 5px;
+      color: #2a3550;
+      font-size: 14px;
+    }
+
+    .feature p {
+      margin: 0;
+      font-size: 13px;
+      color: #54647a;
+      line-height: 1.7;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 16px 0 23px;
+      border: 1px solid #e2e7f1;
+      border-radius: 13px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      line-height: 1.6;
+      min-width: 500px;
+    }
+
+    th {
+      text-align: left;
+      padding: 12px 15px;
+      background: #f0edff;
+      color: #493b9d;
+      border-bottom: 1px solid #e0dafb;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    td {
+      padding: 11px 15px;
+      vertical-align: top;
+      border-bottom: 1px solid #edf0f6;
+      color: #485970;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #fafbff;
+    }
+
+    td:first-child {
+      font-weight: 750;
+      color: #27364d;
+    }
+
+    .diagram {
+      border: 1px solid #e5e9f2;
+      background: #fbfcff;
+      border-radius: 17px;
+      padding: 22px;
+      margin: 17px 0 21px;
+    }
+
+    .diagram-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 850;
+      color: #6f5ac1;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+
+    .process-row {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .process-box {
+      flex: 1;
+      min-width: 0;
+      border-radius: 12px;
+      background: #f0ebff;
+      border: 1px solid #e2dafa;
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .process-box.blue {
+      background: #e8f4ff;
+      border-color: #d0e8fb;
+    }
+
+    .process-box.green {
+      background: #e9f9f0;
+      border-color: #cdebdc;
+    }
+
+    .process-box.orange {
+      background: #fff3e6;
+      border-color: #f9e2c6;
+    }
+
+    .process-box .step-icon {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .process-box b {
+      display: block;
+      font-size: 12px;
+      color: #2f3852;
+      line-height: 1.4;
+    }
+
+    .process-box small {
+      display: block;
+      margin-top: 5px;
+      font-size: 10.5px;
+      color: #61708a;
+      line-height: 1.5;
+    }
+
+    .arrow {
+      display: grid;
+      place-items: center;
+      flex: none;
+      font-size: 21px;
+      color: #9486cb;
+      font-weight: 800;
+    }
+
+    .diagram-caption {
+      text-align: center;
+      margin: 12px 0 0;
+      color: #76849b;
+      font-size: 11.5px;
+    }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .channel {
+      background: #f4f1ff;
+      border: 1px solid #e9e2ff;
+      border-radius: 12px;
+      text-align: center;
+      padding: 12px 8px;
+    }
+
+    .channel span {
+      display: block;
+      font-size: 24px;
+    }
+
+    .channel b {
+      display: block;
+      color: #4d3c96;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .channel small {
+      display: block;
+      font-size: 10.5px;
+      color: #7b6e9f;
+      line-height: 1.5;
+      margin-top: 3px;
+    }
+
+    .diagram-hub {
+      margin: 0 auto 13px;
+      width: min(100%, 400px);
+      border-radius: 13px;
+      padding: 14px;
+      text-align: center;
+      background: linear-gradient(110deg, #5940b9, #8e66df);
+      color: #fff;
+    }
+
+    .diagram-hub b {
+      color: #fff;
+    }
+
+    .diagram-hub small {
+      display: block;
+      color: #ebe3ff;
+    }
+
+    .down-arrow {
+      text-align: center;
+      height: 26px;
+      line-height: 22px;
+      font-size: 23px;
+      color: #8d79cf;
+    }
+
+    .highlight-numbers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 11px;
+      margin: 18px 0;
+    }
+
+    .number-box {
+      text-align: center;
+      background: #f8f7ff;
+      border: 1px solid #e9e2fc;
+      border-radius: 14px;
+      padding: 18px 10px;
+    }
+
+    .number-box .num-icon {
+      font-size: 25px;
+      display: block;
+    }
+
+    .number-box strong {
+      display: block;
+      font-size: 23px;
+      line-height: 1.4;
+      color: #543ab7;
+    }
+
+    .number-box small {
+      display: block;
+      font-size: 11px;
+      color: #61718a;
+    }
+
+    .step-list {
+      counter-reset: item;
+      list-style: none;
+      margin: 17px 0;
+      padding: 0;
+    }
+
+    .step-list li {
+      position: relative;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 8px 0;
+      margin: 0;
+    }
+
+    .step-list li::before {
+      counter-increment: item;
+      content: counter(item);
+      width: 29px;
+      height: 29px;
+      border-radius: 9px;
+      flex: 0 0 29px;
+      color: #fff;
+      background: #7457d2;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .step-list li span {
+      flex: 1;
+    }
+
+    .step-list.compact li {
+      padding: 6px 0;
+    }
+
+    .shop-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px;
+      margin: 15px 0;
+    }
+
+    .shop-product {
+      text-align: center;
+      background: #f6f8ff;
+      border: 1px solid #e6ebf5;
+      border-radius: 13px;
+      padding: 15px 10px;
+    }
+
+    .shop-product span {
+      display: block;
+      font-size: 34px;
+    }
+
+    .shop-product b {
+      display: block;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .shop-product small {
+      display: block;
+      font-size: 10.5px;
+      color: #75839b;
+    }
+
+    .mini-note {
+      font-size: 12px;
+      color: #697891;
+    }
+
+    .lesson-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 23px;
+    }
+
+    .lesson-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border-radius: 11px;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 12px;
+      background: #f0ebff;
+      color: #5941bd;
+      border: 1px solid #e3dafd;
+    }
+
+    .lesson-links a:hover {
+      background: #e6ddff;
+    }
+
+    .lesson-links a.primary {
+      background: #6247c1;
+      color: #fff;
+      border-color: #6247c1;
+    }
+
+    .lesson-links a.primary:hover {
+      background: #4d35aa;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 23px;
+      z-index: 60;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 13px;
+      background: #6043c5;
+      color: #fff;
+      font-size: 21px;
+      cursor: pointer;
+      box-shadow: 0 7px 22px rgba(65, 41, 145, .22);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity .2s, transform .2s, visibility .2s;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .sidebar-overlay {
+      display: none;
+    }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+
+    /* Responsive behavior */
+    @media (max-width: 1170px) {
+      .content {
+        padding: 28px 25px 55px;
+      }
+
+      .topbar {
+        padding: 0 25px;
+      }
+
+      .lesson-section {
+        padding: 28px 28px 30px;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        width: min(85vw, 310px);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 105;
+        background: rgba(10, 18, 36, .57);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .25s, visibility .25s;
+      }
+
+      .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 4px;
+        z-index: 80;
+      }
+
+      .overview-strip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 91px;
+      }
+
+      
+      .lesson-navigation a {
+        width: 100%;
+      }
+
+      body {
+        font-size: 14px;
+        line-height: 1.74;
+      }
+
+      .topbar {
+        height: 60px;
+        padding: 0 15px;
+        gap: 9px;
+      }
+
+      .crumbs {
+        font-size: 10.5px;
+        gap: 5px;
+      }
+
+      .crumbs .crumb-course {
+        display: none;
+      }
+
+      .course-label {
+        font-size: 9px;
+        padding: 5px 8px;
+      }
+
+      .content {
+        padding: 16px 12px 42px;
+      }
+
+      .hero {
+        padding: 30px 22px 28px;
+        border-radius: 19px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .hero-tags span {
+        font-size: 10px;
+      }
+
+      .overview-strip {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .overview-item {
+        padding: 10px 14px;
+      }
+
+      .overview-item .overview-emoji {
+        width: 33px;
+        height: 33px;
+        font-size: 17px;
+      }
+
+      .lesson-section {
+        border-radius: 17px;
+        padding: 23px 18px 25px;
+        margin-top: 15px;
+      }
+
+      .section-symbol {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+        font-size: 21px;
+        border-radius: 12px;
+      }
+
+      .section-title {
+        gap: 10px;
+      }
+
+      .section-title h2 {
+        font-size: 21px;
+      }
+
+      .section-title small {
+        font-size: 9px;
+      }
+
+      .lesson-section h3 {
+        font-size: 15.5px;
+      }
+
+      .lead {
+        font-size: 14px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .feature {
+        padding: 14px 16px;
+      }
+
+      .table-wrap {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      table {
+        font-size: 12px;
+        min-width: 440px;
+      }
+
+      th,
+      td {
+        padding: 10px 12px;
+      }
+
+      .diagram {
+        padding: 16px 12px;
+      }
+
+      .process-row {
+        flex-direction: column;
+        gap: 1px;
+      }
+
+      .process-box {
+        padding: 12px;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+        height: 25px;
+      }
+
+      .channel-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .channel {
+        padding: 10px 6px;
+      }
+
+      .highlight-numbers {
+        gap: 6px;
+      }
+
+      .number-box {
+        padding: 13px 6px;
+      }
+
+      .number-box strong {
+        font-size: 19px;
+      }
+
+      .number-box small {
+        font-size: 9.5px;
+      }
+
+      .shop-products {
+        gap: 7px;
+      }
+
+      .shop-product {
+        padding: 12px 4px;
+      }
+
+      .shop-product span {
+        font-size: 27px;
+      }
+
+      .shop-product b {
+        font-size: 11px;
+      }
+
+      .back-to-top {
+        right: 14px;
+        bottom: 15px;
+        width: 39px;
+        height: 39px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
+    <a class="brand" href="index.html" aria-label="Tr.Sun Education home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12.5L16 6l13 6.5L16 19 3 12.5Z" fill="white" />
+          <path d="M8 17v5.6c4.4 3.4 11.7 3.4 16 0V17" stroke="white" stroke-width="2.3" stroke-linejoin="round" />
+          <path d="M29 13v9" stroke="white" stroke-width="2.1" stroke-linecap="round" />
+          <circle cx="29" cy="23.4" r="1.5" fill="white" />
+        </svg>
+      </span>
+      <span><span class="brand-name">Tr.Sun Education</span><span class="brand-tagline">LEARN · EXPLORE ·
+          ACHIEVE</span></span>
+    </a>
+
+    <div class="side-kicker">YOU ARE STUDYING</div>
+    <div class="current-lesson"><span class="current-icon">🤝</span><span><small>TOPIC 14.3</small><strong>Customer
+          Relationship Management Systems</strong></span></div>
+    <div class="side-kicker">LESSON CONTENT</div>
+    <nav class="side-nav" id="sectionNav">
+      <a href="#section-1" class="active"><span class="nav-num">01</span><span>Introduction to CRM</span></a>
+      <a href="#section-2"><span class="nav-num">02</span><span>Synchronising Marketing Events</span></a>
+      <a href="#section-3"><span class="nav-num">03</span><span>Loyalty Schemes</span></a>
+      <a href="#section-4"><span class="nav-num">04</span><span>Analysing Buying Trends</span></a>
+      <a href="#section-5"><span class="nav-num">05</span><span>Improving Customer Service</span></a>
+      <a href="#section-6"><span class="nav-num">06</span><span>Customer Retention</span></a>
+      <a href="#section-7"><span class="nav-num">07</span><span>Upselling</span></a>
+      <a href="#section-8"><span class="nav-num">08</span><span>Six CRM Functions Together</span></a>
+      <a href="#section-9"><span class="nav-num">09</span><span>Important Terms</span></a>
+      <a href="#section-10"><span class="nav-num">10</span><span>Overall Understanding</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="side-rule"></div>
+      <p><strong>Edexcel International A Level IT</strong></p>
+      <p>Unit 3 · Topic 14</p>
+      <p>Created by Tr. Sun</p>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    
+    <header class="topbar">
+
+      <div style="display:flex;align-items:center;gap:12px;min-width:0">
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open lesson navigation" aria-controls="sidebar"
+          aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+
+        </button>
+
+        <div class="crumbs">
+          <a href="index.html">Edexcel IAL IT</a>
+          <span>›</span>
+          <a class="crumb-course" href="topic-14.html">Topic 14</a>
+          <span>›</span
+          <b>14.3 · CRM Systems</b>
+        </div>
+
+      </div>
+
+      <span class="course-label">A2 · UNIT 3</span>
+
+    </header>
+
+    <main class="content" id="mainContent">
+      <div class="hero">
+
+        <div class="hero-eyebrow">📚 EDEXCEL IAL INFORMATION TECHNOLOGY</div>
+        <h1>Topic 14.3 <span>— Customer Relationship Management Systems</span></h1>
+        <p>Understand how businesses use CRM software to manage customer relationships, coordinate marketing,
+          personalise services and improve profitability.</p>
+        <div class="hero-tags">
+          <span>🤝 Customer relationships</span>
+          <span>🛍️ Sales &amp; loyalty</span>
+          <span>📊 Business decisions</span>
+        </div>
+
+      </div>
+
+
+
+      <!-- ======================================================= -->
+      <!-- SECTION 1: INTRODUCTION -->
+      <!-- ======================================================= -->
+      <section class="lesson-section" id="section-1">
+        <div class="section-title"><span class="section-symbol">🤝</span>
+          <div><small>Section 01</small>
+            <h2>Introduction to CRM Systems</h2>
+          </div>
+        </div>
+        <h3>1.1 What is Customer Relationship Management (CRM)?</h3>
+        <p><strong>Customer Relationship Management (CRM)</strong> is the process of managing a company's interactions
+          and relationships with its customers and other stakeholders.</p>
+        <p>A <strong>Customer Relationship Management system</strong> is software that helps an organisation collect,
+          store, organise and analyse customer information so that it can provide better services, improve customer
+          relationships and increase sales.</p>
+        <p>CRM systems commonly use databases together with other software tools to manage customer interactions.</p>
+        <div class="definition">
+          <div class="callout-title">📌 Key definition — CRM system</div>
+          <p>A software system that manages customer information and interactions to improve customer satisfaction,
+            encourage customer loyalty and increase business profitability.</p>
+        </div>
+        <p>For example, a supermarket may use a CRM system to record:</p>
+        <ul>
+          <li>Customers' names and contact details.</li>
+          <li>Products customers frequently purchase.</li>
+          <li>Dates and values of previous purchases.</li>
+          <li>Customer loyalty points and rewards.</li>
+          <li>Customer enquiries, complaints and feedback.</li>
+          <li>Customers' preferences and buying habits.</li>
+        </ul>
+        <p>The supermarket can analyse this information to understand its customers and provide personalised services.
+        </p>
+
+        <h3>1.2 Main purposes of CRM systems</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Purpose</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Improve customer relationships</td>
+                <td>Understand customers' needs and preferences.</td>
+              </tr>
+              <tr>
+                <td>Improve customer satisfaction</td>
+                <td>Provide appropriate and personalised services.</td>
+              </tr>
+              <tr>
+                <td>Increase sales</td>
+                <td>Recommend suitable products and encourage additional purchases.</td>
+              </tr>
+              <tr>
+                <td>Encourage customer loyalty</td>
+                <td>Reward customers and motivate them to make repeat purchases.</td>
+              </tr>
+              <tr>
+                <td>Improve marketing</td>
+                <td>Send targeted advertisements and promotional messages.</td>
+              </tr>
+              <tr>
+                <td>Support business decisions</td>
+                <td>Analyse customer information and buying patterns.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>1.3 How does a CRM system work?</h3>
+        <p>A CRM system typically collects information from different parts of an organisation, stores and analyses that
+          information, and uses the results to support business activities.</p>
+        <div class="diagram"><span class="diagram-label">Diagram · How a CRM system works</span>
+          <div class="process-row">
+            <div class="process-box"><span class="step-icon">🗄️</span><b>1. Collect data</b><small>Purchases,
+                enquiries, loyalty cards, online transactions</small></div><span class="arrow">→</span>
+            <div class="process-box blue"><span class="step-icon">📈</span><b>2. Analyse information</b><small>Identify
+                preferences, patterns and trends</small></div><span class="arrow">→</span>
+            <div class="process-box green"><span class="step-icon">📨</span><b>3. Take action</b><small>Send offers,
+                recommend products, provide support</small></div><span class="arrow">→</span>
+            <div class="process-box orange"><span class="step-icon">🌟</span><b>4. Improve results</b><small>Higher
+                satisfaction, loyalty, sales and profits</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: MARKETING -->
+      <section class="lesson-section" id="section-2">
+        <div class="section-title"><span class="section-symbol">📣</span>
+          <div><small>Section 02</small>
+            <h2>Synchronising Marketing Events</h2>
+          </div>
+        </div>
+        <h3>2.1 What is marketing?</h3>
+        <p>Marketing refers to the activities a business carries out to promote its products and services and encourage
+          customers to purchase them.</p>
+        <p>Businesses often communicate with customers through several platforms, such as social media, email, SMS and
+          websites. A business may need to advertise the same promotion across all these platforms.</p>
+        <h3>2.2 What does synchronising marketing events mean?</h3>
+        <div class="definition">
+          <div class="callout-title">📌 Key definition — Marketing synchronisation</div>
+          <p>Coordinating marketing activities so that advertising and promotional messages are consistent and delivered
+            at appropriate times across different communication platforms.</p>
+        </div>
+        <p>A CRM system allows businesses to plan, schedule and automate related marketing activities from one central
+          system. For example, a clothing store might plan a weekend promotion offering a 20% discount.</p>
+        <div class="diagram"><span class="diagram-label">Diagram · One promotion, multiple channels</span>
+          <div class="diagram-hub"><b>📅 CRM Marketing Schedule</b><small>Plan, coordinate and automate a
+              promotion</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="channel-grid">
+            <div class="channel"><span>✉️</span><b>Email</b><small>Discount announcement</small></div>
+            <div class="channel"><span>💬</span><b>SMS</b><small>Promotion reminder</small></div>
+            <div class="channel"><span>📱</span><b>Social media</b><small>Scheduled posts</small></div>
+            <div class="channel"><span>🖥️</span><b>Website</b><small>Promotion details</small></div>
+          </div>
+          <p class="diagram-caption">All marketing activities are coordinated through the same CRM system.</p>
+        </div>
+        <h3>2.3 How does a CRM system help?</h3>
+        <div class="feature-grid">
+          <div class="feature purple"><span class="feature-icon">🗓️</span>
+            <h4>Centralised planning</h4>
+            <p>Marketing activities can be organised within a single system instead of being managed separately.</p>
+          </div>
+          <div class="feature blue"><span class="feature-icon">⏰</span>
+            <h4>Automated scheduling</h4>
+            <p>Promotional messages can be sent at predetermined times without manual sending.</p>
+          </div>
+          <div class="feature green"><span class="feature-icon">✅</span>
+            <h4>Consistent messages</h4>
+            <p>Customers receive the same promotional information across different platforms.</p>
+          </div>
+          <div class="feature orange"><span class="feature-icon">🔗</span>
+            <h4>Platform integration</h4>
+            <p>CRM tools connect to other systems, such as social media services, to distribute messages.</p>
+          </div>
+        </div>
+        <p>In addition, <strong>better coordination</strong> helps marketing teams and other departments work together
+          effectively.</p>
+        <div class="example">
+          <div class="callout-title">💡 Example — Supermarket weekend promotion</div>
+          <p>A supermarket launches a special discount on Friday. Its CRM system schedules an email on Thursday, a
+            social media advertisement on Friday morning, and an SMS reminder on Saturday. All messages promote the same
+            offer and encourage shoppers to visit during the promotion.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 3: LOYALTY -->
+      <section class="lesson-section" id="section-3">
+        <div class="section-title"><span class="section-symbol">🎁</span>
+          <div><small>Section 03</small>
+            <h2>Loyalty Schemes</h2>
+          </div>
+        </div>
+        <h3>3.1 What is a loyalty scheme?</h3>
+        <div class="definition">
+          <div class="callout-title">📌 Key definition — Loyalty scheme</div>
+          <p>A marketing strategy that rewards customers for purchasing products or services from a business,
+            encouraging them to return rather than shop with competitors.</p>
+        </div>
+        <p>Businesses may offer loyalty cards, reward points, vouchers and special discounts. The main aim is to
+          encourage customers to continue purchasing from the same business.</p>
+        <h3>3.2 How do loyalty schemes work?</h3>
+        <p>A loyalty scheme often awards points according to the value of purchases. Customers can accumulate points and
+          exchange them for rewards later.</p>
+        <div class="diagram"><span class="diagram-label">Example · Loyalty points</span>
+          <div class="highlight-numbers">
+            <div class="number-box"><span class="num-icon">🛍️</span><strong>$50</strong><small>Customer
+                purchase</small></div>
+            <div class="number-box"><span class="num-icon">⭐</span><strong>50 points</strong><small>Points
+                earned</small></div>
+            <div class="number-box"><span class="num-icon">🎁</span><strong>Reward</strong><small>Redeem points
+                later</small></div>
+          </div>
+          <p class="diagram-caption">Illustrative scheme: $1 spent earns 1 point. Actual rewards and rules vary by
+            business.</p>
+        </div>
+        <p>This gives customers a reason to return to the same store, instead of buying from competitors.</p>
+        <h3>3.3 How are CRM systems used in loyalty schemes?</h3>
+        <p>CRM systems are often linked to other business systems:</p>
+        <div class="feature-grid">
+          <div class="feature blue"><span class="feature-icon">🧾</span>
+            <h4>EPOS systems</h4>
+            <p>Electronic Point of Sale systems record the products purchased and the value of each transaction.</p>
+          </div>
+          <div class="feature green"><span class="feature-icon">📦</span>
+            <h4>Inventory databases</h4>
+            <p>Store information about products and the stock available to the organisation.</p>
+          </div>
+          <div class="feature purple"><span class="feature-icon">👤</span>
+            <h4>Customer databases</h4>
+            <p>Store customer profiles, purchase histories, preferences and loyalty points.</p>
+          </div>
+          <div class="feature orange"><span class="feature-icon">📊</span>
+            <h4>Data analysis</h4>
+            <p>Identifies buying patterns to provide suitable incentives to different customers.</p>
+          </div>
+        </div>
+        <h3>3.4 Personalised loyalty rewards</h3>
+        <p>Basic loyalty schemes provide general rewards to everyone. More effective loyalty schemes use CRM data to
+          offer <strong>personalised incentives</strong> based on customers' buying habits.</p>
+        <div class="example">
+          <div class="callout-title">💡 Example — Breakfast cereal voucher</div>
+          <ol class="step-list compact">
+            <li><span>A customer regularly buys a particular brand of breakfast cereal.</span></li>
+            <li><span>The EPOS system records the purchase against the customer's loyalty account.</span></li>
+            <li><span>The CRM system analyses the purchase history.</span></li>
+            <li><span>The system identifies the customer's preferred cereal brand.</span></li>
+            <li><span>The store sends a personalised discount voucher for that brand.</span></li>
+            <li><span>The customer is encouraged to return and buy the cereal again.</span></li>
+          </ol>
+        </div>
+        <h3>3.5 Benefits of loyalty schemes</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Benefit</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Encourages repeat purchases</td>
+                <td>Customers return to earn or redeem rewards.</td>
+              </tr>
+              <tr>
+                <td>Improves customer loyalty</td>
+                <td>Customers feel rewarded for continuing to shop.</td>
+              </tr>
+              <tr>
+                <td>Provides valuable data</td>
+                <td>Businesses learn about customer buying habits.</td>
+              </tr>
+              <tr>
+                <td>Supports targeted offers</td>
+                <td>Customers receive promotions relevant to their interests.</td>
+              </tr>
+              <tr>
+                <td>Increases sales opportunities</td>
+                <td>Discounts and rewards may encourage additional purchases.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: BUYING TRENDS -->
+      <section class="lesson-section" id="section-4">
+        <div class="section-title"><span class="section-symbol">📊</span>
+          <div><small>Section 04</small>
+            <h2>Analysing Buying Trends</h2>
+          </div>
+        </div>
+        <h3>4.1 What are buying trends?</h3>
+        <div class="definition">
+          <div class="callout-title">📌 Key definition — Buying trends</div>
+          <p>Patterns in customers' purchasing behaviour that can be identified by analysing sales data over time.</p>
+        </div>
+        <p>Buying trends may show:</p>
+        <ul>
+          <li>Which products customers purchase frequently.</li>
+          <li>Which products are becoming more or less popular.</li>
+          <li>When customers are most likely to purchase particular products.</li>
+          <li>Which customer groups prefer particular products.</li>
+          <li>How demand changes at different times of the year.</li>
+        </ul>
+        <h3>4.2 How does CRM analyse buying trends?</h3>
+        <p>CRM systems analyse information generated by sales transactions. By looking for patterns in this data,
+          businesses can make informed decisions about stock levels, advertising and product promotions.</p>
+        <p>For example, a supermarket may discover that demand for cold drinks increases during hot weather. This
+          information can help with stock purchasing and promotional planning.</p>
+        <h3>4.3 How do buying trends support business decisions?</h3>
+        <div class="feature-grid">
+          <div class="feature purple"><span class="feature-icon">📦</span>
+            <h4>1. Stock purchasing decisions</h4>
+            <p>Determine which products to buy and how much stock may be needed. This can reduce overstocking and
+              shortages.</p>
+          </div>
+          <div class="feature blue"><span class="feature-icon">📅</span>
+            <h4>2. Timing of advertisements</h4>
+            <p>Identify when customers are most likely to be interested in particular products and schedule promotions
+              accordingly.</p>
+          </div>
+          <div class="feature green"><span class="feature-icon">🎯</span>
+            <h4>3. Targeting appropriate customers</h4>
+            <p>Direct advertisements towards customers who are more likely to want the advertised products.</p>
+          </div>
+          <div class="feature orange"><span class="feature-icon">💼</span>
+            <h4>4. Strategic decisions</h4>
+            <p>Use patterns in customer purchasing data to support longer-term business planning.</p>
+          </div>
+        </div>
+        <h3>4.4 Practical example — Clothing store</h3>
+        <div class="example">
+          <div class="callout-title">💡 Example — Demand for jackets</div>
+          <p>A clothing store examines previous sales records and finds that jacket sales increase during colder months.
+            Using this trend, the business can:</p>
+          <ol>
+            <li>Order more jackets before the colder season begins.</li>
+            <li>Schedule advertisements when demand is expected to rise.</li>
+            <li>Send jacket offers to customers who previously purchased similar clothing.</li>
+            <li>Reduce unnecessary advertising to customers less likely to be interested.</li>
+          </ol>
+        </div>
+        <div class="important">
+          <div class="callout-title">⭐ Important concept</div>
+          <p>Buying trend analysis turns raw sales data into useful information for strategic decisions. It helps
+            managers understand <strong>what customers buy, when they buy and who is most likely to buy.</strong></p>
+        </div>
+      </section>
+
+      <!-- SECTION 5: CUSTOMER SERVICE -->
+      <section class="lesson-section" id="section-5">
+        <div class="section-title"><span class="section-symbol">🎧</span>
+          <div><small>Section 05</small>
+            <h2>Improving Customer Service</h2>
+          </div>
+        </div>
+        <h3>5.1 What is customer service?</h3>
+        <p><strong>Customer service</strong> is the assistance and support a business provides to customers before,
+          during and after they purchase its products or services.</p>
+        <p>Good customer service helps customers feel valued and encourages them to develop positive relationships with
+          a business.</p>
+        <h3>5.2 How do CRM systems improve customer service?</h3>
+        <p>CRM systems store customer information and previous interactions. Employees can view relevant purchase
+          histories, earlier enquiries and complaints to understand a customer's situation and offer more appropriate
+          assistance.</p>
+        <h3>5.3 Personalised customer experiences</h3>
+        <div class="feature-grid">
+          <div class="feature purple"><span class="feature-icon">🎂</span>
+            <h4>Birthday greetings</h4>
+            <p>Send a personalised birthday message or special offer to a customer.</p>
+          </div>
+          <div class="feature blue"><span class="feature-icon">✉️</span>
+            <h4>Follow-up emails</h4>
+            <p>Contact customers after a purchase to offer support or check satisfaction.</p>
+          </div>
+          <div class="feature green"><span class="feature-icon">💬</span>
+            <h4>Customer enquiries</h4>
+            <p>Record questions so employees can respond and follow up effectively.</p>
+          </div>
+          <div class="feature orange"><span class="feature-icon">📋</span>
+            <h4>Complaint tracking</h4>
+            <p>Monitor reported problems and check whether they have been resolved.</p>
+          </div>
+        </div>
+        <h3>5.4 Tracking customer issues</h3>
+        <p>One important CRM function is recording and tracking customer problems. This allows issues to be followed up
+          until they are resolved.</p>
+        <div class="example">
+          <div class="callout-title">💡 Example — A faulty laptop complaint</div>
+          <ol class="step-list compact">
+            <li><span>A customer contacts an electronics store about a faulty laptop.</span></li>
+            <li><span>An employee records the complaint in the CRM system.</span></li>
+            <li><span>The record includes purchase details and a description of the problem.</span></li>
+            <li><span>The complaint is assigned to the appropriate employee or department.</span></li>
+            <li><span>The CRM system records follow-up actions and the progress of the case.</span></li>
+            <li><span>The business contacts the customer when the issue is resolved.</span></li>
+          </ol>
+          <p>The CRM record helps prevent complaints from being forgotten and makes it easier to provide a satisfactory
+            resolution.</p>
+        </div>
+        <h3>5.5 Benefits of CRM for customer service</h3>
+        <ul>
+          <li>Faster and more informed responses to customer enquiries.</li>
+          <li>Accurate records of previous customer interactions.</li>
+          <li>Personalised support based on customer history and preferences.</li>
+          <li>Better follow-up of unresolved complaints and issues.</li>
+          <li>Improved customer satisfaction and overall service quality.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 6: RETENTION -->
+      <section class="lesson-section" id="section-6">
+        <div class="section-title"><span class="section-symbol">💚</span>
+          <div><small>Section 06</small>
+            <h2>Customer Retention</h2>
+          </div>
+        </div>
+        <h3>6.1 What is customer retention?</h3>
+        <div class="definition">
+          <div class="callout-title">📌 Key definition — Customer retention</div>
+          <p>A business's ability to keep existing customers and encourage them to continue buying its products or
+            services.</p>
+        </div>
+        <p>A retained customer returns to make further purchases instead of buying from a business only once.</p>
+        <h3>6.2 Why is customer retention important?</h3>
+        <p>Attracting a customer for one purchase may show that an advertisement or promotion worked. A returning
+          customer, however, suggests satisfaction with a wider range of factors such as product quality, pricing,
+          customer service and the overall shopping experience.</p>
+        <p>Returning customers may recommend the company to others, helping the business attract more customers through
+          positive recommendations.</p>
+        <h3>6.3 New customers versus returning customers</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>New customer</th>
+                <th>Returning customer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Purchases from the business for the first time.</td>
+                <td>Has purchased from the business before.</td>
+              </tr>
+              <tr>
+                <td>May be attracted by advertising or promotions.</td>
+                <td>May return because of a positive previous experience.</td>
+              </tr>
+              <tr>
+                <td>Has limited purchase history with the business.</td>
+                <td>Has an existing purchase history.</td>
+              </tr>
+              <tr>
+                <td>May be unfamiliar with the company's services.</td>
+                <td>May already trust the company.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Both customer groups are valuable. However, retention helps a business build longer-term relationships and
+          encourage repeat sales.</p>
+        <h3>6.4 How do CRM systems improve customer retention?</h3>
+        <p>CRM systems bring together information from across the business so that companies can understand and support
+          existing customers. They can:</p>
+        <ul>
+          <li>Identify customers who have not purchased anything recently.</li>
+          <li>Send personalised offers to encourage customers to return.</li>
+          <li>Reward regular customers through loyalty schemes.</li>
+          <li>Resolve customer complaints and service problems.</li>
+          <li>Recommend products based on previous purchases.</li>
+          <li>Maintain regular and relevant customer communication.</li>
+        </ul>
+        <h3>6.5 Example — Online bookstore</h3>
+        <div class="example">
+          <div class="callout-title">💡 Example — Encouraging a customer to return</div>
+          <p>A customer used to buy books regularly from an online bookstore but has not made a purchase for several
+            months. The CRM system identifies the change in buying behaviour. The bookstore sends a discount offer for
+            books in the customer's favourite genre. If the customer purchases again, the CRM-supported promotion has
+            helped improve customer retention.</p>
+        </div>
+        <div class="important">
+          <div class="callout-title">⭐ Important distinction</div>
+          <p><strong>Customer acquisition</strong> means attracting new customers. <strong>Customer retention</strong>
+            means encouraging existing customers to keep purchasing. CRM systems can support both, but retention focuses
+            on long-term relationships.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 7: UPSELLING -->
+      <section class="lesson-section" id="section-7">
+        <div class="section-title"><span class="section-symbol">🛒</span>
+          <div><small>Section 07</small>
+            <h2>Upselling</h2>
+          </div>
+        </div>
+        <h3>7.1 What is upselling?</h3>
+        <div class="definition">
+          <div class="callout-title">📌 Key definition — Upselling</div>
+          <p>A sales technique that encourages customers to spend more than they originally intended, such as by
+            purchasing a more expensive product or additional items.</p>
+        </div>
+        <p>In the Topic 14.3 source, upselling is explained using recommendations for related add-on products that
+          complement the original purchase.</p>
+        <p>CRM systems analyse customer purchase data and identify items that may be recommended to increase sales.</p>
+        <h3>7.2 How do CRM systems support upselling?</h3>
+        <p>CRM systems can be integrated with e-commerce websites. When a customer selects a product, the system can
+          compare it with purchases made by other customers and identify related products that the customer may also
+          want.</p>
+        <h3>7.3 Example — Purchasing a laptop online</h3>
+        <div class="diagram"><span class="diagram-label">Example · CRM product recommendations</span>
+          <div class="process-row">
+            <div class="process-box"><span class="step-icon">💻</span><b>1. Customer chooses laptop</b><small>Adds
+                laptop to shopping basket</small></div><span class="arrow">→</span>
+            <div class="process-box blue"><span class="step-icon">🧠</span><b>2. CRM analyses data</b><small>Checks
+                patterns in similar purchases</small></div><span class="arrow">→</span>
+            <div class="process-box green"><span class="step-icon">🛍️</span><b>3. Recommends add-ons</b><small>Suggests
+                useful complementary products</small></div>
+          </div>
+          <div class="shop-products">
+            <div class="shop-product"><span>💼</span><b>Laptop case</b><small>Protection and transport</small></div>
+            <div class="shop-product"><span>🖱️</span><b>Mouse</b><small>Extra peripheral</small></div>
+            <div class="shop-product"><span>🎧</span><b>Headset</b><small>Audio accessory</small></div>
+          </div>
+          <p class="diagram-caption">The customer may add recommended items, increasing the overall order value.</p>
+        </div>
+        <h3>7.4 Why is upselling useful to businesses?</h3>
+        <div class="feature-grid">
+          <div class="feature green"><span class="feature-icon">💰</span>
+            <h4>Increases sales revenue</h4>
+            <p>Customers may buy additional products or more expensive alternatives.</p>
+          </div>
+          <div class="feature blue"><span class="feature-icon">🎯</span>
+            <h4>More relevant recommendations</h4>
+            <p>Customers may discover useful products they had not considered.</p>
+          </div>
+          <div class="feature purple"><span class="feature-icon">📊</span>
+            <h4>Uses existing data</h4>
+            <p>Recommendations are based on purchasing patterns rather than guesswork.</p>
+          </div>
+          <div class="feature orange"><span class="feature-icon">⚡</span>
+            <h4>Encourages impulse purchases</h4>
+            <p>Customers may decide to add products they had not planned to buy.</p>
+          </div>
+        </div>
+        <p>Additional sales may help the company increase its profitability.</p>
+        <h3>7.5 Upselling and cross-selling</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Technique</th>
+                <th>Meaning</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Upselling</td>
+                <td>Encouraging customers to purchase a more expensive or upgraded product.</td>
+                <td>Recommending a laptop with more RAM and storage.</td>
+              </tr>
+              <tr>
+                <td>Cross-selling</td>
+                <td>Encouraging customers to purchase additional related products.</td>
+                <td>Recommending a laptop bag, mouse or headset.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="important">
+          <div class="callout-title">⭐ Terminology note</div>
+          <p>The Topic 14.3 source calls its laptop-accessories example <strong>upselling</strong>. In standard sales
+            terminology, recommending complementary accessories is more precisely called <strong>cross-selling</strong>.
+            Both techniques aim to increase the value of a customer's purchase.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 8: FUNCTIONS TOGETHER -->
+      <section class="lesson-section" id="section-8">
+        <div class="section-title"><span class="section-symbol">🔗</span>
+          <div><small>Section 08</small>
+            <h2>How the Six Functions of CRM Work Together</h2>
+          </div>
+        </div>
+        <p>The six CRM functions are interconnected. Information collected to support one activity may also be useful
+          for other parts of the business.</p>
+        <p>Consider a supermarket that uses a CRM system across marketing, sales and customer support.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>CRM function</th>
+                <th>How the supermarket uses it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1. Synchronising marketing events</td>
+                <td>Coordinates promotional messages across email, SMS and social media.</td>
+              </tr>
+              <tr>
+                <td>2. Loyalty schemes</td>
+                <td>Awards points and offers personalised vouchers.</td>
+              </tr>
+              <tr>
+                <td>3. Buying trends</td>
+                <td>Identifies popular products and helps plan future stock requirements.</td>
+              </tr>
+              <tr>
+                <td>4. Customer service</td>
+                <td>Records customer questions, complaints and follow-up actions.</td>
+              </tr>
+              <tr>
+                <td>5. Customer retention</td>
+                <td>Encourages previous shoppers to return through rewards and offers.</td>
+              </tr>
+              <tr>
+                <td>6. Upselling</td>
+                <td>Recommends additional products using buying patterns.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="definition">
+          <div class="callout-title">📌 Key idea — Integrated systems</div>
+          <p>A supermarket does not need six separate CRM systems. One integrated CRM system may support multiple
+            functions using information from shared databases and connected systems such as EPOS and e-commerce
+            platforms.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 9: GLOSSARY -->
+      <section class="lesson-section" id="section-9">
+        <div class="section-title"><span class="section-symbol">📘</span>
+          <div><small>Section 09</small>
+            <h2>Important Terms and Definitions</h2>
+          </div>
+        </div>
+        <p>These key terms help students understand the vocabulary used throughout Topic 14.3.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Definition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CRM</td>
+                <td>Managing relationships and interactions with customers and stakeholders.</td>
+              </tr>
+              <tr>
+                <td>CRM system</td>
+                <td>Software used to manage and analyse customer information and interactions.</td>
+              </tr>
+              <tr>
+                <td>Marketing synchronisation</td>
+                <td>Coordinating promotional activities across different platforms.</td>
+              </tr>
+              <tr>
+                <td>Loyalty scheme</td>
+                <td>A rewards programme that encourages repeat purchases.</td>
+              </tr>
+              <tr>
+                <td>Buying trends</td>
+                <td>Patterns identified in customer purchasing behaviour.</td>
+              </tr>
+              <tr>
+                <td>Personalisation</td>
+                <td>Adapting services, offers or communications to individual customers.</td>
+              </tr>
+              <tr>
+                <td>Customer service</td>
+                <td>Assistance and support provided to customers.</td>
+              </tr>
+              <tr>
+                <td>Customer retention</td>
+                <td>Encouraging existing customers to continue purchasing.</td>
+              </tr>
+              <tr>
+                <td>Upselling</td>
+                <td>Encouraging customers to purchase a more expensive or upgraded product.</td>
+              </tr>
+              <tr>
+                <td>Cross-selling</td>
+                <td>Encouraging customers to buy additional related products.</td>
+              </tr>
+              <tr>
+                <td>EPOS</td>
+                <td>Electronic Point of Sale system used to process and record sales transactions.</td>
+              </tr>
+              <tr>
+                <td>E-commerce</td>
+                <td>Buying and selling products or services electronically, usually over the internet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 10: OVERALL UNDERSTANDING -->
+      <section class="lesson-section" id="section-10">
+        <div class="section-title"><span class="section-symbol">🎓</span>
+          <div><small>Section 10</small>
+            <h2>Overall Understanding of Topic 14.3</h2>
+          </div>
+        </div>
+        <p>Customer Relationship Management systems help organisations use customer data effectively.</p>
+        <p>They do more than store names and contact details. They analyse purchasing behaviour, coordinate marketing
+          activities, personalise services and support long-term customer relationships.</p>
+        <div class="diagram"><span class="diagram-label">The central CRM relationship</span>
+          <div class="process-row">
+            <div class="process-box"><span class="step-icon">🗄️</span><b>Customer data</b><small>Transactions,
+                preferences and interactions</small></div><span class="arrow">→</span>
+            <div class="process-box blue"><span class="step-icon">🧠</span><b>CRM analysis</b><small>Patterns, insights
+                and decisions</small></div><span class="arrow">→</span>
+            <div class="process-box green"><span class="step-icon">🤝</span><b>Customer actions</b><small>Better
+                service, offers and relationships</small></div>
+          </div>
+        </div>
+        <div class="definition">
+          <div class="callout-title">💜 The most important idea</div>
+          <p><strong>CRM systems use customer information to improve relationships between businesses and customers,
+              while also supporting sales growth and profitability.</strong></p>
+        </div>
+        
+         
+          </section>
+
+      <nav class="lesson-navigation" aria-label="Other lessons">
+        <a href="topic-14-02.html">← Topic 14.2</a>
+        <a href="topic-14-04.html">Topic 14.4  →</a>
+      </nav>
+
+      <footer class="page-footer">
+        <strong>Tr.Sun Education</strong>
+        <p>Edexcel International A Level IT</p>
+        <p>Created by <strong>Tr. Sun</strong></p>
+      </footer>
+    
+      </main>
   </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 14.3</h3><p>Customer Relationship Management Systems</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 14 lessons"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-14.html"><span class="nav-number">14</span><span>Topic 14 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 14 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 14"><a href="topic-14-01.html" ><span class="nav-number">14.1</span><span>The Role of IT Systems in Organisations</span></a>
-<a href="topic-14-02.html" ><span class="nav-number">14.2</span><span>Transaction Processing</span></a>
-<a href="topic-14-03.html" class="active" aria-current="page"><span class="nav-number">14.3</span><span>Customer Relationship Management Systems</span></a>
-<a href="topic-14-04.html" ><span class="nav-number">14.4</span><span>Management Information Systems</span></a>
-<a href="topic-14-05.html" ><span class="nav-number">14.5</span><span>Intelligent Transportation Systems</span></a>
-<a href="topic-14-06.html" ><span class="nav-number">14.6</span><span>Expert Systems</span></a>
-<a href="topic-14-07.html" ><span class="nav-number">14.7</span><span>IT Governance and Policy</span></a>
-<a href="topic-14-08.html" ><span class="nav-number">14.8</span><span>Managing IT Changeover</span></a>
-<a href="topic-14-09.html" ><span class="nav-number">14.9</span><span>System Maintenance</span></a>
-<a href="topic-14-10.html" ><span class="nav-number">14.10</span><span>Archiving Data</span></a>
-<a href="topic-14-11.html" ><span class="nav-number">14.11</span><span>Disaster Recovery Plans</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong><div>Unit 3 · A2 Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-14.html">Topic 14</a><span aria-hidden="true">›</span><strong>Lesson 14.3</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 3</span><h1>Customer Relationship Management Systems</h1><p>Edexcel International A Level IT · A2 Level</p><div class="hero-tags"><span>📖 Topic 14.3</span><span>💻 Using IT Systems in Organisations</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 14.3: Customer Relationship Management Systems</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 14 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-14.html">← Back to Topic 14</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-14-02.html" aria-label="Previous lesson">← Lesson 14.2</a><a href="topic-14-04.html" aria-label="Next lesson">Lesson 14.4 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script>
+    // Offline-friendly vanilla JavaScript; no external libraries.
+    (() => {
+      'use strict';
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      const toggle = document.getElementById('menuToggle');
+      const navLinks = [...document.querySelectorAll('#sectionNav a')];
+      const sections = [...document.querySelectorAll('.lesson-section')];
+      const progress = document.getElementById('readingProgress');
+      const topButton = document.getElementById('backToTop');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      function setMenu(open) {
+        sidebar.classList.toggle('open', open);
+        overlay.classList.toggle('active', open);
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+      }
+      toggle.addEventListener('click', () => setMenu(!sidebar.classList.contains('open')));
+      overlay.addEventListener('click', () => setMenu(false));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+      navLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
+      window.addEventListener('resize', () => { if (window.innerWidth > 960) setMenu(false); });
+
+      function updatePageState() {
+        const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        progress.style.width = `${Math.min(100, Math.max(0, (window.scrollY / maxScroll) * 100))}%`;
+        topButton.classList.toggle('visible', window.scrollY > 450);
+        // The active section is the last section whose top is near the viewing position.
+        let activeId = sections[0]?.id;
+        const threshold = window.innerWidth <= 960 ? 125 : 145;
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= threshold) activeId = section.id;
+          else break;
+        }
+        // Ensure final section is selected when the page is scrolled to the bottom.
+        if (maxScroll - window.scrollY < 6) activeId = sections[sections.length - 1]?.id;
+        navLinks.forEach(link => {
+          const selected = link.getAttribute('href') === `#${activeId}`;
+          link.classList.toggle('active', selected);
+          if (selected) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      let queued = false;
+      function requestUpdate() {
+        if (queued) return;
+        queued = true;
+        window.requestAnimationFrame(() => { queued = false; updatePageState(); });
+      }
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+      window.addEventListener('load', updatePageState);
+      topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' }));
+      updatePageState();
+    })();
+  </script>
 </body>
+
 </html>
