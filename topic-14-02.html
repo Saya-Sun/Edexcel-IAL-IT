@@ -1,124 +1,2799 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 14.2: Transaction Processing — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 14.2 – Transaction Processing | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description"
+    content="Edexcel IAL IT A2 Topic 14.2 Transaction Processing: EPOS, order processing, ACID, financial transaction requirements and Bacs. Tr.Sun Education.">
+  <title>Topic 14.2 - Transaction Processing | Tr.Sun Education</title>
+  <style>
+    :root {
+      --sidebar-width: 282px;
+      --navy: #111827;
+      --navy-2: #1e293b;
+      --purple: #7653e8;
+      --purple-dark: #5937c5;
+      --bg: #f5f7fc;
+      --surface: #fff;
+      --text: #253047;
+      --muted: #64748b;
+      --border: #e7eaf2;
+      --shadow: 0 8px 28px rgba(25, 33, 60, .045);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #b69aff;
+      outline-offset: 3px;
+    }
+
+    /* Sidebar and brand: shared with Topic 15.2 */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: var(--navy);
+      color: #fff;
+      z-index: 1000;
+      scrollbar-width: thin;
+      scrollbar-color: #45506a transparent;
+    }
+
+    .brand {
+      padding: 28px 18px 23px;
+      border-bottom: 1px solid #30394c;
+    }
+
+    .brand-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 62px;
+      height: 62px;
+      flex: 0 0 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #a06aff, #5837c6);
+      box-shadow: 0 8px 24px rgba(117, 83, 232, .3);
+    }
+
+    .brand-logo svg {
+      width: 49px;
+      height: 49px;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.3;
+      color: #fff;
+      letter-spacing: -.5px;
+    }
+
+    .brand-text p {
+      margin: 5px 0 0;
+      color: #c4b5fd;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .brand-curriculum {
+      margin-top: 20px;
+      color: #94a3b8;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.15px;
+    }
+
+    .current-lesson {
+      margin: 22px 13px 13px;
+      padding: 16px;
+      border: 1px solid #4b3a86;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #382b65, #29234a);
+    }
+
+    .current-lesson small {
+      display: block;
+      margin-bottom: 8px;
+      color: #c4b5fd;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 1px;
+    }
+
+    .current-lesson h3 {
+      margin: 0;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .current-lesson p {
+      margin: 4px 0 0;
+      color: #d6d0ea;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .sidebar-label {
+      padding: 18px 23px 12px;
+      color: #8591a8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+    }
+
+    .side-nav {
+      padding: 0 12px 18px;
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 5px;
+      padding: 11px 12px;
+      color: #cbd5e1;
+      font-size: 12.5px;
+      line-height: 1.4;
+      border-radius: 11px;
+      transition: background .2s, color .2s;
+    }
+
+    .side-nav a:hover {
+      background: #283249;
+      color: #fff;
+    }
+
+    .side-nav a.active {
+      background: #392b66;
+      color: #fff;
+      box-shadow: inset 3px 0 #a78bfa;
+    }
+
+    .nav-number {
+      flex-shrink: 0;
+      width: 34px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: #293449;
+      color: #bac5d8;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .side-nav a.active .nav-number {
+      background: #8157ed;
+      color: #fff;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 21px 22px;
+      border-top: 1px solid #30394c;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .sidebar-footer strong {
+      color: #e2e8f0;
+    }
+
+    /* Page chrome */
+    .main {
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+      padding: 34px 42px 55px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      color: #78849a;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: inherit;
+    }
+
+    .breadcrumb a:hover {
+      color: #6744d0;
+    }
+
+    .breadcrumb strong {
+      color: #6744d0;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 47px 44px;
+      border-radius: 24px;
+      background: linear-gradient(115deg, #4934b5 0%, #7753e7 55%, #ad72ed 100%);
+      box-shadow: 0 15px 35px rgba(88, 60, 180, .16);
+      color: #fff;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .15);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      right: -100px;
+      top: -200px;
+    }
+
+    .hero::after {
+      width: 250px;
+      height: 250px;
+      right: 90px;
+      bottom: -175px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 15px;
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .8px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 3.6vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 21px 0 14px;
+    }
+
+    .hero p {
+      max-width: 710px;
+      color: #f2ecff;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-tags span {
+      padding: 8px 13px;
+      font-size: 11px;
+      font-weight: 650;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .17);
+    }
+
+    .introduction {
+      margin: 30px 0;
+      padding: 27px 31px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--purple);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .introduction h2 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .introduction p {
+      margin: 9px 0;
+    }
+
+    /* Lesson sections: same white card treatment as Topic 15.2 */
+    .lesson-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 23px;
+      border-bottom: 1px solid #eef0f5;
+    }
+
+    .section-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      font-size: 26px;
+    }
+
+    .purple {
+      background: #f2edff;
+    }
+
+    .blue {
+      background: #ebf4ff;
+    }
+
+    .green {
+      background: #eaf9f1;
+    }
+
+    .section-heading small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: #1e293b;
+      margin: 3px 0 0;
+      line-height: 1.3;
+      font-size: clamp(21px, 2.5vw, 26px);
+    }
+
+    h3 {
+      color: #25324a;
+      margin: 27px 0 12px;
+      font-size: 18px;
+    }
+
+    h4 {
+      color: #24334b;
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    strong {
+      color: #26354d;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    li {
+      padding: 4px 0;
+    }
+
+    li::marker {
+      color: var(--purple);
+      font-weight: bold;
+    }
+
+    .content-card {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+
+    .content-card+.content-card {
+      margin-top: 29px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border);
+    }
+
+    .content-card>p:first-child {
+      margin-top: 0;
+    }
+
+    .content-card>p:last-child {
+      margin-bottom: 0;
+    }
+
+    .definition {
+      margin: 19px 0;
+      padding: 19px 22px;
+      border-radius: 12px;
+      border-left: 4px solid #875bea;
+      background: #f4f0ff;
+    }
+
+    .definition .label {
+      display: block;
+      color: #633cb8;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .definition p {
+      margin: 5px 0 0;
+      color: #3a3368;
+    }
+
+    .definition strong {
+      color: #633cb8;
+    }
+
+    /* Characteristic cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .feature {
+      padding: 21px;
+      border: 1px solid rgba(80, 100, 145, .08);
+      border-radius: 14px;
+      background: #f2edff;
+    }
+
+    .feature:nth-child(4n + 2) {
+      background: #ebf4ff;
+    }
+
+    .feature:nth-child(4n + 3) {
+      background: #eaf9f1;
+    }
+
+    .feature:nth-child(4n + 4) {
+      background: #fff4e5;
+    }
+
+    .feature-icon {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .feature h4 {
+      font-size: 15px;
+    }
+
+    .feature p {
+      color: #526177;
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Practical examples */
+    .example-box {
+      margin-top: 23px;
+      padding: 23px 25px;
+      background: #effbf5;
+      border: 1px solid #c9ecda;
+      border-radius: 14px;
+    }
+
+    .example-label {
+      color: #11825b;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .example-box h3 {
+      margin: 9px 0 11px;
+      color: #176b50;
+    }
+
+    .example-box p {
+      margin: 9px 0;
+    }
+
+    .example-box strong {
+      color: #176b50;
+    }
+
+    .example-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      margin: 19px 0 4px;
+    }
+
+    .example-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid #dbf3e7;
+      border-radius: 10px;
+      padding: 13px 14px;
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .check {
+      color: #059669;
+      font-weight: 800;
+    }
+
+    .note-box {
+      background: #fff8ec;
+      border: 1px solid #f7e2b8;
+      border-radius: 13px;
+      padding: 19px 22px;
+      margin-top: 22px;
+      color: #725021;
+      font-size: 14px;
+    }
+
+    .note-box strong {
+      color: #a56518;
+    }
+
+    /* Time, cost and quality cards */
+    .constraint-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .constraint-card {
+      border: 1px solid rgba(80, 100, 145, .1);
+      border-radius: 14px;
+      padding: 23px 16px;
+      text-align: center;
+    }
+
+    .constraint-card .big-icon {
+      display: block;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .constraint-card h3 {
+      font-size: 19px;
+      margin: 0 0 8px;
+    }
+
+    .constraint-card p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #526177;
+      margin: 0;
+    }
+
+    .time-card {
+      background: #ebf4ff;
+    }
+
+    .time-card h3 {
+      color: #2563eb;
+    }
+
+    .cost-card {
+      background: #eaf9f1;
+    }
+
+    .cost-card h3 {
+      color: #15805a;
+    }
+
+    .quality-card {
+      background: #f2edff;
+    }
+
+    .quality-card h3 {
+      color: #7550c9;
+    }
+
+    .relationship {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 21px 0 0;
+    }
+
+    .relationship span {
+      border-radius: 30px;
+      background: #f1f3f9;
+      color: #4a5870;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .relationship b {
+      color: #8157ed;
+    }
+
+    /* Problems table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      margin: 22px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    thead {
+      background: #f1edff;
+    }
+
+    th {
+      color: #5a36ad;
+      text-align: left;
+      padding: 15px 17px;
+    }
+
+    td {
+      padding: 15px 17px;
+      vertical-align: top;
+      border-top: 1px solid var(--border);
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff;
+    }
+
+    .problem-name {
+      color: #24334b;
+      font-weight: 700;
+    }
+
+    /* Benefits */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 17px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 19px;
+      border: 1px solid rgba(80, 100, 145, .1);
+      border-radius: 14px;
+      background: #f6f8ff;
+    }
+
+    .benefit:nth-child(4n+2) {
+      background: #edf8ff;
+    }
+
+    .benefit:nth-child(4n+3) {
+      background: #eefaf3;
+    }
+
+    .benefit:nth-child(4n+4) {
+      background: #fff5e8;
+    }
+
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      background: #d1fae5;
+      color: #059669;
+      border-radius: 50%;
+      font-weight: 800;
+    }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .benefit p {
+      color: #526177;
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Reading controls */
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+    .reading-progress {
+      position: fixed;
+      left: var(--sidebar-width);
+      top: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #7955e8, #bd7aff);
+      z-index: 200;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 13px;
+      background: #6442cf;
+      color: #fff;
+      font-size: 21px;
+      cursor: pointer;
+      box-shadow: 0 7px 20px #6442cf33;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: .2s;
+      z-index: 80;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      background: #4e2db3;
+    }
+
+    .menu-button,
+    .overlay {
+      display: none;
+    }
+
+    /* Mobile and tablet */
+    @media (max-width: 1050px) {
+      .main {
+        padding: 28px;
+      }
+
+      .lesson-section {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .sidebar {
+        width: 280px;
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 78px 16px 35px;
+      }
+
+      .menu-button {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        position: fixed;
+        top: 15px;
+        left: 16px;
+        z-index: 900;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 11px;
+        background: var(--navy-2);
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 5px 18px #0002;
+      }
+
+      .overlay.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(13, 18, 30, .65);
+        z-index: 950;
+      }
+
+      .hero {
+        padding: 33px 25px;
+        border-radius: 19px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .introduction {
+        padding: 23px 20px;
+      }
+
+      .lesson-section {
+        padding: 25px 19px;
+        border-radius: 16px;
+      }
+
+      .section-heading {
+        gap: 12px;
+      }
+
+      .section-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 23px;
+      }
+
+      .constraint-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reading-progress {
+        left: 0;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .feature-grid,
+      .example-list,
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 29px 21px;
+      }
+
+      .hero-tags {
+        gap: 7px;
+      }
+
+      .hero-tags span {
+        font-size: 10px;
+      }
+
+      .section-heading h2 {
+        font-size: 20px;
+      }
+
+      .example-box {
+        padding: 20px;
+      }
+
+      .relationship {
+        gap: 7px;
+      }
+
+      .relationship span {
+        font-size: 11px;
+        padding: 6px 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+
+    /* Topic 15.3-specific additions, matching the shared Tr.Sun design */
+    .lesson-overview {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 6px;
+    }
+
+    .overview-tile {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 16px 10px;
+      border-radius: 13px;
+      border: 1px solid #e8e7f6;
+      background: #f8f6ff;
+      color: #4a398b;
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1.4;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .overview-tile:nth-child(5n+2) {
+      background: #eff6ff;
+      border-color: #dbeafe;
+      color: #245a9d;
+    }
+
+    .overview-tile:nth-child(5n+3) {
+      background: #ecfbf5;
+      border-color: #d4f3e6;
+      color: #17694f;
+    }
+
+    .overview-tile:nth-child(5n+4) {
+      background: #fff7ed;
+      border-color: #ffead5;
+      color: #9a5514;
+    }
+
+    .overview-tile:nth-child(5n+5) {
+      background: #fff1f5;
+      border-color: #ffe0e9;
+      color: #9b3b6a;
+    }
+
+    .overview-tile span {
+      font-size: 26px;
+      line-height: 1.3;
+    }
+
+    .overview-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px #1e293b10;
+    }
+
+    .subtle-intro {
+      color: #526177;
+    }
+
+    .point-box {
+      margin-top: 21px;
+      background: #f0f4ff;
+      border: 1px solid #dce5ff;
+      border-left: 4px solid #7c5be5;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #344160;
+    }
+
+    .point-box strong {
+      color: #5e42bf;
+    }
+
+    .compact-list {
+      margin-top: 11px;
+      margin-bottom: 15px;
+    }
+
+    .bullet-title {
+      color: #334155;
+      font-weight: 800;
+    }
+
+    .warning-box {
+      margin-top: 20px;
+      background: #fff8ec;
+      border: 1px solid #f4deb0;
+      border-left: 4px solid #e9a34e;
+      padding: 18px 20px;
+      border-radius: 12px;
+    }
+
+    .warning-box strong {
+      color: #925411;
+    }
+
+    .warning-box p {
+      margin: 6px 0;
+    }
+
+    .case-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 15px 0 21px;
+    }
+
+    .case-header .case-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      border-radius: 13px;
+      background: #d5f5e5;
+    }
+
+    .case-header h3 {
+      margin: 0;
+    }
+
+    .case-header p {
+      margin: 1px 0 0;
+      color: #5c7166;
+      font-size: 12px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+      margin: 22px 0;
+    }
+
+    .metric-card {
+      background: #f6f3ff;
+      border: 1px solid #eae2ff;
+      border-radius: 13px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .metric-card:nth-child(2) {
+      background: #edfbf4;
+      border-color: #d9f3e4;
+    }
+
+    .metric-card:nth-child(3) {
+      background: #eff6ff;
+      border-color: #d9eaff;
+    }
+
+    .metric-card .metric-number {
+      display: block;
+      font-size: 25px;
+      font-weight: 850;
+      color: #6442cf;
+      line-height: 1.4;
+    }
+
+    .metric-card:nth-child(2) .metric-number {
+      color: #147d54;
+    }
+
+    .metric-card:nth-child(3) .metric-number {
+      color: #2765bc;
+    }
+
+    .metric-card .metric-label {
+      font-size: 12px;
+      color: #526177;
+      font-weight: 650;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .comparison-card {
+      border: 1px solid #e6e8f1;
+      background: #f9faff;
+      border-radius: 15px;
+      padding: 23px;
+    }
+
+    .comparison-card h3 {
+      margin: 0 0 10px;
+      color: #6341c9;
+    }
+
+    .comparison-card:nth-child(2) {
+      background: #f1fbf6;
+      border-color: #ddf2e6;
+    }
+
+    .comparison-card:nth-child(2) h3 {
+      color: #16815d;
+    }
+
+    .comparison-card p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .step-list {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 11px;
+    }
+
+    .step-list li {
+      counter-increment: steps;
+      position: relative;
+      padding: 13px 15px 13px 49px;
+      background: #f6f8fc;
+      border: 1px solid #e8ecf4;
+      border-radius: 12px;
+    }
+
+    .step-list li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      background: #7958e3;
+      border-radius: 8px;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .step-list li::marker {
+      content: "";
+    }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    @media (max-width:1120px) {
+      .lesson-overview {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width:550px) {
+      .lesson-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .metric-grid,
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-tile {
+        padding: 12px 7px;
+      }
+
+      .lesson-navigation a {
+        width: 100%;
+      }
+
+      .case-header {
+        align-items: flex-start;
+      }
+    }
+
+    /* Topic 14.2 interactive-free diagrams and learning elements */
+    .toc-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 9px;
+    }
+
+    .toc-jump a {
+      padding: 8px 12px;
+      background: #f6f3ff;
+      border: 1px solid #e8ddff;
+      border-radius: 9px;
+      color: #5e42bb;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .toc-jump a:hover {
+      background: #eae2ff;
+    }
+
+    .subsection {
+      scroll-margin-top: 28px;
+    }
+
+    .numbered-title {
+      margin-top: 28px;
+    }
+
+    .process-flow {
+      display: grid;
+      gap: 9px;
+      margin: 23px auto;
+      max-width: 750px;
+    }
+
+    .process-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #f6f8ff;
+      border: 1px solid #e3e9f5;
+      border-radius: 12px;
+      padding: 15px 17px;
+    }
+
+    .process-step:nth-of-type(2n) {
+      background: #eef8ff;
+    }
+
+    .process-step .step-symbol {
+      width: 37px;
+      height: 37px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #e7dcff;
+      font-size: 20px;
+    }
+
+    .process-step h4 {
+      margin: 0 0 3px;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: #526177;
+      font-size: 13px;
+    }
+
+    .process-arrow {
+      text-align: center;
+      color: #7e62da;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .flow-caption {
+      font-size: 12px;
+      color: #69758c;
+      text-align: center;
+      margin-top: -5px;
+    }
+
+    .acid-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 13px;
+      margin: 21px 0 6px;
+    }
+
+    .acid-card {
+      text-align: center;
+      padding: 20px 11px;
+      border-radius: 13px;
+      border: 1px solid #e7e4f7;
+      background: #f3eeff;
+    }
+
+    .acid-card:nth-child(2) {
+      background: #eaf4ff;
+      border-color: #d9eafd;
+    }
+
+    .acid-card:nth-child(3) {
+      background: #e9f9ef;
+      border-color: #d3f0df;
+    }
+
+    .acid-card:nth-child(4) {
+      background: #fff4e8;
+      border-color: #f8e4cb;
+    }
+
+    .acid-letter {
+      display: block;
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1.12;
+      color: #7550c9;
+    }
+
+    .acid-card:nth-child(2) .acid-letter {
+      color: #2462ac;
+    }
+
+    .acid-card:nth-child(3) .acid-letter {
+      color: #12875b;
+    }
+
+    .acid-card:nth-child(4) .acid-letter {
+      color: #b56d1a;
+    }
+
+    .acid-card strong {
+      display: block;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .acid-card p {
+      margin: 2px 0 0;
+      font-size: 11.5px;
+      color: #526177;
+    }
+
+    .stat-comparison {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .stat-tile {
+      background: #f4f0ff;
+      border: 1px solid #e8e0ff;
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .stat-tile:nth-child(2) {
+      background: #fff7ed;
+      border-color: #f4e5cf;
+    }
+
+    .stat-tile:nth-child(3) {
+      background: #ebfaf2;
+      border-color: #d5eddf;
+    }
+
+    .stat-tile span {
+      display: block;
+      font-size: 29px;
+      font-weight: 850;
+      color: #6948c7;
+      line-height: 1.25;
+    }
+
+    .stat-tile:nth-child(2) span {
+      color: #ba7423;
+    }
+
+    .stat-tile:nth-child(3) span {
+      color: #14805b;
+    }
+
+    .stat-tile small {
+      font-size: 11px;
+      color: #526177;
+      font-weight: 700;
+    }
+
+    .transfer {
+      margin: 20px 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+    }
+
+    .transfer-node {
+      padding: 17px 12px;
+      background: #f4f6fc;
+      border: 1px solid #e1e7f0;
+      border-radius: 13px;
+      text-align: center;
+    }
+
+    .transfer-node b {
+      display: block;
+      color: #26354d;
+    }
+
+    .transfer-node span {
+      display: block;
+      font-size: 24px;
+      color: #6245bf;
+      font-weight: 850;
+    }
+
+    .transfer-node small {
+      display: block;
+      color: #64748b;
+      font-size: 11px;
+    }
+
+    .transfer-arrow {
+      display: grid;
+      place-items: center;
+      gap: 2px;
+      color: #6950c6;
+      font-weight: 800;
+      font-size: 24px;
+    }
+
+    .transfer-arrow small {
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .acid-detail {
+      border-top: 1px solid #ecedf3;
+      padding-top: 6px;
+    }
+
+    .key-point {
+      margin: 19px 0;
+      padding: 15px 18px;
+      border-left: 4px solid #8160df;
+      border-radius: 10px;
+      background: #f3f0ff;
+      color: #49416d;
+      font-size: 14px;
+    }
+
+    .key-point strong {
+      color: #6143b7;
+    }
+
+    .section-number {
+      display: inline-block;
+      color: #7254c5;
+      font-size: 12px;
+      font-weight: 800;
+      margin-right: 7px;
+    }
+
+    .callout-red {
+      background: #fff2f1;
+      border: 1px solid #ffd6d1;
+      border-left: 4px solid #e87163;
+      color: #8d413a;
+      border-radius: 12px;
+      padding: 17px 19px;
+      margin: 20px 0;
+    }
+
+    .callout-red strong {
+      color: #a74237;
+    }
+
+    .compare-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 19px 0;
+    }
+
+    .compare-panel {
+      border: 1px solid #e2e7f1;
+      border-radius: 13px;
+      padding: 19px;
+      background: #f4f7ff;
+    }
+
+    .compare-panel:nth-child(2) {
+      background: #f1fbf6;
+      border-color: #d8efdf;
+    }
+
+    .compare-panel h4 {
+      font-size: 15px;
+    }
+
+    .compare-panel ul {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .pill-label {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #5e42bb;
+      letter-spacing: .02em;
+    }
+
+    .highlight-row td:first-child {
+      font-weight: 750;
+      color: #5740b0;
+    }
+
+    .terms-table td:first-child {
+      font-weight: 800;
+      color: #5a3fb4;
+      width: 25%;
+    }
+
+    .section-ending {
+      font-size: 13px;
+      color: #64748b;
+      padding-top: 9px;
+    }
+
+    @media(max-width:1050px) {
+      .acid-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media(max-width:550px) {
+      .stat-comparison {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-tile:last-child {
+        grid-column: 1/-1;
+      }
+
+      .compare-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .transfer {
+        grid-template-columns: 1fr;
+      }
+
+      .transfer-arrow {
+        transform: rotate(90deg);
+        margin: 3px auto;
+      }
+
+      .acid-grid {
+        gap: 9px;
+      }
+
+      .acid-card {
+        padding: 17px 8px;
+      }
+
+      .toc-jump a {
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-  </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 14.2</h3><p>Transaction Processing</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 14 lessons"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-14.html"><span class="nav-number">14</span><span>Topic 14 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 14 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 14"><a href="topic-14-01.html" ><span class="nav-number">14.1</span><span>The Role of IT Systems in Organisations</span></a>
-<a href="topic-14-02.html" class="active" aria-current="page"><span class="nav-number">14.2</span><span>Transaction Processing</span></a>
-<a href="topic-14-03.html" ><span class="nav-number">14.3</span><span>Customer Relationship Management Systems</span></a>
-<a href="topic-14-04.html" ><span class="nav-number">14.4</span><span>Management Information Systems</span></a>
-<a href="topic-14-05.html" ><span class="nav-number">14.5</span><span>Intelligent Transportation Systems</span></a>
-<a href="topic-14-06.html" ><span class="nav-number">14.6</span><span>Expert Systems</span></a>
-<a href="topic-14-07.html" ><span class="nav-number">14.7</span><span>IT Governance and Policy</span></a>
-<a href="topic-14-08.html" ><span class="nav-number">14.8</span><span>Managing IT Changeover</span></a>
-<a href="topic-14-09.html" ><span class="nav-number">14.9</span><span>System Maintenance</span></a>
-<a href="topic-14-10.html" ><span class="nav-number">14.10</span><span>Archiving Data</span></a>
-<a href="topic-14-11.html" ><span class="nav-number">14.11</span><span>Disaster Recovery Plans</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong><div>Unit 3 · A2 Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-14.html">Topic 14</a><span aria-hidden="true">›</span><strong>Lesson 14.2</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 2</span><h1>Transaction Processing</h1><p>Edexcel International A Level IT · A2 Level</p><div class="hero-tags"><span>📖 Topic 14.2</span><span>💻 Using IT Systems in Organisations</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 14.2: Transaction Processing</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 14 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-14.html">← Back to Topic 14</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-14-01.html" aria-label="Previous lesson">← Lesson 14.1</a><a href="topic-14-03.html" aria-label="Next lesson">Lesson 14.3 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-label="Open lesson navigation"
+    aria-expanded="false">☰ <span>Lesson Menu</span></button>
+  <div class="overlay" id="overlay"></div>
+  <div class="reading-progress" id="readingProgress"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-identity">
+        <div class="brand-logo">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
+            <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h2>Tr.Sun Education</h2>
+          <p>Learn · Explore · Achieve</p>
+        </div>
+      </div>
+      <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
+    </div>
+    <div class="current-lesson"><small>YOU ARE STUDYING</small>
+      <h3>📖 Topic 14.2</h3>
+      <p>Transaction Processing</p>
+    </div>
+    <div class="sidebar-label">LESSON CONTENTS</div>
+    <nav class="side-nav" aria-label="Lesson sections"><a class="active" href="#introduction-to-tp"><span
+          class="nav-number">1</span><span>Transaction Processing</span></a>
+      <a href="#epos"><span class="nav-number">2</span><span>EPOS Systems</span></a>
+      <a href="#order-processing"><span class="nav-number">3</span><span>Order Processing & ACID</span></a>
+      <a href="#financial"><span class="nav-number">4</span><span>Financial Transactions</span></a>
+      <a href="#bacs"><span class="nav-number">5</span><span>Bacs Payments</span></a>
+      <a href="#worked-example"><span class="nav-number">6</span><span>Worked Business Example</span></a>
+    </nav>
+
+    <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong>
+      <div>Unit 3 · A2 Level</div>
+      <div style="margin-top:12px">Created by Tr. Sun</div>
+    </div>
+
+  </aside>
+
+  <main class="main">
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Edexcel IAL IT</a>
+        <span>›</span>
+        <a href="topic-14.html">Topic 14</a>
+        <span>›</span>
+        <strong>14.2</strong>
+      </nav>
+
+
+      <header class="hero" id="overview">
+
+        <div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 2</span>
+          
+          <h1>Transaction Processing</h1>
+
+          <p>Learn how organisations process sales, update inventory, manage orders, protect databases using ACID
+            principles and perform reliable financial transactions.</p>
+
+          <div class="hero-tags">
+            <span>💳 EPOS &amp; Sales</span>
+            <span>🧩 ACID Principles</span>
+            <span>🏦 Financial Payments</span>
+            <span>🎓 A2 Level</span>
+          </div>
+
+        </div>
+      </header>
+
+
+      <section class="lesson-section" id="introduction-to-tp" style="margin-top: 28px;">
+        <div class="section-heading">
+          <div class="section-icon purple" aria-hidden="true">🔄</div>
+          <div><small>Section 14.2.1</small>
+            <h2>1. Introduction to Transaction Processing</h2>
+          </div>
+        </div>
+        <div class="content-card subsection" id="what-is-tp">
+          <h3>1.1 What is transaction processing?</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Transaction Processing (TP)</span>
+            <p><strong>Transaction processing</strong> is the process of managing individual tasks that involve changes
+              to data within an information system.</p>
+          </div>
+          <p>A <strong>transaction</strong> is an action that reads, adds, updates or deletes data as part of a
+            particular operation. Transaction processing is commonly used wherever an organisation records purchases,
+            payments, orders or inventory movements.</p>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-icon">🏦</div>
+              <h4>Financial transactions</h4>
+              <p>Bank transfers, card payments and electronic bill payments.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🛒</div>
+              <h4>Sales transactions</h4>
+              <p>Purchasing products at a store checkout or through an online shop.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📦</div>
+              <h4>Inventory transactions</h4>
+              <p>Updating stock quantities after sales, deliveries or returns.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🎟️</div>
+              <h4>Order transactions</h4>
+              <p>Recording online orders, bookings and reservations.</p>
+            </div>
+          </div>
+          <p>The main purpose of transaction processing is to maintain <strong>data integrity</strong> so that stored
+            data remains accurate, complete and consistent. Transactions are typically short-lived and self-contained,
+            but often interact with large databases.</p>
+          <div class="definition"><span class="label">KEY DEFINITION · Data Integrity</span>
+            <p><strong>Data integrity</strong> refers to keeping stored information accurate, complete and consistent
+              throughout its use and processing.</p>
+          </div>
+        </div>
+        <div class="content-card subsection" id="tp-workflow">
+          <h3>1.2 How transaction processing works</h3>
+          <p>Consider an online shop selling laptops. When a customer makes a purchase, several related operations take
+            place:</p>
+          <div class="process-flow" role="group" aria-label="Steps in an online shopping transaction">
+            <div class="process-step"><span class="step-symbol">🛒</span>
+              <div>
+                <h4>1. Customer places an order</h4>
+                <p>The customer chooses a laptop and confirms the purchase.</p>
+              </div>
+            </div>
+            <div class="process-arrow" aria-hidden="true">↓</div>
+            <div class="process-step"><span class="step-symbol">💳</span>
+              <div>
+                <h4>2. Payment is processed</h4>
+                <p>The system requests authorisation for the payment.</p>
+              </div>
+            </div>
+            <div class="process-arrow" aria-hidden="true">↓</div>
+            <div class="process-step"><span class="step-symbol">📦</span>
+              <div>
+                <h4>3. Stock records are updated</h4>
+                <p>The available quantity is reduced to reflect the purchase.</p>
+              </div>
+            </div>
+            <div class="process-arrow" aria-hidden="true">↓</div>
+            <div class="process-step"><span class="step-symbol">🧾</span>
+              <div>
+                <h4>4. Order is recorded</h4>
+                <p>The order details are saved and the customer receives confirmation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="note-box"><strong>Important:</strong> The operations must be coordinated correctly. If a customer
+            is charged but the order is not recorded, the system has not completed the purchase correctly. Real payment
+            processing may involve separate payment and database systems, so additional coordination is required.</div>
+        </div>
+        <div class="content-card subsection" id="tp-importance">
+          <h3>1.3 Why transaction processing is important</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Importance</th>
+                  <th>Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Data accuracy</strong></td>
+                  <td>Ensures that transaction records contain correct information.</td>
+                </tr>
+                <tr>
+                  <td><strong>Data integrity</strong></td>
+                  <td>Prevents incomplete or conflicting changes to stored data.</td>
+                </tr>
+                <tr>
+                  <td><strong>Efficiency</strong></td>
+                  <td>Automates routine operations and reduces manual work.</td>
+                </tr>
+                <tr>
+                  <td><strong>Reliability</strong></td>
+                  <td>Helps systems handle transactions without losing important information.</td>
+                </tr>
+                <tr>
+                  <td><strong>Customer confidence</strong></td>
+                  <td>Allows users to trust purchases, payments and reservations.</td>
+                </tr>
+                <tr>
+                  <td><strong>Up-to-date records</strong></td>
+                  <td>Provides current stock, order and account information.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example-box"><span class="example-label">💡 Example · Supermarket stock</span>
+            <p>A supermarket has <strong>50 bottles</strong> of water. A customer buys <strong>6 bottles</strong>, so
+              the stock database should show <strong>44 bottles</strong>. Without this update, employees might make
+              decisions using incorrect stock information.</p>
+          </div>
+        </div>
+        <div class="content-card subsection" id="tp-characteristics">
+          <h3>1.4 Characteristics of transaction processing</h3>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-icon">⏱️</div>
+              <h4>Short-lived</h4>
+              <p>A transaction usually takes a short time, for example recording a single purchase.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🎯</div>
+              <h4>Self-contained</h4>
+              <p>Each transaction represents a particular operation, such as reserving a seat.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🗄️</div>
+              <h4>Database interaction</h4>
+              <p>Transactions read, insert or change records in a database.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">✅</div>
+              <h4>Consistent and reliable</h4>
+              <p>Systems aim to avoid incorrect and incomplete updates.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📈</div>
+              <h4>High volumes</h4>
+              <p>Businesses may need to process many transactions at the same time.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🔗</div>
+              <h4>Part of larger systems</h4>
+              <p>Small transactions often interact with a wider IT system, such as inventory and finance databases.</p>
+            </div>
+          </div>
+        </div>
+        <div class="key-point"><strong>Key point:</strong> Transaction processing is not just recording a purchase. It
+          keeps important business information correct while actions take place.</div>
+      </section>
+
+      <section class="lesson-section" id="epos">
+        <div class="section-heading">
+          <div class="section-icon blue" aria-hidden="true">🛍️</div>
+          <div><small>Section 14.2.2</small>
+            <h2>2. Electronic Point of Sale (EPOS)</h2>
+          </div>
+        </div>
+        <div class="content-card subsection" id="epos-definition">
+          <h3>2.1 What is an EPOS system?</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Electronic Point of Sale</span>
+            <p>An <strong>EPOS system</strong> is a computer-based system used to process sales transactions and manage
+              associated business information.</p>
+          </div>
+          <p>Modern stores, supermarkets, restaurants and cafés often use EPOS systems rather than traditional cash
+            registers. Unlike a basic cash register, an EPOS system can link sales activity with <strong>inventory
+              databases</strong>, <strong>customer records</strong> and <strong>back-office processes</strong>.</p>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-icon">🏪</div>
+              <h4>Retail shops</h4>
+              <p>Scan products, record purchases and calculate totals.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🍽️</div>
+              <h4>Restaurants and cafés</h4>
+              <p>Take orders, process bills and track popular items.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🛒</div>
+              <h4>Supermarkets</h4>
+              <p>Process high volumes of transactions and update stock automatically.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📱</div>
+              <h4>Self-service checkouts</h4>
+              <p>Allow customers to scan and pay for items themselves.</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-card subsection" id="epos-components">
+          <h3>2.2 Components of an EPOS system</h3>
+          <p>An EPOS setup may use some or all of the following components:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Function</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Touchscreen / computer</td>
+                  <td>Allows employees to enter orders and operate the system.</td>
+                </tr>
+                <tr>
+                  <td>Barcode scanner</td>
+                  <td>Reads product barcodes to identify goods quickly.</td>
+                </tr>
+                <tr>
+                  <td>Card / contactless reader</td>
+                  <td>Accepts supported cards and smartphone payments.</td>
+                </tr>
+                <tr>
+                  <td>Cash drawer</td>
+                  <td>Stores cash received from customers.</td>
+                </tr>
+                <tr>
+                  <td>Receipt printer</td>
+                  <td>Prints details of completed sales.</td>
+                </tr>
+                <tr>
+                  <td>EPOS software</td>
+                  <td>Calculates totals, records transactions and manages sales data.</td>
+                </tr>
+                <tr>
+                  <td>Stock database</td>
+                  <td>Stores product information and available quantities.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>A small café may use a tablet-based system, while a large supermarket may use dedicated checkout terminals.
+          </p>
+        </div>
+        <div class="content-card subsection" id="epos-functions">
+          <h3>2.3 Main functions of EPOS systems</h3>
+          <h3>A. Sales processing</h3>
+          <p>Sales processing involves recording products or services purchased and handling customer payments.</p>
+          <ul>
+            <li>Identify products from barcodes or product selections.</li>
+            <li>Retrieve product prices and calculate totals.</li>
+            <li>Process supported payment methods.</li>
+            <li>Record completed sales and produce receipts.</li>
+          </ul>
+          <div class="example-box"><span class="example-label">💡 Example · Shop checkout</span>
+            <p>A customer buys items costing <strong>$10, $15 and $20</strong>. The EPOS system calculates the total of
+              <strong>$45</strong> and records the transaction after payment.</p>
+            <p><strong>Benefit:</strong> Faster and more accurate checkout processing.</p>
+          </div>
+          <h3>B. Inventory management</h3>
+          <p>An EPOS system can connect to a stock database and adjust product quantities after a sale. When stock
+            reaches a predefined <strong>reorder level</strong>, the system may automatically initiate stock
+            replenishment.</p>
+          <div class="stat-comparison">
+            <div class="stat-tile"><span>100</span><small>Units before sale</small></div>
+            <div class="stat-tile"><span>−8</span><small>Units sold</small></div>
+            <div class="stat-tile"><span>92</span><small>Units remaining</small></div>
+          </div>
+          <ul>
+            <li>Maintains up-to-date stock information.</li>
+            <li>Reduces manual record keeping.</li>
+            <li>Helps avoid running out of popular products.</li>
+            <li>Supports more efficient stock replenishment.</li>
+            <li>Helps reduce unnecessary orders.</li>
+          </ul>
+          <h3>C. Customer insights</h3>
+          <p>EPOS systems collect detailed sales data, helping managers identify popular and unpopular products,
+            purchasing trends, busy times and changes in customer demand.</p>
+          <div class="example-box"><span class="example-label">💡 Example · Café demand</span>
+            <p>A café finds that iced coffee sells most frequently between <strong>1 p.m. and 4 p.m.</strong> It can
+              schedule staff and prepare enough ingredients during that period.</p>
+            <p><strong>Benefit:</strong> More informed decisions about stock, staffing and marketing.</p>
+          </div>
+          <h3>D. Improved customer experience</h3>
+          <p>EPOS can make shopping more convenient through faster checkouts, contactless payments, self-service
+            checkouts, loyalty-card integration and accurate receipts.</p>
+          <div class="example-box"><span class="example-label">💡 Example · Self-service checkout</span>
+            <p>A customer with only a few products can scan and pay for them at a self-service station without asking a
+              cashier to scan each item.</p>
+          </div>
+        </div>
+        <div class="content-card subsection" id="self-checkout">
+          <h3>2.4 Self-service checkout systems</h3>
+          <p>A <strong>self-service checkout</strong> enables customers to scan products and complete payments with
+            limited staff involvement.</p>
+          <div class="compare-2">
+            <div class="compare-panel">
+              <h4>✅ Potential benefits</h4>
+              <ul>
+                <li>Customers with a few items may finish more quickly.</li>
+                <li>Several checkout stations can be supervised by one employee.</li>
+                <li>Staff can be reassigned to other tasks.</li>
+                <li>Customers have more checkout choices.</li>
+              </ul>
+            </div>
+            <div class="compare-panel">
+              <h4>⚠️ Potential drawbacks</h4>
+              <ul>
+                <li>Some customers find checkout machines difficult to use.</li>
+                <li>Technical problems require employee assistance.</li>
+                <li>Incorrect scanning or deliberate non-payment may cause losses.</li>
+                <li>Some customers prefer face-to-face service.</li>
+                <li>Traditional cashier duties may be reduced.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note-box"><strong>Important:</strong> Self-service checkouts do not benefit every customer
+            equally. Accessibility needs, technical confidence and personal preferences may affect the experience.</div>
+        </div>
+        <div class="key-point"><strong>Key point:</strong> EPOS links sales processing to inventory and business
+          information, helping organisations make operational decisions.</div>
+      </section>
+
+      <section class="lesson-section" id="order-processing">
+        <div class="section-heading">
+          <div class="section-icon green" aria-hidden="true">🧩</div>
+          <div><small>Section 14.2.3</small>
+            <h2>3. Order Processing and ACID Principles</h2>
+          </div>
+        </div>
+        <div class="content-card subsection" id="order-definition">
+          <h3>3.1 What is order processing?</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Order Processing</span>
+            <p><strong>Order processing</strong> is the management of transactions involved in receiving, validating,
+              recording and completing customer orders.</p>
+          </div>
+          <p>Order processing is used by online shops, cinema booking systems, hotel reservation platforms and
+            restaurant ordering systems. A system must ensure that orders are handled correctly and do not interfere
+            with other orders.</p>
+          <div class="example-box"><span class="example-label">💡 Example · Final ticket</span>
+            <p>If two customers try to buy the final cinema ticket, the system must prevent the same seat from being
+              successfully allocated twice.</p>
+          </div>
+          <p>Reliable database transactions follow the <strong>ACID principles</strong>, which protect data integrity
+            during changes.</p>
+        </div>
+        <div class="content-card subsection" id="acid-overview">
+          <h3>3.2 What are the ACID principles?</h3>
+          <div class="acid-grid" aria-label="ACID principles">
+            <div class="acid-card"><span class="acid-letter">A</span><strong>Atomicity</strong>
+              <p>All or nothing</p>
+            </div>
+            <div class="acid-card"><span class="acid-letter">C</span><strong>Consistency</strong>
+              <p>Valid data states</p>
+            </div>
+            <div class="acid-card"><span class="acid-letter">I</span><strong>Isolation</strong>
+              <p>No interference</p>
+            </div>
+            <div class="acid-card"><span class="acid-letter">D</span><strong>Durability</strong>
+              <p>Changes persist</p>
+            </div>
+          </div>
+          <p>These four properties help ensure that database transactions are handled accurately and reliably.</p>
+          <div class="toc-jump" aria-label="Jump to ACID explanation"><a href="#atomicity">Atomicity</a><a
+              href="#consistency">Consistency</a><a href="#isolation">Isolation</a><a href="#durability">Durability</a>
+          </div>
+        </div>
+        <div class="content-card subsection acid-detail" id="atomicity">
+          <h3>3.3 Atomicity – All or nothing</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Atomicity</span>
+            <p>A transaction is treated as <strong>one complete, indivisible unit</strong>. Either all of its required
+              operations succeed or its changes are not committed.</p>
+          </div>
+          <p>For example, transferring <strong>$200</strong> from Account A to Account B requires two linked database
+            operations:</p>
+          <ol>
+            <li>Deduct $200 from Account A.</li>
+            <li>Add $200 to Account B.</li>
+          </ol>
+          <div class="transfer">
+            <div class="transfer-node"><b>Account A</b><span>$1,000 → $800</span><small>Money deducted</small></div>
+            <div class="transfer-arrow"><small>$200</small>→</div>
+            <div class="transfer-node"><b>Account B</b><span>$500 → $700</span><small>Money added</small></div>
+          </div>
+          <div class="callout-red"><strong>What if an error occurs?</strong> If the amount is deducted from Account A
+            but the credit to Account B fails, the transaction cannot be left partially committed. The database changes
+            must be rolled back or otherwise resolved according to the transaction design.</div>
+          <div class="key-point"><strong>Why atomicity matters:</strong> It prevents partially completed operations from
+            creating incorrect balances, stock records or orders.</div>
+        </div>
+        <div class="content-card subsection acid-detail" id="consistency">
+          <h3>3.4 Consistency – Rules stay valid</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Consistency</span>
+            <p>A transaction must move the database from <strong>one valid state to another valid state</strong>,
+              preserving its required rules and constraints.</p>
+          </div>
+          <p>For instance, a system may check that a payment method is valid, a product is available, required
+            information is present and stock records follow the organisation's rules.</p>
+          <div class="example-box"><span class="example-label">💡 Example · Insufficient stock</span>
+            <p>An online store has <strong>5 tablets</strong>, but a customer requests <strong>8</strong>. If backorders
+              are not allowed, the system should reject the purchase or require a smaller quantity. Allowing stock to
+              become <strong>−3</strong> would violate the rule prohibiting negative stock.</p>
+          </div>
+          <div class="key-point"><strong>Why consistency matters:</strong> It keeps stored data accurate and makes sure
+            established business rules are respected.</div>
+        </div>
+        <div class="content-card subsection acid-detail" id="isolation">
+          <h3>3.5 Isolation – Concurrent transactions do not interfere</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Isolation</span>
+            <p>Transactions happening at the same time should not interfere with one another in ways that produce
+              incorrect results.</p>
+          </div>
+          <p>This is important in <strong>multi-user systems</strong> where customers may attempt to buy the same
+            limited item or book the same seat.</p>
+          <div class="process-flow" role="group" aria-label="Cinema seat reservation example">
+            <div class="process-step"><span class="step-symbol">🎟️</span>
+              <div>
+                <h4>Seat A12: only 1 available</h4>
+                <p>Both Customer A and Customer B attempt to reserve it at nearly the same time.</p>
+              </div>
+            </div>
+            <div class="process-arrow" aria-hidden="true">↓</div>
+            <div class="process-step"><span class="step-symbol">🔒</span>
+              <div>
+                <h4>The system coordinates the bookings</h4>
+                <p>Database concurrency controls prevent conflicting reservations.</p>
+              </div>
+            </div>
+            <div class="process-arrow" aria-hidden="true">↓</div>
+            <div class="process-step"><span class="step-symbol">✅</span>
+              <div>
+                <h4>Only one reservation succeeds</h4>
+                <p>Customer A may receive confirmation while Customer B is told the seat is unavailable.</p>
+              </div>
+            </div>
+          </div>
+          <div class="key-point"><strong>Why isolation matters:</strong> It prevents double-booking, overselling and
+            incorrect updates when multiple users access the same data.</div>
+        </div>
+        <div class="content-card subsection acid-detail" id="durability">
+          <h3>3.6 Durability – Saved changes persist</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Durability</span>
+            <p>Once a transaction has been successfully <strong>committed</strong>, the recorded changes must remain
+              stored, even if the system subsequently fails.</p>
+          </div>
+          <p>Imagine a customer completes an online order and receives confirmation. Shortly afterwards the server
+            crashes. When the database recovers, the successfully committed order must still exist.</p>
+          <p>Reliable database storage and recovery mechanisms, such as transaction logs, help support durability.</p>
+          <div class="example-box"><span class="example-label">💡 Example · Order confirmation</span>
+            <p>At 10:00 a.m., an order is committed. At 10:01 a.m., a server fails. After recovery, the confirmed order
+              and its committed database changes remain available.</p>
+          </div>
+          <div class="key-point"><strong>Why durability matters:</strong> It prevents completed transactions from
+            disappearing after unexpected system failures.</div>
+        </div>
+        <div class="content-card subsection" id="acid-comparison">
+          <h3>3.7 Comparison of ACID principles</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Principle</th>
+                  <th>Main question</th>
+                  <th>Practical example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Atomicity</strong></td>
+                  <td>Did the whole transaction complete?</td>
+                  <td>Both sides of a bank transfer must complete.</td>
+                </tr>
+                <tr>
+                  <td><strong>Consistency</strong></td>
+                  <td>Are the required rules still satisfied?</td>
+                  <td>Stock must not become negative if this is forbidden.</td>
+                </tr>
+                <tr>
+                  <td><strong>Isolation</strong></td>
+                  <td>Did simultaneous transactions interfere?</td>
+                  <td>Two customers must not receive the same reserved seat.</td>
+                </tr>
+                <tr>
+                  <td><strong>Durability</strong></td>
+                  <td>Will committed changes remain stored?</td>
+                  <td>A confirmed order must survive a server restart.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note-box"><strong>Remember:</strong> <strong>A</strong> = completeness, <strong>C</strong> =
+            validity, <strong>I</strong> = concurrent operations, <strong>D</strong> = persistence.</div>
+        </div>
+        <div class="content-card subsection" id="acid-failure">
+          <h3>3.8 What happens when ACID principles are not followed?</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Failure</th>
+                  <th>Possible consequence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Atomicity failure</td>
+                  <td>A linked payment and order database operation remains incomplete.</td>
+                </tr>
+                <tr>
+                  <td>Consistency failure</td>
+                  <td>Stock records violate required business rules.</td>
+                </tr>
+                <tr>
+                  <td>Isolation failure</td>
+                  <td>Two customers receive the same cinema seat.</td>
+                </tr>
+                <tr>
+                  <td>Durability failure</td>
+                  <td>A confirmed transaction disappears after a crash.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="key-point"><strong>Key point:</strong> ACID is one of the most important technical concepts in order
+          processing. Understand each principle and be able to apply it to a realistic transaction.</div>
+      </section>
+
+      <section class="lesson-section" id="financial">
+        <div class="section-heading">
+          <div class="section-icon purple" aria-hidden="true">🏦</div>
+          <div><small>Section 14.2.4</small>
+            <h2>4. Financial Transaction Processing</h2>
+          </div>
+        </div>
+        <div class="content-card subsection" id="financial-intro">
+          <h3>4.1 What is financial transaction processing?</h3>
+          <p>Financial transaction processing involves managing the movement and recording of money through information
+            systems. Examples include bank transfers, card payments, salary payments, bill payments and online
+            purchases.</p>
+          <p>These systems process important and sensitive information. An incorrect transaction can cause financial
+            losses, delays or inaccurate account records. Therefore, <strong>accuracy, integrity, security and
+              reliability</strong> are essential.</p>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-icon">🧩</div>
+              <h4>ACID compliance</h4>
+              <p>Transactions preserve database integrity.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🕒</div>
+              <h4>High availability</h4>
+              <p>Systems stay accessible when needed.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📈</div>
+              <h4>Scalability</h4>
+              <p>Systems cope with increases in workload.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🛡️</div>
+              <h4>Security</h4>
+              <p>Financial information and operations are protected.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">⚖️</div>
+              <h4>Regulatory compliance</h4>
+              <p>Applicable laws and regulations are followed.</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-card subsection" id="financial-acid">
+          <h3>4.2 ACID compliance</h3>
+          <p>Financial database transactions should follow <strong>Atomicity, Consistency, Isolation and
+              Durability</strong> to maintain correct and reliable account information.</p>
+          <ul>
+            <li>All required database changes take place together.</li>
+            <li>Account data obeys required rules and constraints.</li>
+            <li>Concurrent transactions do not produce incorrect results.</li>
+            <li>Successfully committed transactions are stored reliably.</li>
+          </ul>
+          <div class="example-box"><span class="example-label">💡 Example · Online banking</span>
+            <p>A bank transfer must not lose its completed record if a server fails after the transaction is committed.
+            </p>
+          </div>
+        </div>
+        <div class="content-card subsection" id="availability">
+          <h3>4.3 High availability</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · High Availability</span>
+            <p><strong>High availability</strong> means designing a system to stay operational and accessible with as
+              little downtime as possible.</p>
+          </div>
+          <p>Customers may need financial services at any hour, including nights and weekends. Banks therefore aim for
+            <strong>24/7 availability</strong>, supported by measures such as:</p>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-icon">🖥️</div>
+              <h4>Redundant servers</h4>
+              <p>Alternative servers can take over when a primary server fails.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🔋</div>
+              <h4>Backup power</h4>
+              <p>Helps maintain operations when electrical power is interrupted.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🔁</div>
+              <h4>Failover mechanisms</h4>
+              <p>Switches services to working equipment when a failure occurs.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📊</div>
+              <h4>Monitoring</h4>
+              <p>Helps detect technical problems before they cause lengthy outages.</p>
+            </div>
+          </div>
+          <div class="example-box"><span class="example-label">💡 Example · Banking service</span>
+            <p>If a banking server fails, a redundant server can take over so customers experience minimal interruption.
+            </p>
+          </div>
+        </div>
+        <div class="content-card subsection" id="scalability">
+          <h3>4.4 Scalability</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Scalability</span>
+            <p><strong>Scalability</strong> is the ability of a system to handle increasing workloads while maintaining
+              acceptable performance.</p>
+          </div>
+          <p>Transaction volumes can increase during holidays, salary payment periods and major shopping events.</p>
+          <div class="example-box"><span class="example-label">💡 Example · Sales campaign</span>
+            <p>A payment platform usually processes <strong>2,000 transactions per hour</strong>, but a major sale
+              increases demand to <strong>15,000 transactions per hour</strong>. A scalable system provides additional
+              capacity to handle the extra workload.</p>
+          </div>
+          <div class="compare-2">
+            <div class="compare-panel">
+              <h4>⬆️ Vertical scaling</h4>
+              <p>Increase the CPU, memory or other resources of an existing server.</p>
+            </div>
+            <div class="compare-panel">
+              <h4>↔️ Horizontal scaling</h4>
+              <p>Add more servers or processing resources to share the workload.</p>
+            </div>
+          </div>
+          <div class="note-box"><strong>Extra technical explanation:</strong> Vertical and horizontal scaling are common
+            approaches to achieving the scalability described in the textbook.</div>
+        </div>
+        <div class="content-card subsection" id="financial-security">
+          <h3>4.5 Security and fraud prevention</h3>
+          <p>Financial systems handle sensitive data and must guard against unauthorised access, stolen information and
+            fraudulent activity.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Security measure</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Encryption</strong></td>
+                  <td>Protects sensitive data by making it unreadable without the correct key.</td>
+                </tr>
+                <tr>
+                  <td><strong>Authentication</strong></td>
+                  <td>Checks that users are who they claim to be.</td>
+                </tr>
+                <tr>
+                  <td><strong>Access controls</strong></td>
+                  <td>Limits sensitive records and functions to authorised users.</td>
+                </tr>
+                <tr>
+                  <td><strong>Fraud detection</strong></td>
+                  <td>Identifies suspicious or unusual transaction patterns.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example-box"><span class="example-label">💡 Example · Suspicious payment</span>
+            <p>A bank notices an unusually large payment and may request additional verification before allowing it to
+              proceed.</p>
+          </div>
+        </div>
+        <div class="content-card subsection" id="financial-regulations">
+          <h3>4.6 Compliance with regulations</h3>
+          <p>Financial institutions must follow applicable rules and laws to protect customers, support transparency and
+            reduce financial crime.</p>
+          <ul>
+            <li>Protect customer information.</li>
+            <li>Keep appropriate transaction records.</li>
+            <li>Reduce opportunities for financial crime.</li>
+            <li>Support authorised audits and investigations.</li>
+            <li>Operate financial systems responsibly.</li>
+          </ul>
+          <div class="example-box"><span class="example-label">💡 Example · Financial records</span>
+            <p>A financial institution may need to retain suitable transaction records for authorised reviews and
+              audits.</p>
+          </div>
+        </div>
+        <div class="content-card subsection" id="financial-summary">
+          <h3>4.7 Summary of financial system requirements</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Requirement</th>
+                  <th>Meaning</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ACID compliance</td>
+                  <td>Database transactions follow ACID properties.</td>
+                  <td>Maintain integrity.</td>
+                </tr>
+                <tr>
+                  <td>High availability</td>
+                  <td>Services are accessible with minimal downtime.</td>
+                  <td>Provide dependable services.</td>
+                </tr>
+                <tr>
+                  <td>Scalability</td>
+                  <td>Systems cope with growing transaction volumes.</td>
+                  <td>Maintain performance.</td>
+                </tr>
+                <tr>
+                  <td>Security and fraud prevention</td>
+                  <td>Information and operations are protected.</td>
+                  <td>Reduce unauthorised access and fraud.</td>
+                </tr>
+                <tr>
+                  <td>Regulatory compliance</td>
+                  <td>Systems follow applicable requirements.</td>
+                  <td>Support lawful, responsible operation.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="key-point"><strong>Key point:</strong> Financial systems must be trustworthy not only when
+          conditions are normal, but also during failures, high demand and attempted fraud.</div>
+      </section>
+
+      <section class="lesson-section" id="bacs">
+        <div class="section-heading">
+          <div class="section-icon blue" aria-hidden="true">💷</div>
+          <div><small>Section 14.2.5</small>
+            <h2>5. Bacs Payment Schemes Limited</h2>
+          </div>
+        </div>
+        <div class="content-card subsection" id="bacs-intro">
+          <h3>5.1 What is Bacs?</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Bacs</span>
+            <p><strong>Bacs Payment Schemes Limited (Bacs)</strong> is a UK-based payment scheme organisation associated
+              with electronic payments between bank accounts, particularly direct debits and direct credits.</p>
+          </div>
+          <p>These payment arrangements support electronic transfers without requiring the exchange of cash. Two
+            important types are <strong>direct debit</strong> and <strong>direct credit</strong>.</p>
+        </div>
+        <div class="content-card subsection" id="direct-debit">
+          <h3>5.2 Direct debit</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Direct Debit</span>
+            <p>A <strong>direct debit</strong> is an arrangement where a customer authorises an organisation to collect
+              money from their bank account.</p>
+          </div>
+          <p>Direct debits are used for recurring payments, including electricity bills, water bills, mobile phone
+            contracts, internet subscriptions and insurance premiums.</p>
+          <div class="transfer">
+            <div class="transfer-node"><b>Customer's account</b><span>💳</span><small>Gives collection
+                authorisation</small></div>
+            <div class="transfer-arrow"><small>Money collected</small>→</div>
+            <div class="transfer-node"><b>Electricity company</b><span>⚡</span><small>Receives bill payment</small>
+            </div>
+          </div>
+          <p>The organisation initiates the collection under the customer's authorisation. The amount may be fixed or
+            variable depending on the payment agreement.</p>
+          <h3>Advantages of direct debit</h3>
+          <ul>
+            <li>Customers do not need to make each payment manually.</li>
+            <li>Payments can be collected regularly.</li>
+            <li>Organisations can automate recurring collections.</li>
+            <li>Customers are less likely to forget scheduled bills.</li>
+          </ul>
+        </div>
+        <div class="content-card subsection" id="direct-credit">
+          <h3>5.3 Direct credit</h3>
+          <div class="definition"><span class="label">KEY DEFINITION · Direct Credit</span>
+            <p>A <strong>direct credit</strong> is a payment sent directly into a recipient's bank account by the payer.
+            </p>
+          </div>
+          <p>Examples include salary payments, pensions, government benefits and payments from organisations to
+            individuals.</p>
+          <div class="transfer">
+            <div class="transfer-node"><b>Employer's account</b><span>🏢</span><small>Initiates salary payment</small>
+            </div>
+            <div class="transfer-arrow"><small>£2,000</small>→</div>
+            <div class="transfer-node"><b>Employee's account</b><span>💷</span><small>Receives salary</small></div>
+          </div>
+          <h3>Advantages of direct credit</h3>
+          <ul>
+            <li>Money is transferred electronically.</li>
+            <li>Organisations can automate large numbers of payments.</li>
+            <li>Employees do not need cash or physical cheques.</li>
+            <li>Electronic records make payments easier to track.</li>
+          </ul>
+        </div>
+        <div class="content-card subsection" id="debit-credit">
+          <h3>5.4 Differences between direct debit and direct credit</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Direct debit</th>
+                  <th>Direct credit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Who initiates?</td>
+                  <td>Receiving organisation (with authorisation)</td>
+                  <td>Payer</td>
+                </tr>
+                <tr>
+                  <td>Direction of money</td>
+                  <td>Collected from the customer's account</td>
+                  <td>Sent into the recipient's account</td>
+                </tr>
+                <tr>
+                  <td>Typical purpose</td>
+                  <td>Paying recurring bills</td>
+                  <td>Paying salaries or benefits</td>
+                </tr>
+                <tr>
+                  <td>Example</td>
+                  <td>Internet provider collects a monthly bill</td>
+                  <td>Employer pays employees</td>
+                </tr>
+                <tr>
+                  <td>Authorisation</td>
+                  <td>Customer permits a collection arrangement</td>
+                  <td>Payer approves payment to be sent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note-box"><strong>Easy way to remember:</strong> A <strong>direct debit</strong> is an authorised
+            collection <em>from</em> your account. A <strong>direct credit</strong> is a payment <em>into</em> an
+            account.</div>
+        </div>
+        <div class="content-card subsection" id="payment-systems">
+          <h3>5.5 Similar payment systems in other countries</h3>
+          <p>The textbook identifies systems in other regions with comparable electronic bank-payment functions:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Country or region</th>
+                  <th>System</th>
+                  <th>General function</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>United Kingdom</td>
+                  <td>Bacs</td>
+                  <td>Supports direct debit and direct credit arrangements.</td>
+                </tr>
+                <tr>
+                  <td>United States</td>
+                  <td>Automated Clearing House (ACH)</td>
+                  <td>Supports electronic bank payments and transfers.</td>
+                </tr>
+                <tr>
+                  <td>European participating countries</td>
+                  <td>Single Euro Payments Area (SEPA)</td>
+                  <td>Provides euro-denominated credit transfers and direct debit schemes.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>These arrangements differ in geographical scope and operational rules but help individuals and
+            organisations make electronic bank payments.</p>
+        </div>
+        <div class="key-point"><strong>Key point:</strong> Distinguish direct debit from direct credit by identifying
+          <em>who initiates the transaction</em> and <em>which account receives the money</em>.</div>
+      </section>
+
+      <section class="lesson-section" id="worked-example">
+        <div class="section-heading">
+          <div class="section-icon green" aria-hidden="true">🛒</div>
+          <div><small>Section 14.2.6</small>
+            <h2>6. Worked Example: A Supermarket Transaction</h2>
+          </div>
+        </div>
+        <p>Consider a supermarket with an EPOS system connected to a stock database. A customer purchases <strong>five
+            packets of rice</strong> and pays by card.</p>
+        <div class="process-flow" role="group" aria-label="Supermarket transaction stages">
+          <div class="process-step"><span class="step-symbol">🛍️</span>
+            <div>
+              <h4>Stage 1 · Sales processing</h4>
+              <p>The EPOS system identifies the products, retrieves their prices and calculates the total.</p>
+            </div>
+          </div>
+          <div class="process-arrow" aria-hidden="true">↓</div>
+          <div class="process-step"><span class="step-symbol">💳</span>
+            <div>
+              <h4>Stage 2 · Payment processing</h4>
+              <p>The card payment system attempts to authorise and process the payment securely.</p>
+            </div>
+          </div>
+          <div class="process-arrow" aria-hidden="true">↓</div>
+          <div class="process-step"><span class="step-symbol">📦</span>
+            <div>
+              <h4>Stage 3 · Inventory management</h4>
+              <p>Following a successful sale, available stock is reduced by five packets.</p>
+            </div>
+          </div>
+          <div class="process-arrow" aria-hidden="true">↓</div>
+          <div class="process-step"><span class="step-symbol">🧾</span>
+            <div>
+              <h4>Stage 4 · Transaction recording</h4>
+              <p>The details are saved and a receipt is provided to the customer.</p>
+            </div>
+          </div>
+          <div class="process-arrow" aria-hidden="true">↓</div>
+          <div class="process-step"><span class="step-symbol">📊</span>
+            <div>
+              <h4>Stage 5 · Business information</h4>
+              <p>Managers later analyse sales records to understand demand and plan stock purchasing.</p>
+            </div>
+          </div>
+        </div>
+        <h3>How ACID principles apply</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ACID property</th>
+                <th>Supermarket application</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Atomicity</td>
+                <td>A database transaction should not be left partially committed when linked operations fail.</td>
+              </tr>
+              <tr>
+                <td>Consistency</td>
+                <td>Sales and stock records must follow the system's business rules.</td>
+              </tr>
+              <tr>
+                <td>Isolation</td>
+                <td>Simultaneous purchases must not lead to incorrect stock quantities.</td>
+              </tr>
+              <tr>
+                <td>Durability</td>
+                <td>Committed sales records must survive unexpected failures.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box"><strong>Important distinction:</strong> ACID primarily describes database transactions. A
+          real card payment may be handled by a separate service, so synchronising payment outcomes with order and stock
+          updates can require additional system logic.</div>
+        <div class="key-point"><strong>Key point:</strong> A single checkout sale can involve EPOS, database
+          transactions, inventory updates, payment processing and management information.</div>
+      </section>
+
+
+      <nav class="lesson-navigation" aria-label="Other lessons"><a href="topic-14-01.html">← Topic 14.1 · Role of IT
+          Systems</a><a href="topic-14.html">Topic 14 · All Lessons ↗</a><a href="topic-14-03.html">Topic 14.3 · CRM
+          Systems →</a></nav>
+
+
+      <footer class="page-footer">
+        <p><strong>Tr.Sun Education</strong></p>
+        <p>Edexcel International A Level IT · Unit 3 · A2</p>
+        <p>Topic 14.2 · Transaction Processing</p>
+        <p>Created by Tr. Sun</p>
+      </footer>
+    </div>
+  </main><button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const menuButton = document.getElementById('menuButton');
+    const overlay = document.getElementById('overlay');
+    const navLinks = document.querySelectorAll('.side-nav a');
+    const sections = document.querySelectorAll('section.lesson-section');
+    const progress = document.getElementById('readingProgress');
+    const backTop = document.getElementById('backTop');
+
+    function openMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('show');
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'Close lesson navigation');
+    }
+    function closeMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open lesson navigation');
+    }
+    menuButton.addEventListener('click', () => sidebar.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    function updateActiveSection() {
+      let activeId = sections[0].id;
+      sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= 160) activeId = section.id;
+      });
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === '#' + activeId;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    function updateReadingProgress() {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const percentage = maxScroll > 0 ? Math.min(100, window.scrollY / maxScroll * 100) : 100;
+      progress.style.width = percentage + '%';
+    }
+    function updateBackTop() {
+      backTop.classList.toggle('visible', window.scrollY > 450);
+    }
+    function updatePage() {
+      updateActiveSection();
+      updateReadingProgress();
+      updateBackTop();
+    }
+    backTop.addEventListener('click', () => window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    }));
+    window.addEventListener('scroll', updatePage, { passive: true });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 800) closeMenu();
+      updatePage();
+    });
+    window.addEventListener('load', updatePage);
+    updatePage();
+  </script>
 </body>
+
 </html>
