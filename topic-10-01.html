@@ -1,120 +1,2415 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 10.1: Web Page Design Tools — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 10.1 – Web Page Design Tools | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description"
+    content="Detailed Edexcel International A Level IT Topic 10.1.1 notes on wireframes, mock-ups, web-design style guides and prototyping.">
+  <title>Topic 10.1.1 – How to Design Web Pages | Tr.Sun Education</title>
+  <style>
+    /* =========================================
+       TR.SUN EDUCATION - SHARED LESSON DESIGN
+       ========================================= */
+
+    :root {
+      --sidebar-width: 282px;
+      --navy: #111827;
+      --navy-2: #1e293b;
+      --purple: #7653e8;
+      --purple-dark: #5937c5;
+      --bg: #f5f7fc;
+      --surface: #ffffff;
+      --text: #253047;
+      --muted: #64748b;
+      --border: #e7eaf2;
+      --shadow: 0 8px 28px rgba(25, 33, 60, 0.045);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #b69aff;
+      outline-offset: 3px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    h3 {
+      color: #25324a;
+      margin: 27px 0 12px;
+      font-size: 18px;
+    }
+
+    h4 {
+      color: #24334b;
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    li {
+      padding: 4px 0;
+    }
+
+    li::marker {
+      color: var(--purple);
+      font-weight: bold;
+    }
+
+    code {
+      background: #f1edff;
+      color: #5937c5;
+      border-radius: 5px;
+      padding: 2px 5px;
+      overflow-wrap: anywhere;
+    }
+
+    /* =========================================
+       SIDEBAR
+       ========================================= */
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: var(--navy);
+      color: #ffffff;
+      z-index: 1000;
+      scrollbar-width: thin;
+      scrollbar-color: #45506a transparent;
+    }
+
+    .brand {
+      padding: 28px 18px 23px;
+      border-bottom: 1px solid #30394c;
+    }
+
+    .brand-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 62px;
+      height: 62px;
+      flex: 0 0 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #a06aff, #5837c6);
+      box-shadow: 0 8px 24px rgba(117, 83, 232, 0.3);
+    }
+
+    .brand-logo svg {
+      width: 49px;
+      height: 49px;
+    }
+
+    .brand-text h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+    }
+
+    .brand-text p {
+      margin: 5px 0 0;
+      color: #c4b5fd;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .brand-curriculum {
+      margin-top: 20px;
+      color: #94a3b8;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.15px;
+    }
+
+    .current-lesson {
+      margin: 22px 13px 13px;
+      padding: 16px;
+      border: 1px solid #4b3a86;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #382b65, #29234a);
+    }
+
+    .current-lesson small {
+      display: block;
+      margin-bottom: 8px;
+      color: #c4b5fd;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 1px;
+    }
+
+    .current-lesson h3 {
+      margin: 0;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .current-lesson p {
+      margin: 4px 0 0;
+      color: #d6d0ea;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .sidebar-label {
+      padding: 18px 23px 12px;
+      color: #8591a8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+    }
+
+    .side-nav {
+      padding: 0 12px 18px;
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 5px;
+      padding: 11px 12px;
+      color: #cbd5e1;
+      font-size: 12.5px;
+      line-height: 1.4;
+      border-radius: 11px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .side-nav a:hover {
+      background: #283249;
+      color: #ffffff;
+    }
+
+    .side-nav a.active {
+      background: #392b66;
+      color: #ffffff;
+      box-shadow: inset 3px 0 #a78bfa;
+    }
+
+    .nav-number {
+      flex-shrink: 0;
+      width: 34px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: #293449;
+      color: #bac5d8;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .side-nav a.active .nav-number {
+      background: #8157ed;
+      color: #ffffff;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 21px 22px;
+      border-top: 1px solid #30394c;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .sidebar-footer strong {
+      color: #e2e8f0;
+    }
+
+    /* =========================================
+       MAIN CONTENT
+       ========================================= */
+
+    .main {
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+      padding: 34px 42px 55px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      color: #78849a;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: inherit;
+    }
+
+    .breadcrumb a:hover,
+    .breadcrumb strong {
+      color: #6744d0;
+    }
+
+    /* =========================================
+       HERO HEADER
+       ========================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 47px 44px;
+      border-radius: 24px;
+      background: linear-gradient(115deg,
+          #4934b5 0%,
+          #7753e7 55%,
+          #ad72ed 100%);
+      box-shadow: 0 15px 35px rgba(88, 60, 180, 0.16);
+      color: #ffffff;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      right: -100px;
+      top: -200px;
+    }
+
+    .hero::after {
+      width: 250px;
+      height: 250px;
+      right: 90px;
+      bottom: -175px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 15px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 0.8px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 3.6vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 21px 0 14px;
+      color: #ffffff;
+    }
+
+    .hero p {
+      max-width: 710px;
+      color: #f2ecff;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-tags span {
+      padding: 8px 13px;
+      font-size: 11px;
+      font-weight: 650;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.17);
+    }
+
+    /* =========================================
+       INTRODUCTION
+       ========================================= */
+
+    .introduction {
+      margin: 30px 0;
+      padding: 27px 31px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--purple);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .introduction h2 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    /* =========================================
+       LESSON CARDS
+       ========================================= */
+
+    .lesson-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 23px;
+      border-bottom: 1px solid #eef0f5;
+    }
+
+    .section-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      font-size: 26px;
+    }
+
+    .purple {
+      background: #f2edff;
+    }
+
+    .blue {
+      background: #ebf4ff;
+    }
+
+    .green {
+      background: #eaf9f1;
+    }
+
+    .section-heading small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: #1e293b;
+      margin: 3px 0 0;
+      line-height: 1.3;
+      font-size: clamp(21px, 2.5vw, 26px);
+    }
+
+    /* =========================================
+       KEY DEFINITION BOX
+       ========================================= */
+
+    .definition {
+      margin: 19px 0;
+      padding: 19px 22px;
+      border-radius: 12px;
+      border-left: 4px solid #875bea;
+      background: #f4f0ff;
+    }
+
+    .definition .label {
+      display: block;
+      color: #633cb8;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .definition p {
+      margin: 5px 0 0;
+      color: #3a3368;
+    }
+
+    /* =========================================
+       COLOURFUL FEATURE CARDS
+       ========================================= */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .feature {
+      padding: 21px;
+      border: 1px solid rgba(80, 100, 145, 0.08);
+      border-radius: 14px;
+      background: #f2edff;
+    }
+
+    .feature:nth-child(4n+2) {
+      background: #ebf4ff;
+    }
+
+    .feature:nth-child(4n+3) {
+      background: #eaf9f1;
+    }
+
+    .feature:nth-child(4n+4) {
+      background: #fff4e5;
+    }
+
+    .feature-icon {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #526177;
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .feature ul {
+      font-size: 13.5px;
+      margin: 8px 0 0;
+    }
+
+    /* =========================================
+       EXAMPLE AND NOTE BOXES
+       ========================================= */
+
+    .example-box {
+      margin-top: 23px;
+      padding: 23px 25px;
+      background: #effbf5;
+      border: 1px solid #c9ecda;
+      border-radius: 14px;
+    }
+
+    .example-label {
+      color: #11825b;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .example-box h3 {
+      margin: 9px 0 11px;
+      color: #176b50;
+    }
+
+    .example-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      margin: 19px 0 4px;
+    }
+
+    .example-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid #dbf3e7;
+      border-radius: 10px;
+      padding: 13px 14px;
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .check {
+      color: #059669;
+      font-weight: 800;
+    }
+
+    .note-box {
+      background: #fff8ec;
+      border: 1px solid #f7e2b8;
+      border-radius: 13px;
+      padding: 19px 22px;
+      margin-top: 22px;
+      color: #725021;
+      font-size: 14px;
+    }
+
+    .note-box strong {
+      color: #a56518;
+    }
+
+    /* =========================================
+       TABLES
+       ========================================= */
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      margin: 22px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    thead {
+      background: #f1edff;
+    }
+
+    th {
+      color: #5a36ad;
+      text-align: left;
+      padding: 15px 17px;
+    }
+
+    td {
+      padding: 15px 17px;
+      vertical-align: top;
+      border-top: 1px solid var(--border);
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff;
+    }
+
+    /* =========================================
+       PROCESS DIAGRAMS
+       ========================================= */
+
+    .process {
+      margin: 25px 0;
+      padding: 23px;
+      border: 1px solid #e8e2fb;
+      border-radius: 16px;
+      background: #faf9ff;
+    }
+
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: #ffffff;
+      border: 1px solid #e8e3f5;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: #7653e8;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .process-step strong {
+      display: block;
+      color: #27354d;
+    }
+
+    .process-step p {
+      margin: 3px 0 0;
+      font-size: 13.5px;
+    }
+
+    .process-arrow {
+      text-align: center;
+      color: #7653e8;
+      font-size: 23px;
+      padding: 5px;
+      line-height: 1.2;
+    }
+
+    .network-diagram {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin: 24px 0;
+    }
+
+    .diagram-node {
+      text-align: center;
+      border: 1px solid #ddd6fe;
+      background: #f4f0ff;
+      padding: 20px 10px;
+      border-radius: 13px;
+    }
+
+    .diagram-node:nth-child(2) {
+      background: #ebf4ff;
+      border-color: #bfdbfe;
+    }
+
+    .diagram-node:nth-child(3) {
+      background: #eaf9f1;
+      border-color: #bbf7d0;
+    }
+
+    .diagram-icon {
+      font-size: 35px;
+    }
+
+    .diagram-node strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .diagram-node p {
+      font-size: 12px;
+      color: #64748b;
+      margin: 4px 0 0;
+    }
+
+    /* =========================================
+       FOOTER AND NAVIGATION
+       ========================================= */
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+    .reading-progress {
+      position: fixed;
+      left: var(--sidebar-width);
+      top: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #7955e8, #bd7aff);
+      z-index: 200;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 13px;
+      background: #6442cf;
+      color: #ffffff;
+      font-size: 21px;
+      cursor: pointer;
+      box-shadow: 0 7px 20px #6442cf33;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: 0.2s;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .menu-button,
+    .overlay {
+      display: none;
+    }
+
+    /* =========================================
+       RESPONSIVE DESIGN
+       ========================================= */
+
+    @media (max-width: 1050px) {
+      .main {
+        padding: 28px;
+      }
+
+      .lesson-section {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .sidebar {
+        width: 280px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 78px 16px 35px;
+      }
+
+      .menu-button {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        position: fixed;
+        top: 15px;
+        left: 16px;
+        z-index: 900;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 11px;
+        background: var(--navy-2);
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .overlay.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(13, 18, 30, 0.65);
+        z-index: 950;
+      }
+
+      .hero {
+        padding: 33px 25px;
+        border-radius: 19px;
+      }
+
+      .introduction {
+        padding: 23px 20px;
+      }
+
+      .lesson-section {
+        padding: 25px 19px;
+        border-radius: 16px;
+      }
+
+      .reading-progress {
+        left: 0;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .feature-grid,
+      .example-list,
+      .network-diagram {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 29px 21px;
+      }
+
+      .hero-tags {
+        gap: 7px;
+      }
+
+      .hero-tags span {
+        font-size: 10px;
+      }
+
+      .section-heading {
+        gap: 12px;
+      }
+
+      .section-heading h2 {
+        font-size: 20px;
+      }
+
+      .section-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 23px;
+      }
+
+      .example-box {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+
+    /* Topic 10.1.1 · Custom educational demonstrations */
+    .lead {
+      font-size: 15.5px;
+      color: #485670
+    }
+
+    .four-tools {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 23px 0
+    }
+
+    .tool-card {
+      padding: 20px 14px;
+      text-align: center;
+      border: 1px solid #e8e7f7;
+      border-radius: 14px;
+      background: #f6f2ff
+    }
+
+    .tool-card:nth-child(2) {
+      background: #eef6ff;
+      border-color: #dce9ff
+    }
+
+    .tool-card:nth-child(3) {
+      background: #edf9f3;
+      border-color: #d8efdf
+    }
+
+    .tool-card:nth-child(4) {
+      background: #fff5e8;
+      border-color: #fce5c7
+    }
+
+    .tool-card .big-icon {
+      font-size: 30px;
+      display: block;
+      margin-bottom: 6px
+    }
+
+    .tool-card strong {
+      display: block;
+      font-size: 14px;
+      color: #293750
+    }
+
+    .tool-card small {
+      display: block;
+      color: #68768c;
+      font-size: 11px;
+      margin-top: 3px
+    }
+
+    .subtle {
+      color: #65748a;
+      font-size: 13px
+    }
+
+    .diagram-title {
+      font-weight: 800;
+      font-size: 13px;
+      color: #40516d;
+      margin: 0 0 13px
+    }
+
+    .visual-board {
+      background: #f8faff;
+      border: 1px solid #e6eafa;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 22px 0
+    }
+
+    .visual-board figcaption {
+      margin-top: 11px;
+      color: #64748b;
+      font-size: 12.5px;
+      text-align: center
+    }
+
+    .wireframe {
+      border: 2px solid #94a3b8;
+      padding: 12px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      color: #526178;
+      font: 600 12px/1.4 Arial, sans-serif
+    }
+
+    .wf-header {
+      border: 2px dashed #94a3b8;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      margin-bottom: 10px
+    }
+
+    .wf-logo {
+      width: 61px;
+      min-height: 43px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #94a3b8;
+      border-radius: 5px
+    }
+
+    .wf-heading {
+      flex: 1;
+      text-align: center
+    }
+
+    .wf-nav {
+      border: 2px dashed #94a3b8;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px
+    }
+
+    .wf-middle {
+      display: grid;
+      grid-template-columns: 29% 1fr;
+      gap: 10px;
+      min-height: 214px
+    }
+
+    .wf-side {
+      border: 2px dashed #94a3b8;
+      border-radius: 5px;
+      padding: 15px 6px;
+      text-align: center;
+      background: repeating-linear-gradient(0deg, #fff, #fff 27px, #f8fafc 27px, #f8fafc 30px)
+    }
+
+    .wf-content {
+      border: 2px dashed #94a3b8;
+      border-radius: 5px;
+      padding: 12px;
+      min-width: 0
+    }
+
+    .wf-image {
+      height: 84px;
+      border: 2px solid #94a3b8;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, transparent 49%, #b4bfce 50%, transparent 51%), linear-gradient(35deg, transparent 49%, #b4bfce 50%, transparent 51%);
+      margin: 8px 0 12px;
+      border-radius: 4px
+    }
+
+    .wf-lines {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px
+    }
+
+    .wf-lines div {
+      border: 2px dashed #94a3b8;
+      text-align: center;
+      padding: 11px 4px;
+      border-radius: 4px
+    }
+
+    .wf-footer {
+      border: 2px dashed #94a3b8;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px
+    }
+
+    .mock-browser {
+      max-width: 700px;
+      margin: 0 auto;
+      border: 1px solid #d6dbed;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 9px 28px rgba(34, 33, 84, .09)
+    }
+
+    .mock-top {
+      height: 30px;
+      background: #e9edf5;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 13px
+    }
+
+    .mock-dot {
+      height: 8px;
+      width: 8px;
+      background: #c4ccda;
+      border-radius: 50%
+    }
+
+    .mock-site {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: linear-gradient(110deg, #4934b5, #9e64e2);
+      padding: 19px 23px;
+      color: white
+    }
+
+    .mock-brand {
+      font-weight: 900;
+      font-size: 17px
+    }
+
+    .mock-menu {
+      font-weight: 600;
+      font-size: 11px;
+      opacity: .9
+    }
+
+    .mock-layout {
+      display: grid;
+      grid-template-columns: 29% 1fr;
+      min-height: 235px
+    }
+
+    .mock-sidebar {
+      background: #162034;
+      color: #dbe5f7;
+      padding: 18px 13px;
+      font-size: 11px
+    }
+
+    .mock-sidebar span {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      margin: 4px 0;
+      background: #25344e
+    }
+
+    .mock-main {
+      padding: 17px 20px;
+      min-width: 0
+    }
+
+    .mock-main h4 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      color: #2b2857
+    }
+
+    .mock-main p {
+      font-size: 11px;
+      line-height: 1.55;
+      color: #6c7892;
+      margin: 0 0 12px
+    }
+
+    .mock-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px
+    }
+
+    .mock-card {
+      border: 1px solid #e2e6f1;
+      border-radius: 9px;
+      overflow: hidden;
+      background: #fff
+    }
+
+    .mock-art {
+      height: 70px;
+      background: linear-gradient(140deg, #d8ccff, #edeaff);
+      display: grid;
+      place-items: center;
+      font-size: 25px
+    }
+
+    .mock-card:nth-child(2) .mock-art {
+      background: linear-gradient(135deg, #cdf1e4, #eafbf7)
+    }
+
+    .mock-card div:last-child {
+      font-size: 11px;
+      font-weight: 800;
+      color: #3e4a65;
+      padding: 9px 10px
+    }
+
+    .mock-bottom {
+      text-align: center;
+      background: #eef0f7;
+      font-size: 10px;
+      padding: 10px;
+      color: #6b778d
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 23px
+    }
+
+    .swatch {
+      border: 1px solid #e5e9f0;
+      border-radius: 11px;
+      overflow: hidden;
+      min-width: 0;
+      background: white
+    }
+
+    .swatch-color {
+      height: 57px
+    }
+
+    .swatch-body {
+      padding: 10px 9px;
+      font-size: 11px;
+      line-height: 1.45
+    }
+
+    .swatch-body strong {
+      display: block;
+      color: #30405e
+    }
+
+    .swatch-body code {
+      font-size: 10px;
+      white-space: nowrap
+    }
+
+    .type-scale {
+      background: #fafaff;
+      border: 1px solid #e9e9f6;
+      border-radius: 13px;
+      padding: 20px 22px
+    }
+
+    .type-example {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 1px solid #e7e9f1;
+      padding: 11px 0
+    }
+
+    .type-example:last-child {
+      border-bottom: 0
+    }
+
+    .type-example small {
+      font-size: 11px;
+      color: #7e8da2;
+      white-space: nowrap
+    }
+
+    .type-h1 {
+      font: 700 28px/1.25 Arial, sans-serif;
+      color: #273048
+    }
+
+    .type-h2 {
+      font: 700 21px/1.3 Arial, sans-serif;
+      color: #273048
+    }
+
+    .type-para {
+      font: 400 16px/1.5 Arial, sans-serif;
+      color: #273048
+    }
+
+    .fake-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin: 17px 0 6px
+    }
+
+    .fake-button {
+      display: inline-flex;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 800;
+      border-radius: 9px;
+      cursor: default;
+      user-select: none
+    }
+
+    .fake-button.primary {
+      background: #5634b8;
+      color: #fff
+    }
+
+    .fake-button.secondary {
+      color: #5634b8;
+      border: 1px solid #d7c9fa;
+      background: white
+    }
+
+    .prototype-shell {
+      max-width: 700px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 1px solid #dcdcf4;
+      background: white;
+      box-shadow: 0 8px 22px rgba(40, 34, 85, .07)
+    }
+
+    .proto-header {
+      background: #221b52;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px
+    }
+
+    .proto-title {
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -.2px
+    }
+
+    .proto-title small {
+      font-size: 9px;
+      background: #a78bfa;
+      color: #231352;
+      padding: 3px 6px;
+      border-radius: 5px;
+      margin-left: 6px
+    }
+
+    .proto-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    .proto-nav button {
+      border: 1px solid transparent;
+      border-radius: 7px;
+      background: transparent;
+      color: #e5e7ff;
+      padding: 7px 11px;
+      cursor: pointer;
+      font: 700 12px Arial, sans-serif
+    }
+
+    .proto-nav button:hover,
+    .proto-nav button[aria-pressed="true"] {
+      background: #6f52d8;
+      color: white
+    }
+
+    .proto-body {
+      min-height: 170px;
+      padding: 27px 24px
+    }
+
+    .proto-body h3 {
+      font-size: 20px;
+      margin: 0 0 7px
+    }
+
+    .proto-body p {
+      font-size: 13px;
+      margin: 0 0 15px
+    }
+
+    .proto-cta {
+      border: 0;
+      border-radius: 9px;
+      background: #6743d2;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 11px 15px;
+      cursor: pointer
+    }
+
+    .proto-cta:hover {
+      background: #5132b3
+    }
+
+    .proto-status {
+      background: #f3f0ff;
+      color: #5a3f9d;
+      font-size: 11px;
+      padding: 9px 16px;
+      border-top: 1px solid #e8e0fc
+    }
+
+    .prototype-badge {
+      display: inline-block;
+      font-size: 10px;
+      border: 1px solid #b7ebd0;
+      background: #eafff3;
+      color: #17764d;
+      padding: 4px 8px;
+      border-radius: 50px;
+      font-weight: 800;
+      margin-bottom: 10px
+    }
+
+    .stage-list {
+      margin: 20px 0;
+      display: grid;
+      gap: 11px
+    }
+
+    .stage {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      border: 1px solid #e7eafa;
+      border-radius: 13px;
+      background: #fcfcff;
+      padding: 15px 17px
+    }
+
+    .stage-num {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      background: #7554df;
+      border-radius: 11px;
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px
+    }
+
+    .stage strong {
+      color: #29354c
+    }
+
+    .stage p {
+      margin: 2px 0 0;
+      color: #68778d;
+      font-size: 13px
+    }
+
+    .table-wrap table strong {
+      color: #2b3750
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 800;
+      background: #eaf7f0;
+      color: #178258;
+      padding: 4px 7px;
+      border-radius: 6px;
+      white-space: nowrap
+    }
+
+    .pill.no {
+      background: #f5efff;
+      color: #8652bd
+    }
+
+    .pill.maybe {
+      background: #fff2df;
+      color: #996c24
+    }
+
+    .mini-note {
+      font-size: 12px;
+      color: #67748b;
+      font-style: italic
+    }
+
+    @media(max-width:1050px) {
+      .four-tools {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media(max-width:550px) {
+      .four-tools {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px
+      }
+
+      .tool-card {
+        padding: 15px 7px
+      }
+
+      .swatches {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .visual-board {
+        padding: 10px
+      }
+
+      .wf-middle {
+        min-height: 180px
+      }
+
+      .wireframe {
+        padding: 7px;
+        font-size: 10px
+      }
+
+      .wf-header,
+      .wf-nav,
+      .wf-footer {
+        padding: 6px
+      }
+
+      .wf-side,
+      .wf-content {
+        padding: 8px 4px
+      }
+
+      .wf-image {
+        height: 67px
+      }
+
+      .wf-lines div {
+        padding: 8px 0
+      }
+
+      .mock-site {
+        padding: 12px
+      }
+
+      .mock-brand {
+        font-size: 12px
+      }
+
+      .mock-layout {
+        min-height: 205px
+      }
+
+      .mock-sidebar {
+        padding: 12px 6px
+      }
+
+      .mock-sidebar span {
+        padding: 7px 4px;
+        font-size: 9px
+      }
+
+      .mock-main {
+        padding: 11px
+      }
+
+      .mock-main h4 {
+        font-size: 12px
+      }
+
+      .mock-main p {
+        font-size: 10px
+      }
+
+      .mock-cards {
+        gap: 6px
+      }
+
+      .mock-art {
+        height: 50px
+      }
+
+      .mock-card div:last-child {
+        font-size: 9px;
+        padding: 6px
+      }
+
+      .type-example {
+        display: block
+      }
+
+      .type-example small {
+        display: block;
+        margin-top: 5px
+      }
+
+      .type-h1 {
+        font-size: 23px
+      }
+
+      .type-h2 {
+        font-size: 19px
+      }
+
+      .proto-header {
+        gap: 7px
+      }
+
+      .proto-body {
+        padding: 20px 16px
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-  </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 10.1</h3><p>Web Page Design Tools</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 10 navigation"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-10.html"><span class="nav-number">10</span><span>Topic 10 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 10 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 10"><a href="topic-10-01.html" class="active" aria-current="page"><span class="nav-number">10.1</span><span>Web Page Design Tools</span></a>
-<a href="topic-10-02.html" ><span class="nav-number">10.2</span><span>Web Typography</span></a>
-<a href="topic-10-03.html" ><span class="nav-number">10.3</span><span>Effective Design Principles</span></a>
-<a href="topic-10-04.html" ><span class="nav-number">10.4</span><span>Introduction to Web Accessibility</span></a>
-<a href="topic-10-05.html" ><span class="nav-number">10.5</span><span>Applying WCAG Guidelines</span></a>
-<a href="topic-10-06.html" ><span class="nav-number">10.6</span><span>Designing Intuitive Navigation</span></a>
-<a href="topic-10-07.html" ><span class="nav-number">10.7</span><span>Browser Compatibility and Testing</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 10 · Designing Web Pages</strong><div>Unit 2 · AS Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-10.html">Topic 10</a><span aria-hidden="true">›</span><strong>Lesson 10.1</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 2 · TOPIC 10 · LESSON 1</span><h1>Web Page Design Tools</h1><p>Edexcel International A Level IT · AS Level</p><div class="hero-tags"><span>📖 Topic 10.1</span><span>📑 Syllabus 10.1.1</span><span>💻 Designing Web Pages</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 10.1: Web Page Design Tools</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 10 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-10.html">← Back to Topic 10</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-10.html">← Topic 10 Dashboard</a><a href="topic-10-02.html">Lesson 10.2 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT AS</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false">☰ <span>Lesson
+      Menu</span></button>
+  <div class="overlay" id="overlay"></div>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-identity">
+        <div class="brand-logo" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
+            <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
+          </svg></div>
+        <div class="brand-text">
+          <h2>Tr.Sun Education</h2>
+          <p>Learn · Explore · Achieve</p>
+        </div>
+      </div>
+      <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
+    </div>
+    <div class="current-lesson"><small>YOU ARE STUDYING</small>
+      <h3>🎨 Topic 10.1</h3>
+      <p>How to Design Web Pages</p>
+    </div>
+    <div class="sidebar-label">LESSON CONTENTS</div>
+    <nav class="side-nav" aria-label="Lesson sections">
+      <a class="active" href="#introduction"><span class="nav-number">1</span><span>Introduction to Design</span></a>
+      <a href="#wireframes"><span class="nav-number">2</span><span>Wireframes</span></a>
+      <a href="#mockups"><span class="nav-number">3</span><span>Mock-ups</span></a>
+      <a href="#style-guide"><span class="nav-number">4</span><span>Web-Design Style Guide</span></a>
+      <a href="#prototyping"><span class="nav-number">5</span><span>Prototyping</span></a>
+      <a href="#comparison"><span class="nav-number">6</span><span>Comparing Design Tools</span></a>
+      <a href="#workflow"><span class="nav-number">7</span><span>How the Tools Work Together</span></a>
+      <a href="#real-world"><span class="nav-number">8</span><span>Real-World Application</span></a>
+      <a href="#misunderstandings"><span class="nav-number">9</span><span>Common Misunderstandings</span></a>
+      <a href="#conclusion"><span class="nav-number">10</span><span>Conclusion</span></a>
+    </nav>
+    <div class="sidebar-footer"><strong>Topic 10 · Designing Web Pages</strong>
+      <div>Unit 2 · AS Level</div>
+      <div style="margin-top:12px">Created by Tr. Sun</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span>&gt;</span><a
+          href="topic-10.html">Topic 10</a><span>&gt;</span><strong>Lesson 10.1</strong></nav>
+      <header class="hero">
+        <div class="hero-content"><span class="hero-badge">UNIT 2 · TOPIC 10 · SYLLABUS 10.1.1</span>
+          <h1>How to Design Web Pages</h1>
+          <p>Understand how designers plan effective web pages using wireframes, mock-ups, web-design style guides and
+            interactive prototypes.</p>
+          <div class="hero-tags"><span>📘 10 Learning Sections</span><span>🎓 AS Level · Unit 2</span><span>🎨
+              Principles of Design</span></div>
+        </div>
+      </header>
+
+      <section class="lesson-section" id="introduction" aria-labelledby="head-intro">
+        <div class="section-heading">
+          <div class="section-icon purple">🧭</div>
+          <div><small>Section 01</small>
+            <h2 id="head-intro">Introduction to Web Page Design</h2>
+          </div>
+        </div>
+        <p class="lead">Before developers start writing <strong>HTML, CSS and JavaScript</strong>, they plan how a
+          website should look, how its content should be organised and how users should interact with it.</p>
+        <div class="definition"><span class="label">KEY DEFINITION · WEB PAGE DESIGN</span>
+          <p><strong>Web page design</strong> is the process of planning the structure, layout, appearance and
+            interactions of a web page before it is fully developed.</p>
+        </div>
+        <p>A well-designed website should be <strong>easy to navigate, visually attractive, consistent</strong> and
+          suitable for its intended users. For an online learning website, designers must decide where to place the
+          navigation menu, lesson content, images and buttons.</p>
+        <h3>The four main design tools</h3>
+        <div class="four-tools">
+          <div class="tool-card"><span class="big-icon">📐</span><strong>Wireframe</strong><small>Structure and
+              layout</small></div>
+          <div class="tool-card"><span class="big-icon">🖼️</span><strong>Mock-up</strong><small>Visual
+              appearance</small></div>
+          <div class="tool-card"><span class="big-icon">🎨</span><strong>Style guide</strong><small>Consistent
+              formatting</small></div>
+          <div class="tool-card"><span class="big-icon">🖱️</span><strong>Prototype</strong><small>Interaction and
+              testing</small></div>
+        </div>
+        <div class="example-box"><span class="example-label">💡 EXAMPLE · ONLINE CLASSROOM WEBSITE</span>
+          <p>Before coding an online classroom, the designer decides where the student login button, topic links, lesson
+            notes and announcements should appear. Different tools are used to communicate and test these decisions.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="wireframes" aria-labelledby="head-wireframes">
+        <div class="section-heading">
+          <div class="section-icon blue">📐</div>
+          <div><small>Section 02</small>
+            <h2 id="head-wireframes">Wireframes</h2>
+          </div>
+        </div>
+        <h3>2.1 What is a wireframe?</h3>
+        <div class="definition"><span class="label">KEY DEFINITION · WIREFRAME</span>
+          <p>A <strong>wireframe</strong> is a simple, two-dimensional representation of a web page showing the
+            arrangement and positioning of its main elements.</p>
+        </div>
+        <p>Think of a wireframe as an <strong>architect's blueprint</strong>. It concentrates on <strong>structure and
+            layout</strong>, rather than the final colours, font choices or images.</p>
+        <p>A wireframe may show the position of the:</p>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">🏷️</div>
+            <h4>Header and logo</h4>
+            <p>Identifies the website at the top of the page.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">☰</div>
+            <h4>Navigation menu</h4>
+            <p>Shows where users will find links to different pages.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📄</div>
+            <h4>Main content, text and images</h4>
+            <p>Reserves space for important information and visuals.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧱</div>
+            <h4>Sidebar and footer</h4>
+            <p>Indicates supporting links and bottom-of-page information.</p>
+          </div>
+        </div>
+        <h3>2.2 Example of a wireframe</h3>
+        <figure class="visual-board">
+          <div class="diagram-title">Online learning website · structural wireframe</div>
+          <div class="wireframe" role="img"
+            aria-label="Wireframe showing a logo and website header above a navigation menu; a sidebar beside the main content; an image placeholder and two content blocks; and a footer.">
+            <div class="wf-header">
+              <div class="wf-logo">LOGO</div>
+              <div class="wf-heading">WEBSITE HEADER</div>
+            </div>
+            <div class="wf-nav">NAVIGATION MENU</div>
+            <div class="wf-middle">
+              <div class="wf-side">SIDEBAR</div>
+              <div class="wf-content">
+                <div style="text-align:center">MAIN CONTENT</div>
+                <div class="wf-image">IMAGE PLACEHOLDER</div>
+                <div class="wf-lines">
+                  <div>Content 1</div>
+                  <div>Content 2</div>
+                </div>
+              </div>
+            </div>
+            <div class="wf-footer">FOOTER</div>
+          </div>
+          <figcaption>Boxes and labels show <strong>where</strong> content will appear—not its final visual style.
+          </figcaption>
+        </figure>
+        <h3>2.3 Why are wireframes useful?</h3>
+        <ol>
+          <li>Plan where information will appear.</li>
+          <li>Decide how much space different page elements require.</li>
+          <li>Organise content into a logical structure.</li>
+          <li>Identify layout problems before development begins.</li>
+          <li>Discuss suggested changes with clients and stakeholders.</li>
+        </ol>
+        <div class="example-box"><span class="example-label">💡 PRACTICAL EXAMPLE</span>
+          <p>A school requests a website. The designer uses a wireframe to show where the lessons, announcements and
+            student login page will be located. The school can recommend changes <strong>before any code is
+              written</strong>.</p>
+        </div>
+        <div class="note-box"><strong>⚠️ Limitation:</strong> A wireframe does not communicate the finished page's
+          visual appearance. Stakeholders may find it difficult to judge whether the final website will look attractive.
+        </div>
+      </section>
+
+      <section class="lesson-section" id="mockups" aria-labelledby="head-mockups">
+        <div class="section-heading">
+          <div class="section-icon green">🖼️</div>
+          <div><small>Section 03</small>
+            <h2 id="head-mockups">Mock-ups</h2>
+          </div>
+        </div>
+        <h3>3.1 What is a mock-up?</h3>
+        <div class="definition"><span class="label">KEY DEFINITION · MOCK-UP</span>
+          <p>A <strong>mock-up</strong> is a more realistic visual representation of what the completed web page is
+            expected to look like.</p>
+        </div>
+        <p>Unlike a wireframe, a mock-up includes the design decisions that make the page look closer to the real
+          finished website:</p>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">🔠</div>
+            <h4>Text and typography</h4>
+            <p>Actual or representative wording, font sizes and styles.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🌈</div>
+            <h4>Colours and backgrounds</h4>
+            <p>The planned colour scheme and visual contrast.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📷</div>
+            <h4>Images and logos</h4>
+            <p>Proposed image choices and brand elements.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔘</div>
+            <h4>Buttons, icons and spacing</h4>
+            <p>How interface controls and content will be aligned.</p>
+          </div>
+        </div>
+        <h3>3.2 Example of a mock-up</h3>
+        <figure class="visual-board">
+          <div class="diagram-title">Online learning website · visual mock-up</div>
+          <div class="mock-browser" role="img"
+            aria-label="Static visual mock-up with purple website header, dark sidebar, white lesson cards, coloured illustration areas and a footer.">
+            <div class="mock-top"><span class="mock-dot"></span><span class="mock-dot"></span><span
+                class="mock-dot"></span></div>
+            <div class="mock-site"><span class="mock-brand">✦ LearnSpace</span><span class="mock-menu">Home &nbsp; ·
+                &nbsp; Lessons &nbsp; · &nbsp; Contact</span></div>
+            <div class="mock-layout">
+              <div class="mock-sidebar"><strong>YOUR SUBJECTS</strong><span>✦ Home</span><span>▤ IT
+                  Lessons</span><span>☷ Resources</span></div>
+              <div class="mock-main">
+                <h4>Welcome to your lessons!</h4>
+                <p>Choose a topic to begin learning.</p>
+                <div class="mock-cards">
+                  <div class="mock-card">
+                    <div class="mock-art">💻</div>
+                    <div>Topic 1 · Hardware</div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-art">🌐</div>
+                    <div>Topic 2 · Networks</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mock-bottom">© LearnSpace · Learning made simple</div>
+          </div>
+          <figcaption>This is a <strong>static visual example</strong>. The apparent links and cards are illustrations
+            rather than working controls.</figcaption>
+        </figure>
+        <h3>3.3 Why create a mock-up?</h3>
+        <p>A mock-up helps designers and stakeholders evaluate the appearance of the page before development. For
+          example, a teacher could assess whether a purple header, dark sidebar and white lesson cards are appropriate.
+        </p>
+        <ul>
+          <li>Do the colours work well together?</li>
+          <li>Are headings readable and easy to recognise?</li>
+          <li>Is navigation clearly visible?</li>
+          <li>Are images suitable for students?</li>
+          <li>Does the design look consistent across the page?</li>
+        </ul>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Advantages</th>
+                <th>Limitations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shows a realistic representation of the final appearance.</td>
+                <td>Usually does not demonstrate functionality.</td>
+              </tr>
+              <tr>
+                <td>Helps stakeholders provide feedback on the visual design.</td>
+                <td>Takes more time to produce than a basic wireframe.</td>
+              </tr>
+              <tr>
+                <td>Helps identify visual problems and communicate intended styling.</td>
+                <td>Redesigns may take time; it does not prove the page works.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box"><strong>🔍 Wireframe versus mock-up:</strong> A <strong>wireframe</strong> shows
+          <em>where</em> elements will go. A <strong>mock-up</strong> shows <em>what they will look like</em>. A
+          wireframe might label a rectangle “Login Button”; a mock-up could show the finished purple button with white
+          text and rounded corners.</div>
+      </section>
+
+      <section class="lesson-section" id="style-guide" aria-labelledby="head-style-guide">
+        <div class="section-heading">
+          <div class="section-icon purple">🎨</div>
+          <div><small>Section 04</small>
+            <h2 id="head-style-guide">Web-Design Style Guide</h2>
+          </div>
+        </div>
+        <h3>4.1 What is a style guide?</h3>
+        <div class="definition"><span class="label">KEY DEFINITION · STYLE GUIDE</span>
+          <p>A <strong>web-design style guide</strong> is a document that specifies the formatting rules and visual
+            standards that should be followed when creating pages for a website.</p>
+        </div>
+        <p>Its main purpose is <strong>consistency</strong>. For example, every page of a school's website should use
+          the same logo, colour scheme, main heading style and navigation design.</p>
+        <h3>4.2 What belongs in a style guide?</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">🔠</div>
+            <h4>Text hierarchy</h4>
+            <p>Headings, subheadings, paragraph text and how bold or italic text should be used.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🅰️</div>
+            <h4>Fonts</h4>
+            <p>Font families, sizes and colours for different levels of text.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📋</div>
+            <h4>Tables and lists</h4>
+            <p>Rules for borders, spacing, bullets and numbered lists.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧩</div>
+            <h4>Interface elements</h4>
+            <p>Buttons, icons and guidelines for displaying images.</p>
+          </div>
+        </div>
+        <h3>4.3 Example of a visual style guide</h3>
+        <p class="subtle">The following is an illustrative style guide for an education website.</p>
+        <div class="visual-board">
+          <p class="diagram-title">Example Education Website · Visual Style Guide</p>
+          <h4>Brand colours</h4>
+          <div class="swatches">
+            <div class="swatch">
+              <div class="swatch-color" style="background:#5634B8"></div>
+              <div class="swatch-body"><strong>Primary</strong><code>#5634B8</code></div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background:#A875E4"></div>
+              <div class="swatch-body"><strong>Accent</strong><code>#A875E4</code></div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background:#111827"></div>
+              <div class="swatch-body"><strong>Navigation</strong><code>#111827</code></div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-color" style="background:#E9EDF3"></div>
+              <div class="swatch-body"><strong>Background</strong><code>#E9EDF3</code></div>
+            </div>
+          </div>
+          <h4>Typography</h4>
+          <div class="type-scale">
+            <div class="type-example">
+              <div><span class="type-h1">Main Page Heading</span></div><small>Arial · 32px · Bold</small>
+            </div>
+            <div class="type-example">
+              <div><span class="type-h2">Section Heading</span></div><small>Arial · 24px · Bold</small>
+            </div>
+            <div class="type-example">
+              <div><span class="type-para">Example paragraph text for a lesson webpage.</span></div><small>Arial · 16px
+                · Regular</small>
+            </div>
+          </div>
+          <h4 style="margin-top:21px">Button styling</h4>
+          <div class="fake-buttons" aria-label="Non-interactive button style examples"><span
+              class="fake-button primary">Primary button</span><span class="fake-button secondary">Secondary
+              button</span></div>
+          <p class="mini-note">The button samples above illustrate formatting rules; they are not interactive controls.
+          </p>
+        </div>
+        <h3>4.4 Why is a style guide important?</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">✅</div>
+            <h4>Consistency</h4>
+            <p>All pages look related and professional.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h4>Efficiency</h4>
+            <p>Developers do not have to select colours and fonts afresh for every page.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🤝</div>
+            <h4>Team collaboration</h4>
+            <p>Different developers can follow the same visual standards.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔧</div>
+            <h4>Maintenance</h4>
+            <p>New pages can be added while preserving the website's visual identity.</p>
+          </div>
+        </div>
+        <div class="example-box"><span class="example-label">💡 PRACTICAL EXAMPLE</span>
+          <p>If a school adds five new subject pages, a different developer can follow the existing style guide. The new
+            pages will use the same colour palette, heading styles and buttons as the original website.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="prototyping" aria-labelledby="head-prototyping">
+        <div class="section-heading">
+          <div class="section-icon blue">🖱️</div>
+          <div><small>Section 05</small>
+            <h2 id="head-prototyping">Prototyping</h2>
+          </div>
+        </div>
+        <h3>5.1 What is a prototype?</h3>
+        <div class="definition"><span class="label">KEY DEFINITION · PROTOTYPE</span>
+          <p>A <strong>prototype</strong> is an early digital model of a website that allows designers and users to
+            explore how the website will function before the final version is developed.</p>
+        </div>
+        <p>A prototype is like a first working draft. Its key difference from a static mock-up is that a prototype
+          <strong>can demonstrate interaction</strong>, such as a navigation button taking the user to another sample
+          screen.</p>
+        <h3>5.2 Interactive example · Student website navigation</h3>
+        <div class="visual-board">
+          <div class="diagram-title">Try clicking the navigation buttons in this working prototype</div>
+          <div class="prototype-shell" id="prototypeDemo">
+            <div class="proto-header">
+              <div class="proto-title">✦ Learning Portal <small>PROTOTYPE</small></div>
+              <div class="proto-nav" aria-label="Prototype navigation"><button type="button" data-screen="home"
+                  aria-pressed="true">Home</button><button type="button" data-screen="lessons"
+                  aria-pressed="false">Lessons</button><button type="button" data-screen="about"
+                  aria-pressed="false">About</button></div>
+            </div>
+            <div class="proto-body" id="prototypeContent" aria-live="polite"><span class="prototype-badge">Sample screen
+                · Home</span>
+              <h3>Welcome to the Learning Portal</h3>
+              <p>Choose <strong>Lessons</strong> to explore the available topics.</p><button class="proto-cta"
+                type="button" data-goto="lessons">View Lessons →</button>
+            </div>
+            <div class="proto-status" id="prototypeStatus">Current sample screen: Home</div>
+          </div>
+          <p class="mini-note">The navigation works inside this demonstration. It is a small prototype, not a complete
+            website or student login system.</p>
+        </div>
+        <h3>5.3 Why are prototypes useful?</h3>
+        <ol>
+          <li>Demonstrate how website navigation will work.</li>
+          <li>Allow users to test interactions and complete sample tasks.</li>
+          <li>Collect feedback about the design.</li>
+          <li>Identify usability problems early.</li>
+          <li>Improve the design before full development.</li>
+          <li>Reduce the risk of wasting time and money on unsuitable designs.</li>
+        </ol>
+        <div class="example-box"><span class="example-label">💡 PRACTICAL EXAMPLE</span>
+          <p>Students test a prototype of an online learning website and report that the lesson menu is difficult to
+            locate. The developer can move the menu or make it clearer <strong>before building the final site</strong>.
+          </p>
+        </div>
+        <h3>5.4 Advantages and limitations</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Advantages</th>
+                <th>Limitations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Allows early testing of interactive features.</td>
+                <td>May not include all final website features.</td>
+              </tr>
+              <tr>
+                <td>Helps identify usability problems.</td>
+                <td>Creating it may require additional development time.</td>
+              </tr>
+              <tr>
+                <td>Encourages stakeholder feedback.</td>
+                <td>Some interactions may only be simulated.</td>
+              </tr>
+              <tr>
+                <td>May prevent more expensive changes later.</td>
+                <td>Users may mistake the prototype for a complete website.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="comparison" aria-labelledby="head-comparison">
+        <div class="section-heading">
+          <div class="section-icon green">⚖️</div>
+          <div><small>Section 06</small>
+            <h2 id="head-comparison">Comparison of the Four Design Tools</h2>
+          </div>
+        </div>
+        <p>Each design tool serves a different purpose. Knowing these distinctions helps you choose the right tool for a
+          particular design task.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Wireframe</th>
+                <th>Mock-up</th>
+                <th>Style guide</th>
+                <th>Prototype</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Main purpose</strong></td>
+                <td>Plan layout</td>
+                <td>Show appearance</td>
+                <td>Ensure consistency</td>
+                <td>Test interactions</td>
+              </tr>
+              <tr>
+                <td><strong>Shows layout</strong></td>
+                <td><span class="pill">Yes</span></td>
+                <td><span class="pill">Yes</span></td>
+                <td><span class="pill no">Not normally</span></td>
+                <td><span class="pill">Yes</span></td>
+              </tr>
+              <tr>
+                <td><strong>Shows colours and fonts</strong></td>
+                <td><span class="pill no">Usually no</span></td>
+                <td><span class="pill">Yes</span></td>
+                <td>Specifies rules</td>
+                <td><span class="pill maybe">Often yes</span></td>
+              </tr>
+              <tr>
+                <td><strong>Functional interactions</strong></td>
+                <td><span class="pill no">No</span></td>
+                <td><span class="pill no">Usually no</span></td>
+                <td><span class="pill no">No</span></td>
+                <td><span class="pill maybe">Often yes</span></td>
+              </tr>
+              <tr>
+                <td><strong>Useful for feedback</strong></td>
+                <td><span class="pill">Yes</span></td>
+                <td><span class="pill">Yes</span></td>
+                <td><span class="pill">Yes</span></td>
+                <td><span class="pill">Yes</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="feature-grid">
+          <div class="feature">
+            <h4>📐 Wireframe</h4>
+            <p><strong>Where</strong> will everything go?</p>
+          </div>
+          <div class="feature">
+            <h4>🖼️ Mock-up</h4>
+            <p><strong>What</strong> will everything look like?</p>
+          </div>
+          <div class="feature">
+            <h4>🎨 Style guide</h4>
+            <p><strong>Which formatting rules</strong> must everyone follow?</p>
+          </div>
+          <div class="feature">
+            <h4>🖱️ Prototype</h4>
+            <p><strong>How</strong> will everything work when users interact?</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="workflow" aria-labelledby="head-workflow">
+        <div class="section-heading">
+          <div class="section-icon purple">🔄</div>
+          <div><small>Section 07</small>
+            <h2 id="head-workflow">How the Design Tools Work Together</h2>
+          </div>
+        </div>
+        <p>The tools complement one another throughout website development. A possible workflow is:</p>
+        <div class="stage-list">
+          <div class="stage">
+            <div class="stage-num">01</div>
+            <div><strong>Website requirements</strong>
+              <p>Identify the users, the content they need and the features the website should provide.</p>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="stage-num">02</div>
+            <div><strong>Wireframe</strong>
+              <p>Plan the structure, positioning and general layout of the page.</p>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="stage-num">03</div>
+            <div><strong>Mock-up and style guide</strong>
+              <p>Choose the visual appearance and establish consistent formatting rules.</p>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="stage-num">04</div>
+            <div><strong>Prototype</strong>
+              <p>Demonstrate navigation and let stakeholders try important interactions.</p>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="stage-num">05</div>
+            <div><strong>Feedback and improvements</strong>
+              <p>Update the design to address problems before full development.</p>
+            </div>
+          </div>
+        </div>
+        <div class="note-box"><strong>📌 Important:</strong> This is an example workflow, not a compulsory sequence.
+          Designers may move between stages or revisit earlier decisions as requirements change.</div>
+      </section>
+
+      <section class="lesson-section" id="real-world" aria-labelledby="head-real-world">
+        <div class="section-heading">
+          <div class="section-icon blue">🛒</div>
+          <div><small>Section 08</small>
+            <h2 id="head-real-world">Real-World Application</h2>
+          </div>
+        </div>
+        <p>Imagine a company is planning to build an <strong>online shopping website</strong>. Each design tool can help
+          with a different part of the work.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Design tool</th>
+                <th>Practical application</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>📐 Wireframe</strong></td>
+                <td>Plan where product images, search tools, categories and the shopping cart will appear.</td>
+              </tr>
+              <tr>
+                <td><strong>🖼️ Mock-up</strong></td>
+                <td>Show product images, select fonts and colours, and illustrate the appearance of the <em>Buy</em>
+                  button.</td>
+              </tr>
+              <tr>
+                <td><strong>🎨 Style guide</strong></td>
+                <td>Define a consistent appearance for product, checkout and navigation pages.</td>
+              </tr>
+              <tr>
+                <td><strong>🖱️ Prototype</strong></td>
+                <td>Let users simulate finding a product, adding it to the basket and proceeding to checkout.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example-box"><span class="example-label">✅ WHY THIS MATTERS</span>
+          <p>These tools give the company an opportunity to discover layout, appearance and usability problems
+            <strong>before investing in the complete working website</strong>.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="misunderstandings" aria-labelledby="head-misunderstandings">
+        <div class="section-heading">
+          <div class="section-icon green">💡</div>
+          <div><small>Section 09</small>
+            <h2 id="head-misunderstandings">Common Misunderstandings</h2>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">📐</div>
+            <h4>Wireframe ≠ finished design</h4>
+            <p>A wireframe mainly communicates structure and layout; it does not show the final colours and fonts.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🖼️</div>
+            <h4>Mock-up ≠ working page</h4>
+            <p>A mock-up may show buttons and menus without allowing a user to click them.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <h4>Style guide ≠ individual web page</h4>
+            <p>A style guide contains design rules applied across many pages, not one complete page layout.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🖱️</div>
+            <h4>Prototype ≠ finished website</h4>
+            <p>A prototype may include only selected features needed to demonstrate and test interactions.</p>
+          </div>
+        </div>
+        <div class="note-box"><strong>🔎 Remember:</strong> A prototype can simulate some features without having a real
+          database, account system or checkout process. Its purpose is to explore and test the user experience.</div>
+      </section>
+
+      <section class="lesson-section" id="conclusion" aria-labelledby="head-conclusion">
+        <div class="section-heading">
+          <div class="section-icon purple">🏁</div>
+          <div><small>Section 10</small>
+            <h2 id="head-conclusion">Conclusion</h2>
+          </div>
+        </div>
+        <p>The four main design tools help developers plan and evaluate websites <strong>before full
+            implementation</strong>.</p>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">📐</div>
+            <h4>Wireframes</h4>
+            <p>Establish the structure and layout.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🖼️</div>
+            <h4>Mock-ups</h4>
+            <p>Communicate the intended visual appearance.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <h4>Style guides</h4>
+            <p>Maintain consistency across all pages.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🖱️</div>
+            <h4>Prototypes</h4>
+            <p>Allow interaction testing and feedback.</p>
+          </div>
+        </div>
+        <p>Together, they make it easier to meet user requirements, improve usability and reduce the risk of costly
+          design changes later.</p>
+      </section>
+
+      <nav class="lesson-navigation" aria-label="Other lessons"><a href="topic-10.html">⬆️ Topic 10 Dashboard</a><a
+          href="topic-10-02.html">Next · Topic 10.2 ➡️</a></nav>
+
+
+          
+      <footer class="page-footer">
+        <p><strong>Tr.Sun Education</strong></p>
+        <p>Edexcel International A Level IT</p>
+        <p>Created by Tr. Sun</p>
+      </footer>
+    </div>
+  </main>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    // Keep the mobile lesson menu, progress bar and section highlighting
+    // consistent with the Tr.Sun Education Topic 3.1 lesson template.
+    const sidebar = document.getElementById('sidebar');
+    const menuButton = document.getElementById('menuButton');
+    const overlay = document.getElementById('overlay');
+    const progress = document.getElementById('readingProgress');
+    const backTop = document.getElementById('backTop');
+    const navLinks = document.querySelectorAll('.side-nav a');
+    const sections = document.querySelectorAll('.lesson-section');
+    function openMenu() { sidebar.classList.add('open'); overlay.classList.add('show'); menuButton.setAttribute('aria-expanded', 'true'); menuButton.setAttribute('aria-label', 'Close lesson navigation'); }
+    function closeMenu() { sidebar.classList.remove('open'); overlay.classList.remove('show'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open lesson navigation'); }
+    menuButton.addEventListener('click', () => sidebar.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    function updateActiveSection() { let currentSection = sections[0]?.id; sections.forEach(section => { if (section.getBoundingClientRect().top <= 190) currentSection = section.id; }); navLinks.forEach(link => { const active = link.getAttribute('href') === '#' + currentSection; link.classList.toggle('active', active); if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); }); }
+    function updateReadingProgress() { const maxScroll = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = (maxScroll > 0 ? Math.min(100, (window.scrollY / maxScroll) * 100) : 100) + '%'; }
+    function updateBackTop() { backTop.classList.toggle('visible', window.scrollY > 450); }
+    function updatePage() { updateActiveSection(); updateReadingProgress(); updateBackTop(); }
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+    window.addEventListener('scroll', updatePage, { passive: true });
+    window.addEventListener('resize', () => { if (window.innerWidth > 800) closeMenu(); updatePage(); });
+
+    // Small interactive prototype (demo only; no network or external libraries).
+    const screens = {
+      home: { tag: 'Home', title: 'Welcome to the Learning Portal', text: 'Choose <strong>Lessons</strong> to explore the available topics.', button: 'View Lessons →', goto: 'lessons' },
+      lessons: { tag: 'Lessons', title: 'Available Lessons', text: 'Browse <strong>Topic 1 · Hardware</strong>, <strong>Topic 2 · Networks</strong> and <strong>Topic 10 · Designing Web Pages</strong>.', button: 'About This Site →', goto: 'about' },
+      about: { tag: 'About', title: 'About the Learning Portal', text: 'This sample portal helps students find and explore their IT learning materials.', button: 'Return Home →', goto: 'home' }
+    };
+    const demo = document.getElementById('prototypeDemo');
+    const demoContent = document.getElementById('prototypeContent');
+    const demoStatus = document.getElementById('prototypeStatus');
+    function showScreen(name) {
+      const d = screens[name]; if (!d) return;
+      demo.querySelectorAll('[data-screen]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.screen === name)));
+      demoContent.innerHTML = '<span class="prototype-badge">Sample screen · ' + d.tag + '</span><h3>' + d.title + '</h3><p>' + d.text + '</p><button class="proto-cta" type="button" data-goto="' + d.goto + '">' + d.button + '</button>';
+      demoStatus.textContent = 'Current sample screen: ' + d.tag;
+    }
+    demo.addEventListener('click', event => { const button = event.target.closest('button[data-screen],button[data-goto]'); if (button && demo.contains(button)) showScreen(button.dataset.screen || button.dataset.goto); });
+    updatePage();
+  </script>
 </body>
+
 </html>

@@ -1,120 +1,1818 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 10.2: Web Typography — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 10.2 – Web Typography | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description"
+    content="Tr.Sun Education lesson notes for Edexcel International A Level IT Topic 10.1.2: Web Typography.">
+  <title>Topic 10.2 – Web Typography | Tr.Sun Education</title>
+  <style>
+    :root {
+      --sidebar: #111827;
+      --sidebar-text: #cbd5e1;
+      --purple: #6549d7;
+      --purple-light: #eeeaff;
+      --text: #202842;
+      --muted: #667085;
+      --border: #e8ecf4;
+      --bg: #f5f7fc;
+      --card: #fff;
+      --shadow: 0 10px 32px rgba(42, 47, 92, .055)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 36px
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.75 Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased
+    }
+
+    button,
+    a {
+      font: inherit
+    }
+
+    a {
+      color: #5d43cd;
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid #b69cff;
+      outline-offset: 4px
+    }
+
+    ::selection {
+      background: #ddd4ff;
+      color: #281454
+    }
+
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #8567fa, #cd8efb);
+      z-index: 100
+    }
+
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 282px;
+      background: var(--sidebar);
+      color: #fff;
+      z-index: 45;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 24px rgba(17, 24, 39, .08)
+    }
+
+    .brand {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      padding: 29px 23px 22px;
+      border-bottom: 1px solid #ffffff16
+    }
+
+    .brand-logo {
+      width: 45px;
+      height: 45px;
+      flex: 0 0 45px;
+      border-radius: 12px;
+      background: linear-gradient(140deg, #7054ed, #a66df4);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 20px #674acc4a
+    }
+
+    .brand-name {
+      font-size: 17px;
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: -.35px
+    }
+
+    .tagline {
+      font-size: 10px;
+      color: #b8b2de;
+      letter-spacing: 1.05px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 5px
+    }
+
+    .sidebar-content {
+      overflow-y: auto;
+      padding: 21px 14px 18px;
+      scrollbar-width: thin;
+      scrollbar-color: #424b63 transparent
+    }
+
+    .sidebar-label {
+      color: #8691a9;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0 13px;
+      margin: 5px 0 10px
+    }
+
+    .current-topic {
+      background: linear-gradient(125deg, rgba(111, 82, 222, .28), rgba(139, 95, 239, .08));
+      border: 1px solid #9a80f84d;
+      border-radius: 13px;
+      padding: 13px 15px;
+      margin: 0 5px 25px
+    }
+
+    .current-topic small {
+      color: #c4b4ff;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1px
+    }
+
+    .current-topic strong {
+      font-size: 15px;
+      line-height: 1.5;
+      display: block;
+      margin: 5px 0 3px
+    }
+
+    .current-topic span {
+      color: #c7cee0;
+      font-size: 12px
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #bfcae0;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin: 3px 2px;
+      font-size: 12.6px;
+      font-weight: 600;
+      line-height: 1.45;
+      transition: background .15s, color .15s
+    }
+
+    .nav-link:hover {
+      background: #ffffff0d;
+      color: #fff;
+      text-decoration: none
+    }
+
+    .nav-link.active {
+      background: #6850da;
+      color: #fff;
+      box-shadow: 0 3px 13px #5d43cb35
+    }
+
+    .nav-num {
+      color: #9485db;
+      font-weight: 800;
+      font-size: 11px;
+      min-width: 23px
+    }
+
+    .nav-link.active .nav-num {
+      color: #fff
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 18px 25px 23px;
+      border-top: 1px solid #ffffff16;
+      color: #9aa7ba;
+      font-size: 11px;
+      line-height: 1.65
+    }
+
+    .sidebar-footer strong {
+      color: #e6e9f6
+    }
+
+    .main {
+      margin-left: 282px;
+      min-width: 0;
+      min-height: 100vh
+    }
+
+    .main-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 33px 47px 65px
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      color: #8991a5;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0 0 24px
+    }
+
+    .breadcrumb a {
+      color: #606c8f
+    }
+
+    .breadcrumb a:hover {
+      color: var(--purple)
+    }
+
+    .breadcrumb svg {
+      width: 14px;
+      color: #b0b8c8
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      background: linear-gradient(115deg, #4934b5 0%, #7650d8 52%, #ad72ed 100%);
+      border-radius: 23px;
+      padding: 46px 47px 46px;
+      color: white;
+      overflow: hidden;
+      box-shadow: 0 13px 30px #6646ca26;
+      margin-bottom: 26px
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 330px;
+      height: 330px;
+      right: -80px;
+      top: -190px;
+      border: 1px solid #ffffff38;
+      border-radius: 50%;
+      box-shadow: 0 0 0 62px #ffffff08, 0 0 0 132px #ffffff08
+    }
+
+    .hero:after {
+      content: "Aa";
+      position: absolute;
+      right: 35px;
+      bottom: -40px;
+      font: 900 145px/1 Georgia, serif;
+      color: #ffffff15;
+      transform: rotate(-10deg);
+      z-index: -1
+    }
+
+    .hero-kickers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 19px
+    }
+
+    .hero-kickers span {
+      font-size: 10px;
+      line-height: 1.2;
+      letter-spacing: .7px;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: #ffffff2b;
+      border: 1px solid #ffffff36;
+      border-radius: 50px;
+      padding: 8px 12px
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-weight: 850;
+      letter-spacing: -1.8px;
+      line-height: 1.1;
+      font-size: clamp(36px, 4.8vw, 56px)
+    }
+
+    .hero p {
+      max-width: 610px;
+      margin: 0;
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #f1e9ff
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 24px
+    }
+
+    .hero-meta span {
+      font-size: 11px;
+      font-weight: 700;
+      background: #1d0d6025;
+      border: 1px solid #ffffff36;
+      border-radius: 7px;
+      padding: 5px 11px
+    }
+
+    .intro-strip {
+      display: flex;
+      gap: 14px;
+      align-items: start;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px 21px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow)
+    }
+
+    .intro-strip .icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 36px;
+      height: 36px;
+      color: #6245d4;
+      background: #f0ebff;
+      border-radius: 10px
+    }
+
+    .intro-strip p {
+      margin: 1px 0;
+      color: #536078;
+      font-size: 13px;
+      line-height: 1.75
+    }
+
+    .intro-strip strong {
+      color: #2c3656
+    }
+
+    .lesson-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      margin: 0 0 25px;
+      padding: 31px 33px 32px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 27px
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid #edf0f6;
+      padding-bottom: 19px;
+      margin-bottom: 24px
+    }
+
+    .section-icon {
+      flex: 0 0 47px;
+      height: 47px;
+      border-radius: 13px;
+      background: #efecff;
+      color: #6347d4;
+      display: grid;
+      place-items: center
+    }
+
+    .lesson-section:nth-of-type(3n+2) .section-icon {
+      background: #e9f8f2;
+      color: #0d956b
+    }
+
+    .lesson-section:nth-of-type(3n) .section-icon {
+      background: #fff2e5;
+      color: #cb7d26
+    }
+
+    .section-eyebrow {
+      display: block;
+      color: #8065db;
+      letter-spacing: 1.5px;
+      font-size: 10px;
+      font-weight: 900;
+      margin-bottom: 1px
+    }
+
+    .section-header h2 {
+      font-size: clamp(20px, 2.5vw, 26px);
+      letter-spacing: -.65px;
+      line-height: 1.3;
+      margin: 0;
+      color: #1c2743
+    }
+
+    .section-content {
+      font-size: 14.4px;
+      line-height: 1.82;
+      color: #46536d
+    }
+
+    .section-content>p:first-child {
+      margin-top: 0
+    }
+
+    .section-content p {
+      margin: 12px 0
+    }
+
+    .section-content strong {
+      color: #273453
+    }
+
+    .subheading,
+    .example-heading {
+      color: #30375b;
+      margin: 29px 0 12px;
+      font-size: 17px;
+      letter-spacing: -.2px;
+      line-height: 1.45
+    }
+
+    .subheading:first-child,
+    .example-heading:first-child {
+      margin-top: 0
+    }
+
+    .subheading:before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      vertical-align: -3px;
+      background: #7c5be4;
+      border-radius: 5px;
+      margin-right: 10px
+    }
+
+    .example-heading {
+      display: flex;
+      align-items: center;
+      background: #f6f3ff;
+      border: 1px solid #eee8ff;
+      border-radius: 11px;
+      padding: 12px 15px;
+      color: #543fc2
+    }
+
+    .definition {
+      background: #f4f0ff;
+      border-left: 4px solid #7956df;
+      border-radius: 0 10px 10px 0;
+      padding: 15px 18px;
+      margin: 18px 0 !important;
+      color: #463a88 !important;
+      font-weight: 650
+    }
+
+    .tip {
+      background: #e9f9f4;
+      border-left: 4px solid #19a678;
+      border-radius: 0 10px 10px 0;
+      padding: 13px 17px;
+      font-weight: 700;
+      color: #11674d
+    }
+
+    .note {
+      background: #fff7e5;
+      border-left: 4px solid #efb63e;
+      padding: 13px 17px;
+      border-radius: 0 9px 9px 0;
+      color: #856011
+    }
+
+    .section-content ul {
+      padding-left: 23px
+    }
+
+    .section-content li {
+      margin: 7px 0;
+      padding-left: 4px
+    }
+
+    .section-content li::marker {
+      color: #7a58dc
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      padding: 0 !important;
+      list-style: none
+    }
+
+    .feature-list li {
+      padding: 12px 15px !important;
+      background: #f8f9ff;
+      border: 1px solid #e9edfa;
+      border-radius: 10px;
+      font-size: 13.5px;
+      margin: 0 !important
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0
+    }
+
+    .concept-card {
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #ebe7fb
+    }
+
+    .concept-card.lavender {
+      background: #f5f0ff
+    }
+
+    .concept-card.sky {
+      background: #ecf8ff;
+      border-color: #d8ebf8
+    }
+
+    .concept-symbol {
+      font: 800 25px/1.2 Georgia, serif;
+      color: #6346cc;
+      margin-bottom: 12px
+    }
+
+    .sky .concept-symbol {
+      color: #2583b5
+    }
+
+    .concept-card h3 {
+      font-size: 16px;
+      margin: 0 0 8px;
+      color: #273353
+    }
+
+    .concept-card p {
+      margin: 0;
+      color: #5a6680;
+      font-size: 13px
+    }
+
+    .font-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0
+    }
+
+    .font-card {
+      border: 1px solid #e6eafa;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #fff, #fafbff);
+      padding: 17px 18px;
+      overflow: hidden
+    }
+
+    .font-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px
+    }
+
+    .font-top strong {
+      font-size: 13px
+    }
+
+    .font-top span {
+      font-size: 10px;
+      color: #745ac1;
+      background: #f1edff;
+      border-radius: 20px;
+      padding: 3px 8px;
+      white-space: nowrap
+    }
+
+    .font-sample {
+      font-size: 23px;
+      line-height: 1.5;
+      color: #29314d;
+      margin: 10px 0 1px !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .font-small {
+      font-size: 11px;
+      color: #96a0b4;
+      letter-spacing: 1px
+    }
+
+    .advantage-heading,
+    .term-label,
+    .step-heading {
+      margin: 19px 0 4px !important;
+      color: #4239a2;
+      font-weight: 800 !important;
+      font-size: 14px
+    }
+
+    .advantage-heading+p,
+    .step-heading+p,
+    .term-label+p {
+      margin-top: 2px
+    }
+
+    .term-label {
+      display: inline-block;
+      padding: 5px 11px;
+      border-radius: 7px;
+      background: #eeeafd
+    }
+
+    .warning-list {
+      background: #fffaf0;
+      border: 1px solid #ffebc2;
+      border-radius: 12px;
+      padding: 15px 18px 15px 34px !important
+    }
+
+    .warning-list li::marker {
+      color: #e8a83a
+    }
+
+    .code-panel {
+      border-radius: 13px;
+      overflow: hidden;
+      border: 1px solid #252c45;
+      background: #151b2b;
+      margin: 18px 0 20px;
+      box-shadow: 0 8px 16px #17203614
+    }
+
+    .code-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #242d43;
+      border-bottom: 1px solid #39415a
+    }
+
+    .code-lang {
+      color: #d0c4fa;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .8px
+    }
+
+    .copy-btn {
+      color: #d9def1;
+      background: #ffffff10;
+      border: 1px solid #ffffff26;
+      padding: 5px 9px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .copy-btn:hover {
+      background: #ffffff23
+    }
+
+    .code-panel pre {
+      margin: 0;
+      padding: 18px 20px;
+      overflow-x: auto;
+      color: #e2e6f1;
+      font: 13px/1.8 Consolas, "Courier New", monospace;
+      tab-size: 4
+    }
+
+    .code-panel code {
+      font: inherit;
+      white-space: pre
+    }
+
+    .section-content :not(pre)>code {
+      font: 12.5px/1.5 Consolas, "Courier New", monospace;
+      background: #f0edfa;
+      color: #5b38bd;
+      border-radius: 5px;
+      padding: 2px 5px
+    }
+
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 19px 0
+    }
+
+    .process-step {
+      position: relative;
+      background: #f7f5ff;
+      border: 1px solid #e7dfff;
+      border-radius: 12px;
+      padding: 16px 15px 15px
+    }
+
+    .process-step:not(:last-child):after {
+      content: "→";
+      position: absolute;
+      right: -15px;
+      top: 36%;
+      font-size: 20px;
+      font-weight: 900;
+      color: #8165d7;
+      z-index: 1
+    }
+
+    .process-number {
+      display: block;
+      color: #957fd4;
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: 11px;
+      margin-bottom: 5px
+    }
+
+    .process-step strong {
+      font-size: 13px;
+      display: block
+    }
+
+    .process-step p {
+      font-size: 12px;
+      margin: 7px 0 0;
+      line-height: 1.6
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #e5eaf4;
+      border-radius: 11px;
+      margin: 19px 0;
+      scrollbar-width: thin
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 580px;
+      font-size: 12.9px;
+      line-height: 1.7
+    }
+
+    .compare-table th {
+      text-align: left;
+      background: #f1ecff;
+      color: #4a3b9c;
+      white-space: normal;
+      font-size: 12px
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e8ecf5;
+      vertical-align: top
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: 0
+    }
+
+    .compare-table tbody tr:nth-child(even) {
+      background: #fafbfe
+    }
+
+    .compare-table td:first-child {
+      font-weight: 700;
+      color: #3c4763
+    }
+
+    .example-label {
+      display: inline-block;
+      color: #047753;
+      font-weight: 850 !important;
+      padding: 4px 11px;
+      background: #e7f8ed;
+      border-radius: 7px
+    }
+
+    .misconception-title {
+      color: #9d5a18 !important;
+      font-weight: 850 !important;
+      background: #fff4e5;
+      border: 1px solid #ffe4be;
+      border-radius: 8px;
+      padding: 9px 13px;
+      margin: 20px 0 2px !important
+    }
+
+    .misconception-title+p {
+      background: #fffdf8;
+      padding: 11px 13px;
+      border-left: 3px solid #f2c17b;
+      margin: 0 0 8px !important
+    }
+
+    .conclusion-paragraph:last-child {
+      font-weight: 700;
+      color: #463b9d;
+      background: #f4f0ff;
+      padding: 13px 16px;
+      border-radius: 10px
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: stretch;
+      margin: 18px 0 8px
+    }
+
+    .page-link {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 15px 18px;
+      flex: 1;
+      box-shadow: var(--shadow);
+      text-decoration: none !important;
+      color: #252e4d
+    }
+
+    .page-link:hover {
+      border-color: #bdabf3;
+      transform: translateY(-2px)
+    }
+
+    .page-link.next {
+      justify-content: flex-end;
+      text-align: right
+    }
+
+    .page-link small {
+      display: block;
+      color: #8591a4;
+      font-size: 11px;
+      font-weight: 700
+    }
+
+    .page-link strong {
+      display: block;
+      font-size: 13px
+    }
+
+    .site-signoff {
+      text-align: center;
+      font-size: 11px;
+      color: #97a0b3;
+      margin-top: 28px
+    }
+
+    .mobile-bar {
+      display: none
+    }
+
+    .overlay {
+      display: none
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      border: 0;
+      border-radius: 13px;
+      background: #684bd4;
+      color: white;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 24px #664bd34d;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px);
+      transition: .2s;
+      z-index: 30
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0)
+    }
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+
+    @media(max-width:1050px) {
+      .main-inner {
+        padding: 28px 28px 60px
+      }
+
+      .hero {
+        padding: 38px 35px
+      }
+
+      .lesson-section {
+        padding: 25px 26px
+      }
+    }
+
+    @media(max-width:800px) {
+      .sidebar {
+        transform: translateX(-102%);
+        transition: transform .25s ease;
+        z-index: 65;
+        width: min(282px, 88vw)
+      }
+
+      body.sidebar-open .sidebar {
+        transform: translateX(0)
+      }
+
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: #0c142b99;
+        z-index: 60;
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .2s
+      }
+
+      body.sidebar-open .overlay {
+        opacity: 1;
+        pointer-events: auto
+      }
+
+      .main {
+        margin-left: 0
+      }
+
+      .main-inner {
+        padding: 22px 19px 58px
+      }
+
+      .mobile-bar {
+        position: sticky;
+        top: 0;
+        z-index: 35;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        height: 62px;
+        padding: 0 17px;
+        background: #111827;
+        color: white;
+        box-shadow: 0 3px 14px #141b3033
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+        background: #ffffff18;
+        color: white;
+        border: 1px solid #ffffff2c;
+        border-radius: 10px;
+        width: 38px;
+        height: 38px
+      }
+
+      .mobile-title {
+        font-weight: 850;
+        font-size: 14px;
+        line-height: 1.1
+      }
+
+      .mobile-subtitle {
+        display: block;
+        font-size: 10px;
+        color: #c4b7ea;
+        font-weight: 600;
+        margin-top: 5px
+      }
+
+      .close-nav {
+        display: grid !important;
+        place-items: center;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 33px;
+        height: 33px;
+        border-radius: 9px;
+        border: 1px solid #ffffff30;
+        background: #ffffff1b;
+        color: white
+      }
+
+      .brand {
+        padding-right: 44px
+      }
+
+      .hero {
+        margin-top: 4px
+      }
+    }
+
+    @media(min-width:801px) {
+      .close-nav {
+        display: none !important
+      }
+    }
+
+    @media(max-width:590px) {
+      .main-inner {
+        padding: 17px 12px 48px
+      }
+
+      .breadcrumb {
+        padding: 0 5px;
+        font-size: 11px;
+        gap: 6px;
+        margin-bottom: 14px
+      }
+
+      .hero {
+        padding: 31px 23px 34px;
+        border-radius: 17px;
+        margin-bottom: 17px
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        letter-spacing: -1.15px
+      }
+
+      .hero p {
+        font-size: 13.3px
+      }
+
+      .hero:after {
+        right: -18px;
+        font-size: 108px;
+        bottom: -12px
+      }
+
+      .intro-strip {
+        padding: 15px;
+        margin-bottom: 17px
+      }
+
+      .lesson-section {
+        padding: 22px 17px 23px;
+        border-radius: 15px;
+        margin-bottom: 17px
+      }
+
+      .section-header {
+        gap: 11px
+      }
+
+      .section-icon {
+        height: 42px;
+        flex-basis: 42px
+      }
+
+      .section-header h2 {
+        font-size: 20px
+      }
+
+      .section-content {
+        font-size: 13.6px
+      }
+
+      .feature-list,
+      .font-grid,
+      .concept-grid {
+        grid-template-columns: 1fr
+      }
+
+      .font-sample {
+        font-size: 23px
+      }
+
+      .process-flow {
+        grid-template-columns: 1fr
+      }
+
+      .process-step:not(:last-child):after {
+        content: "↓";
+        right: auto;
+        left: 49%;
+        top: auto;
+        bottom: -20px
+      }
+
+      .process-step:not(:last-child) {
+        margin-bottom: 8px
+      }
+
+      .code-panel pre {
+        font-size: 12px;
+        padding: 15px 13px
+      }
+
+      .bottom-links {
+        flex-direction: column
+      }
+
+      .page-link.next {
+        justify-content: space-between
+      }
+
+      .back-to-top {
+        right: 15px;
+        bottom: 16px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *:before,
+      *:after {
+        transition: none !important
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-  </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 10.2</h3><p>Web Typography</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 10 navigation"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-10.html"><span class="nav-number">10</span><span>Topic 10 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 10 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 10"><a href="topic-10-01.html" ><span class="nav-number">10.1</span><span>Web Page Design Tools</span></a>
-<a href="topic-10-02.html" class="active" aria-current="page"><span class="nav-number">10.2</span><span>Web Typography</span></a>
-<a href="topic-10-03.html" ><span class="nav-number">10.3</span><span>Effective Design Principles</span></a>
-<a href="topic-10-04.html" ><span class="nav-number">10.4</span><span>Introduction to Web Accessibility</span></a>
-<a href="topic-10-05.html" ><span class="nav-number">10.5</span><span>Applying WCAG Guidelines</span></a>
-<a href="topic-10-06.html" ><span class="nav-number">10.6</span><span>Designing Intuitive Navigation</span></a>
-<a href="topic-10-07.html" ><span class="nav-number">10.7</span><span>Browser Compatibility and Testing</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 10 · Designing Web Pages</strong><div>Unit 2 · AS Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-10.html">Topic 10</a><span aria-hidden="true">›</span><strong>Lesson 10.2</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 2 · TOPIC 10 · LESSON 2</span><h1>Web Typography</h1><p>Edexcel International A Level IT · AS Level</p><div class="hero-tags"><span>📖 Topic 10.2</span><span>📑 Syllabus 10.1.2</span><span>💻 Designing Web Pages</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 10.2: Web Typography</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 10 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-10.html">← Back to Topic 10</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-10-01.html">← Lesson 10.1</a><a href="topic-10-03.html">Lesson 10.3 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT AS</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <div class="progress" id="readingProgress" aria-hidden="true"></div>
+  <header class="mobile-bar">
+    <button type="button" class="menu-btn" id="openMenu" aria-label="Open lesson navigation" aria-controls="lessonNav"
+      aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg></button>
+    <div class="mobile-title">Tr.Sun Education<span class="mobile-subtitle">Topic 10.2 · Web Typography</span></div>
+  </header>
+  <div class="overlay" id="sidebarOverlay" aria-hidden="true"></div>
+  <aside class="sidebar" id="lessonNav" aria-label="Lesson navigation">
+    <button type="button" class="close-nav" id="closeMenu" aria-label="Close lesson navigation"><svg width="20"
+        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg></button>
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <path d="M3 12 16 6l13 6-13 6L3 12Z" fill="white" />
+          <path d="M9 15.1v7c4.3 3.6 9.7 3.6 14 0v-7" stroke="white" stroke-width="2.2" stroke-linejoin="round" />
+          <path d="M29 12v9" stroke="white" stroke-width="2.2" stroke-linecap="round" />
+        </svg></div>
+      <div>
+        <div class="brand-name">Tr.Sun Education</div>
+        <div class="tagline">Learn · Explore · Achieve</div>
+      </div>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-label">CURRENT LESSON</div>
+      <div class="current-topic"><small>Unit 2 · Topic 10</small><strong>10.2 · Web Typography</strong><span>Syllabus
+          reference: 10.1.2</span></div>
+      <div class="sidebar-label">ON THIS PAGE</div>
+      <nav aria-label="Sections"><a class="nav-link" href="#section-01" data-section="section-01"><span
+            class="nav-num">01</span><span>Introduction to Web Typography</span></a>
+        <a class="nav-link" href="#section-02" data-section="section-02"><span class="nav-num">02</span><span>Web-Safe
+            Fonts</span></a>
+        <a class="nav-link" href="#section-03" data-section="section-03"><span class="nav-num">03</span><span>Using
+            Web-Safe Fonts in CSS</span></a>
+        <a class="nav-link" href="#section-04" data-section="section-04"><span class="nav-num">04</span><span>Embedding
+            Web Fonts</span></a>
+        <a class="nav-link" href="#section-05" data-section="section-05"><span class="nav-num">05</span><span>Advantages
+            and Disadvantages of Embedded Web Fonts</span></a>
+        <a class="nav-link" href="#section-06" data-section="section-06"><span class="nav-num">06</span><span>Web-Safe
+            Fonts vs Embedded Web Fonts</span></a>
+        <a class="nav-link" href="#section-07" data-section="section-07"><span class="nav-num">07</span><span>Selecting
+            Appropriate Fonts for a Website</span></a>
+        <a class="nav-link" href="#section-08" data-section="section-08"><span class="nav-num">08</span><span>Common
+            Misunderstandings</span></a>
+
+      </nav>
+    </div>
+    <div class="sidebar-footer"><strong>Edexcel IAL Information Technology</strong><br>Created by Tr. Sun</div>
+  </aside>
+  <main class="main" id="mainContent">
+    <div class="main-inner">
+      <div class="breadcrumb"><a href="topic-10.html">Topic 10 Dashboard</a> <svg width="20" height="20"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg> <span>Topic 10.2</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg> <span>Web Typography</span></div>
+      <header class="hero">
+        <div class="hero-kickers"><span>Edexcel IAL IT</span><span>Unit 2</span><span>Designing Web Pages</span></div>
+        <h1>Web Typography</h1>
+        <p>Understand web-safe fonts, font fallback lists and embedded web fonts — and discover how typography shapes
+          readable, reliable websites.</p>
+        <div class="hero-meta"><span>Topic 10.2</span><span>Syllabus 10.1.2</span><span>9 lesson sections</span></div>
+      </header>
+      <div class="intro-strip"><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M12 7v14M3 18V5a2 2 0 0 1 2-2h3a4 4 0 0 1 4 4 4 4 0 0 1 4-4h3a2 2 0 0 1 2 2v13h-5a4 4 0 0 0-4 3 4 4 0 0 0-4-3H3Z" />
+          </svg></span>
+        <p><strong>In this lesson:</strong> Learn how web-safe fonts work, how to use <code>font-family</code> in CSS,
+          how embedded fonts are delivered, and when each approach is appropriate. All examples are included in these
+          notes.</p>
+      </div>
+      <section id="section-01" class="lesson-section" aria-labelledby="title-01">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m4 7 0-2h16v2M12 5v14m-4 0h8" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 01</span>
+            <h2 id="title-01">Introduction to Web Typography</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <p class="definition">Web typography refers to the selection, arrangement and formatting of text on a website
+            to make it readable, visually appealing and consistent.</p>
+          <p>Typography is an important part of web design because most websites communicate information through text.
+          </p>
+          <p>When designing a website, a web designer must carefully consider:</p>
+          <ul class="feature-list">
+            <li>Font family – the appearance of the letters.</li>
+            <li>Font size – how large or small the text appears.</li>
+            <li>Font weight – whether text is normal or bold.</li>
+            <li>Font colour – how clearly text stands out from the background.</li>
+            <li>Text spacing – the spacing between letters and lines.</li>
+            <li>Font compatibility – whether the font displays correctly on different devices and browsers.</li>
+          </ul>
+          <p>For example, an online learning website should use clear, readable fonts so students can comfortably read
+            lesson notes.</p>
+          <p>The syllabus focuses on two main areas:</p>
+          <div class="concept-grid">
+            <div class="concept-card lavender">
+              <div class="concept-symbol">Aa</div>
+              <h3 class="subheading">Web-safe fonts</h3>
+            </div>
+            <div class="concept-card sky">
+              <div class="concept-symbol">@</div>
+              <h3 class="subheading">Embedding web fonts</h3>
+            </div>
+          </div>
+          <p>Using commonly available fonts that are likely to display reliably.</p>
+
+          <p>Providing custom font resources so the browser can display fonts not installed on the device.</p>
+        </div>
+      </section>
+      <section id="section-02" class="lesson-section" aria-labelledby="title-02">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 02</span>
+            <h2 id="title-02">Web-Safe Fonts</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <h3 class="subheading">2.1 What is a web-safe font?</h3>
+          <p class="definition">A web-safe font is a font that is commonly pre-installed on computers and devices,
+            making it likely to display correctly without downloading an additional font file.</p>
+          <p>The textbook describes web-safe fonts as standard fonts already installed on the user's device.</p>
+          <p>When a browser displays a web page, it tries to use the font specified by the web designer. If the font is
+            available on the device, the browser can display the text using that font.</p>
+          <h3 class="subheading">2.2 Examples of web-safe fonts</h3>
+          <p>The textbook identifies seven common examples.</p>
+          <div class="font-grid">
+            <div class="font-card">
+              <div class="font-top"><strong>Arial</strong><span>Sans-serif</span></div>
+              <p class="font-sample" style="font-family:Arial, Helvetica, sans-serif">The quick brown fox</p>
+              <div class="font-small">Aa Bb Cc 0123456789</div>
+            </div>
+            <div class="font-card">
+              <div class="font-top"><strong>Georgia</strong><span>Serif</span></div>
+              <p class="font-sample" style="font-family:Georgia, serif">The quick brown fox</p>
+              <div class="font-small">Aa Bb Cc 0123456789</div>
+            </div>
+            <div class="font-card">
+              <div class="font-top"><strong>Courier New</strong><span>Monospace</span></div>
+              <p class="font-sample" style='font-family:"Courier New", monospace'>The quick brown fox</p>
+              <div class="font-small">Aa Bb Cc 0123456789</div>
+            </div>
+            <div class="font-card">
+              <div class="font-top"><strong>Impact</strong><span>Display</span></div>
+              <p class="font-sample" style="font-family:Impact, sans-serif">The quick brown fox</p>
+              <div class="font-small">Aa Bb Cc 0123456789</div>
+            </div>
+            <div class="font-card">
+              <div class="font-top"><strong>Tahoma</strong><span>Sans-serif</span></div>
+              <p class="font-sample" style="font-family:Tahoma, sans-serif">The quick brown fox</p>
+              <div class="font-small">Aa Bb Cc 0123456789</div>
+            </div>
+            <div class="font-card">
+              <div class="font-top"><strong>Times New Roman</strong><span>Serif</span></div>
+              <p class="font-sample" style='font-family:"Times New Roman", serif'>The quick brown fox</p>
+              <div class="font-small">Aa Bb Cc 0123456789</div>
+            </div>
+            <div class="font-card">
+              <div class="font-top"><strong>Verdana</strong><span>Sans-serif</span></div>
+              <p class="font-sample" style="font-family:Verdana, sans-serif">The quick brown fox</p>
+              <div class="font-small">Aa Bb Cc 0123456789</div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <p>These examples are rendered using your device's available fonts. Where a font is unavailable, the browser
+            may substitute another font.</p>
+          <h3 class="subheading">2.3 Why do designers use web-safe fonts?</h3>
+          <p>There are several advantages.</p>
+          <p class="advantage-heading">1. Compatibility</p>
+          <p>Web-safe fonts are commonly supported across different operating systems and browsers.</p>
+          <p>For example, Arial is widely available, so a website using Arial is likely to display consistently across
+            many devices.</p>
+          <p class="advantage-heading">2. Faster loading</p>
+          <p>If the required font is already installed on the user's device, the browser does not need to download an
+            additional font resource.</p>
+          <p class="advantage-heading">3. Reliability</p>
+          <p>Commonly available fonts reduce the chance that the browser will have to substitute an unexpected font.</p>
+          <p class="advantage-heading">4. Readability</p>
+          <p>Many web-safe fonts are familiar to users and suitable for displaying large amounts of text.</p>
+          <p class="advantage-heading">5. Easier website maintenance</p>
+          <p>Developers can use standard fonts without managing separate font files.</p>
+          <h3 class="subheading">2.4 Limitations of web-safe fonts</h3>
+          <p>Web-safe fonts also have disadvantages.</p>
+          <ul class="warning-list">
+            <li>There is a limited selection compared with the number of fonts available for download.</li>
+            <li>Websites using only common fonts may have less distinctive typography.</li>
+            <li>Not every font is installed on every operating system or device.</li>
+            <li>Designers have less control over the exact appearance if a requested font is unavailable.</li>
+          </ul>
+          <p>For example, a company may want a distinctive typeface for its brand identity, but that typeface might not
+            be commonly installed.</p>
+          <p>In this situation, the company may choose to embed a web font.</p>
+        </div>
+      </section>
+      <section id="section-03" class="lesson-section" aria-labelledby="title-03">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m8 17-5-5 5-5m8 10 5-5-5-5m-3-14-2 28" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 03</span>
+            <h2 id="title-03">Using Web-Safe Fonts in CSS</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <p>Web designers can specify fonts using the CSS <code>font-family</code> property.</p>
+          <h3 class="subheading">3.1 Basic example</h3>
+          <div class="code-panel">
+            <div class="code-top"><span class="code-lang">CSS</span><button aria-label="Copy code example"
+                class="copy-btn" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.85" viewbox="0 0 24 24" width="16">
+                  <rect height="13" rx="2" width="13" x="8" y="8"></rect>
+                  <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path>
+                </svg> Copy code</button></div>
+            <pre><code>
+body {
+    font-family: Arial;
+    font-size: 16px;
+}
+
+</code></pre>
+          </div>
+          <p>Explanation:</p>
+          <ul class="bullet-list">
+            <li><code>body</code> selects the body element of the web page.</li>
+            <li><code>font-family: Arial;</code> tells the browser to display text using Arial.</li>
+            <li><code>font-size: 16px;</code> sets the font size to 16 pixels.</li>
+          </ul>
+          <h3 class="subheading">3.2 Using fallback fonts</h3>
+          <p>A better approach is to specify several fonts in order of preference.</p>
+          <div class="code-panel">
+            <div class="code-top"><span class="code-lang">CSS</span><button aria-label="Copy code example"
+                class="copy-btn" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.85" viewbox="0 0 24 24" width="16">
+                  <rect height="13" rx="2" width="13" x="8" y="8"></rect>
+                  <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path>
+                </svg> Copy code</button></div>
+            <pre><code>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+</code></pre>
+          </div>
+          <p>The browser follows this order:</p>
+          <p class="step-heading">1. Try Arial</p>
+          <p>If available, use Arial.</p>
+          <p class="step-heading">2. Try Helvetica</p>
+          <p>If Arial is unavailable, try Helvetica.</p>
+          <p class="step-heading">3. Use sans-serif</p>
+          <p>Use an available font from the sans-serif family.</p>
+          <p class="tip">This is called a font fallback list.</p>
+          <p>It is useful because font availability differs between operating systems and devices.</p>
+          <h3 class="subheading">3.3 Serif, sans-serif and monospace fonts</h3>
+          <p>These categories help designers choose suitable fonts.</p>
+          <p class="term-label">Serif fonts</p>
+          <p>Have small decorative strokes at the ends of letters. Examples include Georgia and Times New Roman. They
+            are often associated with traditional or formal designs.</p>
+          <p class="term-label">Sans-serif fonts</p>
+          <p>Do not have the decorative strokes found in serif fonts. Examples include Arial, Verdana and Tahoma. They
+            are often used for modern website interfaces.</p>
+          <p class="term-label">Monospace fonts</p>
+          <p>Give each character the same horizontal width. Courier New is an example. Monospace fonts are particularly
+            useful for displaying computer code.</p>
+          <p>These font categories are additional explanations to help students understand how font selection affects
+            web design.</p>
+        </div>
+      </section>
+      <section id="section-04" class="lesson-section" aria-labelledby="title-04">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5 5 5 5-5m-5 5V3" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 04</span>
+            <h2 id="title-04">Embedding Web Fonts</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <h3 class="subheading">4.1 What is font embedding?</h3>
+          <p class="definition">Embedding a web font means making a font available to a website through a font resource
+            so that users can view text in that font even if it is not installed on their devices.</p>
+          <p>The textbook explains that a web designer can include a resource containing the information required to
+            display a special font.</p>
+          <p>When a user opens the web page, the browser can download the required font file and use it to display the
+            text.</p>
+          <h3 class="subheading">4.2 How does embedding work?</h3>
+          <div class="process-flow">
+            <div class="process-step"><span class="process-number">01</span><strong>Web designer</strong></div>
+            <div class="process-step"><span class="process-number">02</span><strong>Browser requests resources</strong>
+            </div>
+            <div class="process-step"><span class="process-number">03</span><strong>Browser displays text</strong></div>
+          </div>
+          <p>Specifies a custom font in HTML or CSS</p>
+
+          <p>Downloads the web page and any required font files</p>
+
+          <p>Uses the downloaded custom font when available</p>
+          <h3 class="subheading">4.3 Example from the textbook</h3>
+          <p>The textbook demonstrates the use of the Asap font through Google Fonts.</p>
+          <div class="code-panel">
+            <div class="code-top"><span class="code-lang">HTML + CSS</span><button aria-label="Copy code example"
+                class="copy-btn" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.85" viewbox="0 0 24 24" width="16">
+                  <rect height="13" rx="2" width="13" x="8" y="8"></rect>
+                  <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path>
+                </svg> Copy code</button></div>
+            <pre><code>
+&lt;link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Asap"
+&gt;
+
+&lt;style&gt;
+  body {
+    font-family: 'Asap';
+    font-size: 12px;
+  }
+&lt;/style&gt;
+
+</code></pre>
+          </div>
+          <p>Explanation:</p>
+          <p>The <code>&lt;link&gt;</code> element connects the web page to a Google Fonts stylesheet.</p>
+          <p>The stylesheet provides instructions for loading the required font resource.</p>
+          <p>The CSS <code>font-family</code> property specifies that the body text should use the Asap font.</p>
+          <p>A more resilient version would include a fallback font:</p>
+          <div class="code-panel">
+            <div class="code-top"><span class="code-lang">CSS</span><button aria-label="Copy code example"
+                class="copy-btn" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.85" viewbox="0 0 24 24" width="16">
+                  <rect height="13" rx="2" width="13" x="8" y="8"></rect>
+                  <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path>
+                </svg> Copy code</button></div>
+            <pre><code>
+body {
+    font-family: 'Asap', Arial, sans-serif;
+    font-size: 16px;
+}
+
+</code></pre>
+          </div>
+          <p>If Asap cannot be loaded, the browser can try Arial or another sans-serif font.</p>
+          <h3 class="subheading">4.4 Using a locally hosted web font</h3>
+          <p>Another method is to store a font file with the website and load it using CSS.</p>
+          <div class="code-panel">
+            <div class="code-top"><span class="code-lang">CSS</span><button aria-label="Copy code example"
+                class="copy-btn" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.85" viewbox="0 0 24 24" width="16">
+                  <rect height="13" rx="2" width="13" x="8" y="8"></rect>
+                  <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path>
+                </svg> Copy code</button></div>
+            <pre><code>
+@font-face {
+    font-family: 'SchoolFont';
+    src: url('fonts/schoolfont.woff2')
+         format('woff2');
+}
+
+body {
+    font-family: 'SchoolFont', Arial, sans-serif;
+}
+
+</code></pre>
+          </div>
+          <p>In this example:</p>
+          <ul class="bullet-list">
+            <li><code>@font-face</code> defines a custom font.</li>
+            <li><code>font-family</code> assigns the name SchoolFont.</li>
+            <li><code>src</code> identifies where the font file is stored.</li>
+            <li><code>format('woff2')</code> identifies the font file format.</li>
+            <li>The browser loads the font when it is required for displaying text.</li>
+          </ul>
+          <p class="note">This local-hosting approach is an additional practical example beyond the textbook's Google
+            Fonts demonstration.</p>
+        </div>
+      </section>
+      <section id="section-05" class="lesson-section" aria-labelledby="title-05">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m16 16 3-8 3 8zM2 16l3-8 3 8zm3-8h14m-7-5v18M8 21h8" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 05</span>
+            <h2 id="title-05">Advantages and Disadvantages of Embedded Web Fonts</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <div aria-label="Advantages and Disadvantages of Embedded Web Fonts comparison table" class="table-wrap"
+            role="region" tabindex="0">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Advantages</th>
+                  <th>Disadvantages</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Designers can choose from a much wider selection of fonts</td>
+                  <td>Additional font files can increase loading time</td>
+                </tr>
+                <tr>
+                  <td>Supports distinctive website branding</td>
+                  <td>Font resources may fail to download</td>
+                </tr>
+                <tr>
+                  <td>Provides greater control over typography</td>
+                  <td>External font services usually require an internet connection</td>
+                </tr>
+                <tr>
+                  <td>Can maintain consistent typography across devices</td>
+                  <td>Additional font files require hosting and management</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="example-label">Example:</p>
+          <p>A company wants its website to use a particular font associated with its brand. The font is not commonly
+            installed on users' devices.</p>
+          <p>By providing the font as a web resource, the company can make its typography more consistent across
+            devices.</p>
+          <p>However, if the font file fails to load, the browser should use a suitable fallback font.</p>
+        </div>
+      </section>
+      <section id="section-06" class="lesson-section" aria-labelledby="title-06">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M12 3v18" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 06</span>
+            <h2 id="title-06">Web-Safe Fonts vs Embedded Web Fonts</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <div aria-label="Web-Safe Fonts vs Embedded Web Fonts comparison table" class="table-wrap" role="region"
+            tabindex="0">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Web-safe fonts</th>
+                  <th>Embedded web fonts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Availability</td>
+                  <td>Commonly pre-installed on devices</td>
+                  <td>Supplied through website resources</td>
+                </tr>
+                <tr>
+                  <td>Font selection</td>
+                  <td>More limited</td>
+                  <td>Much wider selection</td>
+                </tr>
+                <tr>
+                  <td>Additional download</td>
+                  <td>Usually not required</td>
+                  <td>Usually required</td>
+                </tr>
+                <tr>
+                  <td>Loading performance</td>
+                  <td>Generally faster</td>
+                  <td>May introduce additional loading time</td>
+                </tr>
+                <tr>
+                  <td>Design flexibility</td>
+                  <td>More limited</td>
+                  <td>Greater</td>
+                </tr>
+                <tr>
+                  <td>Examples</td>
+                  <td>Arial, Georgia, Verdana</td>
+                  <td>Asap or other custom web fonts</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="definition">Key distinction: Web-safe fonts rely on fonts commonly available on the user's device,
+            while embedded web fonts allow the website to supply a specific font.</p>
+        </div>
+      </section>
+      <section id="section-07" class="lesson-section" aria-labelledby="title-07">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m4 4 7.07 17 2.51-7.39L21 11.07 4 4z" />
+              <path d="m13.58 13.61 5.66 5.66" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 07</span>
+            <h2 id="title-07">Selecting Appropriate Fonts for a Website</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <p>When choosing typography, designers should consider the website's purpose and target audience.</p>
+          <h3 class="example-heading">Example 1: Educational website</h3>
+          <p>A student learning website contains large amounts of text.</p>
+          <p>A designer might choose Arial or Verdana for lesson content because these fonts are familiar and generally
+            easy to read.</p>
+          <p>The designer should also use sufficiently large text, consistent heading styles and appropriate line
+            spacing.</p>
+          <h3 class="example-heading">Example 2: Business website</h3>
+          <p>A company may use an embedded font to establish a distinctive brand identity.</p>
+          <p>However, the font must remain readable and should have a suitable fallback.</p>
+          <h3 class="example-heading">Example 3: Programming tutorial website</h3>
+          <p>A website teaching programming may use a sans-serif font for explanations and a monospace font such as
+            Courier New for code examples.</p>
+          <p>This helps students distinguish ordinary text from programming instructions.</p>
+        </div>
+      </section>
+      <section id="section-08" class="lesson-section" aria-labelledby="title-08">
+        <div class="section-header">
+          <div class="section-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m10.29 3.86-8.47 14.14A2 2 0 0 0 3.53 21h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+              <path d="M12 9v4m0 4h.01" />
+            </svg></div>
+          <div><span class="section-eyebrow">SECTION 08</span>
+            <h2 id="title-08">Common Misunderstandings</h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <p class="misconception-title">Misunderstanding 1: Every web-safe font is installed on every device.</p>
+          <p>In practice, font availability varies. Designers should specify suitable fallback fonts.</p>
+          <p class="misconception-title">Misunderstanding 2: Embedded web fonts must already exist on the user's
+            computer.</p>
+          <p>Embedded web fonts are supplied through web resources and can be downloaded when needed.</p>
+          <p class="misconception-title">Misunderstanding 3: Embedded fonts always make a website better.</p>
+          <p>Custom fonts offer more design flexibility, but they may increase loading time and introduce additional
+            dependencies.</p>
+          <p class="misconception-title">Misunderstanding 4: A font that looks attractive is always suitable.</p>
+          <p>A font must also be readable and appropriate for the intended audience and purpose.</p>
+        </div>
+      </section>
+
+      <nav class="bottom-links" aria-label="Lesson pagination">
+
+        <a class="page-link" href="topic-10-01.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6m-6 6h12" />
+          </svg> <span><small>Previous lesson</small><strong>10.1 · Web Page Design Tools</strong></span>
+        </a>
+
+        <a class="page-link next" href="topic-10-03.html"><span><small>Next lesson</small><strong>10.3 · Effective
+              Design
+              Principles</strong></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m9 18 6-6-6-6m6 6H3" />
+          </svg>
+        </a>
+
+      </nav>
+
+      <footer class="page-footer">
+        <p><strong>Tr.Sun Education</strong></p>
+        <p>Edexcel International A Level IT</p>
+        <p>Created by Tr. Sun</p>
+      </footer>
+
+
+    </div>
+  </main>
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top"><svg width="20" height="20"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <path d="m18 15-6-6-6 6" />
+    </svg></button>
+  <script>
+    (function () {
+      'use strict';
+      var body = document.body;
+      var openBtn = document.getElementById('openMenu');
+      var closeBtn = document.getElementById('closeMenu');
+      var overlay = document.getElementById('sidebarOverlay');
+      var progress = document.getElementById('readingProgress');
+      var toTop = document.getElementById('backToTop');
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('.lesson-section'));
+      function menu(open) { body.classList.toggle('sidebar-open', open); openBtn.setAttribute('aria-expanded', String(open)); if (open) { closeBtn.focus() } else { openBtn.focus() } }
+      openBtn.addEventListener('click', function () { menu(true) });
+      closeBtn.addEventListener('click', function () { menu(false) });
+      overlay.addEventListener('click', function () { menu(false) });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && body.classList.contains('sidebar-open')) menu(false) });
+      links.forEach(function (link) { link.addEventListener('click', function () { if (window.innerWidth <= 800) { body.classList.remove('sidebar-open'); openBtn.setAttribute('aria-expanded', 'false') } }) });
+      var ticking = false;
+      function update() { var scrolled = window.scrollY || document.documentElement.scrollTop; var max = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = (max > 0 ? Math.min(100, Math.max(0, scrolled / max * 100)) : 100) + '%'; toTop.classList.toggle('visible', scrolled > 380); var active = sections[0]; sections.forEach(function (s) { if (s.getBoundingClientRect().top <= 150) active = s }); links.forEach(function (link) { var match = link.getAttribute('data-section') === active.id; link.classList.toggle('active', match); if (match) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current') }); ticking = false }
+      window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true } }, { passive: true });
+      window.addEventListener('resize', function () { if (window.innerWidth > 800) { body.classList.remove('sidebar-open'); openBtn.setAttribute('aria-expanded', 'false') } update() });
+      toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }) });
+      document.querySelectorAll('.copy-btn').forEach(function (btn) { btn.addEventListener('click', function () { var code = btn.closest('.code-panel').querySelector('code').innerText; function label() { btn.textContent = '✓ Copied'; setTimeout(function () { btn.textContent = 'Copy code' }, 1600) } if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(code).then(label).catch(function () { fallback(code, label) }) } else { fallback(code, label) } }) });
+      function fallback(value, done) { var text = document.createElement('textarea'); text.value = value; text.style.position = 'fixed'; text.style.opacity = '0'; document.body.appendChild(text); text.select(); try { if (document.execCommand('copy')) done() } catch (e) { } text.remove() }
+      update();
+    })();
+  </script>
 </body>
+
 </html>
