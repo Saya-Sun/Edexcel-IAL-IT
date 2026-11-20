@@ -1,124 +1,2589 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 14.8: Managing IT Changeover — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 14.8 – Managing IT Changeover | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="#111827" name="theme-color" />
+  <meta
+    content="Tr.Sun Education – Edexcel International A Level IT, Topic 14.8: Managing IT Changeover. Detailed notes, comparison tables, diagrams and Drac and Hasc Investments case study."
+    name="description" />
+  <title>Topic 14.8 – Managing IT Changeover | Tr.Sun Education</title>
+  <style>
+    :root {
+      --navy: #111827;
+      --navy-soft: #1d293b;
+      --purple: #6d4ed6;
+      --purple-deep: #4934b5;
+      --pink: #ad72ed;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --page: #f4f6fb;
+      --white: #fff;
+      --radius: 20px;
+      --sidebar-width: 282px;
+      --shadow: 0 8px 30px rgba(31, 41, 55, .055);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 28px
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    }
+
+    a {
+      color: #5f40c7
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #c5b6ff;
+      outline-offset: 3px
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    .reading-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #a78bfa, #ec8bd3);
+      z-index: 200;
+      transition: width .1s
+    }
+
+    .sidebar {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      background: var(--navy);
+      color: #d7def0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 18px rgba(15, 23, 42, .10)
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 26px 21px 23px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .brand-logo {
+      width: 47px;
+      height: 47px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(140deg, #7356dc, #b976f0);
+      box-shadow: 0 7px 22px rgba(136, 93, 238, .22)
+    }
+
+    .brand-title {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.35px;
+      font-weight: 800;
+      line-height: 1.25
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 3px;
+      color: #bdc6dd;
+      font-size: 11px;
+      letter-spacing: .2px
+    }
+
+    .sidebar-scroll {
+      padding: 23px 14px 19px;
+      overflow-y: auto;
+      flex: 1;
+      scrollbar-color: #475569 transparent;
+      scrollbar-width: thin
+    }
+
+    .sidebar-label {
+      padding: 0 10px;
+      font-size: 11px;
+      color: #93a5c3;
+      font-weight: 800;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      margin: 0 0 11px
+    }
+
+    .current-lesson {
+      border: 1px solid rgba(178, 152, 255, .25);
+      background: linear-gradient(125deg, rgba(127, 87, 226, .24), rgba(80, 66, 160, .13));
+      padding: 14px 15px;
+      border-radius: 14px;
+      margin: 0 3px 26px
+    }
+
+    .current-lesson .eyebrow {
+      font-size: 11px;
+      color: #cfbbff;
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase
+    }
+
+    .current-lesson strong {
+      display: block;
+      color: white;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 4px
+    }
+
+    .current-lesson span:last-child {
+      display: block;
+      font-size: 11px;
+      color: #bbc5dd;
+      margin-top: 5px
+    }
+
+    .side-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #c4cedf;
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.4;
+      border-radius: 10px;
+      padding: 11px 10px;
+      margin: 3px 0;
+      transition: background .2s, color .2s
+    }
+
+    .side-nav a:hover {
+      background: rgba(255, 255, 255, .07);
+      color: white
+    }
+
+    .side-nav a.active {
+      background: linear-gradient(90deg, rgba(147, 103, 241, .27), rgba(147, 103, 241, .10));
+      color: white;
+      box-shadow: inset 3px 0 #b79aff
+    }
+
+    .nav-num {
+      flex: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .07);
+      font-weight: 800;
+      font-size: 11px;
+      color: #becaef
+    }
+
+    .side-nav a.active .nav-num {
+      background: #a78bfa;
+      color: #1e1744
+    }
+
+    .sidebar-foot {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 16px 20px 21px;
+      font-size: 11px;
+      line-height: 1.8;
+      color: #aab8cf
+    }
+
+    .sidebar-foot strong {
+      color: #ecedfb
+    }
+
+    .main {
+      margin-left: var(--sidebar-width);
+      min-width: 0;
+      padding: 30px clamp(20px, 4.6vw, 66px) 70px
+    }
+
+    .content {
+      max-width: 1120px;
+      margin: 0 auto
+    }
+
+    .breadcrumbs {
+      font-size: 12.5px;
+      color: #6c7990;
+      font-weight: 600;
+      margin: 2px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #6253a7
+    }
+
+    .breadcrumbs .sep {
+      color: #afb6c6
+    }
+
+    .hero {
+      color: white;
+      background: linear-gradient(112deg, #4934b5 0%, #7451d2 52%, #ad72ed 100%);
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: clamp(28px, 4.2vw, 54px);
+      box-shadow: 0 16px 35px rgba(82, 58, 187, .17);
+      margin-bottom: 27px
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 2px solid rgba(255, 255, 255, .13);
+      border-radius: 50%;
+      right: -85px;
+      top: -150px
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 235px;
+      height: 235px;
+      background: rgba(255, 255, 255, .055);
+      border-radius: 50%;
+      right: 50px;
+      bottom: -170px
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 17px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .22)
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.3vw, 53px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px;
+      color: white
+    }
+
+    .hero p {
+      font-size: clamp(14px, 1.65vw, 17px);
+      max-width: 780px;
+      color: #f4eefe;
+      margin: 0;
+      line-height: 1.8
+    }
+
+    .hero-meta {
+      margin-top: 23px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12.5px;
+      color: #f5ebff
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center
+    }
+
+    .notice-intro {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 21px 25px;
+      margin-bottom: 27px;
+      box-shadow: var(--shadow)
+    }
+
+    .notice-intro strong {
+      color: #4b379a
+    }
+
+    .lesson-section {
+      background: white;
+      border: 1px solid #e8eaf0;
+      border-radius: var(--radius);
+      padding: clamp(22px, 3.4vw, 39px);
+      margin: 0 0 28px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 25px
+    }
+
+    .section-top {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding-bottom: 17px;
+      border-bottom: 1px solid #e9edf5;
+      margin-bottom: 23px
+    }
+
+    .section-icon {
+      height: 50px;
+      width: 50px;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #ebe6ff, #f5e9ff);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      flex: none
+    }
+
+    .section-top small {
+      display: block;
+      color: #7e62bd;
+      font-size: 11px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin: 1px 0 2px
+    }
+
+    h2 {
+      color: #17243c;
+      line-height: 1.3;
+      font-size: clamp(22px, 2.5vw, 29px);
+      margin: 0;
+      letter-spacing: -.65px
+    }
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 27px 0 10px;
+      color: #31256e;
+      letter-spacing: -.25px
+    }
+
+    h4 {
+      font-size: 16px;
+      line-height: 1.45;
+      margin: 19px 0 8px;
+      color: #243451
+    }
+
+    p {
+      margin: 11px 0 16px
+    }
+
+    ul,
+    ol {
+      padding-left: 23px;
+      margin: 12px 0 20px
+    }
+
+    li {
+      padding-left: 3px;
+      margin: 5px 0
+    }
+
+    li::marker {
+      color: #8b5bd8;
+      font-weight: 700
+    }
+
+    strong {
+      font-weight: 750
+    }
+
+    em {
+      color: #475569
+    }
+
+    .definition {
+      margin: 19px 0;
+      background: #f3efff;
+      border: 1px solid #e4d8ff;
+      border-left: 5px solid #8a62e7;
+      border-radius: 12px;
+      padding: 17px 20px
+    }
+
+    .definition .callout-title {
+      color: #6240ae;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 5px
+    }
+
+    .definition p,
+    .tip p,
+    .warning p,
+    .example p {
+      margin: 5px 0 0
+    }
+
+    .tip {
+      background: #eafaf1;
+      border: 1px solid #bdebd1;
+      border-left: 5px solid #25aa6a;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 19px 0
+    }
+
+    .tip strong {
+      color: #11653e
+    }
+
+    .warning {
+      background: #fff8e6;
+      border: 1px solid #f5df9e;
+      border-left: 5px solid #e8ad2b;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 20px 0
+    }
+
+    .warning strong {
+      color: #94600c
+    }
+
+    .example {
+      background: #f0fafb;
+      border: 1px solid #c9e9ed;
+      padding: 18px 20px;
+      border-radius: 13px;
+      margin: 19px 0
+    }
+
+    .example strong {
+      color: #146474
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0
+    }
+
+    .cards.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .mini-card {
+      border: 1px solid #e2e8f0;
+      padding: 18px;
+      border-radius: 15px;
+      background: #f8fafc
+    }
+
+    .mini-card h4 {
+      margin: 0 0 7px;
+      color: #2b285f;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .mini-card p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #475569
+    }
+
+    .mini-card.purple {
+      background: #f6f1ff;
+      border-color: #e7d7ff
+    }
+
+    .mini-card.blue {
+      background: #eef6ff;
+      border-color: #d1e5ff
+    }
+
+    .mini-card.green {
+      background: #ecfbf3;
+      border-color: #c9efd9
+    }
+
+    .mini-card.peach {
+      background: #fff3ed;
+      border-color: #ffddc8
+    }
+
+    .mini-card.yellow {
+      background: #fffbed;
+      border-color: #fae9b7
+    }
+
+    .mini-card.cyan {
+      background: #edfbfc;
+      border-color: #c6edf2
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #e5eaf3;
+      border-radius: 13px;
+      margin: 17px 0 22px
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 555px;
+      font-size: 13.5px;
+      line-height: 1.55
+    }
+
+    thead {
+      background: #ede9ff;
+      color: #483498
+    }
+
+    th {
+      text-align: left;
+      padding: 13px 15px;
+      font-size: 12.5px;
+      font-weight: 800
+    }
+
+    td {
+      padding: 12px 15px;
+      vertical-align: top;
+      border-top: 1px solid #e7ebf4
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff
+    }
+
+    td:first-child {
+      font-weight: 650;
+      color: #30435a
+    }
+
+    .rule {
+      background: #162238;
+      color: #e9edff;
+      padding: 19px 23px;
+      border-radius: 13px;
+      overflow: auto;
+      font: 13px/1.9 ui-monospace, SFMono-Regular, Consolas, monospace;
+      white-space: pre-wrap;
+      margin: 14px 0
+    }
+
+    .rule .purple-text {
+      color: #c5a5ff
+    }
+
+    .rule .green-text {
+      color: #93e0b1
+    }
+
+    .diagram {
+      background: #fbfcff;
+      border: 1px solid #e1e5f0;
+      border-radius: 17px;
+      padding: 22px;
+      margin: 22px 0;
+      text-align: center
+    }
+
+    .diagram-label {
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      font-weight: 850;
+      color: #7a68aa;
+      margin: 0 0 16px
+    }
+
+    .flow-vertical {
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .flow-node {
+      padding: 12px 19px;
+      border-radius: 11px;
+      border: 1px solid #d5d9e9;
+      background: #fff;
+      max-width: 100%;
+      min-width: 210px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      text-align: center;
+      font-weight: 700
+    }
+
+    .flow-node small {
+      display: block;
+      color: #64748b;
+      font-weight: 500;
+      font-size: 11.5px;
+      margin-top: 3px
+    }
+
+    .flow-node.purple {
+      background: #f0eaff;
+      border-color: #d6c5ff;
+      color: #5235ab
+    }
+
+    .flow-node.blue {
+      background: #eaf3ff;
+      border-color: #c8dffc;
+      color: #245da4
+    }
+
+    .flow-node.green {
+      background: #e9f9ef;
+      border-color: #b9e8ca;
+      color: #126b3e
+    }
+
+    .flow-node.yellow {
+      background: #fff8e5;
+      border-color: #f5df9e;
+      color: #97620a
+    }
+
+    .down-arrow {
+      font-size: 22px;
+      line-height: 1;
+      color: #9183b4
+    }
+
+    .flow-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      width: 100%;
+      max-width: 600px
+    }
+
+    .flow-split .branch {
+      border-radius: 12px;
+      padding: 13px;
+      border: 1px solid #e0e8ee;
+      text-align: center
+    }
+
+    .flow-split .branch.yes {
+      background: #ecfbf3;
+      border-color: #b9e8ca
+    }
+
+    .flow-split .branch.no {
+      background: #fff0ef;
+      border-color: #f3c6c1
+    }
+
+    .branch .answer {
+      font-weight: 900;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin: 0 0 4px
+    }
+
+    .branch p {
+      font-size: 12.5px;
+      margin: 5px 0
+    }
+
+    .schema {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .schema-mid {
+      grid-column: 1/-1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px
+    }
+
+    .schema .flow-node {
+      min-width: 0;
+      width: 100%
+    }
+
+    .schema .join {
+      grid-column: 1/-1;
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .dfd-figure {
+      overflow: auto;
+      background: #fff;
+      border: 1px solid #e1e5ee;
+      border-radius: 16px;
+      margin: 22px 0;
+      padding: 14px
+    }
+
+    .dfd-figure svg {
+      display: block;
+      min-width: 650px;
+      width: 100%;
+      height: auto
+    }
+
+    .dfd-legend {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #6b7280;
+      margin: 10px 4px 5px
+    }
+
+    .dfd-legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .swatch {
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      border: 1px solid #999
+    }
+
+    .steps {
+      list-style: none;
+      counter-reset: steps;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      margin: 0;
+      padding: 14px 15px 14px 60px;
+      background: #f8f9fd;
+      border: 1px solid #e9ecf4;
+      border-radius: 12px;
+      min-height: 58px
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      color: white;
+      background: #7852d8;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800
+    }
+
+    .steps li strong {
+      display: block;
+      color: #293757
+    }
+
+    .steps li span {
+      font-size: 13.5px;
+      color: #5d697a
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 15px 0
+    }
+
+    .comparison>.mini-card {
+      height: 100%
+    }
+
+    .activity-header {
+      background: linear-gradient(100deg, #44309d, #845fe0);
+      padding: 21px 24px;
+      border-radius: 15px;
+      color: white;
+      margin: 18px 0 24px
+    }
+
+    .activity-header strong {
+      font-size: 19px
+    }
+
+    .activity-header p {
+      color: #efeaff;
+      margin: 6px 0 0;
+      font-size: 14px
+    }
+
+    .subdivider {
+      border: 0;
+      border-top: 1px solid #e7eaf2;
+      margin: 30px 0
+    }
+
+    .bottom-nav {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 35px 0 15px
+    }
+
+    .bottom-nav a {
+      background: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      font-weight: 750;
+      font-size: 13px
+    }
+
+    .bottom-nav a:hover {
+      border-color: #ab93e9;
+      background: #f8f5ff
+    }
+
+    .page-foot {
+      text-align: center;
+      color: #8490a3;
+      font-size: 12px;
+      margin-top: 35px
+    }
+
+    .mobile-header {
+      display: none
+    }
+
+    .overlay {
+      display: none
+    }
+
+    .to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 22px;
+      background: #704acf;
+      color: white;
+      border: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      box-shadow: 0 7px 22px rgba(80, 52, 180, .3);
+      font-size: 21px;
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(9px);
+      transition: .2s
+    }
+
+    .to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0)
+    }
+
+    @media (max-width:1120px) {
+      .cards.three {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media (max-width:900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        top: 0;
+        z-index: 120
+      }
+
+      body.menu-open .sidebar {
+        transform: translateX(0)
+      }
+
+      .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 17, 31, .58);
+        z-index: 110;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .25s, visibility .25s
+      }
+
+      body.menu-open .overlay {
+        opacity: 1;
+        visibility: visible
+      }
+
+      body.menu-open {
+        overflow: hidden
+      }
+
+      .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 61px;
+        padding: 9px 18px;
+        background: #111827;
+        color: white;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, .12)
+      }
+
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, .09);
+        border: 1px solid rgba(255, 255, 255, .1);
+        color: white;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-size: 23px
+      }
+
+      .mobile-brand {
+        font-size: 15px;
+        font-weight: 800
+      }
+
+      .mobile-brand span {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        color: #b4bdd1;
+        line-height: 1.3
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 22px 20px 60px
+      }
+
+      html {
+        scroll-padding-top: 80px
+      }
+
+      .lesson-section {
+        scroll-margin-top: 80px
+      }
+    }
+
+    @media (max-width:620px) {
+      body {
+        font-size: 14px;
+        line-height: 1.76
+      }
+
+      .main {
+        padding: 17px 12px 50px
+      }
+
+      .hero {
+        padding: 26px 21px;
+        border-radius: 18px
+      }
+
+      .hero h1 {
+        letter-spacing: -.75px;
+        font-size: 33px
+      }
+
+      .lesson-section {
+        padding: 22px 17px;
+        border-radius: 17px;
+        margin-bottom: 17px
+      }
+
+      .section-top {
+        gap: 12px
+      }
+
+      .section-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+        border-radius: 12px
+      }
+
+      h2 {
+        font-size: 21px
+      }
+
+      h3 {
+        font-size: 17px
+      }
+
+      .cards,
+      .cards.three,
+      .comparison {
+        grid-template-columns: 1fr
+      }
+
+      .notice-intro {
+        padding: 17px 19px
+      }
+
+      .flow-split {
+        gap: 7px
+      }
+
+      .flow-split .branch {
+        padding: 9px 7px
+      }
+
+      .flow-node {
+        min-width: 0
+      }
+
+      .diagram {
+        padding: 14px 10px
+      }
+
+      .schema {
+        gap: 8px
+      }
+
+      .hero-meta {
+        gap: 8px
+      }
+
+      .breadcrumbs {
+        font-size: 11px
+      }
+
+      .bottom-nav {
+        flex-direction: column
+      }
+
+      .bottom-nav a {
+        text-align: center
+      }
+
+      .to-top {
+        right: 13px;
+        bottom: 15px;
+        width: 42px;
+        height: 42px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important
+      }
+    }
+
+    @media print {
+
+      .sidebar,
+      .mobile-header,
+      .overlay,
+      .reading-progress,
+      .to-top,
+      .bottom-nav {
+        display: none !important
+      }
+
+      .main {
+        margin: 0;
+        padding: 0
+      }
+
+      .hero {
+        box-shadow: none
+      }
+
+      .lesson-section {
+        break-inside: avoid;
+        box-shadow: none
+      }
+
+      .table-wrap {
+        overflow: visible
+      }
+
+      body {
+        background: white
+      }
+
+      a {
+        color: inherit
+      }
+    }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+
+    /* Topic 14.8 diagrams: extension to the exact Topic 14.6 lesson-page template. */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 19px 0
+    }
+
+    .pros,
+    .cons {
+      border: 1px solid;
+      border-radius: 14px;
+      padding: 18px 20px;
+      min-width: 0
+    }
+
+    .pros {
+      background: #ecf9f0;
+      border-color: #d9ede0
+    }
+
+    .cons {
+      background: #fff1eb;
+      border-color: #f3ded3
+    }
+
+    .pros h3,
+    .cons h3 {
+      font-size: 16px;
+      margin: 0 0 11px
+    }
+
+    .pros h3 {
+      color: #167a4c
+    }
+
+    .cons h3 {
+      color: #ad5b40
+    }
+
+    .pros ul,
+    .cons ul {
+      padding-left: 19px;
+      margin: 0
+    }
+
+    .pros li,
+    .cons li {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 9px 0
+    }
+
+    .stepgrid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0
+    }
+
+    .step {
+      background: #f3efff;
+      border: 1px solid #e8ddff;
+      border-radius: 14px;
+      padding: 16px 15px;
+      min-width: 0
+    }
+
+    .step .num {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: #765bd0;
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 12px
+    }
+
+    .step b {
+      display: block;
+      font-size: 13.5px;
+      line-height: 1.5
+    }
+
+    .step p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #64748b;
+      margin: 6px 0 0
+    }
+
+    .switch {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0
+    }
+
+    .switch>div {
+      padding: 17px 12px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      border-radius: 13px;
+      background: #f8fafc;
+      min-width: 0
+    }
+
+    .switch span {
+      display: block;
+      color: #66758e;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      margin-bottom: 6px
+    }
+
+    .switch strong {
+      display: block;
+      font-size: 15px;
+      color: #28364e
+    }
+
+    .switch .old {
+      border-top: 4px solid #dda048
+    }
+
+    .switch .middle {
+      border-top: 4px solid #9374de
+    }
+
+    .switch .new {
+      border-top: 4px solid #42a77b
+    }
+
+    .bars {
+      background: #f8f9fe;
+      border: 1px solid #e1e7f0;
+      border-radius: 15px;
+      padding: 21px;
+      margin: 19px 0
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr) 85px;
+      gap: 12px;
+      align-items: center;
+      margin: 0 0 13px
+    }
+
+    .bar-row:last-of-type {
+      margin-bottom: 0
+    }
+
+    .bar-row .bar-caption {
+      color: #526079;
+      font-size: 13px;
+      font-weight: 800
+    }
+
+    .bar {
+      height: 22px;
+      display: flex;
+      background: #785bcb;
+      border-radius: 6px;
+      overflow: hidden
+    }
+
+    .bar .old-share {
+      background: #94a3b8
+    }
+
+    .bar-row small {
+      font-size: 12px;
+      color: #64748b;
+      text-align: right
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      color: #64748b;
+      font-size: 12px
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle
+    }
+
+    .dot.old {
+      background: #94a3b8
+    }
+
+    .dot.new {
+      background: #785bcb
+    }
+
+    .branches {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(0, 1fr));
+      gap: 7px;
+      margin: 20px 0
+    }
+
+    .branch {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 4px;
+      min-width: 0;
+      min-height: 66px;
+      background: #f0f3f8;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      border-radius: 11px;
+      font-size: 11px;
+      font-weight: 800
+    }
+
+    .branch svg {
+      width: 27px;
+      height: 27px
+    }
+
+    .branch.selected {
+      background: #765bd0;
+      border-color: #765bd0;
+      color: #fff
+    }
+
+    .case-timeline {
+      display: grid;
+      gap: 14px;
+      margin: 19px 0
+    }
+
+    .case-phase {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 13px
+    }
+
+    .case-num {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #ede7ff;
+      color: #6647b4;
+      font-weight: 850;
+      font-size: 19px
+    }
+
+    .case-box {
+      background: #fafbff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 18px 22px
+    }
+
+    .case-box h3 {
+      margin: 0 0 8px
+    }
+
+    .case-box ul {
+      margin: 7px 0 0
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0
+    }
+
+    .stat {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 17px 13px;
+      text-align: center;
+      background: #f8faff;
+      min-width: 0
+    }
+
+    .stat .symbol {
+      color: #6c4cc5;
+      font-size: 25px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 8px
+    }
+
+    .stat b {
+      display: block;
+      font-size: 13px;
+      line-height: 1.45;
+      margin-bottom: 6px;
+      color: #29344c
+    }
+
+    .stat p {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0
+    }
+
+    @media(max-width:1120px) {
+      .stepgrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .branches {
+        grid-template-columns: repeat(5, minmax(0, 1fr))
+      }
+
+      .stat-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media(max-width:620px) {
+
+      .pros-cons,
+      .stepgrid,
+      .stat-row {
+        grid-template-columns: 1fr
+      }
+
+      .switch {
+        gap: 6px
+      }
+
+      .switch>div {
+        padding: 13px 5px
+      }
+
+      .switch strong {
+        font-size: 12px
+      }
+
+      .switch span {
+        font-size: 9px
+      }
+
+      .bar-row {
+        grid-template-columns: 51px minmax(0, 1fr) 53px;
+        gap: 7px
+      }
+
+      .bar-row .bar-caption,
+      .bar-row small {
+        font-size: 10px
+      }
+
+      .bars {
+        padding: 14px 11px
+      }
+
+      .branches {
+        grid-template-columns: repeat(5, minmax(0, 1fr))
+      }
+
+      .case-phase {
+        grid-template-columns: 35px minmax(0, 1fr);
+        gap: 8px
+      }
+
+      .case-num {
+        width: 33px;
+        height: 33px;
+        font-size: 15px
+      }
+
+      .case-box {
+        padding: 13px 14px
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-  </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 14.8</h3><p>Managing IT Changeover</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 14 lessons"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-14.html"><span class="nav-number">14</span><span>Topic 14 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 14 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 14"><a href="topic-14-01.html" ><span class="nav-number">14.1</span><span>The Role of IT Systems in Organisations</span></a>
-<a href="topic-14-02.html" ><span class="nav-number">14.2</span><span>Transaction Processing</span></a>
-<a href="topic-14-03.html" ><span class="nav-number">14.3</span><span>Customer Relationship Management Systems</span></a>
-<a href="topic-14-04.html" ><span class="nav-number">14.4</span><span>Management Information Systems</span></a>
-<a href="topic-14-05.html" ><span class="nav-number">14.5</span><span>Intelligent Transportation Systems</span></a>
-<a href="topic-14-06.html" ><span class="nav-number">14.6</span><span>Expert Systems</span></a>
-<a href="topic-14-07.html" ><span class="nav-number">14.7</span><span>IT Governance and Policy</span></a>
-<a href="topic-14-08.html" class="active" aria-current="page"><span class="nav-number">14.8</span><span>Managing IT Changeover</span></a>
-<a href="topic-14-09.html" ><span class="nav-number">14.9</span><span>System Maintenance</span></a>
-<a href="topic-14-10.html" ><span class="nav-number">14.10</span><span>Archiving Data</span></a>
-<a href="topic-14-11.html" ><span class="nav-number">14.11</span><span>Disaster Recovery Plans</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong><div>Unit 3 · A2 Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-14.html">Topic 14</a><span aria-hidden="true">›</span><strong>Lesson 14.8</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 8</span><h1>Managing IT Changeover</h1><p>Edexcel International A Level IT · A2 Level</p><div class="hero-tags"><span>📖 Topic 14.8</span><span>💻 Using IT Systems in Organisations</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 14.8: Managing IT Changeover</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 14 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-14.html">← Back to Topic 14</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-14-07.html" aria-label="Previous lesson">← Lesson 14.7</a><a href="topic-14-09.html" aria-label="Next lesson">Lesson 14.9 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <div aria-label="Reading progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="reading-progress"
+    id="readingProgress" role="progressbar"></div>
+  <header class="mobile-header">
+    <button aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation" class="menu-toggle"
+      id="menuToggle" type="button">☰</button>
+    <div class="mobile-brand">Tr.Sun Education<span>Learn · Explore · Achieve</span></div>
+  </header>
+  <div aria-hidden="true" class="overlay" id="overlay"></div>
+  <aside aria-label="Lesson navigation" class="sidebar" id="sidebar">
+    <a aria-label="Tr.Sun Education Topic 14 dashboard" class="brand" href="topic-14.html">
+      <div aria-hidden="true" class="brand-logo">
+        <svg fill="none" height="33" viewbox="0 0 40 40" width="33" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 15.5 20 8l16 7.5L20 23 4 15.5Z" stroke="white" stroke-linejoin="round" stroke-width="2.4"></path>
+          <path d="M11 19.5V26c5.3 4.3 12.7 4.3 18 0v-6.5" stroke="white" stroke-linecap="round" stroke-width="2.4">
+          </path>
+          <path d="M35.5 17v11" stroke="white" stroke-linecap="round" stroke-width="2.4"></path>
+          <circle cx="35.5" cy="30" fill="white" r="2"></circle>
+        </svg>
+      </div>
+      <div><span class="brand-title">Tr.Sun Education</span><span class="brand-tagline">Learn · Explore · Achieve</span>
+      </div>
+    </a>
+    <div class="sidebar-scroll">
+      <p class="sidebar-label">Current lesson</p>
+      <div class="current-lesson"><span class="eyebrow">Topic 14 · Unit 3</span><strong>14.8 – Managing IT
+          Changeover</strong><span>Edexcel IAL Information Technology</span></div>
+      <p class="sidebar-label">On this page</p>
+      <nav aria-label="Section navigation">
+        <ol class="side-nav">
+          <li><a href="#section-1"><span class="nav-num">01</span>Introduction</a></li>
+          <li><a href="#section-2"><span class="nav-num">02</span>Four changeover methods</a></li>
+          <li><a href="#section-3"><span class="nav-num">03</span>Phased changeover</a></li>
+          <li><a href="#section-4"><span class="nav-num">04</span>Direct changeover</a></li>
+          <li><a href="#section-5"><span class="nav-num">05</span>Parallel changeover</a></li>
+          <li><a href="#section-6"><span class="nav-num">06</span>Pilot changeover</a></li>
+          <li><a href="#section-7"><span class="nav-num">07</span>Comparing methods</a></li>
+          <li><a href="#section-8"><span class="nav-num">08</span>Choosing a method</a></li>
+          <li><a href="#section-9"><span class="nav-num">09</span>Case study</a></li>
+          <li><a href="#section-10"><span class="nav-num">10</span>Important terms</a></li>
+          <li><a href="#section-11"><span class="nav-num">11</span>Key understandings</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="sidebar-foot">Edexcel International A Level IT<br /><strong>Created by Tr. Sun</strong><br />© Tr.Sun
+      Education</div>
+  </aside>
+  <main class="main" id="mainContent">
+    <div class="content">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">›</span><a href="topic-14.html">Topic
+          14</a><span class="sep">›</span><span>14.8 Managing IT Changeover</span></div>
+      <section aria-labelledby="pageTitle" class="hero">
+        <div class="badges"><span class="badge">🎓 A2 Level</span><span class="badge">📘 Unit 3</span><span
+            class="badge">Topic 14.8</span></div>
+        <h1 id="pageTitle">Managing IT Changeover</h1>
+        <p>Learn how organisations move safely from an old IT system to a new one through phased, direct, parallel and
+          pilot changeover, and explore the risks, benefits and practical decisions involved.</p>
+        <div class="hero-meta"><span>📚 Using IT Systems in Organisations</span><span>📝 Detailed Lesson Notes</span>
+        </div>
+      </section>
+      <div class="notice-intro"><strong>Lesson overview: </strong>Managing IT changeover means planning the transition
+        between an existing system and its replacement. This lesson explains the four main methods, their strengths and
+        limitations, how to select the right approach, and the Drac and Hasc Investments case study.</div>
+      <section class="lesson-section" id="section-1">
+        <div class="section-top">
+          <div class="section-icon">📘</div>
+          <div><small>Section 01</small>
+            <h2>Introduction to IT Changeover</h2>
+          </div>
+        </div>
+        <h3>1.1 What is IT changeover?</h3>
+        <div class="definition"><span class="callout-title">Key definition</span>
+          <p><strong>IT changeover</strong> is the process of replacing an existing IT system with a new system while
+            managing the transition to minimise disruption to an organisation.</p>
+        </div>
+        <p>Organisations regularly review their IT systems to determine whether they still meet business requirements.
+          They may decide to replace a system because:</p>
+        <div class="cards three">
+          <article class="mini-card purple">
+            <h4>🕰️ Outdated technology</h4>
+            <p>The current system may be too old or slow.</p>
+          </article>
+          <article class="mini-card blue">
+            <h4>📈 Business growth</h4>
+            <p>The system may no longer support additional users, data or transactions.</p>
+          </article>
+          <article class="mini-card yellow">
+            <h4>💰 High costs</h4>
+            <p>Maintenance and operating costs may be too expensive.</p>
+          </article>
+          <article class="mini-card peach">
+            <h4>🔐 Security problems</h4>
+            <p>The existing system may have security vulnerabilities.</p>
+          </article>
+          <article class="mini-card green">
+            <h4>🚀 Better functionality</h4>
+            <p>New technology may allow tasks to be performed more efficiently.</p>
+          </article>
+          <article class="mini-card cyan">
+            <h4>🤝 Improved service</h4>
+            <p>The organisation may want to improve customer or employee experiences.</p>
+          </article>
+        </div>
+        <div class="example"><strong>📗 Example – School management system</strong>
+          <p>A school currently uses paper records and spreadsheets to manage attendance, examination results and
+            student details. It decides to introduce a cloud-based student management system. The school must plan how
+            to transfer its data, train staff and introduce the new system without interrupting daily operations. This
+            transition is IT changeover.</p>
+        </div>
+        <h3>1.2 Why is managing IT changeover important?</h3>
+        <p>A poorly managed changeover can affect employees, customers, business processes and the organisation's
+          overall performance.</p>
+        <div class="cards">
+          <article class="mini-card peach">
+            <h4>🗂️ Data loss</h4>
+            <p>Important information may be lost or damaged during transfer.</p>
+          </article>
+          <article class="mini-card yellow">
+            <h4>⏸️ Business disruption</h4>
+            <p>Employees may temporarily be unable to complete normal tasks.</p>
+          </article>
+          <article class="mini-card blue">
+            <h4>📉 Reduced productivity</h4>
+            <p>Users may work more slowly while learning the new system.</p>
+          </article>
+          <article class="mini-card peach">
+            <h4>💸 Financial losses</h4>
+            <p>Failures and interruptions can increase costs or reduce revenue.</p>
+          </article>
+          <article class="mini-card purple">
+            <h4>🙅 User resistance</h4>
+            <p>Employees may feel uncomfortable with unfamiliar technology.</p>
+          </article>
+          <article class="mini-card cyan">
+            <h4>🔗 Compatibility problems</h4>
+            <p>Old and new systems may struggle to exchange information.</p>
+          </article>
+        </div>
+        <div class="tip"><strong>⭐ Important</strong>
+          <p>The objective of a successful changeover is to gain the benefits of the new system while minimising risks,
+            costs and disruption.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-2">
+        <div class="section-top">
+          <div class="section-icon">🧭</div>
+          <div><small>Section 02</small>
+            <h2>The Four Methods of IT Changeover</h2>
+          </div>
+        </div>
+        <p>There are four main ways an organisation can introduce a replacement IT system. The most suitable choice
+          depends on the system, the organisation and the consequences of failure.</p>
+        <div class="cards">
+          <article class="mini-card purple">
+            <h4>🔁 1. Phased changeover</h4>
+            <p>Introduce the new system gradually, one component or module at a time.</p>
+          </article>
+          <article class="mini-card peach">
+            <h4>⚡ 2. Direct changeover</h4>
+            <p>Stop using the old system and switch to the entire new system at a specific time.</p>
+          </article>
+          <article class="mini-card blue">
+            <h4>🔀 3. Parallel changeover</h4>
+            <p>Operate the old and new systems during a transition period.</p>
+          </article>
+          <article class="mini-card green">
+            <h4>🧪 4. Pilot changeover</h4>
+            <p>Introduce the complete new system to a limited group or area first.</p>
+          </article>
+        </div>
+        <div class="tip"><strong>⭐ Remember the difference</strong>
+          <p><strong>Phased</strong> refers to parts of a system. <strong>Pilot</strong> refers to a limited number of
+            users or locations. <strong>Parallel</strong> keeps both systems operating during transition.
+            <strong>Direct</strong> replaces the old system at once.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-3">
+        <div class="section-top">
+          <div class="section-icon">🔁</div>
+          <div><small>Section 03</small>
+            <h2>Phased Changeover</h2>
+          </div>
+        </div>
+        <h3>3.1 What is phased changeover?</h3>
+        <div class="definition"><span class="callout-title">Key definition</span>
+          <p><strong>Phased changeover</strong> introduces a new IT system gradually in separate stages or modules,
+            while the necessary parts of the existing system continue operating until the transition is complete.</p>
+        </div>
+        <p>Rather than replacing the whole system at once, the organisation introduces one function, tests it and then
+          moves to the next. It is especially suitable when a system can be divided into distinct components.</p>
+        <h3>3.2 How does phased changeover work?</h3>
+        <p>For example, a manufacturing company introduces an <strong>Enterprise Resource Planning (ERP)</strong> system
+          in four stages:</p>
+        <div aria-label="Four phases of ERP implementation" class="stepgrid">
+          <div class="step"><span class="num">1</span><b>Finance and accounting</b>
+            <p>Payments, expenses and financial records.</p>
+          </div>
+          <div class="step"><span class="num">2</span><b>Inventory and procurement</b>
+            <p>Stock management and purchasing.</p>
+          </div>
+          <div class="step"><span class="num">3</span><b>Sales and order management</b>
+            <p>Customer orders and transactions.</p>
+          </div>
+          <div class="step"><span class="num">4</span><b>Reporting and analytics</b>
+            <p>Business performance and reports.</p>
+          </div>
+        </div>
+        <p>Each stage is tested and refined before the next is implemented. The organisation must also ensure that
+          modules already introduced can exchange information with parts of the old system.</p>
+        <h3>3.3 Advantages of phased changeover</h3>
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✓ Advantages</h3>
+            <ul>
+              <li><strong>Reduced risk:</strong> A problem is usually restricted to the module being introduced.</li>
+              <li><strong>Easier testing:</strong> Each stage can be checked and corrected before the next begins.</li>
+              <li><strong>Gradual training:</strong> Smaller groups of employees can learn the new features over time.
+              </li>
+              <li><strong>Continuous improvement:</strong> Lessons from early stages can improve later stages.</li>
+              <li><strong>Less disruption:</strong> Unaffected business areas can continue normal work.</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>✕ Disadvantages</h3>
+            <ul>
+              <li><strong>Longer transition:</strong> Introducing separate modules can take considerable time.</li>
+              <li><strong>Delayed full benefits:</strong> The complete improvement is not available immediately.</li>
+              <li><strong>Compatibility issues:</strong> New modules may need to communicate with older systems.</li>
+              <li><strong>Complex coordination:</strong> Module dependencies and implementation order must be planned.
+              </li>
+              <li><strong>Additional costs:</strong> Extended integration and support can increase expense.</li>
+            </ul>
+          </div>
+        </div>
+        <h3>3.4 When is phased changeover suitable?</h3>
+        <ul>
+          <li>The system contains several separate modules.</li>
+          <li>The organisation has multiple departments and processes.</li>
+          <li>Employees require gradual training.</li>
+          <li>Replacing the whole system at once would cause significant disruption.</li>
+        </ul>
+        <div class="example"><strong>📗 Example</strong>
+          <p>In a manufacturing company, the finance department may begin using a new accounting module while inventory
+            and sales departments continue using the old system. The organisation must ensure financial data from the
+            new module can still be shared with the older departments.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-4">
+        <div class="section-top">
+          <div class="section-icon">⚡</div>
+          <div><small>Section 04</small>
+            <h2>Direct Changeover</h2>
+          </div>
+        </div>
+        <h3>4.1 What is direct changeover?</h3>
+        <div class="definition"><span class="callout-title">Key definition</span>
+          <p><strong>Direct changeover</strong>, also called <strong>Big Bang changeover</strong>, replaces the entire
+            old system with the new one at a specific point in time.</p>
+        </div>
+        <p>The old system is switched off and the new system takes over. There is no extended period in which both
+          systems operate together.</p>
+        <h3>4.2 How does direct changeover work?</h3>
+        <p>An organisation might replace its office productivity software over a weekend:</p>
+        <div aria-label="Direct changeover timetable" class="switch">
+          <div class="old"><span>FRIDAY</span><strong>Old system</strong></div>
+          <div class="middle"><span>WEEKEND</span><strong>Changeover</strong></div>
+          <div class="new"><span>MONDAY</span><strong>New system</strong></div>
+        </div>
+        <p>Before the switch, the organisation should finish testing, prepare and back up data, complete any necessary
+          migration and train staff.</p>
+        <h3>4.3 Advantages and disadvantages</h3>
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✓ Advantages</h3>
+            <ul>
+              <li><strong>Immediate full benefits:</strong> Users can access the entire new system after the switch.
+              </li>
+              <li><strong>Short transition:</strong> The actual changeover can happen quickly.</li>
+              <li><strong>No dual operation:</strong> The organisation does not need to keep using two active systems.
+              </li>
+              <li><strong>Less transitional complexity:</strong> No prolonged need to coordinate data across old and new
+                systems.</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>✕ Disadvantages</h3>
+            <ul>
+              <li><strong>High risk:</strong> A serious fault in the new system may interrupt the whole organisation.
+              </li>
+              <li><strong>No active fallback:</strong> The old system may not be available for an immediate return.</li>
+              <li><strong>Training pressure:</strong> Staff must be ready before the changeover.</li>
+              <li><strong>Reduced initial productivity:</strong> Staff may be slower while learning a new interface.
+              </li>
+              <li><strong>Potential disruption:</strong> An unexpected failure can affect business operations.</li>
+            </ul>
+          </div>
+        </div>
+        <h3>4.4 When is direct changeover suitable?</h3>
+        <ul>
+          <li>The application is small or non-business-critical.</li>
+          <li>The new system has been thoroughly tested.</li>
+          <li>The organisation can tolerate some interruption if problems arise.</li>
+          <li>Keeping both systems operational would be unnecessary or impractical.</li>
+        </ul>
+        <div class="warning"><strong>⚠️ Important</strong>
+          <p>Direct changeover should be used cautiously for business-critical systems because there is no immediately
+            operating old system to fall back on if the replacement fails.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-5">
+        <div class="section-top">
+          <div class="section-icon">🔀</div>
+          <div><small>Section 05</small>
+            <h2>Parallel Changeover</h2>
+          </div>
+        </div>
+        <h3>5.1 What is parallel changeover?</h3>
+        <div class="definition"><span class="callout-title">Key definition</span>
+          <p><strong>Parallel changeover</strong> involves operating the old and new systems at the same time for a
+            specified period, gradually transferring work to the new system.</p>
+        </div>
+        <p>Some tasks may be duplicated across both systems so that outputs can be compared. Once the new system proves
+          reliable, the remaining work is transferred and the old system is retired.</p>
+        <h3>5.2 How does parallel changeover work?</h3>
+        <p>Consider a company introducing a new payroll system. For a period, salary calculations are completed using
+          the old and new systems. The organisation compares the results to check whether the new system calculates pay
+          correctly.</p>
+        <div
+          aria-label="Illustration of parallel changeover. Old system workload decreases from 80 percent in stage 1 to zero in stage 4 as new system workload increases."
+          class="bars" role="img">
+          <div class="bar-row"><span class="bar-caption">Stage 1</span>
+            <div class="bar"><span class="old-share" style="width:80%"></span></div><small>20% new</small>
+          </div>
+          <div class="bar-row"><span class="bar-caption">Stage 2</span>
+            <div class="bar"><span class="old-share" style="width:60%"></span></div><small>40% new</small>
+          </div>
+          <div class="bar-row"><span class="bar-caption">Stage 3</span>
+            <div class="bar"><span class="old-share" style="width:30%"></span></div><small>70% new</small>
+          </div>
+          <div class="bar-row"><span class="bar-caption">Stage 4</span>
+            <div class="bar"><span class="old-share" style="width:0%"></span></div><small>100% new</small>
+          </div>
+          <div class="legend"><span><i class="dot old"></i>Old system workload</span><span><i class="dot new"></i>New
+              system workload</span></div>
+          <p style="font-size:11px;color:#6d7890;margin:9px 0 0">Percentages are illustrative only; some tasks may be
+            duplicated on both systems during comparison.</p>
+        </div>
+        <div class="example"><strong>📗 Example – Checking payroll results</strong>
+          <p>If the old system calculates an employee's monthly salary as £2,500 and the new system produces £2,500, the
+            outputs agree. If the results differ, the organisation investigates before depending entirely on the new
+            system.</p>
+        </div>
+        <h3>5.3 Advantages and disadvantages</h3>
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✓ Advantages</h3>
+            <ul>
+              <li><strong>Working fallback:</strong> The old system remains available if the new system fails.</li>
+              <li><strong>Output comparison:</strong> Results can be checked for accuracy and consistency.</li>
+              <li><strong>Reduced downtime risk:</strong> Business operations can continue while issues are resolved.
+              </li>
+              <li><strong>Greater confidence:</strong> Employees can see the new system work before final replacement.
+              </li>
+              <li><strong>Gradual adjustment:</strong> Users can gain experience without relying on the new system
+                immediately.</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>✕ Disadvantages</h3>
+            <ul>
+              <li><strong>Higher cost:</strong> Both systems need support and resources.</li>
+              <li><strong>Increased workload:</strong> Some work must be duplicated.</li>
+              <li><strong>More resources:</strong> Extra staff time, hardware and technical support may be needed.</li>
+              <li><strong>Longer transition:</strong> Keeping both systems running takes time.</li>
+              <li><strong>Data consistency:</strong> Updates need careful coordination between systems.</li>
+            </ul>
+          </div>
+        </div>
+        <h3>5.4 When is parallel changeover suitable?</h3>
+        <ul>
+          <li>The system is important to daily business operations.</li>
+          <li>Accurate processing is essential, as in payroll or financial systems.</li>
+          <li>The organisation needs a dependable fallback.</li>
+          <li>It can afford the temporary cost of running two systems.</li>
+        </ul>
+        <div class="tip"><strong>⭐ Important</strong>
+          <p>The main advantage of parallel changeover is having a functioning fallback system throughout the
+            transition. Its main disadvantage is the additional time, cost and resources needed.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-6">
+        <div class="section-top">
+          <div class="section-icon">🧪</div>
+          <div><small>Section 06</small>
+            <h2>Pilot Changeover</h2>
+          </div>
+        </div>
+        <h3>6.1 What is pilot changeover?</h3>
+        <div class="definition"><span class="callout-title">Key definition</span>
+          <p><strong>Pilot changeover</strong> introduces the complete new system to a limited area of an organisation
+            or a selected group of users before deciding on wider implementation.</p>
+        </div>
+        <p>The pilot group uses the system in a real working environment. The organisation monitors performance,
+          collects feedback and corrects problems before deciding whether to roll it out further.</p>
+        <h3>6.2 How does pilot changeover work?</h3>
+        <p>Suppose a supermarket chain with 50 branches wants to introduce a new Point of Sale (POS) system. It could
+          first introduce the full system in one supermarket and retain the old system in the other branches.</p>
+        <div aria-label="Ten illustrative branches, with the first selected as the pilot" class="branches">
+          <div class="branch selected"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+              <path d="M3 9h18l-2-5H5L3 9Zm2 0v11h14V9M9 20v-7h6v7"></path>
+            </svg>Pilot</div>
+          <div class="branch">🏬<span>2</span></div>
+          <div class="branch">🏬<span>3</span></div>
+          <div class="branch">🏬<span>4</span></div>
+          <div class="branch">🏬<span>5</span></div>
+          <div class="branch">🏬<span>6</span></div>
+          <div class="branch">🏬<span>7</span></div>
+          <div class="branch">🏬<span>8</span></div>
+          <div class="branch">🏬<span>9</span></div>
+          <div class="branch">🏬<span>10</span></div>
+        </div>
+        <p style="color:#7a8498;font-size:12px">Ten branches are shown for illustration; the example organisation has 50
+          branches.</p>
+        <p>During the pilot, the organisation:</p>
+        <ol>
+          <li>Selects a branch or user group.</li>
+          <li>Installs the complete new system in that area.</li>
+          <li>Trains the relevant employees.</li>
+          <li>Uses the new system during normal operations.</li>
+          <li>Monitors performance and collects feedback.</li>
+          <li>Identifies and fixes issues.</li>
+          <li>Evaluates whether wider rollout should proceed.</li>
+        </ol>
+        <h3>6.3 Advantages and disadvantages</h3>
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✓ Advantages</h3>
+            <ul>
+              <li><strong>Limited risk:</strong> Problems mainly affect the pilot area, not the whole organisation.</li>
+              <li><strong>Real-world testing:</strong> Practical issues can be discovered during everyday work.</li>
+              <li><strong>User feedback:</strong> Staff and customers can report problems and preferences.</li>
+              <li><strong>Opportunity to refine:</strong> Bugs and usability issues can be fixed before wider rollout.
+              </li>
+              <li><strong>Better training:</strong> Lessons from the pilot improve support materials.</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>✕ Disadvantages</h3>
+            <ul>
+              <li><strong>Limited representativeness:</strong> A single branch may not reflect other environments.</li>
+              <li><strong>Scalability issues:</strong> A small pilot may miss problems that occur with many users.</li>
+              <li><strong>Additional time:</strong> Testing and evaluating the pilot delays the full rollout.</li>
+              <li><strong>More implementation work:</strong> A wider changeover is still needed after the pilot.</li>
+            </ul>
+          </div>
+        </div>
+        <h3>6.4 When is pilot changeover suitable?</h3>
+        <ul>
+          <li>The organisation operates several branches or departments.</li>
+          <li>The system can be tested with a limited group.</li>
+          <li>Feedback from real users is important.</li>
+          <li>The organisation wants to reduce the effect of early failures.</li>
+        </ul>
+        <div class="tip"><strong>⭐ Phased vs pilot</strong>
+          <p><strong>Phased:</strong> Introduce different <em>components</em> of a system over
+            time.<br /><strong>Pilot:</strong> Introduce the <em>whole system</em> to a limited <em>group or
+              location</em>.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-7">
+        <div class="section-top">
+          <div class="section-icon">📊</div>
+          <div><small>Section 07</small>
+            <h2>Comparing the Four Methods</h2>
+          </div>
+        </div>
+        <p>Different changeover methods suit different business situations. Compare their typical characteristics below.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Phased</th>
+                <th>Direct</th>
+                <th>Parallel</th>
+                <th>Pilot</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Implementation</td>
+                <td>One module at a time</td>
+                <td>Entire system at once</td>
+                <td>Both systems run during transition</td>
+                <td>Whole system in a small area</td>
+              </tr>
+              <tr>
+                <td>Risk</td>
+                <td>Spread across stages</td>
+                <td>Higher if new system fails</td>
+                <td>Reduced by active fallback</td>
+                <td>Restricted mainly to pilot group</td>
+              </tr>
+              <tr>
+                <td>Time</td>
+                <td>Often longer</td>
+                <td>Short actual changeover</td>
+                <td>Often longer</td>
+                <td>Testing before wider rollout</td>
+              </tr>
+              <tr>
+                <td>Resources</td>
+                <td>Integration and staged training</td>
+                <td>Intensive preparation</td>
+                <td>Extra support for both systems</td>
+                <td>Testing and evaluation resources</td>
+              </tr>
+              <tr>
+                <td>Main strength</td>
+                <td>Controlled introduction</td>
+                <td>Quick full replacement</td>
+                <td>Working fallback</td>
+                <td>Real-world testing</td>
+              </tr>
+              <tr>
+                <td>Main limitation</td>
+                <td>Compatibility between modules</td>
+                <td>No immediately active fallback</td>
+                <td>Higher cost and workload</td>
+                <td>May miss large-scale problems</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>7.1 Recognising the method in a scenario</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Situation</th>
+                <th>Method</th>
+                <th>Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A company introduces accounting, then inventory, then sales modules.</td>
+                <td>Phased</td>
+                <td>Different parts of one system are introduced gradually.</td>
+              </tr>
+              <tr>
+                <td>A school switches off its old application on Friday and begins using the new one on Monday.</td>
+                <td>Direct</td>
+                <td>The entire old system is replaced at one point.</td>
+              </tr>
+              <tr>
+                <td>A company calculates salaries in both old and new payroll applications.</td>
+                <td>Parallel</td>
+                <td>Both systems are used and outputs can be compared.</td>
+              </tr>
+              <tr>
+                <td>A hospital tries a complete new records system in one department.</td>
+                <td>Pilot</td>
+                <td>The complete system is introduced to a limited group.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12px;color:#798398">Actual cost, risk and duration depend on the organisation and the system
+          being introduced.</p>
+      </section>
+      <section class="lesson-section" id="section-8">
+        <div class="section-top">
+          <div class="section-icon">⚖️</div>
+          <div><small>Section 08</small>
+            <h2>Choosing the Most Appropriate Method</h2>
+          </div>
+        </div>
+        <p>No single method is best for every organisation. Managers must consider the requirements of the new system
+          and the consequences of failure.</p>
+        <div class="cards">
+          <article class="mini-card purple">
+            <h4>1. Business criticality</h4>
+            <p>Would a system failure prevent essential operations? Critical systems may need a functioning fallback.
+            </p>
+          </article>
+          <article class="mini-card blue">
+            <h4>2. Budget</h4>
+            <p>Can the organisation afford to operate and support both old and new systems temporarily?</p>
+          </article>
+          <article class="mini-card yellow">
+            <h4>3. Implementation time</h4>
+            <p>How quickly must the transition be completed, and can the organisation tolerate a longer rollout?</p>
+          </article>
+          <article class="mini-card green">
+            <h4>4. System complexity</h4>
+            <p>Can the new system be divided into separate modules, or must it work as a whole?</p>
+          </article>
+          <article class="mini-card peach">
+            <h4>5. Users and locations</h4>
+            <p>Does the organisation have branches or departments where a limited pilot could be carried out?</p>
+          </article>
+          <article class="mini-card cyan">
+            <h4>6. Training requirements</h4>
+            <p>How much time and support will employees need to become confident using the new system?</p>
+          </article>
+          <article class="mini-card blue">
+            <h4>7. Compatibility</h4>
+            <p>Will existing and new systems need to exchange data during the changeover?</p>
+          </article>
+          <article class="mini-card yellow">
+            <h4>8. Risk of failure</h4>
+            <p>What would be the financial, operational or customer-service impact if the replacement failed?</p>
+          </article>
+        </div>
+        <h3>8.1 Practical selection examples</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Situation</th>
+                <th>Likely suitable approach</th>
+                <th>Why?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Large system divided into independent modules</td>
+                <td>Phased</td>
+                <td>Each module can be introduced and tested separately.</td>
+              </tr>
+              <tr>
+                <td>Small, non-critical application</td>
+                <td>Direct</td>
+                <td>Short transition; a failure has limited consequences.</td>
+              </tr>
+              <tr>
+                <td>Business-critical system requiring a fallback</td>
+                <td>Parallel</td>
+                <td>The old system remains available while the new one is checked.</td>
+              </tr>
+              <tr>
+                <td>New system for multiple branches</td>
+                <td>Pilot</td>
+                <td>One branch can test the complete system before wider rollout.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>⭐ Important</strong>
+          <p>These are typical choices, not fixed rules. Some organisations combine methods to balance safety, cost and
+            speed.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-9">
+        <div class="section-top">
+          <div class="section-icon">🏦</div>
+          <div><small>Section 09</small>
+            <h2>Case Study: Drac and Hasc Investments</h2>
+          </div>
+        </div>
+        <h3>9.1 Background</h3>
+        <p>Drac and Hasc Investments is a wealth management firm serving commercial and private clients. Its existing
+          <strong>client onboarding</strong> process was paper-based, slow and prone to errors. The result was customer
+          frustration and inefficient working practices.</p>
+        <p>The company wanted to introduce a new cloud-based onboarding platform but recognised the risks of replacing
+          the whole existing process immediately.</p>
+        <div class="definition"><span class="callout-title">Chosen solution</span>
+          <p>The company selected a <strong>pilot changeover followed by a phased rollout</strong> to minimise
+            disruption, gather feedback and improve the system before it was used more widely.</p>
+        </div>
+        <h3>9.2 How the changeover was managed</h3>
+        <div class="case-timeline">
+          <div class="case-phase">
+            <div class="case-num">1</div>
+            <div class="case-box">
+              <h3>Pilot with 50 new clients</h3>
+              <ul>
+                <li>Selected 50 clients representing different investment profiles.</li>
+                <li>Introduced the new platform for these clients and the relevant staff only.</li>
+                <li>Trained employees responsible for the pilot group.</li>
+                <li>Tested the platform continuously and gathered staff and client feedback.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-phase">
+            <div class="case-num">2</div>
+            <div class="case-box">
+              <h3>Review and refinement</h3>
+              <ul>
+                <li>Identified minor bugs and usability problems.</li>
+                <li>Learned more about client and employee preferences.</li>
+                <li>Updated staff training materials and client support resources.</li>
+                <li>Corrected identified issues before wider rollout.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case-phase">
+            <div class="case-num">3</div>
+            <div class="case-box">
+              <h3>Phased rollout to a further 200 new clients</h3>
+              <ul>
+                <li>Extended the platform gradually according to client type and adviser familiarity.</li>
+                <li>Provided continuing technical support and training.</li>
+                <li>Monitored performance and addressed emerging problems during rollout.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <h3>9.3 Outcomes</h3>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="symbol">30%</div><b>Less onboarding time</b>
+            <p>Streamlined data collection and document management.</p>
+          </div>
+          <div class="stat">
+            <div class="symbol">😊</div><b>Higher client satisfaction</b>
+            <p>Faster and more user-friendly onboarding.</p>
+          </div>
+          <div class="stat">
+            <div class="symbol">⚙️</div><b>Greater efficiency</b>
+            <p>Automation and centralised records saved advisers' time.</p>
+          </div>
+          <div class="stat">
+            <div class="symbol">✓</div><b>Fewer errors</b>
+            <p>Less manual data entry improved accuracy.</p>
+          </div>
+        </div>
+        <h3>9.4 Why was the pilot suitable?</h3>
+        <ul>
+          <li>Risk was limited to the selected clients and staff.</li>
+          <li>The system was tested using real client interactions.</li>
+          <li>Feedback exposed usability issues and bugs.</li>
+          <li>Training and support could be improved before wider adoption.</li>
+        </ul>
+        <h3>9.5 Why follow with phased rollout?</h3>
+        <ul>
+          <li>Additional clients were introduced gradually.</li>
+          <li>Staff had more time to become familiar with the platform.</li>
+          <li>Technical support was available while workload increased.</li>
+          <li>New problems could be identified and resolved before further expansion.</li>
+        </ul>
+        <h3>9.6 Could other methods have worked?</h3>
+        <div class="cards">
+          <article class="mini-card peach">
+            <h4>⚡ Alternative: Direct changeover</h4>
+            <p><strong>Possible benefit:</strong> New clients could use the complete platform
+              sooner.<br /><strong>Risk:</strong> Any serious error or training gap might disrupt onboarding across the
+              organisation.</p>
+          </article>
+          <article class="mini-card blue">
+            <h4>🔀 Alternative: Parallel changeover</h4>
+            <p><strong>Possible benefit:</strong> The paper process could serve as a
+              fallback.<br /><strong>Risk:</strong> Staff might process information twice, adding costs, workload and
+              potential inconsistencies.</p>
+          </article>
+        </div>
+        <div class="example"><strong>📗 What the case study demonstrates</strong>
+          <p>A pilot can reveal real-world problems before they affect many people. A phased rollout can then extend a
+            corrected system gradually. <strong>Combining changeover methods</strong> can therefore help balance risks
+            with business requirements.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-10">
+        <div class="section-top">
+          <div class="section-icon">📚</div>
+          <div><small>Section 10</small>
+            <h2>Important Concepts and Terms</h2>
+          </div>
+        </div>
+        <p>These terms help explain the practical decisions involved in IT changeover.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Changeover</td>
+                <td>Moving from an existing IT system to a replacement system.</td>
+              </tr>
+              <tr>
+                <td>Legacy system</td>
+                <td>An older IT system that is still in use.</td>
+              </tr>
+              <tr>
+                <td>Data migration</td>
+                <td>Transferring existing data to the new system.</td>
+              </tr>
+              <tr>
+                <td>Fallback system</td>
+                <td>A working system that can be used if the new system fails.</td>
+              </tr>
+              <tr>
+                <td>Compatibility</td>
+                <td>The ability of systems to work together or exchange information.</td>
+              </tr>
+              <tr>
+                <td>Downtime</td>
+                <td>A period when a system or service is unavailable.</td>
+              </tr>
+              <tr>
+                <td>System testing</td>
+                <td>Checking that a system works correctly and meets requirements.</td>
+              </tr>
+              <tr>
+                <td>User training</td>
+                <td>Helping employees learn to use the new system.</td>
+              </tr>
+              <tr>
+                <td>Rollout</td>
+                <td>Introducing a system to its intended users or locations.</td>
+              </tr>
+              <tr>
+                <td>Stakeholders</td>
+                <td>People or groups affected by, or interested in, the system.</td>
+              </tr>
+              <tr>
+                <td>Business-critical system</td>
+                <td>A system whose failure would seriously disrupt important operations.</td>
+              </tr>
+              <tr>
+                <td>Contingency plan</td>
+                <td>Prepared actions for managing unexpected problems or failures.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-11">
+        <div class="section-top">
+          <div class="section-icon">🎯</div>
+          <div><small>Section 11</small>
+            <h2>Key Understandings</h2>
+          </div>
+        </div>
+        <p>Understanding IT changeover involves knowing not only how each method operates, but also the circumstances in
+          which it may be appropriate.</p>
+        <div class="cards">
+          <div class="mini-card purple">
+            <h4>🔁 Phased</h4>
+            <p>Different components of the system are introduced over time. Appropriate when the system has distinct
+              modules.</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>⚡ Direct</h4>
+            <p>The old system is replaced at a single point in time. Fast, but carries significant risk if the new
+              system fails.</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>🔀 Parallel</h4>
+            <p>Old and new systems are operated during the transition, allowing comparisons and an operational fallback.
+            </p>
+          </div>
+          <div class="mini-card purple">
+            <h4>🧪 Pilot</h4>
+            <p>The complete new system is tested with a limited group or location before broader deployment.</p>
+          </div>
+        </div>
+        <div class="tip"><strong>⭐ Final principle</strong>
+          <p>A successful IT changeover introduces the benefits of a new system while managing the risk of disruption.
+            The right approach depends on criticality, cost, time, complexity, training requirements and the
+            consequences of failure.</p>
+        </div>
+      </section>
+
+      <nav aria-label="Other lessons" class="lesson-navigation">
+        <a href="topic-14-07.html">← Topic 14.7</a>
+        <a href="topic-14-09.html">Topic 14.9 →</a>
+      </nav>
+
+
+      <footer class="page-footer">
+        <strong>Tr.Sun Education</strong>
+        <p>Edexcel International A Level IT</p>
+        <p>Created by <strong>Tr. Sun</strong></p>
+      </footer>
+
+      
+    </div>
+  </main>
+  <button aria-label="Back to top" class="to-top" id="toTop" title="Back to top" type="button">↑</button>
+  <script>
+    (() => {
+      'use strict';
+      const body = document.body;
+      const menuButton = document.getElementById('menuToggle');
+      const overlay = document.getElementById('overlay');
+      const sidebar = document.getElementById('sidebar');
+      const progress = document.getElementById('readingProgress');
+      const toTop = document.getElementById('toTop');
+      const links = [...document.querySelectorAll('.side-nav a')];
+      const sections = [...document.querySelectorAll('.lesson-section')];
+      let lastFocus = null;
+      function setMenu(open) {
+        body.classList.toggle('menu-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+        if (open) {
+          lastFocus = document.activeElement;
+          sidebar.querySelector('.side-nav a')?.focus();
+        } else if (lastFocus && window.innerWidth <= 900) {
+          menuButton.focus();
+        }
+      }
+      menuButton.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
+      overlay.addEventListener('click', () => setMenu(false));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && body.classList.contains('menu-open')) setMenu(false);
+      });
+      links.forEach(link => link.addEventListener('click', () => {
+        if (body.classList.contains('menu-open')) setMenu(false);
+      }));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && body.classList.contains('menu-open')) setMenu(false);
+      });
+      function updateScroll() {
+        const available = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = available > 0 ? Math.min(100, Math.max(0, window.scrollY / available * 100)) : 100;
+        progress.style.width = percent.toFixed(2) + '%';
+        progress.setAttribute('aria-valuenow', Math.round(percent));
+        toTop.classList.toggle('visible', window.scrollY > 470);
+        let current = sections[0]?.id;
+        const threshold = window.innerWidth <= 900 ? 140 : 95;
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= threshold) current = section.id;
+        }
+        links.forEach(link => {
+          const active = link.hash === '#' + current;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      let scheduled = false;
+      window.addEventListener('scroll', () => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => { updateScroll(); scheduled = false; });
+      }, { passive: true });
+      window.addEventListener('resize', updateScroll);
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+      updateScroll();
+    })();
+  </script>
 </body>
+
 </html>

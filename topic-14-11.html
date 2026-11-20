@@ -1,124 +1,2597 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 14.11: Disaster Recovery Plans — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 14.11 – Disaster Recovery Plans | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="#111827" name="theme-color" />
+  <meta
+    content="Tr.Sun Education – Edexcel International A Level IT Topic 14.11: Disaster Recovery Plans. Detailed notes, RTO and RPO examples, risk analysis, team roles and management."
+    name="description" />
+  <title>Topic 14.11 – Disaster Recovery Plans | Tr.Sun Education</title>
+  <style>
+    :root {
+      --navy: #111827;
+      --navy-soft: #1d293b;
+      --purple: #6d4ed6;
+      --purple-deep: #4934b5;
+      --pink: #ad72ed;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --page: #f4f6fb;
+      --white: #fff;
+      --radius: 20px;
+      --sidebar-width: 282px;
+      --shadow: 0 8px 30px rgba(31, 41, 55, .055);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 28px
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    }
+
+    a {
+      color: #5f40c7
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #c5b6ff;
+      outline-offset: 3px
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    .reading-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #a78bfa, #ec8bd3);
+      z-index: 200;
+      transition: width .1s
+    }
+
+    .sidebar {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      background: var(--navy);
+      color: #d7def0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 18px rgba(15, 23, 42, .10)
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 26px 21px 23px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .brand-logo {
+      width: 47px;
+      height: 47px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(140deg, #7356dc, #b976f0);
+      box-shadow: 0 7px 22px rgba(136, 93, 238, .22)
+    }
+
+    .brand-title {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.35px;
+      font-weight: 800;
+      line-height: 1.25
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 3px;
+      color: #bdc6dd;
+      font-size: 11px;
+      letter-spacing: .2px
+    }
+
+    .sidebar-scroll {
+      padding: 23px 14px 19px;
+      overflow-y: auto;
+      flex: 1;
+      scrollbar-color: #475569 transparent;
+      scrollbar-width: thin
+    }
+
+    .sidebar-label {
+      padding: 0 10px;
+      font-size: 11px;
+      color: #93a5c3;
+      font-weight: 800;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      margin: 0 0 11px
+    }
+
+    .current-lesson {
+      border: 1px solid rgba(178, 152, 255, .25);
+      background: linear-gradient(125deg, rgba(127, 87, 226, .24), rgba(80, 66, 160, .13));
+      padding: 14px 15px;
+      border-radius: 14px;
+      margin: 0 3px 26px
+    }
+
+    .current-lesson .eyebrow {
+      font-size: 11px;
+      color: #cfbbff;
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase
+    }
+
+    .current-lesson strong {
+      display: block;
+      color: white;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 4px
+    }
+
+    .current-lesson span:last-child {
+      display: block;
+      font-size: 11px;
+      color: #bbc5dd;
+      margin-top: 5px
+    }
+
+    .side-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #c4cedf;
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.4;
+      border-radius: 10px;
+      padding: 11px 10px;
+      margin: 3px 0;
+      transition: background .2s, color .2s
+    }
+
+    .side-nav a:hover {
+      background: rgba(255, 255, 255, .07);
+      color: white
+    }
+
+    .side-nav a.active {
+      background: linear-gradient(90deg, rgba(147, 103, 241, .27), rgba(147, 103, 241, .10));
+      color: white;
+      box-shadow: inset 3px 0 #b79aff
+    }
+
+    .nav-num {
+      flex: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .07);
+      font-weight: 800;
+      font-size: 11px;
+      color: #becaef
+    }
+
+    .side-nav a.active .nav-num {
+      background: #a78bfa;
+      color: #1e1744
+    }
+
+    .sidebar-foot {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 16px 20px 21px;
+      font-size: 11px;
+      line-height: 1.8;
+      color: #aab8cf
+    }
+
+    .sidebar-foot strong {
+      color: #ecedfb
+    }
+
+    .main {
+      margin-left: var(--sidebar-width);
+      min-width: 0;
+      padding: 30px clamp(20px, 4.6vw, 66px) 70px
+    }
+
+    .content {
+      max-width: 1120px;
+      margin: 0 auto
+    }
+
+    .breadcrumbs {
+      font-size: 12.5px;
+      color: #6c7990;
+      font-weight: 600;
+      margin: 2px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #6253a7
+    }
+
+    .breadcrumbs .sep {
+      color: #afb6c6
+    }
+
+    .hero {
+      color: white;
+      background: linear-gradient(112deg, #4934b5 0%, #7451d2 52%, #ad72ed 100%);
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: clamp(28px, 4.2vw, 54px);
+      box-shadow: 0 16px 35px rgba(82, 58, 187, .17);
+      margin-bottom: 27px
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 2px solid rgba(255, 255, 255, .13);
+      border-radius: 50%;
+      right: -85px;
+      top: -150px
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 235px;
+      height: 235px;
+      background: rgba(255, 255, 255, .055);
+      border-radius: 50%;
+      right: 50px;
+      bottom: -170px
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 17px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .22)
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.3vw, 53px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px;
+      color: white
+    }
+
+    .hero p {
+      font-size: clamp(14px, 1.65vw, 17px);
+      max-width: 780px;
+      color: #f4eefe;
+      margin: 0;
+      line-height: 1.8
+    }
+
+    .hero-meta {
+      margin-top: 23px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12.5px;
+      color: #f5ebff
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center
+    }
+
+    .notice-intro {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 21px 25px;
+      margin-bottom: 27px;
+      box-shadow: var(--shadow)
+    }
+
+    .notice-intro strong {
+      color: #4b379a
+    }
+
+    .lesson-section {
+      background: white;
+      border: 1px solid #e8eaf0;
+      border-radius: var(--radius);
+      padding: clamp(22px, 3.4vw, 39px);
+      margin: 0 0 28px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 25px
+    }
+
+    .section-top {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding-bottom: 17px;
+      border-bottom: 1px solid #e9edf5;
+      margin-bottom: 23px
+    }
+
+    .section-icon {
+      height: 50px;
+      width: 50px;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #ebe6ff, #f5e9ff);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      flex: none
+    }
+
+    .section-top small {
+      display: block;
+      color: #7e62bd;
+      font-size: 11px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin: 1px 0 2px
+    }
+
+    h2 {
+      color: #17243c;
+      line-height: 1.3;
+      font-size: clamp(22px, 2.5vw, 29px);
+      margin: 0;
+      letter-spacing: -.65px
+    }
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 27px 0 10px;
+      color: #31256e;
+      letter-spacing: -.25px
+    }
+
+    h4 {
+      font-size: 16px;
+      line-height: 1.45;
+      margin: 19px 0 8px;
+      color: #243451
+    }
+
+    p {
+      margin: 11px 0 16px
+    }
+
+    ul,
+    ol {
+      padding-left: 23px;
+      margin: 12px 0 20px
+    }
+
+    li {
+      padding-left: 3px;
+      margin: 5px 0
+    }
+
+    li::marker {
+      color: #8b5bd8;
+      font-weight: 700
+    }
+
+    strong {
+      font-weight: 750
+    }
+
+    em {
+      color: #475569
+    }
+
+    .definition {
+      margin: 19px 0;
+      background: #f3efff;
+      border: 1px solid #e4d8ff;
+      border-left: 5px solid #8a62e7;
+      border-radius: 12px;
+      padding: 17px 20px
+    }
+
+    .definition .callout-title {
+      color: #6240ae;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 5px
+    }
+
+    .definition p,
+    .tip p,
+    .warning p,
+    .example p {
+      margin: 5px 0 0
+    }
+
+    .tip {
+      background: #eafaf1;
+      border: 1px solid #bdebd1;
+      border-left: 5px solid #25aa6a;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 19px 0
+    }
+
+    .tip strong {
+      color: #11653e
+    }
+
+    .warning {
+      background: #fff8e6;
+      border: 1px solid #f5df9e;
+      border-left: 5px solid #e8ad2b;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 20px 0
+    }
+
+    .warning strong {
+      color: #94600c
+    }
+
+    .example {
+      background: #f0fafb;
+      border: 1px solid #c9e9ed;
+      padding: 18px 20px;
+      border-radius: 13px;
+      margin: 19px 0
+    }
+
+    .example strong {
+      color: #146474
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0
+    }
+
+    .cards.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .mini-card {
+      border: 1px solid #e2e8f0;
+      padding: 18px;
+      border-radius: 15px;
+      background: #f8fafc
+    }
+
+    .mini-card h4 {
+      margin: 0 0 7px;
+      color: #2b285f;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .mini-card p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #475569
+    }
+
+    .mini-card.purple {
+      background: #f6f1ff;
+      border-color: #e7d7ff
+    }
+
+    .mini-card.blue {
+      background: #eef6ff;
+      border-color: #d1e5ff
+    }
+
+    .mini-card.green {
+      background: #ecfbf3;
+      border-color: #c9efd9
+    }
+
+    .mini-card.peach {
+      background: #fff3ed;
+      border-color: #ffddc8
+    }
+
+    .mini-card.yellow {
+      background: #fffbed;
+      border-color: #fae9b7
+    }
+
+    .mini-card.cyan {
+      background: #edfbfc;
+      border-color: #c6edf2
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #e5eaf3;
+      border-radius: 13px;
+      margin: 17px 0 22px
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 555px;
+      font-size: 13.5px;
+      line-height: 1.55
+    }
+
+    thead {
+      background: #ede9ff;
+      color: #483498
+    }
+
+    th {
+      text-align: left;
+      padding: 13px 15px;
+      font-size: 12.5px;
+      font-weight: 800
+    }
+
+    td {
+      padding: 12px 15px;
+      vertical-align: top;
+      border-top: 1px solid #e7ebf4
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff
+    }
+
+    td:first-child {
+      font-weight: 650;
+      color: #30435a
+    }
+
+    .rule {
+      background: #162238;
+      color: #e9edff;
+      padding: 19px 23px;
+      border-radius: 13px;
+      overflow: auto;
+      font: 13px/1.9 ui-monospace, SFMono-Regular, Consolas, monospace;
+      white-space: pre-wrap;
+      margin: 14px 0
+    }
+
+    .rule .purple-text {
+      color: #c5a5ff
+    }
+
+    .rule .green-text {
+      color: #93e0b1
+    }
+
+    .diagram {
+      background: #fbfcff;
+      border: 1px solid #e1e5f0;
+      border-radius: 17px;
+      padding: 22px;
+      margin: 22px 0;
+      text-align: center
+    }
+
+    .diagram-label {
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      font-weight: 850;
+      color: #7a68aa;
+      margin: 0 0 16px
+    }
+
+    .flow-vertical {
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .flow-node {
+      padding: 12px 19px;
+      border-radius: 11px;
+      border: 1px solid #d5d9e9;
+      background: #fff;
+      max-width: 100%;
+      min-width: 210px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      text-align: center;
+      font-weight: 700
+    }
+
+    .flow-node small {
+      display: block;
+      color: #64748b;
+      font-weight: 500;
+      font-size: 11.5px;
+      margin-top: 3px
+    }
+
+    .flow-node.purple {
+      background: #f0eaff;
+      border-color: #d6c5ff;
+      color: #5235ab
+    }
+
+    .flow-node.blue {
+      background: #eaf3ff;
+      border-color: #c8dffc;
+      color: #245da4
+    }
+
+    .flow-node.green {
+      background: #e9f9ef;
+      border-color: #b9e8ca;
+      color: #126b3e
+    }
+
+    .flow-node.yellow {
+      background: #fff8e5;
+      border-color: #f5df9e;
+      color: #97620a
+    }
+
+    .down-arrow {
+      font-size: 22px;
+      line-height: 1;
+      color: #9183b4
+    }
+
+    .flow-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      width: 100%;
+      max-width: 600px
+    }
+
+    .flow-split .branch {
+      border-radius: 12px;
+      padding: 13px;
+      border: 1px solid #e0e8ee;
+      text-align: center
+    }
+
+    .flow-split .branch.yes {
+      background: #ecfbf3;
+      border-color: #b9e8ca
+    }
+
+    .flow-split .branch.no {
+      background: #fff0ef;
+      border-color: #f3c6c1
+    }
+
+    .branch .answer {
+      font-weight: 900;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin: 0 0 4px
+    }
+
+    .branch p {
+      font-size: 12.5px;
+      margin: 5px 0
+    }
+
+    .schema {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .schema-mid {
+      grid-column: 1/-1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px
+    }
+
+    .schema .flow-node {
+      min-width: 0;
+      width: 100%
+    }
+
+    .schema .join {
+      grid-column: 1/-1;
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .dfd-figure {
+      overflow: auto;
+      background: #fff;
+      border: 1px solid #e1e5ee;
+      border-radius: 16px;
+      margin: 22px 0;
+      padding: 14px
+    }
+
+    .dfd-figure svg {
+      display: block;
+      min-width: 650px;
+      width: 100%;
+      height: auto
+    }
+
+    .dfd-legend {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #6b7280;
+      margin: 10px 4px 5px
+    }
+
+    .dfd-legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .swatch {
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      border: 1px solid #999
+    }
+
+    .steps {
+      list-style: none;
+      counter-reset: steps;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      margin: 0;
+      padding: 14px 15px 14px 60px;
+      background: #f8f9fd;
+      border: 1px solid #e9ecf4;
+      border-radius: 12px;
+      min-height: 58px
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      color: white;
+      background: #7852d8;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800
+    }
+
+    .steps li strong {
+      display: block;
+      color: #293757
+    }
+
+    .steps li span {
+      font-size: 13.5px;
+      color: #5d697a
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 15px 0
+    }
+
+    .comparison>.mini-card {
+      height: 100%
+    }
+
+    .activity-header {
+      background: linear-gradient(100deg, #44309d, #845fe0);
+      padding: 21px 24px;
+      border-radius: 15px;
+      color: white;
+      margin: 18px 0 24px
+    }
+
+    .activity-header strong {
+      font-size: 19px
+    }
+
+    .activity-header p {
+      color: #efeaff;
+      margin: 6px 0 0;
+      font-size: 14px
+    }
+
+    .subdivider {
+      border: 0;
+      border-top: 1px solid #e7eaf2;
+      margin: 30px 0
+    }
+
+    .bottom-nav {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 35px 0 15px
+    }
+
+    .bottom-nav a {
+      background: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      font-weight: 750;
+      font-size: 13px
+    }
+
+    .bottom-nav a:hover {
+      border-color: #ab93e9;
+      background: #f8f5ff
+    }
+
+    .page-foot {
+      text-align: center;
+      color: #8490a3;
+      font-size: 12px;
+      margin-top: 35px
+    }
+
+    .mobile-header {
+      display: none
+    }
+
+    .overlay {
+      display: none
+    }
+
+    .to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 22px;
+      background: #704acf;
+      color: white;
+      border: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      box-shadow: 0 7px 22px rgba(80, 52, 180, .3);
+      font-size: 21px;
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(9px);
+      transition: .2s
+    }
+
+    .to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0)
+    }
+
+    @media (max-width:1120px) {
+      .cards.three {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media (max-width:900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        top: 0;
+        z-index: 120
+      }
+
+      body.menu-open .sidebar {
+        transform: translateX(0)
+      }
+
+      .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 17, 31, .58);
+        z-index: 110;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .25s, visibility .25s
+      }
+
+      body.menu-open .overlay {
+        opacity: 1;
+        visibility: visible
+      }
+
+      body.menu-open {
+        overflow: hidden
+      }
+
+      .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 61px;
+        padding: 9px 18px;
+        background: #111827;
+        color: white;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, .12)
+      }
+
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, .09);
+        border: 1px solid rgba(255, 255, 255, .1);
+        color: white;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-size: 23px
+      }
+
+      .mobile-brand {
+        font-size: 15px;
+        font-weight: 800
+      }
+
+      .mobile-brand span {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        color: #b4bdd1;
+        line-height: 1.3
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 22px 20px 60px
+      }
+
+      html {
+        scroll-padding-top: 80px
+      }
+
+      .lesson-section {
+        scroll-margin-top: 80px
+      }
+    }
+
+    @media (max-width:620px) {
+      body {
+        font-size: 14px;
+        line-height: 1.76
+      }
+
+      .main {
+        padding: 17px 12px 50px
+      }
+
+      .hero {
+        padding: 26px 21px;
+        border-radius: 18px
+      }
+
+      .hero h1 {
+        letter-spacing: -.75px;
+        font-size: 33px
+      }
+
+      .lesson-section {
+        padding: 22px 17px;
+        border-radius: 17px;
+        margin-bottom: 17px
+      }
+
+      .section-top {
+        gap: 12px
+      }
+
+      .section-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+        border-radius: 12px
+      }
+
+      h2 {
+        font-size: 21px
+      }
+
+      h3 {
+        font-size: 17px
+      }
+
+      .cards,
+      .cards.three,
+      .comparison {
+        grid-template-columns: 1fr
+      }
+
+      .notice-intro {
+        padding: 17px 19px
+      }
+
+      .flow-split {
+        gap: 7px
+      }
+
+      .flow-split .branch {
+        padding: 9px 7px
+      }
+
+      .flow-node {
+        min-width: 0
+      }
+
+      .diagram {
+        padding: 14px 10px
+      }
+
+      .schema {
+        gap: 8px
+      }
+
+      .hero-meta {
+        gap: 8px
+      }
+
+      .breadcrumbs {
+        font-size: 11px
+      }
+
+      .bottom-nav {
+        flex-direction: column
+      }
+
+      .bottom-nav a {
+        text-align: center
+      }
+
+      .to-top {
+        right: 13px;
+        bottom: 15px;
+        width: 42px;
+        height: 42px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important
+      }
+    }
+
+    @media print {
+
+      .sidebar,
+      .mobile-header,
+      .overlay,
+      .reading-progress,
+      .to-top,
+      .bottom-nav {
+        display: none !important
+      }
+
+      .main {
+        margin: 0;
+        padding: 0
+      }
+
+      .hero {
+        box-shadow: none
+      }
+
+      .lesson-section {
+        break-inside: avoid;
+        box-shadow: none
+      }
+
+      .table-wrap {
+        overflow: visible
+      }
+
+      body {
+        background: white
+      }
+
+      a {
+        color: inherit
+      }
+    }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+  </style>
+  <style>
+    /* Topic 14.11 content-specific elements. The page shell and core components
+   are inherited directly from subtopic-lesson-page-design (Topic 14.6). */
+    .notice-intro p {
+      margin: 9px 0 0;
+    }
+
+    .card-emoji {
+      font-size: 25px;
+      line-height: 1.25;
+      margin-bottom: 7px;
+    }
+
+    .detail-card h4 {
+      margin-top: 0;
+    }
+
+    .detail-card p {
+      font-size: 13.5px;
+    }
+
+    .detail-card ul {
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin: 9px 0 0;
+    }
+
+    .info-note {
+      background: #eef6ff;
+      border: 1px solid #cfdef8;
+      border-left: 5px solid #448ad2;
+      padding: 17px 19px;
+      border-radius: 12px;
+      margin: 18px 0;
+    }
+
+    .info-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-illustration {
+      border: 1px solid #e1e7f2;
+      background: #fbfcff;
+      border-radius: 15px;
+      margin: 19px 0;
+      padding: 21px;
+    }
+
+    .timeline-illustration h4 {
+      margin: 0 0 15px;
+    }
+
+    .time-track {
+      height: 12px;
+      border-radius: 100px;
+      background: #b29cf1;
+      position: relative;
+      margin: 31px 18px 12px;
+    }
+
+    .time-track::before,
+    .time-track::after {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 2px #7952db;
+      background: #5c3fbd;
+    }
+
+    .time-track::before {
+      left: 0;
+    }
+
+    .time-track::after {
+      left: 100%;
+    }
+
+    .time-track.rpo {
+      background: linear-gradient(to right, #1da866 0 50%, #f0b847 50% 100%);
+    }
+
+    .time-track.rpo .middle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 17px;
+      height: 17px;
+      border: 3px solid white;
+      background: #178350;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #178350;
+    }
+
+    .track-labels {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      font-size: 12px;
+      color: #4b5871;
+    }
+
+    .track-labels div:last-child {
+      text-align: right;
+    }
+
+    .track-labels strong {
+      display: block;
+      color: #32225b;
+    }
+
+    .track-result {
+      text-align: center;
+      margin-top: 14px;
+      font-weight: 850;
+      color: #5b3db8;
+    }
+
+    .caption {
+      font-size: 12px;
+      color: #69758a;
+      margin: 7px 0 0;
+      line-height: 1.55;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 21px;
+      margin: 20px 0;
+    }
+
+    .flow-box {
+      position: relative;
+      padding: 18px 13px;
+      border-radius: 14px;
+      text-align: center;
+      background: #f1ecff;
+      border: 1px solid #ded3ff;
+    }
+
+    .flow-box:nth-child(2) {
+      background: #fff7e7;
+      border-color: #f2e1b9;
+    }
+
+    .flow-box:nth-child(3) {
+      background: #ecfaf1;
+      border-color: #c9edd5;
+    }
+
+    .flow-box:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 900;
+      font-size: 24px;
+      color: #8c78c3;
+    }
+
+    .flow-box strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .flow-box small {
+      display: block;
+      margin-top: 6px;
+      color: #566278;
+      font-size: 11.5px;
+    }
+
+    .terms {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      margin: 18px 0;
+    }
+
+    .term {
+      padding: 14px 16px;
+      background: #f6f5fe;
+      border: 1px solid #e7e2fa;
+      border-radius: 12px;
+    }
+
+    .term strong {
+      display: block;
+      font-size: 13px;
+      color: #5038a4;
+    }
+
+    .term p {
+      font-size: 12.8px;
+      margin: 5px 0 0;
+      color: #516078;
+    }
+
+    @media (max-width: 620px) {
+      .flow {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .flow-box:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        right: 50%;
+        bottom: -26px;
+        transform: translateX(50%);
+      }
+
+      .terms {
+        grid-template-columns: 1fr;
+      }
+
+      .track-labels {
+        font-size: 10.5px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-  </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 14.11</h3><p>Disaster Recovery Plans</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 14 lessons"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-14.html"><span class="nav-number">14</span><span>Topic 14 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 14 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 14"><a href="topic-14-01.html" ><span class="nav-number">14.1</span><span>The Role of IT Systems in Organisations</span></a>
-<a href="topic-14-02.html" ><span class="nav-number">14.2</span><span>Transaction Processing</span></a>
-<a href="topic-14-03.html" ><span class="nav-number">14.3</span><span>Customer Relationship Management Systems</span></a>
-<a href="topic-14-04.html" ><span class="nav-number">14.4</span><span>Management Information Systems</span></a>
-<a href="topic-14-05.html" ><span class="nav-number">14.5</span><span>Intelligent Transportation Systems</span></a>
-<a href="topic-14-06.html" ><span class="nav-number">14.6</span><span>Expert Systems</span></a>
-<a href="topic-14-07.html" ><span class="nav-number">14.7</span><span>IT Governance and Policy</span></a>
-<a href="topic-14-08.html" ><span class="nav-number">14.8</span><span>Managing IT Changeover</span></a>
-<a href="topic-14-09.html" ><span class="nav-number">14.9</span><span>System Maintenance</span></a>
-<a href="topic-14-10.html" ><span class="nav-number">14.10</span><span>Archiving Data</span></a>
-<a href="topic-14-11.html" class="active" aria-current="page"><span class="nav-number">14.11</span><span>Disaster Recovery Plans</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong><div>Unit 3 · A2 Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-14.html">Topic 14</a><span aria-hidden="true">›</span><strong>Lesson 14.11</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 11</span><h1>Disaster Recovery Plans</h1><p>Edexcel International A Level IT · A2 Level</p><div class="hero-tags"><span>📖 Topic 14.11</span><span>💻 Using IT Systems in Organisations</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 14.11: Disaster Recovery Plans</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 14 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-14.html">← Back to Topic 14</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-14-10.html" aria-label="Previous lesson">← Lesson 14.10</a><a href="topic-14.html">Topic 14 Dashboard →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <div aria-label="Reading progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="reading-progress"
+    id="readingProgress" role="progressbar"></div>
+  <header class="mobile-header">
+    <button aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation" class="menu-toggle"
+      id="menuToggle" type="button">☰</button>
+    <div class="mobile-brand">Tr.Sun Education<span>Learn · Explore · Achieve</span></div>
+  </header>
+  <div aria-hidden="true" class="overlay" id="overlay"></div>
+  <aside aria-label="Lesson navigation" class="sidebar" id="sidebar">
+    <a aria-label="Tr.Sun Education Topic 14 dashboard" class="brand" href="topic-14.html">
+      <div aria-hidden="true" class="brand-logo">
+        <svg fill="none" height="33" viewbox="0 0 40 40" width="33" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 15.5 20 8l16 7.5L20 23 4 15.5Z" stroke="white" stroke-linejoin="round" stroke-width="2.4"></path>
+          <path d="M11 19.5V26c5.3 4.3 12.7 4.3 18 0v-6.5" stroke="white" stroke-linecap="round" stroke-width="2.4">
+          </path>
+          <path d="M35.5 17v11" stroke="white" stroke-linecap="round" stroke-width="2.4"></path>
+          <circle cx="35.5" cy="30" fill="white" r="2"></circle>
+        </svg>
+      </div>
+      <div><span class="brand-title">Tr.Sun Education</span><span class="brand-tagline">Learn · Explore · Achieve</span>
+      </div>
+    </a>
+    <div class="sidebar-scroll">
+      <p class="sidebar-label">Current lesson</p>
+      <div class="current-lesson"><span class="eyebrow">Topic 14 · Unit 3</span><strong>14.11 – Disaster Recovery
+          Plans</strong><span>Edexcel IAL Information Technology</span></div>
+      <p class="sidebar-label">On this page</p>
+      <nav aria-label="Section navigation">
+        <ol class="side-nav">
+          <li><a href="#section-1"><span class="nav-num">01</span>Introduction</a></li>
+          <li><a href="#section-2"><span class="nav-num">02</span>Key data &amp; recovery objectives</a></li>
+          <li><a href="#section-3"><span class="nav-num">03</span>Risk analysis</a></li>
+          <li><a href="#section-4"><span class="nav-num">04</span>Team actions</a></li>
+          <li><a href="#section-5"><span class="nav-num">05</span>Plan management</a></li>
+          <li><a href="#section-6"><span class="nav-num">06</span>School recovery example</a></li>
+          <li><a href="#section-7"><span class="nav-num">07</span>Advantages &amp; limitations</a></li>
+          <li><a href="#section-8"><span class="nav-num">08</span>Key concepts</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="sidebar-foot">Edexcel International A Level IT<br /><strong>Created by Tr. Sun</strong><br />© Tr.Sun
+      Education</div>
+  </aside>
+  <main class="main" id="mainContent">
+    <div class="content">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">›</span><a href="topic-14.html">Topic
+          14</a><span class="sep">›</span><span>14.11 Disaster Recovery Plans</span></div>
+      <section aria-labelledby="pageTitle" class="hero">
+        <div class="badges"><span class="badge">🎓 A2 Level</span><span class="badge">📘 Unit 3</span><span
+            class="badge">Topic 14.11</span></div>
+        <h1 id="pageTitle">Disaster Recovery Plans</h1>
+        <p>Explore how organisations protect critical data, prepare for serious IT disruptions and restore essential
+          services through effective disaster recovery planning.</p>
+        <div class="hero-meta"><span>📚 Using IT Systems in Organisations</span><span>📝 Detailed Lesson Notes</span>
+        </div>
+      </section>
+      <div class="notice-intro"><strong>Lesson overview:</strong> Organisations depend on IT systems for their daily
+        activities. Hardware failures, cyberattacks, natural disasters, human errors and power failures can interrupt
+        these systems, risking data loss, financial harm and extended downtime.<p>A disaster recovery plan (DRP)
+          prepares the organisation to restore vital IT services and maintain business continuity. This lesson covers
+          key data, RTO and RPO, backups, risk analysis, team responsibilities, plan approval, maintenance and
+          documentation.</p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="lesson-section" id="section-1">
+        <div class="section-top">
+          <div class="section-icon">🛡️</div>
+          <div><small>Section 01</small>
+            <h2>Understanding Disaster Recovery Plans</h2>
+          </div>
+        </div>
+        <h3>1.1 What is a Disaster Recovery Plan?</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Disaster Recovery Plan (DRP)</div>
+          <p>A documented set of procedures and strategies explaining how an organisation will recover critical IT
+            systems, restore important data and resume operations after a serious disruption or disaster.</p>
+        </div>
+        <p>A disaster recovery plan forms an important part of an organisation's <strong>IT governance and
+            policies</strong>. It should identify critical systems, possible threats, backup methods, recovery
+          priorities, team responsibilities and communication arrangements.</p>
+        <p>Possible incidents include:</p>
+        <ul>
+          <li>Hardware failures, such as a damaged server.</li>
+          <li>Cyberattacks, including ransomware.</li>
+          <li>Natural disasters, such as floods, fires and earthquakes.</li>
+          <li>Human error, such as accidental deletion of files.</li>
+          <li>Power failures and network interruptions.</li>
+          <li>Malicious actions by internal or external attackers.</li>
+        </ul>
+        <h3>1.2 Main Objectives of a DRP</h3>
+        <div class="cards three">
+          <div class="mini-card purple">
+            <div class="card-emoji">⏱️</div>
+            <h4>Minimise downtime</h4>
+            <p>Restore important systems as quickly as possible so that service interruptions are reduced.</p>
+          </div>
+          <div class="mini-card green">
+            <div class="card-emoji">🔐</div>
+            <h4>Protect data</h4>
+            <p>Use backups and recovery procedures to prevent or minimise permanent data loss.</p>
+          </div>
+          <div class="mini-card peach">
+            <div class="card-emoji">🏢</div>
+            <h4>Maintain business continuity</h4>
+            <p>Keep essential organisational activities running or resume them promptly after a disruption.</p>
+          </div>
+        </div>
+        <div class="definition">
+          <div class="callout-title">Key term – Downtime</div>
+          <p>The period during which an IT service or system is unavailable or unable to operate normally.</p>
+        </div>
+        <div class="example"><strong>✅ Example – School online learning platform</strong>
+          <p>A school's main server fails, making student records, exam results and lessons unavailable. Without a DRP,
+            employees may not know which data to recover or who is responsible. With a DRP, the IT team can follow a
+            planned sequence to restore data from backups and resume critical services.</p>
+        </div>
+        <div class="warning"><strong>💡 Remember</strong>
+          <p>A DRP is not just a backup schedule. It also covers recovery objectives, risk analysis, responsibilities,
+            communication, testing and management approval.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-2">
+        <div class="section-top">
+          <div class="section-icon">🗃️</div>
+          <div><small>Section 02</small>
+            <h2>Key Data</h2>
+          </div>
+        </div>
+        <p>Disaster recovery must focus on the data and systems that an organisation cannot afford to lose. Not all
+          information has equal importance: losing a temporary file may cause little inconvenience, while losing
+          financial records or a patient database may have serious consequences.</p>
+        <h3>2.1 Inventory of Data</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Inventory of Data</div>
+          <p>A detailed record identifying the critical data and IT systems covered by the disaster recovery plan.</p>
+        </div>
+        <p>An inventory can record the <strong>name</strong> of the data or system, its <strong>purpose</strong>,
+          <strong>storage location</strong>, <strong>responsible person</strong>, <strong>importance</strong> and
+          <strong>backup requirements</strong>.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>School data/system</th>
+                <th>Purpose</th>
+                <th>Importance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Student database</td>
+                <td>Student and enrolment records</td>
+                <td>Critical</td>
+              </tr>
+              <tr>
+                <td>Examination results</td>
+                <td>Grades and assessment records</td>
+                <td>Critical</td>
+              </tr>
+              <tr>
+                <td>Learning platform</td>
+                <td>Online lessons and resources</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>Staff records</td>
+                <td>Employee information</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>Old promotional materials</td>
+                <td>Previous advertising material</td>
+                <td>Low</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The inventory helps identify recovery priorities, prevents important data being overlooked and supports the
+          choice of suitable backup procedures.</p>
+        <h3>2.2 Recovery Objectives</h3>
+        <p>After identifying critical systems, the organisation must decide <strong>how quickly a system should be
+            restored</strong> and <strong>how much recent data loss is acceptable</strong>.</p>
+        <div class="cards">
+          <div class="mini-card purple detail-card">
+            <h4>⏱️ Recovery Time Objective (RTO)</h4>
+            <p>The maximum target time that an affected service should remain unavailable before it is restored.</p>
+            <p><strong>Question:</strong> How quickly must the system work again?</p>
+          </div>
+          <div class="mini-card green detail-card">
+            <h4>💾 Recovery Point Objective (RPO)</h4>
+            <p>The maximum acceptable amount of recent data loss, measured in time, following a disruption.</p>
+            <p><strong>Question:</strong> How much recent data could be lost?</p>
+          </div>
+        </div>
+        <h4>A. Recovery Time Objective (RTO)</h4>
+        <p>Suppose a bank sets an RTO of <strong>30 minutes</strong> for a transaction-processing system. The
+          organisation aims to restore that service within 30 minutes after a disruption. More critical services
+          generally require shorter RTOs.</p>
+        <div class="timeline-illustration">
+          <h4>Illustration – RTO of 4 hours</h4>
+          <div class="time-track"></div>
+          <div class="track-labels">
+            <div><strong>9:00 AM</strong>System fails</div>
+            <div><strong>1:00 PM</strong>Target recovery deadline</div>
+          </div>
+          <div class="track-result">RTO = 4 hours</div>
+          <div class="caption">If failure occurs at 9:00 AM, the service should be restored by 1:00 PM to meet this
+            target.</div>
+        </div>
+        <p>A very short RTO may require standby servers, redundant infrastructure, specialist staff or other additional
+          resources.</p>
+        <h4>B. Recovery Point Objective (RPO)</h4>
+        <p>Suppose a business has an RPO of <strong>one hour</strong> for its customer database. After a failure, the
+          database should be recoverable to a point no more than one hour before the incident. Hourly recoverable
+          backups might support this target, provided they complete reliably.</p>
+        <div class="timeline-illustration">
+          <h4>Illustration – RPO of 1 hour</h4>
+          <div class="time-track rpo"><span class="middle"></span></div>
+          <div class="track-labels">
+            <div><strong>9:00 AM</strong>Earlier data</div>
+            <div><strong>11:00 AM</strong>System fails</div>
+          </div>
+          <div class="track-result">Latest usable backup: 10:00 AM</div>
+          <div class="caption">The period from 10:00 to 11:00 AM represents up to one hour of changes that might be
+            lost.</div>
+        </div>
+        <p>Systems with rapidly changing or highly valuable data may need a short RPO. Less frequently updated archives
+          may tolerate a longer RPO.</p>
+        <h4>C. Comparing RTO and RPO</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>RTO</th>
+                <th>RPO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Full name</td>
+                <td>Recovery Time Objective</td>
+                <td>Recovery Point Objective</td>
+              </tr>
+              <tr>
+                <td>Main focus</td>
+                <td>System downtime</td>
+                <td>Data loss</td>
+              </tr>
+              <tr>
+                <td>Question</td>
+                <td>How fast must the system be restored?</td>
+                <td>How much recent data can be lost?</td>
+              </tr>
+              <tr>
+                <td>Example</td>
+                <td>Restore within 2 hours</td>
+                <td>Lose no more than 30 minutes of data</td>
+              </tr>
+              <tr>
+                <td>Primary concern</td>
+                <td>Availability of a service</td>
+                <td>Recoverability of information</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="warning"><strong>⭐ Important distinction</strong>
+          <p>A system might recover quickly but still lose substantial data; it might also recover nearly all its data
+            but take too long to resume service. A DRP needs <strong>both RTO and RPO</strong>.</p>
+        </div>
+        <h3>2.3 Backup and Recovery Procedures</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Data Backup</div>
+          <p>A separate copy of important data that can be used to restore information if the original is lost,
+            corrupted or damaged.</p>
+        </div>
+        <p>The DRP should explain exactly how data is backed up, stored, protected and restored.</p>
+        <div class="cards">
+          <div class="mini-card purple detail-card">
+            <h4>📥 Backup procedures</h4>
+            <ul>
+              <li>Identify what must be backed up.</li>
+              <li>Set backup frequency according to RPO.</li>
+              <li>Choose storage locations, including off-site options.</li>
+              <li>Protect backups with encryption and access controls.</li>
+              <li>Assign responsibility for monitoring backups.</li>
+            </ul>
+          </div>
+          <div class="mini-card green detail-card">
+            <h4>♻️ Recovery procedures</h4>
+            <ol>
+              <li>Identify damaged or unavailable systems.</li>
+              <li>Locate a safe, suitable backup.</li>
+              <li>Prepare the recovery environment.</li>
+              <li>Restore data and applications.</li>
+              <li>Verify accuracy and functionality.</li>
+              <li>Return services to authorised users.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="example"><strong>✅ Example – Online shop</strong>
+          <p>An online shop backs up its order database every 30 minutes. A cyberattack damages the database at 3:00 PM.
+            The team selects an unaffected backup, restores it and checks the recovered orders. If the latest usable
+            backup is from 2:30 PM, up to 30 minutes of recent orders may be missing unless another recovery method is
+            available.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-3">
+        <div class="section-top">
+          <div class="section-icon">⚠️</div>
+          <div><small>Section 03</small>
+            <h2>Risk Analysis</h2>
+          </div>
+        </div>
+        <div class="definition">
+          <div class="callout-title">Definition – Risk Analysis</div>
+          <p>The process of identifying potential threats to data and IT systems, assessing their possible consequences
+            and developing strategies to reduce the likelihood or impact of those threats.</p>
+        </div>
+        <p>Risk analysis considers threats in relation to the organisation's core functions. It has three main stages:
+        </p>
+        <div class="flow">
+          <div class="flow-box"><strong>1. Threat Identification</strong><small>What could go wrong?</small></div>
+          <div class="flow-box"><strong>2. Impact Assessment</strong><small>What damage might it cause?</small></div>
+          <div class="flow-box"><strong>3. Risk Mitigation</strong><small>How can the risk be reduced?</small></div>
+        </div>
+        <h3>3.1 Threat Identification</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Threat Identification</div>
+          <p>Recognising and recording specific events or activities that could damage, interrupt or compromise
+            organisational data and IT systems.</p>
+        </div>
+        <p>A nominated person, often the senior IT manager, should carry out a comprehensive assessment of potential
+          threats. Threats may be <strong>internal</strong> or <strong>external</strong>.</p>
+        <div class="cards">
+          <div class="mini-card purple detail-card">
+            <h4>🏢 Internal threats</h4>
+            <p>Threats originating within the organisation.</p>
+            <ul>
+              <li>Accidental deletion of data.</li>
+              <li>Malicious employee activity.</li>
+              <li>Incorrect system configuration.</li>
+              <li>Poor equipment maintenance.</li>
+              <li>Inappropriate access permissions.</li>
+            </ul>
+          </div>
+          <div class="mini-card peach detail-card">
+            <h4>🌍 External threats</h4>
+            <p>Threats originating outside the organisation.</p>
+            <ul>
+              <li>Cyberattacks and ransomware.</li>
+              <li>Floods and earthquakes.</li>
+              <li>Fire affecting the premises.</li>
+              <li>Power supply failure.</li>
+              <li>External cloud or network outages.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="warning"><strong>💡 Be specific</strong>
+          <p>“IT failure” is a vague threat. “Flood damage to the main server room” is specific and makes it easier to
+            plan a suitable response, such as relocating equipment or maintaining backups at another site.</p>
+        </div>
+        <h3>3.2 Impact Assessment</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Impact Assessment</div>
+          <p>Evaluating the possible consequences of each identified threat for data, IT systems and business
+            operations.</p>
+        </div>
+        <div class="cards three">
+          <div class="mini-card purple">
+            <div class="card-emoji">📁</div>
+            <h4>Impact on data</h4>
+            <p>Information might be lost, corrupted or exposed to unauthorised users.</p>
+          </div>
+          <div class="mini-card green">
+            <div class="card-emoji">🖥️</div>
+            <h4>Impact on IT systems</h4>
+            <p>Services might be unavailable, unreliable or expensive to restore.</p>
+          </div>
+          <div class="mini-card peach">
+            <div class="card-emoji">📉</div>
+            <h4>Impact on operations</h4>
+            <p>Employees or customers may be affected, leading to delays, costs or reputational damage.</p>
+          </div>
+        </div>
+        <div class="example"><strong>✅ Example – Hospital system</strong>
+          <p>If a hospital's patient information system becomes unavailable, clinicians may struggle to view patient
+            histories or test results. This may delay treatment, disrupt appointments and threaten patient safety.
+            Because the potential impact is high, the system may require very short recovery objectives.</p>
+        </div>
+        <p>Impact assessments also help determine appropriate <strong>RTOs and RPOs</strong>. Critical services should
+          usually be given higher recovery priority.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Potential impact</th>
+                <th>Illustrative priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Emergency patient records</td>
+                <td>Very high</td>
+                <td>Very short RTO and RPO</td>
+              </tr>
+              <tr>
+                <td>Online payment system</td>
+                <td>High</td>
+                <td>Short RTO and RPO</td>
+              </tr>
+              <tr>
+                <td>Internal notice board</td>
+                <td>Low</td>
+                <td>Longer RTO may be acceptable</td>
+              </tr>
+              <tr>
+                <td>Historical advertising archive</td>
+                <td>Very low</td>
+                <td>Lower recovery priority</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>3.3 Risk Mitigation Strategies</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Risk Mitigation</div>
+          <p>Measures that reduce the likelihood of a threat occurring or minimise the damage if it occurs.</p>
+        </div>
+        <p>Risk mitigation cannot guarantee that a threat will never occur. An effective strategy must consider
+          <strong>prevention</strong> and <strong>reducing the consequences</strong>.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Threat</th>
+                <th>Reduce likelihood</th>
+                <th>Reduce impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cyberattack</td>
+                <td>Firewalls, updates, staff security training</td>
+                <td>Isolated backups and incident recovery</td>
+              </tr>
+              <tr>
+                <td>Hardware failure</td>
+                <td>Regular maintenance and monitoring</td>
+                <td>Spare equipment and redundant systems</td>
+              </tr>
+              <tr>
+                <td>Fire</td>
+                <td>Fire detection and prevention measures</td>
+                <td>Off-site backups and alternative facilities</td>
+              </tr>
+              <tr>
+                <td>Human error</td>
+                <td>Training and restricted access</td>
+                <td>Backups and version recovery</td>
+              </tr>
+              <tr>
+                <td>Power failure</td>
+                <td>Electrical infrastructure maintenance</td>
+                <td>UPS and backup generators</td>
+              </tr>
+              <tr>
+                <td>Flooding</td>
+                <td>Avoid high-risk equipment locations</td>
+                <td>Geographically separate recovery facilities</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-note">
+          <p><strong>Prevention vs recovery:</strong> A firewall may reduce the likelihood of an attack. Restoring a
+            clean backup after an attack is a recovery measure. Both matter.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-4">
+        <div class="section-top">
+          <div class="section-icon">👥</div>
+          <div><small>Section 04</small>
+            <h2>Team Actions</h2>
+          </div>
+        </div>
+        <p>A DRP is effective only if the people involved know their responsibilities. A large organisation may have a
+          dedicated disaster recovery team; a smaller organisation may assign the work to its usual IT support staff.
+        </p>
+        <h3>4.1 Defining Team Roles</h3>
+        <p>The plan should identify <strong>who</strong> performs each task, <strong>when</strong> it should be done and
+          <strong>who takes over</strong> if the main person is unavailable.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Possible team member</th>
+                <th>Main responsibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Disaster Recovery Manager</td>
+                <td>Coordinates recovery and major decisions</td>
+              </tr>
+              <tr>
+                <td>IT Infrastructure Technician</td>
+                <td>Repairs or replaces hardware and restores servers</td>
+              </tr>
+              <tr>
+                <td>Database Administrator</td>
+                <td>Recovers databases and validates restored data</td>
+              </tr>
+              <tr>
+                <td>Network Administrator</td>
+                <td>Restores connections and network services</td>
+              </tr>
+              <tr>
+                <td>Security Officer</td>
+                <td>Investigates security incidents and protects restored systems</td>
+              </tr>
+              <tr>
+                <td>Communications Officer</td>
+                <td>Updates employees, management and stakeholders</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>These are examples of roles; the exact structure depends on the organisation. Clear responsibility prevents
+          confusion, duplicated tasks, overlooked activities and unnecessary delays.</p>
+        <div class="example"><strong>✅ Example – Replacement personnel</strong>
+          <p>If the database administrator is unavailable when a server fails, the plan should name a suitably trained
+            replacement who can follow the documented restoration instructions.</p>
+        </div>
+        <h3>4.2 Communication Plan</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Communication Plan</div>
+          <p>A documented procedure explaining how relevant people will receive information during and after a disaster.
+          </p>
+        </div>
+        <p>A communication plan should state <strong>who to contact</strong>, <strong>who sends updates</strong>,
+          <strong>what information to share</strong>, <strong>which communication channels to use</strong> and
+          <strong>when updates are due</strong>.</p>
+        <div class="cards">
+          <div class="mini-card purple detail-card">
+            <h4>📣 Internal communication</h4>
+            <ul>
+              <li>Notify senior management.</li>
+              <li>Tell staff which services are unavailable.</li>
+              <li>Assign tasks to IT team members.</li>
+              <li>Update department managers on progress.</li>
+            </ul>
+          </div>
+          <div class="mini-card green detail-card">
+            <h4>📨 External communication</h4>
+            <ul>
+              <li>Notify customers of interruptions.</li>
+              <li>Contact external IT service providers.</li>
+              <li>Inform affected suppliers.</li>
+              <li>Contact relevant authorities when necessary.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="example"><strong>✅ Example – School communication</strong>
+          <p>If an online learning platform fails, the IT manager informs the principal; teachers receive instructions
+            through an alternative channel; students and parents are told about changes to lessons; and the IT team
+            provides status updates.</p>
+        </div>
+        <div class="warning"><strong>💡 Remember</strong>
+          <p>Communication plans need current contact details and backup communication methods. The organisation's
+            normal email or messaging system may be unavailable during the incident.</p>
+        </div>
+        <h3>4.3 Training and Drills</h3>
+        <div class="cards">
+          <div class="mini-card purple detail-card">
+            <h4>🎓 Training</h4>
+            <p>Employees learn their responsibilities, how to follow recovery instructions, how to restore data and how
+              to communicate during a disaster.</p>
+          </div>
+          <div class="mini-card peach detail-card">
+            <h4>🧪 Drills</h4>
+            <p>Planned exercises allow employees to practise the DRP and identify weaknesses before a real incident
+              occurs.</p>
+          </div>
+        </div>
+        <div class="definition">
+          <div class="callout-title">Definition – Disaster Recovery Drill</div>
+          <p>A practice exercise used to test the effectiveness of disaster recovery procedures.</p>
+        </div>
+        <h4>Example drill – Simulated server failure</h4>
+        <ol>
+          <li>Simulate a server failure in a safe test environment.</li>
+          <li>Activate the appropriate recovery procedures.</li>
+          <li>Restore the test system from a backup.</li>
+          <li>Measure the time required for recovery.</li>
+          <li>Check that all necessary data is present and accurate.</li>
+          <li>Record weaknesses and improve the plan.</li>
+        </ol>
+        <p>Regular training and drills can reduce confusion, improve coordination and show whether recovery objectives
+          can realistically be achieved.</p>
+        <div class="info-note">
+          <p><strong>Documentation:</strong> Records of training, drills, identified problems and corrective actions
+            should be kept with the DRP. They can provide useful evidence during reviews or audits.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-5">
+        <div class="section-top">
+          <div class="section-icon">📋</div>
+          <div><small>Section 05</small>
+            <h2>Management of Disaster Recovery Plans</h2>
+          </div>
+        </div>
+        <p>A disaster recovery plan must not become an outdated document that nobody reads. Organisations should manage
+          the plan continuously so it reflects new technologies, business requirements, employees and threats.</p>
+        <h3>5.1 Plan Approval</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Plan Approval</div>
+          <p>The formal process in which senior management reviews and authorises a disaster recovery plan.</p>
+        </div>
+        <p>After the disaster recovery team develops the plan, senior management should approve it and commit to
+          providing the necessary resources.</p>
+        <div class="cards three">
+          <div class="mini-card purple">
+            <div class="card-emoji">✅</div>
+            <h4>Official authorisation</h4>
+            <p>Confirms that the organisation accepts the recovery strategy.</p>
+          </div>
+          <div class="mini-card green">
+            <div class="card-emoji">💰</div>
+            <h4>Necessary resources</h4>
+            <p>Supports spending on equipment, backups, facilities and training.</p>
+          </div>
+          <div class="mini-card peach">
+            <div class="card-emoji">📌</div>
+            <h4>Accountability</h4>
+            <p>Clarifies responsibility for implementing and supporting the plan.</p>
+          </div>
+        </div>
+        <div class="example"><strong>✅ Example – School backup server</strong>
+          <p>A school's IT department proposes an extra server and off-site backups. Senior management must approve the
+            plan and provide the required budget and resources.</p>
+        </div>
+        <h3>5.2 Plan Maintenance</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Plan Maintenance</div>
+          <p>The ongoing process of reviewing and updating the DRP to keep it accurate, relevant and effective.</p>
+        </div>
+        <p>A review may be required when hardware is replaced, databases are moved, employees change roles, new services
+          are introduced or new cybersecurity threats emerge. Any updated plan should be sent to senior management for
+          approval.</p>
+        <ol class="steps">
+          <li><strong>Review the existing plan</strong>
+            <p>Check whether procedures still meet operational needs.</p>
+          </li>
+          <li><strong>Identify required changes</strong>
+            <p>Consider new systems, staff, business activities and threats.</p>
+          </li>
+          <li><strong>Update recovery procedures</strong>
+            <p>Revise backup arrangements, responsibilities and technical instructions.</p>
+          </li>
+          <li><strong>Obtain management approval</strong>
+            <p>Submit the updated plan for formal authorisation.</p>
+          </li>
+          <li><strong>Communicate and test changes</strong>
+            <p>Ensure staff understand the new procedures and can use them successfully.</p>
+          </li>
+        </ol>
+        <div class="example"><strong>✅ Example – Moving to cloud services</strong>
+          <p>A business transfers its customer database from a physical server to a cloud platform. Its old DRP still
+            describes restoring the physical server. The organisation needs to rewrite the recovery steps for the new
+            environment and obtain approval for the revised plan.</p>
+        </div>
+        <h3>5.3 Documentation</h3>
+        <div class="definition">
+          <div class="callout-title">Definition – Disaster Recovery Documentation</div>
+          <p>The written records, recovery instructions and technical information required to protect and restore an
+            organisation's IT systems and data.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Document</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Disaster recovery plan</td>
+                <td>Overall procedures, priorities and responsibilities</td>
+              </tr>
+              <tr>
+                <td>Data inventory</td>
+                <td>Identifies critical data and systems</td>
+              </tr>
+              <tr>
+                <td>Backup procedures</td>
+                <td>Explains backup creation, storage and protection</td>
+              </tr>
+              <tr>
+                <td>Recovery instructions</td>
+                <td>Step-by-step system restoration guidance</td>
+              </tr>
+              <tr>
+                <td>Network diagrams</td>
+                <td>Shows devices and connections</td>
+              </tr>
+              <tr>
+                <td>Configuration records</td>
+                <td>Records important technical settings</td>
+              </tr>
+              <tr>
+                <td>Contact lists</td>
+                <td>Provides contact details for key people</td>
+              </tr>
+              <tr>
+                <td>Training and drill records</td>
+                <td>Records tests, issues and improvements</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="warning"><strong>⚠️ Essential requirement</strong>
+          <p>Documentation should be clear, accurate and easily accessible to authorised staff. It should also be stored
+            in a <strong>separate location or system</strong> that will remain available if the main IT infrastructure
+            fails.</p>
+        </div>
+        <p>For example, if the only copy of recovery instructions is stored on the server that has failed, the team may
+          be unable to access the instructions. Protected off-site copies can prevent this problem.</p>
+      </section>
+      <section class="lesson-section" id="section-6">
+        <div class="section-top">
+          <div class="section-icon">🏫</div>
+          <div><small>Section 06</small>
+            <h2>Practical Example: Online Learning Platform</h2>
+          </div>
+        </div>
+        <div class="example"><strong>📚 Scenario</strong>
+          <p>A school operates a platform for <strong>500 students and 30 teachers</strong>. It stores student
+            registrations, lesson materials, examination results, assignment submissions and account information. A
+            serious server failure makes the platform unavailable.</p>
+        </div>
+        <h3>Step 1 – Identify Key Data and Recovery Targets</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data / system</th>
+                <th>Importance</th>
+                <th>Example RTO</th>
+                <th>Example RPO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Student database</td>
+                <td>Critical</td>
+                <td>2 hours</td>
+                <td>30 minutes</td>
+              </tr>
+              <tr>
+                <td>Examination results</td>
+                <td>Critical</td>
+                <td>2 hours</td>
+                <td>1 hour</td>
+              </tr>
+              <tr>
+                <td>Assignment submissions</td>
+                <td>High</td>
+                <td>4 hours</td>
+                <td>1 hour</td>
+              </tr>
+              <tr>
+                <td>Lesson materials</td>
+                <td>High</td>
+                <td>8 hours</td>
+                <td>24 hours</td>
+              </tr>
+              <tr>
+                <td>Archived announcements</td>
+                <td>Low</td>
+                <td>48 hours</td>
+                <td>24 hours</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption">These RTO and RPO values are illustrative teaching examples, not universal requirements.</p>
+        <h3>Step 2 – Analyse Risks</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Threat</th>
+                <th>Possible impact</th>
+                <th>Mitigation strategy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Server failure</td>
+                <td>Platform unavailable</td>
+                <td>Backups and alternative server resources</td>
+              </tr>
+              <tr>
+                <td>Ransomware</td>
+                <td>Data may be inaccessible</td>
+                <td>Security controls and protected backups</td>
+              </tr>
+              <tr>
+                <td>Accidental deletion</td>
+                <td>Loss of student work</td>
+                <td>Access controls and versioned backups</td>
+              </tr>
+              <tr>
+                <td>Power failure</td>
+                <td>Services stop operating</td>
+                <td>UPS and alternative power arrangements</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Step 3 – Assign Responsibilities</h3>
+        <ul>
+          <li><strong>IT Manager:</strong> coordinates the disaster recovery process.</li>
+          <li><strong>System Administrator:</strong> restores servers and applications.</li>
+          <li><strong>Database Administrator:</strong> restores and verifies student data.</li>
+          <li><strong>School Management:</strong> approves resources and important decisions.</li>
+          <li><strong>Communications Officer:</strong> informs teachers, students and parents.</li>
+        </ul>
+        <h3>Step 4 – Follow the Recovery Procedure</h3>
+        <ol class="steps">
+          <li><strong>10:00 AM – Detect the failure</strong>
+            <p>Monitoring identifies that the main server has stopped responding.</p>
+          </li>
+          <li><strong>10:10 AM – Notify the team</strong>
+            <p>The IT manager activates the plan and alerts responsible staff.</p>
+          </li>
+          <li><strong>10:20 AM – Assess the damage</strong>
+            <p>The team determines which services and data are affected.</p>
+          </li>
+          <li><strong>10:30 AM – Start restoration</strong>
+            <p>A replacement environment is prepared and clean backups are selected.</p>
+          </li>
+          <li><strong>11:30 AM – Verify the recovery</strong>
+            <p>Data, accounts and important application functions are tested.</p>
+          </li>
+          <li><strong>11:45 AM – Resume critical services</strong>
+            <p>The student database and essential learning functions become available again.</p>
+          </li>
+        </ol>
+        <div class="warning"><strong>⭐ Applying RTO and RPO</strong>
+          <p>In this example, essential services are restored in <strong>1 hour 45 minutes</strong>, within a two-hour
+            RTO. The team must separately check that the restored data also meets the agreed RPOs.</p>
+        </div>
+        <h3>Step 5 – Review and Improve</h3>
+        <p>After the incident, the school should investigate its cause, measure recovery performance, check for data
+          loss, evaluate staff communication and update the plan wherever weaknesses are discovered. Significant updates
+          should be formally approved.</p>
+      </section>
+      <section class="lesson-section" id="section-7">
+        <div class="section-top">
+          <div class="section-icon">⚖️</div>
+          <div><small>Section 07</small>
+            <h2>Advantages and Limitations</h2>
+          </div>
+        </div>
+        <h3>7.1 Advantages of a Disaster Recovery Plan</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Advantage</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reduced downtime</td>
+                <td>Prepared procedures can help restore important services faster.</td>
+              </tr>
+              <tr>
+                <td>Reduced data loss</td>
+                <td>Backups and recovery methods support restoration of important records.</td>
+              </tr>
+              <tr>
+                <td>Business continuity</td>
+                <td>Essential activities can continue or resume after a disruption.</td>
+              </tr>
+              <tr>
+                <td>Clear responsibilities</td>
+                <td>Employees know who must complete each task.</td>
+              </tr>
+              <tr>
+                <td>Better communication</td>
+                <td>Stakeholders receive organised and timely updates.</td>
+              </tr>
+              <tr>
+                <td>Reduced financial damage</td>
+                <td>Faster recovery may reduce lost revenue and extra operational costs.</td>
+              </tr>
+              <tr>
+                <td>Improved preparedness</td>
+                <td>Training and drills help people respond more effectively.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>7.2 Limitations of a Disaster Recovery Plan</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Limitation</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Implementation costs</td>
+                <td>Additional hardware, storage and facilities can be expensive.</td>
+              </tr>
+              <tr>
+                <td>Maintenance requirements</td>
+                <td>The plan must be reviewed when technology, staff or threats change.</td>
+              </tr>
+              <tr>
+                <td>Training costs</td>
+                <td>Employees need time and resources to practise recovery procedures.</td>
+              </tr>
+              <tr>
+                <td>No complete protection</td>
+                <td>Not every disaster can be predicted or prevented.</td>
+              </tr>
+              <tr>
+                <td>Possible recovery failures</td>
+                <td>Backups may be corrupted, missing or inaccessible.</td>
+              </tr>
+              <tr>
+                <td>Dependence on staff</td>
+                <td>Recovery may be delayed if trained personnel are unavailable.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-note">
+          <p><strong>Overall:</strong> A DRP reduces risk and improves preparedness, but it cannot guarantee zero
+            downtime or zero data loss.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-8">
+        <div class="section-top">
+          <div class="section-icon">📝</div>
+          <div><small>Section 08</small>
+            <h2>Topic Summary and Key Terms</h2>
+          </div>
+        </div>
+        <p>The key content of Topic 14.11 can be organised into <strong>four main areas</strong>:</p>
+        <div class="cards three">
+          <div class="mini-card purple">
+            <div class="card-emoji">🗃️</div>
+            <h4>1. Key Data</h4>
+            <p>Inventory of data, recovery objectives (RTO and RPO), backup and recovery procedures.</p>
+          </div>
+          <div class="mini-card green">
+            <div class="card-emoji">⚠️</div>
+            <h4>2. Risk Analysis</h4>
+            <p>Threat identification, impact assessment and mitigation strategies.</p>
+          </div>
+          <div class="mini-card peach">
+            <div class="card-emoji">👥</div>
+            <h4>3. Team Actions</h4>
+            <p>Assigned roles, communication plans, training and drills.</p>
+          </div>
+          <div class="mini-card blue">
+            <div class="card-emoji">📋</div>
+            <h4>4. Management</h4>
+            <p>Senior management approval, ongoing maintenance and accessible documentation.</p>
+          </div>
+        </div>
+        <h3>Essential Terms</h3>
+        <div class="terms">
+          <div class="term"><strong>Disaster Recovery Plan (DRP)</strong>
+            <p>Documented procedures to restore critical IT systems and data after a disruption.</p>
+          </div>
+          <div class="term"><strong>Downtime</strong>
+            <p>The period when a service is unavailable.</p>
+          </div>
+          <div class="term"><strong>Business continuity</strong>
+            <p>The ability to maintain or resume essential operations.</p>
+          </div>
+          <div class="term"><strong>Data inventory</strong>
+            <p>A record of important information and systems needing protection.</p>
+          </div>
+          <div class="term"><strong>RTO</strong>
+            <p>The target maximum period for recovering a system.</p>
+          </div>
+          <div class="term"><strong>RPO</strong>
+            <p>The maximum acceptable data loss measured in time.</p>
+          </div>
+          <div class="term"><strong>Backup</strong>
+            <p>A separate copy of data that can be used for restoration.</p>
+          </div>
+          <div class="term"><strong>Risk analysis</strong>
+            <p>Identifying threats, assessing consequences and planning mitigation.</p>
+          </div>
+          <div class="term"><strong>Threat identification</strong>
+            <p>Recognising possible sources of IT system or data damage.</p>
+          </div>
+          <div class="term"><strong>Impact assessment</strong>
+            <p>Evaluating how an incident could affect data, systems and operations.</p>
+          </div>
+          <div class="term"><strong>Risk mitigation</strong>
+            <p>Reducing a threat's likelihood or consequences.</p>
+          </div>
+          <div class="term"><strong>Recovery drill</strong>
+            <p>A practice exercise to test disaster recovery procedures.</p>
+          </div>
+          <div class="term"><strong>Plan maintenance</strong>
+            <p>Reviewing and updating the DRP to keep it effective.</p>
+          </div>
+          <div class="term"><strong>Plan approval</strong>
+            <p>Formal authorisation by senior management.</p>
+          </div>
+        </div>
+        <div class="example"><strong>✅ Final understanding</strong>
+          <p><strong>Effective disaster recovery requires preparation before a disaster occurs.</strong> Organisations
+            should identify critical systems, decide suitable recovery targets, assess risks, assign responsibilities,
+            train staff and regularly update an approved recovery plan. This can minimise downtime, protect data and
+            support business continuity.</p>
+        </div>
+      </section>
+      <nav aria-label="Other lessons" class="lesson-navigation">
+        <a href="topic-14-10.html">← Topic 14.10</a>
+        <a href="topic-14.html">Topic 14 ⬆️</a></nav>
+      <footer class="page-footer"><strong>Tr.Sun Education</strong>
+        <p>Edexcel International A Level IT · Unit 3 · Topic 14.11</p>
+        <p>Created by <strong>Tr. Sun</strong></p>
+      </footer>
+    </div>
+  </main>
+  <button aria-label="Back to top" class="to-top" id="toTop" title="Back to top" type="button">↑</button>
+  <script>
+    (() => {
+      'use strict';
+      const body = document.body;
+      const menuButton = document.getElementById('menuToggle');
+      const overlay = document.getElementById('overlay');
+      const sidebar = document.getElementById('sidebar');
+      const progress = document.getElementById('readingProgress');
+      const toTop = document.getElementById('toTop');
+      const links = [...document.querySelectorAll('.side-nav a')];
+      const sections = [...document.querySelectorAll('.lesson-section')];
+      let lastFocus = null;
+      function setMenu(open) {
+        body.classList.toggle('menu-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+        if (open) {
+          lastFocus = document.activeElement;
+          sidebar.querySelector('.side-nav a')?.focus();
+        } else if (lastFocus && window.innerWidth <= 900) {
+          menuButton.focus();
+        }
+      }
+      menuButton.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
+      overlay.addEventListener('click', () => setMenu(false));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && body.classList.contains('menu-open')) setMenu(false);
+      });
+      links.forEach(link => link.addEventListener('click', () => {
+        if (body.classList.contains('menu-open')) setMenu(false);
+      }));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && body.classList.contains('menu-open')) setMenu(false);
+      });
+      function updateScroll() {
+        const available = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = available > 0 ? Math.min(100, Math.max(0, window.scrollY / available * 100)) : 100;
+        progress.style.width = percent.toFixed(2) + '%';
+        progress.setAttribute('aria-valuenow', Math.round(percent));
+        toTop.classList.toggle('visible', window.scrollY > 470);
+        let current = sections[0]?.id;
+        const threshold = window.innerWidth <= 900 ? 140 : 95;
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= threshold) current = section.id;
+        }
+        links.forEach(link => {
+          const active = link.hash === '#' + current;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      let scheduled = false;
+      window.addEventListener('scroll', () => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => { updateScroll(); scheduled = false; });
+      }, { passive: true });
+      window.addEventListener('resize', updateScroll);
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+      updateScroll();
+    })();
+  </script>
 </body>
+
 </html>

@@ -1,124 +1,2711 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 14.7: IT Governance and Policy — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 14.7 – IT Governance and Policy | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="#111827" name="theme-color" />
+  <meta
+    content="Tr.Sun Education – Edexcel International A Level IT, Topic 14.7: IT Governance and Policy. Detailed lessons on governance goals, business continuity, disaster recovery, risk management, acceptable use and IT risk assessment."
+    name="description" />
+  <title>Topic 14.7 – IT Governance and Policy | Tr.Sun Education</title>
+  <style>
+    :root {
+      --navy: #111827;
+      --navy-soft: #1d293b;
+      --purple: #6d4ed6;
+      --purple-deep: #4934b5;
+      --pink: #ad72ed;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --page: #f4f6fb;
+      --white: #fff;
+      --radius: 20px;
+      --sidebar-width: 282px;
+      --shadow: 0 8px 30px rgba(31, 41, 55, .055);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 28px
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    }
+
+    a {
+      color: #5f40c7
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #c5b6ff;
+      outline-offset: 3px
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    .reading-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #a78bfa, #ec8bd3);
+      z-index: 200;
+      transition: width .1s
+    }
+
+    .sidebar {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      background: var(--navy);
+      color: #d7def0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 18px rgba(15, 23, 42, .10)
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 26px 21px 23px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .brand-logo {
+      width: 47px;
+      height: 47px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(140deg, #7356dc, #b976f0);
+      box-shadow: 0 7px 22px rgba(136, 93, 238, .22)
+    }
+
+    .brand-title {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.35px;
+      font-weight: 800;
+      line-height: 1.25
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 3px;
+      color: #bdc6dd;
+      font-size: 11px;
+      letter-spacing: .2px
+    }
+
+    .sidebar-scroll {
+      padding: 23px 14px 19px;
+      overflow-y: auto;
+      flex: 1;
+      scrollbar-color: #475569 transparent;
+      scrollbar-width: thin
+    }
+
+    .sidebar-label {
+      padding: 0 10px;
+      font-size: 11px;
+      color: #93a5c3;
+      font-weight: 800;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      margin: 0 0 11px
+    }
+
+    .current-lesson {
+      border: 1px solid rgba(178, 152, 255, .25);
+      background: linear-gradient(125deg, rgba(127, 87, 226, .24), rgba(80, 66, 160, .13));
+      padding: 14px 15px;
+      border-radius: 14px;
+      margin: 0 3px 26px
+    }
+
+    .current-lesson .eyebrow {
+      font-size: 11px;
+      color: #cfbbff;
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase
+    }
+
+    .current-lesson strong {
+      display: block;
+      color: white;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 4px
+    }
+
+    .current-lesson span:last-child {
+      display: block;
+      font-size: 11px;
+      color: #bbc5dd;
+      margin-top: 5px
+    }
+
+    .side-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #c4cedf;
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.4;
+      border-radius: 10px;
+      padding: 11px 10px;
+      margin: 3px 0;
+      transition: background .2s, color .2s
+    }
+
+    .side-nav a:hover {
+      background: rgba(255, 255, 255, .07);
+      color: white
+    }
+
+    .side-nav a.active {
+      background: linear-gradient(90deg, rgba(147, 103, 241, .27), rgba(147, 103, 241, .10));
+      color: white;
+      box-shadow: inset 3px 0 #b79aff
+    }
+
+    .nav-num {
+      flex: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .07);
+      font-weight: 800;
+      font-size: 11px;
+      color: #becaef
+    }
+
+    .side-nav a.active .nav-num {
+      background: #a78bfa;
+      color: #1e1744
+    }
+
+    .sidebar-foot {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 16px 20px 21px;
+      font-size: 11px;
+      line-height: 1.8;
+      color: #aab8cf
+    }
+
+    .sidebar-foot strong {
+      color: #ecedfb
+    }
+
+    .main {
+      margin-left: var(--sidebar-width);
+      min-width: 0;
+      padding: 30px clamp(20px, 4.6vw, 66px) 70px
+    }
+
+    .content {
+      max-width: 1120px;
+      margin: 0 auto
+    }
+
+    .breadcrumbs {
+      font-size: 12.5px;
+      color: #6c7990;
+      font-weight: 600;
+      margin: 2px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #6253a7
+    }
+
+    .breadcrumbs .sep {
+      color: #afb6c6
+    }
+
+    .hero {
+      color: white;
+      background: linear-gradient(112deg, #4934b5 0%, #7451d2 52%, #ad72ed 100%);
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: clamp(28px, 4.2vw, 54px);
+      box-shadow: 0 16px 35px rgba(82, 58, 187, .17);
+      margin-bottom: 27px
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 2px solid rgba(255, 255, 255, .13);
+      border-radius: 50%;
+      right: -85px;
+      top: -150px
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 235px;
+      height: 235px;
+      background: rgba(255, 255, 255, .055);
+      border-radius: 50%;
+      right: 50px;
+      bottom: -170px
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 17px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .22)
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.3vw, 53px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px;
+      color: white
+    }
+
+    .hero p {
+      font-size: clamp(14px, 1.65vw, 17px);
+      max-width: 780px;
+      color: #f4eefe;
+      margin: 0;
+      line-height: 1.8
+    }
+
+    .hero-meta {
+      margin-top: 23px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12.5px;
+      color: #f5ebff
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center
+    }
+
+    .notice-intro {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 21px 25px;
+      margin-bottom: 27px;
+      box-shadow: var(--shadow)
+    }
+
+    .notice-intro strong {
+      color: #4b379a
+    }
+
+    .lesson-section {
+      background: white;
+      border: 1px solid #e8eaf0;
+      border-radius: var(--radius);
+      padding: clamp(22px, 3.4vw, 39px);
+      margin: 0 0 28px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 25px
+    }
+
+    .section-top {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding-bottom: 17px;
+      border-bottom: 1px solid #e9edf5;
+      margin-bottom: 23px
+    }
+
+    .section-icon {
+      height: 50px;
+      width: 50px;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #ebe6ff, #f5e9ff);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      flex: none
+    }
+
+    .section-top small {
+      display: block;
+      color: #7e62bd;
+      font-size: 11px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin: 1px 0 2px
+    }
+
+    h2 {
+      color: #17243c;
+      line-height: 1.3;
+      font-size: clamp(22px, 2.5vw, 29px);
+      margin: 0;
+      letter-spacing: -.65px
+    }
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 27px 0 10px;
+      color: #31256e;
+      letter-spacing: -.25px
+    }
+
+    h4 {
+      font-size: 16px;
+      line-height: 1.45;
+      margin: 19px 0 8px;
+      color: #243451
+    }
+
+    p {
+      margin: 11px 0 16px
+    }
+
+    ul,
+    ol {
+      padding-left: 23px;
+      margin: 12px 0 20px
+    }
+
+    li {
+      padding-left: 3px;
+      margin: 5px 0
+    }
+
+    li::marker {
+      color: #8b5bd8;
+      font-weight: 700
+    }
+
+    strong {
+      font-weight: 750
+    }
+
+    em {
+      color: #475569
+    }
+
+    .definition {
+      margin: 19px 0;
+      background: #f3efff;
+      border: 1px solid #e4d8ff;
+      border-left: 5px solid #8a62e7;
+      border-radius: 12px;
+      padding: 17px 20px
+    }
+
+    .definition .callout-title {
+      color: #6240ae;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 5px
+    }
+
+    .definition p,
+    .tip p,
+    .warning p,
+    .example p {
+      margin: 5px 0 0
+    }
+
+    .tip {
+      background: #eafaf1;
+      border: 1px solid #bdebd1;
+      border-left: 5px solid #25aa6a;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 19px 0
+    }
+
+    .tip strong {
+      color: #11653e
+    }
+
+    .warning {
+      background: #fff8e6;
+      border: 1px solid #f5df9e;
+      border-left: 5px solid #e8ad2b;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 20px 0
+    }
+
+    .warning strong {
+      color: #94600c
+    }
+
+    .example {
+      background: #f0fafb;
+      border: 1px solid #c9e9ed;
+      padding: 18px 20px;
+      border-radius: 13px;
+      margin: 19px 0
+    }
+
+    .example strong {
+      color: #146474
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0
+    }
+
+    .cards.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .mini-card {
+      border: 1px solid #e2e8f0;
+      padding: 18px;
+      border-radius: 15px;
+      background: #f8fafc
+    }
+
+    .mini-card h4 {
+      margin: 0 0 7px;
+      color: #2b285f;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .mini-card p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #475569
+    }
+
+    .mini-card.purple {
+      background: #f6f1ff;
+      border-color: #e7d7ff
+    }
+
+    .mini-card.blue {
+      background: #eef6ff;
+      border-color: #d1e5ff
+    }
+
+    .mini-card.green {
+      background: #ecfbf3;
+      border-color: #c9efd9
+    }
+
+    .mini-card.peach {
+      background: #fff3ed;
+      border-color: #ffddc8
+    }
+
+    .mini-card.yellow {
+      background: #fffbed;
+      border-color: #fae9b7
+    }
+
+    .mini-card.cyan {
+      background: #edfbfc;
+      border-color: #c6edf2
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #e5eaf3;
+      border-radius: 13px;
+      margin: 17px 0 22px
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 555px;
+      font-size: 13.5px;
+      line-height: 1.55
+    }
+
+    thead {
+      background: #ede9ff;
+      color: #483498
+    }
+
+    th {
+      text-align: left;
+      padding: 13px 15px;
+      font-size: 12.5px;
+      font-weight: 800
+    }
+
+    td {
+      padding: 12px 15px;
+      vertical-align: top;
+      border-top: 1px solid #e7ebf4
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff
+    }
+
+    td:first-child {
+      font-weight: 650;
+      color: #30435a
+    }
+
+    .rule {
+      background: #162238;
+      color: #e9edff;
+      padding: 19px 23px;
+      border-radius: 13px;
+      overflow: auto;
+      font: 13px/1.9 ui-monospace, SFMono-Regular, Consolas, monospace;
+      white-space: pre-wrap;
+      margin: 14px 0
+    }
+
+    .rule .purple-text {
+      color: #c5a5ff
+    }
+
+    .rule .green-text {
+      color: #93e0b1
+    }
+
+    .diagram {
+      background: #fbfcff;
+      border: 1px solid #e1e5f0;
+      border-radius: 17px;
+      padding: 22px;
+      margin: 22px 0;
+      text-align: center
+    }
+
+    .diagram-label {
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      font-weight: 850;
+      color: #7a68aa;
+      margin: 0 0 16px
+    }
+
+    .flow-vertical {
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .flow-node {
+      padding: 12px 19px;
+      border-radius: 11px;
+      border: 1px solid #d5d9e9;
+      background: #fff;
+      max-width: 100%;
+      min-width: 210px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      text-align: center;
+      font-weight: 700
+    }
+
+    .flow-node small {
+      display: block;
+      color: #64748b;
+      font-weight: 500;
+      font-size: 11.5px;
+      margin-top: 3px
+    }
+
+    .flow-node.purple {
+      background: #f0eaff;
+      border-color: #d6c5ff;
+      color: #5235ab
+    }
+
+    .flow-node.blue {
+      background: #eaf3ff;
+      border-color: #c8dffc;
+      color: #245da4
+    }
+
+    .flow-node.green {
+      background: #e9f9ef;
+      border-color: #b9e8ca;
+      color: #126b3e
+    }
+
+    .flow-node.yellow {
+      background: #fff8e5;
+      border-color: #f5df9e;
+      color: #97620a
+    }
+
+    .down-arrow {
+      font-size: 22px;
+      line-height: 1;
+      color: #9183b4
+    }
+
+    .flow-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      width: 100%;
+      max-width: 600px
+    }
+
+    .flow-split .branch {
+      border-radius: 12px;
+      padding: 13px;
+      border: 1px solid #e0e8ee;
+      text-align: center
+    }
+
+    .flow-split .branch.yes {
+      background: #ecfbf3;
+      border-color: #b9e8ca
+    }
+
+    .flow-split .branch.no {
+      background: #fff0ef;
+      border-color: #f3c6c1
+    }
+
+    .branch .answer {
+      font-weight: 900;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin: 0 0 4px
+    }
+
+    .branch p {
+      font-size: 12.5px;
+      margin: 5px 0
+    }
+
+    .schema {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .schema-mid {
+      grid-column: 1/-1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px
+    }
+
+    .schema .flow-node {
+      min-width: 0;
+      width: 100%
+    }
+
+    .schema .join {
+      grid-column: 1/-1;
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .dfd-figure {
+      overflow: auto;
+      background: #fff;
+      border: 1px solid #e1e5ee;
+      border-radius: 16px;
+      margin: 22px 0;
+      padding: 14px
+    }
+
+    .dfd-figure svg {
+      display: block;
+      min-width: 650px;
+      width: 100%;
+      height: auto
+    }
+
+    .dfd-legend {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #6b7280;
+      margin: 10px 4px 5px
+    }
+
+    .dfd-legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .swatch {
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      border: 1px solid #999
+    }
+
+    .steps {
+      list-style: none;
+      counter-reset: steps;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      margin: 0;
+      padding: 14px 15px 14px 60px;
+      background: #f8f9fd;
+      border: 1px solid #e9ecf4;
+      border-radius: 12px;
+      min-height: 58px
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      color: white;
+      background: #7852d8;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800
+    }
+
+    .steps li strong {
+      display: block;
+      color: #293757
+    }
+
+    .steps li span {
+      font-size: 13.5px;
+      color: #5d697a
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 15px 0
+    }
+
+    .comparison>.mini-card {
+      height: 100%
+    }
+
+    .activity-header {
+      background: linear-gradient(100deg, #44309d, #845fe0);
+      padding: 21px 24px;
+      border-radius: 15px;
+      color: white;
+      margin: 18px 0 24px
+    }
+
+    .activity-header strong {
+      font-size: 19px
+    }
+
+    .activity-header p {
+      color: #efeaff;
+      margin: 6px 0 0;
+      font-size: 14px
+    }
+
+    .subdivider {
+      border: 0;
+      border-top: 1px solid #e7eaf2;
+      margin: 30px 0
+    }
+
+    .bottom-nav {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 35px 0 15px
+    }
+
+    .bottom-nav a {
+      background: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      font-weight: 750;
+      font-size: 13px
+    }
+
+    .bottom-nav a:hover {
+      border-color: #ab93e9;
+      background: #f8f5ff
+    }
+
+    .page-foot {
+      text-align: center;
+      color: #8490a3;
+      font-size: 12px;
+      margin-top: 35px
+    }
+
+    .mobile-header {
+      display: none
+    }
+
+    .overlay {
+      display: none
+    }
+
+    .to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 22px;
+      background: #704acf;
+      color: white;
+      border: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      box-shadow: 0 7px 22px rgba(80, 52, 180, .3);
+      font-size: 21px;
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(9px);
+      transition: .2s
+    }
+
+    .to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0)
+    }
+
+    @media (max-width:1120px) {
+      .cards.three {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media (max-width:900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        top: 0;
+        z-index: 120
+      }
+
+      body.menu-open .sidebar {
+        transform: translateX(0)
+      }
+
+      .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 17, 31, .58);
+        z-index: 110;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .25s, visibility .25s
+      }
+
+      body.menu-open .overlay {
+        opacity: 1;
+        visibility: visible
+      }
+
+      body.menu-open {
+        overflow: hidden
+      }
+
+      .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 61px;
+        padding: 9px 18px;
+        background: #111827;
+        color: white;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, .12)
+      }
+
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, .09);
+        border: 1px solid rgba(255, 255, 255, .1);
+        color: white;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-size: 23px
+      }
+
+      .mobile-brand {
+        font-size: 15px;
+        font-weight: 800
+      }
+
+      .mobile-brand span {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        color: #b4bdd1;
+        line-height: 1.3
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 22px 20px 60px
+      }
+
+      html {
+        scroll-padding-top: 80px
+      }
+
+      .lesson-section {
+        scroll-margin-top: 80px
+      }
+    }
+
+    @media (max-width:620px) {
+      body {
+        font-size: 14px;
+        line-height: 1.76
+      }
+
+      .main {
+        padding: 17px 12px 50px
+      }
+
+      .hero {
+        padding: 26px 21px;
+        border-radius: 18px
+      }
+
+      .hero h1 {
+        letter-spacing: -.75px;
+        font-size: 33px
+      }
+
+      .lesson-section {
+        padding: 22px 17px;
+        border-radius: 17px;
+        margin-bottom: 17px
+      }
+
+      .section-top {
+        gap: 12px
+      }
+
+      .section-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+        border-radius: 12px
+      }
+
+      h2 {
+        font-size: 21px
+      }
+
+      h3 {
+        font-size: 17px
+      }
+
+      .cards,
+      .cards.three,
+      .comparison {
+        grid-template-columns: 1fr
+      }
+
+      .notice-intro {
+        padding: 17px 19px
+      }
+
+      .flow-split {
+        gap: 7px
+      }
+
+      .flow-split .branch {
+        padding: 9px 7px
+      }
+
+      .flow-node {
+        min-width: 0
+      }
+
+      .diagram {
+        padding: 14px 10px
+      }
+
+      .schema {
+        gap: 8px
+      }
+
+      .hero-meta {
+        gap: 8px
+      }
+
+      .breadcrumbs {
+        font-size: 11px
+      }
+
+      .bottom-nav {
+        flex-direction: column
+      }
+
+      .bottom-nav a {
+        text-align: center
+      }
+
+      .to-top {
+        right: 13px;
+        bottom: 15px;
+        width: 42px;
+        height: 42px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important
+      }
+    }
+
+    @media print {
+
+      .sidebar,
+      .mobile-header,
+      .overlay,
+      .reading-progress,
+      .to-top,
+      .bottom-nav {
+        display: none !important
+      }
+
+      .main {
+        margin: 0;
+        padding: 0
+      }
+
+      .hero {
+        box-shadow: none
+      }
+
+      .lesson-section {
+        break-inside: avoid;
+        box-shadow: none
+      }
+
+      .table-wrap {
+        overflow: visible
+      }
+
+      body {
+        background: white
+      }
+
+      a {
+        color: inherit
+      }
+    }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+
+    /* Topic 14.7-only lesson tools; use the exact Topic 14.6 design for shared components. */
+    the page shell and visual system come from Topic 14.6. */ .formula {
+      padding: 18px;
+      background: #f3efff;
+      border: 1px solid #e4d8ff;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 19px;
+      font-weight: 800;
+      color: #6240ae;
+      margin: 17px 0
+    }
+
+    .assessment {
+      border: 1px solid #dfd5ff;
+      background: linear-gradient(145deg, #f8f5ff, #fff);
+      padding: 21px;
+      border-radius: 14px;
+      margin: 22px 0
+    }
+
+    .assessment h4 {
+      margin: 0 0 5px;
+      font-size: 18px;
+      color: #452a8c
+    }
+
+    .assessment p {
+      font-size: 13px;
+      margin: 3px 0 15px;
+      color: #637083
+    }
+
+    .assess-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px
+    }
+
+    .range-control label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px
+    }
+
+    .range-control output {
+      color: #6240ae
+    }
+
+    .range-control input {
+      width: 100%;
+      accent-color: #6d4ed6
+    }
+
+    .range-control small {
+      display: block;
+      font-size: 12px;
+      color: #67748a
+    }
+
+    .scorebox {
+      margin-top: 18px;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid #e5dfef;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .score-number {
+      font-size: 29px;
+      font-weight: 900;
+      color: #6240ae;
+      line-height: 1.2
+    }
+
+    .score-label {
+      font-size: 13px;
+      font-weight: 800;
+      border-radius: 100px;
+      padding: 5px 12px;
+      background: #fff0df;
+      color: #a86a18
+    }
+
+    .score-label.high {
+      background: #ffebeb;
+      color: #c24444
+    }
+
+    .score-label.medium {
+      background: #fff1da;
+      color: #986310
+    }
+
+    .score-label.low {
+      background: #e6f8ee;
+      color: #16764a
+    }
+
+    .scorebar {
+      height: 10px;
+      background: #e7e7f1;
+      border-radius: 100px;
+      overflow: hidden;
+      margin-top: 11px
+    }
+
+    .scorebar>div {
+      height: 100%;
+      background: linear-gradient(90deg, #7550d4, #c174db);
+      transition: width .2s ease;
+      width: 60%
+    }
+
+    .small {
+      font-size: 12px;
+      color: #68758b
+    }
+
+    .numbered {
+      list-style: none;
+      counter-reset: point;
+      padding: 0;
+      margin: 18px 0
+    }
+
+    .numbered li {
+      counter-increment: point;
+      position: relative;
+      margin: 0 0 12px;
+      padding: 11px 15px 11px 50px;
+      border: 1px solid #e8edf4;
+      border-radius: 11px;
+      background: #fcfdff
+    }
+
+    .numbered li::before {
+      content: counter(point);
+      position: absolute;
+      left: 12px;
+      top: 11px;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      border-radius: 9px;
+      background: #e9e2ff;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 900;
+      color: #6240ae
+    }
+
+    @media(max-width:560px) {
+      .assess-grid {
+        grid-template-columns: 1fr
+      }
+
+      .assessment {
+        padding: 17px
+      }
+
+      .score-number {
+        font-size: 24px
+      }
+    }
+
+    @media print {
+      .assessment input {
+        display: none
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-  </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 14.7</h3><p>IT Governance and Policy</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 14 lessons"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-14.html"><span class="nav-number">14</span><span>Topic 14 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 14 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 14"><a href="topic-14-01.html" ><span class="nav-number">14.1</span><span>The Role of IT Systems in Organisations</span></a>
-<a href="topic-14-02.html" ><span class="nav-number">14.2</span><span>Transaction Processing</span></a>
-<a href="topic-14-03.html" ><span class="nav-number">14.3</span><span>Customer Relationship Management Systems</span></a>
-<a href="topic-14-04.html" ><span class="nav-number">14.4</span><span>Management Information Systems</span></a>
-<a href="topic-14-05.html" ><span class="nav-number">14.5</span><span>Intelligent Transportation Systems</span></a>
-<a href="topic-14-06.html" ><span class="nav-number">14.6</span><span>Expert Systems</span></a>
-<a href="topic-14-07.html" class="active" aria-current="page"><span class="nav-number">14.7</span><span>IT Governance and Policy</span></a>
-<a href="topic-14-08.html" ><span class="nav-number">14.8</span><span>Managing IT Changeover</span></a>
-<a href="topic-14-09.html" ><span class="nav-number">14.9</span><span>System Maintenance</span></a>
-<a href="topic-14-10.html" ><span class="nav-number">14.10</span><span>Archiving Data</span></a>
-<a href="topic-14-11.html" ><span class="nav-number">14.11</span><span>Disaster Recovery Plans</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong><div>Unit 3 · A2 Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-14.html">Topic 14</a><span aria-hidden="true">›</span><strong>Lesson 14.7</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 7</span><h1>IT Governance and Policy</h1><p>Edexcel International A Level IT · A2 Level</p><div class="hero-tags"><span>📖 Topic 14.7</span><span>💻 Using IT Systems in Organisations</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 14.7: IT Governance and Policy</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 14 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-14.html">← Back to Topic 14</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-14-06.html" aria-label="Previous lesson">← Lesson 14.6</a><a href="topic-14-08.html" aria-label="Next lesson">Lesson 14.8 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <div aria-label="Reading progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="reading-progress"
+    id="readingProgress" role="progressbar"></div>
+  <header class="mobile-header">
+    <button aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation" class="menu-toggle"
+      id="menuToggle" type="button">☰</button>
+    <div class="mobile-brand">Tr.Sun Education<span>Learn · Explore · Achieve</span></div>
+  </header>
+  <div aria-hidden="true" class="overlay" id="overlay"></div>
+  <aside aria-label="Lesson navigation" class="sidebar" id="sidebar">
+    <a aria-label="Tr.Sun Education Topic 14 dashboard" class="brand" href="topic-14.html">
+      <div aria-hidden="true" class="brand-logo">
+        <svg fill="none" height="33" viewbox="0 0 40 40" width="33" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 15.5 20 8l16 7.5L20 23 4 15.5Z" stroke="white" stroke-linejoin="round" stroke-width="2.4"></path>
+          <path d="M11 19.5V26c5.3 4.3 12.7 4.3 18 0v-6.5" stroke="white" stroke-linecap="round" stroke-width="2.4">
+          </path>
+          <path d="M35.5 17v11" stroke="white" stroke-linecap="round" stroke-width="2.4"></path>
+          <circle cx="35.5" cy="30" fill="white" r="2"></circle>
+        </svg>
+      </div>
+      <div><span class="brand-title">Tr.Sun Education</span><span class="brand-tagline">Learn · Explore · Achieve</span>
+      </div>
+    </a>
+    <div class="sidebar-scroll">
+      <p class="sidebar-label">Current lesson</p>
+      <div class="current-lesson"><span class="eyebrow">Topic 14 · Unit 3</span><strong>14.7 – IT Governance and
+          Policy</strong><span>Edexcel IAL Information Technology</span></div>
+      <p class="sidebar-label">On this page</p>
+      <nav aria-label="Section navigation">
+        <ol class="side-nav">
+          <li><a href="#section-1"><span class="nav-num">01</span>Understanding IT Governance</a></li>
+          <li><a href="#section-2"><span class="nav-num">02</span>Structures and policies</a></li>
+          <li><a href="#section-3"><span class="nav-num">03</span>Five governance goals</a></li>
+          <li><a href="#section-4"><span class="nav-num">04</span>Business continuity</a></li>
+          <li><a href="#section-5"><span class="nav-num">05</span>Disaster recovery</a></li>
+          <li><a href="#section-6"><span class="nav-num">06</span>BCP vs DRP</a></li>
+          <li><a href="#section-7"><span class="nav-num">07</span>Risk management</a></li>
+          <li><a href="#section-8"><span class="nav-num">08</span>Acceptable use policy</a></li>
+          <li><a href="#section-9"><span class="nav-num">09</span>Comparing IT policies</a></li>
+          <li><a href="#section-10"><span class="nav-num">10</span>Real-world case study</a></li>
+          <li><a href="#section-11"><span class="nav-num">11</span>Risk assessment activity</a></li>
+          <li><a href="#section-12"><span class="nav-num">12</span>How concepts connect</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="sidebar-foot">Edexcel International A Level IT<br /><strong>Created by Tr. Sun</strong><br />© Tr.Sun
+      Education</div>
+  </aside>
+  <main class="main" id="mainContent">
+    <div class="content">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">›</span><a href="topic-14.html">Topic
+          14</a><span class="sep">›</span><span>14.7 IT Governance and Policy</span></div>
+      <section aria-labelledby="pageTitle" class="hero">
+        <div class="badges"><span class="badge">🎓 A2 Level</span><span class="badge">📘 Unit 3</span><span
+            class="badge">Topic 14.7</span></div>
+        <h1 id="pageTitle">IT Governance and Policy</h1>
+        <p>Understand how organisations direct and control IT resources, manage risks, protect information, and use
+          business continuity, disaster recovery and acceptable use policies to maintain effective operations.</p>
+        <div class="hero-meta"><span>📚 Using IT Systems in Organisations</span><span>📝 Detailed Lesson Notes</span>
+        </div>
+      </section>
+      <div class="notice-intro"><strong>Lesson overview:</strong> Learn the five goals of IT governance and explore the
+        four important policies: business continuity, disaster recovery, risk management and acceptable use. Includes
+        examples, comparisons and a school IT risk assessment activity.</div>
+      <section class="lesson-section" id="section-1">
+        <div class="section-top">
+          <div class="section-icon">🏛️</div>
+          <div><small>Section 01</small>
+            <h2>Understanding IT Governance</h2>
+          </div>
+        </div>
+        <p>Every organisation depends on information technology (IT) for tasks such as storing information,
+          communicating with customers, processing transactions and making decisions. However, IT also creates risks:
+          cyberattacks, system failures, data loss, misuse of resources and non-compliance with laws.</p>
+        <p><strong>IT governance</strong> helps organisations use technology effectively while controlling these risks.
+        </p>
+        <h3>1.1 What is IT governance?</h3>
+        <div class="definition">
+          <div class="callout-title">Key definition: IT Governance</div>
+          <p>IT governance refers to the predefined processes, structures and mechanisms that an organisation uses to
+            ensure that IT resources are managed appropriately, efficiently and effectively in support of its business
+            objectives.</p>
+        </div>
+        <p>In simple terms, IT governance determines <strong>how IT is managed, who is responsible for it, and how
+            important IT decisions are made</strong>.</p>
+        <ul>
+          <li>Ensure that technology supports business goals.</li>
+          <li>Make appropriate decisions about IT investments.</li>
+          <li>Identify and reduce potential risks.</li>
+          <li>Protect information and IT systems.</li>
+          <li>Use staff, hardware, software and budgets efficiently.</li>
+          <li>Meet legal and regulatory obligations.</li>
+          <li>Measure and improve IT performance.</li>
+        </ul>
+        <div class="example"><strong>📚 Example: IT governance in a school</strong>
+          <p>A school uses a learning management system (LMS) for lessons, assignments and examination results.
+            Governance defines who maintains the system, who can access student records, who approves software and
+            server purchases, and what happens if the system stops working. The school's management might approve a new
+            server, while an IT administrator manages accounts, security and backups.</p>
+        </div>
+        <h3>1.2 Why is IT governance important?</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Without effective IT governance</th>
+                <th>With effective IT governance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IT investments may be wasted.</td>
+                <td>IT expenditure is planned and justified.</td>
+              </tr>
+              <tr>
+                <td>Staff may be unsure of their duties.</td>
+                <td>Roles and responsibilities are clear.</td>
+              </tr>
+              <tr>
+                <td>Security risks may be ignored.</td>
+                <td>Risks are identified and managed.</td>
+              </tr>
+              <tr>
+                <td>IT may not support business goals.</td>
+                <td>IT activities support organisational strategies.</td>
+              </tr>
+              <tr>
+                <td>Important decisions may be delayed.</td>
+                <td>Decision-making authority is defined.</td>
+              </tr>
+              <tr>
+                <td>Legal obligations may be overlooked.</td>
+                <td>Compliance is monitored.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>💡 Important:</strong> IT governance is not just about securing computers. It also
+          ensures that technology delivers real value to the organisation.</div>
+      </section>
+      <section class="lesson-section" id="section-2">
+        <div class="section-top">
+          <div class="section-icon">📋</div>
+          <div><small>Section 02</small>
+            <h2>Governance Structures and IT Policies</h2>
+          </div>
+        </div>
+        <p>Effective governance needs clear, documented procedures that explain how employees should use IT systems and
+          how important decisions are authorised.</p>
+        <h3>2.1 Roles and responsibilities</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Personnel</th>
+                <th>Typical responsibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Senior management</td>
+                <td>Approves IT strategy, major expenditure and organisational policies.</td>
+              </tr>
+              <tr>
+                <td>IT manager</td>
+                <td>Oversees IT services, planning, technical staff and resource allocation.</td>
+              </tr>
+              <tr>
+                <td>IT administrator</td>
+                <td>Maintains systems, user accounts and operational IT services.</td>
+              </tr>
+              <tr>
+                <td>Security officer</td>
+                <td>Oversees information security and related risks.</td>
+              </tr>
+              <tr>
+                <td>Employees</td>
+                <td>Use technology responsibly and follow established policies.</td>
+              </tr>
+              <tr>
+                <td>Data protection officer, where appointed</td>
+                <td>Oversees relevant data protection responsibilities.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">These are illustrative roles; responsibilities depend on an organisation's size and structure.
+        </p>
+        <h3>2.2 Decision-making hierarchy</h3>
+        <p>A <strong>decision-making hierarchy</strong> shows who has authority to make different decisions. Replacing a
+          keyboard might be authorised by IT support, but replacing a central server could require senior management's
+          approval.</p>
+        <div aria-label="Example decision-making hierarchy for server replacement" class="flow-vertical">
+          <div class="flow-node blue"><b>IT Administrator</b><small>Identifies the server problem and reports
+              it.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>IT Manager</b><small>Evaluates the options, costs and risks.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>Senior Management</b><small>Makes the final decision on the investment.</small>
+          </div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>IT Department</b><small>Plans and carries out the approved replacement.</small>
+          </div>
+        </div>
+        <h3>2.3 What is an IT policy?</h3>
+        <div class="definition">
+          <div class="callout-title">Key definition: IT Policy</div>
+          <p>An IT policy is a formal document containing rules, responsibilities, guidelines and procedures for the
+            appropriate use and management of an organisation's IT resources.</p>
+        </div>
+        <p>Examples include business continuity, disaster recovery, risk management, acceptable use and information
+          security policies.</p>
+        <h3>2.4 IT governance vs IT policy</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>IT governance</th>
+                <th>IT policy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Overall framework for directing and controlling IT.</td>
+                <td>Specific rules and procedures for using and managing IT.</td>
+              </tr>
+              <tr>
+                <td>Determines who is responsible and authorised.</td>
+                <td>Explains what users and staff should do.</td>
+              </tr>
+              <tr>
+                <td>Focuses on strategic goals, risk and performance.</td>
+                <td>Focuses on required actions and behaviours.</td>
+              </tr>
+              <tr>
+                <td>Example: Management sets the approach to IT security.</td>
+                <td>Example: Staff must use approved authentication methods.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>Remember:</strong> Governance provides <em>direction and accountability</em>; policies
+          translate that direction into <em>practical rules and procedures</em>.</div>
+      </section>
+      <section class="lesson-section" id="section-3">
+        <div class="section-top">
+          <div class="section-icon">🎯</div>
+          <div><small>Section 03</small>
+            <h2>The Five Key Goals of IT Governance</h2>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="mini-card purple">
+            <h4>🎯 1. Strategic alignment</h4>
+            <p>IT activities and investments support overall business strategies and objectives.</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>🛡️ 2. Risk management</h4>
+            <p>Identify threats and apply controls to reduce their likelihood or impact.</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>💻 3. Resource management</h4>
+            <p>Plan the purchase, use and allocation of resources to minimise waste.</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>📈 4. Performance measurement</h4>
+            <p>Use measures and indicators to evaluate IT effectiveness and improve performance.</p>
+          </div>
+          <div class="mini-card purple" style="grid-column:1/-1">
+            <h4>⚖️ 5. Compliance and legal requirements</h4>
+            <p>Meet relevant privacy, data protection, cybersecurity and other legal obligations.</p>
+          </div>
+        </div>
+        <h3>3.1 Strategic alignment</h3>
+        <p>Strategic alignment means that the organisation's IT strategy supports its business objectives. Technology
+          investments should deliver useful results rather than being purchased without a clear purpose.</p>
+        <div class="example"><strong>🛒 Example: Online retailer</strong>
+          <p>A retailer wants to increase online sales. It could invest in a faster website, more secure payments and a
+            customer relationship management (CRM) system. Each investment directly supports the business objective of
+            improving sales and customer satisfaction.</p>
+        </div>
+        <p><strong>Benefits:</strong> avoids unnecessary expenditure, improves return on investment and makes IT more
+          useful to the organisation.</p>
+        <h3>3.2 Risk management</h3>
+        <p>Risk management identifies threats, estimates the consequences and introduces controls. Risks can include
+          malware, hardware failure, unauthorised access, data loss, power failure and human error.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Risk</th>
+                <th>Possible consequence</th>
+                <th>Possible mitigation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Malware</td>
+                <td>Damage to files or theft of information.</td>
+                <td>Updates, security software and staff training.</td>
+              </tr>
+              <tr>
+                <td>Hardware failure</td>
+                <td>Systems become unavailable.</td>
+                <td>Maintenance, backups and spare equipment.</td>
+              </tr>
+              <tr>
+                <td>Unauthorised access</td>
+                <td>Confidential information is exposed.</td>
+                <td>Access restrictions and multifactor authentication.</td>
+              </tr>
+              <tr>
+                <td>Data loss</td>
+                <td>Important records become unavailable.</td>
+                <td>Regular, tested backups.</td>
+              </tr>
+              <tr>
+                <td>Power failure</td>
+                <td>IT services are interrupted.</td>
+                <td>Uninterruptible power supplies (UPS).</td>
+              </tr>
+              <tr>
+                <td>Human error</td>
+                <td>Files are deleted or incorrectly changed.</td>
+                <td>Training, permissions and backups.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>3.3 Resource management</h3>
+        <p>Organisations manage hardware, software, licences, data storage, network capacity, budgets and staff. The aim
+          is to <strong>maximise value and minimise waste</strong>.</p>
+        <div class="example"><strong>🏫 Example: School computer laboratory</strong>
+          <p>A school wants 30 computers. It must consider purchase price, software requirements, maintenance costs and
+            network capacity. Computers that are too expensive may waste money; computers that cannot run required
+            applications may fail to meet the school's needs.</p>
+        </div>
+        <h3>3.4 Performance measurement</h3>
+        <p>Performance is measured through <strong>Key Performance Indicators (KPIs)</strong>: measurable values used to
+          assess progress towards objectives.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>KPI</th>
+                <th>What it measures</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>System uptime</td>
+                <td>How often a service is available.</td>
+              </tr>
+              <tr>
+                <td>Average response time</td>
+                <td>How quickly systems or support teams respond.</td>
+              </tr>
+              <tr>
+                <td>Number of security incidents</td>
+                <td>Frequency of recorded security problems.</td>
+              </tr>
+              <tr>
+                <td>Recovery time</td>
+                <td>How long it takes to restore disrupted services.</td>
+              </tr>
+              <tr>
+                <td>Spending against budget</td>
+                <td>Whether IT costs stay within plans.</td>
+              </tr>
+              <tr>
+                <td>User satisfaction</td>
+                <td>How users rate the IT service.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example"><strong>📊 Example: Website uptime</strong>
+          <p>If a company sets a target of 99.9% availability for its ordering system, it can monitor actual uptime.
+            Falling below the target prompts an investigation and improvement plan.</p>
+        </div>
+        <h3>3.5 Compliance and legal requirements</h3>
+        <p>Compliance means following applicable laws and requirements, including data protection, privacy,
+          cybersecurity, confidentiality, intellectual property and software licensing rules.</p>
+        <div class="example"><strong>🔐 Example: Student records</strong>
+          <p>A school holds personal information including names, addresses and examination results. It should restrict
+            access to authorised staff, protect stored records and establish appropriate data-breach response
+            procedures.</p>
+        </div>
+        <p>Failing to comply can lead to <strong>legal penalties, financial losses, reputational damage and reduced
+            customer trust</strong>. The exact obligations depend on location, activities and the information handled.
+        </p>
+      </section>
+      <section class="lesson-section" id="section-4">
+        <div class="section-top">
+          <div class="section-icon">🏢</div>
+          <div><small>Section 04</small>
+            <h2>Business Continuity Policy</h2>
+          </div>
+        </div>
+        <h3>4.1 What is business continuity?</h3>
+        <div class="definition">
+          <div class="callout-title">Key definition: Business Continuity</div>
+          <p>The ability of an organisation to keep essential business activities operating during and after a serious
+            disruption.</p>
+        </div>
+        <div class="definition">
+          <div class="callout-title">Key definition: Business Continuity Plan (BCP)</div>
+          <p>A documented set of procedures describing how an organisation will maintain or resume essential activities
+            when unexpected incidents occur.</p>
+        </div>
+        <p>Disruptions can include cyberattacks, serious IT failures, electricity or internet outages, fires, floods,
+          unavailable workplaces or the failure of an important service provider.</p>
+        <h3>4.2 Why is it important?</h3>
+        <ul>
+          <li><strong>Minimises disruption:</strong> alternative arrangements keep services operating.</li>
+          <li><strong>Maintains confidence:</strong> customers can still receive important services.</li>
+          <li><strong>Reduces financial losses:</strong> interruptions to transactions and productivity are limited.
+          </li>
+          <li><strong>Protects reputation:</strong> incidents can be managed professionally.</li>
+          <li><strong>Clarifies responsibility:</strong> employees know what they must do.</li>
+          <li><strong>Supports recovery:</strong> temporary operations continue while damaged systems are restored.</li>
+        </ul>
+        <h3>4.3 What should a BCP contain?</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Critical functions</td>
+                <td>Identifies activities that must continue.</td>
+              </tr>
+              <tr>
+                <td>Roles and responsibilities</td>
+                <td>States who makes emergency decisions and performs tasks.</td>
+              </tr>
+              <tr>
+                <td>Communication procedures</td>
+                <td>Explains how staff, customers and relevant authorities are informed.</td>
+              </tr>
+              <tr>
+                <td>Fallback systems</td>
+                <td>Identifies alternative tools and processes.</td>
+              </tr>
+              <tr>
+                <td>Alternative working arrangements</td>
+                <td>Explains how staff can work if normal facilities are unavailable.</td>
+              </tr>
+              <tr>
+                <td>Incident investigation</td>
+                <td>Establishes how the root cause is investigated.</td>
+              </tr>
+              <tr>
+                <td>Recovery coordination</td>
+                <td>Explains how normal activities are resumed.</td>
+              </tr>
+              <tr>
+                <td>Review and improvement</td>
+                <td>Keeps procedures updated after incidents and tests.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>4.4 Example: Online learning system failure</h3>
+        <div class="flow-vertical">
+          <div class="flow-node blue"><b>🚨 Incident</b><small>The school's learning management server stops
+              working.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>1. Assess</b><small>The IT team checks the failure and informs school
+              management.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>2. Activate alternatives</b><small>Teachers distribute lessons through an
+              approved alternative platform or printed resources.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>3. Communicate</b><small>Students, teachers and parents receive information
+              about temporary arrangements.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>✅ Continue teaching</b><small>Essential educational activities continue while
+              systems are repaired.</small></div>
+        </div>
+        <div class="tip"><strong>Key idea:</strong> A BCP is not simply a plan to repair technology. Its main focus is
+          <strong>continuing essential activities while disruption is occurring</strong>.</div>
+        <h3>4.5 Link with disaster recovery</h3>
+        <p>Business continuity and disaster recovery are often linked or integrated. In the school example, the BCP
+          provides alternative teaching arrangements, while the disaster recovery plan guides IT staff in restoring the
+          learning platform.</p>
+      </section>
+      <section class="lesson-section" id="section-5">
+        <div class="section-top">
+          <div class="section-icon">💾</div>
+          <div><small>Section 05</small>
+            <h2>Disaster Recovery Policy</h2>
+          </div>
+        </div>
+        <h3>5.1 What is disaster recovery?</h3>
+        <div class="definition">
+          <div class="callout-title">Key definition: Disaster Recovery</div>
+          <p>The process of restoring IT systems, data and services following a serious incident that causes damage,
+            data loss or system unavailability.</p>
+        </div>
+        <div class="definition">
+          <div class="callout-title">Key definition: Disaster Recovery Plan (DRP)</div>
+          <p>A documented set of procedures describing how an organisation responds to an IT disaster and restores
+            technology infrastructure, applications and data.</p>
+        </div>
+        <p>Possible disasters include failed servers, ransomware, accidental data deletion, fires, floods, natural
+          disasters and major network failures.</p>
+        <h3>5.2 Objectives of disaster recovery</h3>
+        <ul>
+          <li>Minimise downtime.</li>
+          <li>Restore important information and data.</li>
+          <li>Recover critical applications and services.</li>
+          <li>Reduce the financial impact of failures.</li>
+          <li>Allocate recovery responsibilities clearly.</li>
+          <li>Establish procedures for different disaster scenarios.</li>
+          <li>Test and update recovery arrangements.</li>
+        </ul>
+        <h3>5.3 Elements of a DRP</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>What it includes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Recovery objectives</td>
+                <td>Targets for service restoration time and acceptable data loss.</td>
+              </tr>
+              <tr>
+                <td>Roles and responsibilities</td>
+                <td>Staff responsible for different recovery tasks.</td>
+              </tr>
+              <tr>
+                <td>Backup strategies</td>
+                <td>How backups are created, protected, stored and restored.</td>
+              </tr>
+              <tr>
+                <td>Recovery procedures</td>
+                <td>Steps to bring affected systems back into operation.</td>
+              </tr>
+              <tr>
+                <td>Contingency plans</td>
+                <td>Alternative arrangements if recovery is delayed.</td>
+              </tr>
+              <tr>
+                <td>Testing</td>
+                <td>Checks that backups and restoration procedures work.</td>
+              </tr>
+              <tr>
+                <td>Review and updates</td>
+                <td>Changes required as technology and risks evolve.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>5.4 Data backup and recovery</h3>
+        <p>A <strong>backup</strong> is a separate copy of data that can be used to restore information if the original
+          becomes lost, damaged or unavailable.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Backup type</th>
+                <th>Description</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Full</td>
+                <td>Copies all selected data.</td>
+                <td>Entire database backed up on Sunday.</td>
+              </tr>
+              <tr>
+                <td>Incremental</td>
+                <td>Copies changes since the most recent backup of any type.</td>
+                <td>Monday's backup contains changes since Sunday's backup.</td>
+              </tr>
+              <tr>
+                <td>Differential</td>
+                <td>Copies changes since the last full backup.</td>
+                <td>Wednesday's backup contains all changes since Sunday's full backup.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Backups should be secure and tested. A backup that cannot be restored does not provide reliable protection.
+        </p>
+        <h3>5.5 Recovery targets: RTO and RPO</h3>
+        <div class="cards">
+          <div class="mini-card purple">
+            <h4>⏱️ Recovery Time Objective (RTO)</h4>
+            <p>Target maximum time allowed to restore a service after disruption. An RTO of two hours means the
+              organisation aims to restore service within two hours.</p>
+          </div>
+          <div class="mini-card blue">
+            <h4>🗂️ Recovery Point Objective (RPO)</h4>
+            <p>Target maximum amount of data loss measured in time. An RPO of 30 minutes means the organisation aims to
+              avoid losing more than 30 minutes of data.</p>
+          </div>
+        </div>
+        <h3>5.6 Example: Database server failure at a bank</h3>
+        <ol class="numbered">
+          <li>Detect the database server failure.</li>
+          <li>Assess the systems and data affected.</li>
+          <li>Activate the disaster recovery team.</li>
+          <li>Switch to a suitable backup system, if available.</li>
+          <li>Restore information from a verified backup.</li>
+          <li>Check the accuracy of account balances and transactions.</li>
+          <li>Return services to normal.</li>
+          <li>Investigate the cause and improve recovery procedures.</li>
+        </ol>
+        <p>Effective disaster recovery limits downtime, financial losses and damage to trust.</p>
+      </section>
+      <section class="lesson-section" id="section-6">
+        <div class="section-top">
+          <div class="section-icon">⚖️</div>
+          <div><small>Section 06</small>
+            <h2>Business Continuity vs Disaster Recovery</h2>
+          </div>
+        </div>
+        <p>The two concepts are related but have different main purposes.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Business continuity</th>
+                <th>Disaster recovery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Main purpose</td>
+                <td>Keep essential activities operating.</td>
+                <td>Restore affected IT systems and data.</td>
+              </tr>
+              <tr>
+                <td>Main focus</td>
+                <td>Organisation-wide operations.</td>
+                <td>IT infrastructure and information.</td>
+              </tr>
+              <tr>
+                <td>Typical response</td>
+                <td>Use alternative ways of working and fallback systems.</td>
+                <td>Recover servers, applications, networks and backups.</td>
+              </tr>
+              <tr>
+                <td>Common responsibility</td>
+                <td>Business management and departments.</td>
+                <td>IT recovery teams with management support.</td>
+              </tr>
+              <tr>
+                <td>School example</td>
+                <td>Teachers use an alternative lesson platform.</td>
+                <td>Technicians restore the primary learning platform.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cards">
+          <div class="mini-card green">
+            <h4>🏢 Business continuity</h4>
+            <p>“How do we keep working during the problem?”</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>💾 Disaster recovery</h4>
+            <p>“How do we restore the affected technology?”</p>
+          </div>
+        </div>
+        <div class="tip"><strong>Remember:</strong> Business continuity is about <strong>continuing business
+            operations</strong>. Disaster recovery is about <strong>restoring IT systems and data</strong>.
+          Organisations often need both.</div>
+      </section>
+      <section class="lesson-section" id="section-7">
+        <div class="section-top">
+          <div class="section-icon">🛡️</div>
+          <div><small>Section 07</small>
+            <h2>Risk Management Policy</h2>
+          </div>
+        </div>
+        <h3>7.1 What is risk management?</h3>
+        <div class="definition">
+          <div class="callout-title">Key definition: Risk Management</div>
+          <p>The systematic process of identifying, assessing, reducing and monitoring potential threats that could
+            negatively affect an organisation or its IT systems.</p>
+        </div>
+        <p>A <strong>risk</strong> is the possibility of an event occurring and causing an undesirable outcome. Risks
+          cannot always be eliminated; organisations therefore try to reduce their likelihood or the harm they may
+          cause.</p>
+        <h3>7.2 Purpose of the policy</h3>
+        <ul>
+          <li>Identify and document potential risks.</li>
+          <li>Assess the probability and severity of each risk.</li>
+          <li>Decide which risks require attention first.</li>
+          <li>Introduce preventive and protective controls.</li>
+          <li>Assign responsibility for managing risks.</li>
+          <li>Monitor risks and review the effectiveness of the controls.</li>
+        </ul>
+        <h3>7.3 Risk management process</h3>
+        <div class="flow-vertical">
+          <div class="flow-node blue"><b>1. Identify</b><small>List threats such as data loss, malware and system
+              failure.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>2. Assess</b><small>Estimate likelihood and severity.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>3. Prioritise</b><small>Decide which risks need urgent attention.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>4. Mitigate</b><small>Implement security measures, backups and
+              training.</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>5. Monitor and review ↻</b><small>Check that controls work and update the
+              assessment regularly.</small></div>
+        </div>
+        <h3>7.4 Risk assessment</h3>
+        <p>Two common factors are <strong>probability</strong> (how likely the incident is) and
+          <strong>severity</strong> (how serious the consequences would be). A simple semi-quantitative approach
+          calculates a risk score by multiplying the two ratings.</p>
+        <div class="formula">Risk Score = Probability × Severity</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Rating</th>
+                <th>Probability</th>
+                <th>Severity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Very unlikely</td>
+                <td>Negligible</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Unlikely</td>
+                <td>Minor</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Possible</td>
+                <td>Moderate</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Likely</td>
+                <td>Major</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Very likely</td>
+                <td>Critical</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Worked example:</strong> A server failure has a probability rating of 3 and a severity rating of 5.
+          The risk score is <strong>3 × 5 = 15</strong>. In this example, a larger score represents higher priority.</p>
+        <div aria-labelledby="risk-tool-title" class="assessment">
+          <h4 id="risk-tool-title">🎚️ Interactive Risk Assessment</h4>
+          <p>Move the sliders to see how different probability and severity ratings change the calculated risk score.
+          </p>
+          <div class="assess-grid">
+            <div class="range-control"><label for="probability">Probability <output for="probability"
+                  id="probabilityValue">3 / 5</output></label><input aria-label="Risk probability" id="probability"
+                max="5" min="1" step="1" type="range" value="3" /><small id="probabilityLabel">Possible</small></div>
+            <div class="range-control"><label for="severity">Severity <output for="severity" id="severityValue">5 /
+                  5</output></label><input aria-label="Risk severity" id="severity" max="5" min="1" step="1"
+                type="range" value="5" /><small id="severityLabel">Critical</small></div>
+          </div>
+          <div aria-live="polite" class="scorebox">
+            <div>
+              <div class="small">Calculated Risk Score</div>
+              <div class="score-number" id="riskScore">15 / 25</div>
+            </div><span class="score-label high" id="riskLevel">High risk</span>
+          </div>
+          <div aria-hidden="true" class="scorebar">
+            <div id="riskBar"></div>
+          </div>
+          <p class="small" id="riskAdvice" style="margin-top:9px;margin-bottom:0">High priority: plan and implement risk
+            mitigation measures.</p>
+        </div>
+        <p class="small">The 1–5 scale and the risk-level thresholds in this interactive example are illustrative
+          teaching choices, not universal standards.</p>
+        <h3>7.5 Methods of risk mitigation</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Risk</th>
+                <th>Possible mitigation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ransomware</td>
+                <td>Maintain protected backups, update systems and train staff.</td>
+              </tr>
+              <tr>
+                <td>Unauthorised access</td>
+                <td>Use permissions and multifactor authentication.</td>
+              </tr>
+              <tr>
+                <td>Data loss</td>
+                <td>Make and test regular backups.</td>
+              </tr>
+              <tr>
+                <td>Hardware failure</td>
+                <td>Use preventive maintenance and suitable redundant systems.</td>
+              </tr>
+              <tr>
+                <td>Network outage</td>
+                <td>Monitor the network and consider alternative connectivity.</td>
+              </tr>
+              <tr>
+                <td>Human error</td>
+                <td>Offer training and establish clear procedures.</td>
+              </tr>
+              <tr>
+                <td>Physical damage</td>
+                <td>Protect premises and equipment.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>7.6 How risk policies work with other policies</h3>
+        <div class="example"><strong>🔒 Example: Ransomware attack</strong>
+          <ul>
+            <li><strong>Risk management:</strong> identifies and evaluates the ransomware threat.</li>
+            <li><strong>Security policy:</strong> defines preventive measures such as updates, permissions and malware
+              protection.</li>
+            <li><strong>Disaster recovery:</strong> explains how systems and data will be restored.</li>
+            <li><strong>Business continuity:</strong> explains how essential activities can continue during restoration.
+            </li>
+          </ul>
+          <p>These policies should be linked rather than written and applied in isolation.</p>
+        </div>
+      </section>
+      <section class="lesson-section" id="section-8">
+        <div class="section-top">
+          <div class="section-icon">👥</div>
+          <div><small>Section 08</small>
+            <h2>User Policy (Acceptable Use Policy – AUP)</h2>
+          </div>
+        </div>
+        <h3>8.1 What is an AUP?</h3>
+        <div class="definition">
+          <div class="callout-title">Key definition: Acceptable Use Policy (AUP)</div>
+          <p>A formal document that defines acceptable and unacceptable behaviour when users access an organisation's IT
+            resources, including computers, networks, applications and online services.</p>
+        </div>
+        <p>An AUP explains what employees and other users <strong>can and cannot do</strong> when using organisational
+          technology.</p>
+        <h3>8.2 Why is an AUP necessary?</h3>
+        <ol>
+          <li>Prevents misuse of IT resources.</li>
+          <li>Reduces security risks caused by unsafe behaviour.</li>
+          <li>Protects confidential and sensitive information.</li>
+          <li>Encourages responsible internet and email usage.</li>
+          <li>Establishes professional conduct standards.</li>
+          <li>Explains the consequences of policy violations.</li>
+        </ol>
+        <h3>8.3 Common areas covered by an AUP</h3>
+        <div class="cards">
+          <div class="mini-card purple">
+            <h4>💻 Computers and software</h4>
+            <p>Rules for using devices, installing applications and modifying settings.</p>
+          </div>
+          <div class="mini-card blue">
+            <h4>🌐 Internet usage</h4>
+            <p>Rules for appropriate browsing and restrictions on harmful or inappropriate sites.</p>
+          </div>
+          <div class="mini-card green">
+            <h4>✉️ Email communication</h4>
+            <p>Professional conduct, suspicious attachments, phishing and message handling.</p>
+          </div>
+          <div class="mini-card yellow">
+            <h4>🔐 Sensitive information</h4>
+            <p>Rules for authorised access, storage and sharing of confidential data.</p>
+          </div>
+          <div class="mini-card peach" style="grid-column:1/-1">
+            <h4>🤝 Professional behaviour</h4>
+            <p>Expected conduct when interacting with colleagues, customers and external stakeholders.</p>
+          </div>
+        </div>
+        <h3>8.4 Acceptable vs unacceptable behaviour</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Acceptable</th>
+                <th>Unacceptable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Use approved software for work.</td>
+                <td>Install unauthorised applications.</td>
+              </tr>
+              <tr>
+                <td>Keep passwords confidential.</td>
+                <td>Share passwords with colleagues.</td>
+              </tr>
+              <tr>
+                <td>Report suspicious emails.</td>
+                <td>Open suspicious attachments without checks.</td>
+              </tr>
+              <tr>
+                <td>Access only authorised records.</td>
+                <td>View confidential information without permission.</td>
+              </tr>
+              <tr>
+                <td>Communicate professionally.</td>
+                <td>Send abusive or inappropriate messages.</td>
+              </tr>
+              <tr>
+                <td>Follow data-handling procedures.</td>
+                <td>Share sensitive information with unauthorised people.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>8.5 Consequences of breaking an AUP</h3>
+        <p>Depending on the breach and organisational procedures, consequences may include warnings, additional
+          training, restrictions on IT access, disciplinary measures, dismissal in serious cases or legal action where
+          applicable.</p>
+        <h3>8.6 Example: AUP in a school</h3>
+        <div class="example"><strong>🏫 School AUP</strong>
+          <p>Students must use school computers for approved educational purposes, keep passwords private, respect
+            others online, avoid unauthorised software, not access another student's account and report suspicious
+            messages. Repeated violations may result in sanctions according to the school's rules.</p>
+        </div>
+        <div class="tip"><strong>Important:</strong> An AUP supports system security <strong>and</strong> sets
+          professional expectations for how users behave and communicate.</div>
+      </section>
+      <section class="lesson-section" id="section-9">
+        <div class="section-top">
+          <div class="section-icon">🧩</div>
+          <div><small>Section 09</small>
+            <h2>Comparing the Four Important IT Policies</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Policy</th>
+                <th>Question it answers</th>
+                <th>Main purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Business continuity</strong></td>
+                <td>How can essential activities continue during disruption?</td>
+                <td>Maintain operations.</td>
+              </tr>
+              <tr>
+                <td><strong>Disaster recovery</strong></td>
+                <td>How can damaged systems and data be restored?</td>
+                <td>Recover technology and data.</td>
+              </tr>
+              <tr>
+                <td><strong>Risk management</strong></td>
+                <td>What could go wrong and how can we reduce the risk?</td>
+                <td>Identify, assess and mitigate threats.</td>
+              </tr>
+              <tr>
+                <td><strong>Acceptable use</strong></td>
+                <td>What are users allowed and forbidden to do?</td>
+                <td>Promote secure, responsible IT usage.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Although these policies have different purposes, they should be designed to work together as part of the
+          organisation's governance framework.</p>
+      </section>
+      <section class="lesson-section" id="section-10">
+        <div class="section-top">
+          <div class="section-icon">🌍</div>
+          <div><small>Section 10</small>
+            <h2>Applying IT Governance in a Real Organisation</h2>
+          </div>
+        </div>
+        <h3>10.1 Case study: Online education platform</h3>
+        <p>Consider an online education platform used by <strong>500 students and 20 teachers</strong>. It provides
+          lessons, assignments, examinations and progress reports.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Governance area</th>
+                <th>Example application</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Strategic alignment</td>
+                <td>Invest in features that improve teaching and learning.</td>
+              </tr>
+              <tr>
+                <td>Risk management</td>
+                <td>Assess data loss, cyberattacks and server failure.</td>
+              </tr>
+              <tr>
+                <td>Resource management</td>
+                <td>Budget for hosting, storage and technical support.</td>
+              </tr>
+              <tr>
+                <td>Performance measurement</td>
+                <td>Monitor uptime, speed and technical incidents.</td>
+              </tr>
+              <tr>
+                <td>Compliance</td>
+                <td>Protect student data according to applicable requirements.</td>
+              </tr>
+              <tr>
+                <td>Business continuity</td>
+                <td>Arrange alternative access to lessons during an outage.</td>
+              </tr>
+              <tr>
+                <td>Disaster recovery</td>
+                <td>Restore the platform and student records from backups.</td>
+              </tr>
+              <tr>
+                <td>Acceptable use</td>
+                <td>Set account security and online conduct rules for staff and learners.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>10.2 Scenario: Serious cyberattack</h3>
+        <ol class="numbered">
+          <li><strong>Risk management</strong> helps identify the threat and plan controls.</li>
+          <li><strong>Security procedures</strong> help contain the attack.</li>
+          <li><strong>Business continuity</strong> provides approved alternatives for lessons.</li>
+          <li><strong>Disaster recovery</strong> guides system and data restoration.</li>
+          <li><strong>Acceptable use</strong> defines security and reporting duties for users.</li>
+          <li><strong>IT governance</strong> coordinates responsibilities, resources and decisions.</li>
+        </ol>
+        <p>This shows why organisations need a coordinated governance framework, not unrelated policies.</p>
+      </section>
+      <section class="lesson-section" id="section-11">
+        <div class="section-top">
+          <div class="section-icon">📝</div>
+          <div><small>Section 11</small>
+            <h2>Practical Activity: IT Risk Assessment</h2>
+          </div>
+        </div>
+        <p>The original Topic 14.7 lesson concludes with an activity asking students to investigate common risk
+          assessment methodologies and assess IT risks in a school or college.</p>
+        <p>The suggested assessment table includes: <strong>potential risk, probability, severity, risk score, and
+            comments/potential mitigation</strong>.</p>
+        <h3>11.1 Example completed school assessment</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Potential risk</th>
+                <th>Probability (1–5)</th>
+                <th>Severity (1–5)</th>
+                <th>Risk score</th>
+                <th>Comments / mitigation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Malware infection</td>
+                <td>4</td>
+                <td>4</td>
+                <td>16</td>
+                <td>Security software, updates and awareness training.</td>
+              </tr>
+              <tr>
+                <td>Server failure</td>
+                <td>3</td>
+                <td>5</td>
+                <td>15</td>
+                <td>Maintenance, reliable equipment and tested backups.</td>
+              </tr>
+              <tr>
+                <td>Power failure</td>
+                <td>3</td>
+                <td>3</td>
+                <td>9</td>
+                <td>Use UPS devices for critical systems.</td>
+              </tr>
+              <tr>
+                <td>Unauthorised access</td>
+                <td>3</td>
+                <td>5</td>
+                <td>15</td>
+                <td>Use authentication and access controls.</td>
+              </tr>
+              <tr>
+                <td>Accidental data deletion</td>
+                <td>3</td>
+                <td>4</td>
+                <td>12</td>
+                <td>Backups, permissions and training.</td>
+              </tr>
+              <tr>
+                <td>Network failure</td>
+                <td>4</td>
+                <td>3</td>
+                <td>12</td>
+                <td>Monitor the network and consider alternative connectivity.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">Illustrative values only: a real assessment should justify its ratings using evidence about the
+          school's actual systems.</p>
+        <h3>11.2 Common risk assessment methodologies</h3>
+        <div class="cards">
+          <div class="mini-card purple">
+            <h4>Qualitative</h4>
+            <p>Describes risk using categories such as low, medium and high. Example: server failure is medium
+              likelihood and high impact.</p>
+          </div>
+          <div class="mini-card blue">
+            <h4>Semi-quantitative</h4>
+            <p>Uses numerical rating scales, such as 1–5, and calculates a score. Example: 3 × 5 = 15.</p>
+          </div>
+          <div class="mini-card green" style="grid-column:1/-1">
+            <h4>Quantitative</h4>
+            <p>Uses numerical estimates such as incident probability and potential financial loss. Example: estimating
+              the cost of an extended website outage.</p>
+          </div>
+        </div>
+        <h3>11.3 Suggested steps</h3>
+        <ol class="numbered">
+          <li>Identify school IT systems such as computers, servers, databases and networks.</li>
+          <li>List the risks affecting each system.</li>
+          <li>Estimate each risk's probability.</li>
+          <li>Estimate the severity of its consequences.</li>
+          <li>Calculate a score using the chosen method.</li>
+          <li>Suggest realistic mitigation strategies.</li>
+          <li>Review high-priority risks and recommend improvements.</li>
+        </ol>
+      </section>
+      <section class="lesson-section" id="section-12">
+        <div class="section-top">
+          <div class="section-icon">🔗</div>
+          <div><small>Section 12</small>
+            <h2>How All the Concepts Connect</h2>
+          </div>
+        </div>
+        <div aria-label="Relationship between IT governance, goals, policies and outcomes" class="flow-vertical">
+          <div class="flow-node purple"><b>🏛️ IT Governance</b><small>Overall direction, control and
+              accountability</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>🎯 Five Governance Goals</b><small>Strategic alignment · Risk management ·
+              Resource management<br />Performance measurement · Compliance</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node blue"><b>📋 Policies and Procedures</b><small>Business continuity · Disaster
+              recovery<br />Risk management · Acceptable use</small></div>
+          <div class="down-arrow">↓</div>
+          <div class="flow-node green"><b>✅ Effective IT Management</b><small>Reliable, secure, efficient and compliant
+              services that support organisational objectives</small></div>
+        </div>
+        <div class="warning"><strong>Central principle:</strong> Organisations need clear direction for the use of
+          technology. IT governance defines objectives and responsibilities; IT policies turn them into practical rules
+          and procedures. Together they help the organisation use resources wisely, manage risks, keep essential
+          activities operating, protect information and meet its obligations.</div>
+      </section>
+      <nav aria-label="Other lessons" class="lesson-navigation">
+        <a href="topic-14-06.html">← Topic 14.6</a>
+        <a href="topic-14-08.html">Topic 14.8 →</a>
+      </nav>
+
+      <footer class="page-footer">
+        <strong>Tr.Sun Education</strong>
+        <p>Edexcel International A Level IT</p>
+        <p>Created by <strong>Tr. Sun</strong></p>
+      </footer>
+      
+    </div>
+  </main>
+  <button aria-label="Back to top" class="to-top" id="toTop" title="Back to top" type="button">↑</button>
+  <script>
+    (() => {
+      'use strict';
+      const body = document.body;
+      const menuButton = document.getElementById('menuToggle');
+      const overlay = document.getElementById('overlay');
+      const sidebar = document.getElementById('sidebar');
+      const progress = document.getElementById('readingProgress');
+      const toTop = document.getElementById('toTop');
+      const links = [...document.querySelectorAll('.side-nav a')];
+      const sections = [...document.querySelectorAll('.lesson-section')];
+      let lastFocus = null;
+      function setMenu(open) {
+        body.classList.toggle('menu-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+        if (open) {
+          lastFocus = document.activeElement;
+          sidebar.querySelector('.side-nav a')?.focus();
+        } else if (lastFocus && window.innerWidth <= 900) {
+          menuButton.focus();
+        }
+      }
+      menuButton.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
+      overlay.addEventListener('click', () => setMenu(false));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && body.classList.contains('menu-open')) setMenu(false);
+      });
+      links.forEach(link => link.addEventListener('click', () => {
+        if (body.classList.contains('menu-open')) setMenu(false);
+      }));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && body.classList.contains('menu-open')) setMenu(false);
+      });
+      function updateScroll() {
+        const available = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = available > 0 ? Math.min(100, Math.max(0, window.scrollY / available * 100)) : 100;
+        progress.style.width = percent.toFixed(2) + '%';
+        progress.setAttribute('aria-valuenow', Math.round(percent));
+        toTop.classList.toggle('visible', window.scrollY > 470);
+        let current = sections[0]?.id;
+        const threshold = window.innerWidth <= 900 ? 140 : 95;
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= threshold) current = section.id;
+        }
+        links.forEach(link => {
+          const active = link.hash === '#' + current;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      let scheduled = false;
+      window.addEventListener('scroll', () => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => { updateScroll(); scheduled = false; });
+      }, { passive: true });
+      window.addEventListener('resize', updateScroll);
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+      updateScroll();
+    })();
+  </script>
+  <script>
+    (() => {
+      const probability = document.getElementById('probability');
+      const severity = document.getElementById('severity');
+      if (!probability || !severity) return;
+      const probabilityLabels = ['Very unlikely', 'Unlikely', 'Possible', 'Likely', 'Very likely'];
+      const severityLabels = ['Negligible', 'Minor', 'Moderate', 'Major', 'Critical'];
+      function updateRisk() {
+        const p = Number(probability.value), s = Number(severity.value), score = p * s;
+        document.getElementById('probabilityValue').textContent = p + ' / 5';
+        document.getElementById('severityValue').textContent = s + ' / 5';
+        document.getElementById('probabilityLabel').textContent = probabilityLabels[p - 1];
+        document.getElementById('severityLabel').textContent = severityLabels[s - 1];
+        document.getElementById('riskScore').textContent = score + ' / 25';
+        const level = score <= 5 ? 'low' : score <= 12 ? 'medium' : 'high';
+        const label = document.getElementById('riskLevel');
+        label.className = 'score-label ' + level;
+        label.textContent = level.charAt(0).toUpperCase() + level.slice(1) + ' risk';
+        document.getElementById('riskBar').style.width = (score / 25 * 100) + '%';
+        document.getElementById('riskAdvice').textContent = level === 'low' ? 'Lower priority: keep monitoring the risk.' : level === 'medium' ? 'Moderate priority: plan appropriate mitigation.' : 'High priority: plan and implement risk mitigation measures.';
+      }
+      probability.addEventListener('input', updateRisk);
+      severity.addEventListener('input', updateRisk);
+      updateRisk();
+    })();
+  </script>
 </body>
+
 </html>
