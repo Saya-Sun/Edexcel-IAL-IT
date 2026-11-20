@@ -3,1074 +3,2642 @@
 
 <head>
   <meta charset="UTF-8">
-<<<<<<< HEAD
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Topic 14.4 Management Information Systems: detailed Edexcel IAL IT A2 lesson notes, examples, case study and activity.">
-  <title>Topic 14.4 | Management Information Systems | Tr.Sun Education</title>
-  <style>
-    :root {
-      --navy:#111827; --navy-soft:#1e293b; --purple:#6d4ade; --purple-deep:#4934b5;
-      --purple-pale:#f1edff; --ink:#1e293b; --muted:#64748b; --bg:#f4f6fb;
-      --line:#e5eaf3; --green:#0d8a67; --green-pale:#eaf9f1;
-      --amber:#a3650a; --amber-pale:#fff7e6; --blue:#2563a9; --blue-pale:#edf6ff;
-      --sidebar-width:282px; --radius:20px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:28px}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.74}
-    a{color:inherit} a:focus-visible,button:focus-visible{outline:3px solid #aa9aff;outline-offset:3px}
-    .reading-progress{position:fixed;z-index:1000;inset:0 auto auto 0;width:0;height:4px;background:linear-gradient(90deg,#7c5aff,#f0a3ff);transition:width .1s linear}
-    /* Left sidebar */
-    .sidebar{position:fixed;z-index:90;inset:0 auto 0 0;width:var(--sidebar-width);overflow-y:auto;background:var(--navy);color:#e5e7eb;box-shadow:5px 0 30px rgba(10,20,45,.08);scrollbar-width:thin;scrollbar-color:#4b5563 transparent}
-    .brand{padding:26px 19px 23px;border-bottom:1px solid rgba(255,255,255,.09);display:flex;gap:12px;align-items:center;text-decoration:none}
-    .brand-icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(145deg,#7347eb,#bb73ef);display:grid;place-items:center;flex:none;box-shadow:0 6px 22px rgba(130,85,235,.3)}
-    .brand-icon svg{width:30px;height:30px}
-    .brand-title{display:block;font-size:18px;line-height:1.15;font-weight:800;letter-spacing:-.5px;color:white}
-    .brand-sub{display:block;font-size:10px;color:#b9b6db;letter-spacing:.55px;margin-top:5px}
-    .side-course{margin:19px 15px 18px;padding:14px 15px;border-radius:14px;background:linear-gradient(135deg,rgba(123,82,235,.22),rgba(192,117,239,.1));border:1px solid rgba(183,149,255,.15)}
-    .side-course small{font-size:10px;text-transform:uppercase;color:#c9baff;letter-spacing:1.1px;font-weight:800}
-    .side-course strong{font-size:14px;line-height:1.45;display:block;color:white;margin-top:4px}
-    .side-course span{font-size:12px;color:#bfc6d9;display:block;margin-top:5px}
-    .side-label{color:#9ca3af;font-size:11px;text-transform:uppercase;font-weight:750;letter-spacing:1.3px;margin:20px 24px 9px}
-    .side-nav{display:grid;gap:3px;padding:0 10px}
-    .side-nav a{display:flex;align-items:center;gap:10px;text-decoration:none;color:#cbd5e1;font-size:12.8px;font-weight:550;line-height:1.4;border-radius:10px;padding:10px 12px;transition:background .2s,color .2s}
-    .side-nav a:hover{background:#26324a;color:#fff}
-    .side-nav a.active{color:white;background:linear-gradient(110deg,#5842bd,#8061e4);box-shadow:0 4px 12px rgba(74,46,170,.3)}
-    .nav-number{display:grid;place-items:center;flex:none;border-radius:7px;width:25px;height:25px;background:rgba(255,255,255,.09);font-size:11px;font-weight:800}
-    .side-nav a.active .nav-number{background:rgba(255,255,255,.2)}
-    .side-bottom{padding:22px 22px 28px;margin-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:11px;color:#8e9ab0;line-height:1.75}
-    .side-bottom strong{color:#d1d5db}
-    /* Main page */
-    .page{margin-left:var(--sidebar-width);min-height:100vh;padding:35px clamp(18px,4.3vw,67px) 65px}
-    .content{width:min(100%,1120px);margin:0 auto}
-    .breadcrumbs{display:flex;gap:9px;align-items:center;flex-wrap:wrap;font-size:12px;font-weight:650;color:#818a9d;margin-bottom:20px}
-    .breadcrumbs a{text-decoration:none;color:#6452bd}.breadcrumbs a:hover{text-decoration:underline}
-    .hero{position:relative;overflow:hidden;background:linear-gradient(118deg,#4934b5 0%,#7752d6 54%,#ad72ed 100%);border-radius:24px;padding:clamp(29px,4.5vw,58px);color:#fff;box-shadow:0 14px 40px rgba(83,65,169,.19);margin-bottom:31px}
-    .hero:before,.hero:after{content:"";position:absolute;pointer-events:none;border:1px solid rgba(255,255,255,.16);border-radius:50%}
-    .hero:before{width:360px;height:360px;right:-130px;top:-210px;box-shadow:0 0 0 50px rgba(255,255,255,.035),0 0 0 105px rgba(255,255,255,.025)}
-    .hero:after{width:205px;height:205px;right:120px;bottom:-170px}
-    .hero>*{position:relative;z-index:1}
-    .hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}
-    .hero-tags span{font-size:11px;font-weight:750;letter-spacing:.35px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.14);border-radius:100px;padding:6px 12px}
-    .hero h1{font-size:clamp(29px,4vw,48px);line-height:1.16;letter-spacing:-1.3px;max-width:730px;margin:0 0 14px;font-weight:820}
-    .hero p{max-width:750px;font-size:15px;color:#f1eaff;line-height:1.75;margin:0}
-    .hero-foot{margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);font-size:12px;color:#f1eaff;display:flex;flex-wrap:wrap;gap:10px 22px}
-    /* Cards and content components */
-    .lesson-section{background:white;border:1px solid #e9edf5;border-radius:var(--radius);padding:clamp(21px,3.2vw,39px);margin-bottom:24px;box-shadow:0 6px 25px rgba(29,42,70,.04);scroll-margin-top:24px}
-    .section-kicker{display:flex;align-items:center;gap:10px;color:#7355d4;font-size:12px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:10px}
-    .section-num{display:grid;place-items:center;background:var(--purple-pale);color:#6146c7;border-radius:9px;min-width:35px;height:35px;font-size:13px;letter-spacing:0}
-    h2{font-size:clamp(23px,2.8vw,30px);line-height:1.3;letter-spacing:-.65px;color:#20243d;margin:0 0 19px}
-    h3{font-size:19px;color:#34304f;margin:30px 0 10px;line-height:1.4;letter-spacing:-.2px}
-    h4{font-size:16px;color:#3d3866;margin:23px 0 8px}
-    p{margin:12px 0}ul,ol{padding-left:24px;margin:11px 0 18px}li{padding-left:3px;margin:7px 0}strong{color:#263047}
-    .lead{font-size:16px;color:#46536c}
-    .definition{background:linear-gradient(100deg,#f3efff,#faf8ff);border-left:4px solid #865cde;padding:17px 20px;border-radius:0 13px 13px 0;margin:21px 0}
-    .definition strong{color:#5037aa}
-    .example{background:var(--green-pale);border-left:4px solid #3bb78e;border-radius:0 12px 12px 0;padding:14px 18px;margin:20px 0}
-    .example strong{color:#0b7054}
-    .important{background:var(--amber-pale);border-left:4px solid #e8ae43;border-radius:0 12px 12px 0;padding:14px 18px;margin:21px 0}
-    .important strong{color:#8c5908}
-    .info{background:var(--blue-pale);border-left:4px solid #69a3ed;border-radius:0 12px 12px 0;padding:14px 18px;margin:21px 0}
-    .subtle{color:var(--muted);font-size:13px}
-    .tile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:19px 0}
-    .tile{border:1px solid #e7e8f2;border-radius:15px;padding:19px;background:#fafbff;min-width:0}
-    .tile:nth-child(3n+1){background:#f4f0ff;border-color:#e8dfff}.tile:nth-child(3n+2){background:#ecf8ff;border-color:#d7edff}.tile:nth-child(3n){background:#effaf2;border-color:#d7f2df}
-    .tile .emoji{font-size:27px;display:block;margin-bottom:5px}.tile h4{margin:5px 0;font-size:15px}.tile p{font-size:13.7px;margin:6px 0 0;color:#4d5b72}
-    .table-wrap{overflow:auto;margin:18px 0 22px;border-radius:13px;border:1px solid #e3e6f1;-webkit-overflow-scrolling:touch}
-    table{width:100%;border-collapse:collapse;min-width:560px;font-size:13.5px;line-height:1.55}
-    th,td{padding:13px 15px;text-align:left;vertical-align:top;border-bottom:1px solid #edf0f5}
-    th{background:#f0edfb;color:#4e398f;font-size:12px;letter-spacing:.15px;font-weight:800}
-    tbody tr:nth-child(even){background:#fafbfe}tbody tr:last-child td{border-bottom:none}
-    .flow{margin:22px 0;display:grid;gap:9px;justify-items:stretch}
-    .flow-row{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);gap:9px;align-items:stretch}
-    .flow-box{background:#f3efff;border:1px solid #ded5fa;padding:14px 10px;border-radius:13px;text-align:center;min-width:0}
-    .flow-box:nth-child(2){background:#edf6ff;border-color:#d5e7ff}.flow-box:nth-child(3){background:#effaf2;border-color:#d4efdd}.flow-box:nth-child(4){background:#fff6eb;border-color:#f3dfc4}
-    .flow-box b{display:block;font-size:13px;color:#30285a}.flow-box small{display:block;font-size:11px;margin-top:5px;color:#5d6980;line-height:1.45}
-    .flow-arrow{align-self:center;justify-self:center;font-size:24px;font-weight:800;color:#9585d4}
-    .flow-integrate{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:15px}
-    .source-pill{padding:11px 8px;text-align:center;background:#f0f3ff;border:1px solid #dfe4f9;border-radius:11px;font-size:13px;font-weight:700}
-    .center-arrow{text-align:center;color:#6f50d4;font-size:29px;line-height:1.4;font-weight:800}
-    .system-pill{margin:auto;max-width:600px;padding:18px 20px;border-radius:14px;text-align:center;background:linear-gradient(120deg,#6144c9,#9171e5);color:white;font-weight:800}
-    .system-pill span{display:block;font-size:12px;font-weight:500;margin-top:5px;color:#eee7ff}
-    .output-pill{border-radius:13px;padding:16px;margin:auto;max-width:600px;background:#eaf8f1;border:1px solid #bde8cf;text-align:center;color:#19684e;font-weight:800}
-    .steps{counter-reset:step;display:grid;gap:12px;margin:18px 0}
-    .step{position:relative;background:#fafbfe;border:1px solid #e7ebf5;border-radius:14px;padding:16px 18px 17px 65px}
-    .step:before{counter-increment:step;content:counter(step);position:absolute;top:15px;left:17px;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:#ece5ff;color:#6343c6;font-weight:800}
-    .step h4{margin:0 0 7px;font-size:15px}.step p{margin:5px 0;font-size:14px}
-    .dashboard{border-radius:16px;border:1px solid #e3e7f1;padding:18px;margin:20px 0;background:#fbfcff}
-    .dash-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.dash-head strong{font-size:15px}.dash-head span{font-size:11px;color:#7b8496}
-    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-    .kpi{background:white;border:1px solid #e7eaf2;border-radius:12px;padding:13px}
-    .kpi b{display:block;color:#6045b7;font-size:clamp(16px,2vw,23px);line-height:1.3}.kpi small{color:#7d8798;font-size:11px}
-    .bar-row{display:grid;grid-template-columns:90px 1fr 70px;gap:10px;align-items:center;margin:13px 0;font-size:12px}
-    .bar-track{height:15px;border-radius:30px;background:#edeaf9;overflow:hidden}.bar-fill{height:100%;border-radius:30px;background:linear-gradient(90deg,#7651dd,#b18aef)}
-    .bar-value{text-align:right;font-weight:700;color:#5c5674}
-    .answer{padding:20px;border:1px solid #cce5d6;border-radius:14px;background:#f1fbf5}
-    .answer h3{margin:0 0 10px;color:#17694c}
-    .closing{background:linear-gradient(110deg,#efe9ff,#f7f3ff);border:1px solid #e2d7ff;border-radius:15px;padding:21px;margin-top:19px}
-    .footer{text-align:center;color:#7f8ba0;font-size:12px;margin:35px 0 0}.footer a{color:#674cbd;text-decoration:none}
-    /* Mobile navigation and floating controls */
-    .menu-btn{display:none;position:fixed;top:13px;left:14px;z-index:150;border:0;border-radius:12px;background:var(--navy);color:white;box-shadow:0 5px 22px rgba(7,14,30,.25);width:46px;height:46px;cursor:pointer;font-size:23px}
-    .overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:80}
-    .to-top{position:fixed;right:24px;bottom:25px;z-index:30;width:45px;height:45px;border:0;border-radius:14px;background:#6f4bda;color:#fff;box-shadow:0 8px 24px rgba(93,62,187,.35);font-size:22px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s}
-    .to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
-    @media(max-width:1140px){.tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-row{grid-template-columns:1fr;gap:0}.flow-arrow{transform:rotate(90deg)}}
-    @media(max-width:850px){
-      .sidebar{transform:translateX(-105%);transition:transform .25s ease;width:min(300px,85vw)}
-      .sidebar.open{transform:translateX(0)}.overlay.show{display:block}.menu-btn{display:grid;place-items:center}
-      .page{margin-left:0;padding:78px 18px 48px}.hero{padding:30px 24px}
-      .lesson-section{padding:24px 20px}
-    }
-    @media(max-width:560px){
-      body{font-size:15px}.page{padding-left:12px;padding-right:12px}.hero{border-radius:18px;padding:28px 21px}
-      .hero h1{font-size:30px;letter-spacing:-.8px}.lesson-section{border-radius:16px;padding:21px 17px}
-      .tile-grid{grid-template-columns:1fr}.flow-integrate{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .kpis{grid-template-columns:1fr}.bar-row{grid-template-columns:68px 1fr 51px;gap:7px;font-size:11px}
-      .step{padding-right:13px}.to-top{right:14px;bottom:15px}
-    }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-=======
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111827">
-  <meta name="description"
-    content="Topic 14.4: Management Information Systems — lesson page coming soon at Tr.Sun Education.">
-  <title>Topic 14.4 – Management Information Systems | Tr.Sun Education</title>
-  <style>
-    :root {
-      --sidebar-width: 282px;
-      --navy: #111827;
-      --navy-2: #1e293b;
-      --purple: #7653e8;
-      --purple-dark: #5937c5;
-      --bg: #f5f7fc;
-      --surface: #fff;
-      --text: #253047;
-      --muted: #64748b;
-      --border: #e7eaf2;
-      --shadow: 0 8px 28px rgba(25, 33, 60, .045)
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 3px solid #b69aff;
-      outline-offset: 3px
-    }
-
-    .skip-link {
-      position: fixed;
-      top: -80px;
-      left: 10px;
-      z-index: 2000;
-      padding: 9px 13px;
-      background: #fff;
-      border-radius: 9px
-    }
-
-    .skip-link:focus {
-      top: 10px
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      width: var(--sidebar-width);
-      height: 100vh;
-      height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-      background: var(--navy);
-      color: #fff;
-      scrollbar-width: thin;
-      scrollbar-color: #45506a transparent
-    }
-
-    .brand {
-      padding: 28px 18px 23px;
-      border-bottom: 1px solid #30394c
-    }
-
-    .brand-identity {
-      display: flex;
-      align-items: center;
-      gap: 12px
-    }
-
-    .brand-logo {
-      width: 62px;
-      height: 62px;
-      flex: 0 0 62px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #a06aff, #5837c6);
-      box-shadow: 0 8px 24px rgba(117, 83, 232, .3)
-    }
-
-    .brand-logo svg {
-      width: 49px;
-      height: 49px
-    }
-
-    .brand-text {
-      min-width: 0
-    }
-
-    .brand-text h2 {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.3;
-      color: #fff;
-      letter-spacing: -.5px
-    }
-
-    .brand-text p {
-      margin: 5px 0 0;
-      color: #c4b5fd;
-      font-size: 11px;
-      white-space: nowrap
-    }
-
-    .brand-curriculum {
-      margin-top: 20px;
-      color: #94a3b8;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1.15px
-    }
-
-    .current-lesson {
-      margin: 22px 13px 13px;
-      padding: 16px;
-      border: 1px solid #4b3a86;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #382b65, #29234a)
-    }
-
-    .current-lesson small {
-      display: block;
-      margin-bottom: 8px;
-      color: #c4b5fd;
-      font-size: 10px;
-      font-weight: 750;
-      letter-spacing: 1px
-    }
-
-    .current-lesson h3 {
-      margin: 0;
-      font-size: 15px;
-      color: #fff
-    }
-
-    .current-lesson p {
-      margin: 4px 0 0;
-      color: #d6d0ea;
-      font-size: 12px;
-      line-height: 1.5
-    }
-
-    .sidebar-label {
-      padding: 18px 23px 12px;
-      color: #8591a8;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.7px
-    }
-
-    .side-nav {
-      padding: 0 12px 18px
-    }
-
-    .side-nav a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 5px;
-      padding: 11px 12px;
-      color: #cbd5e1;
-      font-size: 12.5px;
-      line-height: 1.4;
-      border-radius: 11px;
-      transition: background .2s, color .2s
-    }
-
-    .side-nav a:hover {
-      background: #283249;
-      color: #fff
-    }
-
-    .side-nav a.active {
-      background: #392b66;
-      color: #fff;
-      box-shadow: inset 3px 0 #a78bfa
-    }
-
-    .nav-number {
-      flex-shrink: 0;
-      width: 42px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border-radius: 9px;
-      background: #293449;
-      color: #bac5d8;
-      font-size: 11px;
-      font-weight: 800
-    }
-
-    .side-nav a.active .nav-number {
-      background: #8157ed;
-      color: #fff
-    }
-
-    .sidebar-footer {
-      margin-top: auto;
-      padding: 21px 22px;
-      border-top: 1px solid #30394c;
-      color: #94a3b8;
-      font-size: 12px
-    }
-
-    .sidebar-footer strong {
-      color: #e2e8f0
-    }
-
-    .main {
-      margin-left: var(--sidebar-width);
-      min-height: 100vh;
-      padding: 34px 42px 55px
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto
-    }
-
-    .breadcrumb {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 9px;
-      color: #78849a;
-      font-size: 12px;
-      margin-bottom: 20px
-    }
-
-    .breadcrumb a:hover,
-    .breadcrumb strong {
-      color: #6744d0
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 47px 44px;
-      border-radius: 24px;
-      background: linear-gradient(115deg, #4934b5 0%, #7753e7 55%, #ad72ed 100%);
-      box-shadow: 0 15px 35px rgba(88, 60, 180, .16);
-      color: #fff
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, .15);
-      pointer-events: none
-    }
-
-    .hero::before {
-      width: 360px;
-      height: 360px;
-      right: -100px;
-      top: -200px
-    }
-
-    .hero::after {
-      width: 250px;
-      height: 250px;
-      right: 90px;
-      bottom: -175px
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 7px 15px;
-      background: rgba(255, 255, 255, .16);
-      border: 1px solid rgba(255, 255, 255, .2);
-      border-radius: 30px;
-      font-size: 11px;
-      font-weight: 750;
-      letter-spacing: .8px
-    }
-
-    .hero h1 {
-      font-size: clamp(28px, 3.6vw, 43px);
-      line-height: 1.2;
-      letter-spacing: -1px;
-      margin: 21px 0 14px
-    }
-
-    .hero p {
-      max-width: 710px;
-      color: #f2ecff;
-      font-size: 15px;
-      margin: 0
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 26px
-    }
-
-    .hero-tags span {
-      padding: 8px 13px;
-      font-size: 11px;
-      font-weight: 650;
-      border-radius: 9px;
-      background: rgba(255, 255, 255, .15);
-      border: 1px solid rgba(255, 255, 255, .17)
-    }
-
-    .coming-section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: clamp(28px, 5vw, 60px) 26px;
-      margin: 30px 0 26px;
-      box-shadow: var(--shadow);
-      text-align: center
-    }
-
-    .status-icon {
-      display: grid;
-      place-items: center;
-      width: 76px;
-      height: 76px;
-      border-radius: 22px;
-      background: #f2edff;
-      color: #7653e8;
-      margin: 0 auto 22px
-    }
-
-    .status-icon svg {
-      width: 39px;
-      height: 39px
-    }
-
-    .status-label {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 1.4px;
-      font-weight: 800;
-      color: #6b4cc7;
-      text-transform: uppercase;
-      margin-bottom: 8px
-    }
-
-    .coming-section h2 {
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -1px;
-      margin: 6px 0 15px;
-      color: #253047
-    }
-
-    .coming-section p {
-      max-width: 540px;
-      margin: 0 auto 24px;
-      color: #64748b;
-      font-size: 15px
-    }
-
-    .notice {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      max-width: 570px;
-      margin: 0 auto 25px;
-      padding: 16px 18px;
-      border: 1px solid #f7e2b8;
-      border-left: 4px solid #e9a34e;
-      background: #fff8ec;
-      border-radius: 12px;
-      text-align: left;
-      color: #7c581f;
-      font-size: 13px
-    }
-
-    .notice svg {
-      width: 20px;
-      height: 20px;
-      flex: 0 0 20px;
-      margin-top: 2px;
-      color: #b57622
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      margin-top: 24px
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 45px;
-      padding: 11px 17px;
-      border-radius: 11px;
-      font-size: 13px;
-      font-weight: 750;
-      border: 1px solid #e0d4ff;
-      background: #f2edff;
-      color: #5a38c3;
-      transition: background .2s, transform .2s
-    }
-
-    .btn:hover {
-      background: #e8deff;
-      transform: translateY(-1px)
-    }
-
-    .btn.primary {
-      border-color: #6644cd;
-      background: #6746cf;
-      color: #fff
-    }
-
-    .btn.primary:hover {
-      background: #4f31b0
-    }
-
-    .lesson-navigation {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 24px 0 10px
-    }
-
-    .lesson-navigation a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 11px;
-      font-size: 13px;
-      font-weight: 750;
-      color: #5a38c3;
-      background: #f2edff;
-      border: 1px solid #e0d4ff
-    }
-
-    .lesson-navigation a:hover {
-      background: #e8deff
-    }
-
-    .page-footer {
-      padding: 25px 15px;
-      text-align: center;
-      color: #8995aa;
-      font-size: 12px
-    }
-
-    .page-footer p {
-      margin: 4px
-    }
-
-    .page-footer strong {
-      color: #5a38c3
-    }
-
-    .menu-button,
-    .overlay {
-      display: none
-    }
-
-    @media(max-width:1050px) {
-      .main {
-        padding: 28px
+  <<<<<<< HEAD <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+      content="Topic 14.4 Management Information Systems: detailed Edexcel IAL IT A2 lesson notes, examples, case study and activity.">
+    <title>Topic 14.4 | Management Information Systems | Tr.Sun Education</title>
+    <style>
+      :root {
+        --navy: #111827;
+        --navy-soft: #1e293b;
+        --purple: #6d4ade;
+        --purple-deep: #4934b5;
+        --purple-pale: #f1edff;
+        --ink: #1e293b;
+        --muted: #64748b;
+        --bg: #f4f6fb;
+        --line: #e5eaf3;
+        --green: #0d8a67;
+        --green-pale: #eaf9f1;
+        --amber: #a3650a;
+        --amber-pale: #fff7e6;
+        --blue: #2563a9;
+        --blue-pale: #edf6ff;
+        --sidebar-width: 282px;
+        --radius: 20px;
       }
-    }
 
-    @media(max-width:800px) {
+      * {
+        box-sizing: border-box
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 28px
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.74
+      }
+
+      a {
+        color: inherit
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #aa9aff;
+        outline-offset: 3px
+      }
+
+      .reading-progress {
+        position: fixed;
+        z-index: 1000;
+        inset: 0 auto auto 0;
+        width: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #7c5aff, #f0a3ff);
+        transition: width .1s linear
+      }
+
+      /* Left sidebar */
       .sidebar {
-        width: 280px;
-        transform: translateX(-100%);
-        transition: transform .3s ease;
-        box-shadow: 14px 0 35px rgba(0, 0, 0, .2)
+        position: fixed;
+        z-index: 90;
+        inset: 0 auto 0 0;
+        width: var(--sidebar-width);
+        overflow-y: auto;
+        background: var(--navy);
+        color: #e5e7eb;
+        box-shadow: 5px 0 30px rgba(10, 20, 45, .08);
+        scrollbar-width: thin;
+        scrollbar-color: #4b5563 transparent
       }
 
-      .sidebar.open {
-        transform: translateX(0)
+      .brand {
+        padding: 26px 19px 23px;
+        border-bottom: 1px solid rgba(255, 255, 255, .09);
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-decoration: none
       }
 
-      .main {
-        margin-left: 0;
-        padding: 78px 16px 35px
+      .brand-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        background: linear-gradient(145deg, #7347eb, #bb73ef);
+        display: grid;
+        place-items: center;
+        flex: none;
+        box-shadow: 0 6px 22px rgba(130, 85, 235, .3)
       }
 
-      .menu-button {
+      .brand-icon svg {
+        width: 30px;
+        height: 30px
+      }
+
+      .brand-title {
+        display: block;
+        font-size: 18px;
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -.5px;
+        color: white
+      }
+
+      .brand-sub {
+        display: block;
+        font-size: 10px;
+        color: #b9b6db;
+        letter-spacing: .55px;
+        margin-top: 5px
+      }
+
+      .side-course {
+        margin: 19px 15px 18px;
+        padding: 14px 15px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(123, 82, 235, .22), rgba(192, 117, 239, .1));
+        border: 1px solid rgba(183, 149, 255, .15)
+      }
+
+      .side-course small {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #c9baff;
+        letter-spacing: 1.1px;
+        font-weight: 800
+      }
+
+      .side-course strong {
+        font-size: 14px;
+        line-height: 1.45;
+        display: block;
+        color: white;
+        margin-top: 4px
+      }
+
+      .side-course span {
+        font-size: 12px;
+        color: #bfc6d9;
+        display: block;
+        margin-top: 5px
+      }
+
+      .side-label {
+        color: #9ca3af;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 750;
+        letter-spacing: 1.3px;
+        margin: 20px 24px 9px
+      }
+
+      .side-nav {
+        display: grid;
+        gap: 3px;
+        padding: 0 10px
+      }
+
+      .side-nav a {
         display: flex;
         align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #cbd5e1;
+        font-size: 12.8px;
+        font-weight: 550;
+        line-height: 1.4;
+        border-radius: 10px;
+        padding: 10px 12px;
+        transition: background .2s, color .2s
+      }
+
+      .side-nav a:hover {
+        background: #26324a;
+        color: #fff
+      }
+
+      .side-nav a.active {
+        color: white;
+        background: linear-gradient(110deg, #5842bd, #8061e4);
+        box-shadow: 0 4px 12px rgba(74, 46, 170, .3)
+      }
+
+      .nav-number {
+        display: grid;
+        place-items: center;
+        flex: none;
+        border-radius: 7px;
+        width: 25px;
+        height: 25px;
+        background: rgba(255, 255, 255, .09);
+        font-size: 11px;
+        font-weight: 800
+      }
+
+      .side-nav a.active .nav-number {
+        background: rgba(255, 255, 255, .2)
+      }
+
+      .side-bottom {
+        padding: 22px 22px 28px;
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        font-size: 11px;
+        color: #8e9ab0;
+        line-height: 1.75
+      }
+
+      .side-bottom strong {
+        color: #d1d5db
+      }
+
+      /* Main page */
+      .page {
+        margin-left: var(--sidebar-width);
+        min-height: 100vh;
+        padding: 35px clamp(18px, 4.3vw, 67px) 65px
+      }
+
+      .content {
+        width: min(100%, 1120px);
+        margin: 0 auto
+      }
+
+      .breadcrumbs {
+        display: flex;
         gap: 9px;
-        position: fixed;
-        top: 15px;
-        left: 16px;
-        z-index: 900;
-        padding: 10px 15px;
-        border: 0;
-        border-radius: 11px;
-        background: var(--navy-2);
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 12px;
+        font-weight: 650;
+        color: #818a9d;
+        margin-bottom: 20px
+      }
+
+      .breadcrumbs a {
+        text-decoration: none;
+        color: #6452bd
+      }
+
+      .breadcrumbs a:hover {
+        text-decoration: underline
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(118deg, #4934b5 0%, #7752d6 54%, #ad72ed 100%);
+        border-radius: 24px;
+        padding: clamp(29px, 4.5vw, 58px);
         color: #fff;
-        box-shadow: 0 5px 18px #0002
+        box-shadow: 0 14px 40px rgba(83, 65, 169, .19);
+        margin-bottom: 31px
       }
 
-      .overlay.show {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(13, 18, 30, .65);
-        z-index: 950;
-        border: 0;
-        width: 100%
+      .hero:before,
+      .hero:after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        border: 1px solid rgba(255, 255, 255, .16);
+        border-radius: 50%
       }
 
-      .hero {
-        padding: 33px 25px;
-        border-radius: 19px
+      .hero:before {
+        width: 360px;
+        height: 360px;
+        right: -130px;
+        top: -210px;
+        box-shadow: 0 0 0 50px rgba(255, 255, 255, .035), 0 0 0 105px rgba(255, 255, 255, .025)
       }
 
-      .hero p {
-        font-size: 14px
-      }
-    }
-
-    @media(max-width:550px) {
-      .hero {
-        padding: 29px 21px
+      .hero:after {
+        width: 205px;
+        height: 205px;
+        right: 120px;
+        bottom: -170px
       }
 
-      .hero h1 {
-        font-size: clamp(27px, 7vw, 36px)
+      .hero>* {
+        position: relative;
+        z-index: 1
       }
 
       .hero-tags {
-        gap: 7px
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-bottom: 18px
       }
 
       .hero-tags span {
-        font-size: 10px
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: .35px;
+        border: 1px solid rgba(255, 255, 255, .25);
+        background: rgba(255, 255, 255, .14);
+        border-radius: 100px;
+        padding: 6px 12px
+      }
+
+      .hero h1 {
+        font-size: clamp(29px, 4vw, 48px);
+        line-height: 1.16;
+        letter-spacing: -1.3px;
+        max-width: 730px;
+        margin: 0 0 14px;
+        font-weight: 820
+      }
+
+      .hero p {
+        max-width: 750px;
+        font-size: 15px;
+        color: #f1eaff;
+        line-height: 1.75;
+        margin: 0
+      }
+
+      .hero-foot {
+        margin-top: 26px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, .22);
+        font-size: 12px;
+        color: #f1eaff;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 22px
+      }
+
+      /* Cards and content components */
+      .lesson-section {
+        background: white;
+        border: 1px solid #e9edf5;
+        border-radius: var(--radius);
+        padding: clamp(21px, 3.2vw, 39px);
+        margin-bottom: 24px;
+        box-shadow: 0 6px 25px rgba(29, 42, 70, .04);
+        scroll-margin-top: 24px
+      }
+
+      .section-kicker {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #7355d4;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .9px;
+        text-transform: uppercase;
+        margin-bottom: 10px
+      }
+
+      .section-num {
+        display: grid;
+        place-items: center;
+        background: var(--purple-pale);
+        color: #6146c7;
+        border-radius: 9px;
+        min-width: 35px;
+        height: 35px;
+        font-size: 13px;
+        letter-spacing: 0
+      }
+
+      h2 {
+        font-size: clamp(23px, 2.8vw, 30px);
+        line-height: 1.3;
+        letter-spacing: -.65px;
+        color: #20243d;
+        margin: 0 0 19px
+      }
+
+      h3 {
+        font-size: 19px;
+        color: #34304f;
+        margin: 30px 0 10px;
+        line-height: 1.4;
+        letter-spacing: -.2px
+      }
+
+      h4 {
+        font-size: 16px;
+        color: #3d3866;
+        margin: 23px 0 8px
+      }
+
+      p {
+        margin: 12px 0
+      }
+
+      ul,
+      ol {
+        padding-left: 24px;
+        margin: 11px 0 18px
+      }
+
+      li {
+        padding-left: 3px;
+        margin: 7px 0
+      }
+
+      strong {
+        color: #263047
+      }
+
+      .lead {
+        font-size: 16px;
+        color: #46536c
+      }
+
+      .definition {
+        background: linear-gradient(100deg, #f3efff, #faf8ff);
+        border-left: 4px solid #865cde;
+        padding: 17px 20px;
+        border-radius: 0 13px 13px 0;
+        margin: 21px 0
+      }
+
+      .definition strong {
+        color: #5037aa
+      }
+
+      .example {
+        background: var(--green-pale);
+        border-left: 4px solid #3bb78e;
+        border-radius: 0 12px 12px 0;
+        padding: 14px 18px;
+        margin: 20px 0
+      }
+
+      .example strong {
+        color: #0b7054
+      }
+
+      .important {
+        background: var(--amber-pale);
+        border-left: 4px solid #e8ae43;
+        border-radius: 0 12px 12px 0;
+        padding: 14px 18px;
+        margin: 21px 0
+      }
+
+      .important strong {
+        color: #8c5908
+      }
+
+      .info {
+        background: var(--blue-pale);
+        border-left: 4px solid #69a3ed;
+        border-radius: 0 12px 12px 0;
+        padding: 14px 18px;
+        margin: 21px 0
+      }
+
+      .subtle {
+        color: var(--muted);
+        font-size: 13px
+      }
+
+      .tile-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 13px;
+        margin: 19px 0
+      }
+
+      .tile {
+        border: 1px solid #e7e8f2;
+        border-radius: 15px;
+        padding: 19px;
+        background: #fafbff;
+        min-width: 0
+      }
+
+      .tile:nth-child(3n+1) {
+        background: #f4f0ff;
+        border-color: #e8dfff
+      }
+
+      .tile:nth-child(3n+2) {
+        background: #ecf8ff;
+        border-color: #d7edff
+      }
+
+      .tile:nth-child(3n) {
+        background: #effaf2;
+        border-color: #d7f2df
+      }
+
+      .tile .emoji {
+        font-size: 27px;
+        display: block;
+        margin-bottom: 5px
+      }
+
+      .tile h4 {
+        margin: 5px 0;
+        font-size: 15px
+      }
+
+      .tile p {
+        font-size: 13.7px;
+        margin: 6px 0 0;
+        color: #4d5b72
+      }
+
+      .table-wrap {
+        overflow: auto;
+        margin: 18px 0 22px;
+        border-radius: 13px;
+        border: 1px solid #e3e6f1;
+        -webkit-overflow-scrolling: touch
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 560px;
+        font-size: 13.5px;
+        line-height: 1.55
+      }
+
+      th,
+      td {
+        padding: 13px 15px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid #edf0f5
+      }
+
+      th {
+        background: #f0edfb;
+        color: #4e398f;
+        font-size: 12px;
+        letter-spacing: .15px;
+        font-weight: 800
+      }
+
+      tbody tr:nth-child(even) {
+        background: #fafbfe
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none
+      }
+
+      .flow {
+        margin: 22px 0;
+        display: grid;
+        gap: 9px;
+        justify-items: stretch
+      }
+
+      .flow-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr);
+        gap: 9px;
+        align-items: stretch
+      }
+
+      .flow-box {
+        background: #f3efff;
+        border: 1px solid #ded5fa;
+        padding: 14px 10px;
+        border-radius: 13px;
+        text-align: center;
+        min-width: 0
+      }
+
+      .flow-box:nth-child(2) {
+        background: #edf6ff;
+        border-color: #d5e7ff
+      }
+
+      .flow-box:nth-child(3) {
+        background: #effaf2;
+        border-color: #d4efdd
+      }
+
+      .flow-box:nth-child(4) {
+        background: #fff6eb;
+        border-color: #f3dfc4
+      }
+
+      .flow-box b {
+        display: block;
+        font-size: 13px;
+        color: #30285a
+      }
+
+      .flow-box small {
+        display: block;
+        font-size: 11px;
+        margin-top: 5px;
+        color: #5d6980;
+        line-height: 1.45
+      }
+
+      .flow-arrow {
+        align-self: center;
+        justify-self: center;
+        font-size: 24px;
+        font-weight: 800;
+        color: #9585d4
+      }
+
+      .flow-integrate {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 15px
+      }
+
+      .source-pill {
+        padding: 11px 8px;
+        text-align: center;
+        background: #f0f3ff;
+        border: 1px solid #dfe4f9;
+        border-radius: 11px;
+        font-size: 13px;
+        font-weight: 700
+      }
+
+      .center-arrow {
+        text-align: center;
+        color: #6f50d4;
+        font-size: 29px;
+        line-height: 1.4;
+        font-weight: 800
+      }
+
+      .system-pill {
+        margin: auto;
+        max-width: 600px;
+        padding: 18px 20px;
+        border-radius: 14px;
+        text-align: center;
+        background: linear-gradient(120deg, #6144c9, #9171e5);
+        color: white;
+        font-weight: 800
+      }
+
+      .system-pill span {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 5px;
+        color: #eee7ff
+      }
+
+      .output-pill {
+        border-radius: 13px;
+        padding: 16px;
+        margin: auto;
+        max-width: 600px;
+        background: #eaf8f1;
+        border: 1px solid #bde8cf;
+        text-align: center;
+        color: #19684e;
+        font-weight: 800
+      }
+
+      .steps {
+        counter-reset: step;
+        display: grid;
+        gap: 12px;
+        margin: 18px 0
+      }
+
+      .step {
+        position: relative;
+        background: #fafbfe;
+        border: 1px solid #e7ebf5;
+        border-radius: 14px;
+        padding: 16px 18px 17px 65px
+      }
+
+      .step:before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        top: 15px;
+        left: 17px;
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: #ece5ff;
+        color: #6343c6;
+        font-weight: 800
+      }
+
+      .step h4 {
+        margin: 0 0 7px;
+        font-size: 15px
+      }
+
+      .step p {
+        margin: 5px 0;
+        font-size: 14px
+      }
+
+      .dashboard {
+        border-radius: 16px;
+        border: 1px solid #e3e7f1;
+        padding: 18px;
+        margin: 20px 0;
+        background: #fbfcff
+      }
+
+      .dash-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px
+      }
+
+      .dash-head strong {
+        font-size: 15px
+      }
+
+      .dash-head span {
+        font-size: 11px;
+        color: #7b8496
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px
+      }
+
+      .kpi {
+        background: white;
+        border: 1px solid #e7eaf2;
+        border-radius: 12px;
+        padding: 13px
+      }
+
+      .kpi b {
+        display: block;
+        color: #6045b7;
+        font-size: clamp(16px, 2vw, 23px);
+        line-height: 1.3
+      }
+
+      .kpi small {
+        color: #7d8798;
+        font-size: 11px
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 90px 1fr 70px;
+        gap: 10px;
+        align-items: center;
+        margin: 13px 0;
+        font-size: 12px
+      }
+
+      .bar-track {
+        height: 15px;
+        border-radius: 30px;
+        background: #edeaf9;
+        overflow: hidden
+      }
+
+      .bar-fill {
+        height: 100%;
+        border-radius: 30px;
+        background: linear-gradient(90deg, #7651dd, #b18aef)
+      }
+
+      .bar-value {
+        text-align: right;
+        font-weight: 700;
+        color: #5c5674
+      }
+
+      .answer {
+        padding: 20px;
+        border: 1px solid #cce5d6;
+        border-radius: 14px;
+        background: #f1fbf5
+      }
+
+      .answer h3 {
+        margin: 0 0 10px;
+        color: #17694c
+      }
+
+      .closing {
+        background: linear-gradient(110deg, #efe9ff, #f7f3ff);
+        border: 1px solid #e2d7ff;
+        border-radius: 15px;
+        padding: 21px;
+        margin-top: 19px
+      }
+
+      .footer {
+        text-align: center;
+        color: #7f8ba0;
+        font-size: 12px;
+        margin: 35px 0 0
+      }
+
+      .footer a {
+        color: #674cbd;
+        text-decoration: none
+      }
+
+      /* Mobile navigation and floating controls */
+      .menu-btn {
+        display: none;
+        position: fixed;
+        top: 13px;
+        left: 14px;
+        z-index: 150;
+        border: 0;
+        border-radius: 12px;
+        background: var(--navy);
+        color: white;
+        box-shadow: 0 5px 22px rgba(7, 14, 30, .25);
+        width: 46px;
+        height: 46px;
+        cursor: pointer;
+        font-size: 23px
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, .55);
+        z-index: 80
+      }
+
+      .to-top {
+        position: fixed;
+        right: 24px;
+        bottom: 25px;
+        z-index: 30;
+        width: 45px;
+        height: 45px;
+        border: 0;
+        border-radius: 14px;
+        background: #6f4bda;
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(93, 62, 187, .35);
+        font-size: 22px;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: .2s
+      }
+
+      .to-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0)
+      }
+
+      @media(max-width:1140px) {
+        .tile-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flow-row {
+          grid-template-columns: 1fr;
+          gap: 0
+        }
+
+        .flow-arrow {
+          transform: rotate(90deg)
+        }
+      }
+
+      @media(max-width:850px) {
+        .sidebar {
+          transform: translateX(-105%);
+          transition: transform .25s ease;
+          width: min(300px, 85vw)
+        }
+
+        .sidebar.open {
+          transform: translateX(0)
+        }
+
+        .overlay.show {
+          display: block
+        }
+
+        .menu-btn {
+          display: grid;
+          place-items: center
+        }
+
+        .page {
+          margin-left: 0;
+          padding: 78px 18px 48px
+        }
+
+        .hero {
+          padding: 30px 24px
+        }
+
+        .lesson-section {
+          padding: 24px 20px
+        }
+      }
+
+      @media(max-width:560px) {
+        body {
+          font-size: 15px
+        }
+
+        .page {
+          padding-left: 12px;
+          padding-right: 12px
+        }
+
+        .hero {
+          border-radius: 18px;
+          padding: 28px 21px
+        }
+
+        .hero h1 {
+          font-size: 30px;
+          letter-spacing: -.8px
+        }
+
+        .lesson-section {
+          border-radius: 16px;
+          padding: 21px 17px
+        }
+
+        .tile-grid {
+          grid-template-columns: 1fr
+        }
+
+        .flow-integrate {
+          grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .kpis {
+          grid-template-columns: 1fr
+        }
+
+        .bar-row {
+          grid-template-columns: 68px 1fr 51px;
+          gap: 7px;
+          font-size: 11px
+        }
+
+        .step {
+          padding-right: 13px
+        }
+
+        .to-top {
+          right: 14px;
+          bottom: 15px
+        }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+        html {
+          scroll-behavior: auto
+        }
+
+        *,
+        *:before,
+        *:after {
+          transition: none !important;
+          animation: none !important
+        }
+      }
+
+      =======<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#111827"><meta name="description"
+
+      content="Topic 14.4: Management Information Systems — lesson page coming soon at Tr.Sun Education."><title>Topic 14.4 – Management Information Systems | Tr.Sun Education</title><style> :root {
+        --sidebar-width: 282px;
+        --navy: #111827;
+        --navy-2: #1e293b;
+        --purple: #7653e8;
+        --purple-dark: #5937c5;
+        --bg: #f5f7fc;
+        --surface: #fff;
+        --text: #253047;
+        --muted: #64748b;
+        --border: #e7eaf2;
+        --shadow: 0 8px 28px rgba(25, 33, 60, .045)
+      }
+
+      * {
+        box-sizing: border-box
+      }
+
+      html {
+        scroll-behavior: smooth
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit
+      }
+
+      button {
+        font: inherit;
+        cursor: pointer
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #b69aff;
+        outline-offset: 3px
+      }
+
+      .skip-link {
+        position: fixed;
+        top: -80px;
+        left: 10px;
+        z-index: 2000;
+        padding: 9px 13px;
+        background: #fff;
+        border-radius: 9px
+      }
+
+      .skip-link:focus {
+        top: 10px
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: var(--sidebar-width);
+        height: 100vh;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        background: var(--navy);
+        color: #fff;
+        scrollbar-width: thin;
+        scrollbar-color: #45506a transparent
+      }
+
+      .brand {
+        padding: 28px 18px 23px;
+        border-bottom: 1px solid #30394c
+      }
+
+      .brand-identity {
+        display: flex;
+        align-items: center;
+        gap: 12px
+      }
+
+      .brand-logo {
+        width: 62px;
+        height: 62px;
+        flex: 0 0 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #a06aff, #5837c6);
+        box-shadow: 0 8px 24px rgba(117, 83, 232, .3)
+      }
+
+      .brand-logo svg {
+        width: 49px;
+        height: 49px
+      }
+
+      .brand-text {
+        min-width: 0
+      }
+
+      .brand-text h2 {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.3;
+        color: #fff;
+        letter-spacing: -.5px
+      }
+
+      .brand-text p {
+        margin: 5px 0 0;
+        color: #c4b5fd;
+        font-size: 11px;
+        white-space: nowrap
+      }
+
+      .brand-curriculum {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 1.15px
+      }
+
+      .current-lesson {
+        margin: 22px 13px 13px;
+        padding: 16px;
+        border: 1px solid #4b3a86;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #382b65, #29234a)
+      }
+
+      .current-lesson small {
+        display: block;
+        margin-bottom: 8px;
+        color: #c4b5fd;
+        font-size: 10px;
+        font-weight: 750;
+        letter-spacing: 1px
+      }
+
+      .current-lesson h3 {
+        margin: 0;
+        font-size: 15px;
+        color: #fff
+      }
+
+      .current-lesson p {
+        margin: 4px 0 0;
+        color: #d6d0ea;
+        font-size: 12px;
+        line-height: 1.5
+      }
+
+      .sidebar-label {
+        padding: 18px 23px 12px;
+        color: #8591a8;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.7px
+      }
+
+      .side-nav {
+        padding: 0 12px 18px
+      }
+
+      .side-nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 5px;
+        padding: 11px 12px;
+        color: #cbd5e1;
+        font-size: 12.5px;
+        line-height: 1.4;
+        border-radius: 11px;
+        transition: background .2s, color .2s
+      }
+
+      .side-nav a:hover {
+        background: #283249;
+        color: #fff
+      }
+
+      .side-nav a.active {
+        background: #392b66;
+        color: #fff;
+        box-shadow: inset 3px 0 #a78bfa
+      }
+
+      .nav-number {
+        flex-shrink: 0;
+        width: 42px;
+        height: 30px;
+        display: grid;
+        place-items: center;
+        border-radius: 9px;
+        background: #293449;
+        color: #bac5d8;
+        font-size: 11px;
+        font-weight: 800
+      }
+
+      .side-nav a.active .nav-number {
+        background: #8157ed;
+        color: #fff
+      }
+
+      .sidebar-footer {
+        margin-top: auto;
+        padding: 21px 22px;
+        border-top: 1px solid #30394c;
+        color: #94a3b8;
+        font-size: 12px
+      }
+
+      .sidebar-footer strong {
+        color: #e2e8f0
+      }
+
+      .main {
+        margin-left: var(--sidebar-width);
+        min-height: 100vh;
+        padding: 34px 42px 55px
+      }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto
+      }
+
+      .breadcrumb {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 9px;
+        color: #78849a;
+        font-size: 12px;
+        margin-bottom: 20px
+      }
+
+      .breadcrumb a:hover,
+      .breadcrumb strong {
+        color: #6744d0
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 47px 44px;
+        border-radius: 24px;
+        background: linear-gradient(115deg, #4934b5 0%, #7753e7 55%, #ad72ed 100%);
+        box-shadow: 0 15px 35px rgba(88, 60, 180, .16);
+        color: #fff
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, .15);
+        pointer-events: none
+      }
+
+      .hero::before {
+        width: 360px;
+        height: 360px;
+        right: -100px;
+        top: -200px
+      }
+
+      .hero::after {
+        width: 250px;
+        height: 250px;
+        right: 90px;
+        bottom: -175px
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1
+      }
+
+      .hero-badge {
+        display: inline-block;
+        padding: 7px 15px;
+        background: rgba(255, 255, 255, .16);
+        border: 1px solid rgba(255, 255, 255, .2);
+        border-radius: 30px;
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: .8px
+      }
+
+      .hero h1 {
+        font-size: clamp(28px, 3.6vw, 43px);
+        line-height: 1.2;
+        letter-spacing: -1px;
+        margin: 21px 0 14px
+      }
+
+      .hero p {
+        max-width: 710px;
+        color: #f2ecff;
+        font-size: 15px;
+        margin: 0
+      }
+
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px
+      }
+
+      .hero-tags span {
+        padding: 8px 13px;
+        font-size: 11px;
+        font-weight: 650;
+        border-radius: 9px;
+        background: rgba(255, 255, 255, .15);
+        border: 1px solid rgba(255, 255, 255, .17)
       }
 
       .coming-section {
-        padding: 32px 18px
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: clamp(28px, 5vw, 60px) 26px;
+        margin: 30px 0 26px;
+        box-shadow: var(--shadow);
+        text-align: center
       }
 
-      .lesson-navigation a {
-        width: 100%
+      .status-icon {
+        display: grid;
+        place-items: center;
+        width: 76px;
+        height: 76px;
+        border-radius: 22px;
+        background: #f2edff;
+        color: #7653e8;
+        margin: 0 auto 22px
+      }
+
+      .status-icon svg {
+        width: 39px;
+        height: 39px
+      }
+
+      .status-label {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: 1.4px;
+        font-weight: 800;
+        color: #6b4cc7;
+        text-transform: uppercase;
+        margin-bottom: 8px
+      }
+
+      .coming-section h2 {
+        font-size: clamp(30px, 4vw, 42px);
+        line-height: 1.15;
+        letter-spacing: -1px;
+        margin: 6px 0 15px;
+        color: #253047
+      }
+
+      .coming-section p {
+        max-width: 540px;
+        margin: 0 auto 24px;
+        color: #64748b;
+        font-size: 15px
       }
 
       .notice {
-        padding: 14px
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        max-width: 570px;
+        margin: 0 auto 25px;
+        padding: 16px 18px;
+        border: 1px solid #f7e2b8;
+        border-left: 4px solid #e9a34e;
+        background: #fff8ec;
+        border-radius: 12px;
+        text-align: left;
+        color: #7c581f;
+        font-size: 13px
       }
-    }
 
-    @media(prefers-reduced-motion:reduce) {
-      html {
-        scroll-behavior: auto
+      .notice svg {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+        margin-top: 2px;
+        color: #b57622
       }
 
-      *,
-      *::before,
-      *::after {
-        transition-duration: .01ms !important
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        margin-top: 24px
       }
-    }
->>>>>>> 1ec3acb5c848d612da4ce5b2b48a206d273a9d48
-  </style>
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 45px;
+        padding: 11px 17px;
+        border-radius: 11px;
+        font-size: 13px;
+        font-weight: 750;
+        border: 1px solid #e0d4ff;
+        background: #f2edff;
+        color: #5a38c3;
+        transition: background .2s, transform .2s
+      }
+
+      .btn:hover {
+        background: #e8deff;
+        transform: translateY(-1px)
+      }
+
+      .btn.primary {
+        border-color: #6644cd;
+        background: #6746cf;
+        color: #fff
+      }
+
+      .btn.primary:hover {
+        background: #4f31b0
+      }
+
+      .lesson-navigation {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 24px 0 10px
+      }
+
+      .lesson-navigation a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 11px;
+        font-size: 13px;
+        font-weight: 750;
+        color: #5a38c3;
+        background: #f2edff;
+        border: 1px solid #e0d4ff
+      }
+
+      .lesson-navigation a:hover {
+        background: #e8deff
+      }
+
+      .page-footer {
+        padding: 25px 15px;
+        text-align: center;
+        color: #8995aa;
+        font-size: 12px
+      }
+
+      .page-footer p {
+        margin: 4px
+      }
+
+      .page-footer strong {
+        color: #5a38c3
+      }
+
+      .menu-button,
+      .overlay {
+        display: none
+      }
+
+      @media(max-width:1050px) {
+        .main {
+          padding: 28px
+        }
+      }
+
+      @media(max-width:800px) {
+        .sidebar {
+          width: 280px;
+          transform: translateX(-100%);
+          transition: transform .3s ease;
+          box-shadow: 14px 0 35px rgba(0, 0, 0, .2)
+        }
+
+        .sidebar.open {
+          transform: translateX(0)
+        }
+
+        .main {
+          margin-left: 0;
+          padding: 78px 16px 35px
+        }
+
+        .menu-button {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          position: fixed;
+          top: 15px;
+          left: 16px;
+          z-index: 900;
+          padding: 10px 15px;
+          border: 0;
+          border-radius: 11px;
+          background: var(--navy-2);
+          color: #fff;
+          box-shadow: 0 5px 18px #0002
+        }
+
+        .overlay.show {
+          display: block;
+          position: fixed;
+          inset: 0;
+          background: rgba(13, 18, 30, .65);
+          z-index: 950;
+          border: 0;
+          width: 100%
+        }
+
+        .hero {
+          padding: 33px 25px;
+          border-radius: 19px
+        }
+
+        .hero p {
+          font-size: 14px
+        }
+      }
+
+      @media(max-width:550px) {
+        .hero {
+          padding: 29px 21px
+        }
+
+        .hero h1 {
+          font-size: clamp(27px, 7vw, 36px)
+        }
+
+        .hero-tags {
+          gap: 7px
+        }
+
+        .hero-tags span {
+          font-size: 10px
+        }
+
+        .coming-section {
+          padding: 32px 18px
+        }
+
+        .lesson-navigation a {
+          width: 100%
+        }
+
+        .notice {
+          padding: 14px
+        }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+        html {
+          scroll-behavior: auto
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: .01ms !important
+        }
+      }
+
+      >>>>>>>1ec3acb5c848d612da4ce5b2b48a206d273a9d48
+    </style>
 </head>
 
 <body>
-<<<<<<< HEAD
-  <div id="progress" class="reading-progress" aria-hidden="true"></div>
-  <button id="menuBtn" class="menu-btn" type="button" aria-label="Open lesson menu" aria-expanded="false" aria-controls="sidebar">☰</button>
-  <div id="overlay" class="overlay" aria-hidden="true"></div>
-
-  <aside id="sidebar" class="sidebar" aria-label="Lesson navigation">
-    <a class="brand" href="#top">
-      <span class="brand-icon" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 18 24 8l20 10-20 10L4 18Z" fill="white"/>
-          <path d="M13 25v9c7 6 15 6 22 0v-9L24 31 13 25Z" fill="white" opacity=".9"/>
-          <path d="M43 19v12" stroke="white" stroke-width="2.7" stroke-linecap="round"/>
-          <circle cx="43" cy="33" r="3" fill="white"/>
-        </svg>
-      </span>
-      <span><span class="brand-title">Tr.Sun Education</span><span class="brand-sub">LEARN · EXPLORE · ACHIEVE</span></span>
-    </a>
-    <div class="side-course"><small>Current Lesson</small><strong>14.4 Management Information Systems</strong><span>Edexcel IAL IT · A2 · Unit 3</span></div>
-    <div class="side-label">Lesson Contents</div>
-    <nav class="side-nav">
-      <a href="#introduction" class="active"><span class="nav-number">01</span> Introduction to MIS</a>
-      <a href="#record-keeping"><span class="nav-number">02</span> Record Keeping</a>
-      <a href="#decision-making"><span class="nav-number">03</span> Decision-Making</a>
-      <a href="#project-management"><span class="nav-number">04</span> Project Management</a>
-      <a href="#esho-shoes"><span class="nav-number">05</span> Esho Shoes Case Study</a>
-      <a href="#marius"><span class="nav-number">06</span> Marius's Grocery Stores</a>
-      <a href="#benefits"><span class="nav-number">07</span> Benefits of MIS</a>
-      <a href="#limitations"><span class="nav-number">08</span> Limitations &amp; Challenges</a>
-      <a href="#distinctions"><span class="nav-number">09</span> Important Distinctions</a>
-      <a href="#summary"><span class="nav-number">10</span> Key Concepts Summary</a>
-    </nav>
-    <div class="side-bottom">Edexcel International A Level IT<br><strong>Topic 14 · Using IT Systems in Organisations</strong><br>Created by Tr. Sun</div>
-  </aside>
-
-  <main id="top" class="page">
-    <div class="content">
-      <div class="breadcrumbs"><a href="#top">Tr.Sun Education</a><span>›</span><span>Topic 14</span><span>›</span><span>Lesson 14.4</span></div>
-      <header class="hero">
-        <div class="hero-tags"><span>A2 LEVEL</span><span>UNIT 3</span><span>TOPIC 14.4</span></div>
-        <h1>Management Information Systems (MIS)</h1>
-        <p>Understand how an MIS collects information from different sources, supports decision-making, improves project management and helps organisations operate efficiently.</p>
-        <div class="hero-foot"><span>📘 Detailed lesson notes</span><span>🏭 Esho Shoes case study</span><span>🥬 Grocery-store analysis activity</span></div>
-      </header>
-
-      <section id="introduction" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">01</span> Getting started</div>
-        <h2>Introduction to Management Information Systems</h2>
-        <h3>1.1 What is a Management Information System?</h3>
-        <div class="definition"><strong>Key definition — MIS:</strong> A Management Information System is a computer-based system that collects, processes, stores and presents information from different sources to help managers operate an organisation effectively and make informed decisions.</div>
-        <p>An MIS combines information from different departments and sometimes from outside the organisation. Its main purpose is to <strong>turn large amounts of data into meaningful information that managers can use to improve organisational performance.</strong></p>
-        <p>For example, a supermarket may use an EPOS system to record sales, a CRM system to store customer information, an inventory system to track stock and a finance system to record income and expenditure. An MIS can draw information from all these systems to give managers a clearer view of overall performance.</p>
-        <div class="flow" aria-label="Diagram showing information from several business systems being combined by an MIS">
-          <div class="flow-integrate"><div class="source-pill">🛒 EPOS<br><small>Sales</small></div><div class="source-pill">👥 CRM<br><small>Customers</small></div><div class="source-pill">📦 Inventory<br><small>Stock</small></div><div class="source-pill">💰 Finance<br><small>Costs</small></div></div>
-          <div class="center-arrow">↓</div><div class="system-pill">MANAGEMENT INFORMATION SYSTEM<span>Collects · Processes · Stores · Analyses</span></div><div class="center-arrow">↓</div><div class="output-pill">📊 Reports &amp; Dashboards → Informed Management Decisions</div>
-        </div>
-        <h3>1.2 Main purposes of an MIS</h3>
-        <div class="tile-grid"><div class="tile"><span class="emoji">🗂️</span><h4>Record Keeping</h4><p>Collect and maintain reliable organisational information from many sources.</p></div><div class="tile"><span class="emoji">🧠</span><h4>Decision-Making</h4><p>Provide accurate information to help managers choose effective actions.</p></div><div class="tile"><span class="emoji">📋</span><h4>Project Management</h4><p>Provide insights that help plan, monitor and improve projects.</p></div></div>
-      </section>
-
-      <section id="record-keeping" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">02</span> Core function</div>
-        <h2>Record Keeping</h2>
-        <h3>2.1 What is record keeping in an MIS?</h3>
-        <p>Record keeping involves collecting, organising, storing and maintaining data about an organisation's activities. An MIS can bring together information from different systems so managers do not need to examine many separate databases or reports.</p>
-        <h3>2.2 Sources of data</h3>
-        <h4>A. Internal data sources</h4>
-        <p><strong>Internal data</strong> is generated by activities taking place inside the organisation.</p>
-        <div class="table-wrap"><table><thead><tr><th>Internal source</th><th>Information collected</th><th>Management use</th></tr></thead><tbody>
-          <tr><td><strong>EPOS</strong></td><td>Sales transactions, products, transaction times</td><td>Identify popular products and sales trends</td></tr>
-          <tr><td><strong>CRM</strong></td><td>Customer details, preferences, purchase history</td><td>Improve customer service and marketing</td></tr>
-          <tr><td><strong>Employee database</strong></td><td>Attendance, working hours, job roles, salaries</td><td>Manage staffing and workforce requirements</td></tr>
-          <tr><td><strong>Financial records</strong></td><td>Revenue, expenses, budgets, profits</td><td>Monitor financial performance</td></tr>
-          <tr><td><strong>Inventory system</strong></td><td>Stock levels, deliveries, reorder points</td><td>Prevent shortages and overstocking</td></tr>
-          <tr><td><strong>Operational systems</strong></td><td>Production output, downtime, delays</td><td>Improve efficiency and productivity</td></tr>
-        </tbody></table></div>
-        <div class="example"><strong>Example — Clothing store:</strong> An EPOS system records jacket purchases. The MIS shows that winter jackets sell faster in November, helping the manager order enough stock for expected demand.</div>
-        <h4>B. External data sources</h4>
-        <p><strong>External data</strong> is collected from outside the organisation and can provide context about markets, competitors and wider economic conditions.</p>
-        <div class="table-wrap"><table><thead><tr><th>External source</th><th>Information provided</th><th>Management use</th></tr></thead><tbody>
-          <tr><td><strong>Market research</strong></td><td>Customer needs and buying behaviour</td><td>Identify opportunities for new products</td></tr>
-          <tr><td><strong>Industry reports</strong></td><td>Trends and developments</td><td>Understand industry changes</td></tr>
-          <tr><td><strong>Government databases</strong></td><td>Economic, demographic and regulatory data</td><td>Support business planning</td></tr>
-          <tr><td><strong>Competitor analysis</strong></td><td>Competitor products, prices and promotions</td><td>Improve pricing and marketing strategy</td></tr>
-          <tr><td><strong>Supplier information</strong></td><td>Prices, availability and delivery schedules</td><td>Plan purchasing and select suppliers</td></tr>
-        </tbody></table></div>
-        <div class="example"><strong>Example — Smartphone company:</strong> Internal sales records indicate a fall in sales of older models, while market research shows growing interest in longer battery life. Managers may use both types of data to guide product development.</div>
-        <h3>2.3 Data processing in MIS</h3>
-        <p>Data is not necessarily useful as soon as it is collected. An MIS may need to validate, cleanse and aggregate data before presenting reliable information.</p>
-        <div class="tile-grid"><div class="tile"><span class="emoji">✅</span><h4>Validation</h4><p>Checks data against predefined rules. Example: reject a negative stock quantity. Valid data is not necessarily factually correct.</p></div><div class="tile"><span class="emoji">🧹</span><h4>Cleansing</h4><p>Finds and corrects or removes incomplete, inaccurate, inconsistent or duplicate records.</p></div><div class="tile"><span class="emoji">📈</span><h4>Aggregation</h4><p>Combines many records into summaries, such as total daily sales or average weekly revenue.</p></div></div>
-        <h4>Aggregation example</h4>
-        <p>Instead of reading thousands of individual transactions, a manager can view a summary of daily sales:</p>
-        <div class="table-wrap"><table><thead><tr><th>Day</th><th>Sales (illustrative)</th></tr></thead><tbody><tr><td>Monday</td><td>$2,000</td></tr><tr><td>Tuesday</td><td>$2,500</td></tr><tr><td>Wednesday</td><td>$3,000</td></tr><tr><td>Thursday</td><td>$2,800</td></tr><tr><td>Friday</td><td>$3,700</td></tr><tr><td><strong>Total</strong></td><td><strong>$14,000</strong></td></tr><tr><td><strong>Daily average</strong></td><td><strong>$2,800</strong></td></tr></tbody></table></div>
-        <h3>2.4 Types of data handled by an MIS</h3>
-        <div class="table-wrap"><table><thead><tr><th>Data type</th><th>Meaning</th><th>Example</th></tr></thead><tbody>
-          <tr><td><strong>Structured</strong></td><td>Organised in a predefined format, often database tables</td><td>Sales table with product ID, price and quantity</td></tr>
-          <tr><td><strong>Semi-structured</strong></td><td>Has some organisational structure but no fixed table format</td><td>JSON and XML records</td></tr>
-          <tr><td><strong>Unstructured</strong></td><td>Does not follow a predefined database structure</td><td>Emails, photos, reports and free-text feedback</td></tr>
-        </tbody></table></div>
-        <div class="important"><strong>Remember:</strong> An MIS can work with all three types, but extracting useful meaning from unstructured information may require additional processing or analytical tools. Its role is to reduce complexity and present accessible information.</div>
-      </section>
-
-      <section id="decision-making" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">03</span> Core function</div>
-        <h2>Decision-Making</h2>
-        <h3>3.1 How does MIS support decisions?</h3>
-        <p>Managers must make decisions about staffing, budgets, production, purchasing, marketing and business strategy. An MIS supports these decisions by presenting <strong>high-quality information</strong> instead of leaving managers to rely only on assumptions.</p>
-        <p>Useful management information should be accurate, relevant, up to date, sufficiently complete, accessible to authorised users and easy to understand.</p>
-        <h3>3.2 From raw data to an informed decision</h3>
-        <div class="flow-row" aria-label="Data to decision process"><div class="flow-box"><b>1. Raw data</b><small>500 sales transactions recorded</small></div><span class="flow-arrow" aria-hidden="true">↓</span><div class="flow-box"><b>2. Processing</b><small>MIS compares product categories</small></div><span class="flow-arrow" aria-hidden="true">↓</span><div class="flow-box"><b>3. Information</b><small>Cold-drink sales rose by 30%</small></div><span class="flow-arrow" aria-hidden="true">↓</span><div class="flow-box"><b>4. Decision</b><small>Manager considers increasing stock</small></div></div>
-        <p class="subtle">Illustrative example. The increase should be evaluated alongside factors such as cost and expected demand before ordering more stock.</p>
-        <h3>3.3 Information retrieval tools</h3>
-        <div class="table-wrap"><table><thead><tr><th>Tool</th><th>Function</th><th>Example</th></tr></thead><tbody>
-          <tr><td><strong>Query tools</strong></td><td>Request specific information using defined conditions</td><td>Find products with monthly sales below 100 units</td></tr>
-          <tr><td><strong>Search tools</strong></td><td>Locate records, documents and reports</td><td>Find a supplier or customer record</td></tr>
-          <tr><td><strong>Dashboards</strong></td><td>Summarise key figures visually using charts and indicators</td><td>Display today's revenue, stock and sales by branch</td></tr>
-          <tr><td><strong>Reporting interfaces</strong></td><td>Produce detailed or summary reports</td><td>Generate a monthly finance report</td></tr>
-        </tbody></table></div>
-        <h3>3.4 Dashboards in an MIS</h3>
-        <p>Dashboards can show key performance indicators (KPIs), comparisons, trends and warnings so that managers can recognise important changes quickly.</p>
-        <div class="dashboard"><div class="dash-head"><strong>📊 Retail Performance Dashboard</strong><span>Example · Monthly figures</span></div>
-          <div class="kpis"><div class="kpi"><b>$85,000</b><small>Revenue</small></div><div class="kpi"><b>4,200</b><small>Orders</small></div><div class="kpi"><b>7.5%</b><small>Stock waste rate</small></div></div>
-          <h4>Sales by category</h4>
-          <div class="bar-row"><span>Food</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">$35,000</span></div>
-          <div class="bar-row"><span>Clothing</span><div class="bar-track"><div class="bar-fill" style="width:71.4%"></div></div><span class="bar-value">$25,000</span></div>
-          <div class="bar-row"><span>Electronics</span><div class="bar-track"><div class="bar-fill" style="width:42.9%"></div></div><span class="bar-value">$15,000</span></div>
-          <div class="bar-row"><span>Other</span><div class="bar-track"><div class="bar-fill" style="width:28.6%"></div></div><span class="bar-value">$10,000</span></div>
-          <p class="subtle">All dashboard figures are hypothetical and demonstrate how information may be presented.</p>
-        </div>
-        <div class="example"><strong>Manager's interpretation:</strong> Food generates the highest revenue. Before increasing investment, the manager should also examine profit margins, costs and sales trends.</div>
-        <h3>3.5 Levels of decision-making</h3>
-        <div class="table-wrap"><table><thead><tr><th>Level</th><th>Time horizon</th><th>Example decision</th></tr></thead><tbody>
-          <tr><td><strong>Operational</strong></td><td>Short-term, daily activities</td><td>How many staff should work tomorrow?</td></tr>
-          <tr><td><strong>Tactical</strong></td><td>Medium-term department planning</td><td>Should we increase orders for the next three months?</td></tr>
-          <tr><td><strong>Strategic</strong></td><td>Long-term direction</td><td>Should the company open another store?</td></tr>
-        </tbody></table></div>
-        <div class="important"><strong>Key point:</strong> MIS is especially useful for management reporting and tactical decisions, but its information can also support operational and strategic decisions.</div>
-      </section>
-
-      <section id="project-management" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">04</span> Core function</div>
-        <h2>Project Management</h2>
-        <h3>4.1 How does MIS support project management?</h3>
-        <p>Project management involves planning, organising, monitoring and controlling resources to achieve defined objectives within time, cost and quality constraints.</p>
-        <p>An MIS can be integrated with project management software or used alongside it. Project management tools manage activities such as tasks, schedules and responsibilities; an MIS provides broader organisational information that helps managers determine whether projects are necessary, feasible and successful.</p>
-        <h3>4.2 Uses of MIS in project management</h3>
-        <div class="table-wrap"><table><thead><tr><th>Use</th><th>Explanation</th><th>Example</th></tr></thead><tbody>
-          <tr><td><strong>Identify opportunities</strong></td><td>Find business problems worth improving</td><td>Production data reveals a slow process</td></tr>
-          <tr><td><strong>Identify risks</strong></td><td>Reveal patterns that may cause project problems</td><td>Supplier reports show repeated late deliveries</td></tr>
-          <tr><td><strong>Allocate resources</strong></td><td>Show staffing, equipment and budget availability</td><td>Add staff to an understaffed project</td></tr>
-          <tr><td><strong>Monitor progress</strong></td><td>Compare actual performance with plans</td><td>Report that spending exceeds the budget</td></tr>
-          <tr><td><strong>Contingency planning</strong></td><td>Support alternative plans for possible disruptions</td><td>Identify a backup supplier</td></tr>
-          <tr><td><strong>Evaluate outcomes</strong></td><td>Compare results before and after the project</td><td>Measure whether machine upgrades increased output</td></tr>
-        </tbody></table></div>
-        <h3>4.3 Example: Manufacturing improvement project</h3>
-        <div class="steps"><div class="step"><h4>Collect operational evidence</h4><p>The MIS combines production output, maintenance records, employee hours and equipment downtime.</p></div><div class="step"><h4>Identify a problem</h4><p>Analysis shows that one machine regularly breaks down and delays production.</p></div><div class="step"><h4>Plan an improvement</h4><p>Managers start a project to repair, upgrade or replace the machine.</p></div><div class="step"><h4>Monitor and evaluate</h4><p>MIS reports help compare project costs, delays and output before and after the work.</p></div></div>
-        <div class="info"><strong>Difference to remember:</strong> Project management software primarily manages project tasks, schedules and resources. MIS provides the wider information needed to evaluate decisions and organisational performance. The two systems work well together.</div>
-      </section>
-
-      <section id="esho-shoes" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">05</span> Case Study</div>
-        <h2>Case Study: Esho Shoes</h2>
-        <h3>5.1 Background</h3><p>Esho Shoes manufactures shoes. The owner uses an MIS to identify opportunities to improve production efficiency. The MIS shows that one manufacturing line experiences frequent stoppages during <strong>shift changes</strong>.</p>
-        <h3>5.2 Identifying the problem</h3>
-        <p>Without the MIS, a manager might only see that the total number of shoes produced has fallen. For illustration, the factory might normally produce 1,000 pairs a day but now produces 850. This shows reduced output but does not explain the cause.</p>
-        <p>The MIS combines data on equipment downtime, production delays and operational inefficiencies. It reveals a recurring pattern: <strong>stoppages occur particularly often during shift changeovers.</strong></p>
-        <h3>5.3 Explanation of the findings</h3><p>The MIS provides contextual information. Instead of knowing only that output has decreased, the manager can identify <em>when</em> and <em>where</em> problems occur and investigate their likely causes.</p>
-        <h3>5.4 Possible implications and causes</h3>
-        <ul><li><strong>Poor communication:</strong> Outgoing employees fail to explain unfinished tasks.</li><li><strong>Equipment setup delays:</strong> Incoming staff need extra time to prepare machines.</li><li><strong>Coordination problems:</strong> Responsibility for tasks is unclear.</li><li><strong>Dependence on individuals:</strong> Only certain workers can complete critical tasks.</li><li><strong>Maintenance interruptions:</strong> Servicing coincides with shift changes.</li></ul>
-        <div class="important"><strong>Important:</strong> These are possible explanations, not automatically proven causes. The manager should investigate further rather than assuming the MIS has established the cause.</div>
-        <h3>5.5 Actions taken by management</h3>
-        <div class="tile-grid"><div class="tile"><span class="emoji">🤝</span><h4>Improve handovers</h4><p>Use clearer shift-change procedures, handover notes and better communication between teams.</p></div><div class="tile"><span class="emoji">🎓</span><h4>Cross-train staff</h4><p>Train employees to perform several roles, reducing reliance on particular individuals.</p></div><div class="tile"><span class="emoji">🔧</span><h4>Adjust maintenance</h4><p>Schedule maintenance more effectively to reduce unexpected production downtime.</p></div></div>
-        <h3>5.6 Impact of MIS</h3>
-        <div class="table-wrap"><table><thead><tr><th>Without MIS</th><th>With MIS</th></tr></thead><tbody>
-          <tr><td>Manager sees reduced output only</td><td>Manager identifies downtime associated with shift changes</td></tr>
-          <tr><td>Root causes are harder to investigate</td><td>Manager can focus on likely causes</td></tr>
-          <tr><td>Decisions may depend more on guesswork</td><td>Actions can be supported by detailed evidence</td></tr>
-          <tr><td>Improvements might target the wrong area</td><td>Training, maintenance and handovers can be reviewed</td></tr>
-          <tr><td>Problems may take longer to resolve</td><td>Potential solutions may be identified more quickly</td></tr>
-        </tbody></table></div>
-        <div class="example"><strong>Case study conclusion:</strong> The MIS helps Esho Shoes find a more specific pattern behind reduced output. Better-focused improvements may save time and money, but results should be checked using later performance data.</div>
-      </section>
-
-      <section id="marius" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">06</span> Applied activity</div>
-        <h2>Activity 5: Marius's Grocery Stores</h2>
-        <h3>6.1 Scenario</h3>
-        <p>Marius owns five grocery stores across a large city. The stores sell fresh fruit and vegetables and use EPOS systems to record sales. Marius notices that one store wastes significantly more fresh produce than the other four.</p>
-        <div class="definition"><strong>Activity question:</strong> Analyse how Marius could use the EPOS system and the data it provides to discover why one store wastes more fresh produce than the others.</div>
-        <h3>6.2 Step-by-step analysis</h3>
-        <div class="steps">
-          <div class="step"><h4>Compare sales across all five stores</h4><p>Examine the amount and type of produce sold, and compare daily and weekly demand. A particular branch may sell fewer strawberries or leafy vegetables than the others.</p></div>
-          <div class="step"><h4>Compare deliveries and actual sales</h4><p>Combine EPOS records with inventory and delivery data. If a store receives 200 packs of strawberries but sells only 120 before they spoil, it may be ordering too much.</p></div>
-          <div class="step"><h4>Look for sales patterns</h4><p>Check when different products sell most frequently. A branch may receive large Monday deliveries even though most demand occurs at weekends.</p></div>
-          <div class="step"><h4>Identify the products with the most waste</h4><p>Compare sales with stock and wastage records to calculate waste rates and locate the main problem products.</p></div>
-          <div class="step"><h4>Investigate other possible causes</h4><p>Check stock rotation, storage temperatures, pricing, promotions and the accuracy of demand forecasts.</p></div>
-          <div class="step"><h4>Take action and evaluate</h4><p>Adjust order quantities, delivery frequency and stock handling. Continue reviewing data to see whether the waste rate decreases.</p></div>
-        </div>
-        <h3>6.3 Comparing waste rates</h3>
-        <p>The table shows a hypothetical example. The waste rate is the amount wasted divided by the amount of produce available, multiplied by 100.</p>
-        <div class="table-wrap"><table><thead><tr><th>Store</th><th>Produce available</th><th>Produce wasted</th><th>Waste rate</th></tr></thead><tbody>
-          <tr><td>A</td><td>500 kg</td><td>20 kg</td><td>4%</td></tr><tr><td>B</td><td>450 kg</td><td>18 kg</td><td>4%</td></tr><tr><td><strong>C</strong></td><td><strong>400 kg</strong></td><td><strong>60 kg</strong></td><td><strong>15%</strong></td></tr><tr><td>D</td><td>550 kg</td><td>22 kg</td><td>4%</td></tr><tr><td>E</td><td>600 kg</td><td>30 kg</td><td>5%</td></tr>
-        </tbody></table></div>
-        <div class="dashboard"><div class="dash-head"><strong>🥬 Fresh produce waste by store</strong><span>Illustrative figures</span></div>
-          <div class="bar-row"><span>Store A</span><div class="bar-track"><div class="bar-fill" style="width:26.7%"></div></div><span class="bar-value">4%</span></div>
-          <div class="bar-row"><span>Store B</span><div class="bar-track"><div class="bar-fill" style="width:26.7%"></div></div><span class="bar-value">4%</span></div>
-          <div class="bar-row"><span><strong>Store C</strong></span><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#c25871,#ec91a6)"></div></div><span class="bar-value">15%</span></div>
-          <div class="bar-row"><span>Store D</span><div class="bar-track"><div class="bar-fill" style="width:26.7%"></div></div><span class="bar-value">4%</span></div>
-          <div class="bar-row"><span>Store E</span><div class="bar-track"><div class="bar-fill" style="width:33.3%"></div></div><span class="bar-value">5%</span></div>
-        </div>
-        <p>The results highlight Store C. Marius should investigate this branch further to find out why so much produce is discarded.</p>
-        <h3>6.4 Other possible causes of waste</h3>
-        <div class="table-wrap"><table><thead><tr><th>Possible cause</th><th>Evidence to investigate</th></tr></thead><tbody>
-          <tr><td>Overstocking</td><td>Deliveries repeatedly exceed customer demand</td></tr>
-          <tr><td>Poor stock rotation</td><td>Older products are left unsold while newer products are displayed first</td></tr>
-          <tr><td>Poor storage conditions</td><td>Temperature logs show unsuitable conditions</td></tr>
-          <tr><td>Uncompetitive prices</td><td>Customers buy fewer products due to higher prices</td></tr>
-          <tr><td>Weak forecasting</td><td>Orders are based on inaccurate demand estimates</td></tr>
-          <tr><td>Ineffective promotions</td><td>Produce remains unsold despite available stock</td></tr>
-        </tbody></table></div>
-        <h3>6.5 Corrective actions</h3>
-        <ul><li>Reduce order quantities for products with consistently low demand.</li><li>Arrange smaller, more frequent deliveries.</li><li>Use historical EPOS data to improve demand forecasts.</li><li>Discount suitable products approaching their sell-by dates, where appropriate.</li><li>Improve storage conditions and first-in, first-out stock rotation.</li><li>Train staff in handling and monitoring fresh produce.</li></ul>
-        <div class="important"><strong>Crucial distinction:</strong> EPOS data records what is sold. It cannot by itself prove how much produce has spoiled or why. For a reliable explanation, Marius should also use inventory, delivery, wastage and storage records, plus staff observations.</div>
-        <h3>6.6 Complete analytical answer</h3>
-        <div class="answer"><h3>Model response</h3>
-          <p>Marius could use the EPOS system to analyse sales data for fresh fruit and vegetables across all five stores. Comparing the number and types of products sold would help him identify whether the branch with the greatest wastage has lower demand for particular products.</p>
-          <p>He could also examine sales patterns on different days to determine whether stock deliveries and order quantities match customer demand. For example, if large quantities of fresh produce are delivered but only a small proportion is sold before spoilage, the store may be overstocking.</p>
-          <p>By combining EPOS data with inventory, delivery and wastage records, Marius could compare the amount purchased, sold and discarded. This would allow him to calculate waste rates and identify the products that contribute most to the problem.</p>
-          <p>He should then investigate other possible causes, such as poor storage, ineffective stock rotation or inaccurate demand forecasts. Marius could use his findings to change order quantities, improve delivery schedules and introduce suitable promotions.</p>
-          <p>These actions could reduce wasted stock and financial losses. By continuing to monitor sales and wastage figures, he could assess whether the changes improved profitability.</p>
-        </div>
-      </section>
-
-      <section id="benefits" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">07</span> Evaluation</div>
-        <h2>Benefits of Management Information Systems</h2>
-        <p>An effective MIS can improve management decisions and everyday operations throughout an organisation.</p>
-        <div class="table-wrap"><table><thead><tr><th>Benefit</th><th>Explanation</th><th>Example</th></tr></thead><tbody>
-          <tr><td><strong>Better decisions</strong></td><td>Relevant information supports evidence-based choices</td><td>Use sales trends to select stock</td></tr>
-          <tr><td><strong>Improved efficiency</strong></td><td>Highlights delays and unnecessary activities</td><td>Reduce manufacturing downtime</td></tr>
-          <tr><td><strong>Better record keeping</strong></td><td>Combines information across departments</td><td>Link sales, employee and finance information</td></tr>
-          <tr><td><strong>Faster access</strong></td><td>Reports make useful information easier to find</td><td>View daily sales in a dashboard</td></tr>
-          <tr><td><strong>Improved planning</strong></td><td>Identifies trends and resource requirements</td><td>Prepare for seasonal increases in demand</td></tr>
-          <tr><td><strong>Cost reduction</strong></td><td>Reveals waste and avoidable expenditure</td><td>Reduce grocery-store food waste</td></tr>
-          <tr><td><strong>Performance monitoring</strong></td><td>Compares actual outcomes with targets</td><td>Track spending against a project budget</td></tr>
-          <tr><td><strong>Better coordination</strong></td><td>Provides consistent information for teams</td><td>Finance and sales use linked reports</td></tr>
-        </tbody></table></div>
-      </section>
-
-      <section id="limitations" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">08</span> Evaluation</div>
-        <h2>Limitations and Challenges of MIS</h2>
-        <div class="tile-grid"><div class="tile"><span class="emoji">⚠️</span><h4>Data quality</h4><p>Incorrect or out-of-date records can produce misleading reports and poor decisions.</p></div><div class="tile"><span class="emoji">💸</span><h4>Implementation costs</h4><p>Software, hardware, integration, maintenance and staff training can be expensive.</p></div><div class="tile"><span class="emoji">🔐</span><h4>Security and privacy</h4><p>Sensitive financial, employee and customer information must be protected against unauthorised access.</p></div><div class="tile"><span class="emoji">💻</span><h4>Technology dependence</h4><p>Failures and outages may prevent access to vital information. Backups and recovery plans are needed.</p></div><div class="tile"><span class="emoji">🌊</span><h4>Information overload</h4><p>Too much poorly organised information can hide important findings and make decisions harder.</p></div><div class="tile"><span class="emoji">🧑‍💼</span><h4>Human judgement</h4><p>MIS supports decisions, but managers must investigate causes and interpret information carefully.</p></div></div>
-        <div class="example"><strong>Example:</strong> A report shows falling sales. The cause might be competition, seasonal demand, changing preferences or an internal problem. The MIS shows the trend; managers must investigate before choosing an action.</div>
-      </section>
-
-      <section id="distinctions" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">09</span> Essential understanding</div>
-        <h2>Important Distinctions</h2>
-        <h3>9.1 MIS compared with EPOS and CRM</h3>
-        <div class="table-wrap"><table><thead><tr><th>System</th><th>Main purpose</th></tr></thead><tbody><tr><td><strong>EPOS</strong></td><td>Records sales transactions and provides sales information</td></tr><tr><td><strong>CRM</strong></td><td>Manages customer information, interactions and relationships</td></tr><tr><td><strong>MIS</strong></td><td>Combines and analyses information from multiple sources to support management decisions</td></tr></tbody></table></div>
-        <div class="example"><strong>Example:</strong> EPOS records a shoe sale; CRM may store the customer's purchase history; MIS can combine sales, customer, stock and financial information to support next month's purchasing decisions.</div>
-        <h3>9.2 Data, information and knowledge</h3>
-        <div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Data</strong></td><td>Raw facts or figures</td><td>120, 150, 130, 100</td></tr><tr><td><strong>Information</strong></td><td>Processed data given context and meaning</td><td>A report shows sales have decreased</td></tr><tr><td><strong>Knowledge</strong></td><td>Understanding gained by interpreting information</td><td>Manager identifies a likely cause and appropriate response</td></tr></tbody></table></div>
-        <div class="important"><strong>Remember:</strong> Data becomes valuable when it is processed, interpreted in context and used to inform appropriate actions.</div>
-      </section>
-
-      <section id="summary" class="lesson-section">
-        <div class="section-kicker"><span class="section-num">10</span> Final overview</div>
-        <h2>Topic 14.4 — Key Concepts Summary</h2>
-        <div class="table-wrap"><table><thead><tr><th>Concept</th><th>Key point</th></tr></thead><tbody>
-          <tr><td><strong>MIS</strong></td><td>Collects, processes, stores and presents information for managers</td></tr>
-          <tr><td><strong>Internal data</strong></td><td>EPOS, CRM, employee, financial and operational information</td></tr>
-          <tr><td><strong>External data</strong></td><td>Market research, government data and competitor information</td></tr>
-          <tr><td><strong>Validation</strong></td><td>Checks data against rules</td></tr>
-          <tr><td><strong>Cleansing</strong></td><td>Improves data quality by fixing or removing problematic records</td></tr>
-          <tr><td><strong>Aggregation</strong></td><td>Combines individual values into useful summaries</td></tr>
-          <tr><td><strong>Structured data</strong></td><td>Has a predefined format</td></tr>
-          <tr><td><strong>Semi-structured data</strong></td><td>Has some structure but not necessarily fixed tables</td></tr>
-          <tr><td><strong>Unstructured data</strong></td><td>Has no predefined database structure</td></tr>
-          <tr><td><strong>Decision-making</strong></td><td>Uses relevant, reliable information to choose actions</td></tr>
-          <tr><td><strong>Retrieval tools</strong></td><td>Queries, search tools, dashboards and reports</td></tr>
-          <tr><td><strong>Project management</strong></td><td>MIS supports identifying risks, allocating resources and tracking outcomes</td></tr>
-          <tr><td><strong>Esho Shoes</strong></td><td>Analysis highlights downtime during shift changes</td></tr>
-          <tr><td><strong>Marius's stores</strong></td><td>EPOS, stock and waste records can reveal likely causes of food wastage</td></tr>
-        </tbody></table></div>
-        <div class="closing"><strong>Overall conclusion</strong><p>A Management Information System helps turn organisational data into useful information. By combining internal and external sources, it enables managers to identify patterns, understand problems, monitor performance and make better-informed decisions.</p><p><strong>Central idea:</strong> MIS supports management decisions with evidence rather than assumptions, while human judgement remains necessary to interpret the findings.</p></div>
-      </section>
-      <footer class="footer">Tr.Sun Education · Learn · Explore · Achieve<br>Edexcel International A Level Information Technology · Topic 14.4<br>Created by <strong>Tr. Sun</strong></footer>
+  <<<<<<< HEAD <div id="progress" class="reading-progress" aria-hidden="true">
     </div>
-  </main>
-  <button id="toTop" class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
-  <script>
-    (function () {
-      'use strict';
-      const menuBtn = document.getElementById('menuBtn');
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      const progress = document.getElementById('progress');
-      const toTop = document.getElementById('toTop');
-      const links = Array.from(document.querySelectorAll('.side-nav a'));
-      const sections = Array.from(document.querySelectorAll('.lesson-section'));
-      function toggleMenu(isOpen) {
-        sidebar.classList.toggle('open', isOpen);
-        overlay.classList.toggle('show', isOpen);
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-        menuBtn.setAttribute('aria-label', isOpen ? 'Close lesson menu' : 'Open lesson menu');
-        menuBtn.textContent = isOpen ? '✕' : '☰';
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      }
-      menuBtn.addEventListener('click', function () { toggleMenu(!sidebar.classList.contains('open')); });
-      overlay.addEventListener('click', function () { toggleMenu(false); });
-      document.addEventListener('keydown', function (event) { if (event.key === 'Escape') toggleMenu(false); });
-      links.forEach(function (link) { link.addEventListener('click', function () { toggleMenu(false); }); });
-      function onScroll() {
-        const available = document.documentElement.scrollHeight - window.innerHeight;
-        progress.style.width = (available > 0 ? Math.min(100, Math.max(0, window.scrollY / available * 100)) : 100) + '%';
-        toTop.classList.toggle('visible', window.scrollY > 440);
-        let current = sections[0].id;
-        sections.forEach(function (section) { if (section.getBoundingClientRect().top <= 155) current = section.id; });
-        links.forEach(function (link) {
-          const active = link.getAttribute('href') === '#' + current;
-          link.classList.toggle('active', active);
-          if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+    <button id="menuBtn" class="menu-btn" type="button" aria-label="Open lesson menu" aria-expanded="false"
+      aria-controls="sidebar">☰</button>
+    <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+    <aside id="sidebar" class="sidebar" aria-label="Lesson navigation">
+      <a class="brand" href="#top">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 18 24 8l20 10-20 10L4 18Z" fill="white" />
+            <path d="M13 25v9c7 6 15 6 22 0v-9L24 31 13 25Z" fill="white" opacity=".9" />
+            <path d="M43 19v12" stroke="white" stroke-width="2.7" stroke-linecap="round" />
+            <circle cx="43" cy="33" r="3" fill="white" />
+          </svg>
+        </span>
+        <span><span class="brand-title">Tr.Sun Education</span><span class="brand-sub">LEARN · EXPLORE ·
+            ACHIEVE</span></span>
+      </a>
+      <div class="side-course"><small>Current Lesson</small><strong>14.4 Management Information
+          Systems</strong><span>Edexcel IAL IT · A2 · Unit 3</span></div>
+      <div class="side-label">Lesson Contents</div>
+      <nav class="side-nav">
+        <a href="#introduction" class="active"><span class="nav-number">01</span> Introduction to MIS</a>
+        <a href="#record-keeping"><span class="nav-number">02</span> Record Keeping</a>
+        <a href="#decision-making"><span class="nav-number">03</span> Decision-Making</a>
+        <a href="#project-management"><span class="nav-number">04</span> Project Management</a>
+        <a href="#esho-shoes"><span class="nav-number">05</span> Esho Shoes Case Study</a>
+        <a href="#marius"><span class="nav-number">06</span> Marius's Grocery Stores</a>
+        <a href="#benefits"><span class="nav-number">07</span> Benefits of MIS</a>
+        <a href="#limitations"><span class="nav-number">08</span> Limitations &amp; Challenges</a>
+        <a href="#distinctions"><span class="nav-number">09</span> Important Distinctions</a>
+        <a href="#summary"><span class="nav-number">10</span> Key Concepts Summary</a>
+      </nav>
+      <div class="side-bottom">Edexcel International A Level IT<br><strong>Topic 14 · Using IT Systems in
+          Organisations</strong><br>Created by Tr. Sun</div>
+    </aside>
+
+    <main id="top" class="page">
+      <div class="content">
+        <div class="breadcrumbs"><a href="#top">Tr.Sun Education</a><span>›</span><span>Topic
+            14</span><span>›</span><span>Lesson 14.4</span></div>
+        <header class="hero">
+          <div class="hero-tags"><span>A2 LEVEL</span><span>UNIT 3</span><span>TOPIC 14.4</span></div>
+          <h1>Management Information Systems (MIS)</h1>
+          <p>Understand how an MIS collects information from different sources, supports decision-making, improves
+            project management and helps organisations operate efficiently.</p>
+          <div class="hero-foot"><span>📘 Detailed lesson notes</span><span>🏭 Esho Shoes case study</span><span>🥬
+              Grocery-store analysis activity</span></div>
+        </header>
+
+        <section id="introduction" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">01</span> Getting started</div>
+          <h2>Introduction to Management Information Systems</h2>
+          <h3>1.1 What is a Management Information System?</h3>
+          <div class="definition"><strong>Key definition — MIS:</strong> A Management Information System is a
+            computer-based system that collects, processes, stores and presents information from different sources to
+            help managers operate an organisation effectively and make informed decisions.</div>
+          <p>An MIS combines information from different departments and sometimes from outside the organisation. Its
+            main purpose is to <strong>turn large amounts of data into meaningful information that managers can use to
+              improve organisational performance.</strong></p>
+          <p>For example, a supermarket may use an EPOS system to record sales, a CRM system to store customer
+            information, an inventory system to track stock and a finance system to record income and expenditure. An
+            MIS can draw information from all these systems to give managers a clearer view of overall performance.</p>
+          <div class="flow"
+            aria-label="Diagram showing information from several business systems being combined by an MIS">
+            <div class="flow-integrate">
+              <div class="source-pill">🛒 EPOS<br><small>Sales</small></div>
+              <div class="source-pill">👥 CRM<br><small>Customers</small></div>
+              <div class="source-pill">📦 Inventory<br><small>Stock</small></div>
+              <div class="source-pill">💰 Finance<br><small>Costs</small></div>
+            </div>
+            <div class="center-arrow">↓</div>
+            <div class="system-pill">MANAGEMENT INFORMATION SYSTEM<span>Collects · Processes · Stores · Analyses</span>
+            </div>
+            <div class="center-arrow">↓</div>
+            <div class="output-pill">📊 Reports &amp; Dashboards → Informed Management Decisions</div>
+          </div>
+          <h3>1.2 Main purposes of an MIS</h3>
+          <div class="tile-grid">
+            <div class="tile"><span class="emoji">🗂️</span>
+              <h4>Record Keeping</h4>
+              <p>Collect and maintain reliable organisational information from many sources.</p>
+            </div>
+            <div class="tile"><span class="emoji">🧠</span>
+              <h4>Decision-Making</h4>
+              <p>Provide accurate information to help managers choose effective actions.</p>
+            </div>
+            <div class="tile"><span class="emoji">📋</span>
+              <h4>Project Management</h4>
+              <p>Provide insights that help plan, monitor and improve projects.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="record-keeping" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">02</span> Core function</div>
+          <h2>Record Keeping</h2>
+          <h3>2.1 What is record keeping in an MIS?</h3>
+          <p>Record keeping involves collecting, organising, storing and maintaining data about an organisation's
+            activities. An MIS can bring together information from different systems so managers do not need to examine
+            many separate databases or reports.</p>
+          <h3>2.2 Sources of data</h3>
+          <h4>A. Internal data sources</h4>
+          <p><strong>Internal data</strong> is generated by activities taking place inside the organisation.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Internal source</th>
+                  <th>Information collected</th>
+                  <th>Management use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>EPOS</strong></td>
+                  <td>Sales transactions, products, transaction times</td>
+                  <td>Identify popular products and sales trends</td>
+                </tr>
+                <tr>
+                  <td><strong>CRM</strong></td>
+                  <td>Customer details, preferences, purchase history</td>
+                  <td>Improve customer service and marketing</td>
+                </tr>
+                <tr>
+                  <td><strong>Employee database</strong></td>
+                  <td>Attendance, working hours, job roles, salaries</td>
+                  <td>Manage staffing and workforce requirements</td>
+                </tr>
+                <tr>
+                  <td><strong>Financial records</strong></td>
+                  <td>Revenue, expenses, budgets, profits</td>
+                  <td>Monitor financial performance</td>
+                </tr>
+                <tr>
+                  <td><strong>Inventory system</strong></td>
+                  <td>Stock levels, deliveries, reorder points</td>
+                  <td>Prevent shortages and overstocking</td>
+                </tr>
+                <tr>
+                  <td><strong>Operational systems</strong></td>
+                  <td>Production output, downtime, delays</td>
+                  <td>Improve efficiency and productivity</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example"><strong>Example — Clothing store:</strong> An EPOS system records jacket purchases. The
+            MIS shows that winter jackets sell faster in November, helping the manager order enough stock for expected
+            demand.</div>
+          <h4>B. External data sources</h4>
+          <p><strong>External data</strong> is collected from outside the organisation and can provide context about
+            markets, competitors and wider economic conditions.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>External source</th>
+                  <th>Information provided</th>
+                  <th>Management use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Market research</strong></td>
+                  <td>Customer needs and buying behaviour</td>
+                  <td>Identify opportunities for new products</td>
+                </tr>
+                <tr>
+                  <td><strong>Industry reports</strong></td>
+                  <td>Trends and developments</td>
+                  <td>Understand industry changes</td>
+                </tr>
+                <tr>
+                  <td><strong>Government databases</strong></td>
+                  <td>Economic, demographic and regulatory data</td>
+                  <td>Support business planning</td>
+                </tr>
+                <tr>
+                  <td><strong>Competitor analysis</strong></td>
+                  <td>Competitor products, prices and promotions</td>
+                  <td>Improve pricing and marketing strategy</td>
+                </tr>
+                <tr>
+                  <td><strong>Supplier information</strong></td>
+                  <td>Prices, availability and delivery schedules</td>
+                  <td>Plan purchasing and select suppliers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example"><strong>Example — Smartphone company:</strong> Internal sales records indicate a fall in
+            sales of older models, while market research shows growing interest in longer battery life. Managers may use
+            both types of data to guide product development.</div>
+          <h3>2.3 Data processing in MIS</h3>
+          <p>Data is not necessarily useful as soon as it is collected. An MIS may need to validate, cleanse and
+            aggregate data before presenting reliable information.</p>
+          <div class="tile-grid">
+            <div class="tile"><span class="emoji">✅</span>
+              <h4>Validation</h4>
+              <p>Checks data against predefined rules. Example: reject a negative stock quantity. Valid data is not
+                necessarily factually correct.</p>
+            </div>
+            <div class="tile"><span class="emoji">🧹</span>
+              <h4>Cleansing</h4>
+              <p>Finds and corrects or removes incomplete, inaccurate, inconsistent or duplicate records.</p>
+            </div>
+            <div class="tile"><span class="emoji">📈</span>
+              <h4>Aggregation</h4>
+              <p>Combines many records into summaries, such as total daily sales or average weekly revenue.</p>
+            </div>
+          </div>
+          <h4>Aggregation example</h4>
+          <p>Instead of reading thousands of individual transactions, a manager can view a summary of daily sales:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Sales (illustrative)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Monday</td>
+                  <td>$2,000</td>
+                </tr>
+                <tr>
+                  <td>Tuesday</td>
+                  <td>$2,500</td>
+                </tr>
+                <tr>
+                  <td>Wednesday</td>
+                  <td>$3,000</td>
+                </tr>
+                <tr>
+                  <td>Thursday</td>
+                  <td>$2,800</td>
+                </tr>
+                <tr>
+                  <td>Friday</td>
+                  <td>$3,700</td>
+                </tr>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td><strong>$14,000</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Daily average</strong></td>
+                  <td><strong>$2,800</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>2.4 Types of data handled by an MIS</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data type</th>
+                  <th>Meaning</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Structured</strong></td>
+                  <td>Organised in a predefined format, often database tables</td>
+                  <td>Sales table with product ID, price and quantity</td>
+                </tr>
+                <tr>
+                  <td><strong>Semi-structured</strong></td>
+                  <td>Has some organisational structure but no fixed table format</td>
+                  <td>JSON and XML records</td>
+                </tr>
+                <tr>
+                  <td><strong>Unstructured</strong></td>
+                  <td>Does not follow a predefined database structure</td>
+                  <td>Emails, photos, reports and free-text feedback</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="important"><strong>Remember:</strong> An MIS can work with all three types, but extracting useful
+            meaning from unstructured information may require additional processing or analytical tools. Its role is to
+            reduce complexity and present accessible information.</div>
+        </section>
+
+        <section id="decision-making" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">03</span> Core function</div>
+          <h2>Decision-Making</h2>
+          <h3>3.1 How does MIS support decisions?</h3>
+          <p>Managers must make decisions about staffing, budgets, production, purchasing, marketing and business
+            strategy. An MIS supports these decisions by presenting <strong>high-quality information</strong> instead of
+            leaving managers to rely only on assumptions.</p>
+          <p>Useful management information should be accurate, relevant, up to date, sufficiently complete, accessible
+            to authorised users and easy to understand.</p>
+          <h3>3.2 From raw data to an informed decision</h3>
+          <div class="flow-row" aria-label="Data to decision process">
+            <div class="flow-box"><b>1. Raw data</b><small>500 sales transactions recorded</small></div><span
+              class="flow-arrow" aria-hidden="true">↓</span>
+            <div class="flow-box"><b>2. Processing</b><small>MIS compares product categories</small></div><span
+              class="flow-arrow" aria-hidden="true">↓</span>
+            <div class="flow-box"><b>3. Information</b><small>Cold-drink sales rose by 30%</small></div><span
+              class="flow-arrow" aria-hidden="true">↓</span>
+            <div class="flow-box"><b>4. Decision</b><small>Manager considers increasing stock</small></div>
+          </div>
+          <p class="subtle">Illustrative example. The increase should be evaluated alongside factors such as cost and
+            expected demand before ordering more stock.</p>
+          <h3>3.3 Information retrieval tools</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tool</th>
+                  <th>Function</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Query tools</strong></td>
+                  <td>Request specific information using defined conditions</td>
+                  <td>Find products with monthly sales below 100 units</td>
+                </tr>
+                <tr>
+                  <td><strong>Search tools</strong></td>
+                  <td>Locate records, documents and reports</td>
+                  <td>Find a supplier or customer record</td>
+                </tr>
+                <tr>
+                  <td><strong>Dashboards</strong></td>
+                  <td>Summarise key figures visually using charts and indicators</td>
+                  <td>Display today's revenue, stock and sales by branch</td>
+                </tr>
+                <tr>
+                  <td><strong>Reporting interfaces</strong></td>
+                  <td>Produce detailed or summary reports</td>
+                  <td>Generate a monthly finance report</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>3.4 Dashboards in an MIS</h3>
+          <p>Dashboards can show key performance indicators (KPIs), comparisons, trends and warnings so that managers
+            can recognise important changes quickly.</p>
+          <div class="dashboard">
+            <div class="dash-head"><strong>📊 Retail Performance Dashboard</strong><span>Example · Monthly
+                figures</span></div>
+            <div class="kpis">
+              <div class="kpi"><b>$85,000</b><small>Revenue</small></div>
+              <div class="kpi"><b>4,200</b><small>Orders</small></div>
+              <div class="kpi"><b>7.5%</b><small>Stock waste rate</small></div>
+            </div>
+            <h4>Sales by category</h4>
+            <div class="bar-row"><span>Food</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:100%"></div>
+              </div><span class="bar-value">$35,000</span>
+            </div>
+            <div class="bar-row"><span>Clothing</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:71.4%"></div>
+              </div><span class="bar-value">$25,000</span>
+            </div>
+            <div class="bar-row"><span>Electronics</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:42.9%"></div>
+              </div><span class="bar-value">$15,000</span>
+            </div>
+            <div class="bar-row"><span>Other</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:28.6%"></div>
+              </div><span class="bar-value">$10,000</span>
+            </div>
+            <p class="subtle">All dashboard figures are hypothetical and demonstrate how information may be presented.
+            </p>
+          </div>
+          <div class="example"><strong>Manager's interpretation:</strong> Food generates the highest revenue. Before
+            increasing investment, the manager should also examine profit margins, costs and sales trends.</div>
+          <h3>3.5 Levels of decision-making</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Time horizon</th>
+                  <th>Example decision</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Operational</strong></td>
+                  <td>Short-term, daily activities</td>
+                  <td>How many staff should work tomorrow?</td>
+                </tr>
+                <tr>
+                  <td><strong>Tactical</strong></td>
+                  <td>Medium-term department planning</td>
+                  <td>Should we increase orders for the next three months?</td>
+                </tr>
+                <tr>
+                  <td><strong>Strategic</strong></td>
+                  <td>Long-term direction</td>
+                  <td>Should the company open another store?</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="important"><strong>Key point:</strong> MIS is especially useful for management reporting and
+            tactical decisions, but its information can also support operational and strategic decisions.</div>
+        </section>
+
+        <section id="project-management" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">04</span> Core function</div>
+          <h2>Project Management</h2>
+          <h3>4.1 How does MIS support project management?</h3>
+          <p>Project management involves planning, organising, monitoring and controlling resources to achieve defined
+            objectives within time, cost and quality constraints.</p>
+          <p>An MIS can be integrated with project management software or used alongside it. Project management tools
+            manage activities such as tasks, schedules and responsibilities; an MIS provides broader organisational
+            information that helps managers determine whether projects are necessary, feasible and successful.</p>
+          <h3>4.2 Uses of MIS in project management</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Use</th>
+                  <th>Explanation</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Identify opportunities</strong></td>
+                  <td>Find business problems worth improving</td>
+                  <td>Production data reveals a slow process</td>
+                </tr>
+                <tr>
+                  <td><strong>Identify risks</strong></td>
+                  <td>Reveal patterns that may cause project problems</td>
+                  <td>Supplier reports show repeated late deliveries</td>
+                </tr>
+                <tr>
+                  <td><strong>Allocate resources</strong></td>
+                  <td>Show staffing, equipment and budget availability</td>
+                  <td>Add staff to an understaffed project</td>
+                </tr>
+                <tr>
+                  <td><strong>Monitor progress</strong></td>
+                  <td>Compare actual performance with plans</td>
+                  <td>Report that spending exceeds the budget</td>
+                </tr>
+                <tr>
+                  <td><strong>Contingency planning</strong></td>
+                  <td>Support alternative plans for possible disruptions</td>
+                  <td>Identify a backup supplier</td>
+                </tr>
+                <tr>
+                  <td><strong>Evaluate outcomes</strong></td>
+                  <td>Compare results before and after the project</td>
+                  <td>Measure whether machine upgrades increased output</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>4.3 Example: Manufacturing improvement project</h3>
+          <div class="steps">
+            <div class="step">
+              <h4>Collect operational evidence</h4>
+              <p>The MIS combines production output, maintenance records, employee hours and equipment downtime.</p>
+            </div>
+            <div class="step">
+              <h4>Identify a problem</h4>
+              <p>Analysis shows that one machine regularly breaks down and delays production.</p>
+            </div>
+            <div class="step">
+              <h4>Plan an improvement</h4>
+              <p>Managers start a project to repair, upgrade or replace the machine.</p>
+            </div>
+            <div class="step">
+              <h4>Monitor and evaluate</h4>
+              <p>MIS reports help compare project costs, delays and output before and after the work.</p>
+            </div>
+          </div>
+          <div class="info"><strong>Difference to remember:</strong> Project management software primarily manages
+            project tasks, schedules and resources. MIS provides the wider information needed to evaluate decisions and
+            organisational performance. The two systems work well together.</div>
+        </section>
+
+        <section id="esho-shoes" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">05</span> Case Study</div>
+          <h2>Case Study: Esho Shoes</h2>
+          <h3>5.1 Background</h3>
+          <p>Esho Shoes manufactures shoes. The owner uses an MIS to identify opportunities to improve production
+            efficiency. The MIS shows that one manufacturing line experiences frequent stoppages during <strong>shift
+              changes</strong>.</p>
+          <h3>5.2 Identifying the problem</h3>
+          <p>Without the MIS, a manager might only see that the total number of shoes produced has fallen. For
+            illustration, the factory might normally produce 1,000 pairs a day but now produces 850. This shows reduced
+            output but does not explain the cause.</p>
+          <p>The MIS combines data on equipment downtime, production delays and operational inefficiencies. It reveals a
+            recurring pattern: <strong>stoppages occur particularly often during shift changeovers.</strong></p>
+          <h3>5.3 Explanation of the findings</h3>
+          <p>The MIS provides contextual information. Instead of knowing only that output has decreased, the manager can
+            identify <em>when</em> and <em>where</em> problems occur and investigate their likely causes.</p>
+          <h3>5.4 Possible implications and causes</h3>
+          <ul>
+            <li><strong>Poor communication:</strong> Outgoing employees fail to explain unfinished tasks.</li>
+            <li><strong>Equipment setup delays:</strong> Incoming staff need extra time to prepare machines.</li>
+            <li><strong>Coordination problems:</strong> Responsibility for tasks is unclear.</li>
+            <li><strong>Dependence on individuals:</strong> Only certain workers can complete critical tasks.</li>
+            <li><strong>Maintenance interruptions:</strong> Servicing coincides with shift changes.</li>
+          </ul>
+          <div class="important"><strong>Important:</strong> These are possible explanations, not automatically proven
+            causes. The manager should investigate further rather than assuming the MIS has established the cause.</div>
+          <h3>5.5 Actions taken by management</h3>
+          <div class="tile-grid">
+            <div class="tile"><span class="emoji">🤝</span>
+              <h4>Improve handovers</h4>
+              <p>Use clearer shift-change procedures, handover notes and better communication between teams.</p>
+            </div>
+            <div class="tile"><span class="emoji">🎓</span>
+              <h4>Cross-train staff</h4>
+              <p>Train employees to perform several roles, reducing reliance on particular individuals.</p>
+            </div>
+            <div class="tile"><span class="emoji">🔧</span>
+              <h4>Adjust maintenance</h4>
+              <p>Schedule maintenance more effectively to reduce unexpected production downtime.</p>
+            </div>
+          </div>
+          <h3>5.6 Impact of MIS</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Without MIS</th>
+                  <th>With MIS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Manager sees reduced output only</td>
+                  <td>Manager identifies downtime associated with shift changes</td>
+                </tr>
+                <tr>
+                  <td>Root causes are harder to investigate</td>
+                  <td>Manager can focus on likely causes</td>
+                </tr>
+                <tr>
+                  <td>Decisions may depend more on guesswork</td>
+                  <td>Actions can be supported by detailed evidence</td>
+                </tr>
+                <tr>
+                  <td>Improvements might target the wrong area</td>
+                  <td>Training, maintenance and handovers can be reviewed</td>
+                </tr>
+                <tr>
+                  <td>Problems may take longer to resolve</td>
+                  <td>Potential solutions may be identified more quickly</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example"><strong>Case study conclusion:</strong> The MIS helps Esho Shoes find a more specific
+            pattern behind reduced output. Better-focused improvements may save time and money, but results should be
+            checked using later performance data.</div>
+        </section>
+
+        <section id="marius" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">06</span> Applied activity</div>
+          <h2>Activity 5: Marius's Grocery Stores</h2>
+          <h3>6.1 Scenario</h3>
+          <p>Marius owns five grocery stores across a large city. The stores sell fresh fruit and vegetables and use
+            EPOS systems to record sales. Marius notices that one store wastes significantly more fresh produce than the
+            other four.</p>
+          <div class="definition"><strong>Activity question:</strong> Analyse how Marius could use the EPOS system and
+            the data it provides to discover why one store wastes more fresh produce than the others.</div>
+          <h3>6.2 Step-by-step analysis</h3>
+          <div class="steps">
+            <div class="step">
+              <h4>Compare sales across all five stores</h4>
+              <p>Examine the amount and type of produce sold, and compare daily and weekly demand. A particular branch
+                may sell fewer strawberries or leafy vegetables than the others.</p>
+            </div>
+            <div class="step">
+              <h4>Compare deliveries and actual sales</h4>
+              <p>Combine EPOS records with inventory and delivery data. If a store receives 200 packs of strawberries
+                but sells only 120 before they spoil, it may be ordering too much.</p>
+            </div>
+            <div class="step">
+              <h4>Look for sales patterns</h4>
+              <p>Check when different products sell most frequently. A branch may receive large Monday deliveries even
+                though most demand occurs at weekends.</p>
+            </div>
+            <div class="step">
+              <h4>Identify the products with the most waste</h4>
+              <p>Compare sales with stock and wastage records to calculate waste rates and locate the main problem
+                products.</p>
+            </div>
+            <div class="step">
+              <h4>Investigate other possible causes</h4>
+              <p>Check stock rotation, storage temperatures, pricing, promotions and the accuracy of demand forecasts.
+              </p>
+            </div>
+            <div class="step">
+              <h4>Take action and evaluate</h4>
+              <p>Adjust order quantities, delivery frequency and stock handling. Continue reviewing data to see whether
+                the waste rate decreases.</p>
+            </div>
+          </div>
+          <h3>6.3 Comparing waste rates</h3>
+          <p>The table shows a hypothetical example. The waste rate is the amount wasted divided by the amount of
+            produce available, multiplied by 100.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Store</th>
+                  <th>Produce available</th>
+                  <th>Produce wasted</th>
+                  <th>Waste rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A</td>
+                  <td>500 kg</td>
+                  <td>20 kg</td>
+                  <td>4%</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>450 kg</td>
+                  <td>18 kg</td>
+                  <td>4%</td>
+                </tr>
+                <tr>
+                  <td><strong>C</strong></td>
+                  <td><strong>400 kg</strong></td>
+                  <td><strong>60 kg</strong></td>
+                  <td><strong>15%</strong></td>
+                </tr>
+                <tr>
+                  <td>D</td>
+                  <td>550 kg</td>
+                  <td>22 kg</td>
+                  <td>4%</td>
+                </tr>
+                <tr>
+                  <td>E</td>
+                  <td>600 kg</td>
+                  <td>30 kg</td>
+                  <td>5%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dashboard">
+            <div class="dash-head"><strong>🥬 Fresh produce waste by store</strong><span>Illustrative figures</span>
+            </div>
+            <div class="bar-row"><span>Store A</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:26.7%"></div>
+              </div><span class="bar-value">4%</span>
+            </div>
+            <div class="bar-row"><span>Store B</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:26.7%"></div>
+              </div><span class="bar-value">4%</span>
+            </div>
+            <div class="bar-row"><span><strong>Store C</strong></span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#c25871,#ec91a6)"></div>
+              </div><span class="bar-value">15%</span>
+            </div>
+            <div class="bar-row"><span>Store D</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:26.7%"></div>
+              </div><span class="bar-value">4%</span>
+            </div>
+            <div class="bar-row"><span>Store E</span>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:33.3%"></div>
+              </div><span class="bar-value">5%</span>
+            </div>
+          </div>
+          <p>The results highlight Store C. Marius should investigate this branch further to find out why so much
+            produce is discarded.</p>
+          <h3>6.4 Other possible causes of waste</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Possible cause</th>
+                  <th>Evidence to investigate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Overstocking</td>
+                  <td>Deliveries repeatedly exceed customer demand</td>
+                </tr>
+                <tr>
+                  <td>Poor stock rotation</td>
+                  <td>Older products are left unsold while newer products are displayed first</td>
+                </tr>
+                <tr>
+                  <td>Poor storage conditions</td>
+                  <td>Temperature logs show unsuitable conditions</td>
+                </tr>
+                <tr>
+                  <td>Uncompetitive prices</td>
+                  <td>Customers buy fewer products due to higher prices</td>
+                </tr>
+                <tr>
+                  <td>Weak forecasting</td>
+                  <td>Orders are based on inaccurate demand estimates</td>
+                </tr>
+                <tr>
+                  <td>Ineffective promotions</td>
+                  <td>Produce remains unsold despite available stock</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>6.5 Corrective actions</h3>
+          <ul>
+            <li>Reduce order quantities for products with consistently low demand.</li>
+            <li>Arrange smaller, more frequent deliveries.</li>
+            <li>Use historical EPOS data to improve demand forecasts.</li>
+            <li>Discount suitable products approaching their sell-by dates, where appropriate.</li>
+            <li>Improve storage conditions and first-in, first-out stock rotation.</li>
+            <li>Train staff in handling and monitoring fresh produce.</li>
+          </ul>
+          <div class="important"><strong>Crucial distinction:</strong> EPOS data records what is sold. It cannot by
+            itself prove how much produce has spoiled or why. For a reliable explanation, Marius should also use
+            inventory, delivery, wastage and storage records, plus staff observations.</div>
+          <h3>6.6 Complete analytical answer</h3>
+          <div class="answer">
+            <h3>Model response</h3>
+            <p>Marius could use the EPOS system to analyse sales data for fresh fruit and vegetables across all five
+              stores. Comparing the number and types of products sold would help him identify whether the branch with
+              the greatest wastage has lower demand for particular products.</p>
+            <p>He could also examine sales patterns on different days to determine whether stock deliveries and order
+              quantities match customer demand. For example, if large quantities of fresh produce are delivered but only
+              a small proportion is sold before spoilage, the store may be overstocking.</p>
+            <p>By combining EPOS data with inventory, delivery and wastage records, Marius could compare the amount
+              purchased, sold and discarded. This would allow him to calculate waste rates and identify the products
+              that contribute most to the problem.</p>
+            <p>He should then investigate other possible causes, such as poor storage, ineffective stock rotation or
+              inaccurate demand forecasts. Marius could use his findings to change order quantities, improve delivery
+              schedules and introduce suitable promotions.</p>
+            <p>These actions could reduce wasted stock and financial losses. By continuing to monitor sales and wastage
+              figures, he could assess whether the changes improved profitability.</p>
+          </div>
+        </section>
+
+        <section id="benefits" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">07</span> Evaluation</div>
+          <h2>Benefits of Management Information Systems</h2>
+          <p>An effective MIS can improve management decisions and everyday operations throughout an organisation.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Benefit</th>
+                  <th>Explanation</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Better decisions</strong></td>
+                  <td>Relevant information supports evidence-based choices</td>
+                  <td>Use sales trends to select stock</td>
+                </tr>
+                <tr>
+                  <td><strong>Improved efficiency</strong></td>
+                  <td>Highlights delays and unnecessary activities</td>
+                  <td>Reduce manufacturing downtime</td>
+                </tr>
+                <tr>
+                  <td><strong>Better record keeping</strong></td>
+                  <td>Combines information across departments</td>
+                  <td>Link sales, employee and finance information</td>
+                </tr>
+                <tr>
+                  <td><strong>Faster access</strong></td>
+                  <td>Reports make useful information easier to find</td>
+                  <td>View daily sales in a dashboard</td>
+                </tr>
+                <tr>
+                  <td><strong>Improved planning</strong></td>
+                  <td>Identifies trends and resource requirements</td>
+                  <td>Prepare for seasonal increases in demand</td>
+                </tr>
+                <tr>
+                  <td><strong>Cost reduction</strong></td>
+                  <td>Reveals waste and avoidable expenditure</td>
+                  <td>Reduce grocery-store food waste</td>
+                </tr>
+                <tr>
+                  <td><strong>Performance monitoring</strong></td>
+                  <td>Compares actual outcomes with targets</td>
+                  <td>Track spending against a project budget</td>
+                </tr>
+                <tr>
+                  <td><strong>Better coordination</strong></td>
+                  <td>Provides consistent information for teams</td>
+                  <td>Finance and sales use linked reports</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="limitations" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">08</span> Evaluation</div>
+          <h2>Limitations and Challenges of MIS</h2>
+          <div class="tile-grid">
+            <div class="tile"><span class="emoji">⚠️</span>
+              <h4>Data quality</h4>
+              <p>Incorrect or out-of-date records can produce misleading reports and poor decisions.</p>
+            </div>
+            <div class="tile"><span class="emoji">💸</span>
+              <h4>Implementation costs</h4>
+              <p>Software, hardware, integration, maintenance and staff training can be expensive.</p>
+            </div>
+            <div class="tile"><span class="emoji">🔐</span>
+              <h4>Security and privacy</h4>
+              <p>Sensitive financial, employee and customer information must be protected against unauthorised access.
+              </p>
+            </div>
+            <div class="tile"><span class="emoji">💻</span>
+              <h4>Technology dependence</h4>
+              <p>Failures and outages may prevent access to vital information. Backups and recovery plans are needed.
+              </p>
+            </div>
+            <div class="tile"><span class="emoji">🌊</span>
+              <h4>Information overload</h4>
+              <p>Too much poorly organised information can hide important findings and make decisions harder.</p>
+            </div>
+            <div class="tile"><span class="emoji">🧑‍💼</span>
+              <h4>Human judgement</h4>
+              <p>MIS supports decisions, but managers must investigate causes and interpret information carefully.</p>
+            </div>
+          </div>
+          <div class="example"><strong>Example:</strong> A report shows falling sales. The cause might be competition,
+            seasonal demand, changing preferences or an internal problem. The MIS shows the trend; managers must
+            investigate before choosing an action.</div>
+        </section>
+
+        <section id="distinctions" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">09</span> Essential understanding</div>
+          <h2>Important Distinctions</h2>
+          <h3>9.1 MIS compared with EPOS and CRM</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>System</th>
+                  <th>Main purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>EPOS</strong></td>
+                  <td>Records sales transactions and provides sales information</td>
+                </tr>
+                <tr>
+                  <td><strong>CRM</strong></td>
+                  <td>Manages customer information, interactions and relationships</td>
+                </tr>
+                <tr>
+                  <td><strong>MIS</strong></td>
+                  <td>Combines and analyses information from multiple sources to support management decisions</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example"><strong>Example:</strong> EPOS records a shoe sale; CRM may store the customer's purchase
+            history; MIS can combine sales, customer, stock and financial information to support next month's purchasing
+            decisions.</div>
+          <h3>9.2 Data, information and knowledge</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>Meaning</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Data</strong></td>
+                  <td>Raw facts or figures</td>
+                  <td>120, 150, 130, 100</td>
+                </tr>
+                <tr>
+                  <td><strong>Information</strong></td>
+                  <td>Processed data given context and meaning</td>
+                  <td>A report shows sales have decreased</td>
+                </tr>
+                <tr>
+                  <td><strong>Knowledge</strong></td>
+                  <td>Understanding gained by interpreting information</td>
+                  <td>Manager identifies a likely cause and appropriate response</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="important"><strong>Remember:</strong> Data becomes valuable when it is processed, interpreted in
+            context and used to inform appropriate actions.</div>
+        </section>
+
+        <section id="summary" class="lesson-section">
+          <div class="section-kicker"><span class="section-num">10</span> Final overview</div>
+          <h2>Topic 14.4 — Key Concepts Summary</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Concept</th>
+                  <th>Key point</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>MIS</strong></td>
+                  <td>Collects, processes, stores and presents information for managers</td>
+                </tr>
+                <tr>
+                  <td><strong>Internal data</strong></td>
+                  <td>EPOS, CRM, employee, financial and operational information</td>
+                </tr>
+                <tr>
+                  <td><strong>External data</strong></td>
+                  <td>Market research, government data and competitor information</td>
+                </tr>
+                <tr>
+                  <td><strong>Validation</strong></td>
+                  <td>Checks data against rules</td>
+                </tr>
+                <tr>
+                  <td><strong>Cleansing</strong></td>
+                  <td>Improves data quality by fixing or removing problematic records</td>
+                </tr>
+                <tr>
+                  <td><strong>Aggregation</strong></td>
+                  <td>Combines individual values into useful summaries</td>
+                </tr>
+                <tr>
+                  <td><strong>Structured data</strong></td>
+                  <td>Has a predefined format</td>
+                </tr>
+                <tr>
+                  <td><strong>Semi-structured data</strong></td>
+                  <td>Has some structure but not necessarily fixed tables</td>
+                </tr>
+                <tr>
+                  <td><strong>Unstructured data</strong></td>
+                  <td>Has no predefined database structure</td>
+                </tr>
+                <tr>
+                  <td><strong>Decision-making</strong></td>
+                  <td>Uses relevant, reliable information to choose actions</td>
+                </tr>
+                <tr>
+                  <td><strong>Retrieval tools</strong></td>
+                  <td>Queries, search tools, dashboards and reports</td>
+                </tr>
+                <tr>
+                  <td><strong>Project management</strong></td>
+                  <td>MIS supports identifying risks, allocating resources and tracking outcomes</td>
+                </tr>
+                <tr>
+                  <td><strong>Esho Shoes</strong></td>
+                  <td>Analysis highlights downtime during shift changes</td>
+                </tr>
+                <tr>
+                  <td><strong>Marius's stores</strong></td>
+                  <td>EPOS, stock and waste records can reveal likely causes of food wastage</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="closing"><strong>Overall conclusion</strong>
+            <p>A Management Information System helps turn organisational data into useful information. By combining
+              internal and external sources, it enables managers to identify patterns, understand problems, monitor
+              performance and make better-informed decisions.</p>
+            <p><strong>Central idea:</strong> MIS supports management decisions with evidence rather than assumptions,
+              while human judgement remains necessary to interpret the findings.</p>
+          </div>
+        </section>
+        <footer class="footer">Tr.Sun Education · Learn · Explore · Achieve<br>Edexcel International A Level Information
+          Technology · Topic 14.4<br>Created by <strong>Tr. Sun</strong></footer>
+      </div>
+    </main>
+    <button id="toTop" class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+    <script>
+      (function () {
+        'use strict';
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const progress = document.getElementById('progress');
+        const toTop = document.getElementById('toTop');
+        const links = Array.from(document.querySelectorAll('.side-nav a'));
+        const sections = Array.from(document.querySelectorAll('.lesson-section'));
+        function toggleMenu(isOpen) {
+          sidebar.classList.toggle('open', isOpen);
+          overlay.classList.toggle('show', isOpen);
+          menuBtn.setAttribute('aria-expanded', String(isOpen));
+          menuBtn.setAttribute('aria-label', isOpen ? 'Close lesson menu' : 'Open lesson menu');
+          menuBtn.textContent = isOpen ? '✕' : '☰';
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+        menuBtn.addEventListener('click', function () { toggleMenu(!sidebar.classList.contains('open')); });
+        overlay.addEventListener('click', function () { toggleMenu(false); });
+        document.addEventListener('keydown', function (event) { if (event.key === 'Escape') toggleMenu(false); });
+        links.forEach(function (link) { link.addEventListener('click', function () { toggleMenu(false); }); });
+        function onScroll() {
+          const available = document.documentElement.scrollHeight - window.innerHeight;
+          progress.style.width = (available > 0 ? Math.min(100, Math.max(0, window.scrollY / available * 100)) : 100) + '%';
+          toTop.classList.toggle('visible', window.scrollY > 440);
+          let current = sections[0].id;
+          sections.forEach(function (section) { if (section.getBoundingClientRect().top <= 155) current = section.id; });
+          links.forEach(function (link) {
+            const active = link.getAttribute('href') === '#' + current;
+            link.classList.toggle('active', active);
+            if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+          });
+        }
+        let scheduled = false;
+        window.addEventListener('scroll', function () {
+          if (!scheduled) { scheduled = true; requestAnimationFrame(function () { onScroll(); scheduled = false; }); }
+        }, { passive: true });
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 850 && sidebar.classList.contains('open')) toggleMenu(false);
+          onScroll();
         });
-      }
-      let scheduled = false;
-      window.addEventListener('scroll', function () {
-        if (!scheduled) { scheduled = true; requestAnimationFrame(function () { onScroll(); scheduled = false; }); }
-      }, {passive:true});
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 850 && sidebar.classList.contains('open')) toggleMenu(false);
+        toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
         onScroll();
-      });
-      toTop.addEventListener('click', function () { window.scrollTo({top:0,behavior:'smooth'}); });
-      onScroll();
-    }());
+      }());
 =======
   <a class="skip-link" href="#main">Skip to main content</a>
   <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false"
@@ -1174,7 +2742,7 @@
     sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
     document.getElementById('year').textContent = new Date().getFullYear();
 >>>>>>> 1ec3acb5c848d612da4ce5b2b48a206d273a9d48
-  </script>
+    </script>
 </body>
 
 </html>
