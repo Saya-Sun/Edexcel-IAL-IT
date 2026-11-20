@@ -1204,6 +1204,44 @@
         color: inherit
       }
     }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
   </style>
 </head>
 
@@ -1655,7 +1693,8 @@
         </div>
         <p><strong>Expert systems are a traditional form of artificial intelligence (AI)</strong>. They are often called
           <em>symbolic AI</em> because they represent knowledge through explicit facts and rules. Machine learning is
-          another AI approach that learns patterns from training data.</p>
+          another AI approach that learns patterns from training data.
+        </p>
         <div class="table-wrap">
           <table>
             <thead>
@@ -2218,10 +2257,20 @@
           difficult cases.</p>
       </section>
 
-      <nav class="bottom-nav" aria-label="Related lessons"><a href="topic-14-05.html">← Previous: Topic 14.5</a><a
-          href="topic-14.html">↗ Topic 14 Dashboard</a></nav>
-      <footer class="page-foot">Edexcel International A Level IT · Unit 3 · Topic 14.6<br>Tr.Sun Education · Learn ·
-        Explore · Achieve<br>Created by Tr. Sun</footer>
+      <nav class="lesson-navigation" aria-label="Other lessons">
+        <a href="topic-14-05.html">← Topic 14.5</a>
+        <a href="topic-14-07.html">Topic 14.7  →</a>
+      </nav>
+
+      <footer class="page-footer">
+        <strong>Tr.Sun Education</strong>
+        <p>Edexcel International A Level IT</p>
+        <p>Created by <strong>Tr. Sun</strong></p>
+      </footer>
+    
+
+
+
     </div>
   </main>
   <button class="to-top" type="button" id="toTop" aria-label="Back to top" title="Back to top">↑</button>

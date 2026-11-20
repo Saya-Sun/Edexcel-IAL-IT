@@ -845,41 +845,43 @@
       color: #45349e
     }
 
-    .lesson-footer {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin: 24px 0 10px
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
     }
 
-    .footer-link {
+    .page-footer p {
+      margin: 4px;
+    }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      text-decoration: none;
-      padding: 12px 17px;
+      padding: 12px 18px;
       border-radius: 11px;
-      background: #fff;
-      border: 1px solid #dfe4f0;
-      font-weight: 720;
       font-size: 13px;
-      min-height: 46px
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
     }
 
-    .footer-link.primary {
-      background: #6751c8;
-      color: white;
-      border-color: #6751c8
+    .lesson-navigation a:hover {
+      background: #e8deff;
     }
 
-    .footer-bottom {
-      padding: 15px 0 0;
-      text-align: center;
-      color: #8994a9;
-      font-size: 11px
-    }
 
     .back-top {
       position: fixed;
@@ -1033,9 +1035,7 @@
         padding: 5px 9px
       }
 
-      .footer-link {
-        width: 100%
-      }
+
 
       .back-top {
         right: 14px;
@@ -2104,11 +2104,19 @@
         </div>
       </section>
 
-      <div class="lesson-footer"><a class="footer-link" href="topic-14-04.html">← Previous: Topic 14.4</a><a
-          class="footer-link" href="topic-14.html">⌂ Topic 14 Dashboard</a><a class="footer-link primary"
-          href="topic-14-06.html">Next: Topic 14.6 →</a></div>
-      <div class="footer-bottom">Tr.Sun Education · Edexcel International A Level Information Technology · Created by
-        Tr. Sun</div>
+
+      <nav class="lesson-navigation" aria-label="Other lessons">
+        <a href="topic-14-04.html">← Topic 14.4</a>
+        <a href="topic-14-06.html">Topic 14.6  →</a>
+      </nav>
+
+      <footer class="page-footer">
+        <strong>Tr.Sun Education</strong>
+        <p>Edexcel International A Level IT</p>
+        <p>Created by <strong>Tr. Sun</strong></p>
+      </footer>
+    
+
     </div>
   </main>
   <button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
