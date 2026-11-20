@@ -1,124 +1,2152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 14.5: Intelligent Transportation Systems — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 14.5 – Intelligent Transportation Systems | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Tr.Sun Education — Edexcel International A Level IT Topic 14.5: Intelligent Transportation Systems. Detailed lesson notes on ITS, routes, timetabling, locations and fleet management.">
+  <title>Topic 14.5 | Intelligent Transportation Systems — Tr.Sun Education</title>
+  <style>
+    :root {
+      --sidebar: #111827;
+      --sidebar-soft: #1d293a;
+      --bg: #f5f7fc;
+      --ink: #1c2940;
+      --muted: #617086;
+      --border: #e5eaf3;
+      --purple: #6653cc;
+      --purple-deep: #4934b5;
+      --purple-light: #f2eeff;
+      --green: #0a8766;
+      --green-bg: #e9faf3;
+      --amber: #a46a02;
+      --amber-bg: #fff7df;
+      --blue: #1767ae;
+      --blue-bg: #eaf5ff;
+      --pink: #9d468a;
+      --pink-bg: #fcedf9;
+      --shadow: 0 9px 30px rgba(28, 41, 64, .055);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 33px
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 15.5px
+    }
+
+    button,
+    a {
+      font: inherit
+    }
+
+    a {
+      color: var(--purple-deep)
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #fbbf24;
+      outline-offset: 3px
+    }
+
+    .skip {
+      position: absolute;
+      z-index: 200;
+      top: -100px;
+      left: 18px;
+      padding: 9px 16px;
+      background: #fff;
+      color: #111827;
+      border-radius: 8px
+    }
+
+    .skip:focus {
+      top: 12px
+    }
+
+    .progress {
+      height: 5px;
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 150;
+      background: transparent
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #8069ef, #d58afa);
+      transition: width .12s linear
+    }
+
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 282px;
+      background: var(--sidebar);
+      color: #e6ebf6;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      box-shadow: 4px 0 24px rgba(0, 0, 0, .08)
+    }
+
+    .sidebar-header {
+      padding: 29px 19px 17px;
+      border-bottom: 1px solid rgba(255, 255, 255, .075)
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff
+    }
+
+    .logo {
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #5f52db, #af76f1);
+      box-shadow: 0 6px 20px rgba(107, 82, 230, .30);
+      flex: none
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 790;
+      letter-spacing: .1px
+    }
+
+    .brand-tagline {
+      display: block;
+      font-size: 10.6px;
+      color: #aeb8cb;
+      letter-spacing: .4px;
+      margin-top: 4px
+    }
+
+    .current-lesson {
+      margin: 18px 15px 9px;
+      padding: 14px 15px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #332e65, #33316c);
+      border: 1px solid rgba(177, 158, 255, .17)
+    }
+
+    .current-lesson small {
+      color: #c7bafa;
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-weight: 800
+    }
+
+    .current-lesson strong {
+      font-size: 14px;
+      line-height: 1.35;
+      display: block;
+      margin: 7px 0;
+      color: white
+    }
+
+    .current-lesson span {
+      font-size: 11px;
+      color: #ccc8ee
+    }
+
+    .nav-label {
+      padding: 12px 24px 7px;
+      color: #8794ab;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1.6px
+    }
+
+    .sidebar-nav {
+      padding: 0 10px 20px;
+      overflow: auto;
+      flex: 1;
+      scrollbar-width: thin;
+      scrollbar-color: #37455b transparent
+    }
+
+    .sidebar-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      margin: 3px 0;
+      border-radius: 9px;
+      text-decoration: none;
+      color: #b8c4d8;
+      font-weight: 590;
+      font-size: 12.5px;
+      line-height: 1.35;
+      transition: background .2s, color .2s
+    }
+
+    .sidebar-nav a:hover {
+      background: #253147;
+      color: #fff
+    }
+
+    .sidebar-nav a.active {
+      color: #fff;
+      background: linear-gradient(95deg, #6a53d8, #5445b4);
+      box-shadow: 0 4px 12px rgba(67, 54, 140, .24)
+    }
+
+    .nav-num {
+      width: 23px;
+      height: 23px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .075);
+      font-size: 10.5px;
+      flex: none
+    }
+
+    .sidebar-nav a.active .nav-num {
+      background: rgba(255, 255, 255, .19)
+    }
+
+    .sidebar-foot {
+      padding: 16px 20px 22px;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      color: #93a1b5;
+      font-size: 10.5px;
+      line-height: 1.7
+    }
+
+    .sidebar-foot strong {
+      color: #dce4f3
+    }
+
+    .sidebar-foot a {
+      color: #d9cbff;
+      text-decoration: none
+    }
+
+    .menu-button {
+      display: none;
+      position: fixed;
+      z-index: 121;
+      left: 14px;
+      top: 13px;
+      width: 43px;
+      height: 43px;
+      background: #1d2940;
+      border: 0;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px #1f244033;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center
+    }
+
+    .menu-button svg {
+      width: 23px;
+      height: 23px
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 15, 30, .62);
+      z-index: 90
+    }
+
+    .main {
+      margin-left: 282px;
+      min-height: 100vh;
+      padding: 35px 35px 65px
+    }
+
+    .content {
+      max-width: 1080px;
+      margin: auto
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      color: #79869a;
+      font-size: 12px;
+      font-weight: 650;
+      margin: 0 0 20px
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #6a5bc9
+    }
+
+    .breadcrumbs .sep {
+      color: #adb4c4
+    }
+
+    .hero {
+      border-radius: 22px;
+      overflow: hidden;
+      color: #fff;
+      padding: 37px 43px 37px;
+      position: relative;
+      background: linear-gradient(120deg, #4934b5 0%, #7653d1 56%, #ad72ed 100%);
+      box-shadow: 0 13px 33px rgba(81, 57, 167, .16);
+      margin-bottom: 29px
+    }
+
+    .hero:before,
+    .hero:after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 50%;
+      pointer-events: none
+    }
+
+    .hero:before {
+      width: 340px;
+      height: 340px;
+      right: -95px;
+      top: -154px
+    }
+
+    .hero:after {
+      width: 250px;
+      height: 250px;
+      right: 75px;
+      bottom: -185px
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 15px
+    }
+
+    .pill {
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 720;
+      letter-spacing: .15px
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 3.5vw, 41px);
+      line-height: 1.17;
+      max-width: 750px;
+      letter-spacing: -1.2px;
+      margin: 0 0 14px;
+      font-weight: 850
+    }
+
+    .hero p {
+      max-width: 750px;
+      opacity: .95;
+      line-height: 1.78;
+      margin: 0;
+      font-size: 15px
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 23px;
+      font-size: 12px;
+      color: #f2edff
+    }
+
+    .hero-meta span {
+      padding: 5px 12px;
+      border: 1px solid #ffffff44;
+      border-radius: 8px;
+      background: #ffffff14
+    }
+
+    .section {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 32px 36px;
+      margin: 26px 0;
+      scroll-margin-top: 23px
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid #eaeef5;
+      margin-bottom: 24px;
+      padding-bottom: 20px
+    }
+
+    .section-icon {
+      background: linear-gradient(140deg, #ece8ff, #f8eaff);
+      color: #604bc8;
+      width: 51px;
+      height: 51px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      font-size: 24px
+    }
+
+    .section-kicker {
+      font-size: 10.5px;
+      font-weight: 850;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #816cda
+    }
+
+    h2 {
+      font-size: clamp(21px, 2.4vw, 26px);
+      line-height: 1.26;
+      letter-spacing: -.5px;
+      margin: 3px 0 0
+    }
+
+    h3 {
+      font-size: 17.5px;
+      margin: 31px 0 10px;
+      color: #362c87;
+      line-height: 1.4
+    }
+
+    h3:first-of-type {
+      margin-top: 4px
+    }
+
+    p {
+      margin: 11px 0 14px
+    }
+
+    ul,
+    ol {
+      padding-left: 23px;
+      margin: 12px 0 18px
+    }
+
+    li {
+      padding-left: 3px;
+      margin: 5px 0
+    }
+
+    strong {
+      font-weight: 740
+    }
+
+    .definition {
+      border-left: 4px solid #7259df;
+      background: var(--purple-light);
+      padding: 15px 18px;
+      margin: 18px 0;
+      border-radius: 0 12px 12px 0
+    }
+
+    .definition strong {
+      color: #4b37ad
+    }
+
+    .example {
+      background: var(--green-bg);
+      border-left: 4px solid #24ad80;
+      padding: 17px 19px;
+      margin: 19px 0;
+      border-radius: 0 12px 12px 0
+    }
+
+    .example .callout-label {
+      color: #087354
+    }
+
+    .important {
+      background: var(--amber-bg);
+      border-left: 4px solid #edb84e;
+      padding: 16px 18px;
+      margin: 19px 0;
+      border-radius: 0 12px 12px 0
+    }
+
+    .important .callout-label {
+      color: #945e00
+    }
+
+    .info {
+      background: var(--blue-bg);
+      border-left: 4px solid #4b9bdb;
+      padding: 16px 18px;
+      margin: 19px 0;
+      border-radius: 0 12px 12px 0
+    }
+
+    .info .callout-label {
+      color: #1f649a
+    }
+
+    .callout-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .25px;
+      margin-bottom: 5px
+    }
+
+    .definition p:last-child,
+    .example p:last-child,
+    .important p:last-child,
+    .info p:last-child {
+      margin-bottom: 0
+    }
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 19px 0
+    }
+
+    .tile {
+      border: 1px solid #eceaf6;
+      border-radius: 13px;
+      padding: 17px 18px;
+      background: #faf9ff
+    }
+
+    .tile.blue {
+      background: #eef7ff;
+      border-color: #d9ecff
+    }
+
+    .tile.green {
+      background: #eefbf4;
+      border-color: #d5f2e3
+    }
+
+    .tile.amber {
+      background: #fff8e8;
+      border-color: #fae7b8
+    }
+
+    .tile.pink {
+      background: #fff0f8;
+      border-color: #f3dced
+    }
+
+    .tile .emoji {
+      font-size: 23px;
+      display: block;
+      margin-bottom: 7px
+    }
+
+    .tile h4 {
+      margin: 0 0 5px;
+      font-size: 14px;
+      color: #273451
+    }
+
+    .tile p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.7
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin: 18px 0 24px;
+      border: 1px solid #e6eaf3;
+      border-radius: 13px
+    }
+
+    table {
+      width: 100%;
+      min-width: 540px;
+      border-collapse: collapse;
+      font-size: 13.4px;
+      line-height: 1.6
+    }
+
+    th {
+      text-align: left;
+      color: #463497;
+      background: #f0edff;
+      font-weight: 760;
+      padding: 12px 14px;
+      vertical-align: top
+    }
+
+    td {
+      border-top: 1px solid #e9edf4;
+      padding: 12px 14px;
+      vertical-align: top
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fbfcff
+    }
+
+    tbody tr:hover {
+      background: #f6f4ff
+    }
+
+    .figure {
+      padding: 18px;
+      background: #fbfcff;
+      border: 1px solid #e7ebf5;
+      border-radius: 14px;
+      margin: 19px 0
+    }
+
+    .figure-title {
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #34415b
+    }
+
+    figcaption,
+    .figure-caption {
+      font-size: 11.5px;
+      color: #718098;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.6
+    }
+
+    .process {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4px;
+      max-width: 670px;
+      margin: auto
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 13px 16px;
+      border-radius: 11px;
+      background: #f1edff;
+      border: 1px solid #e5ddff
+    }
+
+    .process-step:nth-of-type(2) {
+      background: #eaf5ff;
+      border-color: #d3ebfc
+    }
+
+    .process-step:nth-of-type(3) {
+      background: #fff6e5;
+      border-color: #fceac4
+    }
+
+    .process-step:nth-of-type(4) {
+      background: #e9faf3;
+      border-color: #d3f0e2
+    }
+
+    .process-step strong {
+      display: block;
+      font-size: 13px;
+      color: #3b307e
+    }
+
+    .process-step small {
+      display: block;
+      font-size: 12px;
+      color: #62718a
+    }
+
+    .flow-arrow {
+      text-align: center;
+      font-size: 20px;
+      line-height: 24px;
+      color: #8276bd;
+      font-weight: 900
+    }
+
+    .chart {
+      display: flex;
+      gap: 10px;
+      align-items: end;
+      justify-content: space-between;
+      min-height: 195px;
+      border-bottom: 2px solid #cdd4e3;
+      padding: 18px 6px 0
+    }
+
+    .bar-group {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      justify-content: flex-end;
+      min-width: 0;
+      height: 180px
+    }
+
+    .bar {
+      width: min(43px, 82%);
+      border-radius: 7px 7px 0 0;
+      min-height: 5px;
+      background: linear-gradient(180deg, #9a78ee, #6850c8);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 6px;
+      color: white;
+      font-size: 10px;
+      font-weight: 800
+    }
+
+    .bar-group small {
+      font-size: 10.5px;
+      font-weight: 650;
+      color: #66748a;
+      white-space: nowrap
+    }
+
+    .diagram-svg {
+      width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .mini-label {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 99px;
+      background: #edeaff;
+      color: #6651c9;
+      font-size: 10.5px;
+      font-weight: 800;
+      margin: 0 0 5px
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+      margin: 14px 0 18px
+    }
+
+    .steps li {
+      position: relative;
+      padding: 13px 15px 13px 51px;
+      border: 1px solid #e8edf5;
+      border-radius: 11px;
+      margin: 9px 0;
+      background: #fcfdff
+    }
+
+    .steps li:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 8px;
+      background: #ede9ff;
+      color: #634bc4;
+      font-weight: 850;
+      font-size: 12px
+    }
+
+    .steps strong {
+      color: #34306d
+    }
+
+    .case-steps {
+      border-left: 3px solid #d8d1ff;
+      margin: 17px 0 18px 13px;
+      padding-left: 20px
+    }
+
+    .case-step {
+      position: relative;
+      margin: 0 0 21px
+    }
+
+    .case-step:before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border: 3px solid #fff;
+      background: #785bd4;
+      position: absolute;
+      left: -28px;
+      top: 8px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px #d8d1ff
+    }
+
+    .case-step strong {
+      color: #392c96
+    }
+
+    .end-box {
+      margin-top: 26px;
+      background: linear-gradient(115deg, #f2f0ff, #f7f4ff);
+      padding: 22px 23px;
+      border: 1px solid #ded9ff;
+      border-radius: 14px
+    }
+
+    .end-box strong {
+      color: #45349e
+    }
+
+    .lesson-footer {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 24px 0 10px
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 12px 17px;
+      border-radius: 11px;
+      background: #fff;
+      border: 1px solid #dfe4f0;
+      font-weight: 720;
+      font-size: 13px;
+      min-height: 46px
+    }
+
+    .footer-link.primary {
+      background: #6751c8;
+      color: white;
+      border-color: #6751c8
+    }
+
+    .footer-bottom {
+      padding: 15px 0 0;
+      text-align: center;
+      color: #8994a9;
+      font-size: 11px
+    }
+
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 25px;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      background: #634cc9;
+      color: #fff;
+      border: 0;
+      border-radius: 13px;
+      box-shadow: 0 5px 17px rgba(70, 54, 144, .23);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: .2s;
+      z-index: 30
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto
+    }
+
+    @media (max-width:1100px) {
+      .main {
+        padding: 30px 22px 55px
+      }
+
+      .hero {
+        padding: 31px
+      }
+
+      .section {
+        padding: 27px 25px
+      }
+    }
+
+    @media (max-width:900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        width: min(282px, 84vw)
+      }
+
+      body.menu-open .sidebar {
+        transform: translateX(0)
+      }
+
+      body.menu-open .overlay {
+        display: block
+      }
+
+      .menu-button {
+        display: flex
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 76px 18px 48px
+      }
+
+      .hero {
+        padding: 30px 27px
+      }
+
+      .breadcrumbs {
+        margin-bottom: 15px
+      }
+    }
+
+    @media (max-width:580px) {
+      .main {
+        padding: 72px 12px 32px
+      }
+
+      .hero {
+        padding: 27px 21px;
+        border-radius: 15px;
+        margin-bottom: 19px
+      }
+
+      .hero h1 {
+        font-size: 29px;
+        letter-spacing: -.8px
+      }
+
+      .hero p {
+        font-size: 13.5px
+      }
+
+      .section {
+        padding: 22px 17px;
+        border-radius: 14px;
+        margin: 18px 0
+      }
+
+      .section-head {
+        gap: 10px;
+        padding-bottom: 16px;
+        margin-bottom: 18px
+      }
+
+      .section-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 21px;
+        border-radius: 12px
+      }
+
+      h2 {
+        font-size: 20px
+      }
+
+      h3 {
+        font-size: 16px;
+        margin-top: 25px
+      }
+
+      .tiles {
+        grid-template-columns: 1fr;
+        gap: 9px
+      }
+
+      .tile {
+        padding: 14px
+      }
+
+      .chart {
+        gap: 4px
+      }
+
+      .bar-group small {
+        font-size: 9px
+      }
+
+      .bar {
+        width: min(30px, 88%)
+      }
+
+      .pills {
+        gap: 5px
+      }
+
+      .pill {
+        font-size: 10px;
+        padding: 5px 9px
+      }
+
+      .footer-link {
+        width: 100%
+      }
+
+      .back-top {
+        right: 14px;
+        bottom: 14px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *:before,
+      *:after {
+        transition: none !important;
+        animation: none !important
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
+  <a class="skip" href="#main-content">Skip to lesson content</a>
+  <div class="progress" aria-hidden="true">
+    <div id="progressFill" class="progress-fill"></div>
   </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 14.5</h3><p>Intelligent Transportation Systems</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 14 lessons"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-14.html"><span class="nav-number">14</span><span>Topic 14 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 14 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 14"><a href="topic-14-01.html" ><span class="nav-number">14.1</span><span>The Role of IT Systems in Organisations</span></a>
-<a href="topic-14-02.html" ><span class="nav-number">14.2</span><span>Transaction Processing</span></a>
-<a href="topic-14-03.html" ><span class="nav-number">14.3</span><span>Customer Relationship Management Systems</span></a>
-<a href="topic-14-04.html" ><span class="nav-number">14.4</span><span>Management Information Systems</span></a>
-<a href="topic-14-05.html" class="active" aria-current="page"><span class="nav-number">14.5</span><span>Intelligent Transportation Systems</span></a>
-<a href="topic-14-06.html" ><span class="nav-number">14.6</span><span>Expert Systems</span></a>
-<a href="topic-14-07.html" ><span class="nav-number">14.7</span><span>IT Governance and Policy</span></a>
-<a href="topic-14-08.html" ><span class="nav-number">14.8</span><span>Managing IT Changeover</span></a>
-<a href="topic-14-09.html" ><span class="nav-number">14.9</span><span>System Maintenance</span></a>
-<a href="topic-14-10.html" ><span class="nav-number">14.10</span><span>Archiving Data</span></a>
-<a href="topic-14-11.html" ><span class="nav-number">14.11</span><span>Disaster Recovery Plans</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong><div>Unit 3 · A2 Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-14.html">Topic 14</a><span aria-hidden="true">›</span><strong>Lesson 14.5</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 5</span><h1>Intelligent Transportation Systems</h1><p>Edexcel International A Level IT · A2 Level</p><div class="hero-tags"><span>📖 Topic 14.5</span><span>💻 Using IT Systems in Organisations</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 14.5: Intelligent Transportation Systems</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 14 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-14.html">← Back to Topic 14</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-14-04.html" aria-label="Previous lesson">← Lesson 14.4</a><a href="topic-14-06.html" aria-label="Next lesson">Lesson 14.6 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <button class="menu-button" id="menuButton" aria-label="Open lesson navigation" aria-controls="sidebar"
+    aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"
+      aria-hidden="true">
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+  <aside id="sidebar" class="sidebar" aria-label="Lesson navigation">
+    <div class="sidebar-header">
+      <a class="brand" href="topic-14.html" aria-label="Tr.Sun Education — Topic 14 dashboard">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="35" height="35" fill="none" aria-hidden="true">
+            <path d="M4 19 24 9l20 10-20 10L4 19Z" fill="#fff" />
+            <path d="M13 25v9c6 5 16 5 22 0v-9" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+            <path d="M43 20v12" stroke="#fff" stroke-width="2.7" stroke-linecap="round" />
+            <circle cx="43" cy="35" r="2.5" fill="#fff" />
+          </svg>
+        </span>
+        <span><span class="brand-name">Tr.Sun Education</span><span class="brand-tagline">Learn · Explore ·
+            Achieve</span></span>
+      </a>
+    </div>
+    <div class="current-lesson"><small>Current lesson</small><strong>14.5 · Intelligent Transportation
+        Systems</strong><span>Edexcel IAL IT · A2</span></div>
+    <div class="nav-label">On this page</div>
+    <nav class="sidebar-nav" id="sectionNav">
+      <a href="#section1" class="active"><span class="nav-num">01</span> Introduction to ITS</a>
+      <a href="#section2"><span class="nav-num">02</span> Scheduling &amp; Route Planning</a>
+      <a href="#section3"><span class="nav-num">03</span> Timetabling</a>
+      <a href="#section4"><span class="nav-num">04</span> Locations</a>
+      <a href="#section5"><span class="nav-num">05</span> Fleet Management</a>
+      <a href="#section6"><span class="nav-num">06</span> Benefits &amp; Limitations</a>
+      <a href="#section7"><span class="nav-num">07</span> Worked Example</a>
+      <a href="#section8"><span class="nav-num">08</span> Important Terminology</a>
+      <a href="#section9"><span class="nav-num">09</span> Five Main Areas</a>
+    </nav>
+    <div class="sidebar-foot">Edexcel International A Level IT<br>Created by <strong>Tr. Sun</strong><br><a
+        href="topic-14.html">← Topic 14 dashboard</a></div>
+  </aside>
+
+  <main class="main" id="main-content">
+    <div class="content">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">›</span><a href="topic-14.html">Topic
+          14</a><span class="sep">›</span><span>Topic 14.5</span></div>
+      <header class="hero">
+        <div class="hero-inner">
+          <div class="pills"><span class="pill">Edexcel IAL IT</span><span class="pill">A2 · Unit 3</span><span
+              class="pill">Topic 14.5</span></div>
+          <h1>🚦 Intelligent Transportation Systems</h1>
+          <p>Explore how real-time data, intelligent algorithms, GPS, sensors and telematics help organisations plan
+            routes, manage transport services and operate vehicle fleets efficiently.</p>
+          <div class="hero-meta"><span>📚 Detailed lesson notes</span><span>🧭 9 sections</span><span>💻 Works
+              offline</span></div>
+        </div>
+      </header>
+
+      <!-- SECTION 1 -->
+      <section class="section" id="section1" aria-labelledby="heading1">
+        <div class="section-head">
+          <div class="section-icon">🚦</div>
+          <div>
+            <div class="section-kicker">Section 01</div>
+            <h2 id="heading1">Introduction to Intelligent Transportation Systems</h2>
+          </div>
+        </div>
+        <h3>1.1 What is an Intelligent Transportation System (ITS)?</h3>
+        <p>An <strong>Intelligent Transportation System (ITS)</strong> is a system that uses information technology,
+          sensors, communication networks and data analysis to improve the <strong>planning, management, efficiency and
+            safety</strong> of transportation.</p>
+        <p>ITS can be used in both public and private transportation, including public buses and trains, taxis and
+          ride-hailing services, delivery vehicles, emergency vehicles, private navigation systems and local authority
+          traffic management networks.</p>
+        <div class="definition"><strong>📘 Key definition — Intelligent Transportation System (ITS)</strong>
+          <p>A computer-based system that collects, processes and analyses transportation data to support decisions
+            about traffic management, route planning, scheduling, timetabling and vehicle operations.</p>
+        </div>
+        <h3>1.2 Why are Intelligent Transportation Systems needed?</h3>
+        <p>Transportation networks become more difficult to manage as populations grow, vehicle usage increases and
+          travel demands change. Traditional transport systems often use fixed routes and schedules that cannot
+          automatically respond to changing conditions.</p>
+        <div class="example"><span class="callout-label">✅ Example — A delayed bus</span>
+          <p>A bus is scheduled to arrive at 8:00 a.m., but congestion delays it until 8:30 a.m. Without intelligent
+            monitoring, passengers may not know about the delay. An ITS can track the bus, estimate its revised arrival
+            time and help the operator respond.</p>
+        </div>
+        <p><strong>The main purposes of ITS include:</strong></p>
+        <div class="tiles">
+          <div class="tile"><span class="emoji">🚗</span>
+            <h4>Reduce congestion</h4>
+            <p>Identify bottlenecks and recommend alternative routes or traffic controls.</p>
+          </div>
+          <div class="tile blue"><span class="emoji">⏱️</span>
+            <h4>Improve journey times</h4>
+            <p>Help people and goods reach their destinations efficiently.</p>
+          </div>
+          <div class="tile green"><span class="emoji">🚌</span>
+            <h4>Use resources effectively</h4>
+            <p>Match transport services and available vehicles to actual demand.</p>
+          </div>
+          <div class="tile amber"><span class="emoji">🛡️</span>
+            <h4>Improve safety</h4>
+            <p>Detect incidents and support faster, better-informed responses.</p>
+          </div>
+          <div class="tile pink"><span class="emoji">🌱</span>
+            <h4>Reduce environmental impact</h4>
+            <p>Reduce unnecessary travel, fuel consumption and emissions.</p>
+          </div>
+          <div class="tile"><span class="emoji">📊</span>
+            <h4>Support decision-making</h4>
+            <p>Turn transportation data into usable information for managers.</p>
+          </div>
+        </div>
+        <h3>1.3 How does an ITS work?</h3>
+        <p>ITS commonly follows a process of <strong>data collection, processing, analysis and action</strong>.</p>
+        <div class="figure">
+          <div class="figure-title">How ITS converts data into action</div>
+          <div class="process">
+            <div class="process-step"><strong>📡 1. Data collection</strong><small>GPS devices, sensors, traffic cameras
+                and passenger systems</small></div>
+            <div class="flow-arrow">↓</div>
+            <div class="process-step"><strong>🗄️ 2. Data processing</strong><small>Validate, clean, combine and
+                organise the information</small></div>
+            <div class="flow-arrow">↓</div>
+            <div class="process-step"><strong>🧠 3. Data analysis</strong><small>Identify patterns, congestion and
+                predicted demand</small></div>
+            <div class="flow-arrow">↓</div>
+            <div class="process-step"><strong>🛣️ 4. Decision-making and action</strong><small>Adjust routes, schedules,
+                services and traffic controls</small></div>
+          </div>
+        </div>
+        <div class="example"><span class="callout-label">✅ Example — Responding to a road accident</span>
+          <ol>
+            <li>Sensors and cameras detect unusually slow traffic.</li>
+            <li>ITS receives data showing that vehicle speeds have decreased.</li>
+            <li>It analyses the information and identifies the affected road.</li>
+            <li>A routing algorithm calculates alternative routes.</li>
+            <li>Navigation systems suggest other roads to drivers.</li>
+            <li>Transport managers may redirect buses or delivery vehicles.</li>
+            <li>The system keeps monitoring the situation and updates recommendations.</li>
+          </ol>
+        </div>
+        <h3>1.4 Real-time data and historical data</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Type of data</th>
+                <th>Explanation</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Real-time data</strong></td>
+                <td>Data collected about current conditions, updated continuously or frequently.</td>
+                <td>Current traffic speed, bus location or road congestion.</td>
+              </tr>
+              <tr>
+                <td><strong>Historical data</strong></td>
+                <td>Data collected and stored from previous events or journeys.</td>
+                <td>Traffic recorded during weekday mornings over six months.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Real-time data supports <strong>immediate operational decisions</strong>. Historical data supports
+          <strong>pattern identification and predictions</strong>. Combining both can improve transportation planning.
+        </p>
+        <div class="important"><span class="callout-label">💡 Remember</span>
+          <p>Real-time data tells managers what is happening <strong>now</strong>; historical data helps them understand
+            what has happened <strong>before</strong> and what may happen next.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="section" id="section2" aria-labelledby="heading2">
+        <div class="section-head">
+          <div class="section-icon">🧭</div>
+          <div>
+            <div class="section-kicker">Section 02</div>
+            <h2 id="heading2">Scheduling and Route Planning</h2>
+          </div>
+        </div>
+        <p>These two ITS functions are closely related but serve different purposes. <strong>Scheduling</strong>
+          determines when vehicles should operate, depart or arrive. <strong>Route planning</strong> determines which
+          roads or paths vehicles should take.</p>
+        <h3>2.1 Route planning</h3>
+        <p>Route planning is the process of identifying an efficient path between a starting location and destination.
+          An ITS uses <strong>routing algorithms</strong> — sets of computer instructions that evaluate possible routes
+          — to recommend a suitable path.</p>
+        <p>The best route is <strong>not necessarily the shortest route</strong>: a 5 km journey through heavy traffic
+          may take longer than an 8 km journey on a less congested road.</p>
+        <h3>2.2 Factors considered in route planning</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Traffic flow</strong></td>
+                <td>Shows the number and movement of vehicles using a road.</td>
+              </tr>
+              <tr>
+                <td><strong>Congestion</strong></td>
+                <td>Identifies roads with slow traffic and queues.</td>
+              </tr>
+              <tr>
+                <td><strong>Road capacity</strong></td>
+                <td>Indicates how many vehicles a road can accommodate efficiently.</td>
+              </tr>
+              <tr>
+                <td><strong>Speed limits</strong></td>
+                <td>Help calculate realistic, lawful travel times.</td>
+              </tr>
+              <tr>
+                <td><strong>Road conditions</strong></td>
+                <td>Reveal damage, flooding or weather-related hazards.</td>
+              </tr>
+              <tr>
+                <td><strong>Accidents and closures</strong></td>
+                <td>Identify blocked or restricted routes.</td>
+              </tr>
+              <tr>
+                <td><strong>Vehicle restrictions</strong></td>
+                <td>Prevent unsuitable vehicles from entering height-, weight- or access-restricted roads.</td>
+              </tr>
+              <tr>
+                <td><strong>Distance and travel time</strong></td>
+                <td>Allow different paths to be compared.</td>
+              </tr>
+              <tr>
+                <td><strong>Fuel consumption</strong></td>
+                <td>Helps identify routes with lower operating costs.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Some systems also consider toll charges, delivery deadlines and organisational priorities.</p>
+        <h3>2.3 Example of intelligent route planning</h3>
+        <p>A delivery company must transport a package from its warehouse to a customer. The ITS compares these
+          hypothetical routes:</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Route</th>
+                <th>Distance</th>
+                <th>Travel time</th>
+                <th>Traffic condition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>5 km</td>
+                <td>25 min</td>
+                <td>Heavy congestion</td>
+              </tr>
+              <tr style="background:#eefaf4">
+                <td><strong>B ✓</strong></td>
+                <td><strong>8 km</strong></td>
+                <td><strong>15 min</strong></td>
+                <td>Light traffic</td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>7 km</td>
+                <td>20 min</td>
+                <td>Moderate traffic</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If the objective is to minimise <strong>journey time</strong>, Route B is best even though it has the longest
+          distance. Minimising fuel use, toll fees or total distance might lead to a different recommendation.</p>
+        <div class="example"><span class="callout-label">✅ Real-world application</span>
+          <p>Navigation applications such as Google Maps and Waze use traffic information to estimate arrival times and
+            recommend routes. They may suggest a different route when conditions change.</p>
+        </div>
+        <h3>2.4 Dynamic scheduling</h3>
+        <div class="definition"><strong>📘 Key definition — Dynamic scheduling</strong>
+          <p>Adjusting transportation schedules in response to current conditions, instead of strictly following a fixed
+            timetable.</p>
+        </div>
+        <p>Changes may depend on current passenger numbers, congestion, vehicle delays, unexpected demand and available
+          drivers or vehicles.</p>
+        <div class="example"><span class="callout-label">✅ Example — Extra buses during rush hour</span>
+          <p>A bus company usually provides one bus every 20 minutes. An ITS detects a sharp increase in waiting
+            passengers. The operator may send extra buses and temporarily reduce the interval to 10 minutes. When demand
+            falls, additional services can be reduced.</p>
+        </div>
+        <p><strong>Benefits:</strong> lower waiting times, better use of vehicles, faster response to delays, fewer
+          unnecessary journeys and improved passenger satisfaction.</p>
+        <h3>2.5 Demand-responsive scheduling</h3>
+        <div class="definition"><strong>📘 Key definition — Demand-responsive scheduling</strong>
+          <p>Adjusting transport provision — potentially including pickup times, routes and stops — according to actual
+            passenger requests and demand.</p>
+        </div>
+        <div class="example"><span class="callout-label">✅ Example — Rural minibus service</span>
+          <p>Passengers in different villages request rides through a mobile application. Instead of visiting every bus
+            stop even when no one is waiting, the system generates a route that serves the requested pickup locations
+            efficiently. This can reduce unnecessary travel.</p>
+        </div>
+        <div class="important"><span class="callout-label">⚖️ Dynamic vs demand-responsive</span>
+          <p><strong>Dynamic scheduling</strong> often changes when or how frequently a service operates on an
+            established route. <strong>Demand-responsive scheduling</strong> may also change where a vehicle travels and
+            which passengers it collects.</p>
+        </div>
+        <h3>2.6 Incident management</h3>
+        <p><strong>Incident management</strong> means detecting and responding to unexpected disruptions such as
+          accidents, breakdowns, flooding, road closures or service failures.</p>
+        <div class="example"><span class="callout-label">✅ Example — Accident blocks a bus route</span>
+          <p>ITS receives information that a road is closed. It identifies affected buses, calculates a possible detour,
+            updates arrival estimates and helps the operator notify drivers and passengers. This can minimise
+            disruption.</p>
+        </div>
+        <p>Incident management can involve changing routes, revising departure times, reallocating vehicles and sharing
+          information with passengers or emergency services.</p>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section class="section" id="section3" aria-labelledby="heading3">
+        <div class="section-head">
+          <div class="section-icon">🗓️</div>
+          <div>
+            <div class="section-kicker">Section 03</div>
+            <h2 id="heading3">Timetabling</h2>
+          </div>
+        </div>
+        <h3>3.1 What is timetabling?</h3>
+        <p><strong>Timetabling</strong> is the process of planning when transportation services should depart, arrive
+          and operate. It is important for public buses, trains, school transport, airport shuttles and ferries.</p>
+        <p>Fixed timetables may not match changing passenger demand. Demand varies by time of day, weekday, season and
+          special events, so ITS can analyse information and recommend more appropriate service times.</p>
+        <h3>3.2 How does ITS improve timetabling?</h3>
+        <p>ITS uses historical data, current conditions and predictive algorithms. The system may examine passenger
+          numbers on particular routes, peak travel periods, previous journey times, congestion, weekend or holiday
+          patterns, and long-term growth in transport usage.</p>
+        <h3>3.3 Predicting demand using historical data</h3>
+        <div class="figure">
+          <div class="figure-title">Illustrative passenger demand throughout a day</div>
+          <div class="chart" role="img"
+            aria-label="Bar chart: 6 a.m. 25 passengers, 8 a.m. 90, 10 a.m. 35, 12 p.m. 45, 2 p.m. 40, 4 p.m. 95, 6 p.m. 80, 8 p.m. 20.">
+            <div class="bar-group">
+              <div class="bar" style="height:25%">25</div><small>6 AM</small>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:90%">90</div><small>8 AM</small>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:35%">35</div><small>10 AM</small>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:45%">45</div><small>12 PM</small>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:40%">40</div><small>2 PM</small>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:95%">95</div><small>4 PM</small>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:80%">80</div><small>6 PM</small>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:20%">20</div><small>8 PM</small>
+            </div>
+          </div>
+          <div class="figure-caption">Example only: passenger numbers are highest at approximately 8 a.m. and 4–6 p.m.
+          </div>
+        </div>
+        <p>From this pattern, the operator may plan more frequent departures at peak times, fewer buses when demand is
+          low, larger vehicles on busy routes and better spacing between departures.</p>
+        <h3>3.4 Using machine learning for prediction</h3>
+        <div class="definition"><strong>📘 Key definition — Machine learning</strong>
+          <p>Technology that identifies patterns in data and uses those patterns to make predictions or decisions,
+            without a separately written rule for every possible situation.</p>
+        </div>
+        <p>ITS may analyse two years of passenger data, detect that a route is becoming increasingly busy, and predict
+          that demand will continue growing. The company could plan to purchase buses, recruit drivers or increase
+          service frequency before overcrowding occurs.</p>
+        <div class="important"><span class="callout-label">⚠️ Prediction is not certainty</span>
+          <p>Unexpected events, changed work patterns or special occasions may cause actual demand to differ from
+            predictions. Predictions depend on the quality and relevance of the data.</p>
+        </div>
+        <h3>3.5 Scheduling vs timetabling</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Scheduling</th>
+                <th>Timetabling</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Assigns and adjusts services, vehicles and other resources.</td>
+                <td>Plans departure and arrival times.</td>
+              </tr>
+              <tr>
+                <td>May involve real-time changes.</td>
+                <td>Often uses historical patterns and forecasts for future services.</td>
+              </tr>
+              <tr>
+                <td>Example: sending an extra bus after a sudden rise in demand.</td>
+                <td>Example: planning departures every 10 minutes during rush hour.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>In real operations, the two functions work together: a planned timetable may be modified through dynamic
+          scheduling.</p>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section class="section" id="section4" aria-labelledby="heading4">
+        <div class="section-head">
+          <div class="section-icon">📍</div>
+          <div>
+            <div class="section-kicker">Section 04</div>
+            <h2 id="heading4">Locations</h2>
+          </div>
+        </div>
+        <h3>4.1 What are location-based services?</h3>
+        <div class="definition"><strong>📘 Key definition — Location-based services (LBS)</strong>
+          <p>Services that use the geographical location of a device, person or vehicle to provide relevant information
+            or functions.</p>
+        </div>
+        <p>Location-based services help ITS understand where vehicles are, how fast they are moving, which roads are
+          congested, where incidents have happened and where transport demand is greatest.</p>
+        <h3>4.2 How is location data collected?</h3>
+        <p>ITS draws location-related information from several sources, especially <strong>user-generated data,
+            community-based reporting, road sensors and traffic cameras</strong>.</p>
+        <h3>4.3 User-generated data</h3>
+        <p><strong>User-generated data</strong> is information provided directly or indirectly by people using
+          applications and devices. With appropriate permissions, smartphones and navigation apps can provide position,
+          direction, speed and journey duration information.</p>
+        <div class="definition"><strong>📘 Key definition — Data aggregation</strong>
+          <p>Combining information from multiple sources or records to create useful summarised data, such as average
+            speed on a particular road.</p>
+        </div>
+        <div class="figure">
+          <div class="figure-title">Illustration — GPS traffic monitoring</div>
+          <svg class="diagram-svg" viewBox="0 0 700 230" role="img" aria-labelledby="gps-title gps-desc">
+            <title id="gps-title">Vehicles sharing speed measurements on a congested road</title>
+            <desc id="gps-desc">Six vehicles on a road; a dashed connection leads to a traffic monitoring system showing
+              average speed of 12 kilometres per hour.</desc>
+            <rect x="2" y="2" width="696" height="226" rx="15" fill="#edf4fa" />
+            <path d="M0 145 H700" stroke="#94a3b8" stroke-width="94" />
+            <path d="M0 145 H700" stroke="#566579" stroke-width="76" />
+            <path d="M0 145 H700" stroke="#fff" stroke-width="3" stroke-dasharray="20 13" />
+            <g fill="#e97b68">
+              <rect x="35" y="112" width="59" height="28" rx="7" />
+              <rect x="146" y="155" width="59" height="28" rx="7" />
+              <rect x="255" y="112" width="59" height="28" rx="7" />
+              <rect x="363" y="155" width="59" height="28" rx="7" />
+            </g>
+            <g fill="#39a4bb">
+              <rect x="478" y="112" width="59" height="28" rx="7" />
+              <rect x="588" y="155" width="59" height="28" rx="7" />
+            </g>
+            <g fill="#dceef8">
+              <rect x="49" y="117" width="31" height="18" rx="3" />
+              <rect x="160" y="160" width="31" height="18" rx="3" />
+              <rect x="269" y="117" width="31" height="18" rx="3" />
+              <rect x="377" y="160" width="31" height="18" rx="3" />
+              <rect x="492" y="117" width="31" height="18" rx="3" />
+              <rect x="602" y="160" width="31" height="18" rx="3" />
+            </g>
+            <path d="M75 104 Q151 45 262 78 Q360 14 499 78 Q571 53 625 95" stroke="#795bd0" stroke-width="3"
+              stroke-dasharray="9 6" fill="none" />
+            <rect x="252" y="14" width="196" height="57" rx="12" fill="#fff" stroke="#d7dff0" /><text x="350" y="37"
+              fill="#4d6078" font-size="13" text-anchor="middle">Average reported speed</text><text x="350" y="57"
+              fill="#c45d44" font-weight="800" font-size="23" text-anchor="middle">12 km/h</text>
+            <rect x="241" y="198" width="215" height="23" rx="10" fill="#ffe6dd" /><text x="348" y="214" fill="#a84b35"
+              font-size="12" font-weight="700" text-anchor="middle">Possible congestion detected</text>
+          </svg>
+          <div class="figure-caption">GPS and movement measurements from multiple participating devices can estimate
+            congestion. Illustration only.</div>
+        </div>
+        <div class="example"><span class="callout-label">✅ Example — Detecting congestion</span>
+          <p>Imagine 100 vehicles travelling on the same road. The average reported speed is 12 km/h, while normal
+            traffic moves at approximately 50 km/h. ITS may identify congestion, update traffic information and suggest
+            alternative routes.</p>
+        </div>
+        <p><strong>Advantages:</strong> frequently updated information, broad geographical coverage, improved estimated
+          journey times and more responsive route recommendations.</p>
+        <p><strong>Limitations:</strong> disabled location services, inaccurate GPS signals, poor network coverage,
+          limited participation and privacy risks.</p>
+        <div class="important"><span class="callout-label">🔐 Privacy note</span>
+          <p>Location data is sensitive. Aggregation and anonymisation can reduce privacy risks, but they do not always
+            remove the possibility of identifying an individual from their movement patterns.</p>
+        </div>
+        <h3>4.4 Community-based reporting</h3>
+        <p><strong>Community-based reporting</strong> collects information about roads and transport services from
+          members of the public, passengers, drivers, radio stations, emergency services and other reporting
+          organisations.</p>
+        <div class="example"><span class="callout-label">✅ Example — Accident reporting</span>
+          <p>A driver reports an accident through a navigation app. The system may compare the report with other
+            submissions or sensor information. Once considered reliable, it can warn other drivers and recommend
+            different roads.</p>
+        </div>
+        <p><strong>Advantages:</strong> can detect issues that sensors miss, provides specific details and can spread
+          reports quickly.</p>
+        <p><strong>Limitations:</strong> reports may be incorrect, false, incomplete or outdated; areas with few
+          reporters may be poorly covered; reports often require verification.</p>
+        <h3>4.5 Road sensors and traffic cameras</h3>
+        <div class="tiles">
+          <div class="tile blue"><span class="emoji">📷</span>
+            <h4>Traffic cameras</h4>
+            <p>Provide visual data about road conditions, congestion, incidents and vehicle movement. Image processing
+              may automatically identify some events.</p>
+          </div>
+          <div class="tile green"><span class="emoji">📡</span>
+            <h4>Road sensors</h4>
+            <p>Inductive loops, radar sensors and other detectors can measure vehicle counts, speeds and traffic flow
+              automatically.</p>
+          </div>
+        </div>
+        <div class="example"><span class="callout-label">✅ Example — A busy motorway</span>
+          <p>Road sensors detect a sudden speed reduction. ITS analyses the readings and identifies congestion. A
+            traffic authority may display electronic warnings, adjust available traffic controls, recommend alternative
+            routes or alert relevant services.</p>
+        </div>
+        <h3>4.6 Comparing location data sources</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Main benefit</th>
+                <th>Main limitation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>User-generated data</strong></td>
+                <td>Speed and location data across many areas.</td>
+                <td>Depends on participation, permissions and reliable signals.</td>
+              </tr>
+              <tr>
+                <td><strong>Community reporting</strong></td>
+                <td>Specific descriptions of unexpected incidents.</td>
+                <td>Reports may be inaccurate or unverified.</td>
+              </tr>
+              <tr>
+                <td><strong>Road sensors</strong></td>
+                <td>Regular automated traffic measurements.</td>
+                <td>Installation and maintenance costs.</td>
+              </tr>
+              <tr>
+                <td><strong>Traffic cameras</strong></td>
+                <td>Visual information about road conditions.</td>
+                <td>Limited coverage and potential visibility issues.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Combining data from different sources can improve the overall reliability of ITS traffic information.</p>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section class="section" id="section5" aria-labelledby="heading5">
+        <div class="section-head">
+          <div class="section-icon">🚚</div>
+          <div>
+            <div class="section-kicker">Section 05</div>
+            <h2 id="heading5">Fleet Management</h2>
+          </div>
+        </div>
+        <h3>5.1 What is fleet management?</h3>
+        <p>A <strong>fleet</strong> is a group of vehicles owned, leased or operated by an organisation: delivery
+          trucks, company cars, public buses, taxis, emergency vehicles or commercial vans.</p>
+        <div class="definition"><strong>📘 Key definition — Fleet management</strong>
+          <p>Monitoring, controlling and coordinating an organisation's vehicles to improve efficiency, safety and
+            operating costs.</p>
+        </div>
+        <p>ITS supports fleet management by providing accurate information about vehicle positions, movements and
+          operating conditions.</p>
+        <h3>5.2 GPS in fleet management</h3>
+        <p>The <strong>Global Positioning System (GPS)</strong> is a satellite-based navigation system used to determine
+          geographical location. Fleet vehicles may carry GPS devices that send position updates to a central system via
+          mobile or other communication networks.</p>
+        <p>Fleet managers can use GPS information to locate vehicles, check routes, estimate arrival times, identify
+          delays and assign the nearest suitable available vehicle to a job.</p>
+        <div class="example"><span class="callout-label">✅ Example — Tracking delivery trucks</span>
+          <p>A logistics company operates 30 trucks. Its fleet management system displays their latest reported
+            locations on a map. When a customer asks about a delivery, the manager uses location and traffic data to
+            provide an estimated arrival time. If a truck is delayed, another vehicle may be assigned to an urgent
+            order.</p>
+        </div>
+        <h3>5.3 Telematics technology</h3>
+        <div class="definition"><strong>📘 Key definition — Telematics</strong>
+          <p>Technology that combines telecommunications and information processing to collect and transmit information
+            about a vehicle's location and operation to a remote system.</p>
+        </div>
+        <p>GPS mainly provides geographical location; telematics can provide much broader information about how a
+          vehicle is being operated.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Data collected</th>
+                <th>How it helps managers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Vehicle location</td>
+                <td>Shows where the vehicle is travelling.</td>
+              </tr>
+              <tr>
+                <td>Vehicle speed</td>
+                <td>Helps identify speeding or unusual driving patterns.</td>
+              </tr>
+              <tr>
+                <td>Sudden braking</td>
+                <td>May indicate unsafe driving or a road hazard.</td>
+              </tr>
+              <tr>
+                <td>Sharp turns</td>
+                <td>May indicate potentially risky manoeuvres.</td>
+              </tr>
+              <tr>
+                <td>Fuel consumption</td>
+                <td>Helps find inefficient vehicle operation.</td>
+              </tr>
+              <tr>
+                <td>Engine status</td>
+                <td>Can indicate possible faults or maintenance needs.</td>
+              </tr>
+              <tr>
+                <td>Idle time</td>
+                <td>Measures time the engine runs while the vehicle is stationary.</td>
+              </tr>
+              <tr>
+                <td>Distance travelled</td>
+                <td>Supports maintenance planning and vehicle use analysis.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info"><span class="callout-label">ℹ️ Note</span>
+          <p>Available telematics information depends on the sensors, equipment and software installed in the vehicle.
+          </p>
+        </div>
+        <h3>5.4 Monitoring driver behaviour</h3>
+        <p>Telematics systems may detect sudden braking, rapid acceleration, excessive speed, sharp turning and
+          unnecessary engine idling. Managers can analyse these patterns to improve safety and train drivers.</p>
+        <div class="example"><span class="callout-label">✅ Example — Protecting fragile cargo</span>
+          <p>A delivery company transports glass and delicate electronics. Sudden braking or sharp turns can cause goods
+            to shift and break. Telematics data can identify patterns associated with higher risk, allowing the company
+            to provide targeted driver training.</p>
+        </div>
+        <div class="important"><span class="callout-label">⚠️ Interpret data carefully</span>
+          <p>Sudden braking does not automatically mean poor driving. A driver may have needed to brake suddenly to
+            avoid an accident. Context is essential when evaluating behaviour.</p>
+        </div>
+        <h3>5.5 Vehicle dispatching</h3>
+        <p><strong>Dispatching</strong> means assigning vehicles and drivers to transport tasks. ITS may consider
+          vehicle position and availability, driver availability, traffic, delivery priority, vehicle capacity and
+          customer requirements.</p>
+        <div class="example"><span class="callout-label">✅ Example — Taxi dispatching</span>
+          <p>A taxi company receives a booking. ITS identifies available taxis near the passenger, estimates which
+            suitable vehicle can arrive most efficiently and allocates the journey. This can reduce waiting times and
+            unnecessary travel.</p>
+        </div>
+        <h3>5.6 Proactive fleet management</h3>
+        <p><strong>Proactive management</strong> involves identifying and addressing potential problems before they
+          seriously disrupt operations. ITS can support this by predicting service demand, identifying developing
+          vehicle faults or warning about known road closures.</p>
+        <ul>
+          <li>Schedule maintenance when monitoring information suggests a problem.</li>
+          <li>Redirect vehicles before they reach closed roads.</li>
+          <li>Assign extra vehicles when demand is expected to rise.</li>
+          <li>Move available vehicles to areas with greater predicted demand.</li>
+        </ul>
+        <h3>5.7 Benefits of ITS for fleet management</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Benefit</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Efficiency</strong></td>
+                <td>Vehicles are allocated to appropriate routes and tasks.</td>
+              </tr>
+              <tr>
+                <td><strong>Lower operating costs</strong></td>
+                <td>Less unnecessary travel and idling can reduce fuel use.</td>
+              </tr>
+              <tr>
+                <td><strong>Improved safety</strong></td>
+                <td>Driving behaviour and vehicle condition can be monitored.</td>
+              </tr>
+              <tr>
+                <td><strong>Customer service</strong></td>
+                <td>More accurate arrival estimates can be provided.</td>
+              </tr>
+              <tr>
+                <td><strong>Resource allocation</strong></td>
+                <td>Vehicles and drivers can be assigned according to demand.</td>
+              </tr>
+              <tr>
+                <td><strong>Faster responses</strong></td>
+                <td>Managers can react to congestion, breakdowns and incidents.</td>
+              </tr>
+              <tr>
+                <td><strong>Maintenance planning</strong></td>
+                <td>Vehicle data can help identify service requirements.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 6 -->
+      <section class="section" id="section6" aria-labelledby="heading6">
+        <div class="section-head">
+          <div class="section-icon">⚖️</div>
+          <div>
+            <div class="section-kicker">Section 06</div>
+            <h2 id="heading6">Overall Benefits and Limitations of ITS</h2>
+          </div>
+        </div>
+        <h3>6.1 Advantages of ITS</h3>
+        <div class="tiles">
+          <div class="tile green"><span class="emoji">⏱️</span>
+            <h4>Reduced journey times</h4>
+            <p>Vehicles can avoid heavily congested routes, improving passenger and delivery journeys.</p>
+          </div>
+          <div class="tile blue"><span class="emoji">🚌</span>
+            <h4>Better resource use</h4>
+            <p>Operators allocate vehicles and services to areas with the highest demand.</p>
+          </div>
+          <div class="tile amber"><span class="emoji">🛡️</span>
+            <h4>Improved transport safety</h4>
+            <p>Incident detection and vehicle monitoring support faster, safer responses.</p>
+          </div>
+          <div class="tile green"><span class="emoji">🌱</span>
+            <h4>Reduced environmental impact</h4>
+            <p>Efficient routing and less unnecessary idling may lower fuel use and emissions.</p>
+          </div>
+          <div class="tile"><span class="emoji">📈</span>
+            <h4>Better decisions</h4>
+            <p>Managers use current and historical data for operational and long-term planning.</p>
+          </div>
+          <div class="tile pink"><span class="emoji">😊</span>
+            <h4>Better passenger experience</h4>
+            <p>Passengers benefit from improved arrival estimates and more responsive services.</p>
+          </div>
+        </div>
+        <h3>6.2 Limitations and challenges of ITS</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Challenge</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>High implementation cost</strong></td>
+                <td>Sensors, cameras, GPS devices, software and network infrastructure can be costly.</td>
+              </tr>
+              <tr>
+                <td><strong>Maintenance costs</strong></td>
+                <td>Equipment and software require ongoing support and upgrades.</td>
+              </tr>
+              <tr>
+                <td><strong>Technology dependence</strong></td>
+                <td>Network failures or outages can interrupt monitoring and control.</td>
+              </tr>
+              <tr>
+                <td><strong>Data accuracy</strong></td>
+                <td>Incomplete, inaccurate or old information can produce poor decisions.</td>
+              </tr>
+              <tr>
+                <td><strong>Privacy concerns</strong></td>
+                <td>Location and driving information can expose sensitive individual behaviour.</td>
+              </tr>
+              <tr>
+                <td><strong>Cybersecurity risks</strong></td>
+                <td>Connected systems may be attacked, disrupted or have data exposed.</td>
+              </tr>
+              <tr>
+                <td><strong>Integration difficulties</strong></td>
+                <td>Organisations may use incompatible technology or formats.</td>
+              </tr>
+              <tr>
+                <td><strong>Prediction errors</strong></td>
+                <td>Unexpected changes may make forecasts unreliable.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="important"><span class="callout-label">💡 Important conclusion</span>
+          <p>ITS cannot completely eliminate congestion or delays. Results depend on the quality of data,
+            infrastructure, algorithms and operators' ability to respond to recommendations.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 7 -->
+      <section class="section" id="section7" aria-labelledby="heading7">
+        <div class="section-head">
+          <div class="section-icon">🚌</div>
+          <div>
+            <div class="section-kicker">Section 07</div>
+            <h2 id="heading7">Worked Example: ITS in a Public Bus Company</h2>
+          </div>
+        </div>
+        <p>Imagine a company operating <strong>100 buses</strong> across a city. Buses regularly arrive late, some
+          routes are overcrowded, other routes have few passengers, fuel costs are high and customers complain about
+          waiting times.</p>
+        <p>The company introduces ITS to improve its services.</p>
+        <h3>7.1 How different ITS functions help</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>ITS function</th>
+                <th>How it is used</th>
+                <th>Expected improvement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Route planning</td>
+                <td>Analyse traffic and choose efficient roads.</td>
+                <td>Shorter journeys and fewer delays.</td>
+              </tr>
+              <tr>
+                <td>Dynamic scheduling</td>
+                <td>Change service frequency when demand changes.</td>
+                <td>Reduced waiting and better vehicle utilisation.</td>
+              </tr>
+              <tr>
+                <td>Timetabling</td>
+                <td>Use past demand to plan departure times.</td>
+                <td>More buses at busy times.</td>
+              </tr>
+              <tr>
+                <td>Location services</td>
+                <td>Track buses and estimate arrivals.</td>
+                <td>Better passenger information.</td>
+              </tr>
+              <tr>
+                <td>Fleet management</td>
+                <td>Monitor vehicle use, fuel and driving patterns.</td>
+                <td>Better safety and efficiency.</td>
+              </tr>
+              <tr>
+                <td>Incident management</td>
+                <td>Adjust operations around road closures.</td>
+                <td>Less disruption.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>7.2 A day in the life of the ITS</h3>
+        <div class="case-steps">
+          <div class="case-step"><strong>7:00 a.m. — Predicting demand</strong>
+            <p>The system uses historical passenger records to predict a busy period from 7:30 to 9:00 a.m.</p>
+          </div>
+          <div class="case-step"><strong>7:30 a.m. — Adjusting services</strong>
+            <p>Additional buses are assigned to busy routes to reduce overcrowding.</p>
+          </div>
+          <div class="case-step"><strong>8:00 a.m. — Detecting congestion</strong>
+            <p>Road sensors identify heavy congestion on a main road.</p>
+          </div>
+          <div class="case-step"><strong>8:05 a.m. — Responding to the incident</strong>
+            <p>The system identifies a suitable alternative route for affected buses, subject to restrictions and
+              operational approval.</p>
+          </div>
+          <div class="case-step"><strong>8:10 a.m. — Updating passengers</strong>
+            <p>Mobile applications and passenger displays show revised estimated arrival times.</p>
+          </div>
+          <div class="case-step"><strong>9:30 a.m. — Reviewing operations</strong>
+            <p>As passenger numbers decrease, managers reduce additional services and reassign available buses.</p>
+          </div>
+        </div>
+        <div class="example"><span class="callout-label">✅ Result</span>
+          <p>By combining ITS functions, the bus company can improve passenger satisfaction, reduce unnecessary
+            operating costs and make better use of its vehicles.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 8 -->
+      <section class="section" id="section8" aria-labelledby="heading8">
+        <div class="section-head">
+          <div class="section-icon">📖</div>
+          <div>
+            <div class="section-kicker">Section 08</div>
+            <h2 id="heading8">Important Terminology</h2>
+          </div>
+        </div>
+        <p>The following key terms are useful for understanding and explaining Topic 14.5 accurately.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ITS</strong></td>
+                <td>A technology-based system that uses transportation data to improve operations and planning.</td>
+              </tr>
+              <tr>
+                <td><strong>Real-time data</strong></td>
+                <td>Information about current conditions, frequently or continuously updated.</td>
+              </tr>
+              <tr>
+                <td><strong>Historical data</strong></td>
+                <td>Information stored from past events or journeys.</td>
+              </tr>
+              <tr>
+                <td><strong>Routing algorithm</strong></td>
+                <td>Computer instructions that evaluate possible paths and identify suitable routes.</td>
+              </tr>
+              <tr>
+                <td><strong>Dynamic scheduling</strong></td>
+                <td>Adjusting services based on changing conditions.</td>
+              </tr>
+              <tr>
+                <td><strong>Demand-responsive scheduling</strong></td>
+                <td>Adjusting provision according to passenger requests and demand.</td>
+              </tr>
+              <tr>
+                <td><strong>Incident management</strong></td>
+                <td>Detecting and responding to unexpected transport disruptions.</td>
+              </tr>
+              <tr>
+                <td><strong>Timetabling</strong></td>
+                <td>Planning the departure and arrival times of transport services.</td>
+              </tr>
+              <tr>
+                <td><strong>Machine learning</strong></td>
+                <td>Technology that identifies patterns in data and uses them to make predictions or decisions.</td>
+              </tr>
+              <tr>
+                <td><strong>Location-based services</strong></td>
+                <td>Services using geographical location to provide useful functions.</td>
+              </tr>
+              <tr>
+                <td><strong>Data aggregation</strong></td>
+                <td>Combining multiple records into summarised information.</td>
+              </tr>
+              <tr>
+                <td><strong>GPS</strong></td>
+                <td>A satellite-based system used to determine geographical location.</td>
+              </tr>
+              <tr>
+                <td><strong>Telematics</strong></td>
+                <td>Technology for collecting and transmitting information about vehicle location and operation.</td>
+              </tr>
+              <tr>
+                <td><strong>Fleet management</strong></td>
+                <td>Monitoring and coordinating an organisation's vehicles.</td>
+              </tr>
+              <tr>
+                <td><strong>Dispatching</strong></td>
+                <td>Assigning vehicles and drivers to transport tasks.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 9 -->
+      <section class="section" id="section9" aria-labelledby="heading9">
+        <div class="section-head">
+          <div class="section-icon">🔗</div>
+          <div>
+            <div class="section-kicker">Section 09</div>
+            <h2 id="heading9">Understanding the Five Main Areas</h2>
+          </div>
+        </div>
+        <p>The five principal areas of Topic 14.5 connect together to support intelligent transport decisions.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Main area</th>
+                <th>Central question</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. ITS overview</strong></td>
+                <td>How can transport data improve decisions?</td>
+                <td>Detecting congestion and predicting traffic problems.</td>
+              </tr>
+              <tr>
+                <td><strong>2. Scheduling and route planning</strong></td>
+                <td>Which path should a vehicle take, and when should services run?</td>
+                <td>Rerouting delivery trucks around an accident.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Timetabling</strong></td>
+                <td>When and how frequently should services operate?</td>
+                <td>Planning extra rush-hour buses.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Locations</strong></td>
+                <td>Where are vehicles, passengers and incidents?</td>
+                <td>Using GPS information to detect congestion.</td>
+              </tr>
+              <tr>
+                <td><strong>5. Fleet management</strong></td>
+                <td>How can an organisation coordinate its vehicles?</td>
+                <td>Tracking delivery trucks and monitoring driving patterns.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="end-box"><strong>🎓 Final understanding</strong>
+          <p>The key idea behind Intelligent Transportation Systems is that <strong>transportation data is transformed
+              into useful information for decision-making</strong>.</p>
+          <p>ITS combines real-time monitoring, historical information, predictive analysis and computer-based
+            algorithms to determine <strong>where vehicles should travel, when services should operate, where demand is
+              highest and how fleets can be managed</strong>.</p>
+          <p>These five areas are interconnected: location data supports route planning; routing affects scheduling;
+            historical demand supports timetabling; and all these functions contribute to more effective fleet
+            management.</p>
+        </div>
+      </section>
+
+      <div class="lesson-footer"><a class="footer-link" href="topic-14-04.html">← Previous: Topic 14.4</a><a
+          class="footer-link" href="topic-14.html">⌂ Topic 14 Dashboard</a><a class="footer-link primary"
+          href="topic-14-06.html">Next: Topic 14.6 →</a></div>
+      <div class="footer-bottom">Tr.Sun Education · Edexcel International A Level Information Technology · Created by
+        Tr. Sun</div>
+    </div>
+  </main>
+  <button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    (function () {
+      'use strict';
+      const body = document.body;
+      const menu = document.getElementById('menuButton');
+      const overlay = document.getElementById('overlay');
+      const links = [...document.querySelectorAll('#sectionNav a')];
+      const sections = [...document.querySelectorAll('main section[id]')];
+      const progress = document.getElementById('progressFill');
+      const backTop = document.getElementById('backTop');
+      function toggleMenu(force) {
+        const open = (typeof force === 'boolean') ? force : !body.classList.contains('menu-open');
+        body.classList.toggle('menu-open', open);
+        menu.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+      }
+      menu.addEventListener('click', () => toggleMenu());
+      overlay.addEventListener('click', () => toggleMenu(false));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false) });
+      links.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+      function updateScroll() {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (max > 0 ? Math.min(100, Math.max(0, window.scrollY / max * 100)) : 100) + '%';
+        backTop.classList.toggle('visible', window.scrollY > 380);
+        let active = sections[0];
+        for (const section of sections) { if (section.getBoundingClientRect().top <= 165) active = section; else break; }
+        if (active) { links.forEach(link => { const current = link.hash === '#' + active.id; link.classList.toggle('active', current); if (current) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); }); }
+      }
+      let ticking = false;
+      window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(() => { updateScroll(); ticking = false }); ticking = true; } }, { passive: true });
+      window.addEventListener('resize', () => { if (innerWidth > 900) toggleMenu(false); updateScroll() });
+      backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' }));
+      updateScroll();
+    })();
+  </script>
 </body>
+
 </html>

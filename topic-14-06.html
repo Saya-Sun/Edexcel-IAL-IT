@@ -1,124 +1,2293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<meta name="description" content="Topic 14.6: Expert Systems — lesson page coming soon at Tr.Sun Education.">
-<title>Topic 14.6 – Expert Systems | Tr.Sun Education</title>
-<style>
-:root{--sidebar-width:282px;--navy:#111827;--navy-2:#1e293b;--purple:#7653e8;--purple-dark:#5937c5;--bg:#f5f7fc;--surface:#fff;--text:#253047;--muted:#64748b;--border:#e7eaf2;--shadow:0 8px 28px rgba(25,33,60,.045)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid #b69aff;outline-offset:3px}
-.skip-link{position:fixed;top:-80px;left:10px;z-index:2000;padding:9px 13px;background:#fff;border-radius:9px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;top:0;left:0;z-index:1000;width:var(--sidebar-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-y:auto;background:var(--navy);color:#fff;scrollbar-width:thin;scrollbar-color:#45506a transparent}
-.brand{padding:28px 18px 23px;border-bottom:1px solid #30394c}
-.brand-identity{display:flex;align-items:center;gap:12px}
-.brand-logo{width:62px;height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(135deg,#a06aff,#5837c6);box-shadow:0 8px 24px rgba(117,83,232,.3)}
-.brand-logo svg{width:49px;height:49px}.brand-text{min-width:0}
-.brand-text h2{margin:0;font-size:17px;line-height:1.3;color:#fff;letter-spacing:-.5px}
-.brand-text p{margin:5px 0 0;color:#c4b5fd;font-size:11px;white-space:nowrap}
-.brand-curriculum{margin-top:20px;color:#94a3b8;font-size:9px;font-weight:800;letter-spacing:1.15px}
-.current-lesson{margin:22px 13px 13px;padding:16px;border:1px solid #4b3a86;border-radius:14px;background:linear-gradient(135deg,#382b65,#29234a)}
-.current-lesson small{display:block;margin-bottom:8px;color:#c4b5fd;font-size:10px;font-weight:750;letter-spacing:1px}
-.current-lesson h3{margin:0;font-size:15px;color:#fff}
-.current-lesson p{margin:4px 0 0;color:#d6d0ea;font-size:12px;line-height:1.5}
-.sidebar-label{padding:18px 23px 12px;color:#8591a8;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.side-nav{padding:0 12px 18px}
-.side-nav a{display:flex;align-items:center;gap:12px;margin-bottom:5px;padding:11px 12px;color:#cbd5e1;font-size:12.5px;line-height:1.4;border-radius:11px;transition:background .2s,color .2s}
-.side-nav a:hover{background:#283249;color:#fff}.side-nav a.active{background:#392b66;color:#fff;box-shadow:inset 3px 0 #a78bfa}
-.nav-number{flex-shrink:0;width:42px;height:30px;display:grid;place-items:center;border-radius:9px;background:#293449;color:#bac5d8;font-size:11px;font-weight:800}
-.side-nav a.active .nav-number{background:#8157ed;color:#fff}
-.sidebar-footer{margin-top:auto;padding:21px 22px;border-top:1px solid #30394c;color:#94a3b8;font-size:12px}
-.sidebar-footer strong{color:#e2e8f0}
-.main{margin-left:var(--sidebar-width);min-height:100vh;padding:34px 42px 55px}
-.container{max-width:1120px;margin:0 auto}
-.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#78849a;font-size:12px;margin-bottom:20px}
-.breadcrumb a:hover,.breadcrumb strong{color:#6744d0}
-.hero{position:relative;overflow:hidden;padding:47px 44px;border-radius:24px;background:linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);box-shadow:0 15px 35px rgba(88,60,180,.16);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.15);pointer-events:none}
-.hero::before{width:360px;height:360px;right:-100px;top:-200px}.hero::after{width:250px;height:250px;right:90px;bottom:-175px}
-.hero-content{position:relative;z-index:1}.hero-badge{display:inline-block;padding:7px 15px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:11px;font-weight:750;letter-spacing:.8px}
-.hero h1{font-size:clamp(28px,3.6vw,43px);line-height:1.2;letter-spacing:-1px;margin:21px 0 14px}
-.hero p{max-width:710px;color:#f2ecff;font-size:15px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.hero-tags span{padding:8px 13px;font-size:11px;font-weight:650;border-radius:9px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.17)}
-.coming-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,60px) 26px;margin:30px 0 26px;box-shadow:var(--shadow);text-align:center}
-.status-icon{display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:#f2edff;color:#7653e8;margin:0 auto 22px}
-.status-icon svg{width:39px;height:39px}.status-label{display:inline-block;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#6b4cc7;text-transform:uppercase;margin-bottom:8px}
-.coming-section h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:6px 0 15px;color:#253047}
-.coming-section p{max-width:540px;margin:0 auto 24px;color:#64748b;font-size:15px}
-.notice{display:flex;align-items:flex-start;gap:12px;max-width:570px;margin:0 auto 25px;padding:16px 18px;border:1px solid #f7e2b8;border-left:4px solid #e9a34e;background:#fff8ec;border-radius:12px;text-align:left;color:#7c581f;font-size:13px}
-.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:2px;color:#b57622}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:11px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;padding:11px 17px;border-radius:11px;font-size:13px;font-weight:750;border:1px solid #e0d4ff;background:#f2edff;color:#5a38c3;transition:background .2s,transform .2s}
-.btn:hover{background:#e8deff;transform:translateY(-1px)}.btn.primary{border-color:#6644cd;background:#6746cf;color:#fff}.btn.primary:hover{background:#4f31b0}
-.lesson-navigation{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin:24px 0 10px}
-.lesson-navigation a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff}
-.lesson-navigation a:hover{background:#e8deff}
-.page-footer{padding:25px 15px;text-align:center;color:#8995aa;font-size:12px}.page-footer p{margin:4px}.page-footer strong{color:#5a38c3}
-.menu-button,.overlay{display:none}
-@media(max-width:1050px){.main{padding:28px}}
-@media(max-width:800px){
- .sidebar{width:280px;transform:translateX(-100%);transition:transform .3s ease;box-shadow:14px 0 35px rgba(0,0,0,.2)}
- .sidebar.open{transform:translateX(0)}
- .main{margin-left:0;padding:78px 16px 35px}
- .menu-button{display:flex;align-items:center;gap:9px;position:fixed;top:15px;left:16px;z-index:900;padding:10px 15px;border:0;border-radius:11px;background:var(--navy-2);color:#fff;box-shadow:0 5px 18px #0002}
- .overlay.show{display:block;position:fixed;inset:0;background:rgba(13,18,30,.65);z-index:950;border:0;width:100%}
- .hero{padding:33px 25px;border-radius:19px}.hero p{font-size:14px}
-}
-@media(max-width:550px){.hero{padding:29px 21px}.hero h1{font-size:clamp(27px,7vw,36px)}.hero-tags{gap:7px}.hero-tags span{font-size:10px}.coming-section{padding:32px 18px}.lesson-navigation a{width:100%}.notice{padding:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description"
+    content="Tr.Sun Education – Edexcel International A Level IT, Topic 14.6: Expert Systems. Detailed notes, examples, diagrams and case study.">
+  <title>Topic 14.6 – Expert Systems | Tr.Sun Education</title>
+  <style>
+    :root {
+      --navy: #111827;
+      --navy-soft: #1d293b;
+      --purple: #6d4ed6;
+      --purple-deep: #4934b5;
+      --pink: #ad72ed;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --page: #f4f6fb;
+      --white: #fff;
+      --radius: 20px;
+      --sidebar-width: 282px;
+      --shadow: 0 8px 30px rgba(31, 41, 55, .055);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 28px
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    }
+
+    a {
+      color: #5f40c7
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #c5b6ff;
+      outline-offset: 3px
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    .reading-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #a78bfa, #ec8bd3);
+      z-index: 200;
+      transition: width .1s
+    }
+
+    .sidebar {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      background: var(--navy);
+      color: #d7def0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 18px rgba(15, 23, 42, .10)
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 26px 21px 23px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .brand-logo {
+      width: 47px;
+      height: 47px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(140deg, #7356dc, #b976f0);
+      box-shadow: 0 7px 22px rgba(136, 93, 238, .22)
+    }
+
+    .brand-title {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.35px;
+      font-weight: 800;
+      line-height: 1.25
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 3px;
+      color: #bdc6dd;
+      font-size: 11px;
+      letter-spacing: .2px
+    }
+
+    .sidebar-scroll {
+      padding: 23px 14px 19px;
+      overflow-y: auto;
+      flex: 1;
+      scrollbar-color: #475569 transparent;
+      scrollbar-width: thin
+    }
+
+    .sidebar-label {
+      padding: 0 10px;
+      font-size: 11px;
+      color: #93a5c3;
+      font-weight: 800;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      margin: 0 0 11px
+    }
+
+    .current-lesson {
+      border: 1px solid rgba(178, 152, 255, .25);
+      background: linear-gradient(125deg, rgba(127, 87, 226, .24), rgba(80, 66, 160, .13));
+      padding: 14px 15px;
+      border-radius: 14px;
+      margin: 0 3px 26px
+    }
+
+    .current-lesson .eyebrow {
+      font-size: 11px;
+      color: #cfbbff;
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase
+    }
+
+    .current-lesson strong {
+      display: block;
+      color: white;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 4px
+    }
+
+    .current-lesson span:last-child {
+      display: block;
+      font-size: 11px;
+      color: #bbc5dd;
+      margin-top: 5px
+    }
+
+    .side-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #c4cedf;
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.4;
+      border-radius: 10px;
+      padding: 11px 10px;
+      margin: 3px 0;
+      transition: background .2s, color .2s
+    }
+
+    .side-nav a:hover {
+      background: rgba(255, 255, 255, .07);
+      color: white
+    }
+
+    .side-nav a.active {
+      background: linear-gradient(90deg, rgba(147, 103, 241, .27), rgba(147, 103, 241, .10));
+      color: white;
+      box-shadow: inset 3px 0 #b79aff
+    }
+
+    .nav-num {
+      flex: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .07);
+      font-weight: 800;
+      font-size: 11px;
+      color: #becaef
+    }
+
+    .side-nav a.active .nav-num {
+      background: #a78bfa;
+      color: #1e1744
+    }
+
+    .sidebar-foot {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 16px 20px 21px;
+      font-size: 11px;
+      line-height: 1.8;
+      color: #aab8cf
+    }
+
+    .sidebar-foot strong {
+      color: #ecedfb
+    }
+
+    .main {
+      margin-left: var(--sidebar-width);
+      min-width: 0;
+      padding: 30px clamp(20px, 4.6vw, 66px) 70px
+    }
+
+    .content {
+      max-width: 1120px;
+      margin: 0 auto
+    }
+
+    .breadcrumbs {
+      font-size: 12.5px;
+      color: #6c7990;
+      font-weight: 600;
+      margin: 2px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #6253a7
+    }
+
+    .breadcrumbs .sep {
+      color: #afb6c6
+    }
+
+    .hero {
+      color: white;
+      background: linear-gradient(112deg, #4934b5 0%, #7451d2 52%, #ad72ed 100%);
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: clamp(28px, 4.2vw, 54px);
+      box-shadow: 0 16px 35px rgba(82, 58, 187, .17);
+      margin-bottom: 27px
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 2px solid rgba(255, 255, 255, .13);
+      border-radius: 50%;
+      right: -85px;
+      top: -150px
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 235px;
+      height: 235px;
+      background: rgba(255, 255, 255, .055);
+      border-radius: 50%;
+      right: 50px;
+      bottom: -170px
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 17px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .22)
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.3vw, 53px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px;
+      color: white
+    }
+
+    .hero p {
+      font-size: clamp(14px, 1.65vw, 17px);
+      max-width: 780px;
+      color: #f4eefe;
+      margin: 0;
+      line-height: 1.8
+    }
+
+    .hero-meta {
+      margin-top: 23px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12.5px;
+      color: #f5ebff
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center
+    }
+
+    .notice-intro {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 21px 25px;
+      margin-bottom: 27px;
+      box-shadow: var(--shadow)
+    }
+
+    .notice-intro strong {
+      color: #4b379a
+    }
+
+    .lesson-section {
+      background: white;
+      border: 1px solid #e8eaf0;
+      border-radius: var(--radius);
+      padding: clamp(22px, 3.4vw, 39px);
+      margin: 0 0 28px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 25px
+    }
+
+    .section-top {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding-bottom: 17px;
+      border-bottom: 1px solid #e9edf5;
+      margin-bottom: 23px
+    }
+
+    .section-icon {
+      height: 50px;
+      width: 50px;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #ebe6ff, #f5e9ff);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      flex: none
+    }
+
+    .section-top small {
+      display: block;
+      color: #7e62bd;
+      font-size: 11px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin: 1px 0 2px
+    }
+
+    h2 {
+      color: #17243c;
+      line-height: 1.3;
+      font-size: clamp(22px, 2.5vw, 29px);
+      margin: 0;
+      letter-spacing: -.65px
+    }
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 27px 0 10px;
+      color: #31256e;
+      letter-spacing: -.25px
+    }
+
+    h4 {
+      font-size: 16px;
+      line-height: 1.45;
+      margin: 19px 0 8px;
+      color: #243451
+    }
+
+    p {
+      margin: 11px 0 16px
+    }
+
+    ul,
+    ol {
+      padding-left: 23px;
+      margin: 12px 0 20px
+    }
+
+    li {
+      padding-left: 3px;
+      margin: 5px 0
+    }
+
+    li::marker {
+      color: #8b5bd8;
+      font-weight: 700
+    }
+
+    strong {
+      font-weight: 750
+    }
+
+    em {
+      color: #475569
+    }
+
+    .definition {
+      margin: 19px 0;
+      background: #f3efff;
+      border: 1px solid #e4d8ff;
+      border-left: 5px solid #8a62e7;
+      border-radius: 12px;
+      padding: 17px 20px
+    }
+
+    .definition .callout-title {
+      color: #6240ae;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 5px
+    }
+
+    .definition p,
+    .tip p,
+    .warning p,
+    .example p {
+      margin: 5px 0 0
+    }
+
+    .tip {
+      background: #eafaf1;
+      border: 1px solid #bdebd1;
+      border-left: 5px solid #25aa6a;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 19px 0
+    }
+
+    .tip strong {
+      color: #11653e
+    }
+
+    .warning {
+      background: #fff8e6;
+      border: 1px solid #f5df9e;
+      border-left: 5px solid #e8ad2b;
+      padding: 16px 19px;
+      border-radius: 12px;
+      margin: 20px 0
+    }
+
+    .warning strong {
+      color: #94600c
+    }
+
+    .example {
+      background: #f0fafb;
+      border: 1px solid #c9e9ed;
+      padding: 18px 20px;
+      border-radius: 13px;
+      margin: 19px 0
+    }
+
+    .example strong {
+      color: #146474
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0
+    }
+
+    .cards.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .mini-card {
+      border: 1px solid #e2e8f0;
+      padding: 18px;
+      border-radius: 15px;
+      background: #f8fafc
+    }
+
+    .mini-card h4 {
+      margin: 0 0 7px;
+      color: #2b285f;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .mini-card p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #475569
+    }
+
+    .mini-card.purple {
+      background: #f6f1ff;
+      border-color: #e7d7ff
+    }
+
+    .mini-card.blue {
+      background: #eef6ff;
+      border-color: #d1e5ff
+    }
+
+    .mini-card.green {
+      background: #ecfbf3;
+      border-color: #c9efd9
+    }
+
+    .mini-card.peach {
+      background: #fff3ed;
+      border-color: #ffddc8
+    }
+
+    .mini-card.yellow {
+      background: #fffbed;
+      border-color: #fae9b7
+    }
+
+    .mini-card.cyan {
+      background: #edfbfc;
+      border-color: #c6edf2
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #e5eaf3;
+      border-radius: 13px;
+      margin: 17px 0 22px
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 555px;
+      font-size: 13.5px;
+      line-height: 1.55
+    }
+
+    thead {
+      background: #ede9ff;
+      color: #483498
+    }
+
+    th {
+      text-align: left;
+      padding: 13px 15px;
+      font-size: 12.5px;
+      font-weight: 800
+    }
+
+    td {
+      padding: 12px 15px;
+      vertical-align: top;
+      border-top: 1px solid #e7ebf4
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff
+    }
+
+    td:first-child {
+      font-weight: 650;
+      color: #30435a
+    }
+
+    .rule {
+      background: #162238;
+      color: #e9edff;
+      padding: 19px 23px;
+      border-radius: 13px;
+      overflow: auto;
+      font: 13px/1.9 ui-monospace, SFMono-Regular, Consolas, monospace;
+      white-space: pre-wrap;
+      margin: 14px 0
+    }
+
+    .rule .purple-text {
+      color: #c5a5ff
+    }
+
+    .rule .green-text {
+      color: #93e0b1
+    }
+
+    .diagram {
+      background: #fbfcff;
+      border: 1px solid #e1e5f0;
+      border-radius: 17px;
+      padding: 22px;
+      margin: 22px 0;
+      text-align: center
+    }
+
+    .diagram-label {
+      font-size: 12px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      font-weight: 850;
+      color: #7a68aa;
+      margin: 0 0 16px
+    }
+
+    .flow-vertical {
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .flow-node {
+      padding: 12px 19px;
+      border-radius: 11px;
+      border: 1px solid #d5d9e9;
+      background: #fff;
+      max-width: 100%;
+      min-width: 210px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      text-align: center;
+      font-weight: 700
+    }
+
+    .flow-node small {
+      display: block;
+      color: #64748b;
+      font-weight: 500;
+      font-size: 11.5px;
+      margin-top: 3px
+    }
+
+    .flow-node.purple {
+      background: #f0eaff;
+      border-color: #d6c5ff;
+      color: #5235ab
+    }
+
+    .flow-node.blue {
+      background: #eaf3ff;
+      border-color: #c8dffc;
+      color: #245da4
+    }
+
+    .flow-node.green {
+      background: #e9f9ef;
+      border-color: #b9e8ca;
+      color: #126b3e
+    }
+
+    .flow-node.yellow {
+      background: #fff8e5;
+      border-color: #f5df9e;
+      color: #97620a
+    }
+
+    .down-arrow {
+      font-size: 22px;
+      line-height: 1;
+      color: #9183b4
+    }
+
+    .flow-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      width: 100%;
+      max-width: 600px
+    }
+
+    .flow-split .branch {
+      border-radius: 12px;
+      padding: 13px;
+      border: 1px solid #e0e8ee;
+      text-align: center
+    }
+
+    .flow-split .branch.yes {
+      background: #ecfbf3;
+      border-color: #b9e8ca
+    }
+
+    .flow-split .branch.no {
+      background: #fff0ef;
+      border-color: #f3c6c1
+    }
+
+    .branch .answer {
+      font-weight: 900;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin: 0 0 4px
+    }
+
+    .branch p {
+      font-size: 12.5px;
+      margin: 5px 0
+    }
+
+    .schema {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .schema-mid {
+      grid-column: 1/-1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px
+    }
+
+    .schema .flow-node {
+      min-width: 0;
+      width: 100%
+    }
+
+    .schema .join {
+      grid-column: 1/-1;
+      display: grid;
+      justify-items: center;
+      gap: 7px
+    }
+
+    .dfd-figure {
+      overflow: auto;
+      background: #fff;
+      border: 1px solid #e1e5ee;
+      border-radius: 16px;
+      margin: 22px 0;
+      padding: 14px
+    }
+
+    .dfd-figure svg {
+      display: block;
+      min-width: 650px;
+      width: 100%;
+      height: auto
+    }
+
+    .dfd-legend {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #6b7280;
+      margin: 10px 4px 5px
+    }
+
+    .dfd-legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .swatch {
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      border: 1px solid #999
+    }
+
+    .steps {
+      list-style: none;
+      counter-reset: steps;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      margin: 18px 0
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      margin: 0;
+      padding: 14px 15px 14px 60px;
+      background: #f8f9fd;
+      border: 1px solid #e9ecf4;
+      border-radius: 12px;
+      min-height: 58px
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      color: white;
+      background: #7852d8;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800
+    }
+
+    .steps li strong {
+      display: block;
+      color: #293757
+    }
+
+    .steps li span {
+      font-size: 13.5px;
+      color: #5d697a
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 15px 0
+    }
+
+    .comparison>.mini-card {
+      height: 100%
+    }
+
+    .activity-header {
+      background: linear-gradient(100deg, #44309d, #845fe0);
+      padding: 21px 24px;
+      border-radius: 15px;
+      color: white;
+      margin: 18px 0 24px
+    }
+
+    .activity-header strong {
+      font-size: 19px
+    }
+
+    .activity-header p {
+      color: #efeaff;
+      margin: 6px 0 0;
+      font-size: 14px
+    }
+
+    .subdivider {
+      border: 0;
+      border-top: 1px solid #e7eaf2;
+      margin: 30px 0
+    }
+
+    .bottom-nav {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 35px 0 15px
+    }
+
+    .bottom-nav a {
+      background: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      font-weight: 750;
+      font-size: 13px
+    }
+
+    .bottom-nav a:hover {
+      border-color: #ab93e9;
+      background: #f8f5ff
+    }
+
+    .page-foot {
+      text-align: center;
+      color: #8490a3;
+      font-size: 12px;
+      margin-top: 35px
+    }
+
+    .mobile-header {
+      display: none
+    }
+
+    .overlay {
+      display: none
+    }
+
+    .to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 22px;
+      background: #704acf;
+      color: white;
+      border: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      box-shadow: 0 7px 22px rgba(80, 52, 180, .3);
+      font-size: 21px;
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(9px);
+      transition: .2s
+    }
+
+    .to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0)
+    }
+
+    @media (max-width:1120px) {
+      .cards.three {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media (max-width:900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        top: 0;
+        z-index: 120
+      }
+
+      body.menu-open .sidebar {
+        transform: translateX(0)
+      }
+
+      .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 17, 31, .58);
+        z-index: 110;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .25s, visibility .25s
+      }
+
+      body.menu-open .overlay {
+        opacity: 1;
+        visibility: visible
+      }
+
+      body.menu-open {
+        overflow: hidden
+      }
+
+      .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 61px;
+        padding: 9px 18px;
+        background: #111827;
+        color: white;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, .12)
+      }
+
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, .09);
+        border: 1px solid rgba(255, 255, 255, .1);
+        color: white;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-size: 23px
+      }
+
+      .mobile-brand {
+        font-size: 15px;
+        font-weight: 800
+      }
+
+      .mobile-brand span {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        color: #b4bdd1;
+        line-height: 1.3
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 22px 20px 60px
+      }
+
+      html {
+        scroll-padding-top: 80px
+      }
+
+      .lesson-section {
+        scroll-margin-top: 80px
+      }
+    }
+
+    @media (max-width:620px) {
+      body {
+        font-size: 14px;
+        line-height: 1.76
+      }
+
+      .main {
+        padding: 17px 12px 50px
+      }
+
+      .hero {
+        padding: 26px 21px;
+        border-radius: 18px
+      }
+
+      .hero h1 {
+        letter-spacing: -.75px;
+        font-size: 33px
+      }
+
+      .lesson-section {
+        padding: 22px 17px;
+        border-radius: 17px;
+        margin-bottom: 17px
+      }
+
+      .section-top {
+        gap: 12px
+      }
+
+      .section-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+        border-radius: 12px
+      }
+
+      h2 {
+        font-size: 21px
+      }
+
+      h3 {
+        font-size: 17px
+      }
+
+      .cards,
+      .cards.three,
+      .comparison {
+        grid-template-columns: 1fr
+      }
+
+      .notice-intro {
+        padding: 17px 19px
+      }
+
+      .flow-split {
+        gap: 7px
+      }
+
+      .flow-split .branch {
+        padding: 9px 7px
+      }
+
+      .flow-node {
+        min-width: 0
+      }
+
+      .diagram {
+        padding: 14px 10px
+      }
+
+      .schema {
+        gap: 8px
+      }
+
+      .hero-meta {
+        gap: 8px
+      }
+
+      .breadcrumbs {
+        font-size: 11px
+      }
+
+      .bottom-nav {
+        flex-direction: column
+      }
+
+      .bottom-nav a {
+        text-align: center
+      }
+
+      .to-top {
+        right: 13px;
+        bottom: 15px;
+        width: 42px;
+        height: 42px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important
+      }
+    }
+
+    @media print {
+
+      .sidebar,
+      .mobile-header,
+      .overlay,
+      .reading-progress,
+      .to-top,
+      .bottom-nav {
+        display: none !important
+      }
+
+      .main {
+        margin: 0;
+        padding: 0
+      }
+
+      .hero {
+        box-shadow: none
+      }
+
+      .lesson-section {
+        break-inside: avoid;
+        box-shadow: none
+      }
+
+      .table-wrap {
+        overflow: visible
+      }
+
+      body {
+        background: white
+      }
+
+      a {
+        color: inherit
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open lesson navigation">☰ <span>Lesson Menu</span></button>
-<button class="overlay" id="overlay" type="button" aria-label="Close lesson navigation" tabindex="-1"></button>
-<aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
-  <div class="brand">
-    <div class="brand-identity"><div class="brand-logo"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 25L32 14L55 25L32 36Z" fill="white"/><path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round"/><path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="46" r="3" fill="#F9CD6A"/></svg></div><div class="brand-text"><h2>Tr.Sun Education</h2><p>Learn · Explore · Achieve</p></div></div>
-    <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-  </div>
-  <div class="current-lesson"><small>YOU ARE VIEWING</small><h3>📖 Topic 14.6</h3><p>Expert Systems</p></div>
-  <div class="sidebar-label">COURSE NAVIGATION</div>
-  <nav class="side-nav" aria-label="Topic 14 lessons"><a href="index.html"><span class="nav-number">⌂</span><span>All Topics</span></a><a href="topic-14.html"><span class="nav-number">14</span><span>Topic 14 Dashboard</span></a></nav>
-  <div class="sidebar-label">TOPIC 14 LESSONS</div>
-  <nav class="side-nav" aria-label="Other lessons in Topic 14"><a href="topic-14-01.html" ><span class="nav-number">14.1</span><span>The Role of IT Systems in Organisations</span></a>
-<a href="topic-14-02.html" ><span class="nav-number">14.2</span><span>Transaction Processing</span></a>
-<a href="topic-14-03.html" ><span class="nav-number">14.3</span><span>Customer Relationship Management Systems</span></a>
-<a href="topic-14-04.html" ><span class="nav-number">14.4</span><span>Management Information Systems</span></a>
-<a href="topic-14-05.html" ><span class="nav-number">14.5</span><span>Intelligent Transportation Systems</span></a>
-<a href="topic-14-06.html" class="active" aria-current="page"><span class="nav-number">14.6</span><span>Expert Systems</span></a>
-<a href="topic-14-07.html" ><span class="nav-number">14.7</span><span>IT Governance and Policy</span></a>
-<a href="topic-14-08.html" ><span class="nav-number">14.8</span><span>Managing IT Changeover</span></a>
-<a href="topic-14-09.html" ><span class="nav-number">14.9</span><span>System Maintenance</span></a>
-<a href="topic-14-10.html" ><span class="nav-number">14.10</span><span>Archiving Data</span></a>
-<a href="topic-14-11.html" ><span class="nav-number">14.11</span><span>Disaster Recovery Plans</span></a></nav>
-  <div class="sidebar-footer"><strong>Topic 14 · Using IT Systems in Organisations</strong><div>Unit 3 · A2 Level</div><div style="margin-top:12px">Created by Tr. Sun</div></div>
-</aside>
-<main class="main" id="main">
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span aria-hidden="true">›</span><a href="topic-14.html">Topic 14</a><span aria-hidden="true">›</span><strong>Lesson 14.6</strong></nav>
-  <header class="hero"><div class="hero-content"><span class="hero-badge">UNIT 3 · TOPIC 14 · LESSON 6</span><h1>Expert Systems</h1><p>Edexcel International A Level IT · A2 Level</p><div class="hero-tags"><span>📖 Topic 14.6</span><span>💻 Using IT Systems in Organisations</span></div></div></header>
-  <section class="coming-section" aria-labelledby="coming-title"><div class="status-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="status-label">Lesson page under preparation</span><h2 id="coming-title">Coming Soon!</h2><p>The lesson notes for <strong>Topic 14.6: Expert Systems</strong> are being prepared and will be added here.</p><div class="notice" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v4M12 17h.01"/></svg><span><strong>Content not yet available.</strong> Please return to the Topic 14 dashboard to explore the other lessons.</span></div><div class="actions"><a class="btn primary" href="topic-14.html">← Back to Topic 14</a><a class="btn" href="index.html">All Topics</a></div></section>
-  <nav class="lesson-navigation" aria-label="Adjacent lesson navigation"><a href="topic-14-05.html" aria-label="Previous lesson">← Lesson 14.5</a><a href="topic-14-07.html" aria-label="Next lesson">Lesson 14.7 →</a></nav>
-  <footer class="page-footer"><p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</p><p>Designed and created by Tr. Sun</p></footer>
-</div>
-</main>
-<script>
-'use strict';
-const menuButton=document.getElementById('menuButton');
-const sidebar=document.getElementById('sidebar');
-const overlay=document.getElementById('overlay');
-function setMenu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close lesson navigation':'Open lesson navigation');document.body.style.overflow=open?'hidden':'';}
-menuButton.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
-overlay.addEventListener('click',()=>setMenu(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false);});
-sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+  <div class="reading-progress" id="readingProgress" role="progressbar" aria-label="Reading progress" aria-valuemin="0"
+    aria-valuemax="100" aria-valuenow="0"></div>
+  <header class="mobile-header">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open lesson navigation"
+      aria-controls="sidebar" aria-expanded="false">☰</button>
+    <div class="mobile-brand">Tr.Sun Education<span>Learn · Explore · Achieve</span></div>
+  </header>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Lesson navigation">
+    <a class="brand" href="topic-14.html" aria-label="Tr.Sun Education Topic 14 dashboard">
+      <div class="brand-logo" aria-hidden="true">
+        <svg width="33" height="33" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 15.5 20 8l16 7.5L20 23 4 15.5Z" stroke="white" stroke-width="2.4" stroke-linejoin="round" />
+          <path d="M11 19.5V26c5.3 4.3 12.7 4.3 18 0v-6.5" stroke="white" stroke-width="2.4" stroke-linecap="round" />
+          <path d="M35.5 17v11" stroke="white" stroke-width="2.4" stroke-linecap="round" />
+          <circle cx="35.5" cy="30" r="2" fill="white" />
+        </svg>
+      </div>
+      <div><span class="brand-title">Tr.Sun Education</span><span class="brand-tagline">Learn · Explore · Achieve</span>
+      </div>
+    </a>
+    <div class="sidebar-scroll">
+      <p class="sidebar-label">Current lesson</p>
+      <div class="current-lesson"><span class="eyebrow">Topic 14 · Unit 3</span><strong>14.6 – Expert
+          Systems</strong><span>Edexcel IAL Information Technology</span></div>
+      <p class="sidebar-label">On this page</p>
+      <nav aria-label="Section navigation">
+        <ol class="side-nav">
+          <li><a href="#section-1"><span class="nav-num">01</span>Introduction</a></li>
+          <li><a href="#section-2"><span class="nav-num">02</span>Characteristics</a></li>
+          <li><a href="#section-3"><span class="nav-num">03</span>Main components</a></li>
+          <li><a href="#section-4"><span class="nav-num">04</span>How it works</a></li>
+          <li><a href="#section-5"><span class="nav-num">05</span>Reasoning methods</a></li>
+          <li><a href="#section-6"><span class="nav-num">06</span>AI and machine learning</a></li>
+          <li><a href="#section-7"><span class="nav-num">07</span>Advantages</a></li>
+          <li><a href="#section-8"><span class="nav-num">08</span>Limitations</a></li>
+          <li><a href="#section-9"><span class="nav-num">09</span>Development</a></li>
+          <li><a href="#section-10"><span class="nav-num">10</span>Case study · Activity 6</a></li>
+          <li><a href="#section-11"><span class="nav-num">11</span>Important considerations</a></li>
+          <li><a href="#section-12"><span class="nav-num">12</span>Key concepts</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="sidebar-foot">Edexcel International A Level IT<br><strong>Created by Tr. Sun</strong><br>© Tr.Sun
+      Education</div>
+  </aside>
+
+  <main class="main" id="mainContent">
+    <div class="content">
+      <div class="breadcrumbs"><a href="index.html">Home</a><span class="sep">›</span><a href="topic-14.html">Topic
+          14</a><span class="sep">›</span><span>14.6 Expert Systems</span></div>
+      <section class="hero" aria-labelledby="pageTitle">
+        <div class="badges"><span class="badge">🎓 A2 Level</span><span class="badge">📘 Unit 3</span><span
+            class="badge">Topic 14.6</span></div>
+        <h1 id="pageTitle">Expert Systems</h1>
+        <p>Understand how knowledge-based systems imitate specialist decision-making, how a knowledge base and inference
+          engine work together, and the benefits and limitations of expert-system chatbots in organisations.</p>
+        <div class="hero-meta"><span>📚 Using IT Systems in Organisations</span><span>📝 Detailed Lesson Notes</span>
+        </div>
+      </section>
+      <div class="notice-intro"><strong>Lesson overview:</strong> An expert system uses stored expertise and rules to
+        provide advice or solve problems within a defined field. This lesson covers its components, reasoning
+        techniques, real-world uses, strengths, weaknesses and the textbook's customer-support chatbot case study.</div>
+
+      <section class="lesson-section" id="section-1">
+        <div class="section-top">
+          <div class="section-icon">🧠</div>
+          <div><small>Section 01</small>
+            <h2>Introduction to Expert Systems</h2>
+          </div>
+        </div>
+        <h3>1.1 What is an expert system?</h3>
+        <p>An <strong>expert system</strong> is a computer-based information system designed to imitate the
+          decision-making ability of a human expert in a particular field. It uses stored facts, rules and logical
+          reasoning to analyse problems, draw conclusions and recommend possible solutions.</p>
+        <div class="definition">
+          <div class="callout-title">Key definition</div>
+          <p>An expert system is a <strong>knowledge-based computer system</strong> that uses a collection of facts and
+            rules, together with an <strong>inference engine</strong>, to solve problems or provide expert advice within
+            a specific knowledge domain.</p>
+        </div>
+        <h3>1.2 Examples of expert systems</h3>
+        <div class="cards">
+          <article class="mini-card purple">
+            <h4>🏥 Medical support</h4>
+            <p>Analyses symptoms, medical history and test results to suggest conditions for healthcare professionals to
+              investigate.</p>
+          </article>
+          <article class="mini-card blue">
+            <h4>💻 Computer troubleshooting</h4>
+            <p>Asks questions about technical faults and suggests steps such as checking settings, cables or software
+              configuration.</p>
+          </article>
+          <article class="mini-card green">
+            <h4>🚗 Vehicle diagnosis</h4>
+            <p>Uses symptoms and diagnostic fault codes to identify possible problems with a vehicle and recommend
+              inspections.</p>
+          </article>
+          <article class="mini-card peach">
+            <h4>🏦 Financial services</h4>
+            <p>Applies predefined criteria to support loan, insurance and risk-assessment decisions.</p>
+          </article>
+        </div>
+        <h3>1.3 Why are expert systems useful?</h3>
+        <p>Human experts have valuable specialist knowledge but may be expensive, busy or unavailable outside working
+          hours. An expert system can make some of that knowledge available immediately.</p>
+        <ul>
+          <li>Make routine decisions more quickly.</li>
+          <li>Provide more consistent recommendations.</li>
+          <li>Reduce dependence on human experts for common problems.</li>
+          <li>Make specialist knowledge accessible to many users.</li>
+          <li>Reduce some operating costs and support employee decision-making.</li>
+        </ul>
+        <div class="tip"><strong>Remember</strong>
+          <p>Expert systems normally <strong>support</strong> decision-making rather than completely replace skilled
+            humans, especially for unusual or high-risk problems.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-2">
+        <div class="section-top">
+          <div class="section-icon">🔍</div>
+          <div><small>Section 02</small>
+            <h2>Characteristics of Expert Systems</h2>
+          </div>
+        </div>
+        <h3>2.1 Knowledge-based</h3>
+        <p>Expert systems depend on facts, rules and practical knowledge supplied by human specialists. This information
+          is organised and stored so that the system can apply it to a problem.</p>
+        <div class="example"><strong>Example – Network troubleshooting</strong>
+          <p>An experienced technician knows that a computer connected to Wi-Fi but unable to access the internet may
+            have incorrect IP settings. That knowledge can be written as a diagnostic rule.</p>
+        </div>
+        <div class="rule"><span class="purple-text">IF</span> Wi-Fi is connected
+          <span class="purple-text">AND</span> other devices can use the internet
+          <span class="purple-text">AND</span> this computer has invalid IP settings
+          <span class="green-text">THEN</span> recommend checking its IP configuration.
+        </div>
+        <h3>2.2 Narrow scope (knowledge domain)</h3>
+        <p>An expert system is usually designed for a specific, limited area of expertise called its <strong>knowledge
+            domain</strong>. A system for diagnosing printer problems cannot automatically diagnose car-engine faults
+          because it does not have the relevant rules and facts.</p>
+        <h3>2.3 Static knowledge</h3>
+        <p>Traditional rule-based expert systems do not automatically learn or improve as new data appears. If a
+          software update changes how a setting works, a human expert or knowledge engineer may need to update the
+          knowledge base.</p>
+        <div class="warning"><strong>Important distinction</strong>
+          <p>Traditional expert systems are usually static, but some modern <strong>hybrid systems</strong> combine
+            rules with machine learning.</p>
+        </div>
+        <h3>2.4 Rule-based reasoning</h3>
+        <p>Expert systems often follow <strong>IF–THEN rules</strong>. When the stated condition is satisfied, the
+          system can draw a conclusion or suggest an action.</p>
+        <div class="diagram">
+          <div class="diagram-label">Basic decision rule</div>
+          <div class="flow-split" style="max-width:480px;margin:auto">
+            <div class="flow-node purple"><strong>IF</strong><small>Condition is true</small></div>
+            <div class="flow-node green"><strong>THEN</strong><small>Conclusion or action</small></div>
+          </div>
+        </div>
+        <div class="example"><strong>Printer example</strong>
+          <p>IF the printer is switched on AND it has paper AND a paper-jam warning is displayed, THEN recommend safely
+            checking the paper path for an obstruction.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-3">
+        <div class="section-top">
+          <div class="section-icon">🧩</div>
+          <div><small>Section 03</small>
+            <h2>Main Components of an Expert System</h2>
+          </div>
+        </div>
+        <p>The two <strong>main components</strong> are the <strong>knowledge base</strong> and <strong>inference
+            engine</strong>. A practical system usually also has a user interface; it may include working memory and an
+          explanation facility.</p>
+        <div class="diagram">
+          <div class="diagram-label">Basic expert system structure</div>
+          <div class="schema">
+            <div class="schema-mid">
+              <div class="flow-node blue" style="max-width:270px">👤 User<small>Enters the problem and answers
+                  questions</small></div><span class="down-arrow">↕</span>
+              <div class="flow-node purple" style="max-width:270px">💬 User interface<small>Collects input and displays
+                  advice</small></div><span class="down-arrow">↕</span>
+              <div class="flow-node purple" style="max-width:270px">⚙️ Inference engine<small>Applies rules and reaches
+                  conclusions</small></div><span class="down-arrow">↙ &nbsp; ↘</span>
+            </div>
+            <div class="flow-node green">📚 Knowledge base<small>Facts, rules and expert knowledge</small></div>
+            <div class="flow-node yellow">🗂️ Working memory<small>Facts about the current case</small></div>
+          </div>
+        </div>
+        <h3>3.1 Knowledge base</h3>
+        <p>The <strong>knowledge base</strong> is a repository of specialist information. It contains the knowledge
+          required for the expert system to make decisions in its particular domain.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type of knowledge</th>
+                <th>Explanation</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Facts</td>
+                <td>Information known about a subject or situation.</td>
+                <td>A printer needs paper to print.</td>
+              </tr>
+              <tr>
+                <td>Rules</td>
+                <td>Logical statements that link conditions to conclusions or actions.</td>
+                <td>IF there is no paper, THEN load paper.</td>
+              </tr>
+              <tr>
+                <td>Heuristics</td>
+                <td>Practical strategies based on experts' experience.</td>
+                <td>Checking cable connections is often a useful early troubleshooting step.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>Example – Laptop troubleshooting knowledge base</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Rule</th>
+                <th>Condition or symptom</th>
+                <th>Possible recommendation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Battery is empty and laptop will not turn on.</td>
+                <td>Connect the charger.</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Laptop is running but display appears dark.</td>
+                <td>Check brightness and display settings.</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Laptop overheats.</td>
+                <td>Check vents and cooling.</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Laptop cannot connect to Wi-Fi.</td>
+                <td>Check wireless settings and network connection.</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Laptop operates very slowly.</td>
+                <td>Check running applications and available resources.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A useful knowledge base must be <strong>accurate, sufficiently complete, consistent and up to date</strong>,
+          not merely large.</p>
+        <h3>3.2 Inference engine</h3>
+        <p>The <strong>inference engine</strong> is the decision-making component. It examines the facts about a current
+          problem, looks for applicable rules in the knowledge base, and uses logical reasoning to arrive at a
+          conclusion.</p>
+        <div class="cards">
+          <div class="mini-card green">
+            <h4>📚 Knowledge base</h4>
+            <p>Stores <strong>what the system knows</strong>.</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>⚙️ Inference engine</h4>
+            <p>Determines <strong>what conclusions follow</strong> from that knowledge.</p>
+          </div>
+        </div>
+        <h4>Printer diagnosis example</h4>
+        <ol class="steps">
+          <li><strong>Check power</strong><span>Customer confirms the printer is switched on.</span></li>
+          <li><strong>Check paper</strong><span>Customer confirms paper is available.</span></li>
+          <li><strong>Ask about errors</strong><span>Customer reports a paper-jam warning.</span></li>
+          <li><strong>Apply the matching rule</strong><span>The inference engine selects the relevant troubleshooting
+              rule.</span></li>
+          <li><strong>Suggest an action</strong><span>The system explains how to safely inspect the paper path.</span>
+          </li>
+        </ol>
+        <h3>3.3 User interface</h3>
+        <p>The <strong>user interface</strong> allows users to enter symptoms, answer questions, view recommendations
+          and request additional assistance. It might be a chatbot, website, mobile application or troubleshooting
+          wizard.</p>
+        <h3>3.4 Other supporting components</h3>
+        <div class="cards three">
+          <div class="mini-card yellow">
+            <h4>🗂️ Working memory</h4>
+            <p>Temporarily holds information about the current problem, such as the answers a customer provides.</p>
+          </div>
+          <div class="mini-card blue">
+            <h4>💡 Explanation facility</h4>
+            <p>Shows why a recommendation was made and which facts or rules supported it.</p>
+          </div>
+          <div class="mini-card cyan">
+            <h4>🛠️ Knowledge acquisition</h4>
+            <p>Supports the collection, organisation and updating of expert knowledge.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-4">
+        <div class="section-top">
+          <div class="section-icon">🔄</div>
+          <div><small>Section 04</small>
+            <h2>How an Expert System Works</h2>
+          </div>
+        </div>
+        <p>The system asks questions to collect information, applies the rules that fit the known facts and proposes a
+          suitable conclusion or action.</p>
+        <div class="diagram">
+          <div class="diagram-label">Expert system decision-making process</div>
+          <div class="flow-vertical">
+            <div class="flow-node blue">1. User describes the problem<small>“My laptop cannot connect to Wi-Fi.”</small>
+            </div><span class="down-arrow">↓</span>
+            <div class="flow-node">2. System gathers information<small>Asks about connections, settings and
+                symptoms.</small></div><span class="down-arrow">↓</span>
+            <div class="flow-node purple">3. Inference engine applies rules<small>Finds applicable rules in the
+                knowledge base.</small></div><span class="down-arrow">↓</span>
+            <div class="flow-node">4. System draws a conclusion<small>Identifies a possible cause.</small></div><span
+              class="down-arrow">↓</span>
+            <div class="flow-node green">5. System recommends a solution<small>Provides troubleshooting steps.</small>
+            </div>
+          </div>
+        </div>
+        <h3>4.1 Example – Internet connection problem</h3>
+        <p>A customer reports that their laptop cannot connect to the internet. The system asks diagnostic questions.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>System question</th>
+                <th>Customer answer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Is Wi-Fi enabled?</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Is the laptop connected to a Wi-Fi network?</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Can other devices access the internet?</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Does the laptop have a valid IP configuration?</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule"><span class="purple-text">IF</span> Wi-Fi is enabled
+          <span class="purple-text">AND</span> the laptop is connected to Wi-Fi
+          <span class="purple-text">AND</span> other devices can access the internet
+          <span class="purple-text">AND</span> the laptop has invalid IP settings
+
+          <span class="green-text">THEN</span> possible cause = incorrect IP configuration
+          recommend checking IP settings and using
+          the operating system's network troubleshooter.
+        </div>
+        <p>The inference engine matches the known facts to this rule and presents its recommendation. If the problem
+          continues, the system should investigate other possible causes or refer the case to a technician.</p>
+        <div class="warning"><strong>Important</strong>
+          <p>An expert system's recommendation is not guaranteed to be correct. Its accuracy depends on the quality of
+            the user's information and the knowledge base.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-5">
+        <div class="section-top">
+          <div class="section-icon">🧭</div>
+          <div><small>Section 05</small>
+            <h2>Reasoning Methods Used by Expert Systems</h2>
+          </div>
+        </div>
+        <h3>5.1 Forward chaining</h3>
+        <p><strong>Forward chaining</strong> is a <strong>data-driven</strong> reasoning method. The system begins with
+          known facts, applies relevant rules and works towards possible conclusions.</p>
+        <div class="diagram">
+          <div class="diagram-label">Forward chaining – facts to conclusion</div>
+          <div class="flow-vertical">
+            <div class="flow-node blue">Known fact<small>Printer displays a paper-jam warning.</small></div><span
+              class="down-arrow">↓</span>
+            <div class="flow-node purple">Apply matching rule<small>IF a paper-jam warning appears, investigate the
+                paper path.</small></div><span class="down-arrow">↓</span>
+            <div class="flow-node green">Conclusion<small>Recommend checking for jammed paper.</small></div>
+          </div>
+        </div>
+        <h3>5.2 Backward chaining</h3>
+        <p><strong>Backward chaining</strong> is a <strong>goal-driven</strong> reasoning method. The system begins with
+          a possible conclusion and checks whether the necessary supporting facts are true.</p>
+        <div class="example"><strong>Example – Laptop battery</strong>
+          <p>The system considers the hypothesis “The battery is discharged.” It checks whether the laptop fails to turn
+            on, is disconnected from external power and has an empty battery. If the necessary conditions are met, the
+            system supports this diagnosis and recommends charging the laptop.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Forward chaining</th>
+                <th>Backward chaining</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Starts with known facts.</td>
+                <td>Starts with a possible conclusion or goal.</td>
+              </tr>
+              <tr>
+                <td>Applies rules to discover conclusions.</td>
+                <td>Checks which facts support a conclusion.</td>
+              </tr>
+              <tr>
+                <td>Data-driven reasoning.</td>
+                <td>Goal-driven reasoning.</td>
+              </tr>
+              <tr>
+                <td>Useful for exploring possible diagnoses.</td>
+                <td>Useful for checking a specific hypothesis.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-6">
+        <div class="section-top">
+          <div class="section-icon">🤖</div>
+          <div><small>Section 06</small>
+            <h2>Expert Systems, AI and Machine Learning</h2>
+          </div>
+        </div>
+        <p><strong>Expert systems are a traditional form of artificial intelligence (AI)</strong>. They are often called
+          <em>symbolic AI</em> because they represent knowledge through explicit facts and rules. Machine learning is
+          another AI approach that learns patterns from training data.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Traditional expert system</th>
+                <th>Machine learning system</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Knowledge source</td>
+                <td>Facts and rules supplied by experts.</td>
+                <td>Patterns learned from training data.</td>
+              </tr>
+              <tr>
+                <td>Decision-making</td>
+                <td>Applies explicit logical rules.</td>
+                <td>Uses a trained predictive model.</td>
+              </tr>
+              <tr>
+                <td>Automatic learning</td>
+                <td>Usually does not learn automatically.</td>
+                <td>Can improve through training or retraining.</td>
+              </tr>
+              <tr>
+                <td>Updating</td>
+                <td>Rules are generally changed manually.</td>
+                <td>Models can be retrained with new data.</td>
+              </tr>
+              <tr>
+                <td>Explainability</td>
+                <td>Rule paths can often be traced.</td>
+                <td>Some models are difficult to explain.</td>
+              </tr>
+              <tr>
+                <td>Requirements</td>
+                <td>Needs specialist knowledge.</td>
+                <td>Often needs suitable training data.</td>
+              </tr>
+              <tr>
+                <td>Scope</td>
+                <td>Usually focused on a narrow domain.</td>
+                <td>Depends on the model and training.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>6.1 Example – Suspicious banking transactions</h3>
+        <div class="comparison">
+          <div class="mini-card purple">
+            <h4>📏 Expert-system approach</h4>
+            <p>A predefined rule flags transactions that exceed a specified amount <strong>and</strong> originate from a
+              high-risk location. Employees change the rule when the bank updates its criteria.</p>
+          </div>
+          <div class="mini-card blue">
+            <h4>📊 Machine-learning approach</h4>
+            <p>A model learns patterns from historic transactions labelled as legitimate or fraudulent, then estimates
+              the risk of new transactions.</p>
+          </div>
+        </div>
+        <div class="tip"><strong>Hybrid systems</strong>
+          <p>Some modern applications combine human-written rules with machine-learning models. This does not change the
+            basic distinction between rule-based reasoning and pattern learning.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-7">
+        <div class="section-top">
+          <div class="section-icon">✅</div>
+          <div><small>Section 07</small>
+            <h2>Advantages of Expert Systems</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Advantage</th>
+                <th>Detailed explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>24/7 availability</td>
+                <td>Can offer advice at any time, even when human experts are unavailable.</td>
+              </tr>
+              <tr>
+                <td>Fast decisions</td>
+                <td>Applies stored rules quickly to provide answers for common problems.</td>
+              </tr>
+              <tr>
+                <td>Consistency</td>
+                <td>Normally produces the same advice for the same inputs and rules.</td>
+              </tr>
+              <tr>
+                <td>Reduced operating costs</td>
+                <td>Automates routine tasks and reduces staff time spent on repetitive enquiries.</td>
+              </tr>
+              <tr>
+                <td>Preserved knowledge</td>
+                <td>Keeps valuable specialist knowledge available when employees leave.</td>
+              </tr>
+              <tr>
+                <td>Improved accessibility</td>
+                <td>Lets more users access specialist advice without an in-person appointment.</td>
+              </tr>
+              <tr>
+                <td>Scalability</td>
+                <td>Can support many users if the organisation has enough computing resources.</td>
+              </tr>
+              <tr>
+                <td>Fewer routine human mistakes</td>
+                <td>Consistently follows stored rules without tiredness or distraction.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example"><strong>Example – Online technical support</strong>
+          <p>A software company receives hundreds of daily requests about password resets, incorrect settings and
+            installations. An expert system can handle many routine cases so that human technicians spend more time on
+            complex problems.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-8">
+        <div class="section-top">
+          <div class="section-icon">⚠️</div>
+          <div><small>Section 08</small>
+            <h2>Limitations and Disadvantages</h2>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="mini-card peach">
+            <h4>🎯 8.1 Limited knowledge</h4>
+            <p>The system can only use knowledge stored in its domain. A software-installation chatbot may not
+              understand hardware faults.</p>
+          </div>
+          <div class="mini-card yellow">
+            <h4>🔁 8.2 No automatic learning</h4>
+            <p>Traditional expert systems need manual updates when problems, procedures or technologies change.</p>
+          </div>
+          <div class="mini-card purple">
+            <h4>💰 8.3 High development costs</h4>
+            <p>Specialists, knowledge engineers, programmers, testing and maintenance may all be expensive.</p>
+          </div>
+          <div class="mini-card blue">
+            <h4>❓ 8.4 Unusual problems</h4>
+            <p>Unfamiliar, complex, uncertain or conflicting situations can be difficult to represent with rules.</p>
+          </div>
+          <div class="mini-card green">
+            <h4>📚 8.5 Knowledge-base dependence</h4>
+            <p>Outdated or incorrect rules can lead to inaccurate recommendations.</p>
+          </div>
+          <div class="mini-card cyan">
+            <h4>👩‍🔧 8.6 Limited human judgement</h4>
+            <p>A system may lack the contextual understanding and practical flexibility of a skilled human expert.</p>
+          </div>
+        </div>
+        <h3>8.7 Security and privacy concerns</h3>
+        <p>Expert systems may process sensitive customer, financial or medical information. Organisations must use
+          appropriate security measures and protect personal data against unauthorised access or misuse.</p>
+        <div class="warning"><strong>Example – Outdated instructions</strong>
+          <p>If a new software version removes a setting, an old troubleshooting rule could give customers useless or
+            misleading instructions.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-9">
+        <div class="section-top">
+          <div class="section-icon">🛠️</div>
+          <div><small>Section 09</small>
+            <h2>Developing and Maintaining an Expert System</h2>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><strong>9.1 Identify the knowledge domain</strong><span>Define exactly which problems the system will
+              address, such as login, installation and configuration issues.</span></li>
+          <li><strong>9.2 Acquire expert knowledge</strong><span>Gather reliable facts and troubleshooting procedures
+              from specialists, manuals and approved documents. This is called <em>knowledge acquisition</em>.</span>
+          </li>
+          <li><strong>9.3 Build the knowledge base</strong><span>Organise knowledge into facts, rules and heuristics.
+              Check that the rules are accurate and consistent.</span></li>
+          <li><strong>9.4 Develop the inference engine and interface</strong><span>Implement reasoning procedures and
+              give users a clear way to enter symptoms and view recommendations.</span></li>
+          <li><strong>9.5 Test and validate</strong><span>Test real cases, incorrect inputs, missing facts, conflicting
+              rules, recommendations and the process for referring cases to people.</span></li>
+          <li><strong>9.6 Maintain and update</strong><span>Review expert knowledge and update rules whenever software,
+              products, procedures or regulations change.</span></li>
+        </ol>
+        <div class="tip"><strong>Focus on knowledge acquisition</strong>
+          <p>Experienced employees often use practical judgement that is difficult to turn into simple rules. Extracting
+            and validating that knowledge is a major development challenge.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-10">
+        <div class="section-top">
+          <div class="section-icon">💬</div>
+          <div><small>Section 10 · Textbook activity</small>
+            <h2>Case Study: Expert-System Support Chatbot</h2>
+          </div>
+        </div>
+        <div class="activity-header"><strong>📋 Activity 6 – Software company scenario</strong>
+          <p>A company currently uses an online chat screen staffed by human technicians. It wants customers to speak
+            first to a chatbot powered by an expert system. The chatbot should diagnose common problems and suggest
+            solutions; unresolved cases should be referred to a human technician.</p>
+        </div>
+        <h3>10.1 How the proposed system works</h3>
+        <div class="diagram">
+          <div class="diagram-label">Customer support workflow</div>
+          <div class="flow-vertical">
+            <div class="flow-node blue">👤 Customer opens the chat<small>Describes a software problem.</small></div>
+            <span class="down-arrow">↓</span>
+            <div class="flow-node">💬 Chatbot collects information<small>Asks about symptoms, settings and error
+                messages.</small></div><span class="down-arrow">↓</span>
+            <div class="flow-node purple">⚙️ Expert system analyses the problem<small>Inference engine checks relevant
+                troubleshooting rules.</small></div><span class="down-arrow">↓</span>
+            <div class="flow-node yellow">Can a suitable solution be provided?</div><span class="down-arrow">↓</span>
+            <div class="flow-split">
+              <div class="branch yes"><span class="answer">✓ Yes</span><strong>Provide advice</strong>
+                <p>Customer tests the solution and confirms whether the problem is fixed.</p>
+              </div>
+              <div class="branch no"><span class="answer">✕ No</span><strong>Escalate</strong>
+                <p>Human technician receives the case details and assists the customer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>If a recommended solution does not work, the chatbot should try another relevant diagnostic path or transfer
+          the case rather than assuming success.</p>
+        <h3>10.2 Activity 6 – Data flow diagram (DFD)</h3>
+        <p>A <strong>data flow diagram</strong> shows how information moves between external entities, processes and
+          data stores. The following Level 1 DFD shows the proposed support service.</p>
+        <div class="dfd-figure" role="img"
+          aria-label="Level 1 data flow diagram: a customer submits a problem to the chatbot process; the diagnostic process reads rules from the knowledge base; the response process sends advice back to the customer or case details to a human technician.">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+            <defs>
+              <marker id="dfdArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                <path d="M0 0 L8 4.5 L0 9" fill="none" stroke="#64748b" stroke-width="1.6" />
+              </marker>
+              <marker id="dfdArrowLeft" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                <path d="M0 0 L8 4.5 L0 9" fill="none" stroke="#64748b" stroke-width="1.6" />
+              </marker>
+            </defs>
+            <!-- External customer -->
+            <rect x="25" y="45" width="145" height="70" rx="6" fill="#eaf3ff" stroke="#397bc3" stroke-width="2" /><text
+              x="97" y="74" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700"
+              fill="#1c4a87">Customer</text><text x="97" y="94" text-anchor="middle" font-family="sans-serif"
+              font-size="12" fill="#35649d">External entity</text>
+            <!-- process 1 -->
+            <rect x="310" y="38" width="204" height="83" rx="40" fill="#f1eaff" stroke="#8659d5" stroke-width="2" />
+            <text x="412" y="66" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700"
+              fill="#5832a1">1.0 Chatbot</text><text x="412" y="89" text-anchor="middle" font-family="sans-serif"
+              font-size="14" fill="#5832a1">Collect information</text>
+            <!-- inputs + questions -->
+            <path d="M170 66 L309 66" stroke="#64748b" fill="none" stroke-width="1.8" marker-end="url(#dfdArrow)" />
+            <text x="238" y="56" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#475569">Problem /
+              answers</text>
+            <path d="M310 100 L171 100" stroke="#64748b" fill="none" stroke-width="1.7" marker-end="url(#dfdArrow)" />
+            <text x="239" y="119" text-anchor="middle" font-family="sans-serif" font-size="12.5"
+              fill="#475569">Questions</text>
+            <!-- diagnosis -->
+            <rect x="309" y="185" width="205" height="82" rx="41" fill="#f1eaff" stroke="#8659d5" stroke-width="2" />
+            <text x="412" y="212" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700"
+              fill="#5832a1">2.0 Diagnose</text><text x="412" y="235" text-anchor="middle" font-family="sans-serif"
+              font-size="14" fill="#5832a1">Apply expert rules</text>
+            <path d="M412 121 L412 184" stroke="#64748b" stroke-width="1.8" marker-end="url(#dfdArrow)" /><text x="420"
+              y="155" font-family="sans-serif" font-size="13" fill="#475569">Collected facts</text>
+            <!-- knowledge base -->
+            <rect x="655" y="190" width="215" height="72" fill="#e9fbf1" stroke="#2da66d" stroke-width="2" />
+            <path d="M655 199 H870 M655 253 H870" stroke="#2da66d" stroke-width="1.1" /><text x="762" y="220"
+              text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#176440">D1 Knowledge
+              base</text><text x="762" y="240" text-anchor="middle" font-family="sans-serif" font-size="13"
+              fill="#176440">Facts and rules</text>
+            <path d="M654 212 L515 212" fill="none" stroke="#64748b" stroke-width="1.7" marker-end="url(#dfdArrow)" />
+            <text x="586" y="203" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#475569">Stored
+              rules</text>
+            <path d="M514 244 L654 244" fill="none" stroke="#64748b" stroke-width="1.7" marker-end="url(#dfdArrow)" />
+            <text x="584" y="261" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#475569">Rule
+              requests</text>
+            <!-- response -->
+            <rect x="312" y="324" width="202" height="85" rx="41" fill="#f1eaff" stroke="#8659d5" stroke-width="2" />
+            <text x="412" y="352" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700"
+              fill="#5832a1">3.0 Respond</text><text x="412" y="374" text-anchor="middle" font-family="sans-serif"
+              font-size="14" fill="#5832a1">Advise / escalate</text>
+            <path d="M412 267 L412 323" stroke="#64748b" stroke-width="1.8" marker-end="url(#dfdArrow)" /><text x="419"
+              y="301" font-family="sans-serif" font-size="13" fill="#475569">Diagnosis</text>
+            <!-- technician -->
+            <rect x="25" y="330" width="175" height="71" rx="6" fill="#eaf3ff" stroke="#397bc3" stroke-width="2" /><text
+              x="112" y="357" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700"
+              fill="#1c4a87">Human technician</text><text x="112" y="378" text-anchor="middle" font-family="sans-serif"
+              font-size="12.5" fill="#35649d">External entity</text>
+            <path d="M311 354 L201 354" stroke="#64748b" stroke-width="1.8" marker-end="url(#dfdArrow)" fill="none" />
+            <text x="255" y="342" text-anchor="middle" font-family="sans-serif" font-size="12.5"
+              fill="#475569">Unresolved case</text>
+            <!-- customer response: route back to same customer entity with unambiguous directional arrow -->
+            <path d="M514 381 H595 V450 H95 V116" stroke="#64748b" stroke-width="1.8" marker-end="url(#dfdArrow)"
+              fill="none" /><text x="450" y="443" text-anchor="middle" font-family="sans-serif" font-size="13"
+              fill="#475569">Advice / support outcome to customer</text>
+          </svg>
+          <div class="dfd-legend"><span><i class="swatch" style="background:#eaf3ff;border-color:#397bc3"></i> External
+              entity</span><span><i class="swatch" style="background:#f1eaff;border-color:#8659d5"></i>
+              Process</span><span><i class="swatch" style="background:#e9fbf1;border-color:#2da66d"></i> Data
+              store</span><span>→ Data flow</span></div>
+        </div>
+        <p><strong>Diagram explanation:</strong> The customer supplies problem details and answers questions. The
+          diagnosis process uses the knowledge base to select rules and reach a conclusion. The response process sends
+          advice to the customer or passes an unresolved case to a technician.</p>
+        <div class="tip"><strong>DFD extension</strong>
+          <p>A more detailed system could include a support-ticket database for recording case details, troubleshooting
+            attempts and outcomes. A DFD describes <em>data movement</em>, not the physical network route.</p>
+        </div>
+        <h3>10.3 Activity 6 – Challenges for the company</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Challenge</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gathering expert knowledge</td>
+                <td>Technicians must explain common problems and troubleshooting decisions.</td>
+              </tr>
+              <tr>
+                <td>Writing accurate rules</td>
+                <td>Complex experience must be converted into reliable decision rules.</td>
+              </tr>
+              <tr>
+                <td>Understanding customer descriptions</td>
+                <td>Different customers may use unclear or inconsistent wording.</td>
+              </tr>
+              <tr>
+                <td>Updating knowledge</td>
+                <td>Software changes and new problems require new rules.</td>
+              </tr>
+              <tr>
+                <td>Integrating with support systems</td>
+                <td>The chatbot may need access to customer and ticket information.</td>
+              </tr>
+              <tr>
+                <td>Ensuring diagnosis quality</td>
+                <td>Wrong recommendations can waste time or worsen a problem.</td>
+              </tr>
+              <tr>
+                <td>Recognising limitations</td>
+                <td>The chatbot must identify cases that need human assistance.</td>
+              </tr>
+              <tr>
+                <td>Protecting customer data</td>
+                <td>Support conversations and account details must be secure.</td>
+              </tr>
+              <tr>
+                <td>Development and testing costs</td>
+                <td>Design, implementation and validation require resources.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>10.4 Activity 6 – Benefits and drawbacks for the company</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Benefits for the company</th>
+                <th>Drawbacks for the company</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fewer routine queries for human technicians.</td>
+                <td>High initial development costs.</td>
+              </tr>
+              <tr>
+                <td>Support can operate outside office hours.</td>
+                <td>Knowledge base requires regular maintenance.</td>
+              </tr>
+              <tr>
+                <td>Many customers can be supported at once.</td>
+                <td>Incorrect advice can damage reputation.</td>
+              </tr>
+              <tr>
+                <td>Common cases can be resolved faster.</td>
+                <td>Difficult cases still require human staff.</td>
+              </tr>
+              <tr>
+                <td>More consistent troubleshooting advice.</td>
+                <td>Security and system integration add complexity.</td>
+              </tr>
+              <tr>
+                <td>Staff can focus on difficult problems.</td>
+                <td>Some customers may dislike chatbot support.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example"><strong>Company example</strong>
+          <p>A chatbot handles common password-reset questions, allowing technicians to work on more challenging issues.
+            But if the company changes its account-recovery process, the stored rules must be updated.</p>
+        </div>
+        <h3>10.5 Activity 6 – Benefits and drawbacks for customers</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Benefits for customers</th>
+                <th>Drawbacks for customers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>24-hour access to initial support.</td>
+                <td>The chatbot may misunderstand a problem.</td>
+              </tr>
+              <tr>
+                <td>Shorter waits for common questions.</td>
+                <td>Unusual issues may remain unresolved.</td>
+              </tr>
+              <tr>
+                <td>Immediate answers to routine problems.</td>
+                <td>Users may be asked repetitive questions.</td>
+              </tr>
+              <tr>
+                <td>Self-service without a technician.</td>
+                <td>Some users prefer human interaction.</td>
+              </tr>
+              <tr>
+                <td>Consistent troubleshooting instructions.</td>
+                <td>Outdated recommendations can be frustrating.</td>
+              </tr>
+              <tr>
+                <td>Accessible via an internet-connected device.</td>
+                <td>Sharing personal information raises privacy concerns.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example"><strong>Customer example</strong>
+          <p>A customer experiencing an installation failure provides the operating system, remaining storage and error
+            message. The expert system suggests freeing storage space. If this does not work and the cause is
+            unfamiliar, it should refer the case to a technician.</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-11">
+        <div class="section-top">
+          <div class="section-icon">🛡️</div>
+          <div><small>Section 11</small>
+            <h2>Important Considerations in Organisations</h2>
+          </div>
+        </div>
+        <h3>11.1 Reliability</h3>
+        <p>Expert-system recommendations should be accurate and dependable. Organisations need suitable testing,
+          monitoring and maintenance because incorrect conclusions may waste time or cause harm.</p>
+        <h3>11.2 Human supervision</h3>
+        <p>There must be a clear way to refer unusual, high-risk or unresolved cases to a qualified human. In healthcare
+          or safety-critical environments, expert advice should not replace appropriate professional judgement.</p>
+        <h3>11.3 Data quality</h3>
+        <p>If a user enters incomplete or incorrect details, the inference engine may apply the wrong rule. This
+          illustrates <strong>Garbage In, Garbage Out (GIGO)</strong>: poor input can lead to poor output.</p>
+        <div class="example"><strong>GIGO example</strong>
+          <p>If a customer incorrectly says that a router is functioning normally, the system may rule out a router
+            fault and suggest less relevant solutions.</p>
+        </div>
+        <h3>11.4 Explainability</h3>
+        <p>A rule-based expert system can often explain which facts and rules produced a recommendation. This helps
+          human experts check decisions and gives users more confidence.</p>
+        <div class="definition">
+          <div class="callout-title">Explanation example</div>
+          <p>“Check the IP configuration because your laptop is connected to Wi-Fi, other devices can use the internet,
+            and this laptop has invalid IP settings.”</p>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="section-12">
+        <div class="section-top">
+          <div class="section-icon">📖</div>
+          <div><small>Section 12</small>
+            <h2>Summary of Key Concepts</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Key term</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Expert system</td>
+                <td>Computer system that imitates specialist decision-making in a particular domain.</td>
+              </tr>
+              <tr>
+                <td>Knowledge domain</td>
+                <td>The specific subject area covered by an expert system.</td>
+              </tr>
+              <tr>
+                <td>Knowledge base</td>
+                <td>Repository of facts, rules and expert knowledge.</td>
+              </tr>
+              <tr>
+                <td>Inference engine</td>
+                <td>Component that applies rules to reach conclusions.</td>
+              </tr>
+              <tr>
+                <td>Facts</td>
+                <td>Stored statements about a subject or current situation.</td>
+              </tr>
+              <tr>
+                <td>Rules</td>
+                <td>Logical conditions linking facts to conclusions or actions.</td>
+              </tr>
+              <tr>
+                <td>Heuristics</td>
+                <td>Practical strategies drawn from expert experience.</td>
+              </tr>
+              <tr>
+                <td>User interface</td>
+                <td>How a user interacts with the system.</td>
+              </tr>
+              <tr>
+                <td>Forward chaining</td>
+                <td>Reasoning from known facts towards conclusions.</td>
+              </tr>
+              <tr>
+                <td>Backward chaining</td>
+                <td>Testing whether known facts support a possible conclusion.</td>
+              </tr>
+              <tr>
+                <td>Knowledge acquisition</td>
+                <td>Collecting and organising expert knowledge.</td>
+              </tr>
+              <tr>
+                <td>Static knowledge</td>
+                <td>Knowledge that does not automatically update itself.</td>
+              </tr>
+              <tr>
+                <td>Explanation facility</td>
+                <td>Explains how a conclusion was reached.</td>
+              </tr>
+              <tr>
+                <td>Working memory</td>
+                <td>Temporary facts relating to the current case.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="definition">
+          <div class="callout-title">Most important distinction</div>
+          <p>The <strong>knowledge base</strong> stores what the system knows. The <strong>inference engine</strong>
+            uses that knowledge to reason about the user's problem and recommend possible solutions.</p>
+        </div>
+        <p>Expert systems can improve the speed, consistency and accessibility of decisions, but their success depends
+          on the accuracy of their rules, good-quality input, regular updating and the availability of human experts for
+          difficult cases.</p>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Related lessons"><a href="topic-14-05.html">← Previous: Topic 14.5</a><a
+          href="topic-14.html">↗ Topic 14 Dashboard</a></nav>
+      <footer class="page-foot">Edexcel International A Level IT · Unit 3 · Topic 14.6<br>Tr.Sun Education · Learn ·
+        Explore · Achieve<br>Created by Tr. Sun</footer>
+    </div>
+  </main>
+  <button class="to-top" type="button" id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    (() => {
+      'use strict';
+      const body = document.body;
+      const menuButton = document.getElementById('menuToggle');
+      const overlay = document.getElementById('overlay');
+      const sidebar = document.getElementById('sidebar');
+      const progress = document.getElementById('readingProgress');
+      const toTop = document.getElementById('toTop');
+      const links = [...document.querySelectorAll('.side-nav a')];
+      const sections = [...document.querySelectorAll('.lesson-section')];
+      let lastFocus = null;
+      function setMenu(open) {
+        body.classList.toggle('menu-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+        if (open) {
+          lastFocus = document.activeElement;
+          sidebar.querySelector('.side-nav a')?.focus();
+        } else if (lastFocus && window.innerWidth <= 900) {
+          menuButton.focus();
+        }
+      }
+      menuButton.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
+      overlay.addEventListener('click', () => setMenu(false));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && body.classList.contains('menu-open')) setMenu(false);
+      });
+      links.forEach(link => link.addEventListener('click', () => {
+        if (body.classList.contains('menu-open')) setMenu(false);
+      }));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && body.classList.contains('menu-open')) setMenu(false);
+      });
+      function updateScroll() {
+        const available = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = available > 0 ? Math.min(100, Math.max(0, window.scrollY / available * 100)) : 100;
+        progress.style.width = percent.toFixed(2) + '%';
+        progress.setAttribute('aria-valuenow', Math.round(percent));
+        toTop.classList.toggle('visible', window.scrollY > 470);
+        let current = sections[0]?.id;
+        const threshold = window.innerWidth <= 900 ? 140 : 95;
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= threshold) current = section.id;
+        }
+        links.forEach(link => {
+          const active = link.hash === '#' + current;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      let scheduled = false;
+      window.addEventListener('scroll', () => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => { updateScroll(); scheduled = false; });
+      }, { passive: true });
+      window.addEventListener('resize', updateScroll);
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+      updateScroll();
+    })();
+  </script>
 </body>
+
 </html>
