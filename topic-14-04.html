@@ -811,16 +811,15 @@
       margin-top: 19px
     }
 
-    .footer {
+    .page-footer {
+      padding: 25px 15px;
       text-align: center;
-      color: #7f8ba0;
+      color: #8995aa;
       font-size: 12px;
-      margin: 35px 0 0
     }
 
-    .footer a {
-      color: #674cbd;
-      text-decoration: none
+    .page-footer p {
+      margin: 4px;
     }
 
     /* Mobile navigation and floating controls */
@@ -988,6 +987,34 @@
         transition: none !important;
         animation: none !important
       }
+    }
+
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      text-decoration: none;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
     }
   </style>
 </head>
@@ -1985,6 +2012,11 @@
         </div>
       </section>
       
+      <nav class="lesson-navigation" aria-label="Other lessons">
+        <a href="topic-14-03.html">← Topic 14.3</a>
+        <a href="topic-14-05.html">Topic 14.5 →</a>
+      </nav>
+
       
       <footer class="page-footer">
         <strong>Tr.Sun Education</strong>
@@ -1992,7 +2024,7 @@
         <p>Created by <strong>Tr. Sun</strong></p>
       </footer>
 
-      
+
     </div>
   </main>
   <button id="toTop" class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
