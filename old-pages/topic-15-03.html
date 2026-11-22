@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description"
+    content="Edexcel IAL IT A2 Topic 15.3: Characteristics of a Successful IT Project. Detailed lesson notes from Tr.Sun Education.">
+  <title>Topic 15.3 - Characteristics of a Successful IT Project | Tr.Sun Education</title>
+  <style>
+    :root {
+      --sidebar-width: 282px;
+      --navy: #111827;
+      --navy-2: #1e293b;
+      --purple: #7653e8;
+      --purple-dark: #5937c5;
+      --bg: #f5f7fc;
+      --surface: #fff;
+      --text: #253047;
+      --muted: #64748b;
+      --border: #e7eaf2;
+      --shadow: 0 8px 28px rgba(25, 33, 60, .045);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #b69aff;
+      outline-offset: 3px;
+    }
+
+    /* Sidebar and brand: shared with Topic 15.2 */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: var(--navy);
+      color: #fff;
+      z-index: 1000;
+      scrollbar-width: thin;
+      scrollbar-color: #45506a transparent;
+    }
+
+    .brand {
+      padding: 28px 18px 23px;
+      border-bottom: 1px solid #30394c;
+    }
+
+    .brand-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 62px;
+      height: 62px;
+      flex: 0 0 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #a06aff, #5837c6);
+      box-shadow: 0 8px 24px rgba(117, 83, 232, .3);
+    }
+
+    .brand-logo svg {
+      width: 49px;
+      height: 49px;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.3;
+      color: #fff;
+      letter-spacing: -.5px;
+    }
+
+    .brand-text p {
+      margin: 5px 0 0;
+      color: #c4b5fd;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .brand-curriculum {
+      margin-top: 20px;
+      color: #94a3b8;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.15px;
+    }
+
+    .current-lesson {
+      margin: 22px 13px 13px;
+      padding: 16px;
+      border: 1px solid #4b3a86;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #382b65, #29234a);
+    }
+
+    .current-lesson small {
+      display: block;
+      margin-bottom: 8px;
+      color: #c4b5fd;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 1px;
+    }
+
+    .current-lesson h3 {
+      margin: 0;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .current-lesson p {
+      margin: 4px 0 0;
+      color: #d6d0ea;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .sidebar-label {
+      padding: 18px 23px 12px;
+      color: #8591a8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+    }
+
+    .side-nav {
+      padding: 0 12px 18px;
+    }
+
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 5px;
+      padding: 11px 12px;
+      color: #cbd5e1;
+      font-size: 12.5px;
+      line-height: 1.4;
+      border-radius: 11px;
+      transition: background .2s, color .2s;
+    }
+
+    .side-nav a:hover {
+      background: #283249;
+      color: #fff;
+    }
+
+    .side-nav a.active {
+      background: #392b66;
+      color: #fff;
+      box-shadow: inset 3px 0 #a78bfa;
+    }
+
+    .nav-number {
+      flex-shrink: 0;
+      width: 34px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: #293449;
+      color: #bac5d8;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .side-nav a.active .nav-number {
+      background: #8157ed;
+      color: #fff;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 21px 22px;
+      border-top: 1px solid #30394c;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .sidebar-footer strong {
+      color: #e2e8f0;
+    }
+
+    /* Page chrome */
+    .main {
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+      padding: 34px 42px 55px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      color: #78849a;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: inherit;
+    }
+
+    .breadcrumb a:hover {
+      color: #6744d0;
+    }
+
+    .breadcrumb strong {
+      color: #6744d0;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 47px 44px;
+      border-radius: 24px;
+      background: linear-gradient(115deg, #4934b5 0%, #7753e7 55%, #ad72ed 100%);
+      box-shadow: 0 15px 35px rgba(88, 60, 180, .16);
+      color: #fff;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .15);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      right: -100px;
+      top: -200px;
+    }
+
+    .hero::after {
+      width: 250px;
+      height: 250px;
+      right: 90px;
+      bottom: -175px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 15px;
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .8px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 3.6vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 21px 0 14px;
+    }
+
+    .hero p {
+      max-width: 710px;
+      color: #f2ecff;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-tags span {
+      padding: 8px 13px;
+      font-size: 11px;
+      font-weight: 650;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .17);
+    }
+
+    .introduction {
+      margin: 30px 0;
+      padding: 27px 31px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--purple);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .introduction h2 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .introduction p {
+      margin: 9px 0;
+    }
+
+    /* Lesson sections: same white card treatment as Topic 15.2 */
+    .lesson-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 28px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 23px;
+      border-bottom: 1px solid #eef0f5;
+    }
+
+    .section-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      font-size: 26px;
+    }
+
+    .purple {
+      background: #f2edff;
+    }
+
+    .blue {
+      background: #ebf4ff;
+    }
+
+    .green {
+      background: #eaf9f1;
+    }
+
+    .section-heading small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: #1e293b;
+      margin: 3px 0 0;
+      line-height: 1.3;
+      font-size: clamp(21px, 2.5vw, 26px);
+    }
+
+    h3 {
+      color: #25324a;
+      margin: 27px 0 12px;
+      font-size: 18px;
+    }
+
+    h4 {
+      color: #24334b;
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    strong {
+      color: #26354d;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    li {
+      padding: 4px 0;
+    }
+
+    li::marker {
+      color: var(--purple);
+      font-weight: bold;
+    }
+
+    .content-card {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+
+    .content-card+.content-card {
+      margin-top: 29px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border);
+    }
+
+    .content-card>p:first-child {
+      margin-top: 0;
+    }
+
+    .content-card>p:last-child {
+      margin-bottom: 0;
+    }
+
+    .definition {
+      margin: 19px 0;
+      padding: 19px 22px;
+      border-radius: 12px;
+      border-left: 4px solid #875bea;
+      background: #f4f0ff;
+    }
+
+    .definition .label {
+      display: block;
+      color: #633cb8;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .definition p {
+      margin: 5px 0 0;
+      color: #3a3368;
+    }
+
+    .definition strong {
+      color: #633cb8;
+    }
+
+    /* Characteristic cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .feature {
+      padding: 21px;
+      border: 1px solid rgba(80, 100, 145, .08);
+      border-radius: 14px;
+      background: #f2edff;
+    }
+
+    .feature:nth-child(4n + 2) {
+      background: #ebf4ff;
+    }
+
+    .feature:nth-child(4n + 3) {
+      background: #eaf9f1;
+    }
+
+    .feature:nth-child(4n + 4) {
+      background: #fff4e5;
+    }
+
+    .feature-icon {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .feature h4 {
+      font-size: 15px;
+    }
+
+    .feature p {
+      color: #526177;
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Practical examples */
+    .example-box {
+      margin-top: 23px;
+      padding: 23px 25px;
+      background: #effbf5;
+      border: 1px solid #c9ecda;
+      border-radius: 14px;
+    }
+
+    .example-label {
+      color: #11825b;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .example-box h3 {
+      margin: 9px 0 11px;
+      color: #176b50;
+    }
+
+    .example-box p {
+      margin: 9px 0;
+    }
+
+    .example-box strong {
+      color: #176b50;
+    }
+
+    .example-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      margin: 19px 0 4px;
+    }
+
+    .example-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid #dbf3e7;
+      border-radius: 10px;
+      padding: 13px 14px;
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .check {
+      color: #059669;
+      font-weight: 800;
+    }
+
+    .note-box {
+      background: #fff8ec;
+      border: 1px solid #f7e2b8;
+      border-radius: 13px;
+      padding: 19px 22px;
+      margin-top: 22px;
+      color: #725021;
+      font-size: 14px;
+    }
+
+    .note-box strong {
+      color: #a56518;
+    }
+
+    /* Time, cost and quality cards */
+    .constraint-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .constraint-card {
+      border: 1px solid rgba(80, 100, 145, .1);
+      border-radius: 14px;
+      padding: 23px 16px;
+      text-align: center;
+    }
+
+    .constraint-card .big-icon {
+      display: block;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .constraint-card h3 {
+      font-size: 19px;
+      margin: 0 0 8px;
+    }
+
+    .constraint-card p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #526177;
+      margin: 0;
+    }
+
+    .time-card {
+      background: #ebf4ff;
+    }
+
+    .time-card h3 {
+      color: #2563eb;
+    }
+
+    .cost-card {
+      background: #eaf9f1;
+    }
+
+    .cost-card h3 {
+      color: #15805a;
+    }
+
+    .quality-card {
+      background: #f2edff;
+    }
+
+    .quality-card h3 {
+      color: #7550c9;
+    }
+
+    .relationship {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 21px 0 0;
+    }
+
+    .relationship span {
+      border-radius: 30px;
+      background: #f1f3f9;
+      color: #4a5870;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .relationship b {
+      color: #8157ed;
+    }
+
+    /* Problems table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      margin: 22px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    thead {
+      background: #f1edff;
+    }
+
+    th {
+      color: #5a36ad;
+      text-align: left;
+      padding: 15px 17px;
+    }
+
+    td {
+      padding: 15px 17px;
+      vertical-align: top;
+      border-top: 1px solid var(--border);
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbff;
+    }
+
+    .problem-name {
+      color: #24334b;
+      font-weight: 700;
+    }
+
+    /* Benefits */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 17px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 19px;
+      border: 1px solid rgba(80, 100, 145, .1);
+      border-radius: 14px;
+      background: #f6f8ff;
+    }
+
+    .benefit:nth-child(4n+2) {
+      background: #edf8ff;
+    }
+
+    .benefit:nth-child(4n+3) {
+      background: #eefaf3;
+    }
+
+    .benefit:nth-child(4n+4) {
+      background: #fff5e8;
+    }
+
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      background: #d1fae5;
+      color: #059669;
+      border-radius: 50%;
+      font-weight: 800;
+    }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .benefit p {
+      color: #526177;
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Reading controls */
+    .page-footer {
+      padding: 25px 15px;
+      text-align: center;
+      color: #8995aa;
+      font-size: 12px;
+    }
+
+    .page-footer p {
+      margin: 4px;
+    }
+
+    .reading-progress {
+      position: fixed;
+      left: var(--sidebar-width);
+      top: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(90deg, #7955e8, #bd7aff);
+      z-index: 200;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 13px;
+      background: #6442cf;
+      color: #fff;
+      font-size: 21px;
+      cursor: pointer;
+      box-shadow: 0 7px 20px #6442cf33;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: .2s;
+      z-index: 80;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      background: #4e2db3;
+    }
+
+    .menu-button,
+    .overlay {
+      display: none;
+    }
+
+    /* Mobile and tablet */
+    @media (max-width: 1050px) {
+      .main {
+        padding: 28px;
+      }
+
+      .lesson-section {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .sidebar {
+        width: 280px;
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 78px 16px 35px;
+      }
+
+      .menu-button {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        position: fixed;
+        top: 15px;
+        left: 16px;
+        z-index: 900;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 11px;
+        background: var(--navy-2);
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 5px 18px #0002;
+      }
+
+      .overlay.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(13, 18, 30, .65);
+        z-index: 950;
+      }
+
+      .hero {
+        padding: 33px 25px;
+        border-radius: 19px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .introduction {
+        padding: 23px 20px;
+      }
+
+      .lesson-section {
+        padding: 25px 19px;
+        border-radius: 16px;
+      }
+
+      .section-heading {
+        gap: 12px;
+      }
+
+      .section-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 23px;
+      }
+
+      .constraint-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reading-progress {
+        left: 0;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .feature-grid,
+      .example-list,
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 29px 21px;
+      }
+
+      .hero-tags {
+        gap: 7px;
+      }
+
+      .hero-tags span {
+        font-size: 10px;
+      }
+
+      .section-heading h2 {
+        font-size: 20px;
+      }
+
+      .example-box {
+        padding: 20px;
+      }
+
+      .relationship {
+        gap: 7px;
+      }
+
+      .relationship span {
+        font-size: 11px;
+        padding: 6px 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+
+    /* Topic 15.3-specific additions, matching the shared Tr.Sun design */
+    .lesson-overview {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 6px;
+    }
+
+    .overview-tile {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 16px 10px;
+      border-radius: 13px;
+      border: 1px solid #e8e7f6;
+      background: #f8f6ff;
+      color: #4a398b;
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1.4;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .overview-tile:nth-child(5n+2) {
+      background: #eff6ff;
+      border-color: #dbeafe;
+      color: #245a9d;
+    }
+
+    .overview-tile:nth-child(5n+3) {
+      background: #ecfbf5;
+      border-color: #d4f3e6;
+      color: #17694f;
+    }
+
+    .overview-tile:nth-child(5n+4) {
+      background: #fff7ed;
+      border-color: #ffead5;
+      color: #9a5514;
+    }
+
+    .overview-tile:nth-child(5n+5) {
+      background: #fff1f5;
+      border-color: #ffe0e9;
+      color: #9b3b6a;
+    }
+
+    .overview-tile span {
+      font-size: 26px;
+      line-height: 1.3;
+    }
+
+    .overview-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px #1e293b10;
+    }
+
+    .subtle-intro {
+      color: #526177;
+    }
+
+    .point-box {
+      margin-top: 21px;
+      background: #f0f4ff;
+      border: 1px solid #dce5ff;
+      border-left: 4px solid #7c5be5;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #344160;
+    }
+
+    .point-box strong {
+      color: #5e42bf;
+    }
+
+    .compact-list {
+      margin-top: 11px;
+      margin-bottom: 15px;
+    }
+
+    .bullet-title {
+      color: #334155;
+      font-weight: 800;
+    }
+
+    .warning-box {
+      margin-top: 20px;
+      background: #fff8ec;
+      border: 1px solid #f4deb0;
+      border-left: 4px solid #e9a34e;
+      padding: 18px 20px;
+      border-radius: 12px;
+    }
+
+    .warning-box strong {
+      color: #925411;
+    }
+
+    .warning-box p {
+      margin: 6px 0;
+    }
+
+    .case-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 15px 0 21px;
+    }
+
+    .case-header .case-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      border-radius: 13px;
+      background: #d5f5e5;
+    }
+
+    .case-header h3 {
+      margin: 0;
+    }
+
+    .case-header p {
+      margin: 1px 0 0;
+      color: #5c7166;
+      font-size: 12px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+      margin: 22px 0;
+    }
+
+    .metric-card {
+      background: #f6f3ff;
+      border: 1px solid #eae2ff;
+      border-radius: 13px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .metric-card:nth-child(2) {
+      background: #edfbf4;
+      border-color: #d9f3e4;
+    }
+
+    .metric-card:nth-child(3) {
+      background: #eff6ff;
+      border-color: #d9eaff;
+    }
+
+    .metric-card .metric-number {
+      display: block;
+      font-size: 25px;
+      font-weight: 850;
+      color: #6442cf;
+      line-height: 1.4;
+    }
+
+    .metric-card:nth-child(2) .metric-number {
+      color: #147d54;
+    }
+
+    .metric-card:nth-child(3) .metric-number {
+      color: #2765bc;
+    }
+
+    .metric-card .metric-label {
+      font-size: 12px;
+      color: #526177;
+      font-weight: 650;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .comparison-card {
+      border: 1px solid #e6e8f1;
+      background: #f9faff;
+      border-radius: 15px;
+      padding: 23px;
+    }
+
+    .comparison-card h3 {
+      margin: 0 0 10px;
+      color: #6341c9;
+    }
+
+    .comparison-card:nth-child(2) {
+      background: #f1fbf6;
+      border-color: #ddf2e6;
+    }
+
+    .comparison-card:nth-child(2) h3 {
+      color: #16815d;
+    }
+
+    .comparison-card p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .step-list {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 11px;
+    }
+
+    .step-list li {
+      counter-increment: steps;
+      position: relative;
+      padding: 13px 15px 13px 49px;
+      background: #f6f8fc;
+      border: 1px solid #e8ecf4;
+      border-radius: 12px;
+    }
+
+    .step-list li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      background: #7958e3;
+      border-radius: 8px;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .step-list li::marker {
+      content: "";
+    }
+
+    .lesson-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 24px 0 10px;
+    }
+
+    .lesson-navigation a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 750;
+      color: #5a38c3;
+      background: #f2edff;
+      border: 1px solid #e0d4ff;
+    }
+
+    .lesson-navigation a:hover {
+      background: #e8deff;
+    }
+
+    @media (max-width:1120px) {
+      .lesson-overview {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width:550px) {
+      .lesson-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .metric-grid,
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-tile {
+        padding: 12px 7px;
+      }
+
+      .lesson-navigation a {
+        width: 100%;
+      }
+
+      .case-header {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-label="Open lesson navigation"
+    aria-expanded="false">☰ <span>Lesson Menu</span></button>
+  <div class="overlay" id="overlay"></div>
+  <div class="reading-progress" id="readingProgress"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-identity">
+        <div class="brand-logo">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
+            <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h2>Tr.Sun Education</h2>
+          <p>Learn · Explore · Achieve</p>
+        </div>
+      </div>
+      <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
+    </div>
+    <div class="current-lesson">
+      <small>YOU ARE STUDYING</small>
+      <h3>📖 Topic 15.3</h3>
+      <p>Characteristics of a Successful IT Project</p>
+    </div>
+    <div class="sidebar-label">LESSON CONTENTS</div>
+    <nav class="side-nav" aria-label="Lesson sections">
+      <a class="active" href="#success"><span class="nav-number">3.1</span><span>Successful IT Projects</span></a>
+      <a href="#objectives"><span class="nav-number">3.2</span><span>Clear Objectives</span></a>
+      <a href="#stakeholders"><span class="nav-number">3.3</span><span>Stakeholder Engagement</span></a>
+      <a href="#planning"><span class="nav-number">3.4</span><span>Detailed Planning</span></a>
+      <a href="#team"><span class="nav-number">3.5</span><span>Skilled Team</span></a>
+      <a href="#adaptability"><span class="nav-number">3.6</span><span>Adaptability</span></a>
+      <a href="#communication"><span class="nav-number">3.7</span><span>Effective Communication</span></a>
+      <a href="#quality"><span class="nav-number">3.8</span><span>Quality Focus</span></a>
+      <a href="#risk"><span class="nav-number">3.9</span><span>Risk Management</span></a>
+      <a href="#improvement"><span class="nav-number">3.10</span><span>Continuous Improvement</span></a>
+      <a href="#delivery"><span class="nav-number">3.11</span><span>On-Time & On-Budget</span></a>
+      <a href="#worked-example"><span class="nav-number">3.12</span><span>Worked Example</span></a>
+      <a href="#project-product"><span class="nav-number">3.13</span><span>Project vs Product Success</span></a>
+    </nav>
+    <div class="sidebar-footer"><strong>Topic 15 · Systems Development</strong>
+      <div>Unit 3 · A2 Level</div>
+      <div style="margin-top:12px">Created by Tr. Sun</div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Edexcel IAL IT</a><span>›</span><a
+          href="topic-15.html">Topic 15</a><span>›</span><strong>Lesson 15.3</strong></nav>
+      <header class="hero" id="overview">
+        <div class="hero-content">
+          <span class="hero-badge">UNIT 3 · TOPIC 15 · LESSON 3</span>
+          <h1>Characteristics of a Successful IT Project</h1>
+          <p>Explore the ten characteristics that help IT projects achieve their objectives, satisfy stakeholders and
+            deliver high-quality systems within agreed constraints.</p>
+          <div class="hero-tags"><span>🏆 10 Characteristics</span><span>🎓 A2 Level</span><span>💻 Systems
+              Development</span></div>
+        </div>
+      </header>
+      <div class="introduction">
+        <h2>📖 Introduction</h2>
+        <p>A working system is only one part of a successful IT project. A project must also achieve its goals, meet
+          user needs, maintain quality and manage time, cost and risks effectively.</p>
+        <p>This lesson explains all <strong>ten characteristics of successful IT projects</strong> with clear
+          definitions, detailed explanations, practical examples and a school learning-system case study.</p>
+      </div>
+      <section class="lesson-section" id="success">
+        <div class="section-heading">
+          <div class="section-icon purple" aria-hidden="true">🏆</div>
+          <div><small>Section 3.1</small>
+            <h2>What Is a Successful IT Project?</h2>
+          </div>
+        </div>
+
+        <p>A <strong>successful IT project</strong> achieves its intended objectives, satisfies agreed user and
+          stakeholder requirements, and delivers an appropriate IT solution while managing constraints such as time,
+          cost and quality.</p>
+        <div class="definition"><span class="label">Key Definition</span>
+          <p>A successful IT project produces a system that meets its agreed objectives and acceptance criteria,
+            delivers value to stakeholders, and is completed within approved constraints.</p>
+        </div>
+        <p>Producing software that starts and runs is not enough. Users must be able to carry out the tasks the system
+          was designed to support, and the result must be reliable, usable and suitable for its environment.</p>
+        <h3>Key Indicators of Project Success</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h4>Objectives achieved</h4>
+            <p>The agreed goals and expected outcomes are delivered.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">👥</div>
+            <h4>Requirements met</h4>
+            <p>The solution performs the functions that its users need.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📆</div>
+            <h4>Time and cost controlled</h4>
+            <p>The project is delivered within the agreed schedule and approved budget.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✅</div>
+            <h4>Acceptable quality</h4>
+            <p>The system meets its agreed standards and acceptance criteria.</p>
+          </div>
+        </div>
+        <div class="example-box"><span class="example-label">💡 Example · Online learning system</span>
+          <p>A school receives its new learning platform on the planned date. However, students cannot submit quizzes
+            correctly. The project has met its deadline but <strong>has not met an essential functional
+              requirement</strong>, so it cannot be considered fully successful.</p>
+        </div>
+        <div class="point-box"><strong>Remember:</strong> Time, cost, quality, scope and stakeholder needs should be
+          considered together when judging project success.</div>
+        <h3>Explore the Ten Characteristics</h3>
+        <p class="subtle-intro">Select a characteristic to jump to its detailed explanation.</p>
+        <div class="lesson-overview" aria-label="Ten characteristics navigation">
+          <a class="overview-tile" href="#objectives"><span>🎯</span>Clear objectives</a>
+          <a class="overview-tile" href="#stakeholders"><span>🤝</span>Stakeholder engagement</a>
+          <a class="overview-tile" href="#planning"><span>🗓️</span>Detailed planning</a>
+          <a class="overview-tile" href="#team"><span>👩‍💻</span>Skilled team</a>
+          <a class="overview-tile" href="#adaptability"><span>🔄</span>Adaptability</a>
+          <a class="overview-tile" href="#communication"><span>💬</span>Communication</a>
+          <a class="overview-tile" href="#quality"><span>🛡️</span>Quality focus</a>
+          <a class="overview-tile" href="#risk"><span>⚠️</span>Risk management</a>
+          <a class="overview-tile" href="#improvement"><span>📈</span>Continuous improvement</a>
+          <a class="overview-tile" href="#delivery"><span>⏰</span>On-time and on-budget</a>
+        </div>
+      </section>
+
+      <section class="lesson-section" id="objectives">
+        <div class="section-heading">
+          <div class="section-icon blue" aria-hidden="true">🎯</div>
+          <div><small>Section 3.2</small>
+            <h2>1. Clear Objectives</h2>
+          </div>
+        </div>
+
+        <p>Clear objectives are <strong>specific statements of what a project is expected to achieve</strong>. They help
+          the project manager and team understand the desired outcome, set priorities and evaluate progress.</p>
+        <div class="definition"><span class="label">Key Idea</span>
+          <p>Everyone working on the project should understand <strong>what must be delivered</strong> and <strong>how
+              success will be measured</strong>.</p>
+        </div>
+        <h3>Why are clear objectives important?</h3>
+        <ul>
+          <li>Provide a shared direction for the team and stakeholders.</li>
+          <li>Help determine the project's scope and priorities.</li>
+          <li>Allow progress to be measured against agreed targets.</li>
+          <li>Reduce unnecessary work and misunderstandings.</li>
+        </ul>
+        <h3>Setting SMART Objectives</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>SMART</th>
+                <th>Meaning</th>
+                <th>How it improves an objective</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>S</strong></td>
+                <td>Specific</td>
+                <td>Clearly describes what will be achieved.</td>
+              </tr>
+              <tr>
+                <td><strong>M</strong></td>
+                <td>Measurable</td>
+                <td>Defines evidence used to assess completion.</td>
+              </tr>
+              <tr>
+                <td><strong>A</strong></td>
+                <td>Achievable</td>
+                <td>Can realistically be completed with available resources.</td>
+              </tr>
+              <tr>
+                <td><strong>R</strong></td>
+                <td>Relevant</td>
+                <td>Supports the overall purpose of the project.</td>
+              </tr>
+              <tr>
+                <td><strong>T</strong></td>
+                <td>Time-bound</td>
+                <td>Has a clear deadline.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example-box"><span class="example-label">💡 Example · Turning a vague aim into a SMART target</span>
+          <p><strong>Vague:</strong> “Build a good learning website.”</p>
+          <p><strong>Clearer:</strong> “Develop and deploy an online learning platform within 12 weeks that supports 500
+            registered students and enables teachers to upload lessons and create quizzes.”</p>
+          <p>The second objective identifies deliverables, expected capacity and a deadline, making it much easier to
+            evaluate.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> Clear objectives make it possible to judge whether the
+          project has actually achieved its intended goals.</div>
+      </section>
+
+      <section class="lesson-section" id="stakeholders">
+        <div class="section-heading">
+          <div class="section-icon green" aria-hidden="true">🤝</div>
+          <div><small>Section 3.3</small>
+            <h2>2. Effective Stakeholder Engagement</h2>
+          </div>
+        </div>
+
+        <p><strong>Stakeholders</strong> are people, groups or organisations that can influence a project or are
+          affected by its outcomes. Engaging them means consulting them, understanding their needs and involving them
+          appropriately during the project.</p>
+        <h3>Stakeholders in a School Learning Platform</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Stakeholder</th>
+                <th>Needs or expectations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Students</strong></td>
+                <td>Simple lesson access, reliable quizzes and visible results.</td>
+              </tr>
+              <tr>
+                <td><strong>Teachers</strong></td>
+                <td>Tools for managing classes, uploading lessons and assessing work.</td>
+              </tr>
+              <tr>
+                <td><strong>School management</strong></td>
+                <td>Value for money, security and support for educational goals.</td>
+              </tr>
+              <tr>
+                <td><strong>IT staff</strong></td>
+                <td>A secure, maintainable and manageable system.</td>
+              </tr>
+              <tr>
+                <td><strong>Project sponsor</strong></td>
+                <td>Evidence that investment is delivering the agreed benefits.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Why does engagement matter?</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">📝</div>
+            <h4>Accurate requirements</h4>
+            <p>Users explain what they need instead of developers making assumptions.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔍</div>
+            <h4>Early feedback</h4>
+            <p>Problems can be spotted before they become expensive to correct.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h4>Managed expectations</h4>
+            <p>Stakeholders understand the agreed scope and limitations.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🙌</div>
+            <h4>Greater acceptance</h4>
+            <p>Users are more willing to adopt a system they helped shape.</p>
+          </div>
+        </div>
+        <div class="example-box"><span class="example-label">💡 Example · Collecting user requirements</span>
+          <p>The development team interviews teachers and students before designing the website. Teachers request
+            assignment uploads, while students request the ability to view quiz marks. The team records these
+            requirements and later demonstrates a prototype for feedback.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> Continuous stakeholder involvement increases the likelihood
+          that the finished system will be relevant, accepted and useful.</div>
+      </section>
+
+      <section class="lesson-section" id="planning">
+        <div class="section-heading">
+          <div class="section-icon purple" aria-hidden="true">🗓️</div>
+          <div><small>Section 3.4</small>
+            <h2>3. Detailed Planning</h2>
+          </div>
+        </div>
+
+        <p>Detailed planning means deciding <strong>what work is needed, how it will be carried out, who will do it, and
+            when it should be completed</strong>. A project plan provides the roadmap used to coordinate and control the
+          project.</p>
+        <h3>What should a project plan include?</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Planning element</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Scope and deliverables</td>
+                <td>Defines what is included and the outputs to be produced.</td>
+              </tr>
+              <tr>
+                <td>Tasks and dependencies</td>
+                <td>Identifies activities and the order in which they must occur.</td>
+              </tr>
+              <tr>
+                <td>Timescales and milestones</td>
+                <td>Establishes expected durations, checkpoints and deadlines.</td>
+              </tr>
+              <tr>
+                <td>Resources and responsibilities</td>
+                <td>Allocates team members, equipment and software.</td>
+              </tr>
+              <tr>
+                <td>Budget and risks</td>
+                <td>Estimates spending and prepares responses to possible problems.</td>
+              </tr>
+              <tr>
+                <td>Quality standards</td>
+                <td>Defines the tests and conditions the final solution must satisfy.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="definition"><span class="label">Important Term · Deliverable</span>
+          <p>A <strong>deliverable</strong> is a specific output of a project, such as a working website, database,
+            design document or test report.</p>
+        </div>
+        <h3>Example: Simplified 12-week Project Schedule</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Activity</th>
+                <th>Planned duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gather user requirements</td>
+                <td>2 weeks</td>
+              </tr>
+              <tr>
+                <td>Design the system</td>
+                <td>2 weeks</td>
+              </tr>
+              <tr>
+                <td>Develop the system</td>
+                <td>5 weeks</td>
+              </tr>
+              <tr>
+                <td>Test the system</td>
+                <td>2 weeks</td>
+              </tr>
+              <tr>
+                <td>Deploy the system</td>
+                <td>1 week</td>
+              </tr>
+              <tr>
+                <td><strong>Total (sequential schedule)</strong></td>
+                <td><strong>12 weeks</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>In real projects, some activities may overlap. Gantt charts, precedence tables and critical path analysis can
+          help organise tasks and monitor progress.</p>
+        <div class="point-box"><strong>Key point:</strong> Planning makes work more predictable and improves the use of
+          time, money and resources.</div>
+      </section>
+
+      <section class="lesson-section" id="team">
+        <div class="section-heading">
+          <div class="section-icon blue" aria-hidden="true">👩‍💻</div>
+          <div><small>Section 3.5</small>
+            <h2>4. Skilled Team</h2>
+          </div>
+        </div>
+
+        <p>A successful IT project needs team members with the <strong>appropriate knowledge, technical skills and
+            experience</strong> to carry out their responsibilities effectively. A skilled team combines different areas
+          of expertise and works cooperatively.</p>
+        <h3>Possible Roles in an IT Project</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Role</th>
+                <th>Main responsibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project manager</td>
+                <td>Plans, coordinates, monitors and controls project work.</td>
+              </tr>
+              <tr>
+                <td>Systems analyst</td>
+                <td>Investigates business or user requirements.</td>
+              </tr>
+              <tr>
+                <td>Software developer</td>
+                <td>Builds and maintains program functionality.</td>
+              </tr>
+              <tr>
+                <td>Database developer</td>
+                <td>Designs and manages the data storage solution.</td>
+              </tr>
+              <tr>
+                <td>UI/UX designer</td>
+                <td>Makes the interface clear, accessible and easy to use.</td>
+              </tr>
+              <tr>
+                <td>Software tester</td>
+                <td>Checks that features work and meet agreed requirements.</td>
+              </tr>
+              <tr>
+                <td>Security specialist</td>
+                <td>Helps identify and reduce security vulnerabilities.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>On smaller projects, a single person may perform several roles. The key is to ensure that the required skills
+          and responsibilities are covered.</p>
+        <div class="example-box"><span class="example-label">💡 Example · Allocating work by expertise</span>
+          <p>For an online learning system, an experienced database developer handles student records, a designer
+            creates the interface and a tester verifies registrations, logins and quiz submissions. Assigning suitable
+            people to each task reduces errors and rework.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> A project's success depends on having appropriate skills,
+          assigning tasks wisely and encouraging effective teamwork.</div>
+      </section>
+
+      <section class="lesson-section" id="adaptability">
+        <div class="section-heading">
+          <div class="section-icon green" aria-hidden="true">🔄</div>
+          <div><small>Section 3.6</small>
+            <h2>5. Adaptability</h2>
+          </div>
+        </div>
+
+        <p><strong>Adaptability</strong> is a project's ability to respond to changes or unexpected circumstances
+          without losing sight of its main objectives. Changes may arise from user feedback, new technology, limited
+          resources or technical difficulties.</p>
+        <h3>Situations that Require Adaptability</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h4>Changing user needs</h4>
+            <p>Users may request features or devices that were not initially considered.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧩</div>
+            <h4>Technical difficulties</h4>
+            <p>Unexpected compatibility or performance problems may require a new approach.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔐</div>
+            <h4>New security requirements</h4>
+            <p>Newly identified threats may require improved protection.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧑‍💼</div>
+            <h4>Resource changes</h4>
+            <p>Staff availability or funding may change during development.</p>
+          </div>
+        </div>
+        <div class="example-box"><span class="example-label">💡 Example · Responding to mobile users</span>
+          <p>The school initially expects students to use desktop computers. Feedback shows that many learners will use
+            smartphones, so the team updates the design to support smaller screens. The project manager assesses the
+            extra work, cost and schedule before approving the change.</p>
+        </div>
+        <div class="warning-box"><strong>Important · Beware of Scope Creep</strong>
+          <p>Adaptability does not mean agreeing to every new request. <strong>Scope creep</strong> occurs when project
+            work expands beyond the approved scope without proper control. Changes should be evaluated, authorised and
+            recorded.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> Be flexible when necessary, but maintain control over
+          objectives, time, cost and scope.</div>
+      </section>
+
+      <section class="lesson-section" id="communication">
+        <div class="section-heading">
+          <div class="section-icon purple" aria-hidden="true">💬</div>
+          <div><small>Section 3.7</small>
+            <h2>6. Effective Communication</h2>
+          </div>
+        </div>
+
+        <p>Effective communication is the exchange of <strong>accurate, relevant and timely information</strong> among
+          team members and stakeholders. Everyone needs to know their responsibilities, project progress and important
+          changes.</p>
+        <h3>Communication Methods</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>How it is used</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Team meetings</td>
+                <td>Discuss progress, difficulties and task priorities.</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>Share formal updates, decisions and approved changes.</td>
+              </tr>
+              <tr>
+                <td>Progress reports</td>
+                <td>Give stakeholders an overview of schedule, cost and issues.</td>
+              </tr>
+              <tr>
+                <td>Project management software</td>
+                <td>Track assignments, deadlines and task completion.</td>
+              </tr>
+              <tr>
+                <td>Team messaging</td>
+                <td>Clarify questions and coordinate everyday work quickly.</td>
+              </tr>
+              <tr>
+                <td>Documentation</td>
+                <td>Keep a reliable record of requirements and decisions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Benefits of Effective Communication</h3>
+        <ul>
+          <li>Prevents misunderstandings and duplicated work.</li>
+          <li>Helps problems reach the right people promptly.</li>
+          <li>Improves coordination and decision-making.</li>
+          <li>Keeps stakeholders informed and confident.</li>
+        </ul>
+        <div class="example-box"><span class="example-label">💡 Example · Early problem reporting</span>
+          <p>At a weekly meeting, a developer reports that the quiz-submission feature is behind schedule. The project
+            manager reallocates support and adjusts tasks before the delay affects system testing.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> Good communication is clear and timely, not simply frequent.
+          It makes teamwork more effective.</div>
+      </section>
+
+      <section class="lesson-section" id="quality">
+        <div class="section-heading">
+          <div class="section-icon blue" aria-hidden="true">🛡️</div>
+          <div><small>Section 3.8</small>
+            <h2>7. Quality Focus</h2>
+          </div>
+        </div>
+
+        <p>Quality focus means using suitable standards and methods to ensure the completed system <strong>meets its
+            agreed requirements and works properly in real use</strong>.</p>
+        <h3>Aspects of System Quality</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">⚙️</div>
+            <h4>Functionality</h4>
+            <p>Required features behave correctly.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔁</div>
+            <h4>Reliability</h4>
+            <p>Operation remains consistent without frequent failures.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧭</div>
+            <h4>Usability</h4>
+            <p>Users can understand and operate the system.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h4>Security</h4>
+            <p>Data is protected against unauthorised access.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🚀</div>
+            <h4>Performance</h4>
+            <p>Responses are efficient under expected workloads.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔧</div>
+            <h4>Maintainability</h4>
+            <p>Defects can be corrected and improvements can be made.</p>
+          </div>
+        </div>
+        <h3>Quality Assurance and Quality Control</h3>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h3>Quality Assurance (QA)</h3>
+            <p>Focuses on <strong>preventing defects</strong> by improving the way work is carried out.</p>
+            <p><strong>Examples:</strong> coding standards, development procedures and code reviews.</p>
+          </div>
+          <div class="comparison-card">
+            <h3>Quality Control (QC)</h3>
+            <p>Focuses on <strong>finding defects</strong> by checking what has been produced.</p>
+            <p><strong>Examples:</strong> functional tests, security checks and acceptance testing.</p>
+          </div>
+        </div>
+        <div class="example-box"><span class="example-label">💡 Example · Testing a login feature</span>
+          <p>Testers verify that valid users can sign in, invalid credentials are rejected, student accounts cannot
+            access teacher-only functions and sessions are handled securely. Defects are corrected and the feature is
+            retested.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> A project must deliver a system that meets agreed quality
+          criteria, not merely one that appears to run.</div>
+      </section>
+
+      <section class="lesson-section" id="risk">
+        <div class="section-heading">
+          <div class="section-icon green" aria-hidden="true">⚠️</div>
+          <div><small>Section 3.9</small>
+            <h2>8. Risk Management</h2>
+          </div>
+        </div>
+
+        <p><strong>Risk management</strong> is the process of identifying, analysing, prioritising and responding to
+          uncertain events that could affect project goals. Risks may affect time, cost, functionality, security or the
+          availability of resources.</p>
+        <h3>Stages of Risk Management</h3>
+        <ol class="step-list">
+          <li><strong>Identify:</strong> Find possible events that could cause difficulties.</li>
+          <li><strong>Analyse:</strong> Estimate each risk's likelihood and potential impact.</li>
+          <li><strong>Prioritise:</strong> Give greater attention to the most significant risks.</li>
+          <li><strong>Respond:</strong> Decide how to avoid, reduce, transfer or accept each risk.</li>
+          <li><strong>Monitor:</strong> Review risks and whether the planned responses are working.</li>
+        </ol>
+        <h3>Examples of IT Project Risks</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Risk</th>
+                <th>Possible effect</th>
+                <th>Possible response</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Developer becomes unavailable</td>
+                <td>Important tasks are delayed.</td>
+                <td>Cross-train staff and document work.</td>
+              </tr>
+              <tr>
+                <td>Data loss</td>
+                <td>Project data or system information is lost.</td>
+                <td>Maintain and test backups.</td>
+              </tr>
+              <tr>
+                <td>Security vulnerability</td>
+                <td>Information may be exposed.</td>
+                <td>Apply security controls and conduct testing.</td>
+              </tr>
+              <tr>
+                <td>Budget overrun</td>
+                <td>Funding may be insufficient.</td>
+                <td>Monitor expenditure and use contingency planning.</td>
+              </tr>
+              <tr>
+                <td>Compatibility problem</td>
+                <td>System features may fail on some devices.</td>
+                <td>Test compatibility early.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example-box"><span class="example-label">💡 Example · Platform availability</span>
+          <p>The project manager identifies a risk that the platform might fail during a large online quiz. The team
+            performs load testing, checks server capacity and prepares a recovery plan.</p>
+        </div>
+        <div class="warning-box"><strong>Know the Difference · Risk vs Issue</strong>
+          <p><strong>Risk:</strong> The server <em>might fail</em> during a quiz. <strong>Issue:</strong> The server
+            <em>has failed</em> and students cannot submit answers.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> Managing potential problems early reduces the chances of
+          serious disruption.</div>
+      </section>
+
+      <section class="lesson-section" id="improvement">
+        <div class="section-heading">
+          <div class="section-icon purple" aria-hidden="true">📈</div>
+          <div><small>Section 3.10</small>
+            <h2>9. Continuous Improvement</h2>
+          </div>
+        </div>
+
+        <p>Continuous improvement means <strong>regularly reviewing work, evaluating results and using feedback to
+            improve project activities and outcomes</strong>. It can happen throughout development and after the project
+          has ended.</p>
+        <h3>How does a team improve continuously?</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h4>Progress reviews</h4>
+            <p>Compare actual achievements with the plan.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💡</div>
+            <h4>Team feedback</h4>
+            <p>Discuss difficulties and suggest better ways to work.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🧪</div>
+            <h4>Testing and evaluation</h4>
+            <p>Use test findings to correct weaknesses.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📒</div>
+            <h4>Lessons learned</h4>
+            <p>Record successes and mistakes for future projects.</p>
+          </div>
+        </div>
+        <h3>Why is continuous improvement valuable?</h3>
+        <ul>
+          <li>It can improve productivity and the use of resources.</li>
+          <li>Problems may be corrected before affecting later work.</li>
+          <li>Products become easier to use and more reliable.</li>
+          <li>Experience improves how future projects are managed.</li>
+        </ul>
+        <div class="example-box"><span class="example-label">💡 Example · Improving navigation</span>
+          <p>During user testing, students say that the lesson menu is difficult to understand. The team redesigns the
+            menu and retests it. The team also records the feedback to inform later website projects.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> Learning and refining working methods leads to better project
+          performance and better IT systems.</div>
+      </section>
+
+      <section class="lesson-section" id="delivery">
+        <div class="section-heading">
+          <div class="section-icon blue" aria-hidden="true">⏰</div>
+          <div><small>Section 3.11</small>
+            <h2>10. On-Time and On-Budget Delivery</h2>
+          </div>
+        </div>
+
+        <p>On-time and on-budget delivery means completing the agreed work <strong>by the planned deadline</strong> and
+          <strong>within approved financial limits</strong>, without ignoring essential requirements or quality
+          standards.</p>
+        <h3>Two Important Project Constraints</h3>
+        <div class="constraint-grid">
+          <div class="constraint-card time-card"><span class="big-icon">📅</span>
+            <h3>Time</h3>
+            <p>Deliver the work by the agreed deadline.</p>
+          </div>
+          <div class="constraint-card cost-card"><span class="big-icon">💰</span>
+            <h3>Cost</h3>
+            <p>Keep total expenditure within the approved budget.</p>
+          </div>
+          <div class="constraint-card quality-card"><span class="big-icon">✅</span>
+            <h3>Quality</h3>
+            <p>Meet the specified requirements and acceptance criteria.</p>
+          </div>
+        </div>
+        <h3>Typical Project Costs</h3>
+        <ul>
+          <li>Staff wages and specialist services.</li>
+          <li>Hardware, software and licences.</li>
+          <li>Hosting, equipment and testing.</li>
+          <li>Training, documentation and technical support.</li>
+        </ul>
+        <h3>Example: Planned vs Actual Delivery</h3>
+        <div class="metric-grid">
+          <div class="metric-card"><span class="metric-number">12 weeks</span><span class="metric-label">Planned
+              deadline</span></div>
+          <div class="metric-card"><span class="metric-number">11 weeks</span><span class="metric-label">Actual
+              completion</span></div>
+          <div class="metric-card"><span class="metric-number">$9,500</span><span class="metric-label">Actual cost ·
+              $10,000 budget</span></div>
+        </div>
+        <p>In this example, the team meets the time and financial constraints. However, the system still needs to
+          satisfy its functional and quality requirements to be judged fully successful.</p>
+        <div class="warning-box"><strong>Important Trade-off</strong>
+          <p>Shortening the schedule may require additional staff, increasing costs. Reducing expenditure may affect
+            resources, scope or delivery times. A project manager must consider the consequences of each decision.</p>
+        </div>
+        <div class="point-box"><strong>Key point:</strong> Delivery within the deadline and budget is essential, but it
+          is not sufficient on its own to prove project success.</div>
+      </section>
+
+      <section class="lesson-section" id="worked-example">
+        <div class="section-heading">
+          <div class="section-icon green" aria-hidden="true">🏫</div>
+          <div><small>Section 3.12</small>
+            <h2>Worked Example: Online Learning System</h2>
+          </div>
+        </div>
+
+        <div class="case-header">
+          <div class="case-icon" aria-hidden="true">💻</div>
+          <div>
+            <h3>A School's New Learning Platform</h3>
+            <p>Putting all ten characteristics into practice</p>
+          </div>
+        </div>
+        <p>A school commissions a platform that allows students to register, access lessons, complete quizzes and view
+          marks. Teachers must be able to upload content and manage assessments.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Characteristic</th>
+                <th>Application to the School Project</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Clear objectives</strong></td>
+                <td>The school agrees on essential features, expected capacity and a delivery deadline.</td>
+              </tr>
+              <tr>
+                <td><strong>2. Stakeholder engagement</strong></td>
+                <td>Teachers, students and IT staff are consulted when defining needs.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Detailed planning</strong></td>
+                <td>The project manager prepares a schedule, resource plan and budget.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Skilled team</strong></td>
+                <td>Appropriate developers, designers, testers and IT staff are assigned.</td>
+              </tr>
+              <tr>
+                <td><strong>5. Adaptability</strong></td>
+                <td>The team improves mobile access after receiving student feedback.</td>
+              </tr>
+              <tr>
+                <td><strong>6. Communication</strong></td>
+                <td>Regular progress updates bring concerns to the team quickly.</td>
+              </tr>
+              <tr>
+                <td><strong>7. Quality focus</strong></td>
+                <td>Registration, quiz marking, permissions, security and usability are tested.</td>
+              </tr>
+              <tr>
+                <td><strong>8. Risk management</strong></td>
+                <td>Backups, security controls and plans for service disruption are prepared.</td>
+              </tr>
+              <tr>
+                <td><strong>9. Continuous improvement</strong></td>
+                <td>User testing leads to clearer navigation and better functions.</td>
+              </tr>
+              <tr>
+                <td><strong>10. On-time and on-budget</strong></td>
+                <td>Progress and expenditure are checked against the agreed baseline.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Evaluating the Outcome</h3>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h3>✅ Successful outcome</h3>
+            <p>The platform is completed on time, meets its approved budget, passes acceptance tests and allows teachers
+              and students to perform the required tasks reliably.</p>
+          </div>
+          <div class="comparison-card">
+            <h3>⚠️ Unsuccessful outcome</h3>
+            <p>The platform arrives on time and on budget, but quizzes frequently lose answers and lessons cannot be
+              accessed reliably. Essential quality and user requirements have not been met.</p>
+          </div>
+        </div>
+        <div class="point-box"><strong>Important distinction:</strong> Finishing on time does <em>not</em> automatically
+          mean a project is successful. The system must also meet requirements and be fit for purpose.</div>
+      </section>
+
+      <section class="lesson-section" id="project-product">
+        <div class="section-heading">
+          <div class="section-icon purple" aria-hidden="true">⚖️</div>
+          <div><small>Section 3.13</small>
+            <h2>Project Success vs Product Success</h2>
+          </div>
+        </div>
+
+        <p>Although they are related, <strong>project success</strong> and <strong>product success</strong> describe
+          different aspects of the result.</p>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h3>📋 Project Success</h3>
+            <p>How well the work was managed and delivered against the agreed project objectives and constraints.</p>
+            <p><strong>Consider:</strong> schedule, budget, scope, completion of deliverables and acceptance criteria.
+            </p>
+          </div>
+          <div class="comparison-card">
+            <h3>💻 Product Success</h3>
+            <p>How well the finished system meets user needs and achieves the intended benefits in practice.</p>
+            <p><strong>Consider:</strong> functionality, usability, reliability, security and stakeholder value.</p>
+          </div>
+        </div>
+        <div class="example-box"><span class="example-label">💡 Two possible outcomes</span>
+          <p><strong>Outcome A:</strong> A website is delivered by the deadline and within budget, but is confusing and
+            unreliable. Delivery constraints were met, but product performance is poor.</p>
+          <p><strong>Outcome B:</strong> A website becomes popular and works well, but costs far more than was approved.
+            The product may be valuable while the project has failed an important cost constraint.</p>
+        </div>
+        <div class="note-box"><strong>Final Takeaway:</strong> A successful IT project should achieve its objectives,
+          satisfy stakeholders, deliver a system of acceptable quality and manage time, cost, scope and risk
+          effectively. The ten characteristics work together; weakness in one area can affect the others.</div>
+      </section>
+      
+      <nav class="lesson-navigation" aria-label="Other lessons">
+          <a href="topic-15-02.html">⬅️ Topic 15.2</a>
+          <a href="topic-15-04.html">Topic 15.4 ➡️</a>
+      </nav>
+
+
+      <footer class="page-footer">
+        <p><strong>Tr.Sun Education</strong></p>
+        <p>Edexcel International A Level IT</p>
+        <p>Topic 15.3 · Characteristics of a Successful IT Project</p>
+        <p>Created by Tr. Sun</p>
+      </footer>
+    </div>
+  </main>
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const menuButton = document.getElementById('menuButton');
+    const overlay = document.getElementById('overlay');
+    const navLinks = document.querySelectorAll('.side-nav a');
+    const sections = document.querySelectorAll('section.lesson-section');
+    const progress = document.getElementById('readingProgress');
+    const backTop = document.getElementById('backTop');
+
+    function openMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('show');
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'Close lesson navigation');
+    }
+    function closeMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open lesson navigation');
+    }
+    menuButton.addEventListener('click', () => sidebar.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    function updateActiveSection() {
+      let activeId = sections[0].id;
+      sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= 160) activeId = section.id;
+      });
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === '#' + activeId;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    function updateReadingProgress() {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const percentage = maxScroll > 0 ? Math.min(100, window.scrollY / maxScroll * 100) : 100;
+      progress.style.width = percentage + '%';
+    }
+    function updateBackTop() {
+      backTop.classList.toggle('visible', window.scrollY > 450);
+    }
+    function updatePage() {
+      updateActiveSection();
+      updateReadingProgress();
+      updateBackTop();
+    }
+    backTop.addEventListener('click', () => window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    }));
+    window.addEventListener('scroll', updatePage, { passive: true });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 800) closeMenu();
+      updatePage();
+    });
+    window.addEventListener('load', updatePage);
+    updatePage();
+  </script>
+</body>
+
+</html>

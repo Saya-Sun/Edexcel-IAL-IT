@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+
+    <title>Topic 15.2 - Managing an IT Project | Tr.Sun Education</title>
+
+    <style>
+        /* ==========================================
+   TR.SUN EDUCATION - DESIGN SYSTEM
+========================================== */
+
+        :root {
+            --sidebar-width: 282px;
+            --navy: #111827;
+            --navy-2: #1e293b;
+            --purple: #7653e8;
+            --purple-dark: #5937c5;
+            --purple-pale: #f3efff;
+            --bg: #f5f7fc;
+            --surface: #ffffff;
+            --text: #253047;
+            --muted: #64748b;
+            --border: #e7eaf2;
+            --green: #14966b;
+            --blue: #3478e4;
+            --orange: #df902d;
+            --radius: 18px;
+            --shadow: 0 8px 28px rgba(25, 33, 60, .045);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 30px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #b69aff;
+            outline-offset: 3px;
+        }
+
+        /* ==========================================
+   SIDEBAR
+========================================== */
+
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            height: 100dvh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: var(--navy);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            z-index: 1000;
+            scrollbar-width: thin;
+            scrollbar-color: #45506a transparent;
+        }
+
+        .brand {
+            padding: 28px 18px 23px;
+            border-bottom: 1px solid #30394c;
+        }
+
+        .brand-identity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 62px;
+            height: 62px;
+            flex: 0 0 62px;
+            border-radius: 18px;
+            background: linear-gradient(135deg,
+                    #a06aff,
+                    #5837c6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(117, 83, 232, .3);
+        }
+
+        .brand-logo svg {
+            width: 49px;
+            height: 49px;
+        }
+
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-text h2 {
+            font-size: 17px;
+            line-height: 1.3;
+            margin: 0;
+            color: #ffffff;
+            letter-spacing: -.5px;
+        }
+
+        .brand-text p {
+            margin: 5px 0 0;
+            color: #c4b5fd;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .brand-curriculum {
+            margin-top: 20px;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.15px;
+            color: #94a3b8;
+        }
+
+        /* Current lesson */
+
+        .current-lesson {
+            margin: 22px 13px 13px;
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid #4b3a86;
+            background: linear-gradient(135deg,
+                    #382b65,
+                    #29234a);
+        }
+
+        .current-lesson small {
+            display: block;
+            color: #c4b5fd;
+            font-size: 10px;
+            font-weight: 750;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .current-lesson h3 {
+            margin: 0;
+            font-size: 15px;
+            color: white;
+        }
+
+        .current-lesson p {
+            margin: 4px 0 0;
+            font-size: 12px;
+            color: #d6d0ea;
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+
+        .sidebar-label {
+            padding: 18px 23px 12px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            color: #8591a8;
+        }
+
+        .nav-links {
+            padding: 0 12px 18px;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 12px;
+            margin-bottom: 5px;
+            border-radius: 11px;
+            color: #cbd5e1;
+            font-size: 12.5px;
+            line-height: 1.4;
+            transition: background .2s, color .2s;
+        }
+
+        .nav-links a:hover {
+            background: #283249;
+            color: white;
+        }
+
+        .nav-links a.active {
+            background: #392b66;
+            color: white;
+            box-shadow: inset 3px 0 #a78bfa;
+        }
+
+        .nav-number {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            background: #293449;
+            display: grid;
+            place-items: center;
+            color: #bac5d8;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .nav-links a.active .nav-number {
+            background: #8157ed;
+            color: white;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 21px 22px;
+            border-top: 1px solid #30394c;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        .sidebar-footer strong {
+            color: #e2e8f0;
+        }
+
+        /* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+        .main {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+            padding: 34px 42px 55px;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            align-items: center;
+            color: #78849a;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb strong {
+            color: #6744d0;
+        }
+
+        /* ==========================================
+   HERO
+========================================== */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 47px 44px;
+            border-radius: 24px;
+            background: linear-gradient(115deg,
+                    #4934b5 0%,
+                    #7753e7 55%,
+                    #ad72ed 100%);
+            color: white;
+            box-shadow: 0 15px 35px rgba(88, 60, 180, .16);
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .15);
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 360px;
+            height: 360px;
+            right: -100px;
+            top: -200px;
+        }
+
+        .hero::after {
+            width: 250px;
+            height: 250px;
+            right: 90px;
+            bottom: -175px;
+        }
+
+        .hero>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-tag {
+            display: inline-block;
+            padding: 7px 15px;
+            background: rgba(255, 255, 255, .16);
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 750;
+            letter-spacing: .8px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 3.6vw, 43px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin: 21px 0 14px;
+        }
+
+        .hero p {
+            max-width: 710px;
+            color: #f2ecff;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 26px;
+        }
+
+        .hero-badges span {
+            padding: 8px 13px;
+            font-size: 11px;
+            font-weight: 650;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, .15);
+            border: 1px solid rgba(255, 255, 255, .17);
+        }
+
+        /* ==========================================
+   CONTENT CARDS
+========================================== */
+
+        .introduction {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--purple);
+            padding: 27px 31px;
+            border-radius: 16px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .introduction h2 {
+            margin: 0 0 10px;
+            font-size: 21px;
+        }
+
+        .introduction p {
+            margin: 9px 0;
+        }
+
+        .lesson-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 34px;
+            margin-bottom: 26px;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 28px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 20px;
+            margin-bottom: 23px;
+            border-bottom: 1px solid #eef0f5;
+        }
+
+        .section-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+
+        .section-heading small {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            color: var(--muted);
+        }
+
+        .section-heading h2 {
+            margin: 3px 0 0;
+            line-height: 1.3;
+            font-size: clamp(21px, 2.5vw, 26px);
+            color: #1e293b;
+        }
+
+        h3 {
+            color: #25324a;
+            margin: 27px 0 12px;
+            font-size: 18px;
+        }
+
+        h4 {
+            margin: 0 0 8px;
+            font-size: 15px;
+        }
+
+        p {
+            margin: 12px 0;
+        }
+
+        strong {
+            color: #26354d;
+        }
+
+        ul,
+        ol {
+            padding-left: 24px;
+            margin: 12px 0;
+        }
+
+        li {
+            padding: 4px 0;
+        }
+
+        li::marker {
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        /* Definitions */
+
+        .definition {
+            background: #f4f0ff;
+            border-left: 4px solid #875bea;
+            border-radius: 12px;
+            padding: 19px 22px;
+            margin: 19px 0;
+        }
+
+        .definition strong {
+            color: #633cb8;
+        }
+
+        .definition p {
+            margin: 5px 0 0;
+        }
+
+        /* Colour palette */
+
+        .purple {
+            background: #f2edff;
+        }
+
+        .blue {
+            background: #ebf4ff;
+        }
+
+        .green {
+            background: #eaf9f1;
+        }
+
+        .orange {
+            background: #fff4e5;
+        }
+
+        .pink {
+            background: #fff0f5;
+        }
+
+        .cyan {
+            background: #e8f9fb;
+        }
+
+        .red {
+            background: #fff0ee;
+        }
+
+        /* Grids */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            margin: 22px 0;
+        }
+
+        .mini-card {
+            border-radius: 14px;
+            padding: 21px;
+            border: 1px solid rgba(80, 100, 145, .08);
+        }
+
+        .mini-card .emoji {
+            font-size: 26px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .mini-card h4 {
+            color: #24334b;
+        }
+
+        .mini-card p {
+            font-size: 13.5px;
+            margin: 0;
+            color: #526177;
+            line-height: 1.65;
+        }
+
+        /* Tables */
+
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            margin: 22px 0;
+        }
+
+        table {
+            width: 100%;
+            min-width: 570px;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            line-height: 1.6;
+        }
+
+        thead {
+            background: #f1edff;
+        }
+
+        th {
+            color: #5a36ad;
+            text-align: left;
+            padding: 15px 17px;
+        }
+
+        td {
+            vertical-align: top;
+            padding: 15px 17px;
+            border-top: 1px solid var(--border);
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafbff;
+        }
+
+        /* Examples */
+
+        .example {
+            margin-top: 23px;
+            padding: 23px 25px;
+            border: 1px solid #c9ecda;
+            border-radius: 14px;
+            background: #effbf5;
+        }
+
+        .example-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #11825b;
+            margin-bottom: 12px;
+        }
+
+        .example p {
+            margin: 9px 0;
+        }
+
+        .example strong {
+            color: #176b50;
+        }
+
+        /* Notes */
+
+        .note {
+            background: #fff8ec;
+            border: 1px solid #f7e2b8;
+            border-radius: 13px;
+            padding: 19px 22px;
+            margin-top: 22px;
+        }
+
+        .note strong {
+            color: #a56518;
+        }
+
+        .note p {
+            margin: 7px 0;
+        }
+
+        /* Key ideas */
+
+        .key-idea {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #eef5ff;
+            border: 1px solid #d7e7fc;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-top: 22px;
+            font-size: 14px;
+        }
+
+        .key-idea span {
+            flex-shrink: 0;
+            font-size: 21px;
+        }
+
+        .key-idea p {
+            margin: 0;
+        }
+
+        /* Process diagrams */
+
+        .process {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            margin: 24px 0;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 19px;
+            background: #f7f6ff;
+            border: 1px solid #e8e3fa;
+            border-radius: 12px;
+        }
+
+        .step-number {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: #7955e7;
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        .process-step p {
+            margin: 0;
+        }
+
+        .process-arrow {
+            color: #8b61e7;
+            text-align: center;
+            line-height: 1;
+            font-size: 19px;
+        }
+
+        /* Comparisons */
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin: 21px 0;
+        }
+
+        .compare-box {
+            border: 1px solid rgba(80, 100, 145, .1);
+            border-radius: 13px;
+            padding: 23px;
+        }
+
+        .compare-box h4 {
+            font-size: 16px;
+        }
+
+        .compare-box p {
+            font-size: 14px;
+            margin: 9px 0;
+        }
+
+        /* Small labels */
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin: 18px 0;
+        }
+
+        .pill {
+            background: #f1f3f9;
+            color: #4a5870;
+            border-radius: 30px;
+            padding: 9px 14px;
+            font-size: 12px;
+            font-weight: 650;
+        }
+
+        /* Footer */
+
+        .page-footer {
+            padding: 25px 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #8995aa;
+        }
+
+        .page-footer p {
+            margin: 4px;
+        }
+
+        /* Reading progress */
+
+        .reading-progress {
+            position: fixed;
+            left: var(--sidebar-width);
+            top: 0;
+            height: 4px;
+            width: 0;
+            background: linear-gradient(90deg, #7955e8, #bd7aff);
+            z-index: 200;
+            transition: width .08s linear;
+        }
+
+        /* Back to top */
+
+        .back-top {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 13px;
+            background: #6442cf;
+            color: white;
+            font-size: 21px;
+            cursor: pointer;
+            box-shadow: 0 7px 20px #6442cf33;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: .2s;
+            z-index: 80;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-top:hover {
+            background: #4e2db3;
+        }
+
+        .menu-button,
+        .overlay {
+            display: none;
+        }
+
+        /* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+        @media (max-width: 1050px) {
+            .main {
+                padding: 28px;
+            }
+
+            .lesson-section {
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            .sidebar {
+                width: 280px;
+                transform: translateX(-100%);
+                transition: transform .3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 78px 16px 35px;
+            }
+
+            .menu-button {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+                position: fixed;
+                top: 15px;
+                left: 16px;
+                z-index: 900;
+                padding: 10px 15px;
+                border: 0;
+                border-radius: 11px;
+                background: var(--navy-2);
+                color: white;
+                cursor: pointer;
+                box-shadow: 0 5px 18px #0002;
+            }
+
+            .overlay.show {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: rgba(13, 18, 30, .65);
+                z-index: 950;
+            }
+
+            .hero {
+                padding: 33px 25px;
+                border-radius: 19px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .introduction {
+                padding: 23px 20px;
+            }
+
+            .lesson-section {
+                padding: 25px 19px;
+                border-radius: 16px;
+            }
+
+            .section-heading {
+                gap: 12px;
+            }
+
+            .section-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 23px;
+            }
+
+            .card-grid,
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .example {
+                padding: 20px;
+            }
+
+            .reading-progress {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero {
+                padding: 29px 21px;
+            }
+
+            .hero-badges {
+                gap: 7px;
+            }
+
+            .hero-badges span {
+                font-size: 10px;
+            }
+
+            .section-heading h2 {
+                font-size: 20px;
+            }
+
+            .process-step {
+                gap: 11px;
+                padding: 14px;
+                font-size: 13px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+
+
+        .lesson-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 24px 0 10px;
+        }
+
+        .lesson-navigation a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 11px;
+            font-size: 13px;
+            font-weight: 750;
+            color: #5a38c3;
+            background: #f2edff;
+            border: 1px solid #e0d4ff;
+        }
+
+        .lesson-navigation a:hover {
+            background: #e8deff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================
+     MOBILE MENU
+========================================= -->
+
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open lesson navigation"
+        aria-controls="sidebar" aria-expanded="false">
+        ☰ <span>Lesson Menu</span>
+    </button>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- ========================================
+     SIDEBAR
+========================================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Brand identity -->
+        <div class="brand">
+
+            <div class="brand-identity">
+
+                <div class="brand-logo">
+
+                    <!-- Custom Tr.Sun Education logo -->
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
+                        <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+                        <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
+                    </svg>
+
+                </div>
+
+                <div class="brand-text">
+                    <h2>Tr.Sun Education</h2>
+                    <p>Learn · Explore · Achieve</p>
+                </div>
+
+            </div>
+
+            <div class="brand-curriculum">
+                EDEXCEL INTERNATIONAL A LEVEL IT
+            </div>
+
+        </div>
+
+        <!-- Current lesson -->
+        <div class="current-lesson">
+            <small>YOU ARE STUDYING</small>
+            <h3>📖 Topic 15.2</h3>
+            <p>Managing an IT Project</p>
+        </div>
+
+        <!-- Lesson navigation -->
+        <div class="sidebar-label">LESSON CONTENTS</div>
+
+        <nav class="nav-links" aria-label="Lesson sections">
+
+            <a href="#complexity" class="active">
+                <span class="nav-number">01</span>
+                <span>Complexity Management</span>
+            </a>
+
+            <a href="#resources">
+                <span class="nav-number">02</span>
+                <span>Resource Allocation</span>
+            </a>
+
+            <a href="#risks">
+                <span class="nav-number">03</span>
+                <span>Risk Mitigation</span>
+            </a>
+
+            <a href="#quality">
+                <span class="nav-number">04</span>
+                <span>Quality Assurance</span>
+            </a>
+
+            <a href="#communication">
+                <span class="nav-number">05</span>
+                <span>Communication & Collaboration</span>
+            </a>
+
+            <a href="#changes">
+                <span class="nav-number">06</span>
+                <span>Change Management</span>
+            </a>
+
+            <a href="#scheduling">
+                <span class="nav-number">07</span>
+                <span>Scheduling & Deadlines</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <strong>Topic 15 · Systems Development</strong>
+            <div>Unit 3 · A2 Level</div>
+            <div style="margin-top:12px;">
+                Created by Tr. Sun
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- ========================================
+     MAIN CONTENT
+========================================= -->
+
+    <main class="main">
+
+        <div class="content">
+
+            <div class="breadcrumb">
+                <a href="index.html">Edexcel IAL IT</a>
+                <span>></span>
+                <a href="topic-15.html">Topic 15</a>
+                <span>></span>
+                <strong>Lesson 15.2</strong>
+            </div>
+
+            <!-- HERO -->
+            <header class="hero">
+
+                <span class="course-tag">
+                    UNIT 3 · TOPIC 15 · LESSON 2
+                </span>
+
+                <h1>Managing an IT Project</h1>
+
+                <p>
+                    Learn how a project manager organises complex
+                    activities, allocates resources, manages risks,
+                    maintains quality, controls changes and keeps
+                    an IT project on schedule.
+                </p>
+
+                <div class="hero-badges">
+                    <span>📚 7 Learning Areas</span>
+                    <span>🎓 A2 Level</span>
+                    <span>💻 Systems Development</span>
+                </div>
+
+            </header>
+
+            <!-- INTRODUCTION -->
+            <div class="introduction">
+
+                <h2>📖 Introduction</h2>
+
+                <p>
+                    A <strong>project manager</strong> is responsible
+                    for ensuring that an IT project is planned,
+                    organised, monitored and completed effectively.
+                </p>
+
+                <p>
+                    Successful project management involves managing
+                    tasks, people, equipment, money, time, changes
+                    and potential problems.
+                </p>
+
+                <p>
+                    There are <strong>seven important aspects</strong>
+                    of managing an IT project. Each aspect helps
+                    the project manager achieve the agreed objectives
+                    while controlling time, cost and quality.
+                </p>
+
+            </div>
+
+            <!-- =====================================
+       SECTION 2.1
+  ====================================== -->
+
+            <section class="lesson-section" id="complexity">
+
+                <div class="section-heading">
+                    <div class="section-icon purple">🧩</div>
+                    <div>
+                        <small>SECTION 2.1</small>
+                        <h2>Complexity Management</h2>
+                    </div>
+                </div>
+
+                <div class="definition">
+                    <strong>Definition</strong>
+                    <p>
+                        Complexity management involves breaking
+                        a large, complicated project into smaller,
+                        manageable tasks.
+                    </p>
+                </div>
+
+                <p>
+                    Large IT projects may contain hundreds of
+                    activities involving different people,
+                    technologies and resources.
+                </p>
+
+                <p>
+                    Some tasks depend on the completion of other
+                    tasks, while certain activities can be carried
+                    out at the same time.
+                </p>
+
+                <h3>Why is Complexity Management Important?</h3>
+
+                <div class="card-grid">
+
+                    <div class="mini-card purple">
+                        <span class="emoji">👥</span>
+                        <h4>Clear Responsibilities</h4>
+                        <p>
+                            Each task can be assigned to a suitable
+                            individual or team.
+                        </p>
+                    </div>
+
+                    <div class="mini-card blue">
+                        <span class="emoji">⏱️</span>
+                        <h4>Time Estimation</h4>
+                        <p>
+                            The project manager can estimate how long
+                            individual activities will take.
+                        </p>
+                    </div>
+
+                    <div class="mini-card green">
+                        <span class="emoji">📊</span>
+                        <h4>Progress Monitoring</h4>
+                        <p>
+                            Completed and unfinished tasks can be
+                            identified more easily.
+                        </p>
+                    </div>
+
+                    <div class="mini-card orange">
+                        <span class="emoji">🔍</span>
+                        <h4>Problem Identification</h4>
+                        <p>
+                            Missing tasks, delays and dependencies
+                            can be detected more easily.
+                        </p>
+                    </div>
+
+                </div>
+
+                <h3>Example: E-commerce Website Development</h3>
+
+                <p>
+                    Consider a company developing an online
+                    shopping website. Its activities include:
+                </p>
+
+                <div class="process">
+
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <p>Design the database structure.</p>
+                    </div>
+
+                    <div class="process-arrow">↓</div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <p>Create the database.</p>
+                    </div>
+
+                    <div class="process-arrow">↓</div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <p>Connect the website to the database.</p>
+                    </div>
+
+                    <div class="process-arrow">↓</div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <p>Test the complete system.</p>
+                    </div>
+
+                    <div class="process-arrow">↓</div>
+
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <p>Deploy the website.</p>
+                    </div>
+
+                </div>
+
+                <p>
+                    These activities have dependencies.
+                    For example, the database needs to be created
+                    before the website can be connected to it.
+                </p>
+
+                <p>
+                    However, some tasks, such as designing the
+                    user interface and preparing database structures,
+                    may be carried out in parallel.
+                </p>
+
+                <div class="example">
+
+                    <div class="example-title">
+                        💡 Practical Example
+                    </div>
+
+                    <p>
+                        Instead of assigning one team to
+                        <strong>"Develop the entire website"</strong>,
+                        the project manager divides the work into
+                        smaller activities:
+                    </p>
+
+                    <ul>
+                        <li>User interface design</li>
+                        <li>Database development</li>
+                        <li>Payment integration</li>
+                        <li>System testing</li>
+                    </ul>
+
+                    <p>
+                        This makes responsibilities clearer
+                        and helps prevent important work
+                        from being overlooked.
+                    </p>
+
+                </div>
+
+                <div class="key-idea">
+                    <span>💡</span>
+                    <p>
+                        <strong>Key idea:</strong>
+                        Breaking a complicated project into manageable
+                        tasks makes it easier to plan, organise,
+                        assign responsibilities and track progress.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- =====================================
+       SECTION 2.2
+  ====================================== -->
+
+            <section class="lesson-section" id="resources">
+
+                <div class="section-heading">
+                    <div class="section-icon blue">👥</div>
+                    <div>
+                        <small>SECTION 2.2</small>
+                        <h2>Resource Allocation</h2>
+                    </div>
+                </div>
+
+                <div class="definition">
+                    <strong>Definition</strong>
+                    <p>
+                        Resource allocation is the process of assigning
+                        the resources needed to complete different
+                        project activities effectively.
+                    </p>
+                </div>
+
+                <p>
+                    A project manager must ensure that suitable
+                    resources are available for each task,
+                    without wasting resources or assigning
+                    too much work to one resource.
+                </p>
+
+                <h3>Types of Project Resources</h3>
+
+                <div class="table-wrap">
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Resource Type</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td><strong>Human Resources</strong></td>
+                                <td>
+                                    Programmers, database administrators,
+                                    network engineers and testers.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Physical Resources</strong></td>
+                                <td>
+                                    Computers, servers, networking
+                                    equipment and storage devices.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Software Resources</strong></td>
+                                <td>
+                                    Development tools, testing software
+                                    and software licences.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Financial Resources</strong></td>
+                                <td>
+                                    Budget for salaries, equipment,
+                                    services and other costs.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Time Resources</strong></td>
+                                <td>
+                                    Available working hours and project
+                                    deadlines.
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Resource Overallocation</h3>
+
+                <p>
+                    <strong>Resource overallocation</strong>
+                    occurs when a resource has been assigned
+                    more work than it can reasonably complete
+                    during the available time.
+                </p>
+
+                <div class="example">
+
+                    <div class="example-title">
+                        💡 Example: Company Network Upgrade
+                    </div>
+
+                    <p>
+                        A company is upgrading its network.
+                    </p>
+
+                    <ul>
+                        <li>
+                            A network engineer is responsible for
+                            configuring a server.
+                        </li>
+                        <li>
+                            A technician is responsible for
+                            installing Ethernet cabling.
+                        </li>
+                    </ul>
+
+                    <p>
+                        If both activities require the same engineer
+                        at exactly the same time, a resource conflict
+                        may occur.
+                    </p>
+
+                    <p>
+                        The project manager can resolve the conflict
+                        by assigning another qualified person or
+                        rescheduling one activity.
+                    </p>
+
+                </div>
+
+                <h3>Benefits of Effective Resource Allocation</h3>
+
+                <div class="card-grid">
+
+                    <div class="mini-card green">
+                        <span class="emoji">✅</span>
+                        <h4>Fewer Delays</h4>
+                        <p>
+                            Required resources are available
+                            when tasks need them.
+                        </p>
+                    </div>
+
+                    <div class="mini-card blue">
+                        <span class="emoji">💰</span>
+                        <h4>Lower Waste</h4>
+                        <p>
+                            Resources are used efficiently
+                            to help control project costs.
+                        </p>
+                    </div>
+
+                    <div class="mini-card orange">
+                        <span class="emoji">⚖️</span>
+                        <h4>Balanced Workload</h4>
+                        <p>
+                            Staff are less likely to become
+                            overworked or underused.
+                        </p>
+                    </div>
+
+                    <div class="mini-card purple">
+                        <span class="emoji">📈</span>
+                        <h4>Higher Productivity</h4>
+                        <p>
+                            People and equipment can be
+                            used more effectively.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="key-idea">
+                    <span>💡</span>
+                    <p>
+                        <strong>Key idea:</strong>
+                        Appropriate resource allocation
+                        helps prevent delays, reduce waste
+                        and control project costs.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- =====================================
+       SECTION 2.3
+  ====================================== -->
+
+            <section class="lesson-section" id="risks">
+
+                <div class="section-heading">
+                    <div class="section-icon orange">🛡️</div>
+                    <div>
+                        <small>SECTION 2.3</small>
+                        <h2>Risk Mitigation</h2>
+                    </div>
+                </div>
+
+                <div class="definition">
+                    <strong>Risk</strong>
+                    <p>
+                        A risk is a possible event or situation
+                        that could negatively affect the success
+                        of a project.
+                    </p>
+                </div>
+
+                <div class="definition">
+                    <strong>Risk Mitigation</strong>
+                    <p>
+                        Risk mitigation involves identifying
+                        possible risks and taking action to reduce
+                        their likelihood or impact.
+                    </p>
+                </div>
+
+                <h3>Four Categories of Project Risks</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risk Category</th>
+                                <th>Explanation</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Changing Requirements</strong>
+                                </td>
+                                <td>
+                                    Requirements are modified
+                                    during development.
+                                </td>
+                                <td>
+                                    A client requests additional features.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Technical Issues and Threats</strong>
+                                </td>
+                                <td>
+                                    Problems involving hardware,
+                                    software or security.
+                                </td>
+                                <td>
+                                    Server failure or a data breach.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Human Factors</strong>
+                                </td>
+                                <td>
+                                    Problems involving staff,
+                                    mistakes or human behaviour.
+                                </td>
+                                <td>
+                                    Developer absence or accidental
+                                    deletion of data.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Wider Issues</strong>
+                                </td>
+                                <td>
+                                    External events outside the
+                                    project manager's direct control.
+                                </td>
+                                <td>
+                                    Political instability, legislative
+                                    changes or a pandemic.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Mitigation Plan vs Contingency Plan</h3>
+
+                <div class="compare-grid">
+
+                    <div class="compare-box green">
+                        <h4>🛡️ Mitigation Plan</h4>
+
+                        <p>
+                            Actions taken to reduce the probability
+                            of a risk occurring or to minimise
+                            its possible impact.
+                        </p>
+
+                        <p>
+                            <strong>Example:</strong>
+                            Regularly backing up important data.
+                        </p>
+                    </div>
+
+                    <div class="compare-box orange">
+                        <h4>🚨 Contingency Plan</h4>
+
+                        <p>
+                            Actions prepared in case the
+                            risk actually occurs.
+                        </p>
+
+                        <p>
+                            <strong>Example:</strong>
+                            Restoring lost data from a
+                            verified backup.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="example">
+
+                    <div class="example-title">
+                        💡 Example: Hospital Patient Record System
+                    </div>
+
+                    <p>
+                        A hospital is introducing a new electronic
+                        patient record system.
+                    </p>
+
+                    <p>
+                        <strong>Possible risk:</strong>
+                        Important patient information may be
+                        lost during data migration.
+                    </p>
+
+                    <p><strong>Mitigation measures:</strong></p>
+
+                    <ul>
+                        <li>Create backups of existing data.</li>
+                        <li>Test the data migration process.</li>
+                        <li>
+                            Verify that data has been transferred
+                            accurately.
+                        </li>
+                    </ul>
+
+                    <p>
+                        <strong>Contingency action:</strong>
+                        If the migration fails, restore the data
+                        from a verified backup and follow
+                        the recovery plan.
+                    </p>
+
+                </div>
+
+                <div class="key-idea">
+                    <span>💡</span>
+                    <p>
+                        <strong>Remember:</strong>
+                        Mitigation reduces the chance or impact
+                        of a problem. Contingency planning prepares
+                        a response if that problem occurs.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- =====================================
+       SECTION 2.4
+  ====================================== -->
+
+            <section class="lesson-section" id="quality">
+
+                <div class="section-heading">
+                    <div class="section-icon green">✅</div>
+                    <div>
+                        <small>SECTION 2.4</small>
+                        <h2>Quality Assurance (QA)</h2>
+                    </div>
+                </div>
+
+                <div class="definition">
+                    <strong>Definition</strong>
+                    <p>
+                        Quality assurance is the process
+                        of ensuring that appropriate procedures
+                        and standards are followed throughout
+                        a project so the final system meets
+                        agreed quality requirements.
+                    </p>
+                </div>
+
+                <p>
+                    Quality assurance is not limited to
+                    checking the system after development.
+                    It should occur throughout the entire
+                    project lifecycle.
+                </p>
+
+                <h3>Quality Assurance Activities</h3>
+
+                <div class="card-grid">
+
+                    <div class="mini-card purple">
+                        <span class="emoji">💻</span>
+                        <h4>Coding Standards</h4>
+                        <p>
+                            Ensure programmers follow
+                            agreed coding rules and conventions.
+                        </p>
+                    </div>
+
+                    <div class="mini-card blue">
+                        <span class="emoji">📐</span>
+                        <h4>Design Reviews</h4>
+                        <p>
+                            Review system designs to ensure
+                            they meet project requirements.
+                        </p>
+                    </div>
+
+                    <div class="mini-card green">
+                        <span class="emoji">🔎</span>
+                        <h4>Regular Quality Reviews</h4>
+                        <p>
+                            Check whether procedures and
+                            quality standards are being followed.
+                        </p>
+                    </div>
+
+                    <div class="mini-card orange">
+                        <span class="emoji">📋</span>
+                        <h4>Requirements Checking</h4>
+                        <p>
+                            Ensure the development process
+                            continues to follow agreed requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+                <p>
+                    Quality assurance also includes ensuring
+                    that appropriate testing procedures
+                    are planned and followed.
+                </p>
+
+                <div class="example">
+
+                    <div class="example-title">
+                        💡 Example: Online Payment System
+                    </div>
+
+                    <p>
+                        A company is developing an
+                        online payment system.
+                    </p>
+
+                    <p>
+                        All developers are required to follow
+                        agreed security and coding standards.
+                    </p>
+
+                    <p>
+                        The project manager checks that
+                        developers follow these quality
+                        procedures throughout development.
+                    </p>
+
+                    <p>
+                        This reduces the likelihood of defects
+                        and helps ensure the final system meets
+                        the customer's requirements.
+                    </p>
+
+                </div>
+
+                <div class="note">
+                    <strong>Important Distinction</strong>
+
+                    <p>
+                        <strong>Quality assurance</strong>
+                        focuses on following and improving
+                        processes to prevent defects.
+                    </p>
+
+                    <p>
+                        <strong>Quality control</strong>
+                        focuses on checking the product
+                        to identify defects and verify
+                        that requirements are met.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- =====================================
+       SECTION 2.5
+  ====================================== -->
+
+            <section class="lesson-section" id="communication">
+
+                <div class="section-heading">
+                    <div class="section-icon cyan">💬</div>
+                    <div>
+                        <small>SECTION 2.5</small>
+                        <h2>Communication and Collaboration</h2>
+                    </div>
+                </div>
+
+                <div class="compare-grid">
+
+                    <div class="compare-box blue">
+                        <h4>💬 Communication</h4>
+                        <p>
+                            Sharing project information effectively
+                            with team members and stakeholders.
+                        </p>
+                    </div>
+
+                    <div class="compare-box purple">
+                        <h4>🤝 Collaboration</h4>
+                        <p>
+                            People working together to achieve
+                            common project objectives.
+                        </p>
+                    </div>
+
+                </div>
+
+                <p>
+                    Most IT projects involve developers, designers,
+                    testers, managers, customers and other
+                    stakeholders.
+                </p>
+
+                <p>
+                    The project manager must ensure everyone
+                    understands their responsibilities,
+                    deadlines, requirements and current progress.
+                </p>
+
+                <h3>Information That Must Be Communicated</h3>
+
+                <ul>
+                    <li>Individual responsibilities</li>
+                    <li>Project deadlines</li>
+                    <li>System requirements</li>
+                    <li>Current project progress</li>
+                    <li>Problems and potential delays</li>
+                    <li>Approved project changes</li>
+                </ul>
+
+                <h3>Communication Methods</h3>
+
+                <div class="card-grid">
+
+                    <div class="mini-card blue">
+                        <span class="emoji">👥</span>
+                        <h4>Team Meetings</h4>
+                        <p>
+                            Discuss progress, responsibilities
+                            and problems.
+                        </p>
+                    </div>
+
+                    <div class="mini-card green">
+                        <span class="emoji">📊</span>
+                        <h4>Progress Reports</h4>
+                        <p>
+                            Provide updates about completed
+                            tasks and remaining work.
+                        </p>
+                    </div>
+
+                    <div class="mini-card orange">
+                        <span class="emoji">🗣️</span>
+                        <h4>Client Meetings</h4>
+                        <p>
+                            Confirm requirements and gather
+                            customer feedback.
+                        </p>
+                    </div>
+
+                    <div class="mini-card purple">
+                        <span class="emoji">🖥️</span>
+                        <h4>Project Management Software</h4>
+                        <p>
+                            Track tasks, assignments,
+                            deadlines and project progress.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="example">
+
+                    <div class="example-title">
+                        💡 Example: Login Page Development
+                    </div>
+
+                    <p>
+                        A designer changes the layout
+                        of a website's login page.
+                    </p>
+
+                    <p>
+                        However, the designer does not inform
+                        the developer about the change.
+                    </p>
+
+                    <p>
+                        The developer continues programming
+                        the original design.
+                    </p>
+
+                    <p>
+                        As a result, some work must be repeated,
+                        wasting time and resources.
+                    </p>
+
+                    <p>
+                        <strong>Solution:</strong>
+                        Regular communication ensures that
+                        everyone works with the latest
+                        approved information.
+                    </p>
+
+                </div>
+
+                <div class="key-idea">
+                    <span>💡</span>
+                    <p>
+                        <strong>Key idea:</strong>
+                        Effective communication reduces
+                        misunderstandings, prevents duplicated
+                        work and improves teamwork.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- =====================================
+       SECTION 2.6
+  ====================================== -->
+
+            <section class="lesson-section" id="changes">
+
+                <div class="section-heading">
+                    <div class="section-icon pink">🔄</div>
+                    <div>
+                        <small>SECTION 2.6</small>
+                        <h2>Change Management</h2>
+                    </div>
+                </div>
+
+                <div class="definition">
+                    <strong>Definition</strong>
+                    <p>
+                        Change management is the process of assessing,
+                        planning and managing changes to project
+                        requirements or the organisation while
+                        minimising disruption.
+                    </p>
+                </div>
+
+                <p>
+                    Changes may be necessary because of:
+                </p>
+
+                <div class="pill-list">
+                    <span class="pill">🏢 New Business Needs</span>
+                    <span class="pill">💻 New Technologies</span>
+                    <span class="pill">👤 Customer Requests</span>
+                    <span class="pill">📈 Market Conditions</span>
+                </div>
+
+                <h3>Change Management Process</h3>
+
+                <div class="process">
+
+                    <div class="process-step">
+                        <span class="step-number">1</span>
+                        <p>
+                            <strong>Change Request:</strong>
+                            A change is proposed.
+                        </p>
+                    </div>
+
+                    <div class="process-arrow">↓</div>
+
+                    <div class="process-step">
+                        <span class="step-number">2</span>
+                        <p>
+                            <strong>Impact Assessment:</strong>
+                            Assess effects on time, cost,
+                            resources and project scope.
+                        </p>
+                    </div>
+
+                    <div class="process-arrow">↓</div>
+
+                    <div class="process-step">
+                        <span class="step-number">3</span>
+                        <p>
+                            <strong>Decision:</strong>
+                            Approve, reject or negotiate
+                            the proposed change.
+                        </p>
+                    </div>
+
+                    <div class="process-arrow">↓</div>
+
+                    <div class="process-step">
+                        <span class="step-number">4</span>
+                        <p>
+                            <strong>Update Plans:</strong>
+                            Update project plans and inform
+                            relevant stakeholders of approved changes.
+                        </p>
+                    </div>
+
+                </div>
+
+                <h3>Feature Creep (Scope Creep)</h3>
+
+                <div class="definition">
+                    <strong>Feature Creep</strong>
+                    <p>
+                        Feature creep occurs when additional
+                        features are introduced during development,
+                        potentially increasing the work required
+                        beyond the original project scope.
+                    </p>
+                </div>
+
+                <p>
+                    Feature creep is a type of scope creep.
+                    Scope creep refers more generally to
+                    uncontrolled expansion of the agreed
+                    project work.
+                </p>
+
+                <div class="example">
+
+                    <div class="example-title">
+                        💡 Example: School Attendance System
+                    </div>
+
+                    <p>
+                        A school commissions a simple
+                        attendance management system.
+                    </p>
+
+                    <p>
+                        During development, it requests
+                        additional features:
+                    </p>
+
+                    <ul>
+                        <li>Online payment system</li>
+                        <li>Online examination system</li>
+                        <li>Student messaging system</li>
+                    </ul>
+
+                    <p>
+                        Each feature requires additional
+                        development, testing, resources and time.
+                    </p>
+
+                    <p>
+                        If these changes are not controlled,
+                        the project could experience
+                        significant delays and increased costs.
+                    </p>
+
+                </div>
+
+                <div class="note">
+                    <strong>Important</strong>
+                    <p>
+                        Changes are not always negative.
+                        Proper change management allows
+                        useful changes while controlling
+                        their effects on project objectives.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- =====================================
+       SECTION 2.7
+  ====================================== -->
+
+            <section class="lesson-section" id="scheduling">
+
+                <div class="section-heading">
+                    <div class="section-icon red">📅</div>
+                    <div>
+                        <small>SECTION 2.7</small>
+                        <h2>Scheduling and Deadlines</h2>
+                    </div>
+                </div>
+
+                <div class="definition">
+                    <strong>Scheduling</strong>
+                    <p>
+                        Scheduling is the process of deciding
+                        when project tasks should start and finish,
+                        how long they should take and in what
+                        order they should be completed.
+                    </p>
+                </div>
+
+                <div class="definition">
+                    <strong>Deadline</strong>
+                    <p>
+                        A deadline is the latest agreed time
+                        or date by which a task or project
+                        must be completed.
+                    </p>
+                </div>
+
+                <h3>Importance of Effective Scheduling</h3>
+
+                <div class="card-grid">
+
+                    <div class="mini-card purple">
+                        <span class="emoji">🔗</span>
+                        <h4>Task Dependencies</h4>
+                        <p>
+                            Identify tasks that must be
+                            completed before others can begin.
+                        </p>
+                    </div>
+
+                    <div class="mini-card blue">
+                        <span class="emoji">👥</span>
+                        <h4>Resource Planning</h4>
+                        <p>
+                            Allocate suitable people
+                            and resources at appropriate times.
+                        </p>
+                    </div>
+
+                    <div class="mini-card green">
+                        <span class="emoji">📈</span>
+                        <h4>Progress Monitoring</h4>
+                        <p>
+                            Compare actual progress
+                            with the planned schedule.
+                        </p>
+                    </div>
+
+                    <div class="mini-card orange">
+                        <span class="emoji">⚠️</span>
+                        <h4>Delay Detection</h4>
+                        <p>
+                            Detect delays early so
+                            corrective action can be taken.
+                        </p>
+                    </div>
+
+                </div>
+
+                <h3>Time to Market</h3>
+
+                <div class="definition">
+                    <strong>Definition</strong>
+                    <p>
+                        Time to market is the time required
+                        to develop a product and make it
+                        available for use or sale.
+                    </p>
+                </div>
+
+                <p>
+                    Reducing time to market may give
+                    an organisation a competitive advantage
+                    because it can introduce products
+                    before its competitors.
+                </p>
+
+                <div class="example">
+
+                    <div class="example-title">
+                        💡 Example: Mobile Application
+                    </div>
+
+                    <p>
+                        Two companies are developing
+                        similar mobile applications.
+                    </p>
+
+                    <p>
+                        Company A completes its development
+                        earlier and releases its product first.
+                    </p>
+
+                    <p>
+                        Company A may attract customers
+                        and establish its product in the
+                        market before Company B.
+                    </p>
+
+                    <p>
+                        Therefore, shorter time to market
+                        can create a competitive advantage.
+                    </p>
+
+                </div>
+
+                <div class="note">
+                    <strong>⚠️ Important Consideration</strong>
+
+                    <p>
+                        Rushing development to release a
+                        product earlier may reduce the
+                        quality and reliability of the system.
+                    </p>
+
+                    <p>
+                        Project managers must balance
+                        time, cost and quality.
+                    </p>
+                </div>
+
+                <div class="key-idea">
+                    <span>💡</span>
+                    <p>
+                        <strong>Key idea:</strong>
+                        Effective scheduling helps teams
+                        complete activities in the correct
+                        order, use resources efficiently
+                        and meet agreed deadlines.
+                    </p>
+                </div>
+
+            </section>
+
+            <nav class="lesson-navigation" aria-label="Other lessons">
+                <a href="topic-15-01.html">⬅️ Topic 15.1</a>
+                <a href="topic-15-03.html">Topic 15.3 ➡️</a>
+            </nav>
+
+            <!-- FOOTER -->
+            <footer class="page-footer">
+
+                <p>
+                    <strong>Tr.Sun Education</strong>
+                </p>
+
+                <p>
+                    Edexcel International A Level IT
+                </p>
+
+                <p>
+                    Topic 15.2 · Managing an IT Project
+                </p>
+
+                <p>
+                    Created by Tr. Sun
+                </p>
+
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Back to top -->
+    <button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- ========================================
+     JAVASCRIPT
+========================================= -->
+
+    <script>
+
+        /* Sidebar controls */
+
+        const sidebar = document.getElementById("sidebar");
+        const menuButton = document.getElementById("menuButton");
+        const overlay = document.getElementById("overlay");
+
+        const navLinks = document.querySelectorAll(".nav-links a");
+        const sections = document.querySelectorAll(".lesson-section");
+
+        const progress = document.getElementById("readingProgress");
+        const backTop = document.getElementById("backTop");
+
+        function openMenu() {
+            sidebar.classList.add("open");
+            overlay.classList.add("show");
+            menuButton.setAttribute("aria-expanded", "true");
+            menuButton.setAttribute(
+                "aria-label",
+                "Close lesson navigation"
+            );
+        }
+
+        function closeMenu() {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute(
+                "aria-label",
+                "Open lesson navigation"
+            );
+        }
+
+        menuButton.addEventListener("click", () => {
+            if (sidebar.classList.contains("open")) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        overlay.addEventListener("click", closeMenu);
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        /* Active lesson navigation */
+
+        function updateActiveSection() {
+
+            let activeId = sections[0].id;
+
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top <= 160) {
+                    activeId = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+
+                const isActive =
+                    link.getAttribute("href") === "#" + activeId;
+
+                link.classList.toggle("active", isActive);
+
+                if (isActive) {
+                    link.setAttribute("aria-current", "location");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+
+            });
+        }
+
+        /* Reading progress */
+
+        function updateReadingProgress() {
+
+            const scrollTop = window.scrollY;
+
+            const scrollHeight =
+                document.documentElement.scrollHeight -
+                window.innerHeight;
+
+            const percentage = scrollHeight > 0
+                ? Math.min(100, (scrollTop / scrollHeight) * 100)
+                : 100;
+
+            progress.style.width = percentage + "%";
+
+        }
+
+        /* Back-to-top visibility */
+
+        function updateBackTop() {
+
+            if (window.scrollY > 450) {
+                backTop.classList.add("visible");
+            } else {
+                backTop.classList.remove("visible");
+            }
+
+        }
+
+        backTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches ? "auto" : "smooth"
+            });
+        });
+
+        /* Scroll and resize handling */
+
+        function updatePage() {
+            updateActiveSection();
+            updateReadingProgress();
+            updateBackTop();
+        }
+
+        window.addEventListener("scroll", updatePage, {
+            passive: true
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 800) {
+                closeMenu();
+            }
+            updatePage();
+        });
+
+        window.addEventListener("load", updatePage);
+
+        updatePage();
+
+    </script>
+
+</body>
+
+</html>

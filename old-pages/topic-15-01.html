@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+    <title>Topic 15.1 - Concept of Project Management | Tr.Sun Education</title>
+    <style>
+        :root {
+            --sidebar-width: 282px;
+            --navy: #111827;
+            --navy-2: #1e293b;
+            --purple: #7653e8;
+            --purple-dark: #5937c5;
+            --bg: #f5f7fc;
+            --surface: #fff;
+            --text: #253047;
+            --muted: #64748b;
+            --border: #e7eaf2;
+            --shadow: 0 8px 28px rgba(25, 33, 60, .045);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 30px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #b69aff;
+            outline-offset: 3px;
+        }
+
+        /* Sidebar and brand: shared with Topic 15.2 */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            background: var(--navy);
+            color: #fff;
+            z-index: 1000;
+            scrollbar-width: thin;
+            scrollbar-color: #45506a transparent;
+        }
+
+        .brand {
+            padding: 28px 18px 23px;
+            border-bottom: 1px solid #30394c;
+        }
+
+        .brand-identity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 62px;
+            height: 62px;
+            flex: 0 0 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #a06aff, #5837c6);
+            box-shadow: 0 8px 24px rgba(117, 83, 232, .3);
+        }
+
+        .brand-logo svg {
+            width: 49px;
+            height: 49px;
+        }
+
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-text h2 {
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.3;
+            color: #fff;
+            letter-spacing: -.5px;
+        }
+
+        .brand-text p {
+            margin: 5px 0 0;
+            color: #c4b5fd;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .brand-curriculum {
+            margin-top: 20px;
+            color: #94a3b8;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.15px;
+        }
+
+        .current-lesson {
+            margin: 22px 13px 13px;
+            padding: 16px;
+            border: 1px solid #4b3a86;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #382b65, #29234a);
+        }
+
+        .current-lesson small {
+            display: block;
+            margin-bottom: 8px;
+            color: #c4b5fd;
+            font-size: 10px;
+            font-weight: 750;
+            letter-spacing: 1px;
+        }
+
+        .current-lesson h3 {
+            margin: 0;
+            font-size: 15px;
+            color: #fff;
+        }
+
+        .current-lesson p {
+            margin: 4px 0 0;
+            color: #d6d0ea;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .sidebar-label {
+            padding: 18px 23px 12px;
+            color: #8591a8;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+        }
+
+        .side-nav {
+            padding: 0 12px 18px;
+        }
+
+        .side-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 5px;
+            padding: 11px 12px;
+            color: #cbd5e1;
+            font-size: 12.5px;
+            line-height: 1.4;
+            border-radius: 11px;
+            transition: background .2s, color .2s;
+        }
+
+        .side-nav a:hover {
+            background: #283249;
+            color: #fff;
+        }
+
+        .side-nav a.active {
+            background: #392b66;
+            color: #fff;
+            box-shadow: inset 3px 0 #a78bfa;
+        }
+
+        .nav-number {
+            flex-shrink: 0;
+            width: 34px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: #293449;
+            color: #bac5d8;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .side-nav a.active .nav-number {
+            background: #8157ed;
+            color: #fff;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 21px 22px;
+            border-top: 1px solid #30394c;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        .sidebar-footer strong {
+            color: #e2e8f0;
+        }
+
+        /* Page chrome */
+        .main {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+            padding: 34px 42px 55px;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 9px;
+            color: #78849a;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: inherit;
+        }
+
+        .breadcrumb a:hover {
+            color: #6744d0;
+        }
+
+        .breadcrumb strong {
+            color: #6744d0;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 47px 44px;
+            border-radius: 24px;
+            background: linear-gradient(115deg, #4934b5 0%, #7753e7 55%, #ad72ed 100%);
+            box-shadow: 0 15px 35px rgba(88, 60, 180, .16);
+            color: #fff;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .15);
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 360px;
+            height: 360px;
+            right: -100px;
+            top: -200px;
+        }
+
+        .hero::after {
+            width: 250px;
+            height: 250px;
+            right: 90px;
+            bottom: -175px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 7px 15px;
+            background: rgba(255, 255, 255, .16);
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 750;
+            letter-spacing: .8px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 3.6vw, 43px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin: 21px 0 14px;
+        }
+
+        .hero p {
+            max-width: 710px;
+            color: #f2ecff;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 26px;
+        }
+
+        .hero-tags span {
+            padding: 8px 13px;
+            font-size: 11px;
+            font-weight: 650;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, .15);
+            border: 1px solid rgba(255, 255, 255, .17);
+        }
+
+        .introduction {
+            margin: 30px 0;
+            padding: 27px 31px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--purple);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .introduction h2 {
+            margin: 0 0 10px;
+            font-size: 21px;
+        }
+
+        .introduction p {
+            margin: 9px 0;
+        }
+
+        /* Lesson sections: same white card treatment as Topic 15.2 */
+        .lesson-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 34px;
+            margin-bottom: 26px;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 28px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 20px;
+            margin-bottom: 23px;
+            border-bottom: 1px solid #eef0f5;
+        }
+
+        .section-icon {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            font-size: 26px;
+        }
+
+        .purple {
+            background: #f2edff;
+        }
+
+        .blue {
+            background: #ebf4ff;
+        }
+
+        .green {
+            background: #eaf9f1;
+        }
+
+        .section-heading small {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            color: #1e293b;
+            margin: 3px 0 0;
+            line-height: 1.3;
+            font-size: clamp(21px, 2.5vw, 26px);
+        }
+
+        h3 {
+            color: #25324a;
+            margin: 27px 0 12px;
+            font-size: 18px;
+        }
+
+        h4 {
+            color: #24334b;
+            margin: 0 0 8px;
+            font-size: 15px;
+        }
+
+        p {
+            margin: 12px 0;
+        }
+
+        strong {
+            color: #26354d;
+        }
+
+        ul,
+        ol {
+            padding-left: 24px;
+        }
+
+        li {
+            padding: 4px 0;
+        }
+
+        li::marker {
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        .content-card {
+            background: transparent;
+            border: 0;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            margin: 0;
+        }
+
+        .content-card+.content-card {
+            margin-top: 29px;
+            padding-top: 26px;
+            border-top: 1px solid var(--border);
+        }
+
+        .content-card>p:first-child {
+            margin-top: 0;
+        }
+
+        .content-card>p:last-child {
+            margin-bottom: 0;
+        }
+
+        .definition {
+            margin: 19px 0;
+            padding: 19px 22px;
+            border-radius: 12px;
+            border-left: 4px solid #875bea;
+            background: #f4f0ff;
+        }
+
+        .definition .label {
+            display: block;
+            color: #633cb8;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .definition p {
+            margin: 5px 0 0;
+            color: #3a3368;
+        }
+
+        .definition strong {
+            color: #633cb8;
+        }
+
+        /* Characteristic cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            margin: 22px 0;
+        }
+
+        .feature {
+            padding: 21px;
+            border: 1px solid rgba(80, 100, 145, .08);
+            border-radius: 14px;
+            background: #f2edff;
+        }
+
+        .feature:nth-child(4n + 2) {
+            background: #ebf4ff;
+        }
+
+        .feature:nth-child(4n + 3) {
+            background: #eaf9f1;
+        }
+
+        .feature:nth-child(4n + 4) {
+            background: #fff4e5;
+        }
+
+        .feature-icon {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .feature h4 {
+            font-size: 15px;
+        }
+
+        .feature p {
+            color: #526177;
+            font-size: 13.5px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Practical examples */
+        .example-box {
+            margin-top: 23px;
+            padding: 23px 25px;
+            background: #effbf5;
+            border: 1px solid #c9ecda;
+            border-radius: 14px;
+        }
+
+        .example-label {
+            color: #11825b;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .example-box h3 {
+            margin: 9px 0 11px;
+            color: #176b50;
+        }
+
+        .example-box p {
+            margin: 9px 0;
+        }
+
+        .example-box strong {
+            color: #176b50;
+        }
+
+        .example-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 11px;
+            margin: 19px 0 4px;
+        }
+
+        .example-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #dbf3e7;
+            border-radius: 10px;
+            padding: 13px 14px;
+            color: #334155;
+            font-size: 13px;
+        }
+
+        .check {
+            color: #059669;
+            font-weight: 800;
+        }
+
+        .note-box {
+            background: #fff8ec;
+            border: 1px solid #f7e2b8;
+            border-radius: 13px;
+            padding: 19px 22px;
+            margin-top: 22px;
+            color: #725021;
+            font-size: 14px;
+        }
+
+        .note-box strong {
+            color: #a56518;
+        }
+
+        /* Time, cost and quality cards */
+        .constraint-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 15px;
+            margin: 22px 0;
+        }
+
+        .constraint-card {
+            border: 1px solid rgba(80, 100, 145, .1);
+            border-radius: 14px;
+            padding: 23px 16px;
+            text-align: center;
+        }
+
+        .constraint-card .big-icon {
+            display: block;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .constraint-card h3 {
+            font-size: 19px;
+            margin: 0 0 8px;
+        }
+
+        .constraint-card p {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: #526177;
+            margin: 0;
+        }
+
+        .time-card {
+            background: #ebf4ff;
+        }
+
+        .time-card h3 {
+            color: #2563eb;
+        }
+
+        .cost-card {
+            background: #eaf9f1;
+        }
+
+        .cost-card h3 {
+            color: #15805a;
+        }
+
+        .quality-card {
+            background: #f2edff;
+        }
+
+        .quality-card h3 {
+            color: #7550c9;
+        }
+
+        .relationship {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 21px 0 0;
+        }
+
+        .relationship span {
+            border-radius: 30px;
+            background: #f1f3f9;
+            color: #4a5870;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .relationship b {
+            color: #8157ed;
+        }
+
+        /* Problems table */
+        .table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            margin: 22px 0;
+        }
+
+        table {
+            width: 100%;
+            min-width: 520px;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            line-height: 1.6;
+        }
+
+        thead {
+            background: #f1edff;
+        }
+
+        th {
+            color: #5a36ad;
+            text-align: left;
+            padding: 15px 17px;
+        }
+
+        td {
+            padding: 15px 17px;
+            vertical-align: top;
+            border-top: 1px solid var(--border);
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafbff;
+        }
+
+        .problem-name {
+            color: #24334b;
+            font-weight: 700;
+        }
+
+        /* Benefits */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            margin-top: 17px;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 19px;
+            border: 1px solid rgba(80, 100, 145, .1);
+            border-radius: 14px;
+            background: #f6f8ff;
+        }
+
+        .benefit:nth-child(4n+2) {
+            background: #edf8ff;
+        }
+
+        .benefit:nth-child(4n+3) {
+            background: #eefaf3;
+        }
+
+        .benefit:nth-child(4n+4) {
+            background: #fff5e8;
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            background: #d1fae5;
+            color: #059669;
+            border-radius: 50%;
+            font-weight: 800;
+        }
+
+        .benefit strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .benefit p {
+            color: #526177;
+            font-size: 13.5px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Reading controls */
+        .page-footer {
+            padding: 25px 15px;
+            text-align: center;
+            color: #8995aa;
+            font-size: 12px;
+        }
+
+        .page-footer p {
+            margin: 4px;
+        }
+
+        .reading-progress {
+            position: fixed;
+            left: var(--sidebar-width);
+            top: 0;
+            height: 4px;
+            width: 0;
+            background: linear-gradient(90deg, #7955e8, #bd7aff);
+            z-index: 200;
+        }
+
+        .back-top {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 13px;
+            background: #6442cf;
+            color: #fff;
+            font-size: 21px;
+            cursor: pointer;
+            box-shadow: 0 7px 20px #6442cf33;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: .2s;
+            z-index: 80;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-top:hover {
+            background: #4e2db3;
+        }
+
+        .menu-button,
+        .overlay {
+            display: none;
+        }
+
+        /* Mobile and tablet */
+        @media (max-width: 1050px) {
+            .main {
+                padding: 28px;
+            }
+
+            .lesson-section {
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .sidebar {
+                width: 280px;
+                transform: translateX(-100%);
+                transition: transform .3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 78px 16px 35px;
+            }
+
+            .menu-button {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+                position: fixed;
+                top: 15px;
+                left: 16px;
+                z-index: 900;
+                padding: 10px 15px;
+                border: 0;
+                border-radius: 11px;
+                background: var(--navy-2);
+                color: #fff;
+                cursor: pointer;
+                box-shadow: 0 5px 18px #0002;
+            }
+
+            .overlay.show {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: rgba(13, 18, 30, .65);
+                z-index: 950;
+            }
+
+            .hero {
+                padding: 33px 25px;
+                border-radius: 19px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .introduction {
+                padding: 23px 20px;
+            }
+
+            .lesson-section {
+                padding: 25px 19px;
+                border-radius: 16px;
+            }
+
+            .section-heading {
+                gap: 12px;
+            }
+
+            .section-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 23px;
+            }
+
+            .constraint-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reading-progress {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .feature-grid,
+            .example-list,
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 29px 21px;
+            }
+
+            .hero-tags {
+                gap: 7px;
+            }
+
+            .hero-tags span {
+                font-size: 10px;
+            }
+
+            .section-heading h2 {
+                font-size: 20px;
+            }
+
+            .example-box {
+                padding: 20px;
+            }
+
+            .relationship {
+                gap: 7px;
+            }
+
+            .relationship span {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+
+
+        .lesson-navigation { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:24px 0 10px; }
+        .lesson-navigation a {display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:11px;font-size:13px;font-weight:750;color:#5a38c3;background:#f2edff;border:1px solid #e0d4ff;}
+        .lesson-navigation a:hover {background:#e8deff;}
+
+        
+    </style>
+</head>
+
+<body>
+    <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar"
+        aria-label="Open lesson navigation" aria-expanded="false">☰ <span>Lesson Menu</span></button>
+    <div class="overlay" id="overlay"></div>
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-identity">
+                <div class="brand-logo">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
+                        <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+                        <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h2>Tr.Sun Education</h2>
+                    <p>Learn · Explore · Achieve</p>
+                </div>
+            </div>
+            <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
+        </div>
+
+        <div class="current-lesson">
+            <small>YOU ARE STUDYING</small>
+            <h3>📖 Topic 15.1</h3>
+            <p>Concept of Project Management</p>
+        </div>
+
+        <div class="sidebar-label">LESSON CONTENTS</div>
+        <nav class="side-nav" aria-label="Lesson sections">
+            <a class="active" href="#project"><span class="nav-number">1.1</span><span>What is a Project?</span></a>
+            <a href="#project-management"><span class="nav-number">1.2</span><span>Project Management</span></a>
+            <a href="#importance"><span class="nav-number">1.3</span><span>Why It Is Important</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <strong>Topic 15 · Systems Development</strong>
+            <div>Unit 3 · A2 Level</div>
+            <div style="margin-top:12px">Created by Tr. Sun</div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Edexcel IAL IT</a>
+                <span>></span>
+                <a href="topic-15.html">Topic 15</a>
+                <span>></span>
+                <strong>Lesson 15.1</strong>
+            </nav>
+
+            <header class="hero" id="overview">
+                <div class="hero-content">
+                    <span class="hero-badge">UNIT 3 · TOPIC 15 · LESSON 1</span>
+                    <h1>Concept of Project Management</h1>
+                    <p>Understand what a project is, how project management works and why effective management is
+                        essential for successful IT projects.</p>
+                    <div class="hero-tags">
+                        <span>📚 3 Learning Areas</span>
+                        <span>🎓 A2 Level</span>
+                        <span>💻 Systems Development</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="introduction">
+                <h2>📖 Introduction</h2>
+                <p>Projects are temporary activities with specific objectives, defined resources and expected outcomes.
+                    Effective project management helps ensure that activities are coordinated and the final system meets
+                    agreed requirements.</p>
+                <p>This lesson explains the characteristics of projects, the three main project constraints and the
+                    importance of managing IT projects effectively.</p>
+            </div>
+
+            <section class="lesson-section" id="project">
+                <div class="section-heading">
+                    <div class="section-icon purple">📁</div>
+                    <div>
+                        <small>Section 1.1</small>
+                        <h2>What is a Project?</h2>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <p>
+                        A project is a temporary piece of
+                        work undertaken to achieve a particular
+                        goal or produce a specific outcome.
+                    </p>
+                    <div class="definition">
+                        <span class="label">Key Definition</span>
+                        <p>
+                            A <strong>project</strong> is a temporary
+                            undertaking with a clearly defined
+                            objective, starting point and expected
+                            end, which produces a specific
+                            outcome or deliverable.
+                        </p>
+                    </div>
+                    <p>
+                        Unlike routine activities, a project
+                        does not continue indefinitely.
+                        It is considered complete when its
+                        agreed objectives have been achieved
+                        or it has been formally terminated.
+                    </p>
+                    <h3>Main Characteristics of a Project</h3>
+                    <div class="feature-grid">
+                        <div class="feature">
+                            <div class="feature-icon">🎯</div>
+                            <h4>1. Defined Objective</h4>
+                            <p>
+                                Every project has a specific
+                                goal that it aims to achieve.
+                            </p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📅</div>
+                            <h4>2. Time Constraints</h4>
+                            <p>
+                                A project has a starting
+                                date and an expected
+                                completion date.
+                            </p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">💰</div>
+                            <h4>3. Limited Budget</h4>
+                            <p>
+                                The amount of money available
+                                to complete the project
+                                is normally limited.
+                            </p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🧑‍💻</div>
+                            <h4>4. Resources</h4>
+                            <p>
+                                Resources include people,
+                                hardware, software,
+                                equipment and materials.
+                            </p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📋</div>
+                            <h4>5. Tasks and Activities</h4>
+                            <p>
+                                Different activities must be
+                                completed, sometimes in a
+                                particular order.
+                            </p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📦</div>
+                            <h4>6. Deliverables</h4>
+                            <p>
+                                A project produces an agreed
+                                output such as a website,
+                                software application
+                                or computer system.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- EXAMPLE -->
+                <div class="example-box">
+                    <div class="example-label">
+                        💡 Real-Life IT Project Example
+                    </div>
+                    <h3>
+                        Developing an Online Classroom System
+                    </h3>
+                    <p>
+                        A school wants to develop a website
+                        where students can register,
+                        access lessons, complete quizzes
+                        and receive marks.
+                    </p>
+                    <p>
+                        This is an IT project because
+                        it requires planning, system
+                        development, testing, resources
+                        and deadlines.
+                    </p>
+                    <div class="example-list">
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Student registration
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Online lesson access
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Online quizzes
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Automatic marks and results
+                        </div>
+                    </div>
+                    <div class="note-box">
+                        <strong>Remember:</strong>
+                        The completed online classroom
+                        website is the final project
+                        <strong>deliverable</strong>.
+                    </div>
+                </div>
+            </section>
+
+            <section class="lesson-section" id="project-management">
+                <div class="section-heading">
+                    <div class="section-icon blue">⚙️</div>
+                    <div>
+                        <small>Section 1.2</small>
+                        <h2>What is Project Management?</h2>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <p>
+                        Project management is essential
+                        to ensure that project activities
+                        are organised and completed
+                        successfully.
+                    </p>
+                    <div class="definition">
+                        <span class="label">Key Definition</span>
+                        <p>
+                            <strong>Project management</strong>
+                            is the process of planning,
+                            organising, coordinating,
+                            monitoring and controlling
+                            the tasks and resources required
+                            to achieve a project's objectives.
+                        </p>
+                    </div>
+                    <p>
+                        The main purpose of project management
+                        is to ensure that the project achieves
+                        its objectives while meeting agreed
+                        requirements for time, cost
+                        and quality.
+                    </p>
+                    <h3>
+                        The Three Main Project Constraints
+                    </h3>
+                    <div class="constraint-grid">
+                        <div class="constraint-card time-card">
+                            <span class="big-icon">⏰</span>
+                            <h3>Time</h3>
+                            <p>
+                                Complete all activities according
+                                to the project schedule
+                                and meet deadlines.
+                            </p>
+                        </div>
+                        <div class="constraint-card cost-card">
+                            <span class="big-icon">💵</span>
+                            <h3>Cost</h3>
+                            <p>
+                                Ensure that the total
+                                project expenditure stays
+                                within the approved budget.
+                            </p>
+                        </div>
+                        <div class="constraint-card quality-card">
+                            <span class="big-icon">🏆</span>
+                            <h3>Quality</h3>
+                            <p>
+                                Ensure that the final system
+                                meets agreed requirements
+                                and quality standards.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="relationship">
+                        <span>⏰ Time</span>
+                        <b>↔</b>
+                        <span>💵 Cost</span>
+                        <b>↔</b>
+                        <span>🏆 Quality</span>
+                    </div>
+                    <div class="note-box">
+                        <strong>Important Concept:</strong>
+                        The three constraints are
+                        interconnected. Adding new features
+                        may increase development time
+                        and cost, while reducing testing
+                        time may negatively affect quality.
+                    </div>
+                </div>
+                <!-- EXAMPLE -->
+                <div class="example-box">
+                    <div class="example-label">
+                        💡 Applying Project Management
+                    </div>
+                    <h3>
+                        Managing the Online Classroom Project
+                    </h3>
+                    <p>
+                        When developing the online classroom
+                        system, the project manager must
+                        ensure that the website:
+                    </p>
+                    <div class="example-list">
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Provides the features requested
+                            by the school
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Is completed before the start
+                            of the school term
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Does not exceed the allocated
+                            budget
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Is secure, reliable and easy to use
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Is developed by staff with
+                            clearly assigned responsibilities
+                        </div>
+                        <div class="example-item">
+                            <span class="check">✓</span>
+                            Is tested and checked
+                            before implementation
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lesson-section" id="importance">
+                <div class="section-heading">
+                    <div class="section-icon green">🌟</div>
+                    <div>
+                        <small>Section 1.3</small>
+                        <h2>
+                            Why is Project Management Important?
+                        </h2>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <p>
+                        IT projects can become complicated
+                        because they involve different
+                        people, technologies, resources
+                        and activities.
+                    </p>
+                    <p>
+                        Without effective project management,
+                        an organisation may experience
+                        delays, additional costs,
+                        misunderstandings and system failures.
+                    </p>
+                    <h3>
+                        Problems Caused by Poor Project Management
+                    </h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Problem</th>
+                                    <th>Possible Consequence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="problem-name">
+                                        Poor planning
+                                    </td>
+                                    <td>
+                                        Tasks may be completed in
+                                        the wrong order, causing delays.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="problem-name">
+                                        Lack of communication
+                                    </td>
+                                    <td>
+                                        Developers may misunderstand
+                                        the client's requirements
+                                        and produce an unsuitable system.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="problem-name">
+                                        Incorrect resource allocation
+                                    </td>
+                                    <td>
+                                        Some employees may become
+                                        overloaded while others
+                                        have very little work.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="problem-name">
+                                        Poor risk management
+                                    </td>
+                                    <td>
+                                        Unexpected technical failures
+                                        may cause serious delays
+                                        and additional costs.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="problem-name">
+                                        Uncontrolled changes
+                                    </td>
+                                    <td>
+                                        Additional requirements
+                                        may increase development
+                                        time and cost.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="problem-name">
+                                        Inadequate quality assurance
+                                    </td>
+                                    <td>
+                                        The final system may contain
+                                        errors or fail to meet
+                                        user requirements.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- BENEFITS -->
+                <div class="content-card">
+                    <h3>
+                        ✅ Benefits of Effective Project Management
+                    </h3>
+                    <div class="benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Better Time Management</strong>
+                                <p>
+                                    Tasks can be scheduled
+                                    and monitored to help
+                                    meet project deadlines.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Cost Control</strong>
+                                <p>
+                                    Expenditure is monitored
+                                    to reduce the risk of
+                                    exceeding the budget.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Efficient Use of Resources</strong>
+                                <p>
+                                    Staff, equipment and software
+                                    are allocated appropriately.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Improved Communication</strong>
+                                <p>
+                                    Team members and clients
+                                    understand their responsibilities
+                                    and project progress.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Reduced Risk</strong>
+                                <p>
+                                    Potential problems are
+                                    identified early and
+                                    appropriate actions are taken.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Higher Quality</strong>
+                                <p>
+                                    Regular testing and quality
+                                    checks help ensure that the
+                                    finished system meets requirements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="lesson-navigation" aria-label="Other lessons">
+                <a href="topic-15.html">⬆️ Topic 15</a>
+                <a href="topic-15-02.html">Topic 15.2 ➡️</a>
+            </nav>
+
+            <footer class="page-footer">
+                <p><strong>Tr.Sun Education</strong></p>
+                <p>Edexcel International A Level IT</p>
+                <p>Topic 15.1 • Concept of Project Management</p>
+                <p>Created by Tr. Sun</p>
+            </footer>
+        </div>
+    </main>
+    <button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const menuButton = document.getElementById('menuButton');
+        const overlay = document.getElementById('overlay');
+        const navLinks = document.querySelectorAll('.side-nav a');
+        const sections = document.querySelectorAll('section.lesson-section');
+        const progress = document.getElementById('readingProgress');
+        const backTop = document.getElementById('backTop');
+
+        function openMenu() {
+            sidebar.classList.add('open');
+            overlay.classList.add('show');
+            menuButton.setAttribute('aria-expanded', 'true');
+            menuButton.setAttribute('aria-label', 'Close lesson navigation');
+        }
+        function closeMenu() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.setAttribute('aria-label', 'Open lesson navigation');
+        }
+        menuButton.addEventListener('click', () => sidebar.classList.contains('open') ? closeMenu() : openMenu());
+        overlay.addEventListener('click', closeMenu);
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeMenu();
+        });
+
+        function updateActiveSection() {
+            let activeId = sections[0].id;
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top <= 160) activeId = section.id;
+            });
+            navLinks.forEach(link => {
+                const active = link.getAttribute('href') === '#' + activeId;
+                link.classList.toggle('active', active);
+                if (active) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+            });
+        }
+        function updateReadingProgress() {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const percentage = maxScroll > 0 ? Math.min(100, window.scrollY / maxScroll * 100) : 100;
+            progress.style.width = percentage + '%';
+        }
+        function updateBackTop() {
+            backTop.classList.toggle('visible', window.scrollY > 450);
+        }
+        function updatePage() {
+            updateActiveSection();
+            updateReadingProgress();
+            updateBackTop();
+        }
+        backTop.addEventListener('click', () => window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+        }));
+        window.addEventListener('scroll', updatePage, { passive: true });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 800) closeMenu();
+            updatePage();
+        });
+        window.addEventListener('load', updatePage);
+        updatePage();
+    </script>
+</body>
+
+</html>

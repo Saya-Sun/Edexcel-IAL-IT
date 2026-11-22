@@ -1,490 +1,128 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111827">
-  <meta name="description" content="Explore Topic 15: Systems Development, Edexcel International A Level IT, at Tr.Sun Education.">
-  <title>Topic 15 – Systems Development | Tr.Sun Education</title>
-  <style>
-    :root {
-      --sidebar-width: 282px;
-      --navy: #111827;
-      --navy-2: #1e293b;
-      --purple: #7653e8;
-      --purple-dark: #5937c5;
-      --bg: #f5f7fc;
-      --surface: #ffffff;
-      --text: #253047;
-      --muted: #64748b;
-      --border: #e7eaf2;
-      --shadow: 0 8px 28px rgba(25,33,60,.045);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 28px; }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    a:focus-visible, button:focus-visible, input:focus-visible {
-      outline: 3px solid #b69aff;
-      outline-offset: 3px;
-    }
-    [hidden] { display: none !important; }
-
-    /* Exact branding, dimensions and palette of the Topic 15.3 lesson design */
-    .sidebar {
-      position: fixed;
-      inset: 0 auto 0 0;
-      width: var(--sidebar-width);
-      height: 100vh;
-      height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-      background: var(--navy);
-      color: #fff;
-      z-index: 1000;
-      scrollbar-width: thin;
-      scrollbar-color: #45506a transparent;
-    }
-    .brand { padding: 28px 18px 23px; border-bottom: 1px solid #30394c; }
-    .brand-identity { display: flex; align-items: center; gap: 12px; }
-    .brand-logo {
-      width: 62px; height: 62px; flex: 0 0 62px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 18px;
-      background: linear-gradient(135deg,#a06aff,#5837c6);
-      box-shadow: 0 8px 24px rgba(117,83,232,.3);
-    }
-    .brand-logo svg { width: 49px; height: 49px; }
-    .brand-text { min-width: 0; }
-    .brand-text h2 { margin: 0; color: #fff; font-size: 17px; line-height: 1.3; letter-spacing: -.5px; }
-    .brand-text p { margin: 5px 0 0; color: #c4b5fd; font-size: 11px; white-space: nowrap; }
-    .brand-curriculum { margin-top: 20px; color: #94a3b8; font-size: 9px; font-weight: 800; letter-spacing: 1.15px; }
-    .current-lesson {
-      margin: 22px 13px 13px; padding: 16px; border: 1px solid #4b3a86;
-      border-radius: 14px; background: linear-gradient(135deg,#382b65,#29234a);
-    }
-    .current-lesson small { display: block; margin-bottom: 8px; color: #c4b5fd; font-size: 10px; font-weight: 750; letter-spacing: 1px; }
-    .current-lesson h3 { margin: 0; color: #fff; font-size: 15px; }
-    .current-lesson p { margin: 4px 0 0; color: #d6d0ea; font-size: 12px; line-height: 1.5; }
-    .sidebar-label { padding: 18px 23px 12px; color: #8591a8; font-size: 10px; font-weight: 800; letter-spacing: 1.7px; }
-    .side-nav { padding: 0 12px 18px; }
-    .side-nav a {
-      display: flex; align-items: center; gap: 12px; margin-bottom: 5px;
-      padding: 11px 12px; color: #cbd5e1; font-size: 12.5px;
-      line-height: 1.4; border-radius: 11px; transition: background .2s,color .2s;
-    }
-    .side-nav a:hover { background: #283249; color: #fff; }
-    .side-nav a.active { background: #392b66; color: #fff; box-shadow: inset 3px 0 #a78bfa; }
-    .nav-number {
-      flex-shrink: 0; width: 34px; height: 30px; display: grid; place-items: center;
-      border-radius: 9px; background: #293449; color: #bac5d8; font-size: 11px; font-weight: 800;
-    }
-    .side-nav a.active .nav-number { background: #8157ed; color: #fff; }
-    .sidebar-footer { margin-top: auto; padding: 21px 22px; border-top: 1px solid #30394c; color: #94a3b8; font-size: 12px; }
-    .sidebar-footer strong { color: #e2e8f0; }
-
-    /* Lesson-page layout, breadcrumb, and hero */
-    .main { margin-left: var(--sidebar-width); min-height: 100vh; padding: 34px 42px 55px; }
-    .container { max-width: 1120px; margin: 0 auto; }
-    .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-bottom: 20px; color: #78849a; font-size: 12px; }
-    .breadcrumb a { color: inherit; }
-    .breadcrumb a:hover, .breadcrumb strong { color: #6744d0; }
-    .hero {
-      position: relative; overflow: hidden; padding: 47px 44px;
-      border-radius: 24px;
-      background: linear-gradient(115deg,#4934b5 0%,#7753e7 55%,#ad72ed 100%);
-      box-shadow: 0 15px 35px rgba(88,60,180,.16); color: #fff;
-    }
-    .hero::before, .hero::after {
-      content: ""; position: absolute; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.15); pointer-events: none;
-    }
-    .hero::before { width: 360px; height: 360px; right: -100px; top: -200px; }
-    .hero::after { width: 250px; height: 250px; right: 90px; bottom: -175px; }
-    .hero-content { position: relative; z-index: 1; }
-    .hero-badge {
-      display: inline-block; padding: 7px 15px; background: rgba(255,255,255,.16);
-      border: 1px solid rgba(255,255,255,.2); border-radius: 30px;
-      font-size: 11px; font-weight: 750; letter-spacing: .8px;
-    }
-    .hero h1 { margin: 21px 0 14px; font-size: clamp(29px,3.6vw,43px); line-height: 1.2; letter-spacing: -1px; }
-    .hero p { max-width: 720px; color: #f2ecff; font-size: 15px; margin: 0; }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
-    .hero-tags span { padding: 8px 13px; font-size: 11px; font-weight: 650; border-radius: 9px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.17); }
-
-    .intro {
-      margin: 30px 0; padding: 27px 31px; background: #fff;
-      border: 1px solid var(--border); border-left: 5px solid var(--purple);
-      border-radius: 16px; box-shadow: var(--shadow);
-    }
-    .intro h2 { font-size: 21px; margin: 0 0 9px; }
-    .intro p { margin: 0; color: #526177; font-size: 14px; }
-
-    .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; margin: 0 0 28px; }
-    .stat {
-      display: flex; align-items: center; gap: 15px; min-width: 0;
-      border: 1px solid var(--border); border-radius: 15px;
-      padding: 18px 20px; background: #fff; box-shadow: var(--shadow);
-    }
-    .stat-icon { flex: 0 0 48px; display: grid; place-items: center; height: 48px; border-radius: 14px; font-size: 24px; background: #f2edff; }
-    .stat:nth-child(2) .stat-icon { background: #eaf9f1; }
-    .stat:nth-child(3) .stat-icon { background: #ebf4ff; }
-    .stat strong { display: block; font-size: 23px; line-height: 1.25; color: #253047; }
-    .stat small { display: block; font-size: 11px; color: var(--muted); }
-
-    /* White section cards and pastel feature cards from the selected design */
-    .lesson-section {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 20px; padding: 34px; margin-bottom: 26px;
-      box-shadow: var(--shadow); scroll-margin-top: 28px;
-    }
-    .section-heading {
-      display: flex; align-items: center; gap: 16px;
-      margin-bottom: 23px; padding-bottom: 20px; border-bottom: 1px solid #eef0f5;
-    }
-    .section-icon { width: 56px; height: 56px; flex-shrink: 0; display: grid; place-items: center; border-radius: 16px; font-size: 26px; background: #f2edff; }
-    .section-heading small { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
-    .section-heading h2 { margin: 3px 0 0; color: #1e293b; line-height: 1.3; font-size: clamp(21px,2.5vw,26px); }
-    .section-lead { margin: 0 0 23px; font-size: 14px; color: #64748b; }
-
-    .search-bar {
-      display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
-      padding: 12px 16px; background: #f8f9fd; border: 1px solid #dde2ef;
-      border-radius: 12px; transition: border-color .2s,box-shadow .2s;
-    }
-    .search-bar:focus-within { border-color: #9275ec; box-shadow: 0 0 0 3px #eee8ff; }
-    .search-bar svg { width: 20px; height: 20px; flex-shrink: 0; stroke: #8575ae; }
-    .search-bar input { width: 100%; border: none; background: transparent; color: var(--text); outline: none; font-size: 14px; }
-    .search-clear { border: 0; background: #ede9fa; color: #6845c5; border-radius: 8px; font-size: 12px; padding: 6px 10px; font-weight: 700; }
-    .results-note { margin: 0 0 21px; font-size: 12px; color: #64748b; }
-
-    .cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
-    .lesson-card {
-      display: flex; flex-direction: column; min-width: 0; scroll-margin-top: 25px;
-      padding: 23px; background: #fff; border: 1px solid var(--border);
-      border-radius: 16px; box-shadow: 0 6px 18px rgba(25,33,60,.04);
-      transition: transform .2s,border-color .2s,box-shadow .2s;
-    }
-    .lesson-card:hover { transform: translateY(-3px); border-color: #d9cafa; box-shadow: 0 12px 25px rgba(45,35,90,.09); }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
-    .card-icon { width: 53px; height: 53px; display: grid; place-items: center; font-size: 25px; border-radius: 15px; background: #f2edff; }
-    .lesson-card:nth-child(7n+2) .card-icon { background: #ebf4ff; }
-    .lesson-card:nth-child(7n+3) .card-icon { background: #eaf9f1; }
-    .lesson-card:nth-child(7n+4) .card-icon { background: #fff4e5; }
-    .lesson-card:nth-child(7n+5) .card-icon { background: #fff1f5; }
-    .lesson-card:nth-child(7n+6) .card-icon { background: #f1edff; }
-    .lesson-card:nth-child(7n+7) .card-icon { background: #ebf7f9; }
-    .number { color: #8a93a8; font-size: 10px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; }
-    .status { align-self: flex-start; font-size: 10px; font-weight: 800; border-radius: 30px; padding: 5px 10px; background: #eaf9f1; color: #147d54; }
-    .status.planned { background: #f1f3f8; color: #718096; }
-    .lesson-card h3 { color: #25324a; font-size: 17px; line-height: 1.35; margin: 12px 0 9px; }
-    .lesson-card p { margin: 0 0 19px; color: #617085; font-size: 13px; line-height: 1.65; flex-grow: 1; }
-    .card-footer { border-top: 1px solid #eef0f5; padding-top: 15px; display: flex; justify-content: space-between; align-items: center; gap: 9px; }
-    .open-link { display: inline-flex; align-items: center; gap: 7px; color: #5a38c3; font-size: 12.5px; font-weight: 800; }
-    .open-link:hover { text-decoration: underline; }
-    .coming-soon { color: #8692a6; font-size: 12px; font-weight: 700; }
-    .card-meta { font-size: 10px; color: #9aa5b6; white-space: nowrap; }
-    .empty { text-align: center; padding: 35px 20px; color: #64748b; background: #f7f7fe; border: 1px dashed #d7d3ec; border-radius: 14px; }
-
-    .note-box { margin-top: 22px; background: #fff8ec; border: 1px solid #f4deb0; border-left: 4px solid #e9a34e; padding: 17px 20px; border-radius: 12px; color: #725021; font-size: 13px; }
-    .note-box strong { color: #925411; }
-    .page-footer { padding: 25px 15px; text-align: center; color: #8995aa; font-size: 12px; }
-    .page-footer p { margin: 4px; }
-    .page-footer strong { color: #6542cd; }
-    .reading-progress { position: fixed; left: var(--sidebar-width); top: 0; height: 4px; width: 0; background: linear-gradient(90deg,#7955e8,#bd7aff); z-index: 200; pointer-events: none; }
-    .back-top { position: fixed; right: 24px; bottom: 24px; width: 44px; height: 44px; border: 0; border-radius: 13px; background: #6442cf; color: #fff; font-size: 21px; box-shadow: 0 7px 20px #6442cf33; opacity: 0; pointer-events: none; transform: translateY(10px); transition: .2s; z-index: 80; }
-    .back-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    .back-top:hover { background: #4e2db3; }
-    .menu-button,.overlay { display: none; }
-    .skip-link { position: fixed; top: -65px; left: 16px; z-index: 1500; background: white; padding: 10px 14px; border-radius: 10px; color: #4934b5; }
-    .skip-link:focus { top: 12px; }
-
-    @media (max-width: 1150px) { .cards { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-    @media (max-width: 1050px) { .main { padding: 28px; } .lesson-section { padding: 28px; } }
-    @media (max-width: 800px) {
-      .sidebar { width: 280px; transform: translateX(-100%); transition: transform .3s ease; }
-      .sidebar.open { transform: translateX(0); }
-      .main { margin-left: 0; padding: 78px 16px 35px; }
-      .menu-button { display: flex; align-items: center; gap: 9px; position: fixed; top: 15px; left: 16px; z-index: 900; padding: 10px 15px; border: 0; border-radius: 11px; background: var(--navy-2); color: white; box-shadow: 0 5px 18px #0002; }
-      .overlay.show { display: block; position: fixed; inset: 0; background: rgba(13,18,30,.65); z-index: 950; }
-      .hero { padding: 33px 25px; border-radius: 19px; }
-      .hero p { font-size: 14px; }
-      .intro { padding: 23px 20px; }
-      .lesson-section { padding: 25px 19px; border-radius: 16px; }
-      .reading-progress { left: 0; }
-    }
-    @media (max-width: 550px) {
-      .cards { grid-template-columns: 1fr; }
-      .stats { gap: 8px; }
-      .stat { display: block; text-align: center; padding: 13px 4px; border-radius: 12px; }
-      .stat-icon { width: 36px; height: 36px; margin: 0 auto 7px; font-size: 18px; }
-      .stat strong { font-size: 21px; }
-      .stat small { font-size: 10px; }
-      .hero { padding: 29px 21px; }
-      .hero-tags { gap: 7px; }
-      .hero-tags span { font-size: 10px; }
-      .section-heading { gap: 12px; }
-      .section-heading h2 { font-size: 20px; }
-      .section-icon { width: 48px; height: 48px; font-size: 23px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *,*::before,*::after { transition-duration: .01ms !important; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#141b34" name="theme-color"/>
+<meta content="Explore 12 empty lesson pages in Edexcel IAL IT A2 Topic 15: Systems Development at Tr.Sun Education." name="description"/>
+<title>Topic 15 – Systems Development | Tr.Sun Education</title>
+<style>
+:root{--navy:#141b34;--text:#1d2844;--muted:#71809a;--canvas:#f6f7fc;--purple:#6d59db;--line:#e8eaf3;--sidebar:264px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:26px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--canvas);color:var(--text);line-height:1.55}a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:pointer}:focus-visible{outline:3px solid #a69bff;outline-offset:3px}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.skip{position:fixed;left:12px;top:-80px;background:#fff;padding:12px;z-index:50;border-radius:9px}.skip:focus{top:12px}
+.sidebar{position:fixed;z-index:25;inset:0 auto 0 0;width:var(--sidebar);background:linear-gradient(180deg,#141c35,#101831);color:#fff;padding:26px 15px;overflow:auto;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:12px;padding:2px 8px 25px;border-bottom:1px solid #ffffff1b}.brand-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#a795ff,#6353e4);box-shadow:0 7px 20px #6353e43f;font-size:24px}.brand b{display:block;letter-spacing:-.03em;font-size:16px}.brand small{display:block;letter-spacing:.16em;font-size:10px;font-weight:800;color:#9eacd2}.side-label{margin:28px 11px 12px;font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#8391b7}.nav-link{display:flex;align-items:center;gap:11px;min-height:43px;padding:10px 11px;border-radius:11px;color:#b8c3dc;font-weight:650;font-size:12px;margin:2px 0}.nav-link:hover,.nav-link.current{background:#8478ee24;color:#fff}.nav-link.current{box-shadow:inset 3px 0 #a59afb}.side-emoji{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:#ffffff0e;font-size:15px;flex:none}.side-n{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:#ffffff0b;color:#ada4fb;font-size:11px;font-weight:900;flex:none}.sublink{font-size:11px}.sidebar-footer{margin-top:auto;padding:25px 7px 2px}.side-box{border:1px solid #ffffff16;background:linear-gradient(140deg,#8372ed27,#5e9bd516);padding:15px;border-radius:15px}.side-box strong{display:block;font-size:13px}.side-box p{margin:6px 0 0;color:#adb9d7;font-size:11px}.byline{font-size:11px;color:#91a0c5;margin-top:19px;text-align:center}
+.scrim{display:none}.main{margin-left:var(--sidebar)}.wrap{max-width:1470px;margin:auto;padding:26px clamp(20px,3.4vw,55px) 30px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}.breadcrumb{font-size:12px;font-weight:700;color:#8290a7;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.breadcrumb a:hover{color:#6354ce}.breadcrumb strong{color:#3f4970}.controls{display:flex;align-items:center;gap:11px}.search{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:white;border:1px solid var(--line);width:min(290px,32vw);box-shadow:0 5px 22px #1e2b5f05}.search:focus-within{border-color:#9283ee;box-shadow:0 0 0 3px #9283ee1b}.search span{color:#9aa3b8}.search input{width:100%;border:0;outline:0;color:#243252;font-size:12px;background:transparent}.avatar{width:38px;height:38px;border-radius:50%;background:#edeaff;color:#6956cd;display:grid;place-items:center;font-weight:900;font-size:12px}.mobile-toggle{display:none;border:0;background:white;border-radius:11px;width:41px;height:41px;font-size:23px;color:#29314e}
+.hero{position:relative;overflow:hidden;min-height:273px;padding:clamp(30px,4vw,54px);border-radius:25px;color:#fff;background:linear-gradient(110deg,#5a4bd1 0%,#7d5bdf 55%,#a16cde 100%);box-shadow:0 18px 45px #7761d02a;display:flex;align-items:center;justify-content:space-between;gap:20px;isolation:isolate}.hero:before{content:"";position:absolute;right:-80px;top:-145px;width:420px;height:420px;border:2px solid #ffffff29;border-radius:50%;background:#ffffff0c;z-index:-1}.hero:after{content:"";position:absolute;right:138px;bottom:-155px;width:225px;height:225px;border:26px solid #ffffff0e;border-radius:50%;z-index:-1}.eyebrow{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:850;background:#ffffff23;padding:7px 12px;border:1px solid #ffffff30;border-radius:99px}.hero h1{font-size:clamp(31px,4vw,55px);letter-spacing:-.055em;line-height:1.05;margin:19px 0 15px;max-width:680px}.hero h1 span{color:#fff6b3}.hero p{font-size:14px;color:#f0edff;max-width:600px;margin:0 0 20px;line-height:1.75}.hero-action{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#5b4ac7;font-size:12px;font-weight:850;border-radius:10px;padding:11px 16px}.hero-action:hover{background:#f3f0ff}.hero-graphic{flex:0 0 178px;display:grid;place-items:center;transform:rotate(7deg)}.graphic-tile{width:173px;height:173px;border-radius:35px;background:linear-gradient(140deg,#ffffff4b,#ffffff14);border:1px solid #ffffff50;display:grid;place-content:center;text-align:center;box-shadow:0 14px 32px #30207921}.graphic-tile b{font-size:66px;line-height:1;letter-spacing:-.07em}.graphic-tile small{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:850}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 36px}.stat{display:flex;align-items:center;gap:13px;background:white;border:1px solid var(--line);padding:18px 20px;border-radius:16px;box-shadow:0 8px 28px #1e2b5f06}.stat-icon{display:grid;place-items:center;width:45px;height:45px;flex:none;border-radius:13px;background:#eeeaff;color:#7058df;font-size:22px}.stat:nth-child(2) .stat-icon{background:#e9f9f9;color:#24a4ab}.stat:nth-child(3) .stat-icon{background:#fff2e5;color:#eaa24e}.stat strong{display:block;font-size:22px;line-height:1.18}.stat small{font-size:11px;color:var(--muted)}
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:19px}.overline{color:#7862dd;text-transform:uppercase;letter-spacing:.15em;font-size:10px;font-weight:900}.section-heading h2{margin:2px 0 2px;font-size:26px;letter-spacing:-.045em}.section-heading p{margin:0;font-size:13px;color:var(--muted)}.section-count{white-space:nowrap;color:#7280a0;font-size:12px;font-weight:750;background:white;border:1px solid var(--line);border-radius:9px;padding:8px 11px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.lesson-card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 28px #1e2b5f08;padding:24px;min-width:0;display:flex;flex-direction:column;scroll-margin-top:24px;transition:transform .2s,box-shadow .2s,border-color .2s}.lesson-card:hover{transform:translateY(-4px);box-shadow:0 17px 32px #26376818;border-color:#d8d4f5}.lesson-card[hidden]{display:none}.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}.card-icon{width:53px;height:53px;border-radius:15px;display:grid;place-items:center;font-size:31px;font-weight:500}.violet{background:#eeeaff;color:#6b55de}.teal{background:#e2f7f8;color:#21a0a4}.amber{background:#fff2df;color:#d69836}.blue{background:#e8f0ff;color:#477cd9}.green{background:#e4f7ed;color:#2d9a69}.pink{background:#ffecf7;color:#d15f9f}.number{color:#98a3b8;font-size:10px;font-weight:850;letter-spacing:.09em}.spec{font-size:11px;color:#8c97b0;font-weight:600}.spec b{color:#7660d6}.lesson-card h3{font-size:18px;letter-spacing:-.03em;line-height:1.25;margin:8px 0 9px}.lesson-card p{font-size:12px;color:#6d7891;line-height:1.7;margin:0 0 25px;min-height:63px}.card-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #eef0f6;padding-top:17px}.open{display:inline-flex;align-items:center;gap:8px;color:#6550d6;font-size:12px;font-weight:900}.open span{font-size:19px}.open:hover{text-decoration:underline}.meta{color:#a0a9bc;font-size:10px;font-weight:700}.empty{border:1px dashed #c6cadf;border-radius:16px;padding:32px;background:white;color:#718099;text-align:center;margin-top:16px}.empty[hidden]{display:none}
+.info{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;margin:28px 0 36px;border:1px solid #dedaf8;background:#f0eeff;border-radius:15px;padding:20px}.info-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:#dfdbff;color:#6752d0;font-size:21px}.info h3{margin:0 0 4px;font-size:14px}.info p{margin:0;color:#586682;font-size:12px;line-height:1.7}.info a{color:#5f4bcd;font-weight:800;text-decoration:underline}.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid #e4e7f1;padding:24px 0 5px;color:#8994ab;font-size:11px}.footer strong{color:#6e59d8}
+@media(max-width:1180px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-graphic{flex-basis:145px}.graphic-tile{width:140px;height:140px}.graphic-tile b{font-size:55px}}
+@media(max-width:850px){.sidebar{transform:translateX(-105%);transition:transform .24s;box-shadow:16px 0 38px #0003}body.menu-open .sidebar{transform:translateX(0)}body.menu-open .scrim{display:block;position:fixed;inset:0;z-index:20;background:#0f172c8b;border:0;width:100%}.main{margin-left:0}.mobile-toggle{display:grid;place-items:center}.hero-graphic{display:none}.search{width:min(290px,37vw)}}
+@media(max-width:590px){.wrap{padding:15px 16px 22px}.topbar{gap:8px;margin-bottom:17px}.breadcrumb{font-size:10px;gap:5px}.breadcrumb .crumb-extra{display:none}.controls{gap:8px}.search{width:40px;padding:10px;transition:width .2s}.search:focus-within{position:absolute;right:15px;width:calc(100vw - 80px);z-index:2}.search input{width:100%;min-width:0}.search:not(:focus-within) input::placeholder{color:transparent}.avatar{display:none}.hero{padding:29px 24px;min-height:265px;border-radius:20px}.hero h1{font-size:37px}.hero p{font-size:12px}.stats{gap:8px;margin:15px 0 29px}.stat{padding:13px 5px;display:block;text-align:center;border-radius:12px}.stat-icon{width:34px;height:34px;border-radius:10px;margin:0 auto 7px;font-size:18px}.stat strong{font-size:20px}.stat small{font-size:10px}.section-heading{display:block}.section-heading h2{font-size:23px}.section-count{display:inline-block;margin-top:9px}.cards{grid-template-columns:1fr}.lesson-card{padding:22px}.lesson-card p{min-height:0}.info{padding:14px;grid-template-columns:34px 1fr}.info-mark{width:34px;height:34px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to dashboard content</a>
-  <button class="menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-label="Open topic navigation" aria-expanded="false">☰ <span>Topic Menu</span></button>
-  <div class="overlay" id="overlay" aria-hidden="true"></div>
-  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to lessons</a>
+<button aria-label="Close navigation" class="scrim" id="scrim"></button>
+<aside aria-label="Lesson navigation" class="sidebar" id="sidebar">
+<a class="brand" href="../index.html"><span aria-hidden="true" class="brand-icon">☀</span><span><b>Tr.Sun Education</b><small>LEARNING HUB</small></span></a>
+<div class="side-label">Course navigation</div>
+<a class="nav-link" href="../index.html"><span aria-hidden="true" class="side-emoji">⌂</span> All 19 topics</a>
+<a aria-current="page" class="nav-link current" href="topic-15.html"><span aria-hidden="true" class="side-emoji">▦</span> Topic 15 overview</a>
+<div class="side-label">Twelve lesson pages</div>
 
-  <aside class="sidebar" id="sidebar" aria-label="Topic navigation">
-    <div class="brand">
-      <div class="brand-identity">
-        <div class="brand-logo" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 25L32 14L55 25L32 36Z" fill="white" />
-            <path d="M19 34V43Q32 53 45 43V34" stroke="white" stroke-width="3.5" stroke-linecap="round" />
-            <path d="M54 27V43" stroke="white" stroke-width="3" stroke-linecap="round" />
-            <circle cx="54" cy="46" r="3" fill="#F9CD6A" />
-          </svg>
-        </div>
-        <div class="brand-text">
-          <h2>Tr.Sun Education</h2>
-          <p>Learn · Explore · Achieve</p>
-        </div>
-      </div>
-      <div class="brand-curriculum">EDEXCEL INTERNATIONAL A LEVEL IT</div>
-    </div>
 
-    <div class="current-lesson">
-      <small>YOU ARE EXPLORING</small>
-      <h3>📚 Topic 15</h3>
-      <p>Systems Development</p>
-    </div>
 
-    <div class="sidebar-label">COURSE NAVIGATION</div>
-    <nav class="side-nav" aria-label="Course links">
-      <a href="index.html"><span class="nav-number" aria-hidden="true">⌂</span><span>All Topics</span></a>
-    </nav>
 
-    <div class="sidebar-label">TOPIC 15 LESSONS</div>
-    <nav class="side-nav" id="lessonNav" aria-label="Subtopic lessons">
-      <a href="topic-15-01.html"><span class="nav-number">01</span><span>Project Management</span></a>
-      <a href="topic-15-02.html"><span class="nav-number">02</span><span>Managing an IT Project</span></a>
-      <a href="topic-15-03.html"><span class="nav-number">03</span><span>Successful IT Project</span></a>
-      <a href="#"><span class="nav-number">04</span><span>Project Management Tools</span></a>
-      <a href="#"><span class="nav-number">05</span><span>Waterfall Methodology</span></a>
-      <a href="#"><span class="nav-number">06</span><span>Agile Methodology</span></a>
-      <a href="#"><span class="nav-number">07</span><span>Information Flow Diagrams</span></a>
-    </nav>
 
-    <div class="sidebar-footer">
-      <strong>Topic 15 · Systems Development</strong>
-      <div>Unit 3 · A2 Level</div>
-      <div style="margin-top:12px">Created by Tr. Sun</div>
-    </div>
-  </aside>
 
-  <main class="main" id="main">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Edexcel IAL IT</a>
-        <span aria-hidden="true">›</span>
-        <span>Unit 3 · A2 Level</span>
-        <span aria-hidden="true">›</span>
-        <strong aria-current="page">Topic 15</strong>
-      </nav>
-
-      <header class="hero" id="overview">
-        <div class="hero-content">
-          <span class="hero-badge">UNIT 3 · A2 LEVEL · TOPIC 15</span>
-          <h1>Topic 15:<br>Systems Development</h1>
-          <p>Explore how IT projects are managed, planned and developed, from successful project delivery to Waterfall, Agile and information flow diagrams.</p>
-          <div class="hero-tags">
-            <span>📚 7 Lesson Topics</span>
-            <span>✅ 3 Lessons Ready</span>
-            <span>💻 Edexcel IAL IT</span>
-          </div>
-        </div>
-      </header>
-
-      <section class="intro" aria-labelledby="welcome-title">
-        <h2 id="welcome-title">📖 Welcome to Systems Development</h2>
-        <p>Choose a lesson card below to start learning. Use the search bar to find a particular topic.</p>
-      </section>
-
-      <section class="stats" aria-label="Topic overview statistics">
-        <div class="stat"><span class="stat-icon" aria-hidden="true">📚</span><div><strong>07</strong><small>Lessons in this dashboard</small></div></div>
-        <div class="stat"><span class="stat-icon" aria-hidden="true">✅</span><div><strong>03</strong><small>Lessons linked and ready</small></div></div>
-        <div class="stat"><span class="stat-icon" aria-hidden="true">🎓</span><div><strong>A2</strong><small>International A Level IT</small></div></div>
-      </section>
-
-      <section class="lesson-section" id="lessons" aria-labelledby="lessons-title">
-        <div class="section-heading">
-          <div class="section-icon" aria-hidden="true">🗂️</div>
-          <div><small>CHOOSE YOUR LEARNING PATH</small><h2 id="lessons-title">Explore Subtopics</h2></div>
-        </div>
-        <p class="section-lead">Seven clearly organised lessons in one place, using the same design as your Tr.Sun Education lesson pages.</p>
-        <label class="search-bar" for="lessonSearch">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
-          <input id="lessonSearch" type="search" placeholder="Search lessons, e.g. Agile or project management..." autocomplete="off">
-          <button class="search-clear" id="clearSearch" type="button" hidden>Clear</button>
-        </label>
-        <p class="results-note" id="resultsNote" role="status" aria-live="polite">Showing 7 of 7 lessons · 3 available now</p>
-
-        <div class="cards" id="lessonCards">
-          <article class="lesson-card" id="lesson-01">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">📋</span><span class="number">LESSON 01 / 07</span></div>
-            <h3>Project Management</h3>
-            <p>Understand what a project is, how project management works and why effective management is essential for successful IT projects.</p>
-            <div class="card-footer"><a class="open-link" href="topic-15-01.html" aria-label="Open lesson 01: Project Management">Open lesson <span aria-hidden="true">↗</span></a><span class="card-meta">A2 · Unit 3</span></div>
-          </article>
-
-          <article class="lesson-card" id="lesson-02" >
-            <div class="card-top"><span class="card-icon" aria-hidden="true">📊</span><span class="number">LESSON 02 / 07</span></div>
-            <h3>Managing an IT Project</h3>
-            <p>Learn how a manager coordinates complex tasks, allocates resources, handles risks, maintains quality and controls changes.</p>
-            <div class="card-footer"><a class="open-link" href="topic-15-02.html" aria-label="Open lesson 02: Managing an IT Project">Open lesson <span aria-hidden="true">↗</span></a><span class="card-meta">A2 · Unit 3</span></div>
-          </article>
-
-          <article class="lesson-card" id="lesson-03">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">🏆</span><span class="number">LESSON 03 / 07</span></div>
-            <h3>Characteristics of a Successful IT Project</h3>
-            <p>Explore ten characteristics that help projects meet objectives, satisfy stakeholders and deliver high-quality systems.</p>
-            <div class="card-footer"><a class="open-link" href="topic-15-03.html" aria-label="Open lesson 03: Characteristics of a Successful IT Project">Open lesson <span aria-hidden="true">↗</span></a><span class="card-meta">A2 · Unit 3</span></div>
-          </article>
-
-          <article class="lesson-card" id="lesson-04">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">🗓️</span><span class="number">LESSON 04 / 07</span></div>
-            <h3>Project Management Tools</h3>
-            <p>Investigate Gantt charts, critical path analysis, precedence tables and project requirements.</p>
-            <div class="card-footer"><span class="coming-soon">Coming soon</span><span class="card-meta">A2 · Unit 3</span></div>
-          </article>
-
-          <article class="lesson-card" id="lesson-05" >
-            <div class="card-top"><span class="card-icon" aria-hidden="true">🌊</span><span class="number">LESSON 05 / 07</span></div>
-            <h3>Waterfall Methodology</h3>
-            <p>Study the sequential development phases, key activities, testing and system maintenance.</p>
-            <div class="card-footer"><span class="coming-soon">Coming soon</span><span class="card-meta">A2 · Unit 3</span></div>
-          </article>
-
-          <article class="lesson-card" id="lesson-06">
-            <div class="card-top"><span class="card-icon" aria-hidden="true">🔄</span><span class="number">LESSON 06 / 07</span></div>
-            <h3>Agile Methodology</h3>
-            <p>Understand iterative development, feedback, Agile frameworks, advantages and challenges.</p>
-            <div class="card-footer"><span class="coming-soon">Coming soon</span><span class="card-meta">A2 · Unit 3</span></div>
-          </article>
-
-          <article class="lesson-card" id="lesson-07" >
-            <div class="card-top"><span class="card-icon" aria-hidden="true">🔀</span><span class="number">LESSON 07 / 07</span></div>
-            <h3>Information Flow Diagrams</h3>
-            <p>Learn to create, read and interpret information flow diagrams that show how information moves through a system.</p>
-            <div class="card-footer"><span class="coming-soon">Coming soon</span><span class="card-meta">A2 · Unit 3</span></div>
-          </article>
-        </div>
-        <div class="empty" id="emptyState" role="status" hidden>No matching lessons found. Try a different keyword.</div>
-      </section>
-
-      <footer class="page-footer">
-        <p>© <span id="year">2026</span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT · A2 Level</p>
-        <p>Designed and created by <strong>Tr. Sun</strong></p>
-      </footer>
-    </div>
-  </main>
-
-  <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
-  <script>
-    const menuButton = document.getElementById('menuButton');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const setMenuOpen = (open) => {
-      sidebar.classList.toggle('open', open);
-      overlay.classList.toggle('show', open);
-      menuButton.setAttribute('aria-expanded', String(open));
-      menuButton.setAttribute('aria-label', open ? 'Close topic navigation' : 'Open topic navigation');
-    };
-    menuButton.addEventListener('click', () => setMenuOpen(!sidebar.classList.contains('open')));
-    overlay.addEventListener('click', () => setMenuOpen(false));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenuOpen(false); });
-    sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
-    window.addEventListener('resize', () => { if (innerWidth > 800) setMenuOpen(false); });
-
-    const searchInput = document.getElementById('lessonSearch');
-    const clearSearch = document.getElementById('clearSearch');
-    const cards = [...document.querySelectorAll('.lesson-card')];
-    const resultNote = document.getElementById('resultsNote');
-    const emptyState = document.getElementById('emptyState');
-    const navLinks = [...document.querySelectorAll('#lessonNav a')];
-    const updateSearch = () => {
-      const term = searchInput.value.trim().toLowerCase();
-      let shown = 0;
-      let available = 0;
-      cards.forEach(card => {
-        const searchable = (card.dataset.search + ' ' + card.querySelector('h3').textContent).toLowerCase();
-        const matches = searchable.includes(term);
-        card.hidden = !matches;
-        if (matches) {
-          shown++;
-          if (card.querySelector('.open-link')) available++;
-        }
-      });
-      resultNote.textContent = `Showing ${shown} of ${cards.length} lessons · ${available} available now`;
-      clearSearch.hidden = term.length === 0;
-      emptyState.hidden = shown !== 0;
-      navLinks.forEach(link => {
-        const card = document.querySelector(link.getAttribute('href'));
-        link.hidden = Boolean(term && card && card.hidden);
-      });
-    };
-    searchInput.addEventListener('input', updateSearch);
-    clearSearch.addEventListener('click', () => {
-      searchInput.value = '';
-      updateSearch();
-      searchInput.focus();
-    });
-
-    // Active lesson highlights follow the card closest to the top of the viewport.
-    const updateActive = () => {
-      const visibleCards = cards.filter(card => !card.hidden);
-      if (!visibleCards.length) return;
-      const current = visibleCards.reduce((best, card) => {
-        const distance = Math.abs(card.getBoundingClientRect().top - 130);
-        return distance < best.distance ? {card, distance} : best;
-      }, {card: visibleCards[0], distance: Infinity}).card;
-      navLinks.forEach(link => {
-        const active = link.getAttribute('href') === `#${current.id}`;
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', 'location');
-        else link.removeAttribute('aria-current');
-      });
-    };
-    const progress = document.getElementById('readingProgress');
-    const backTop = document.getElementById('backTop');
-    const onScroll = () => {
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.width = (maxScroll > 0 ? window.scrollY / maxScroll * 100 : 0) + '%';
-      backTop.classList.toggle('visible', window.scrollY > 400);
-      updateActive();
-    };
-    window.addEventListener('scroll', onScroll, {passive: true});
-    searchInput.addEventListener('input', updateActive);
-    backTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
-    document.getElementById('year').textContent = new Date().getFullYear();
-    updateSearch();
-    onScroll();
-  </script>
-</body>
-</html>
+<a class="nav-link sublink" href="topic-15-01.html"><span class="side-n">01</span><span>Introduction to Project Management</span></a><a class="nav-link sublink" href="topic-15-02.html"><span class="side-n">02</span><span>Characteristics of Successful IT Projects</span></a><a class="nav-link sublink" href="topic-15-03.html"><span class="side-n">03</span><span>SMART Targets</span></a><a class="nav-link sublink" href="topic-15-04.html"><span class="side-n">04</span><span>Gantt Charts, Nodes and Project Requirements</span></a><a class="nav-link sublink" href="topic-15-05.html"><span class="side-n">05</span><span>Critical Path Analysis and Precedence Tables</span></a><a class="nav-link sublink" href="topic-15-06.html"><span class="side-n">06</span><span>Introduction to Waterfall Methodology</span></a><a class="nav-link sublink" href="topic-15-07.html"><span class="side-n">07</span><span>Requirements Gathering and Analysis</span></a><a class="nav-link sublink" href="topic-15-08.html"><span class="side-n">08</span><span>System Design and Design Documentation</span></a><a class="nav-link sublink" href="topic-15-09.html"><span class="side-n">09</span><span>Implementation and Testing</span></a><a class="nav-link sublink" href="topic-15-10.html"><span class="side-n">10</span><span>System Deployment and Maintenance</span></a><a class="nav-link sublink" href="topic-15-11.html"><span class="side-n">11</span><span>Agile Methodology, Scrum and Sprints</span></a><a class="nav-link sublink" href="topic-15-12.html"><span class="side-n">12</span><span>Information Flow Diagrams</span></a><div class="sidebar-footer"><div class="side-box"><strong>✦ Learn • Explore • Grow</strong><p>Master systems development one lesson at a time.</p></div><div class="byline">Created by <b>Tr. Sun</b></div></div>
+</aside>
+<main class="main" id="main"><div class="wrap">
+<header class="topbar"><nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span class="crumb-extra">Unit 3: Advanced IT</span><span class="crumb-extra">›</span><strong>Topic 15</strong></nav><div class="controls"><button aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation" class="mobile-toggle" id="toggle">☰</button><label class="search"><span aria-hidden="true">⌕</span><input aria-label="Search subtopic lessons" autocomplete="off" id="search" placeholder="Find a lesson..." type="search"/></label><span class="avatar" title="Created by Tr. Sun">TS</span></div></header>
+<section aria-labelledby="page-title" class="hero"><div><span class="eyebrow">Edexcel IAL IT · A2 Level · Unit 3</span><h1 id="page-title">Topic 15:<br/><span>Systems Development</span></h1><p>From project planning to development methodologies and information flow diagrams. Choose a lesson below to explore each part of Topic 15.</p><a class="hero-action" href="#lessons">Explore the 12 lessons <span aria-hidden="true">↓</span></a></div><div aria-hidden="true" class="hero-graphic"><div class="graphic-tile"><b>15</b><small>Topic</small></div></div></section>
+<section aria-label="Topic overview" class="stats"><div class="stat"><span class="stat-icon">▦</span><div><strong>12</strong><small>Subtopic lessons</small></div></div><div class="stat"><span class="stat-icon">◈</span><div><strong>04</strong><small>Specification areas</small></div></div><div class="stat"><span class="stat-icon">🎓</span><div><strong>A2</strong><small>International A Level IT</small></div></div></section>
+<section aria-labelledby="lessons-heading" id="lessons"><div class="section-heading"><div><div class="overline">Choose your learning path</div><h2 id="lessons-heading">Explore subtopics</h2><p>Twelve focused lessons, organised by the Edexcel specification.</p></div><span class="section-count" id="count">12 lessons available</span></div><div class="cards" id="cards"><article class="lesson-card" data-search="Introduction to Project Management Topic 15 lesson 1" id="introduction-to-project-management">
+<div class="card-top"><span aria-hidden="true" class="card-icon violet">◈</span><span class="number">LESSON 01 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 01</b></div>
+<h3>Introduction to Project Management</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 01: Introduction to Project Management" class="open" href="topic-15-01.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Characteristics of Successful IT Projects Topic 15 lesson 2" id="characteristics-of-successful-it-projects">
+<div class="card-top"><span aria-hidden="true" class="card-icon teal">◎</span><span class="number">LESSON 02 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 02</b></div>
+<h3>Characteristics of Successful IT Projects</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 02: Characteristics of Successful IT Projects" class="open" href="topic-15-02.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="SMART Targets Topic 15 lesson 3" id="smart-targets">
+<div class="card-top"><span aria-hidden="true" class="card-icon amber">▦</span><span class="number">LESSON 03 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 03</b></div>
+<h3>SMART Targets</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 03: SMART Targets" class="open" href="topic-15-03.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Gantt Charts, Nodes and Project Requirements Topic 15 lesson 4" id="gantt-charts-nodes-and-project-requirements">
+<div class="card-top"><span aria-hidden="true" class="card-icon blue">▤</span><span class="number">LESSON 04 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 04</b></div>
+<h3>Gantt Charts, Nodes and Project Requirements</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 04: Gantt Charts, Nodes and Project Requirements" class="open" href="topic-15-04.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Critical Path Analysis and Precedence Tables Topic 15 lesson 5" id="critical-path-analysis-and-precedence-tables">
+<div class="card-top"><span aria-hidden="true" class="card-icon green">↻</span><span class="number">LESSON 05 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 05</b></div>
+<h3>Critical Path Analysis and Precedence Tables</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 05: Critical Path Analysis and Precedence Tables" class="open" href="topic-15-05.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Introduction to Waterfall Methodology Topic 15 lesson 6" id="introduction-to-waterfall-methodology">
+<div class="card-top"><span aria-hidden="true" class="card-icon pink">⤳</span><span class="number">LESSON 06 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 06</b></div>
+<h3>Introduction to Waterfall Methodology</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 06: Introduction to Waterfall Methodology" class="open" href="topic-15-06.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Requirements Gathering and Analysis Topic 15 lesson 7" id="requirements-gathering-and-analysis">
+<div class="card-top"><span aria-hidden="true" class="card-icon violet">◈</span><span class="number">LESSON 07 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 07</b></div>
+<h3>Requirements Gathering and Analysis</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 07: Requirements Gathering and Analysis" class="open" href="topic-15-07.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="System Design and Design Documentation Topic 15 lesson 8" id="system-design-and-design-documentation">
+<div class="card-top"><span aria-hidden="true" class="card-icon teal">◎</span><span class="number">LESSON 08 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 08</b></div>
+<h3>System Design and Design Documentation</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 08: System Design and Design Documentation" class="open" href="topic-15-08.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Implementation and Testing Topic 15 lesson 9" id="implementation-and-testing">
+<div class="card-top"><span aria-hidden="true" class="card-icon amber">▦</span><span class="number">LESSON 09 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 09</b></div>
+<h3>Implementation and Testing</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 09: Implementation and Testing" class="open" href="topic-15-09.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="System Deployment and Maintenance Topic 15 lesson 10" id="system-deployment-and-maintenance">
+<div class="card-top"><span aria-hidden="true" class="card-icon blue">▤</span><span class="number">LESSON 10 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 10</b></div>
+<h3>System Deployment and Maintenance</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 10: System Deployment and Maintenance" class="open" href="topic-15-10.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Agile Methodology, Scrum and Sprints Topic 15 lesson 11" id="agile-methodology-scrum-and-sprints">
+<div class="card-top"><span aria-hidden="true" class="card-icon green">↻</span><span class="number">LESSON 11 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 11</b></div>
+<h3>Agile Methodology, Scrum and Sprints</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 11: Agile Methodology, Scrum and Sprints" class="open" href="topic-15-11.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article><article class="lesson-card" data-search="Information Flow Diagrams Topic 15 lesson 12" id="information-flow-diagrams">
+<div class="card-top"><span aria-hidden="true" class="card-icon pink">⤳</span><span class="number">LESSON 12 / 12</span></div>
+<div class="spec">Topic 15 <b>Lesson 12</b></div>
+<h3>Information Flow Diagrams</h3>
+<p>Lesson notes coming soon.</p>
+<div class="card-bottom"><a aria-label="Open lesson 12: Information Flow Diagrams" class="open" href="topic-15-12.html">Open lesson <span aria-hidden="true">↗</span></a><span class="meta">A2 · Unit 3</span></div>
+</article></div><div class="empty" hidden="" id="empty" role="status">No matching lessons. Try another search.</div></section>
+<section class="info"><div aria-hidden="true" class="info-mark">i</div><div><h3>How this topic is organised</h3><p>These 12 pages divide the Topic 15 textbook material into manageable lessons covering project management, SMART targets, project management tools, Waterfall, Agile, and information flow diagrams. The numbers 01–12 identify lesson webpages and are not official Pearson specification numbers. Lesson notes are intentionally empty and ready to be added.</p></div></section>
+<footer class="footer"><span>© <span id="year"></span> <strong>Tr.Sun Education</strong> · Edexcel IAL IT A2</span><span>Designed and created by <strong>Tr. Sun</strong></span></footer>
+</div></main>
+<script>
+const q=document.getElementById('search');const cards=[...document.querySelectorAll('.lesson-card')];const count=document.getElementById('count'),empty=document.getElementById('empty');
+q.addEventListener('input',()=>{const term=q.value.trim().toLowerCase();let shown=0;cards.forEach(card=>{const ok=card.dataset.search.toLowerCase().includes(term);card.hidden=!ok;if(ok)shown++});count.textContent=shown+' of 12 lessons';empty.hidden=shown!==0});
+const toggle=document.getElementById('toggle');function menu(open){document.body.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')}toggle.addEventListener('click',()=>menu(!document.body.classList.contains('menu-open')));document.getElementById('scrim').addEventListener('click',()=>menu(false));document.addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});document.querySelectorAll('.sidebar a').forEach(a=>a.addEventListener('click',()=>menu(false)));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
